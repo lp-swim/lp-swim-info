@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>LP-SWIM – Individuelles Schwimmtraining</title>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<link href="favicon.ico" rel="icon" type="image/x-icon"/>
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition: all 0.3s ease-in-out;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1rem;
+      background: #f5faff url('background-logo.png') no-repeat center center fixed;
+      background-size: 40%;
+      color: #0a2a43;
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+
+    nav {
+      background: #0096c7;
+      padding: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      background-color: #0077b6;
+      border-radius: 4px;
+    }
+
+    nav a:hover {
+      background-color: #023e8a;
+    }
+
+    section {
+      max-width: 850px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.88);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #0077b6;
+      border-bottom: 2px solid #00b4d8;
+      padding-bottom: 0.4rem;
+      font-weight: normal;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+      font-weight: normal;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.08);
+    }
+
+    input, textarea {
+      padding: 0.8rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #0077b6;
+      color: white;
+      padding: 0.9rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #023e8a;
+    }
+
+    footer {
+      background: #caf0f8;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      position: relative;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1001;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal.show {
+      display: flex;
+      animation: pop 0.4s ease-out;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.95); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  
+/* Scroll-Effekte visuell abgerundet */
+section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body {
+  padding: 0 0 40px 0;
+  margin: 0;
+  background: #f5faff url('background-logo.png') no-repeat center center fixed;
+  background-size: 40%;
+  font-family: 'Times New Roman', serif;
+  font-size: 1rem;
+  color: #111;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+section {
+  background-color: rgba(255,255,255,0.9);
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+  max-width: 850px;
+}
+
+footer {
+  background: #caf0f8;
+  text-align: center;
+  padding: 1rem 1rem 1.5rem 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #ccc;
+  margin-top: 2rem;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+form {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 16px rgba(0,0,0,0.05);
+  max-width: 600px;
+  margin: 2rem auto 1rem auto;
+}
+
+@media (max-width: 768px) {
+  section {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  form {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
+
+nav {
+  background: #0096c7;
+  padding: 1.2rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.7rem 1.4rem;
+  background-color: #0077b6;
+  border-radius: 24px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+nav a:hover {
+  background-color: #023e8a;
+  transform: scale(1.05);
+}
+
+/* Vollständig abgerundete Navigationsleiste */
+nav {
+  border-radius: 18px;
+  margin: 1rem auto;
+  max-width: 950px;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Desktop: Navigation breiter darstellen */
+@media (min-width: 1024px) {
+  nav {
+    max-width: 1080px;
+    padding: 1.5rem 2rem;
+  }
+
+  nav a {
+    font-size: 1.1rem;
+    padding: 0.8rem 1.6rem;
+  }
+}
+
+/* Mobile: kompakte Darstellung */
+@media (max-width: 768px) {
+  nav {
+    padding: 0.8rem;
+    gap: 0.6rem;
+  }
+
+  nav a {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+    button[type="submit"] {
+      background-color: #0077b6;
+      color: white;
+      padding: 0.8rem 1.6rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #005f8a;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0, 119, 182, 0.3);
+    }
+    </style>
+<style>
+  nav a:hover {
+    background-color: #005f8a !important;
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(0, 119, 182, 0.2);
+  }
+</style></head>
+<body style="padding-bottom: 30px;">
+<nav>
+<a href="#start">Start</a>
+<a href="#jugend">Kinder &amp; Jugendliche</a>
+<a href="#schule">Schulbegleitung</a>
+<a href="#erwachsene">Erwachsene</a>
+<a href="#uebermich">Über mich</a>
+<a href="#kontakt">Kontakt</a>
+</nav>
+<section id="start" style="margin: 2rem auto; padding: 1.5rem; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.04); max-width: 850px;"><h2>Herzlich willkommen</h2><p>Individuelles Schwimmtraining in Einzelbetreuung – professionell, freiberuflich, flexibel. Jede Einheit dauert 60 Minuten und wird individuell abgestimmt.</p><p>Im Folgenden findest du eine Übersicht meiner Angebote für Kinder und Jugendliche, begleitende Unterstützung im schulischen Schwimmunterricht sowie individuell abgestimmte Kurse für Erwachsene.</p></section>
+<!-- Beispiel für weitere Sektionen wie #jugend, #schule, #erwachsene etc. -->
+<section id="jugend" style="margin: 2rem auto; padding: 1.5rem; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.04); max-width: 850px;"><h2>Kinder &amp; Jugendliche</h2><p>In Deutschland ertrinken jedes Jahr über 40 Kinder und Jugendliche – meist in Schwimmbädern oder Badeseen. Viele unterschätzen ihre Fähigkeiten oder haben kaum Zugang zu gezieltem Unterricht. Gerade im Schulkontext reicht oft die Zeit nicht aus, um Kinder individuell zu fördern. Einzelunterricht schafft hier einen wirkungsvollen Ausgleich.</p><p>Ob Seepferdchen, Bronze, Silber oder Gold – das Training richtet sich nach den persönlichen Zielen und Fähigkeiten. Kinder lernen, das Wasser zu verstehen, sich sicher zu bewegen und technische Grundlagen zu beherrschen. Wer sich für Wettkampf- oder Vereinssport interessiert, kann gezielt an Kraul-, Brust- oder Rückentechnik arbeiten.</p><p>Das Ziel: Kinder stark machen. Sie sollen mit Freude ins Wasser gehen, ihre Fortschritte erkennen und Vertrauen in sich selbst aufbauen. Einzelbetreuung bietet den Raum, um in eigenem Tempo zu lernen – geduldig, strukturiert und ohne Druck.</p></section>
+<section id="schule" style="margin: 2rem auto; padding: 1.5rem; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.04); max-width: 850px;"><h2>Schulbegleitung</h2><p>Nach dem tragischen Unfall eines Jungen beim Schulschwimmen in Konstanz stehen viele Lehrkräfte vor einer Herausforderung: Was ist im Ernstfall richtig? Was falsch? Das Gerichtsurteil damals verdeutlichte, wie allein Verantwortliche im Becken oft gelassen werden – organisatorisch und emotional.</p><p>Eine zusätzliche Begleitperson im Wasser sorgt für mehr Überblick, Entlastung und pädagogische Unterstützung. Sie steht nicht in Konkurrenz zur Lehrkraft, sondern ergänzt gezielt. So wird es möglich, sich besser um Einzelbedarfe zu kümmern – insbesondere bei Kindern mit Unsicherheiten.</p><p>Ziel ist es, Sicherheit zu schaffen – für alle Beteiligten. Kinder profitieren von einer vertrauensvollen Lernumgebung, Lehrkräfte können sich besser auf Inhalte konzentrieren. Die Zusammenarbeit ist flexibel und orientiert sich am Ablauf des Unterrichts.</p></section>
+<section id="erwachsene" style="margin: 2rem auto; padding: 1.5rem; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.04); max-width: 850px;"><h2>Erwachsene</h2><p>Schwimmen ist keine Frage des Alters. Viele Erwachsene trauen sich erst spät, das Thema anzugehen – aus Unsicherheit, Angst oder weil es nie gelernt wurde. Der Einzelunterricht bietet hier Raum, ohne Urteil oder Hektik neue Erfahrungen im Wasser zu sammeln.</p><p>Gemeinsam entwickeln wir schrittweise ein Gefühl für Wasserlage, Atmung und Bewegung. Egal ob erste Versuche oder Technikauffrischung: Ziel ist eine nachhaltige Entwicklung – ruhig, nachvollziehbar und individuell abgestimmt.</p><p>Wer lernt, sich im Wasser sicher zu bewegen, gewinnt auch an Selbstvertrauen außerhalb des Beckens. Schwimmen zu lernen bedeutet Freiheit. Und jeder Mensch verdient die Chance, das für sich zu entdecken.</p></section>
+<section id="uebermich" style="margin: 2rem auto; padding: 1.5rem; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.04); max-width: 850px;">
+<h2>Über mich</h2>
+<p>Ich heiße Lukas, bin 22 Jahre alt und ausgebildeter Fachangestellter für Bäderbetriebe. Während meiner Berufsausbildung standen Methodik und Didaktik im Zentrum, insbesondere im Hinblick auf die Vermittlung von Schwimmtechniken an Menschen unterschiedlichen Alters und mit verschiedenen Vorerfahrungen.</p>
+<p>Durch meine Arbeit in öffentlichen Bädern begleite ich täglich Kinder, Jugendliche und Erwachsene auf ihrem Weg im Wasser – von ersten Schwimmversuchen bis hin zur Verbesserung spezifischer Techniken. Dabei habe ich gelernt, wie wertvoll ein vertrauensvoller Rahmen und individuelle Zuwendung für den Lernerfolg sind.</p>
+<p>Mit LP-SWIM habe ich eine freiberufliche Nebentätigkeit aufgebaut, die sich ausschließlich auf Einzelunterricht konzentriert. Mein Ziel ist es, Menschen dort abzuholen, wo sie stehen – ohne Druck, mit Geduld und einer klaren Struktur. Termine sind flexibel planbar, die Preise teile ich auf Anfrage gerne mit.</p>
+</section>
+<section id="kontakt" style="margin: 2rem auto; padding: 1.5rem; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.04); max-width: 850px;">
+<h2>Kontakt</h2>
+<p>Du hast Fragen oder möchtest direkt eine individuelle Schwimmeinheit anfragen? Schreib mir gerne – ich melde mich zeitnah zurück.</p>
+<form action="mailto:lpswim.info@gmail.com" enctype="text/plain" method="POST">
+<label for="name">Name</label>
+<input id="name" name="name" placeholder="Max Mustermann" required="" type="text"/>
+<label for="email">E-Mail</label>
+<input id="email" name="email" placeholder="max@example.de" required="" type="email"/>
+<label for="message">Nachricht</label>
+<textarea id="message" name="message" placeholder="Ich interessiere mich für ein individuelles Schwimmtraining für meinen Sohn …" required="" rows="5"></textarea>
+<button type="submit">Nachricht senden</button>
+</form>
+</section>
+<footer style="margin-top: 2rem; padding: 1rem; background: #caf0f8; text-align: center; font-size: 0.9rem;">
+    © 2025 Lukas Prehn – LP-SWIM |
+    <a href="#impressum">Impressum</a> |
+    <a href="#datenschutz">Datenschutz</a>
+</footer>
+<!-- Modal Fenster für Impressum & Datenschutz -->
+<div class="modal" id="impressum">
+<div style="background:white; padding:2rem; border-radius:8px; max-width:600px; margin:10% auto; position:relative;">
+<span class="close" style="position:absolute; top:10px; right:20px; font-size:1.5rem; cursor:pointer;">×</span>
+<h2>Impressum</h2>
+<p>Lukas Prehn<br/>Mannheimer Straße 45<br/>68309 Mannheim</p>
+<p>E-Mail: lpswim.info@gmail.com</p>
+<p>Hinweis gemäß § 19 UStG: Als Kleinunternehmer wird keine Umsatzsteuer ausgewiesen.</p>
+</div>
+</div>
+<div class="modal" id="datenschutz">
+<div style="background:white; padding:2rem; border-radius:8px; max-width:600px; margin:10% auto; position:relative;">
+<span class="close" style="position:absolute; top:10px; right:20px; font-size:1.5rem; cursor:pointer;">×</span>
+<h2>Datenschutzerklärung</h2>
+<p>Diese Website speichert keine personenbezogenen Daten automatisiert. Das Kontaktformular öffnet dein E-Mail-Programm, es findet keine serverseitige Speicherung statt. Es werden keine Cookies zu Analysezwecken gesetzt.</p>
+</div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const links = document.querySelectorAll('footer a[href^="#"]');
+      links.forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const modal = document.getElementById(targetId);
+          if (modal) {
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+          }
+        });
+      });
+
+      document.querySelectorAll('.modal .close').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const modal = btn.closest('.modal');
+          if (modal) {
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+          }
+        });
+      });
+    });
+  </script>
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    }
+  });
+});
+document.querySelectorAll('section').forEach(section => {
+  observer.observe(section);
+});
+</script><script>
+document.addEventListener('DOMContentLoaded', () => {
+  const msgField = document.getElementById("message");
+  let typed = false;
+  const placeholderText = "Ich interessiere mich für ein individuelles Schwimmtraining für meinen Sohn …";
+
+  window.addEventListener('scroll', () => {
+    const fieldTop = msgField.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (!typed && fieldTop < screenHeight - 100) {
+      let i = 0;
+      typed = true;
+      msgField.placeholder = "";
+      const typeInterval = setInterval(() => {
+        msgField.placeholder += placeholderText.charAt(i);
+        i++;
+        if (i >= placeholderText.length) {
+          clearInterval(typeInterval);
+        }
+      }, 40);
+    }
+  });
+});
+</script></body>
+</html>
