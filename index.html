@@ -2047,6 +2047,148 @@ section {
   background-color: rgba(255, 255, 255, 0.78) !important;
   backdrop-filter: blur(2px);
 }
+</style><style>
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', serif;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+section {
+  margin: 1.2rem auto;
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
+  scroll-margin-top: 100px;
+  max-width: 860px;
+  background-color: rgba(255,255,255,0.8);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+/* Mobile layout optimization */
+@media (max-width: 768px) {
+  section {
+    margin: 1rem 0.8rem;
+    padding: 1rem;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 1rem 0.6rem;
+    border-radius: 12px;
+  }
+
+  nav a {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+  }
+
+  form {
+    margin: 1rem 0.6rem;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+}
+</style><style>
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', serif;
+  background: #f0faff url('background-logo.png') no-repeat center center fixed;
+  background-size: 200px;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+section {
+  margin: 1.2rem auto;
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
+  scroll-margin-top: 100px;
+  max-width: 860px;
+  background-color: rgba(255,255,255,0.8);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+nav a {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+  transform: scale(1.05);
+  background-color: #0077b6;
+}
+
+button[type="submit"] {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  transform: scale(1.05);
+  background-color: #005f8a;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  section {
+    margin: 1rem 0.8rem;
+    padding: 1rem;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 1rem 0.6rem;
+    border-radius: 12px;
+  }
+
+  nav a {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+  }
+
+  form {
+    margin: 1rem 0.6rem;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+}
+</style><style>
+body {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+section {
+  margin: 1rem auto;
+  padding: 1rem 1.25rem;
+}
+
+@media (max-width: 480px) {
+  section {
+    margin: 0.8rem 0.5rem;
+    padding: 0.8rem;
+  }
+}
 </style></head>
 <body style="padding-top: 100px;"><a class="visually-hidden" href="#start">Zum Inhalt springen</a>
 <button aria-label="Navigation ein-/ausblenden" id="menu-toggle" style="display: none;  background: none;  border: none;  font-size: 2rem;  color: white;  position: absolute;  top: 12px;  right: 16px;  z-index: 1001;">☰</button><nav aria-label="Hauptnavigation" role="navigation">
@@ -2293,6 +2435,20 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+});
+</script><script>
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("section");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => observer.observe(section));
 });
 </script></body>
 </html>
