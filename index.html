@@ -425,6 +425,29 @@ nav {
     transform: translateY(-1px) scale(1.04);
   }
 }
+
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: block;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: #0077b6;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin: 1rem;
+  }
+  nav.visible {
+    display: flex;
+  }
+  nav a {
+    width: 100%;
+    margin: 0.3rem 0;
+  }
+}
 </style>
 <style>
   nav a:hover {
@@ -505,6 +528,29 @@ nav {
   nav a:hover {
     background: linear-gradient(145deg, #0077b6, #005f8a);
     transform: translateY(-1px) scale(1.04);
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: block;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: #0077b6;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin: 1rem;
+  }
+  nav.visible {
+    display: flex;
+  }
+  nav a {
+    width: 100%;
+    margin: 0.3rem 0;
   }
 }
 </style><style>
@@ -625,6 +671,29 @@ section.show {
     transform: translateY(-1px) scale(1.04);
   }
 }
+
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: block;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: #0077b6;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin: 1rem;
+  }
+  nav.visible {
+    display: flex;
+  }
+  nav a {
+    width: 100%;
+    margin: 0.3rem 0;
+  }
+}
 </style><style>html { scroll-behavior: smooth; }
 @media (max-width: 768px) {
   nav {
@@ -694,6 +763,29 @@ section.show {
   nav a:hover {
     background: linear-gradient(145deg, #0077b6, #005f8a);
     transform: translateY(-1px) scale(1.04);
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: block;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: #0077b6;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin: 1rem;
+  }
+  nav.visible {
+    display: flex;
+  }
+  nav a {
+    width: 100%;
+    margin: 0.3rem 0;
   }
 }
 </style><style>
@@ -776,9 +868,32 @@ section.show {
     transform: translateY(-1px) scale(1.04);
   }
 }
+
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: block;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: #0077b6;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin: 1rem;
+  }
+  nav.visible {
+    display: flex;
+  }
+  nav a {
+    width: 100%;
+    margin: 0.3rem 0;
+  }
+}
 </style></head>
 <body style="padding-bottom: 30px;"><a class="visually-hidden" href="#start">Zum Inhalt springen</a>
-<nav aria-label="Hauptnavigation" role="navigation">
+<button aria-label="Navigation ein-/ausblenden" id="menu-toggle" style="display: none; background: none; border: none; font-size: 2rem; color: white; position: absolute; top: 12px; right: 16px; z-index: 1001;">☰</button><nav aria-label="Hauptnavigation" role="navigation">
 <a href="#start">Start</a>
 <a href="#jugend">Kinder &amp; Jugendliche</a>
 <a href="#schule">Schulbegleitung</a>
@@ -921,6 +1036,14 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
         behavior: 'smooth'
       });
     }
+  });
+});
+</script><script>
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.querySelector("nav");
+  toggle.addEventListener("click", function () {
+    nav.classList.toggle("visible");
   });
 });
 </script></body>
