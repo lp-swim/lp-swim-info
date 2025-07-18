@@ -22,7 +22,7 @@
     body {
       font-family: 'Times New Roman', Times, serif;
       font-size: 1rem;
-      background: #caf0f8 url('background-logo.png') no-repeat center center fixed;
+      background: #e0f7fa url('background-logo.png') no-repeat center center fixed;
       background-size: 40%;
       color: #0a2a43;
       line-height: 1.6;
@@ -124,7 +124,7 @@
     }
 
     footer {
-      background: #caf0f8;
+      background: #e0f7fa;
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
@@ -171,7 +171,7 @@ section.show {
 body {
   padding: 0 0 40px 0;
   margin: 0;
-  background: #caf0f8 url('background-logo.png') no-repeat center center fixed;
+  background: #e0f7fa url('background-logo.png') no-repeat center center fixed;
   background-size: 40%;
   font-family: 'Times New Roman', serif;
   font-size: 1rem;
@@ -190,7 +190,7 @@ section {
 }
 
 footer {
-  background: #caf0f8;
+  background: #e0f7fa;
   text-align: center;
   padding: 1rem 1rem 1.5rem 1rem;
   font-size: 0.9rem;
@@ -354,7 +354,30 @@ nav {
       transform: scale(1.05);
       box-shadow: 0 0 10px rgba(2, 62, 138, 0.3);
     }
-    </style>
+    
+@media (max-width: 768px) {
+  nav {
+    background-color: #0077b6;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  nav a {
+    display: block;
+    width: 100%;
+    background: linear-gradient(to right, #0096c7, #0077b6);
+    border-radius: 12px;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  nav a:hover {
+    background: linear-gradient(to right, #0077b6, #005f8a);
+    transform: scale(1.03);
+  }
+}
+</style>
 <style>
   nav a:hover {
   background-image: linear-gradient(to right, #0077b6, #0077b6);
@@ -365,6 +388,29 @@ nav {
     transform: scale(1.05);
     box-shadow: 0 0 8px rgba(2, 62, 138, 0.2);
   }
+
+@media (max-width: 768px) {
+  nav {
+    background-color: #0077b6;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  nav a {
+    display: block;
+    width: 100%;
+    background: linear-gradient(to right, #0096c7, #0077b6);
+    border-radius: 12px;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  nav a:hover {
+    background: linear-gradient(to right, #0077b6, #005f8a);
+    transform: scale(1.03);
+  }
+}
 </style><style>
 /* Smooth fade-in on scroll */
 @keyframes fadeUp {
@@ -412,7 +458,53 @@ section.show {
 /* Mailto behavior: no direct CSS or HTML can trigger the 'choose mail app' prompt — this depends on OS/browser.
    However, to maximize compatibility, we can ensure a properly formatted mailto link is used.
  */
-</style><style>html { scroll-behavior: smooth; }</style><style>
+
+@media (max-width: 768px) {
+  nav {
+    background-color: #0077b6;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  nav a {
+    display: block;
+    width: 100%;
+    background: linear-gradient(to right, #0096c7, #0077b6);
+    border-radius: 12px;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  nav a:hover {
+    background: linear-gradient(to right, #0077b6, #005f8a);
+    transform: scale(1.03);
+  }
+}
+</style><style>html { scroll-behavior: smooth; }
+@media (max-width: 768px) {
+  nav {
+    background-color: #0077b6;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  nav a {
+    display: block;
+    width: 100%;
+    background: linear-gradient(to right, #0096c7, #0077b6);
+    border-radius: 12px;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  nav a:hover {
+    background: linear-gradient(to right, #0077b6, #005f8a);
+    transform: scale(1.03);
+  }
+}
+</style><style>
 .visually-hidden {
   position: absolute;
   left: -9999px;
@@ -420,6 +512,29 @@ section.show {
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  nav {
+    background-color: #0077b6;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  nav a {
+    display: block;
+    width: 100%;
+    background: linear-gradient(to right, #0096c7, #0077b6);
+    border-radius: 12px;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  nav a:hover {
+    background: linear-gradient(to right, #0077b6, #005f8a);
+    transform: scale(1.03);
+  }
 }
 </style></head>
 <body style="padding-bottom: 30px;"><a class="visually-hidden" href="#start">Zum Inhalt springen</a>
