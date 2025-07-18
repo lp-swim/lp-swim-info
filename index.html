@@ -2086,6 +2086,12 @@ padding: 1rem;
     padding-right: 1rem;
   }
 }
+</style><style>
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  nav {
+    display: none !important;
+  }
+}
 </style></head>
 <body style="padding-top: 100px;">
 <a class="visually-hidden" href="#start">
@@ -2180,23 +2186,23 @@ Du hast Fragen oder möchtest direkt eine individuelle Schwimmeinheit anfragen? 
 <label>
 Bitte dieses Feld leer lassen:
 </label>
-<input name="_gotcha" tabindex="-1" type="text"/>
+<input autocomplete="on" name="_gotcha" tabindex="-1" type="text"/>
 </div>
 <label for="name" style="font-weight: bold;  margin-top: 0.5rem;">
 Name
 </label>
-<input aria-label="Gib deinen vollständigen Namen ein" id="name" name="name" placeholder="Max Mustermann" required="" type="text"/>
+<input aria-label="Gib deinen vollständigen Namen ein" autocomplete="on" id="name" name="name" placeholder="Max Mustermann" required="" type="text"/>
 <label for="email" style="font-weight: bold;  margin-top: 0.5rem;">
 E-Mail
 </label>
-<input aria-label="Trage hier deine E-Mail-Adresse ein" id="email" name="email" placeholder="max.mustermann@example.de" required="" type="email"/>
+<input aria-label="Trage hier deine E-Mail-Adresse ein" autocomplete="on" id="email" name="email" placeholder="max.mustermann@example.de" required="" type="email"/>
 <label for="message" style="font-weight: bold;  margin-top: 0.5rem;">
 Nachricht
 </label>
-<textarea aria-label="Schreibe deine Nachricht oder Anfrage" id="message" name="message" placeholder="Schreibe deine Nachricht oder Anfrage" required="" rows="5"></textarea>
+<textarea aria-label="Schreibe deine Nachricht oder Anfrage" autocomplete="on" id="message" name="message" placeholder="Schreibe deine Nachricht oder Anfrage" required="" rows="5"></textarea>
 <div style="margin-top: 1rem;">
 <label style="font-size: 0.95rem;">
-<input name="privacy-consent" required="" style="margin-right: 0.5rem;" type="checkbox"/>
+<input autocomplete="on" name="privacy-consent" required="" style="margin-right: 0.5rem;" type="checkbox"/>
 Ich habe die
 <a href="#datenschutz" onclick="document.getElementById('datenschutz').classList.add('show'); document.body.style.overflow = 'hidden'; return false;" style="color: #0077b6; text-decoration: underline;">
 Datenschutzerklärung
