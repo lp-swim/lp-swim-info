@@ -7,7 +7,7 @@
 <title>
 LP-SWIM – Individuelles Schwimmtraining
 </title>
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="favicon.ico" rel="icon" type="image/x-icon"/>
 <style>
 * {
@@ -2099,6 +2099,109 @@ padding: 1rem;
     -webkit-overflow-scrolling: touch;
   }
 }
+</style><style>
+/* Pop-up modern glassmorphism style */
+.modal > div {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  animation: fadeInScale 0.3s ease-out;
+}
+
+/* X-button */
+.close {
+  color: #0077b6;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+.close:hover {
+  transform: scale(1.2);
+}
+
+/* Modal animation */
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Message send button visual polish */
+button[type="submit"] {
+  background-color: #0077b6;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s;
+}
+button[type="submit"]:hover {
+  background-color: #005f8a;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0, 119, 182, 0.4);
+}
+
+/* Textbox transparency animation */
+section {
+  transition: background-color 0.5s ease;
+}
+section:hover {
+  background-color: rgba(255,255,255,0.95) !important;
+}
+
+/* Ensure consistent spacing and reduce top margin */
+body {
+  padding-top: 0;
+  margin-top: 0;
+}
+#start, #jugend, #schule, #erwachsene, #kontakt {
+  scroll-margin-top: 90px;
+}
+</style><style>
+@media (max-width: 768px) {
+  section {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  form {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  nav {
+    padding: 0.5rem;
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  footer {
+    font-size: 0.85rem;
+    padding: 0.8rem 1rem;
+  }
+
+  #kontakt form {
+    text-align: center;
+    max-width: 100%;
+    margin: auto;
+  }
+}
+
+/* Desktop Navigation padding adjustment */
+@media (min-width: 1025px) {
+  nav {
+    padding: 1rem 2rem;
+  }
+
+  nav a {
+    font-size: 1.1rem;
+  }
+}
 </style></head>
 <body style="padding-top: 100px;">
 <a class="visually-hidden" href="#start">
@@ -2237,39 +2340,38 @@ Datenschutz
 </footer>
 <!-- Modal Fenster für Impressum & Datenschutz -->
 <div class="modal" id="impressum">
-<div style="background:#caf0f8;  padding:2rem;  border-radius:8px;  max-width:600px;  margin:10% auto;  position:relative;">
-<span aria-label="Fenster schließen" class="close" role="button" style="position:absolute;  top:10px;  right:20px;  font-size:1.5rem;  cursor:pointer;" tabindex="0">
-×
-</span>
-<h2 style="color: #0077b6;">
-Impressum
-</h2>
-<p>
-Lukas Prehn
-<br/>
-Mannheimer Straße 45
-<br/>
-68309 Mannheim
-</p>
-<p>
-E-Mail: lpswim.info@gmail.com
-</p>
-<p>
-Hinweis gemäß § 19 UStG: Als Kleinunternehmer wird keine Umsatzsteuer ausgewiesen.
-</p>
+<div style="background:#caf0f8;  padding:2rem;  border-radius:8px;  max-width:600px;  margin:10% auto;  position:relative;"><span aria-label="Fenster schließen" class="close" style="position:absolute; top:10px; right:20px; font-size:1.5rem; cursor:pointer;">×</span>
+<h2>Impressum</h2>
+<p><strong>Angaben gemäß § 5 DDG</strong><br/>
+LP-SWIM<br/>
+c/o IP-Management #6336<br/>
+Ludwig-Erhard-Straße 18<br/>
+20459 Hamburg<br/>
+Deutschland<br/>
+Vertretungsberechtigt: Lukas Prehn<br/>
+E-Mail: <a href="mailto:lpswim.info@gmail.com">lpswim.info@gmail.com</a></p>
 </div>
 </div>
 <div class="modal" id="datenschutz">
-<div style="background:#caf0f8;  padding:2rem;  border-radius:8px;  max-width:600px;  margin:10% auto;  position:relative;">
-<span aria-label="Fenster schließen" class="close" role="button" style="position:absolute;  top:10px;  right:20px;  font-size:1.5rem;  cursor:pointer;" tabindex="0">
-×
-</span>
-<h2 style="color: #0077b6;">
-Datenschutzerklärung
-</h2>
-<p>
-Diese Website verwendet den Dienst Formspree zum Versenden von Nachrichten über das Kontaktformular. Dabei werden Ihre eingegebenen Daten (Name, E-Mail-Adresse, Nachricht) an die Server von Formspree übertragen und dort gemäß deren Datenschutzrichtlinien verarbeitet. Weitere Informationen finden Sie unter: https://formspree.io/legal/privacy-policy
-</p>
+<div style="background:#caf0f8;  padding:2rem;  border-radius:8px;  max-width:600px;  margin:10% auto;  position:relative;"><span aria-label="Fenster schließen" class="close" style="position:absolute; top:10px; right:20px; font-size:1.5rem; cursor:pointer;">×</span>
+<h2>Datenschutzerklärung</h2>
+<p><strong>1. Allgemeine Hinweise</strong><br/>
+Der Schutz Ihrer Daten ist mir wichtig. Diese Website erhebt und speichert keine personenbezogenen Daten serverseitig, außer wenn Sie mir über das Kontaktformular schreiben.</p>
+<p><strong>2. Verantwortlicher</strong><br/>
+LP-SWIM<br/>
+Lukas Prehn<br/>
+c/o IP-Management #6336<br/>
+Ludwig-Erhard-Straße 18<br/>
+20459 Hamburg<br/>
+E-Mail: <a href="mailto:lpswim.info@gmail.com">lpswim.info@gmail.com</a></p>
+<p><strong>3. Kontaktformular (Formspree)</strong><br/>
+Wenn Sie das Kontaktformular nutzen, werden Ihre Angaben (Name, E-Mail, Nachricht) an Formspree Inc. (USA) übermittelt und dort verarbeitet.<br/>
+Die Datenverarbeitung erfolgt gemäß der Datenschutzerklärung von Formspree:<br/>
+👉 <a href="https://formspree.io/legal/privacy-policy" target="_blank">https://formspree.io/legal/privacy-policy</a></p>
+<p><strong>4. Cookies und Tracking</strong><br/>
+Diese Website verwendet keine Cookies oder Tracking-Tools.</p>
+<p><strong>5. Ihre Rechte</strong><br/>
+Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie Beschwerde bei einer Datenschutzaufsichtsbehörde (Art. 15–20, 77 DSGVO).</p>
 </div>
 </div>
 <script>
@@ -2491,5 +2593,14 @@ observer.unobserve(entry.target);
 sections.forEach(section => observer.observe(section));
 });
 </script>
-</body>
+<script>
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    document.querySelectorAll('.modal.show').forEach(modal => {
+      modal.classList.remove('show');
+      document.body.style.overflow = '';
+    });
+  }
+});
+</script></body>
 </html>
