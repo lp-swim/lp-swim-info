@@ -169,6 +169,9 @@ body { padding-top: 0; padding-bottom: 0; } section { margin: 1rem auto; padding
     from {transform: translateY(-20px); opacity: 0;}
     to {transform: translateY(0); opacity: 1;}
 }
+</style><link href="https://wa.me" rel="dns-prefetch"/><link href="https://api.whatsapp.com" rel="dns-prefetch"/><link crossorigin="" href="https://api.whatsapp.com" rel="preconnect"/><link as="document" href="https://wa.me/c/4917670702137" rel="prefetch"/><style>
+[data-wa-overlay]{opacity:0;transition:opacity .25s ease}
+[data-wa-overlay].is-visible{opacity:1}
 </style></head>
 <body style="padding-top: 100px;">
 <a class="visually-hidden" href="#start">
@@ -206,7 +209,7 @@ body { padding-top: 0; padding-bottom: 0; } section { margin: 1rem auto; padding
    </p>
 <p>
     Jede Einheit dauert 60 Minuten und wird auf deine Ziele abgestimmt. Termine werden nach Anfrage an den Standorten Viernheim und Schriesheim vergeben. Detaillierte Preisangaben sind dem
-    <a href="https://wa.me/c/4917670702137" style="color: #0077b6; text-decoration: underline;" target="_blank">
+    <a data-wa-image="https://lp-swim.github.io/lp-swim-info/images/logo.png" href="https://wa.me/c/4917670702137" style="color: #0077b6; text-decoration: underline;" target="_blank">
      Angebotskatalog
     </a>
     zu entnehmen. Im Folgenden kannst du dir einen Überblick über meine Leistungen verschaffen.
@@ -416,5 +419,102 @@ window.onclick = function(event) {
         }
     }
 }
-</script></footer></body>
+</script></footer><script>
+/**
+ * v4: Delay navigation until background warm-up completes (best-effort), then navigate.
+ * - Uses fetch(..., {mode:'no-cors', keepalive:true}) to warm the connection and wait its settle.
+ * - Falls back to a max timeout (3000ms) so it never hangs.
+ * - Uses location.assign (not replace) so the user can go back.
+ * - Hides overlay on back/forward navigation (pageshow) and new loads.
+ * Note: We cannot know cross-origin "fully loaded" state due to browser security;
+ * this is a best-effort warm-up before actual navigation.
+ */
+(function () {
+  try {
+    var MAX_WAIT_MS = 3000;   // hard cap so it never feels stuck
+    var MIN_WAIT_MS = 250;    // ensure at least a short, smooth display
+    var waSelector = 'a[href^="https://wa.me/"], a[href^="https://api.whatsapp.com/"]';
+    var waLinks = Array.prototype.slice.call(document.querySelectorAll(waSelector));
+    if (!waLinks.length) return;
+
+    // Build overlay
+    var overlay = document.createElement('div');
+    overlay.setAttribute('data-wa-overlay','');
+    overlay.setAttribute('aria-hidden','true');
+    overlay.style.cssText = 'position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.55);z-index:2147483647;pointer-events:none;';
+    var card = document.createElement('div');
+    card.style.cssText = 'background:#fff;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.15);padding:18px 18px 14px;max-width:320px;width:90%;text-align:center;font-family:inherit;';
+    var img = document.createElement('img');
+    img.alt = 'Profilbild';
+    img.width = 160; img.height = 160;
+    img.style.cssText = 'width:160px;height:160px;object-fit:cover;border-radius:50%;display:block;margin:6px auto 10px;';
+    var txt = document.createElement('div');
+    txt.textContent = 'Weiterleiten …';
+    txt.style.cssText = 'font-size:1rem;color:#111;margin-top:2px;margin-bottom:6px;';
+    card.appendChild(img); card.appendChild(txt); overlay.appendChild(card);
+    document.body.appendChild(overlay);
+
+    // Reset overlay on back/forward cache or normal load
+    function hideOverlay() {
+      try { overlay.classList.remove('is-visible'); } catch(e){}
+    }
+    window.addEventListener('pageshow', hideOverlay);
+    window.addEventListener('DOMContentLoaded', hideOverlay);
+
+    function pickImageFor(a) {
+      var c = a.getAttribute('data-wa-image') ||
+              (document.querySelector('meta[property="og:image"]') || {}).content ||
+              (document.querySelector('link[rel="icon"]') || {}).href ||
+              (document.querySelector('img') || {}).src || '';
+      return c || '';
+    }
+
+    function preload(src) {
+      if (!src) return;
+      try { var im = new Image(); im.referrerPolicy = 'no-referrer'; im.src = src; } catch(e){}
+    }
+
+    waLinks.forEach(function (a) { preload(pickImageFor(a)); });
+
+    function showOverlayWith(src){
+      if (src) img.src = src;
+      overlay.getBoundingClientRect();
+      overlay.classList.add('is-visible');
+    }
+
+    function warmUp(url){
+      // Best-effort "ready" signal: wait until a no-cors fetch settles.
+      // Browsers may fulfill from preconnect / prefetch; we still await the promise.
+      if (!('fetch' in window)) return Promise.resolve();
+      return Promise.race([
+        fetch(url, { mode: 'no-cors', keepalive: true, cache: 'no-store' }).catch(function(){ /* ignore */ }),
+        new Promise(function(res){ setTimeout(res, MAX_WAIT_MS); })
+      ]);
+    }
+
+    waLinks.forEach(function (a) {
+      a.setAttribute('rel', (a.getAttribute('rel') || '') + ' noopener');
+      a.addEventListener('click', function (ev) {
+        if (ev.defaultPrevented || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
+        var href = a.href;
+        var preview = pickImageFor(a);
+        ev.preventDefault();
+
+        var start = performance.now();
+        showOverlayWith(preview);
+
+        // Wait for warm-up (or timeout), but ensure a minimum display time for smoothness
+        warmUp(href).then(function () {
+          var elapsed = performance.now() - start;
+          var remaining = Math.max(0, MIN_WAIT_MS - elapsed);
+          setTimeout(function(){
+            // Use assign so user can go back to this page
+            location.assign(href);
+          }, remaining);
+        });
+      }, { passive: false });
+    });
+  } catch(e) {}
+})();
+</script></body>
 </html>
