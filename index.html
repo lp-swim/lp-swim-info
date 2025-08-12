@@ -516,5 +516,111 @@ window.onclick = function(event) {
     });
   } catch(e) {}
 })();
-</script></body>
+</script>
+<!-- Weiterleiten-Overlay -->
+<div data-wa-overlay id="waOverlay" aria-hidden="true" role="status"
+     style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+            background:rgba(0,0,0,.35);z-index:9999;opacity:0;pointer-events:none;">
+  <div style="min-width:220px;background:#fff;padding:18px 22px;border-radius:16px;
+              box-shadow:0 10px 30px rgba(0,0,0,.2);text-align:center">
+    <img src="images/logo.png" alt="" style="width:56px;height:56px;display:block;margin:0 auto 10px">
+    <p style="margin:0;color:#0077b6;font-weight:600">Weiterleiten …</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  // 1) Ziel-Link(s): alle WhatsApp-Katalog-Links auf der Seite
+  const waLinks = Array.from(document.querySelectorAll('a[href^="https://wa.me/c/"]'));
+  if (!waLinks.length) return;
+
+  const overlay = document.getElementById('waOverlay');
+  let navigatingToWA = false;
+  let fallbackTimer = null;
+  let safetyHideTimer = null;
+
+  // Helper
+  const isMobile = /Android|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+  function showOverlay(){
+    overlay.style.pointerEvents = 'auto';
+    overlay.classList.add('is-visible');       // nutzt vorhandenes CSS [data-wa-overlay].is-visible
+    overlay.setAttribute('aria-hidden', 'false');
+    overlay.style.opacity = '1';
+  }
+  function hideOverlay(){
+    overlay.style.pointerEvents = 'none';
+    overlay.classList.remove('is-visible');
+    overlay.setAttribute('aria-hidden', 'true');
+    overlay.style.opacity = '0';
+    clearTimeout(fallbackTimer);
+    clearTimeout(safetyHideTimer);
+    fallbackTimer = safetyHideTimer = null;
+  }
+
+  function openWhatsApp(targetUrl){
+    navigatingToWA = true;
+    showOverlay();
+
+    // Doppel-rAF => garantiert, dass das Overlay zuerst gerendert ist (wichtig für iOS Safari)
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        // Primärer Versuch: direkt die Katalog-URL (öffnet App, falls installiert)
+        try { window.location.href = targetUrl; } catch(_) {}
+
+        // Fallback: wenn nach ~1s immer noch sichtbar (Seite nicht in den Hintergrund), nochmal anstoßen
+        fallbackTimer = setTimeout(() => {
+          if (document.visibilityState === 'visible') {
+            try { window.location.href = targetUrl; } catch(_) {}
+          }
+        }, 1100);
+
+        // Safety: Overlay nicht endlos anzeigen
+        safetyHideTimer = setTimeout(() => {
+          navigatingToWA = false;
+          hideOverlay();
+        }, 9000);
+      });
+    });
+  }
+
+  // 2) Klick abfangen (nur mobil). Desktop bleibt unverändert schnell.
+  waLinks.forEach(a => {
+    a.addEventListener('click', function(ev){
+      if (!isMobile) return; // Desktop: Standardverhalten
+      ev.preventDefault();
+
+      // target="_blank" auf Mobile vermeiden: wir navigieren im selben Tab
+      const url = this.href;
+      openWhatsApp(url);
+    }, { passive:true });
+  });
+
+  // 3) Sichtbarkeitswechsel: bei App-Wechsel kein Fallback mehr; bei Rückkehr Overlay schließen
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') {
+      clearTimeout(fallbackTimer);
+      fallbackTimer = null;
+    } else if (document.visibilityState === 'visible' && navigatingToWA) {
+      // User kehrt zurück (App nicht offen geblieben / abgebrochen)
+      navigatingToWA = false;
+      hideOverlay();
+    }
+  }, { passive:true });
+
+  // 4) BFCache-sicheres Zurückkehren: neu laden, damit Zustand frisch ist & Overlay weg
+  window.addEventListener('pageshow', (e) => {
+    hideOverlay();
+    if (e.persisted) {
+      // Kurzer Delay vermeidet visuelles Flackern
+      setTimeout(() => { try { window.location.reload(); } catch(_){} }, 60);
+    }
+  }, { passive:true });
+
+  // 5) Beim echten Verlassen aufräumen
+  window.addEventListener('pagehide', hideOverlay, { passive:true });
+
+})();
+</script>
+</body>
 </html>
