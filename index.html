@@ -119,7 +119,18 @@ body { padding-top: 0; padding-bottom: 0; } section { margin: 1rem auto; padding
 /* Pop-up modern glassmorphism style */ .modal > div { background: rgba(255, 255, 255, 0.85) !important; backdrop-filter: blur(8px); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); border-radius: 16px; padding: 2rem; position: relative; animation: fadeInScale 0.3s ease-out; } /* X-button */ .close { color: #0077b6; font-weight: bold; transition: transform 0.2s; } .close:hover { transform: scale(1.2); } /* Modal animation */ @keyframes fadeInScale { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } } /* Message send button visual polish */ button[type="submit"] { background-color: #0077b6; font-family: 'Times New Roman', Times, serif; font-weight: bold; transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s; } button[type="submit"]:hover { background-color: #005f8a; transform: scale(1.05); box-shadow: 0 0 12px rgba(0, 119, 182, 0.4); } /* Textbox transparency animation */ section { transition: background-color 0.5s ease; } section:hover { background-color: rgba(255,255,255,0.95) !important; } /* Ensure consistent spacing and reduce top margin */ body { padding-top: 0; margin-top: 0; } #start, #jugend, #schule, #erwachsene, #kontakt { scroll-margin-top: 90px; }
 
 @media (max-width: 768px) { section { margin: 1rem; padding: 1rem; } form { margin: 1rem; padding: 1rem; } nav { padding: 0.5rem; gap: 0.5rem; flex-direction: column; align-items: center; } nav a { font-size: 1rem; padding: 0.5rem 1rem; } footer { font-size: 0.85rem; padding: 0.8rem 1rem; } #kontakt form { text-align: center; max-width: 100%; margin: auto; } } /* Desktop Navigation padding adjustment */ @media (min-width: 1025px) { nav { padding: 1rem 2rem; } nav a { font-size: 1.1rem; } }
-  </style>
+  
+
+/* --- Kontakt: Bild über Formular (robust, ohne Layout-Bruch) --- */
+#kontakt .lp-kontakt-card{max-width:850px;margin-inline:auto;}
+#kontakt .lp-kontakt-media{position:relative;border-radius:12px;overflow:hidden;margin:0 0 1rem 0;}
+#kontakt .lp-kontakt-media picture,#kontakt .lp-kontakt-media img{display:block;width:100%;height:auto;}
+#kontakt .lp-kontakt-media img{aspect-ratio:3/2;object-fit:cover;object-position:center;}
+#kontakt .lp-kontakt-media-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,119,182,.10), rgba(0,119,182,.10));pointer-events:none;}
+@media (prefers-color-scheme:dark){
+  #kontakt .lp-kontakt-media-overlay{background:linear-gradient(180deg, rgba(124,201,240,.10), rgba(124,201,240,.10));}
+}
+</style>
 <script type="application/ld+json">
    {"@context":"https://schema.org","@type":"WebSite","name":"LP-SWIM – Individuelles Schwimmtraining","url":"https://lp-swim.github.io/lp-swim-info/"}
   </script>
@@ -279,14 +290,23 @@ body { padding-top: 0; padding-bottom: 0; } section { margin: 1rem auto; padding
     Das Training verfolgt das Ziel, ein langfristig sicheres und kontrolliertes Bewegungsverhalten im Wasser zu fördern – unabhängig davon, ob grundlegende Schwimmfähigkeiten erlernt oder bestehende Techniken weiterentwickelt werden sollen. Eine zunehmende Bewegungssicherheit trägt zur körperlichen Fitness bei und unterstützt ein präziseres Körpergefühl im Wasser. Der Unterricht wird individuell abgestimmt, fachlich begleitet und methodisch strukturiert. Entscheidend für den Lernerfolg ist die eigene Bereitschaft zur aktiven Mitarbeit.
    </p>
 </section>
-<section aria-labelledby="heading-kontakt" id="kontakt" role="region" style=" margin: 2rem auto;  padding: 1.5rem;  background-color: rgba(255, 255, 255, 0.75);  border-radius: 10px;  box-shadow: 0 0 10px rgba(0,0,0,0.04);  max-width: 850px;">
+<section aria-labelledby="heading-kontakt" id="kontakt" role="region" style=" margin: 2rem auto;  padding: 1.5rem;  background-color: rgba(255, 255, 255, 0.75);  border-radius: 10px;  box-shadow: 0 0 10px rgba(0,0,0,0.04);  max-width: 850px;"><div class="lp-kontakt-media" aria-hidden="true">
+  <img src="kontakt-lukas.jpg" alt="" loading="lazy" decoding="async" width="1200" height="1600" />
+  <div class="lp-kontakt-media-overlay"></div>
+
+</div>
+
 <h2 id="heading-kontakt" style="color: #0077b6;">
     Kontakt
    </h2>
 <p>
     Du hast Fragen oder möchtest direkt eine Schwimmeinheit anfragen? Schreib mir gerne – ich melde mich zeitnah zurück.
    </p>
-<form action="https://formspree.io/f/mkgzgywy" method="POST" style="max-width: 100%; margin: 2rem auto; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 16px rgba(0,0,0,0.05); background: rgba(255,255,255,0.88);">
+
+<div class="lp-kontakt-card">
+  
+  </div>
+  <form action="https://formspree.io/f/mkgzgywy" method="POST" style="max-width: 100%; margin: 2rem auto; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 16px rgba(0,0,0,0.05); background: rgba(255,255,255,0.88);">
 <div style="display:none;">
 <label style="; display: block; text-align: left; margin-bottom: 0.2rem; font-weight: bold;">
       Bitte dieses Feld leer lassen:
@@ -319,6 +339,8 @@ body { padding-top: 0; padding-bottom: 0; } section { margin: 1rem auto; padding
      Nachricht senden
     </button>
 </form>
+</div>
+
 <div id="form-message" style="display: none; text-align: center; color: #0a2a43; font-weight: bold; margin-top: 1rem; background-color: rgba(0, 128, 0, 0.1); padding: 1rem; border-radius: 8px;">
     Vielen Dank für Ihre Nachricht! Ich melde mich zeitnah zurück.
    </div>
