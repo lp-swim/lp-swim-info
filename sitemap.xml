@@ -1,8 +1,32 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 <url>
-<loc>https://lp-swim.github.io/lp-swim-info/index.html</loc>
-<lastmod>2025-08-14T12:00:52Z</lastmod>
+<loc>https://lp-swim.github.io/lp-swim-info/</loc>
+<lastmod>2025-08-14</lastmod>
 <changefreq>weekly</changefreq>
 <priority>1.0</priority>
+</url>
+<url>
+<loc>https://lp-swim.github.io/lp-swim-info/#jugend</loc>
+<lastmod>2025-08-14</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://lp-swim.github.io/lp-swim-info/#erwachsene</loc>
+<lastmod>2025-08-14</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://lp-swim.github.io/lp-swim-info/#schule</loc>
+<lastmod>2025-08-14</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://lp-swim.github.io/lp-swim-info/#kontakt</loc>
+<lastmod>2025-08-14</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
 </url>
 </urlset>
