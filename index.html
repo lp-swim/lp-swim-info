@@ -204,6 +204,41 @@ body { padding-top: 0; padding-bottom: 0; } section { margin: 1rem auto; padding
   box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
 </style>
+
+<style id="feinschliff-2025-08">
+/* --- Feinschliff: PC/4K-Kontaktbild & Hintergrund-Logo (keine Design-/Funktionsänderung) --- */
+
+/* Kontakt-Bild responsiv verkleinern auf Desktop/4K */
+@media (min-width: 1024px) {
+  #kontakt .lp-kontakt-media img {
+    width: clamp(320px, 28vw, 700px);
+    margin-inline: auto;
+  }
+}
+@media (min-width: 1920px) {
+  #kontakt .lp-kontakt-media img {
+    width: clamp(360px, 24vw, 780px);
+  }
+}
+
+/* Schärfere Darstellung bei hochauflösenden Displays */
+#kontakt .lp-kontakt-media img {
+  image-rendering: auto;
+}
+
+/* Hintergrund-Logo an Bildschirmgröße anpassen (PC wie Handy) */
+body {
+  background-size: clamp(200px, 40vmin, 800px);
+}
+@media (min-width: 1920px) {
+  body {
+    background-size: clamp(240px, 35vmin, 900px);
+  }
+}
+
+/* Sicherheitsnetz: keine horizontale Scrollleiste durch Subpixel auf großen Screens */
+html, body { overflow-x: hidden; }
+</style>
 </head>
 <body style="padding-top: 100px;">
 <a class="visually-hidden" href="#start">
