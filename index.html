@@ -312,7 +312,59 @@ html, body { overflow-x: hidden; }
   * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
   </style>
-<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/><link href="https://www.DEINE-DOMAIN.tld/LP-SWIM" rel="canonical"/><link href="https://lp-swim.github.io/lp-swim-info/index.html" hreflang="de-DE" rel="alternate"/><link href="/sitemap.xml" rel="sitemap" type="application/xml"/><link href="https://lp-swim.github.io/lp-swim-info/LP-SWIM.html" rel="canonical"/><link href="/sitemap.xml" rel="sitemap" type="application/xml"/><link href="https://lp-swim.github.io/lp-swim-info/" rel="canonical"/><link href="https://lp-swim.github.io/lp-swim-info/index.html" rel="canonical"/><link href="https://lp-swim.github.io/lp-swim-info/robots.txt" rel="robots"/></head>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/><link href="https://www.DEINE-DOMAIN.tld/LP-SWIM" rel="canonical"/><link href="https://lp-swim.github.io/lp-swim-info/index.html" hreflang="de-DE" rel="alternate"/><link href="/sitemap.xml" rel="sitemap" type="application/xml"/><link href="https://lp-swim.github.io/lp-swim-info/LP-SWIM.html" rel="canonical"/><link href="/sitemap.xml" rel="sitemap" type="application/xml"/><link href="https://lp-swim.github.io/lp-swim-info/" rel="canonical"/><link href="https://lp-swim.github.io/lp-swim-info/index.html" rel="canonical"/><link href="https://lp-swim.github.io/lp-swim-info/robots.txt" rel="robots"/>
+<link rel="alternate" hreflang="de" href="https://lp-swim.github.io/lp-swim-info/"/>
+<link rel="alternate" hreflang="x-default" href="https://lp-swim.github.io/lp-swim-info/"/>
+<style id="cwv-100-final">
+/* ===== Core Web Vitals 100/100 (no design change) ===== */
+
+/* 1) Stable fixed nav offset to eliminate CLS caused by multiple padding-top rules */
+:root { --nav-offset: 90px; }
+body { padding-top: var(--nav-offset) !important; }
+
+/* Single, consistent anchor offset (many variants existed before) */
+section:target::before {
+  content: "";
+  display: block;
+  height: var(--nav-offset);
+  margin-top: calc(var(--nav-offset) * -1);
+  visibility: hidden;
+}
+
+/* 2) Prevent image-driven layout shifts */
+img { display: block; height: auto; max-width: 100%; }
+/* If width/height present, ensure aspect ratio is reserved */
+img[width][height] { aspect-ratio: attr(width) / attr(height); }
+/* Specific contact image already uses aspect-ratio in CSS; keep it stable */
+#kontakt .lp-kontakt-media img { object-fit: cover; object-position: center; }
+
+/* 3) Render large sections more efficiently on desktop to improve LCP/INP */
+@media (min-width: 1025px) {
+  section {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 700px; /* reserve space, avoid jump before paint */
+  }
+}
+
+/* 4) Limit expensive transitions to composited properties only */
+a, button, nav a, button[type="submit"] { will-change: transform, opacity; }
+
+/* Respect motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  section { content-visibility: visible !important; contain-intrinsic-size: auto !important; }
+}
+</style>
+
+<link rel="preload" as="image" href="kontakt-lukas.jpg"/>
+<style id="desktop-firstblock-spacing">
+@media (min-width: 1025px) {
+  /* Reduce top margin of first section to bring it closer to the nav */
+  section:first-of-type {
+    margin-top: 1.5rem !important; /* ~24px */
+  }
+}
+</style>
+</head>
 <body style="padding-top: 100px;">
 <a class="visually-hidden" href="#start">
    Zum Inhalt springen
@@ -928,5 +980,42 @@ window.onclick = function(event){ /* disabled: outside click should not close mo
 <script>
    document.addEventListener('DOMContentLoaded',function(){var imgs=[].slice.call(document.querySelectorAll('img'));imgs.forEach(function(img,i){if(!img.hasAttribute('loading')&&i>0){img.setAttribute('loading','lazy');}if(!img.hasAttribute('decoding')){img.setAttribute('decoding','async');}});});
   </script>
+<script id="cwv-100-final-js">
+(function(){
+  // Stabilize images to avoid CLS and optimize loading characteristics
+  var imgs = Array.from(document.images || []);
+  for (var i=0; i<imgs.length; i++) {
+    var img = imgs[i];
+    // Set intrinsic dimensions if missing (prevents layout shifts)
+    if (!img.hasAttribute('width') || !img.hasAttribute('height')) {
+      if (img.naturalWidth && img.naturalHeight) {
+        img.setAttribute('width', img.naturalWidth);
+        img.setAttribute('height', img.naturalHeight);
+      } else {
+        // Reserve approximate ratio until loaded (safe, no visual change)
+        if (!img.style.aspectRatio) img.style.aspectRatio = '3 / 2';
+      }
+    }
+    // Use async decoding for faster paint
+    if (!img.hasAttribute('decoding')) img.setAttribute('decoding', 'async');
+
+    // Lazy-load only offscreen images to protect LCP
+    if (!img.hasAttribute('loading')) {
+      var rect = img.getBoundingClientRect();
+      var inFirstViewport = rect.top < (window.innerHeight || 800);
+      if (!inFirstViewport) img.setAttribute('loading', 'lazy');
+    }
+    // Prioritize the first image as potential LCP if appropriate
+    if (i === 0 && !img.hasAttribute('fetchpriority')) {
+      img.setAttribute('fetchpriority', 'high');
+    }
+  }
+
+  // Small main-thread win: ensure new-tab links don't hold the opener
+  document.querySelectorAll('a[target="_blank"]:not([rel])').forEach(function(a){
+    a.setAttribute('rel','noopener');
+  });
+})();
+</script>
 </body>
 </html>
