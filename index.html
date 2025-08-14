@@ -364,6 +364,20 @@ a, button, nav a, button[type="submit"] { will-change: transform, opacity; }
   }
 }
 </style>
+<style id="responsive-nav-offset-fix">
+/* Automatische Anpassung des oberen Abstands je Bildschirmgröße */
+@media (max-width: 767px) {
+  :root { --nav-offset: 0px; }
+  body { padding-top: 0 !important; }
+  section:first-of-type { margin-top: 0.6rem !important; } /* etwas Luft, aber kein leerer Bereich */
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  :root { --nav-offset: 56px; } /* Tablet: etwas kleiner als Desktop */
+  body { padding-top: var(--nav-offset) !important; }
+  section:first-of-type { margin-top: 1rem !important; }
+}
+/* Desktop bleibt wie eingestellt (via --nav-offset ~90px in cwv-100-final) */
+</style>
 </head>
 <body style="padding-top: 100px;">
 <a class="visually-hidden" href="#start">
