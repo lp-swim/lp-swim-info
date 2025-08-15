@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="de">
+<html class="is-preloading" lang="de">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -411,6 +411,32 @@ a, button, nav a, button[type="submit"] { will-change: transform, opacity; }
   gtag('config', 'G-T5H2XMBKFL'); // Automatischer page_view
 </script>
 
+
+<!-- Smooth Load & Scroll Enhancements (drop-in, 2025-08) -->
+<style id="lp-smooth-effects">
+/* Respektiere Nutzer mit Bewegungsreduktion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  .lp-reveal, .lp-parallax { transition: none !important; animation: none !important; }
+  html.lp-ready body { transition: none !important; }
+}
+/* Sanfter Seitenstart */
+html.is-preloading body { opacity: 0; }
+html.lp-ready body { opacity: 1; transition: opacity 600ms ease; }
+/* Scroll-Reveal */
+.lp-reveal { opacity: 0; transform: translateY(20px); transition: opacity 600ms ease, transform 600ms ease; will-change: opacity, transform; }
+.lp-reveal.lp-in-view { opacity: 1; transform: none; }
+/* Optional Verzögerungen */
+.lp-reveal[data-delay="100"] { transition-delay: 100ms; }
+.lp-reveal[data-delay="200"] { transition-delay: 200ms; }
+.lp-reveal[data-delay="300"] { transition-delay: 300ms; }
+/* Parallax */
+.lp-parallax { will-change: transform; }
+/* Bilder weich einblenden */
+img.lp-lazy { opacity: 0; transition: opacity 600ms ease; }
+img.lp-lazy.lp-loaded { opacity: 1; }
+</style>
+
 </head>
 <body style="padding-top: 100px;">
 <a class="visually-hidden" href="#start">
@@ -501,7 +527,7 @@ a, button, nav a, button[type="submit"] { will-change: transform, opacity; }
 </section>
 <section aria-labelledby="heading-kontakt" id="kontakt" role="region" style=" margin: 2rem auto;  padding: 1.5rem;  background-color: rgba(255, 255, 255, 0.75);  border-radius: 10px;  box-shadow: 0 0 10px rgba(0,0,0,0.04);  max-width: 850px;">
 <div aria-hidden="true" class="lp-kontakt-media">
-<img alt="" decoding="async" height="1600" loading="lazy" src="kontakt-lukas.jpg" width="1200"/>
+<img alt="" decoding="async" height="1600" loading="lazy" src="kontakt-lukas.jpg" width="1200" class="lp-lazy">
 <div class="lp-kontakt-media-overlay">
 </div>
 </div>
@@ -901,7 +927,7 @@ window.onclick = function(event){ /* disabled: outside click should not close mo
             background:rgba(0,0,0,.35);z-index:9999;opacity:0;pointer-events:none;">
 <div style="min-width:220px;background:#fff;padding:18px 22px;border-radius:16px;
               box-shadow:0 10px 30px rgba(0,0,0,.2);text-align:center">
-<img alt="" decoding="async" loading="lazy" src="images/logo.png" style="width:56px;height:56px;display:block;margin:0 auto 10px"/>
+<img alt="" decoding="async" loading="lazy" src="images/logo.png" style="width:56px;height:56px;display:block;margin:0 auto 10px" class="lp-lazy">
 <p style="margin:0;color:#0077b6;font-weight:600">
      Weiterleiten …
     </p>
@@ -1156,7 +1182,7 @@ window.onclick = function(event){ /* disabled: outside click should not close mo
   <div id="lp-consent">
     <div class="lp-head">
       <span class="lp-logo" aria-hidden="true">
-        <img src="https://lp-swim.github.io/lp-swim-info/images/logo.png" alt="LP‑SWIM" loading="eager">
+        <img src="https://lp-swim.github.io/lp-swim-info/images/logo.png" alt="LP‑SWIM" loading="eager class="lp-lazy">
       </span>
       <h3 id="lp-consent-title">Datenschutz & Einwilligung</h3>
     </div>
@@ -1256,6 +1282,67 @@ window.onclick = function(event){ /* disabled: outside click should not close mo
 })();
 </script>
 <!-- ===== End Cookie/Consent Banner ===== -->
+
+
+<!-- Smooth Load & Scroll Enhancements (drop-in, 2025-08) -->
+<script id="lp-smooth-effects-js">
+(function(){
+  // Markiere 'ready' sanft nach load oder als Fallback
+  var html = document.documentElement;
+  var domReady = false, fullyLoaded = false;
+  function markReady(){ if(!html.classList.contains('lp-ready')) html.classList.add('lp-ready'); }
+  document.addEventListener('DOMContentLoaded', function(){
+    domReady = true;
+    // Tagge Abschnitte als reveal (nicht destruktiv)
+    document.querySelectorAll('section').forEach(function(el){ el.classList.add('lp-reveal'); });
+  });
+  window.addEventListener('load', function(){ fullyLoaded = true; markReady(); });
+  setTimeout(function(){ if(domReady && !fullyLoaded) markReady(); }, 1500);
+
+  // Scroll-Reveal via IntersectionObserver (Fallback: sofort zeigen)
+  var revealEls = function(){ return Array.prototype.slice.call(document.querySelectorAll('.lp-reveal')); };
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('lp-in-view'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+    revealEls().forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls().forEach(function(el){ el.classList.add('lp-in-view'); });
+  }
+
+  // Parallax (nur für Elemente mit .lp-parallax; rAF entkoppelt)
+  var parallaxItems = Array.prototype.slice.call(document.querySelectorAll('.lp-parallax'));
+  if (parallaxItems.length){
+    var ticking = false;
+    function onScroll(){
+      if(!ticking){
+        window.requestAnimationFrame(function(){
+          var vh = window.innerHeight;
+          parallaxItems.forEach(function(el){
+            var speed = parseFloat(el.getAttribute('data-parallax-speed')) || 0.12;
+            var rect = el.getBoundingClientRect();
+            // sanfter Einfluss abhängig von Position im Viewport
+            var progress = (rect.top - vh) / vh; // -1..0..
+            el.style.transform = 'translate3d(0,' + (progress * speed * -60).toFixed(2) + 'px,0)';
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  // Lazy-Images weich einblenden
+  Array.prototype.slice.call(document.querySelectorAll('img.lp-lazy')).forEach(function(img){
+    if (img.complete) img.classList.add('lp-loaded');
+    img.addEventListener('load', function(){ img.classList.add('lp-loaded'); });
+  });
+})();
+</script>
 
 </body>
 </html>
