@@ -1,7 +1,4 @@
 User-agent: *
-Allow: /
-
-# Ausschluss sensibler Verzeichnisse (keine in diesem Fall, Platzhalter)
-# Disallow: /admin/
+Disallow:
 
 Sitemap: https://lp-swim.github.io/lp-swim-info/sitemap.xml
