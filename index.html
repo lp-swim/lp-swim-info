@@ -388,6 +388,29 @@ a, button, nav a, button[type="submit"] { will-change: transform, opacity; }
   gtag('config', 'G-T5H2XMBKFL');
 </script>
 
+
+<!-- Consent Mode v2: Standard (alles verweigert, außer technisch notwendiges) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+
+  gtag('consent', 'default', {
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    ad_storage: 'denied',
+    analytics_storage: 'denied',
+    functionality_storage: 'granted',
+    security_storage: 'granted'
+  });
+</script>
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T5H2XMBKFL"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-T5H2XMBKFL'); // Automatischer page_view
+</script>
+
 </head>
 <body style="padding-top: 100px;">
 <a class="visually-hidden" href="#start">
