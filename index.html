@@ -65,7 +65,7 @@
     ]
   }
   </script>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  
 <link crossorigin="" href="https://wa.me" rel="preconnect"/>
 <link crossorigin="" href="https://formspree.io" rel="preconnect"/>
 <meta content="max-age=31536000" http-equiv="Cache-Control"/>
@@ -1064,7 +1064,199 @@ window.onclick = function(event){ /* disabled: outside click should not close mo
   });
 })();
 </script>
+
+
+
+
+<!-- ===== Cookie/Consent Banner – Pro Design ===== -->
+<style id="lp-consent-style">
+  :root{
+    --lp-blue:#0077b6;
+    --lp-blue-dark:#005f8a;
+    --lp-text:#0b1f2a;
+    --lp-muted:#5b6b75;
+    --lp-surface:rgba(255,255,255,.96);
+    --lp-overlay:rgba(6,18,27,.55);
+  }
+  /* Blur & lock page while banner is visible */
+  html.lp-consent-open body > *:not(#lp-consent-overlay){ filter: blur(5px) saturate(0.9); pointer-events: none; user-select: none; }
+  html.lp-consent-open, html.lp-consent-open body{ height:100%; overflow:hidden; }
+
+  /* Overlay */
+  #lp-consent-overlay{
+    position: fixed; inset: 0; z-index: 100000;
+    background: var(--lp-overlay);
+    display: none; align-items: center; justify-content: center;
+  }
+  #lp-consent-overlay.show{ display:flex; animation: lpFade .25s ease-out; }
+  @keyframes lpFade{ from{opacity:0} to{opacity:1} }
+
+  /* Card */
+  #lp-consent{
+    width: min(820px, 92vw);
+    color: var(--lp-text);
+    background: var(--lp-surface);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 24px 80px rgba(0,0,0,.28);
+    padding: clamp(1rem, 3.2vw, 1.6rem);
+    transform: translateY(8px);
+    animation: lpSlide .25s ease-out;
+  }
+  @keyframes lpSlide{ from{opacity:0; transform: translateY(16px)} to{opacity:1; transform: translateY(0)} }
+
+  /* Header */
+  #lp-consent .lp-head{
+    display:flex; align-items:center; gap:.9rem; margin-bottom:.4rem;
+  }
+  #lp-consent .lp-logo{
+    width: clamp(28px, 6vw, 40px); height: clamp(28px, 6vw, 40px);
+    border-radius:10px; overflow:hidden; display:inline-flex; align-items:center; justify-content:center;
+    background:#e6f4fb;
+  }
+  #lp-consent .lp-logo img{ width:100%; height:100%; object-fit: contain; }
+
+  #lp-consent h3{ margin:0; font-size: clamp(1.15rem, 2.6vw, 1.5rem); color: var(--lp-blue); }
+  #lp-consent p{ margin:.35rem 0 .75rem 0; line-height:1.55; font-size: clamp(.96rem, 2.4vw, 1rem); color: var(--lp-muted); }
+
+  /* Bullet list */
+  #lp-consent .lp-list{ margin:.4rem 0 .9rem 0; padding:0; list-style:none; display:grid; gap:.35rem; }
+  #lp-consent .lp-list li{ display:flex; align-items:flex-start; gap:.5rem; }
+  #lp-consent .lp-list svg{ flex:0 0 auto; width:1.05rem; height:1.05rem; margin-top:.15rem; }
+
+  /* Layout */
+  #lp-consent .lp-row{ display:grid; grid-template-columns: 1fr; gap:.9rem; }
+  @media (min-width: 560px){ #lp-consent .lp-row{ grid-template-columns: 1fr auto auto; align-items:center; } }
+
+  /* Actions */
+  #lp-consent .lp-actions{ display:flex; gap:.6rem; justify-content:flex-end; flex-wrap:wrap; }
+  #lp-consent button{
+    border:0; border-radius:12px; padding:.78rem 1.05rem; font-weight:700; cursor:pointer;
+    transition: transform .15s ease, box-shadow .2s ease;
+    font-size: clamp(.95rem, 2.4vw, 1rem);
+  }
+  #lp-accept{ background: var(--lp-blue); color:#fff; box-shadow: 0 8px 18px rgba(0,119,182,.28); }
+  #lp-accept:hover{ background: var(--lp-blue-dark); transform: translateY(-1px); box-shadow: 0 10px 22px rgba(0,119,182,.35); }
+  #lp-decline{ background:#eef6fb; color:#0b3954; }
+  #lp-decline:hover{ transform: translateY(-1px); box-shadow: 0 8px 18px rgba(0,0,0,.06); }
+
+  /* Links & focus */
+  #lp-consent a{ color: var(--lp-blue); text-decoration: underline; }
+  #lp-consent a:focus, #lp-consent button:focus{ outline:3px solid rgba(0,119,182,.35); outline-offset:2px; border-radius:12px; }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    #lp-consent-overlay.show{ animation:none; }
+    #lp-consent{ animation:none; }
+    *{ scroll-behavior:auto !important; transition:none !important; }
+  }
+</style>
+
+<div id="lp-consent-overlay" role="dialog" aria-modal="true" aria-labelledby="lp-consent-title" aria-describedby="lp-consent-desc">
+  <div id="lp-consent">
+    <div class="lp-head">
+      <span class="lp-logo" aria-hidden="true">
+        <img src="https://lp-swim.github.io/lp-swim-info/images/logo.png" alt="LP‑SWIM" loading="eager">
+      </span>
+      <h3 id="lp-consent-title">Datenschutz & Einwilligung</h3>
+    </div>
+    <p id="lp-consent-desc">
+      Wir nutzen <strong>Google Analytics</strong>, um anonyme Nutzungsstatistiken zu erstellen und unser Angebot zu verbessern.
+      Google kann dabei Daten verarbeiten. Mehr Infos findest du bei
+      <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">Google – Partner‑Websites</a>
+      und in der <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google‑Datenschutzerklärung</a>.
+    </p>
+    <ul class="lp-list" aria-label="Kurzfassung">
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+        <span>Keine personalisierte Werbung; ausschließlich Reichweitenmessung.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+        <span>Du kannst <em>Zustimmen</em> oder <em>Ablehnen</em> – die Seite wird danach freigegeben.</span>
+      </li>
+    </ul>
+
+    <div class="lp-row">
+      <div class="lp-actions">
+        <button id="lp-decline">Ablehnen</button>
+        <button id="lp-accept">Zustimmen</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script id="lp-consent-script">
+(function(){
+  var KEY = "lp_cookie_consent_v1";
+  var overlay = document.getElementById('lp-consent-overlay');
+  var acceptBtn = document.getElementById('lp-accept');
+  var declineBtn = document.getElementById('lp-decline');
+
+  function openBanner(){
+    document.documentElement.classList.add('lp-consent-open');
+    overlay.classList.add('show');
+    setTimeout(function(){ acceptBtn && acceptBtn.focus(); }, 60);
+  }
+  function closeBanner(){
+    overlay.classList.remove('show');
+    document.documentElement.classList.remove('lp-consent-open');
+  }
+
+  function grantConsent(){
+    try {
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', {
+          ad_user_data: 'granted',
+          ad_personalization: 'granted',
+          ad_storage: 'granted',
+          analytics_storage: 'granted'
+        });
+        // Erste Messung nach Zustimmung
+        gtag('event', 'page_view', {
+          page_location: location.href,
+          page_path: location.pathname + location.search + location.hash,
+          page_title: document.title
+        });
+      }
+    } catch(e){ /* ignore */ }
+  }
+
+  function denyConsent(){
+    try {
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', {
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          ad_storage: 'denied',
+          analytics_storage: 'denied'
+        });
+      }
+    } catch(e){ /* ignore */ }
+  }
+
+  // Bindings
+  if (acceptBtn) acceptBtn.addEventListener('click', function(){
+    localStorage.setItem(KEY, 'accepted'); grantConsent(); closeBanner();
+  });
+  if (declineBtn) declineBtn.addEventListener('click', function(){
+    localStorage.setItem(KEY, 'declined'); denyConsent(); closeBanner();
+  });
+
+  // ESC = Decline (failsafe, block stays until choice)
+  document.addEventListener('keydown', function(e){
+    if (overlay.classList.contains('show') && e.key === 'Escape'){
+      localStorage.setItem(KEY, 'declined'); denyConsent(); closeBanner();
+    }
+  });
+
+  // Show only if no prior decision
+  try { if (!localStorage.getItem(KEY)) openBanner(); }
+  catch(e){ openBanner(); }
+})();
+</script>
+<!-- ===== End Cookie/Consent Banner ===== -->
+
 </body>
 </html>
-
 
