@@ -27,13 +27,10 @@
 <meta content="YlKI4FssjU6jEQDyOzNbdwcIOhv516qFAF1RUyDOV6I" name="google-site-verification"/>
 <meta content="58B42B8F103EB15114C7AFC816233F91" name="msvalidate.01"/>
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-
 <meta content="Schwimmen, Einzeltraining, Verein, Viernheim, Schriesheim, Schwimmtrainer, Kinder, Jugendliche, Erwachsene, Gymnastik, Aquajogging, Schwimmlehrer, LP-SWIM, Lukas Prehn" name="keywords"/>
-
 <meta content="LP-SWIM – Professioneller Schwimmunterricht in Viernheim &amp; Umgebung" property="og:title"/>
 <meta content="Ob als Begleitperson im Schulschwimmen oder im individuellen Einzeltraining – professionelles Schwimmtraining in Viernheim &amp; Schriesheim." property="og:description"/>
 <meta content="https://lp-swim.github.io/lp-swim-info/index.html" property="og:url"/>
-
 <link href="favicon.ico" rel="icon" type="image/x-icon"/>
 <!-- === STYLE BLOCK 1 — unverändert; nur organisiert/kommentiert === -->
 <style>
@@ -138,7 +135,22 @@ body { padding-top: 0; padding-bottom: 0; } section { margin: 1rem auto; padding
 @media (prefers-color-scheme:dark){
   #kontakt .lp-kontakt-media-overlay{background:linear-gradient(180deg, rgba(124,201,240,.10), rgba(124,201,240,.10));}
 }
-  </style>
+  
+/* Einheitliche Überschriften-Optik */
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+/* Intro-Überschrift "Schön, dass du da bist" an Textbreite angleichen */
+#intro h1, .section-intro h1 {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px;
+  padding: 0 1.2rem;
+  text-align: center;
+}
+
+</style>
 <!-- === STYLE BLOCK 2 — unverändert; nur organisiert/kommentiert === -->
 <style>
    /* Modal-Design */
@@ -247,11 +259,8 @@ body {
 /* Sicherheitsnetz: keine horizontale Scrollleiste durch Subpixel auf großen Screens */
 html, body { overflow-x: hidden; }
   </style>
-
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
 <meta content="on" http-equiv="x-dns-prefetch-control"/>
-
-
 <link as="image" href="background-logo.png" imagesizes="100vw" rel="preload"/>
 <link as="image" href="https://lp-swim.github.io/lp-swim-info/images/logo.png" rel="preload"/>
 <!-- === STYLE BLOCK 6 — unverändert; nur organisiert/kommentiert === -->
@@ -260,9 +269,7 @@ html, body { overflow-x: hidden; }
   * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
   </style>
-
 <link href="https://lp-swim.github.io/lp-swim-info/index.html" hreflang="de-DE" rel="alternate"/>
-
 <link href="https://lp-swim.github.io/lp-swim-info/" hreflang="de" rel="alternate"/>
 <link href="https://lp-swim.github.io/lp-swim-info/" hreflang="x-default" rel="alternate"/>
 <!-- === STYLE BLOCK 7 — unverändert; nur organisiert/kommentiert === -->
@@ -285,7 +292,7 @@ section:target::before {
 /* 2) Prevent image-driven layout shifts */
 img { display: block; height: auto; max-width: 100%; }
 /* If width/height present, ensure aspect ratio is reserved */
-img[width][height] { aspect-ratio: attr(width) / attr(height); }
+img[width][height] { /* removed unsupported aspect-ratio attr() */ }
 /* Specific contact image already uses aspect-ratio in CSS; keep it stable */
 #kontakt .lp-kontakt-media img { object-fit: cover; object-position: center; }
 
@@ -331,7 +338,7 @@ a, button, nav a, button[type="submit"] { will-change: transform, opacity; }
 /* Desktop bleibt wie eingestellt (via --nav-offset ~90px in cwv-100-final) */
   </style>
 <!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-T5H2XMBKFL">
+<script async="True" src="https://www.googletagmanager.com/gtag/js?id=G-T5H2XMBKFL">
 </script>
 <script>
    window.dataLayer = window.dataLayer || [];
@@ -354,11 +361,11 @@ a, button, nav a, button[type="submit"] { will-change: transform, opacity; }
   });
   </script>
 <!-- Google Analytics 4 -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-T5H2XMBKFL">
+<script async="True" src="https://www.googletagmanager.com/gtag/js?id=G-T5H2XMBKFL">
 </script>
 <script>
    gtag('js', new Date());
-  gtag('config', 'G-T5H2XMBKFL'); // Automatischer page_view
+   // Automatischer page_view
   </script>
 <link href="https://lp-swim.github.io/lp-swim-info/sitemap.xml" rel="sitemap" type="application/xml"/>
 <link href="https://share.google/nPpabbT0nXy5FNJla" rel="me"/>
@@ -525,19 +532,33 @@ a, button, nav a, button[type="submit"] { will-change: transform, opacity; }
   ]
 }
   </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Startseite","item":"https://lp-swim.github.io/lp-swim-info/"},{"@type":"ListItem","position":2,"name":"Angebote","item":"https://lp-swim.github.io/lp-swim-info/#jugend"},{"@type":"ListItem","position":3,"name":"Schule","item":"https://lp-swim.github.io/lp-swim-info/#schule"},{"@type":"ListItem","position":4,"name":"Erwachsene","item":"https://lp-swim.github.io/lp-swim-info/#erwachsene"},{"@type":"ListItem","position":5,"name":"Kontakt","item":"https://lp-swim.github.io/lp-swim-info/#kontakt"}]}</script><meta content="summary" name="twitter:card"/><meta content="LP-SWIM – Professioneller Schwimmunterricht in Viernheim &amp; Umgebung" name="twitter:title"/><meta content="Informationen zu Schwimmangeboten für Jugend, Schule und Erwachsene – Kurse, Trainingszeiten und Kontakt auf einen Blick." name="twitter:description"/><meta content="https://lp-swim.github.io/lp-swim-info/images/logo.png" property="og:image"/><meta content="LP Swim Logo" property="og:image:alt"/><meta content="https://lp-swim.github.io/lp-swim-info/images/logo.png" name="twitter:image"/><meta content="LP Swim Logo" name="twitter:image:alt"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Begleitperson im schulischen Schwimmunterricht sowie in Inklusions- und Freizeitgruppen","serviceType":"Schwimmunterstützung / Begleitperson","description":"Verlässliche Unterstützung im schulischen Schwimmunterricht zur Förderung eines sicheren und strukturierten Ablaufs. Die Begleitperson übernimmt dabei eine unterstützende Rolle – abgestimmt auf die Bedürfnisse einzelner Schüler*innen mit besonderem Förderbedarf – und entlastet das Lehrpersonal im organisatorischen und pädagogischen Alltag.","provider":{"@type":"Organization","name":"LP Swim","url":"https://lp-swim.github.io/lp-swim-info/"},"areaServed":{"@type":"Place","name":"Mannheim und Umgebung"},"offers":{"@type":"Offer","url":"https://lp-swim.github.io/lp-swim-info/#schule","priceSpecification":{"@type":"PriceSpecification","priceCurrency":"EUR","minPrice":28.5},"availability":"https://schema.org/InStock"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Einzeltraining für Kinder & Jugendliche","serviceType":"Schwimm-Einzeltraining","description":"Individuelles Training für Kinder und Jugendliche – angepasst an Alter, Leistungsstand und persönliche Ziele. Dauer: 60 Minuten pro Einheit. Inhalte von grundlegenden Bewegungsabläufen bis zur gezielten Technikoptimierung. Abnahme des Deutschen Sportabzeichens (DSA) möglich. Zusatz: 10 € Verrechnungspauschale (Anfahrt und Eintritt).","provider":{"@type":"Organization","name":"LP Swim","url":"https://lp-swim.github.io/lp-swim-info/"},"areaServed":[{"@type":"Place","name":"Viernheim"},{"@type":"Place","name":"Schriesheim"}],"offers":{"@type":"Offer","url":"https://lp-swim.github.io/lp-swim-info/#jugend","price":"40.00","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","priceCurrency":"EUR","price":40.0,"description":"zzgl. 10 € Verrechnungspauschale (Anfahrt und Eintritt)"},"availability":"https://schema.org/InStock"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Einzeltraining für Erwachsene","serviceType":"Schwimm-Einzeltraining","description":"Individuell abgestimmtes Training für Erwachsene – ideal für Einsteiger, Wiedereinsteiger oder ambitionierte Hobbysportler. Dauer: 60 Minuten pro Einheit. Fokus vom sicheren Wohlfühlen im Wasser bis zur gezielten Technikverfeinerung im Schwimmstil. Zusatz: 10 € Verrechnungspauschale (Anfahrt und Eintritt).","provider":{"@type":"Organization","name":"LP Swim","url":"https://lp-swim.github.io/lp-swim-info/"},"areaServed":[{"@type":"Place","name":"Viernheim"},{"@type":"Place","name":"Schriesheim"}],"offers":{"@type":"Offer","url":"https://lp-swim.github.io/lp-swim-info/#erwachsene","price":"50.00","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","priceCurrency":"EUR","price":50.0,"description":"zzgl. 10 € Verrechnungspauschale (Anfahrt und Eintritt)"},"availability":"https://schema.org/InStock"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Einzeltraining für Personen mit Beeinträchtigungen","serviceType":"Schwimm-Einzeltraining","description":"Individuelles Schwimmtraining in geschützter und unterstützender Atmosphäre – angepasst an die jeweiligen körperlichen oder geistigen Voraussetzungen. Ziel: Vertrauen, Sicherheit und Freude im Wasser aufzubauen. Dauer: 60 Minuten pro Einheit. Zusatz: 10 € Verrechnungspauschale (Anfahrt und Eintritt).","provider":{"@type":"Organization","name":"LP Swim","url":"https://lp-swim.github.io/lp-swim-info/"},"areaServed":[{"@type":"Place","name":"Viernheim"},{"@type":"Place","name":"Schriesheim"}],"offers":{"@type":"Offer","url":"https://lp-swim.github.io/lp-swim-info/","price":"70.00","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","priceCurrency":"EUR","price":70.0,"description":"zzgl. 10 € Verrechnungspauschale (Anfahrt und Eintritt)"},"availability":"https://schema.org/InStock"}}</script></head>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Startseite","item":"https://lp-swim.github.io/lp-swim-info/"},{"@type":"ListItem","position":2,"name":"Angebote","item":"https://lp-swim.github.io/lp-swim-info/#jugend"},{"@type":"ListItem","position":3,"name":"Schule","item":"https://lp-swim.github.io/lp-swim-info/#schule"},{"@type":"ListItem","position":4,"name":"Erwachsene","item":"https://lp-swim.github.io/lp-swim-info/#erwachsene"},{"@type":"ListItem","position":5,"name":"Kontakt","item":"https://lp-swim.github.io/lp-swim-info/#kontakt"}]}</script><meta content="summary" name="twitter:card"/><meta content="LP-SWIM – Professioneller Schwimmunterricht in Viernheim &amp; Umgebung" name="twitter:title"/><meta content="Informationen zu Schwimmangeboten für Jugend, Schule und Erwachsene – Kurse, Trainingszeiten und Kontakt auf einen Blick." name="twitter:description"/><meta content="https://lp-swim.github.io/lp-swim-info/images/logo.png" property="og:image"/><meta content="LP Swim Logo" property="og:image:alt"/><meta content="https://lp-swim.github.io/lp-swim-info/images/logo.png" name="twitter:image"/><meta content="LP Swim Logo" name="twitter:image:alt"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Begleitperson im schulischen Schwimmunterricht sowie in Inklusions- und Freizeitgruppen","serviceType":"Schwimmunterstützung / Begleitperson","description":"Verlässliche Unterstützung im schulischen Schwimmunterricht zur Förderung eines sicheren und strukturierten Ablaufs. Die Begleitperson übernimmt dabei eine unterstützende Rolle – abgestimmt auf die Bedürfnisse einzelner Schüler*innen mit besonderem Förderbedarf – und entlastet das Lehrpersonal im organisatorischen und pädagogischen Alltag.","provider":{"@type":"Organization","name":"LP Swim","url":"https://lp-swim.github.io/lp-swim-info/"},"areaServed":{"@type":"Place","name":"Mannheim und Umgebung"},"offers":{"@type":"Offer","url":"https://lp-swim.github.io/lp-swim-info/#schule","priceSpecification":{"@type":"PriceSpecification","priceCurrency":"EUR","minPrice":28.5},"availability":"https://schema.org/InStock"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Einzeltraining für Kinder & Jugendliche","serviceType":"Schwimm-Einzeltraining","description":"Individuelles Training für Kinder und Jugendliche – angepasst an Alter, Leistungsstand und persönliche Ziele. Dauer: 60 Minuten pro Einheit. Inhalte von grundlegenden Bewegungsabläufen bis zur gezielten Technikoptimierung. Abnahme des Deutschen Sportabzeichens (DSA) möglich. Zusatz: 10 € Verrechnungspauschale (Anfahrt und Eintritt).","provider":{"@type":"Organization","name":"LP Swim","url":"https://lp-swim.github.io/lp-swim-info/"},"areaServed":[{"@type":"Place","name":"Viernheim"},{"@type":"Place","name":"Schriesheim"}],"offers":{"@type":"Offer","url":"https://lp-swim.github.io/lp-swim-info/#jugend","price":"40.00","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","priceCurrency":"EUR","price":40.0,"description":"zzgl. 10 € Verrechnungspauschale (Anfahrt und Eintritt)"},"availability":"https://schema.org/InStock"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Einzeltraining für Erwachsene","serviceType":"Schwimm-Einzeltraining","description":"Individuell abgestimmtes Training für Erwachsene – ideal für Einsteiger, Wiedereinsteiger oder ambitionierte Hobbysportler. Dauer: 60 Minuten pro Einheit. Fokus vom sicheren Wohlfühlen im Wasser bis zur gezielten Technikverfeinerung im Schwimmstil. Zusatz: 10 € Verrechnungspauschale (Anfahrt und Eintritt).","provider":{"@type":"Organization","name":"LP Swim","url":"https://lp-swim.github.io/lp-swim-info/"},"areaServed":[{"@type":"Place","name":"Viernheim"},{"@type":"Place","name":"Schriesheim"}],"offers":{"@type":"Offer","url":"https://lp-swim.github.io/lp-swim-info/#erwachsene","price":"50.00","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","priceCurrency":"EUR","price":50.0,"description":"zzgl. 10 € Verrechnungspauschale (Anfahrt und Eintritt)"},"availability":"https://schema.org/InStock"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Einzeltraining für Personen mit Beeinträchtigungen","serviceType":"Schwimm-Einzeltraining","description":"Individuelles Schwimmtraining in geschützter und unterstützender Atmosphäre – angepasst an die jeweiligen körperlichen oder geistigen Voraussetzungen. Ziel: Vertrauen, Sicherheit und Freude im Wasser aufzubauen. Dauer: 60 Minuten pro Einheit. Zusatz: 10 € Verrechnungspauschale (Anfahrt und Eintritt).","provider":{"@type":"Organization","name":"LP Swim","url":"https://lp-swim.github.io/lp-swim-info/"},"areaServed":[{"@type":"Place","name":"Viernheim"},{"@type":"Place","name":"Schriesheim"}],"offers":{"@type":"Offer","url":"https://lp-swim.github.io/lp-swim-info/","price":"70.00","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","priceCurrency":"EUR","price":70.0,"description":"zzgl. 10 € Verrechnungspauschale (Anfahrt und Eintritt)"},"availability":"https://schema.org/InStock"}}</script><style>
+:root{ --nav-offset: 90px; }
+section:target::before{
+  content:""; display:block;
+  height:var(--nav-offset); margin-top:calc(var(--nav-offset)*-1);
+}
+</style><style>h1, h2, h3 { font-weight: 600; }</style><style>
+.lp-intro-align {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+</style><link href="https://fonts.googleapis.com" rel="preconnect"/><link href="https://fonts.googleapis.com" rel="dns-prefetch"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.gstatic.com" rel="dns-prefetch"/><link href="https://www.googletagmanager.com" rel="preconnect"/><link href="https://www.googletagmanager.com" rel="dns-prefetch"/><link href="https://www.google-analytics.com" rel="preconnect"/><link href="https://www.google-analytics.com" rel="dns-prefetch"/><link href="https://formspree.io" rel="dns-prefetch"/><link href="https://share.google" rel="dns-prefetch"/><link href="https://lp-swim.github.io" rel="dns-prefetch"/></head>
 <body style="padding-top: 100px;">
 <a class="visually-hidden" href="#start">
    Zum Inhalt springen
   </a>
-<button aria-label="Navigation ein-/ausblenden" id="menu-toggle" style="display: none;  background: none;  border: none;  font-size: 2rem;  color: white;  position: absolute;  top: 12px;  right: 16px;  z-index: 1001;">
+<button aria-controls="main-nav" aria-expanded="false" aria-label="Navigation ein-/ausblenden" id="menu-toggle" style="display: none;  background: none;  border: none;  font-size: 2rem;  color: white;  position: absolute;  top: 12px;  right: 16px;  z-index: 1001;">
    ☰
   </button>
 <h1 class="visually-hidden">
    LP-SWIM – Schwimmlehrer in Viernheim &amp; Schriesheim
   </h1>
 <!-- === NAVIGATION === -->
-<nav aria-label="Hauptnavigation" role="navigation">
+<nav aria-label="Hauptnavigation" id="main-nav" role="navigation">
 <a href="#start">
     Start
    </a>
@@ -555,7 +576,7 @@ a, button, nav a, button[type="submit"] { will-change: transform, opacity; }
    </a>
 </nav>
 <!-- === SECTION: #start === -->
-<section aria-labelledby="heading-start" id="start" role="region" style=" margin: 6rem auto 2rem auto; padding: 2rem; background: rgba(255, 255, 255, 0.9); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); max-width: 850px;">
+<section aria-labelledby="heading-start" class="lp-intro-align" id="start" role="region" style=" margin: 6rem auto 2rem auto; padding: 2rem; background: rgba(255, 255, 255, 0.9); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); max-width: 850px;">
 <h2 id="heading-start">
     Schön, dass du da bist
    </h2>
@@ -621,7 +642,7 @@ a, button, nav a, button[type="submit"] { will-change: transform, opacity; }
 <!-- === SECTION: #kontakt === -->
 <section aria-labelledby="heading-kontakt" id="kontakt" role="region" style=" margin: 2rem auto;  padding: 1.5rem;  background-color: rgba(255, 255, 255, 0.75);  border-radius: 10px;  box-shadow: 0 0 10px rgba(0,0,0,0.04);  max-width: 850px;">
 <div aria-hidden="true" class="lp-kontakt-media">
-<img alt="" decoding="async" height="1600" loading="lazy" src="kontakt-lukas.jpg" width="1200"/>
+<img alt="" decoding="async" fetchpriority="high" height="1600" loading="lazy" src="kontakt-lukas.jpg" width="1200"/>
 <div class="lp-kontakt-media-overlay">
 </div>
 </div>
@@ -733,12 +754,12 @@ background-color: #0077b6; color: white; border: none; border-radius: 8px; font-
 <script>
     document.addEventListener('keydown', function(event) { if (event.key === 'Escape') { document.querySelectorAll('.modal.show').forEach(modal => { modal.classList.remove('show'); document.body.style.overflow = ''; }); } });
    </script>
-<div class="modal" id="datenschutzModal">
-<div class="modal-content" style="text-align:left;">
+<div aria-labelledby="modal-title-1" class="modal" id="datenschutzModal">
+<div aria-modal="true" class="modal-content" role="dialog" style="text-align:left;" tabindex="-1">
 <span class="close" onclick="closeModal('datenschutzModal')">
       ×
      </span>
-<h2>
+<h2 id="modal-title-1">
       Datenschutzerklärung
      </h2>
 <p>
@@ -818,12 +839,12 @@ background-color: #0077b6; color: white; border: none; border-radius: 8px; font-
      </p>
 </div>
 </div>
-<div class="modal" id="agbModal">
-<div class="modal-content" style="text-align:left;">
+<div aria-labelledby="modal-title-2" class="modal" id="agbModal">
+<div aria-modal="true" class="modal-content" role="dialog" style="text-align:left;" tabindex="-1">
 <span class="close" onclick="closeModal('agbModal')">
       ×
      </span>
-<h2>
+<h2 id="modal-title-2">
       Allgemeine Geschäftsbedingungen (AGB)
      </h2>
 <p>
@@ -884,12 +905,12 @@ background-color: #0077b6; color: white; border: none; border-radius: 8px; font-
      </p>
 </div>
 </div>
-<div class="modal" id="impressumModal">
-<div class="modal-content" style="text-align:left;">
+<div aria-labelledby="modal-title-3" class="modal" id="impressumModal">
+<div aria-modal="true" class="modal-content" role="dialog" style="text-align:left;" tabindex="-1">
 <span class="close" onclick="closeModal('impressumModal')">
       ×
      </span>
-<h2>
+<h2 id="modal-title-3">
       Impressum
      </h2>
 <p>
@@ -1023,7 +1044,7 @@ window.onclick = function(event){ /* disabled: outside click should not close mo
             background:rgba(0,0,0,.35);z-index:9999;opacity:0;pointer-events:none;">
 <div style="min-width:220px;background:#fff;padding:18px 22px;border-radius:16px;
               box-shadow:0 10px 30px rgba(0,0,0,.2);text-align:center">
-<img alt="" decoding="async" loading="lazy" src="images/logo.png" style="width:56px;height:56px;display:block;margin:0 auto 10px"/>
+<img alt="" decoding="async" height="56" loading="lazy" src="images/logo.png" style="width:56px;height:56px;display:block;margin:0 auto 10px" width="56"/>
 <p style="margin:0;color:#0077b6;font-weight:600">
      Weiterleiten …
     </p>
@@ -1274,7 +1295,7 @@ window.onclick = function(event){ /* disabled: outside click should not close mo
 <div id="lp-consent">
 <div class="lp-head">
 <span aria-hidden="true" class="lp-logo">
-<img alt="LP‑SWIM" loading="eager" src="https://lp-swim.github.io/lp-swim-info/images/logo.png"/>
+<img alt="LP‑SWIM" decoding="async" loading="eager" src="https://lp-swim.github.io/lp-swim-info/images/logo.png"/>
 </span>
 <h3 id="lp-consent-title">
       Datenschutz &amp; Einwilligung
@@ -1406,5 +1427,150 @@ window.onclick = function(event){ /* disabled: outside click should not close mo
 })();
   </script>
 <!-- ===== End Cookie/Consent Banner ===== -->
+<script>
+(function(){
+  var lastFocused = null;
+  function trapFocus(modal){
+    var focusable = modal.querySelectorAll('a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])');
+    if(focusable.length){
+      focusable[0].focus();
+    } else {
+      modal.focus();
+    }
+  }
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('[data-open-modal]');
+    if(btn){
+      var sel = btn.getAttribute('data-open-modal');
+      var modal = document.querySelector(sel);
+      if(modal){
+        lastFocused = btn;
+        modal.classList.add('show');
+        var content = modal.querySelector('.modal-content');
+        if(content){ trapFocus(content); }
+      }
+    }
+    if(e.target.closest('[data-close-modal]')){
+      var modal = e.target.closest('.modal.show');
+      if(modal){
+        modal.classList.remove('show');
+        if(lastFocused){ lastFocused.focus(); }
+      }
+    }
+  });
+  // Optional: handle Escape key globally
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      var modal = document.querySelector('.modal.show');
+      if(modal){
+        modal.classList.remove('show');
+        if(lastFocused){ lastFocused.focus(); }
+      }
+    }
+  });
+})();
+</script>
+<script>
+(function(){
+  var lastFocused = null;
+  function trapFocus(modalContent){
+    var focusable = modalContent.querySelectorAll('a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])');
+    focusable = Array.prototype.slice.call(focusable);
+    if(focusable.length){
+      focusable[0].focus();
+    } else {
+      modalContent.focus();
+    }
+    function handleKey(e){
+      if(e.key === 'Tab'){
+        if(focusable.length === 0){ e.preventDefault(); return; }
+        var index = focusable.indexOf(document.activeElement);
+        if(e.shiftKey){
+          if(index <= 0){
+            e.preventDefault();
+            focusable[focusable.length-1].focus();
+          }
+        } else {
+          if(index === focusable.length-1){
+            e.preventDefault();
+            focusable[0].focus();
+          }
+        }
+      }
+    }
+    modalContent.addEventListener('keydown', handleKey);
+    modalContent._removeTrap = function(){ modalContent.removeEventListener('keydown', handleKey); };
+  }
+  function openModal(sel, trigger){
+    var modal = document.querySelector(sel);
+    if(modal){
+      lastFocused = trigger;
+      modal.classList.add('show');
+      var content = modal.querySelector('.modal-content');
+      if(content){ trapFocus(content); }
+    }
+  }
+  function closeModal(modal){
+    if(modal){
+      var content = modal.querySelector('.modal-content');
+      if(content && content._removeTrap){ content._removeTrap(); }
+      modal.classList.remove('show');
+      if(lastFocused){ lastFocused.focus(); }
+    }
+  }
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('[data-open-modal]');
+    if(btn){
+      var sel = btn.getAttribute('data-open-modal');
+      openModal(sel, btn);
+    }
+    if(e.target.closest('[data-close-modal]')){
+      var modal = e.target.closest('.modal.show');
+      closeModal(modal);
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      var modal = document.querySelector('.modal.show');
+      closeModal(modal);
+    }
+  });
+})();
+</script>
+<script>
+(function(){
+  function getFocusable(container){
+    return Array.prototype.slice.call(
+      container.querySelectorAll('a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])')
+    ).filter(function(el){
+      return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key !== 'Tab') return;
+    var modal = document.querySelector('.modal.show');
+    if(!modal) return;
+    var scope = modal.querySelector('.modal-content') || modal;
+    var focusables = getFocusable(scope);
+    if(!focusables.length) return;
+    var first = focusables[0];
+    var last  = focusables[focusables.length - 1];
+    var active = document.activeElement;
+    if(e.shiftKey){
+      // Shift+Tab on first -> wrap to last
+      if(active === first || !scope.contains(active)){
+        e.preventDefault();
+        last.focus();
+      }
+    } else {
+      // Tab on last -> wrap to first
+      if(active === last){
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  });
+})();
+</script>
 </body>
 </html>
