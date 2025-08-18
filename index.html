@@ -565,7 +565,24 @@ section:target::before{
   <link href="https://formspree.io" rel="dns-prefetch"/>
   <link href="https://share.google" rel="dns-prefetch"/>
   <link href="https://lp-swim.github.io" rel="dns-prefetch"/>
- </head>
+ 
+<style id="cwv-boost-inline">
+/* --- Core Web Vitals BOOST (no design change) --- */
+* { transition-property: transform, opacity, box-shadow, filter; }
+img { display:block; height:auto; max-width:100%; }
+:root { --nav-offset: 90px; }
+body { padding-top: var(--nav-offset) !important; }
+section:target::before { content:""; display:block; height:var(--nav-offset); margin-top:calc(var(--nav-offset) * -1); visibility:hidden; }
+@media (min-width:1025px){
+  section { content-visibility:auto; contain-intrinsic-size:1px 700px; }
+}
+@media (prefers-reduced-motion: reduce){
+  * { transition:none !important; animation:none !important; scroll-behavior:auto !important; }
+  section { content-visibility:visible !important; contain-intrinsic-size:auto !important; }
+}
+</style>
+
+</head>
  <body style="padding-top: 100px;">
   <a class="visually-hidden" href="#start">
    Zum Inhalt springen
@@ -1597,6 +1614,92 @@ window.onclick = function(event){ /* disabled: outside click should not close mo
   });
 })();
   </script>
- </body>
+ 
+<script id="cwv-boost-script">
+(function(){
+  function markLCP(){
+    try{
+      var imgs = Array.prototype.slice.call(document.images||[]);
+      var cand = imgs.find(function(img){
+        var r = img.getBoundingClientRect();
+        return r.top < (window.innerHeight * 1.2);
+      }) || imgs[0];
+      if(!cand) return;
+      cand.loading = 'eager';
+      cand.decoding = 'async';
+      try { cand.fetchPriority = 'high'; } catch(e){}
+      var link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = cand.currentSrc || cand.src;
+      if (cand.srcset) link.setAttribute('imagesrcset', cand.srcset);
+      if (cand.sizes) link.setAttribute('imagesizes', cand.sizes);
+      document.head.appendChild(link);
+    }catch(e){}
+  }
+
+  function lazyImages(){
+    var imgs = Array.prototype.slice.call(document.images||[]);
+    imgs.forEach(function(img){
+      if(img.loading !== 'eager'){
+        img.loading = 'lazy';
+      }
+      img.decoding = 'async';
+      try { if (!img.fetchPriority) img.fetchPriority = 'low'; } catch(e){}
+    });
+  }
+
+  function lazyIframes(){
+    var iframes = Array.prototype.slice.call(document.querySelectorAll('iframe'));
+    if(!('IntersectionObserver' in window)){
+      iframes.forEach(function(f){ if(!f.hasAttribute('loading')) f.setAttribute('loading','lazy'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var f = e.target;
+          if(f.dataset && f.dataset.src && !f.src){
+            f.src = f.dataset.src;
+          }
+          io.unobserve(f);
+        }
+      });
+    }, {rootMargin:'200px 0px'});
+    iframes.forEach(function(f){
+      if(!f.hasAttribute('loading')) f.setAttribute('loading','lazy');
+      var rect = f.getBoundingClientRect();
+      var nearTop = rect.top < (window.innerHeight * 0.8);
+      if (f.src && !nearTop && !f.dataset.src && !/^\s*about:blank/i.test(f.src)) {
+        f.dataset.src = f.src;
+        f.removeAttribute('src');
+        f.src = 'about:blank';
+      }
+      io.observe(f);
+    });
+  }
+
+  function deferThirdParty(){
+    var blocks = ['analytics','gtag','heatmap','facebook','tiktok','linkedin','hotjar'];
+    var scripts = Array.prototype.slice.call(document.querySelectorAll('script[src]'));
+    scripts.forEach(function(s){
+      var src = (s.getAttribute('src')||'').toLowerCase();
+      var isThirdParty = blocks.some(function(k){ return src.indexOf(k) !== -1; });
+      if(isThirdParty && !s.hasAttribute('async') && !s.hasAttribute('defer')){
+        s.setAttribute('defer','');
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    lazyImages();
+    markLCP();
+    lazyIframes();
+    deferThirdParty();
+  });
+})();
+</script>
+
+</body>
 </html>
 
