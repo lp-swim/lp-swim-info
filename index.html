@@ -686,6 +686,57 @@ body.modal-open{ overflow:hidden !important; touch-action:none !important; }
 @keyframes lpFade{ from{opacity:0; transform:scale(.96);} to{opacity:1; transform:scale(1);} }
 </style>
 
+
+<style id="lp-modal-mobile-2025">
+/* === Responsive Modal: Mobile Fullscreen + Scroll-Lock (2025-08) === */
+/* Overlay */
+.modal {
+  position: fixed !important;
+  inset: 0 !important;
+  display: none;
+  z-index: 10000 !important;
+  background: rgba(0,0,0,0.6) !important;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+.modal.show { display: flex !important; }
+
+/* Content card */
+.modal > div,
+.modal .modal-content {
+  background: #fff;
+  color: #000;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  max-width: min(800px, 92vw);
+  max-height: 90vh;
+  width: 92vw;
+  padding: 1.25rem;
+  overflow-y: auto;
+}
+
+/* Mobile: full viewport */
+@media (max-width: 768px) {
+  .modal > div,
+  .modal .modal-content {
+    width: 100vw !important;
+    height: 100dvh !important;
+    max-width: none !important;
+    max-height: none !important;
+    border-radius: 0 !important;
+    padding: 1rem;
+  }
+}
+
+/* Scroll lock while modal open */
+html.modal-open, body.modal-open {
+  overflow: hidden !important;
+  height: 100% !important;
+  touch-action: none;
+  overscroll-behavior: contain;
+}
+</style>
 </head>
 <body style="padding-top: 100px;">
 <!-- LP-SWIM Confirmation Overlay & Modal (v2) -->
@@ -1937,6 +1988,64 @@ window.onclick = function(event){ /* disabled: outside click should not close mo
       }
     };
   })();
+</script>
+
+
+<script id="lp-modal-lock-2025">
+// === Modal visibility & scroll-lock controller ===
+(function(){
+  function anyModalVisible(){
+    return Array.from(document.querySelectorAll('.modal'))
+      .some(m => m.classList.contains('show') ||
+                 (getComputedStyle(m).display !== 'none' &&
+                  m.getBoundingClientRect().width > 0 && m.getBoundingClientRect().height > 0));
+  }
+  function updateLock(){
+    const on = anyModalVisible();
+    document.documentElement.classList.toggle('modal-open', on);
+    document.body.classList.toggle('modal-open', on);
+  }
+
+  // Close on ESC
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      document.querySelectorAll('.modal.show').forEach(m => m.classList.remove('show'));
+      updateLock();
+    }
+  });
+
+  // Click handlers via data attributes
+  document.addEventListener('click', function(e){
+    // open
+    const openBtn = e.target.closest('[data-open-modal]');
+    if(openBtn){
+      e.preventDefault();
+      const sel = openBtn.getAttribute('data-open-modal');
+      const modal = document.querySelector(sel) || document.getElementById(sel.replace(/^#/, ''));
+      if(modal){ modal.classList.add('show'); updateLock(); }
+      return;
+    }
+    // close
+    const closeBtn = e.target.closest('[data-close-modal]');
+    if(closeBtn){
+      e.preventDefault();
+      const modal = closeBtn.closest('.modal');
+      if(modal){ modal.classList.remove('show'); updateLock(); }
+      return;
+    }
+    // backdrop click closes
+    const modalEl = e.target.closest('.modal');
+    if(modalEl && e.target === modalEl){
+      modalEl.classList.remove('show'); updateLock();
+      return;
+    }
+  }, {passive:true});
+
+  // Observe class/style changes to modals and update lock automatically
+  const observer = new MutationObserver(updateLock);
+  observer.observe(document.documentElement, {subtree:true, attributes:true, attributeFilter:['class','style','aria-hidden']});
+  window.addEventListener('load', updateLock);
+})();
 </script>
 
 </body>
