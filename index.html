@@ -125,7 +125,6 @@ body { padding-top: 0; padding-bottom: 0; } section { margin: 1rem auto; padding
 /* Pop-up modern glassmorphism style */ .modal > div { background: rgba(255, 255, 255, 0.85) !important; backdrop-filter: blur(8px); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); border-radius: 16px; padding: 2rem; position: relative; animation: fadeInScale 0.3s ease-out; } /* X-button */ .close { color: #0077b6; font-weight: bold; transition: transform 0.2s; } .close:hover { transform: scale(1.2); } /* Modal animation */ @keyframes fadeInScale { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } } /* Message send button visual polish */ button[type="submit"] { background-color: #0077b6; font-family: 'Times New Roman', Times, serif; font-weight: bold; transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s; } button[type="submit"]:hover { background-color: #005f8a; transform: scale(1.05); box-shadow: 0 0 12px rgba(0, 119, 182, 0.4); } /* Textbox transparency animation */ section { transition: background-color 0.5s ease; } section:hover { background-color: rgba(255,255,255,0.95) !important; } /* Ensure consistent spacing and reduce top margin */ body { padding-top: 0; margin-top: 0; } #start, #jugend, #schule, #erwachsene, #kontakt { scroll-margin-top: 90px; }
 
 @media (max-width: 768px) { section { margin: 1rem; padding: 1rem; } form { margin: 1rem; padding: 1rem; } nav { padding: 0.5rem; gap: 0.5rem; flex-direction: column; align-items: center; } nav a { font-size: 1rem; padding: 0.5rem 1rem; } footer { font-size: 0.85rem; padding: 0.8rem 1rem; } #kontakt form { text-align: center; max-width: 100%; margin: auto; } } /* Desktop Navigation padding adjustment */ @media (min-width: 1025px) { nav { padding: 1rem 2rem; } nav a { font-size: 1.1rem; } }
-  
 
 /* --- Kontakt: Bild über Formular (robust, ohne Layout-Bruch) --- */
 #kontakt .lp-kontakt-card{max-width:850px;margin-inline:auto;}
@@ -136,7 +135,7 @@ body { padding-top: 0; padding-bottom: 0; } section { margin: 1rem auto; padding
 @media (prefers-color-scheme:dark){
   #kontakt .lp-kontakt-media-overlay{background:linear-gradient(180deg, rgba(124,201,240,.10), rgba(124,201,240,.10));}
 }
-  
+
 /* Einheitliche Überschriften-Optik */
 h1, h2, h3 {
   font-weight: 700;
@@ -150,7 +149,7 @@ h1, h2, h3 {
   padding: 0 1.2rem;
   text-align: center;
 }
-  
+
 @media (max-width: 768px) {
   body {
     padding-top: 20px !important; /* Abstand stark reduziert */
@@ -613,8 +612,88 @@ section:target::before { content:""; display:block; height:var(--nav-offset); ma
   body::before { content: none !important; }
 }
 </style>
+
+<style id="lp-popup-branding">
+/* Overlay */
+.lp-overlay{
+  display:none !important;
+  position:fixed !important;
+  inset:0 !important;
+  background:rgba(0,0,0,.5) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  z-index:9998 !important;
+}
+
+/* Modal container */
+.lp-modal{
+  display:none !important;
+  position:fixed !important;
+  inset:0 !important;
+  z-index:9999 !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+
+/* Visible state */
+.lp-modal.show{ display:flex !important; }
+.lp-overlay.show{ display:block !important; }
+
+/* Card */
+.lp-modal-content{
+  background:#ffffff !important;
+  border-radius:20px !important;
+  padding:2rem 2.2rem !important;
+  box-shadow:0 12px 40px rgba(0,119,182,0.35) !important;
+  border:3px solid #0077b6 !important;
+  max-width:min(760px,92vw) !important;
+  max-height:85vh !important;
+  overflow:auto !important;
+  position:relative !important;
+  animation: lpFade .25s ease-out !important;
+  color:#023e8a !important;
+  font-family:'Times New Roman', serif !important;
+  line-height:1.6 !important;
+}
+
+/* Close button */
+.lp-close{
+  position:absolute !important;
+  top:-14px !important;
+  right:-14px !important;
+  width:38px !important;
+  height:38px !important;
+  border-radius:50% !important;
+  background:#0077b6 !important;
+  color:#fff !important;
+  font-size:1.25rem !important;
+  border:none !important;
+  cursor:pointer !important;
+  box-shadow:0 4px 10px rgba(0,0,0,0.25) !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+.lp-close:hover{ background:#023e8a !important; }
+
+/* Typography */
+.lp-popup-text p{ margin:0 0 1rem 0 !important; font-size:1.05rem !important; }
+.lp-popup-text strong{ color:#0077b6 !important; }
+
+/* Body lock */
+body.modal-open{ overflow:hidden !important; touch-action:none !important; }
+
+@keyframes lpFade{ from{opacity:0; transform:scale(.96);} to{opacity:1; transform:scale(1);} }
+</style>
+
 </head>
 <body style="padding-top: 100px;">
+<!-- LP-SWIM Confirmation Overlay & Modal (v2) -->
+<div id="popupOverlay" class="lp-overlay" aria-hidden="true"></div>
+
+  </div>
+</div>
+
 <a class="visually-hidden" href="#start">
    Zum Inhalt springen
   </a>
@@ -797,21 +876,9 @@ section:target::before { content:""; display:block; height:var(--nav-offset); ma
     document.addEventListener("DOMContentLoaded", function () { const name = document.getElementById("name"); const email = document.getElementById("email"); const message = document.getElementById("message"); const button = document.querySelector("button[type='submit']"); function updateButtonHighlight() { if (name.value.trim() && email.value.trim() && message.value.trim()) { button.style.boxShadow = "0 0 12px rgba(0, 119, 182, 0.5)"; button.style.transform = "scale(1.03)"; } else { button.style.boxShadow = "none"; button.style.transform = "scale(1)"; } } name.addEventListener("input", updateButtonHighlight); email.addEventListener("input", updateButtonHighlight); message.addEventListener("input", updateButtonHighlight); });
    </script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () { const form = document.querySelector("form"); const popup = document.getElementById("confirmationPopup"); if (form && popup) { form.addEventListener("submit", function (e) { e.preventDefault(); const formData = new FormData(form); fetch(form.action, { method: "POST", body: formData, headers: { 'Accept': 'application/json' } }).then(response => { if (response.ok) { form.reset(); popup.style.display = "block"; } else { alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."); } }).catch(error => { alert("Netzwerkfehler. Bitte prüfen Sie Ihre Verbindung und versuchen Sie es erneut."); }); }); } });
+    document.addEventListener("DOMContentLoaded", function () { const form = document.querySelector("form"); const popup = document.getElementById("confirmationPopup"); if (form && popup) { form.addEventListener("submit", function (e) { e.preventDefault(); const formData = new FormData(form); fetch(form.action, { method: "POST", body: formData, headers: { 'Accept': 'application/json' } }).then(response => { if (response.ok) { form.reset(); openModal('confirmationPopup'); } else { alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."); } }).catch(error => { alert("Netzwerkfehler. Bitte prüfen Sie Ihre Verbindung und versuchen Sie es erneut."); }); }); } });
    </script>
-<div id="confirmationPopup" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-background-color: rgba(255,255,255,0.97); padding: 2rem 2.5rem; border-radius: 12px; box-shadow: 0 0 15px rgba(0,0,0,0.2);
-z-index: 9999; text-align: center; font-family: 'Times New Roman', serif;">
-<p style="font-size: 1.1rem; color: #0a2a43;">
-     Vielen Dank für Ihre Nachricht!
-     <br/>
-     Ich melde mich zeitnah zurück.
-    </p>
-<button style="margin-top:1.5rem; padding: 0.6rem 1.2rem;
-background-color: #0077b6; color: white; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer;">
-     Schließen
-    </button>
-</div>
+
 <script>
     document.addEventListener("scroll", function() { const nav = document.querySelector("nav"); if (window.scrollY > 10) { nav.classList.add("scrolled"); } else { nav.classList.remove("scrolled"); } });
    </script>
@@ -1729,9 +1796,152 @@ window.onclick = function(event){ /* disabled: outside click should not close mo
   });
 })();
 </script>
+
+<script id="lp-popup-logic">
+(function(){
+  var overlay = null, modal = null;
+
+  function ensureRefs(){
+    overlay = document.getElementById('popupOverlay');
+    modal = document.getElementById('confirmationPopup');
+  }
+  function openPopup(){
+    ensureRefs();
+    if (overlay) overlay.classList.add('show');
+    if (modal) modal.classList.add('show');
+    document.body.classList.add('modal-open');
+  }
+  function closePopup(){
+    ensureRefs();
+    if (overlay) overlay.classList.remove('show');
+    if (modal) modal.classList.remove('show');
+    document.body.classList.remove('modal-open');
+  }
+
+  // Close interactions
+  document.addEventListener('click', function(e){
+    if (e.target && e.target.id === 'closePopup') {
+      e.preventDefault();
+      closePopup();
+    }
+  });
+  // Escape key closes
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      closePopup();
+    }
+  });
+  // Backdrop clicks do NOT close (locked background)
+  document.addEventListener('click', function(e){
+    if (e.target && e.target.id === 'confirmationPopup') {
+      // do nothing -> locked
+      e.stopPropagation();
+    }
+  }, true);
+
+  // Hook contact form
+  function hookForm(){
+    var form = document.querySelector('#kontakt form');
+    if (!form || form.dataset.lpHooked === '1') return;
+    form.dataset.lpHooked = '1';
+
+    form.addEventListener('submit', async function(ev){
+      ev.preventDefault();
+      var formData = new FormData(form);
+      var action = form.getAttribute('action') || form.action || '';
+      var method = (form.getAttribute('method') || form.method || 'POST').toUpperCase();
+
+      try {
+        var resp = await fetch(action, {
+          method: method,
+          headers: { 'Accept': 'application/json' },
+          body: formData
+        });
+        // Open regardless of response to guarantee UX
+        openPopup();
+        form.reset();
+      } catch (err) {
+        openPopup();
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', hookForm);
+  } else {
+    hookForm();
+  }
+
+  // Expose for manual testing in console if needed
+  window.LP_POPUP_TEST = { open: openPopup, close: closePopup };
+})();
+</script>
+
+<!-- ==== MODAL WINDOW: Bestätigung ==== -->
+
+  </div>
+</div>
+
+
+  <!-- ==== MODAL WINDOW: Bestätigung (einheitlicher Stil) ==== -->
+
+<div id="confirmationPopup" class="modal" aria-labelledby="confirm-title" aria-modal="true" role="dialog">
+    <div class="modal-content" tabindex="-1">
+    <span class="close" onclick="closeModal('confirmationPopup')" aria-label="Schließen">×</span>
+
+    <h2 id="confirm-title">Ihre Nachricht wurde erfolgreich übermittelt</h2>
+    <hr>
+    <p>🔎 Das Wichtigste im Überblick::</p>
+
+    <p><strong>📍 Standorte &amp; Termine:</strong><br>
+    Viernheim &amp; Schriesheim | Termine nach Absprache</p>
+
+    <p><strong>🏊‍♀ Training:</strong><br>
+    60 Min. | Einzeltraining</p>
+
+    <p><strong>💳 Preise &amp; Zahlung:</strong><br>
+    Siehe Angebotskatalog | Vorkasse | Kartenzahlung/NFC vor Ort oder Rechnung per E-Mail | keine Barzahlung</p>
+
+    <p><strong>🧾 Rechnungsstellung:</strong><br>
+    Name, E-Mail, Anschrift</p>
+
+    <p><strong>🙋‍♂ Teilnehmerinfos:</strong><br>
+    Alter, Leistungsstand, Ziel, ggf. Gesundheitszustand</p>
+
+    <p><strong>❌ Absagen:</strong><br>
+    bis 24h kostenfrei | danach Berechnung | bei Krankheit Verschiebung</p>
+
+    <p><strong>🌐 AGB:</strong><br>
+    Website</p>
+  </div>
+</div>
+
+
+<script>
+  // Patch: reload page ONLY when the Confirmation modal is closed.
+  (function() {
+    var _origClose = window.closeModal;
+    window.closeModal = function(id) {
+      try {
+        if (typeof _origClose === "function") {
+          _origClose(id);
+        } else {
+          // fallback: minimal close behavior
+          var modal = document.getElementById(id);
+          if (modal) {
+            modal.classList.remove("show");
+            modal.style.display = "none";
+          }
+        }
+      } finally {
+        if (id === "confirmationPopup") {
+          location.reload();
+        }
+      }
+    };
+  })();
+</script>
+
 </body>
 </html>
-
-
-
 
