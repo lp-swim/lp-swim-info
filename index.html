@@ -788,6 +788,33 @@ input, select, textarea {font-size:16px !important;}
 }
 </style>
 
+
+<style id="mobile-button-padding-fix">
+@media (max-width: 768px) {
+  /* Einheitlicher Außenabstand für alle Buttons */
+  .btn, a.btn, button.btn,
+  #load-map {
+    width: 100% !important;
+    max-width: 360px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    box-sizing: border-box;
+  }
+
+  /* Button-Reihen sauber mittig stapeln */
+  .btn-row, .button-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.8rem;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+</style>
+
 </head>
 <body style="padding-top: 100px;">
 <!-- LP-SWIM Confirmation Overlay & Modal (v2) -->
