@@ -8,7 +8,7 @@
 <title>
    LP-SWIM – Professioneller Schwimmunterricht in Viernheim &amp; Umgebung
   </title>
-<meta content="Professionelles Schwimmtraining für Kinder, Jugendliche &amp; Erwachsene in Viernheim &amp; Schriesheim – individuell, sicher &amp; effektiv mit Schwimmlehrer Lukas Prehn." name="description"/>
+<meta content="Professionelles Einzeltraining für Kinder, Jugendliche &amp; Erwachsene in Viernheim und Schriesheim – vom ersten Wasserkontakt bis hin zur Verfeinerung bestehender Schwimmtechniken." name="description"/>
 <link href="https://lp-swim.github.io/lp-swim-info/" rel="canonical"/>
 <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
 <meta content="Lukas Prehn" name="author"/>
@@ -619,7 +619,6 @@ section:target::before { content:""; display:block; height:var(--nav-offset); ma
   section { content-visibility:visible !important; contain-intrinsic-size:auto !important; }
 }
 </style>
-
 <style>
 /* === Mobile-Fix (2025-08-18): Abstand oben minimieren & alte Regeln überschreiben === */
 @media (max-width: 767px) {
@@ -638,7 +637,6 @@ section:target::before { content:""; display:block; height:var(--nav-offset); ma
   body::before { content: none !important; }
 }
 </style>
-
 <style id="lp-popup-branding">
 /* Overlay */
 .lp-overlay{
@@ -711,8 +709,6 @@ body.modal-open{ overflow:hidden !important; touch-action:none !important; }
 
 @keyframes lpFade{ from{opacity:0; transform:scale(.96);} to{opacity:1; transform:scale(1);} }
 </style>
-
-
 <style id="lp-modal-mobile-2025">
 /* === Responsive Modal: Mobile Fullscreen + Scroll-Lock (2025-08) === */
 /* Overlay */
@@ -766,10 +762,8 @@ html.modal-open, body.modal-open {
 </head>
 <body style="padding-top: 100px;">
 <!-- LP-SWIM Confirmation Overlay & Modal (v2) -->
-<div id="popupOverlay" class="lp-overlay" aria-hidden="true"></div>
+<div aria-hidden="true" class="lp-overlay" id="popupOverlay"></div>
 
-  </div>
-</div>
 
 <a class="visually-hidden" href="#start">
    Zum Inhalt springen
@@ -866,7 +860,7 @@ html.modal-open, body.modal-open {
 <!-- === SECTION: #kontakt === -->
 <section aria-labelledby="heading-kontakt" id="kontakt" role="region" style=" margin: 2rem auto;  padding: 1.5rem;  background-color: rgba(255, 255, 255, 0.75);  border-radius: 10px;  box-shadow: 0 0 10px rgba(0,0,0,0.04);  max-width: 850px;">
 <div aria-hidden="true" class="lp-kontakt-media">
-<img alt="" decoding="async" fetchpriority="high" height="1600" loading="eager" src="kontakt-lukas.jpg" width="1200"/>
+<img alt="Bild" decoding="async" fetchpriority="high" height="1600" loading="eager" src="kontakt-lukas.jpg" width="1200"/>
 <div class="lp-kontakt-media-overlay">
 </div>
 </div>
@@ -955,7 +949,6 @@ html.modal-open, body.modal-open {
 <script>
     document.addEventListener("DOMContentLoaded", function () { const form = document.querySelector("form"); const popup = document.getElementById("confirmationPopup"); if (form && popup) { form.addEventListener("submit", function (e) { e.preventDefault(); const formData = new FormData(form); fetch(form.action, { method: "POST", body: formData, headers: { 'Accept': 'application/json' } }).then(response => { if (response.ok) { form.reset(); openModal('confirmationPopup'); } else { alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."); } }).catch(error => { alert("Netzwerkfehler. Bitte prüfen Sie Ihre Verbindung und versuchen Sie es erneut."); }); }); } });
    </script>
-
 <script>
     document.addEventListener("scroll", function() { const nav = document.querySelector("nav"); if (window.scrollY > 10) { nav.classList.add("scrolled"); } else { nav.classList.remove("scrolled"); } });
    </script>
@@ -1261,7 +1254,7 @@ window.onclick = function(event){ /* disabled: outside click should not close mo
             background:rgba(0,0,0,.35);z-index:9999;opacity:0;pointer-events:none;">
 <div style="min-width:220px;background:#fff;padding:18px 22px;border-radius:16px;
               box-shadow:0 10px 30px rgba(0,0,0,.2);text-align:center">
-<img alt="" decoding="async" height="56" loading="lazy" src="images/logo.png" style="width:56px;height:56px;display:block;margin:0 auto 10px" width="56"/>
+<img alt="LP-SWIM Logo" decoding="async" height="56" loading="lazy" src="images/logo.png" style="width:56px;height:56px;display:block;margin:0 auto 10px" width="56"/>
 <p style="margin:0;color:#0077b6;font-weight:600">
      Einen kurzen Augenblick, Sie werden weitergeleitet …
     </p>
@@ -1873,7 +1866,6 @@ window.onclick = function(event){ /* disabled: outside click should not close mo
   });
 })();
 </script>
-
 <script id="lp-popup-logic">
 (function(){
   var overlay = null, modal = null;
@@ -1953,44 +1945,30 @@ window.onclick = function(event){ /* disabled: outside click should not close mo
   window.LP_POPUP_TEST = { open: openPopup, close: closePopup };
 })();
 </script>
-
 <!-- ==== MODAL WINDOW: Bestätigung ==== -->
 
-  </div>
-</div>
 
-  <!-- ==== MODAL WINDOW: Bestätigung (einheitlicher Stil) ==== -->
-
-<div id="confirmationPopup" class="modal" aria-labelledby="confirm-title" aria-modal="true" role="dialog">
-    <div class="modal-content" tabindex="-1">
-    <span class="close" onclick="closeModal('confirmationPopup')" aria-label="Schließen">×</span>
-
-    <h2 id="confirm-title">Ihre Nachricht wurde erfolgreich übermittelt</h2>
-    
-    <p><strong>Das Wichtigste im Überblick – kurz zusammengefasst:</p>
-
-    <p><strong>📍 Standorte &amp; Termine:</strong><br>
+<!-- ==== MODAL WINDOW: Bestätigung (einheitlicher Stil) ==== -->
+<div aria-labelledby="confirm-title" aria-modal="true" class="modal" id="confirmationPopup" role="dialog">
+<div class="modal-content" tabindex="-1">
+<span aria-label="Schließen" class="close" onclick="closeModal('confirmationPopup')">×</span>
+<h2 id="confirm-title">Ihre Nachricht wurde erfolgreich übermittelt</h2>
+<p><strong>Das Wichtigste im Überblick – kurz zusammengefasst:</strong></p>
+<p><strong>📍 Standorte &amp; Termine:</strong><br/>
     Viernheim &amp; Schriesheim | Termine nach Absprache</p>
-
-    <p><strong>🏊‍♀ Training:</strong><br>
+<p><strong>🏊‍♀ Training:</strong><br/>
     60 Min. | Einzeltraining</p>
-
-    <p><strong>💳 Preise &amp; Zahlung:</strong><br>
+<p><strong>💳 Preise &amp; Zahlung:</strong><br/>
     Siehe Angebotskatalog | Vorkasse | Kartenzahlung/NFC vor Ort oder Rechnung per E-Mail | keine Barzahlung</p>
-
-    <p><strong>🧾 Rechnungsstellung:</strong><br>
+<p><strong>🧾 Rechnungsstellung:</strong><br/>
     Name, E-Mail, Anschrift</p>
-
-    <p><strong>🙋‍♂ Teilnehmerinfos:</strong><br>
+<p><strong>🙋‍♂ Teilnehmerinfos:</strong><br/>
     Alter, Leistungsstand, Ziel, ggf. Gesundheitszustand</p>
-
-    <p><strong>❌ Absagen:</strong><br>
+<p><strong>❌ Absagen:</strong><br/>
     bis 24h kostenfrei | danach Berechnung | bei Krankheit Verschiebung</p>
-
-    <p><strong>🌐 AGB:</strong><br>
+<p><strong>🌐 AGB:</strong><br/>
     Website</p>
 </div>
-
 <script>
   // Patch: reload page ONLY when the Confirmation modal is closed.
   (function() {
@@ -2015,8 +1993,6 @@ window.onclick = function(event){ /* disabled: outside click should not close mo
     };
   })();
 </script>
-
-
 <script id="lp-modal-lock-2025">
 // === Modal visibility & scroll-lock controller ===
 (function(){
@@ -2073,6 +2049,5 @@ window.onclick = function(event){ /* disabled: outside click should not close mo
   window.addEventListener('load', updateLock);
 })();
 </script>
-
-</body>
+</div></body>
 </html>
