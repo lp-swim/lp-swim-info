@@ -678,6 +678,59 @@ html.modal-open, body.modal-open {
       border: 2px solid #0077b6;
     }
   </style>
+
+<style id="lp-mobile-optimizations-2025-08">
+/* ===== LP‑SWIM Mobile Optimierungen (≤ 480px) ===== */
+@media (max-width: 480px) {
+  /* Typo & Abstände */
+  h1 { font-size: 1.35rem; line-height: 1.25; margin: 0 0 .6rem; text-align: center; }
+  h2 { font-size: 1.20rem !important; line-height: 1.25; margin: .5rem 0 .8rem !important; text-align: center !important; }
+  h3 { font-size: 1.05rem; line-height: 1.25; margin: .35rem 0 .6rem; text-align: center; }
+  p, li { font-size: .98rem; }
+
+  /* Sektionen kompakt & mittig */
+  section { padding: 0.9rem !important; margin: .8rem .6rem !important; text-align: center; border-radius: 12px !important; }
+  section > *:first-child { margin-top: 0; }
+
+  /* Bilder vollständig responsiv */
+  img, picture, video { max-width: 100%; height: auto; }
+  section:first-of-type img { max-width: 260px; margin: .25rem auto .5rem; border-radius: 16px !important; display:block; }
+
+  /* Links sauber umbrechen */
+  a { word-break: break-word; text-underline-offset: 2px; }
+
+  /* Buttons: full-width, untereinander, gut tappbar */
+  .btn-row, .actions, .buttons, .btn-wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    margin-top: 8px !important;
+  }
+  a.btn, .btn, button, .link-btn, [role="button"] {
+    display: block !important;
+    width: 100% !important;
+    min-height: 44px !important;
+    border-radius: 14px !important;
+    font-weight: 700;
+    text-align: center !important;
+    padding: 12px 14px !important;
+  }
+
+  /* Sterne/Ratings ausblenden (falls vorhanden) */
+  .rating, .stars, [aria-label*="Stern"], [class*="star"] { display: none !important; }
+
+  /* Navbar: kein Leerraum oben, ruhige Darstellung */
+  :root { --nav-offset: 0px; }
+  body { padding-top: 0 !important; }
+  nav { display: none !important; } /* bereits größtenteils so – harte Absicherung */
+
+  /* Footer & Formulare kompakter */
+  footer { padding: .9rem !important; }
+  form { margin: 1rem .5rem !important; padding: 1rem !important; }
+}
+</style>
 </head>
 <body style="padding-top: 100px;">
 <!-- LP-SWIM Confirmation Overlay & Modal (v2) -->
