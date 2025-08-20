@@ -743,49 +743,6 @@ input, select, textarea {font-size:16px !important;}
 /* 10) Kantenfälle: lange Wörter/URLs umbrechen */
 .wrap-any{overflow-wrap:anywhere; word-break:break-word;}
 </style>
-
-<style id="mobile-center-fixes-2025-08-20">
-/* --- Mobile: Buttons und Texte sauber mittig ausrichten --- */
-@media (max-width: 768px){
-  /* 1) Überschriften & Texte zentriert in relevanten Blöcken */
-  section h1, section h2, section h3,
-  .section-title, .headline, [id*="standort"] h2, [id*="standort"] h3 {
-    text-align:center !important;
-    margin-left:auto; margin-right:auto;
-  }
-  section p, section ul, section ol {
-    text-align: center;
-    margin-left:auto; margin-right:auto;
-  }
-  /* 2) CTA-Buttons/Links */
-  .btn, .button, .cta, .cta-primary, .cta-secondary,
-  a.button, a.btn, a[href*="route"], a[href*="rezension"], a[href*="Rezension"], button {
-    display:block !important;
-    width: min(100%, 340px) !important;
-    margin: 12px auto !important;
-    text-align: center !important;
-    border-radius: 14px !important;
-    line-height: 1.2;
-  }
-  /* 3) Reihen aus Buttons vertikal stapeln und mittig halten */
-  .button-row, .cta-row, .cta-group, .actions {
-    display:flex !important;
-    flex-direction:column !important;
-    align-items:center !important;
-    gap:12px !important;
-  }
-  /* 4) Karten/Info-Boxen nicht einrücken */
-  .card, .box, .info, .location-card, [id*="standort"] .card {
-    margin-left:auto !important;
-    margin-right:auto !important;
-    border-radius: 16px !important;
-  }
-  /* 5) Logo/kleine Images links/rechts nicht kollidieren lassen */
-  img {
-    margin-left:auto; margin-right:auto;
-  }
-}
-</style>
 </head>
 <body style="padding-top: 100px;">
 <!-- LP-SWIM Confirmation Overlay & Modal (v2) -->
