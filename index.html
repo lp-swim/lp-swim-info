@@ -743,6 +743,51 @@ input, select, textarea {font-size:16px !important;}
 /* 10) Kantenfälle: lange Wörter/URLs umbrechen */
 .wrap-any{overflow-wrap:anywhere; word-break:break-word;}
 </style>
+
+<style id="mobile-button-center-2025-08-20">
+/* === Mobile Buttons: sauber zentrieren & identische Breite === */
+@media (max-width: 768px) {
+  /* Primärer DSGVO-Button ("Karte laden") */
+  #load-map {
+    display: inline-flex !important;
+    justify-content: center;
+    align-items: center;
+    width: min(92vw, 360px) !important;
+    margin: 0.5rem auto !important;
+    text-align: center !important;
+    box-sizing: border-box;
+  }
+
+  /* Alle Aktions-Buttons in diesem Abschnitt (Route, Rezensionen, etc.) */
+  .btn, a.btn, button.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: min(92vw, 360px);
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  /* Flex-Reihen mit Buttons: mittig anordnen, kein Überlauf */
+  .btn-row, .button-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  /* Sicherheitsnetz: keine horizontale Scrollleiste durch Subpixel */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+}
+</style>
+
 </head>
 <body style="padding-top: 100px;">
 <!-- LP-SWIM Confirmation Overlay & Modal (v2) -->
