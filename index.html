@@ -842,6 +842,26 @@ input, select, textarea {font-size:16px !important;}
 html, body { overflow-x: hidden; }
 </style>
 
+
+<style id="standort-padding-fix-2025-08-20">
+@media (max-width: 768px) {
+  /* Gleiche Seitenabstände für die gesamte Standort-Sektion */
+  #standort {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+  /* Inhalt innerhalb nicht an den Rand kleben lassen */
+  #standort .lp-standort {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}
+</style>
+
 </head>
 <body style="padding-top: 100px;">
 <!-- LP-SWIM Confirmation Overlay & Modal (v2) -->
