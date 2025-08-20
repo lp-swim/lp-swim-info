@@ -843,68 +843,52 @@ html, body { overflow-x: hidden; }
 </style>
 
 
-<style id="mobile-360-hard-fix">
-/* Mobile-only: harte Begrenzung + kein Abschneiden */
+<style id="mobile-360-luftig">
+/* Mobile-only: luftiger, weicher, mit weniger Top-Abstand beim Intro */
 @media (max-width: 768px) {
-  :root { --mobile-gutter: 16px; }
+  :root { --mobile-gutter: 18px; }
 
   html, body {
     margin: 0 !important;
     padding: 0 !important;
     overflow-x: hidden !important;
+    scroll-behavior: smooth !important;
   }
 
-  /* Globale Textboxen */
   section, form {
     max-width: 360px !important;
     width: calc(100vw - var(--mobile-gutter) * 2) !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding: 1rem !important;
+    margin: 1.2rem auto !important;      /* etwas luftiger */
+    padding: 1.25rem !important;
     box-sizing: border-box !important;
-    border-radius: 12px !important;
+    border-radius: 14px !important;
+    transition: all 0.35s ease-in-out;   /* weiche Übergänge */
   }
 
-  /* Standort-Grid IMMER stapeln, damit nichts „ansägt“ */
+  /* Begrüßungssektion („schön dass du da bist“) mit weniger Abstand nach oben */
+  section:first-of-type {
+    margin-top: 0.8rem !important;
+  }
+
+  /* Headings luftiger machen */
+  section h1, section h2 {
+    margin-top: 0.2rem !important;
+    margin-bottom: 0.8rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Standort-Block bleibt 1-spaltig */
   .lp-standort {
     display: grid !important;
     grid-template-columns: 1fr !important;
-    gap: 1rem !important;
-    align-items: start !important;
-    justify-items: stretch !important;
+    gap: 1.2rem !important;
   }
 
-  /* Karten-Container und iFrame auf Containerbreite halten */
-  #map-consent,
-  #map-frame,
-  #map-frame iframe {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow: hidden !important;
-    border-radius: 12px !important;
-  }
-
-  /* Buttons & Reihen: niemals breiter als Container, lieber umbrechen */
-  .lp-standort .btn,
-  .lp-standort a.btn,
-  .lp-standort button,
-  #load-map {
-    width: 100% !important;
-    max-width: 100% !important;
-    white-space: normal !important;
-  }
-
-  /* Generischer Schutz: direkte Kinder dürfen nicht überstehen */
-  section > *, form > * {
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Bilder und eingebettete Medien */
   img, iframe {
     max-width: 100% !important;
     height: auto !important;
     display: block !important;
+    border-radius: 12px;
   }
 }
 </style>
