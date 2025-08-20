@@ -843,30 +843,68 @@ html, body { overflow-x: hidden; }
 </style>
 
 
-<style id="mobile-360-padding-strong">
-/* Mobile-only (<=768px): 360px Maxbreite, sauber mittig, gleiches Padding */
+<style id="mobile-360-hard-fix">
+/* Mobile-only: harte Begrenzung + kein Abschneiden */
 @media (max-width: 768px) {
-  :root { --mobile-gutter: 16px; } /* Weißraum links/rechts */
-  body { margin: 0 !important; padding: 0 !important; }
+  :root { --mobile-gutter: 16px; }
 
-  /* Hohe Spezifität, überschreibt frühere Regeln */
-  html body > section,
-  html body > form,
-  html body section.section,
-  html body section,
-  html body form {
-    max-width: min(360px, 100vw - (var(--mobile-gutter) * 2)) !important;
-    width: auto !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding: 1rem !important;          /* gleichmäßig */
-    box-sizing: border-box !important;
-    overflow: visible !important;       /* nichts wird abgeschnitten */
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
   }
 
-  /* Innere Elemente dürfen nicht über den Container hinausragen */
-  html body section > *, html body form > * {
+  /* Globale Textboxen */
+  section, form {
+    max-width: 360px !important;
+    width: calc(100vw - var(--mobile-gutter) * 2) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 1rem !important;
+    box-sizing: border-box !important;
+    border-radius: 12px !important;
+  }
+
+  /* Standort-Grid IMMER stapeln, damit nichts „ansägt“ */
+  .lp-standort {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    align-items: start !important;
+    justify-items: stretch !important;
+  }
+
+  /* Karten-Container und iFrame auf Containerbreite halten */
+  #map-consent,
+  #map-frame,
+  #map-frame iframe {
+    width: 100% !important;
     max-width: 100% !important;
+    overflow: hidden !important;
+    border-radius: 12px !important;
+  }
+
+  /* Buttons & Reihen: niemals breiter als Container, lieber umbrechen */
+  .lp-standort .btn,
+  .lp-standort a.btn,
+  .lp-standort button,
+  #load-map {
+    width: 100% !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
+
+  /* Generischer Schutz: direkte Kinder dürfen nicht überstehen */
+  section > *, form > * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Bilder und eingebettete Medien */
+  img, iframe {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
   }
 }
 </style>
