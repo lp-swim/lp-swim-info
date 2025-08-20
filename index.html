@@ -678,6 +678,71 @@ html.modal-open, body.modal-open {
       border: 2px solid #0077b6;
     }
   </style>
+
+<style id="mobile-overrides-2025-08-20">
+/* ===== Mobile-First Verbesserungen (nicht-destruktiv, nur Overrides) ===== */
+
+/* 0) Basis: Bilder/Medien nie überlaufen lassen */
+img, video, iframe {max-width:100%; height:auto; display:block;}
+pre, code {white-space: pre-wrap; word-break: break-word;}
+html, body {max-width:100%; overflow-x:hidden;}
+
+/* 1) Navigation: auf Mobile komplett ausblenden, Desktop unverändert */
+@media (max-width: 768px){
+  nav {display:none !important;}
+  body{padding-top:0 !important;}
+}
+
+/* 2) Sections kompakter und lesbarer auf kleinen Bildschirmen */
+@media (max-width: 768px){
+  section{margin:0.8rem !important; padding:1rem !important; border-radius:14px !important;}
+  section > *:first-child{margin-top:0;}
+  section > *:last-child{margin-bottom:0;}
+}
+
+/* 3) Typografie skaliert flüssig */
+h1{font-size:clamp(1.35rem, 5.2vw, 2rem) !important;}
+h2{font-size:clamp(1.2rem, 4.4vw, 1.6rem) !important;}
+h3{font-size:clamp(1.05rem, 4vw, 1.25rem) !important;}
+p, li, label, input, textarea{font-size:clamp(0.98rem, 3.2vw, 1.05rem) !important; line-height:1.55;}
+
+/* 4) Buttons & Links klickfreundlich, aber nicht riesig */
+button, .btn, a.button, nav a{
+  min-height:44px; 
+  padding:0.8rem 1rem !important;
+  border-radius:12px !important;
+}
+@media (max-width: 768px){
+  button, .btn, a.button{
+    width:100%; max-width:360px; margin:0.5rem auto !important; display:block;
+    font-size:1rem !important;
+  }
+}
+
+/* 5) Karten/Tabellen/Embeds – horizontal scrollbar statt Layoutbruch */
+.table-scroll{overflow-x:auto; -webkit-overflow-scrolling:touch;}
+.table-scroll table{min-width:600px;}
+.map, .map-embed, iframe[src*="google.com/maps"]{width:100% !important; border:0; border-radius:12px;}
+
+/* 6) Hintergrund-Logo auf Mobile nicht übermächtig */
+@media (max-width: 768px){
+  body{background-size: clamp(160px, 55vw, 320px) !important; background-attachment: scroll !important;}
+}
+
+/* 7) Cards/Boxen – dezente Schatten, konsistent */
+section{box-shadow: 0 2px 12px rgba(0,0,0,0.05) !important; background-color: rgba(255,255,255,.88) !important;}
+
+/* 8) Formular – Eingabefelder gut bedienbar (iOS-Zoom verhindern) */
+input, select, textarea {font-size:16px !important;}
+
+/* 9) Abstand unter fixierter Nav nur auf ≥769px (Desktop) – fallback falls anderswo gesetzt */
+@media (min-width: 769px){
+  body{padding-top: 70px !important;}
+}
+
+/* 10) Kantenfälle: lange Wörter/URLs umbrechen */
+.wrap-any{overflow-wrap:anywhere; word-break:break-word;}
+</style>
 </head>
 <body style="padding-top: 100px;">
 <!-- LP-SWIM Confirmation Overlay & Modal (v2) -->
