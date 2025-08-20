@@ -789,30 +789,57 @@ input, select, textarea {font-size:16px !important;}
 </style>
 
 
-<style id="mobile-button-padding-fix">
+<style id="standort-align-fix-2025-08-20">
+/* === Standort-Karte: Head-Zeile + Link mittig ausrichten === */
+.lp-standort > div:last-child {
+  text-align: center !important;
+  align-items: center !important;
+}
+/* Logo + Name + "Auf Google Maps ansehen" Zeile */
+.lp-standort > div:last-child > div:first-child {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.75rem !important;
+}
+
+/* === Buttons einheitlich === */
 @media (max-width: 768px) {
-  /* Einheitlicher Außenabstand für alle Buttons */
-  .btn, a.btn, button.btn,
-  #load-map {
-    width: 100% !important;
-    max-width: 360px !important;
+  /* Stack statt Reihe und mittig */
+  .lp-standort [style*="display:flex"][style*="flex-wrap:wrap"] {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.8rem !important;
+  }
+
+  /* Breite & Padding angleichen */
+  .lp-standort a.btn, .lp-standort button.btn, #load-map {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: min(92vw, 360px) !important;
+    max-width: 100% !important;
+    min-width: unset !important;
+    flex: 0 0 auto !important;
     margin-left: auto !important;
     margin-right: auto !important;
     padding-left: 1rem !important;
     padding-right: 1rem !important;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
   }
-
-  /* Button-Reihen sauber mittig stapeln */
-  .btn-row, .button-row {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 0.8rem;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
+  /* Gleiche Borderstärke, damit die optische Breite identisch ist */
+  .lp-standort .btn-primary { border: 2px solid #0077b6 !important; }
+  .lp-standort .btn-ghost   { border: 2px solid #0077b6 !important; background: transparent !important; }
 }
+
+/* Desktop/Tablet: Head-Zeile bleibt zentriert; bei sehr schmalen Displays Logo über Text stapeln */
+@media (max-width: 560px) {
+  .lp-standort > div:last-child > div:first-child { flex-direction: column !important; }
+}
+
+/* Sicherheitsnetz: keine horizontale Scrollleiste durch Subpixel */
+html, body { overflow-x: hidden; }
 </style>
 
 </head>
