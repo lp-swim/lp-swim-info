@@ -843,15 +843,30 @@ html, body { overflow-x: hidden; }
 </style>
 
 
-<style id="mobile-360-padding">
-/* Mobile-only: einheitliches Padding & max. 360px, sauber mittig */
+<style id="mobile-360-padding-strong">
+/* Mobile-only (<=768px): 360px Maxbreite, sauber mittig, gleiches Padding */
 @media (max-width: 768px) {
-  section, form {
-    max-width: 360px !important;
-    width: 100% !important;
-    margin: 1rem auto !important;
-    padding: 1.25rem !important; /* gleichmäßig, nichts schneidet am Rand ab */
+  :root { --mobile-gutter: 16px; } /* Weißraum links/rechts */
+  body { margin: 0 !important; padding: 0 !important; }
+
+  /* Hohe Spezifität, überschreibt frühere Regeln */
+  html body > section,
+  html body > form,
+  html body section.section,
+  html body section,
+  html body form {
+    max-width: min(360px, 100vw - (var(--mobile-gutter) * 2)) !important;
+    width: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 1rem !important;          /* gleichmäßig */
     box-sizing: border-box !important;
+    overflow: visible !important;       /* nichts wird abgeschnitten */
+  }
+
+  /* Innere Elemente dürfen nicht über den Container hinausragen */
+  html body section > *, html body form > * {
+    max-width: 100% !important;
   }
 }
 </style>
