@@ -776,7 +776,23 @@ html, body { overflow-x: hidden; }
   }
 }
 </style>
-<meta content="index, follow" name="googlebot"/><meta content="index, follow" name="bingbot"/><link href="https://lp-swim.github.io/lp-swim-info/" rel="canonical"/><link href="https://lp-swim.github.io/lp-swim-info/" hreflang="de" rel="alternate"/><meta content="de_DE" property="og:locale"/><meta content="summary_large_image" name="twitter:card"/><meta content="LP-SWIM – 60 Minuten Schwimmtraining im Einzelsetting in Viernheim &amp; Umgebung" name="twitter:title"/><meta content="Schwimmunterricht im Einzelsetting – vom ersten Wasserkontakt bis zur Technikverfeinerung." name="twitter:description"/><meta content="https://lp-swim.github.io/lp-swim-info/images/logo.png" name="twitter:image"/></head>
+<meta content="index, follow" name="googlebot"/><meta content="index, follow" name="bingbot"/><link href="https://lp-swim.github.io/lp-swim-info/" rel="canonical"/><link href="https://lp-swim.github.io/lp-swim-info/" hreflang="de" rel="alternate"/><meta content="de_DE" property="og:locale"/><meta content="summary_large_image" name="twitter:card"/><meta content="LP-SWIM – 60 Minuten Schwimmtraining im Einzelsetting in Viernheim &amp; Umgebung" name="twitter:title"/><meta content="Schwimmunterricht im Einzelsetting – vom ersten Wasserkontakt bis zur Technikverfeinerung." name="twitter:description"/><meta content="https://lp-swim.github.io/lp-swim-info/images/logo.png" name="twitter:image"/><style id="perf-fixes">
+  /* Begrenze teure globale Transition "all" */
+  * { transition-property: transform, opacity, background-color, color, box-shadow !important; }
+
+  /* Rendern außerhalb des Viewports überspringen (kein visueller Effekt) */
+  @media (min-width: 1025px){
+    section{ content-visibility:auto; contain-intrinsic-size:1px 700px; }
+  }
+
+  /* Stabiler Anker-Offset */
+  :root{ --nav-offset: 90px; }
+  body{ padding-top:var(--nav-offset)!important; }
+  section:target::before{ content:""; display:block; height:var(--nav-offset); margin-top:calc(var(--nav-offset)*-1); visibility:hidden; }
+
+  img{ display:block; height:auto; max-width:100%; }
+</style>
+</head>
 <body style="padding-top: 100px;">
 <div aria-hidden="true" class="lp-overlay" id="popupOverlay">
 </div>
@@ -2266,6 +2282,36 @@ window.onclick = function(event){ /* disabled: outside click should not close mo
       }
     }
   });
+})();
+</script>
+<script>
+(function(){
+  // Markiere erstes sichtbares Bild als High-Priority, alle anderen lazy
+  function inViewport(el){ var r=el.getBoundingClientRect(); return r.top>=0 && r.top < (innerHeight*0.75); }
+
+  var imgs = Array.prototype.slice.call(document.images || []);
+  var first = imgs.find(inViewport);
+  imgs.forEach(function(img){
+    // ensure dimensions to avoid layout shift (falls schon vorhanden, bleiben sie erhalten)
+    if(!img.getAttribute('width') && img.naturalWidth){ img.setAttribute('width', img.naturalWidth); }
+    if(!img.getAttribute('height') && img.naturalHeight){ img.setAttribute('height', img.naturalHeight); }
+
+    if(first && img===first){
+      img.setAttribute('loading','eager');
+      img.setAttribute('decoding','sync');
+      img.setAttribute('fetchpriority','high');
+    } else {
+      if(!img.hasAttribute('loading')) img.setAttribute('loading','lazy');
+      img.setAttribute('decoding','async');
+      if(!img.hasAttribute('fetchpriority')) img.setAttribute('fetchpriority','low');
+    }
+  });
+
+  // Externe Links sicher öffnen
+  document.querySelectorAll('a[target="_blank"]').forEach(function(a){
+    if(!/\bnoopener\b/.test(a.rel)) a.rel = (a.rel + ' noopener').trim();
+  });
+
 })();
 </script>
 </body>
