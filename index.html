@@ -22,7 +22,7 @@
 <link href="favicon.ico" rel="icon" type="image/x-icon"/>
 <style>
    /* --- Consolidated CSS (order preserved) --- */
-* { margin: 0; padding: 0; box-sizing: border-box; transition: all 0.3s ease-in-out; } html { scroll-behavior: smooth; font-size: 16px; } body { font-family: 'Times New Roman', Times, serif; font-size: 1rem; background: #e0f7fa url('background-logo.png') no-repeat center center fixed; background-size: 40%; color: #0a2a43; line-height: 1.6; padding-bottom: 80px; } nav { background: #368fb8; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; } nav a { border-radius: 32px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); font-weight: bold; letter-spacing: 0.4px; background-image: linear-gradient(to right, #368fb8, #368fb8); color: #ffffff; border: 1px solid #2e7ea1; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); font-weight: bold; letter-spacing: 0.3px; color: #ffffff; text-decoration: none; padding: 0.6rem 1.2rem; background-color: #368fb8; border-radius: 4px; } nav a:hover { background-image: linear-gradient(to right, #368fb8, #368fb8); transform: translateY(-2px) scale(1.04); box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18); border: 1px solid #2e7ea1; background-color: #368fb8; } section { max-width: 850px; margin: 3rem auto; padding: 2rem; background-color: rgba(255, 255, 255, 0.88); border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.05); } h2 { font-size: 1.8rem; margin-bottom: 1rem; color: #368fb8; border-bottom: 2px solid #2e7ea1; padding-bottom: 0.4rem; font-weight: normal; } p { margin-bottom: 1.25rem; font-weight: normal; } form { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; background-color: rgba(255, 255, 255, 0.75); padding: 2rem; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.08); } input, textarea { padding: 0.8rem; border-radius: 6px; border: 1px solid #ccc; font-family: 'Times New Roman', Times, serif; font-size: 1rem; } button { background: #368fb8; color: white; padding: 0.9rem; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer; } button:hover { background: #2e7ea1; } footer { background: #e0f7fa; text-align: center; padding: 1rem; font-size: 0.9rem; position: relative; bottom: 0; left: 0; right: 0; } .modal { display: none; position: static; z-index: 1001; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); align-items: center; justify-content: center; } .modal.show { display: flex; animation: pop 0.4s ease-out; } @keyframes pop { 0% { transform: scale(0.95); opacity: 0; } 100% { transform: scale(1); opacity: 1; } } /* Scroll-Effekte visuell abgerundet */ section { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; } section.show { opacity: 1; transform: translateY(0); } body { padding: 0 0 40px 0; margin: 0; background: #e0f7fa url('background-logo.png') no-repeat center center fixed; background-size: 40%; font-family: 'Times New Roman', Times, serif; font-size: 1rem; color: #111; line-height: 1.6; overflow-x: hidden; } section { background-color: rgba(255, 255, 255, 0.75); margin: 2rem auto; padding: 1.5rem; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); max-width: 850px; } footer { background: #e0f7fa; text-align: center; padding: 1rem 1rem 1.5rem 1rem; font-size: 0.9rem; border-top: 1px solid #ccc; margin-top: 2rem; position: relative; bottom: 0; left: 0; right: 0; } form { background-color: rgba(255, 255, 255, 0.75); padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 16px rgba(0,0,0,0.05); max-width: 600px; margin: 2rem auto 1rem auto; } @media (max-width: 768px) { section { margin: 1rem; padding: 1rem; } form { margin: 1rem; padding: 1rem; } } nav { background: #368fb8; padding: 1.2rem 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; border-radius: 0 0 18px 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); } nav a { border-radius: 32px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); font-weight: bold; letter-spacing: 0.4px; background-image: linear-gradient(to right, #368fb8, #368fb8); color: #ffffff; border: 1px solid #2e7ea1; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); font-weight: bold; letter-spacing: 0.3px; color: #ffffff; text-decoration: none; padding: 0.7rem 1.4rem; background-color: #368fb8; border-radius: 24px; transition: background 0.3s ease, transform 0.2s ease; font-weight: bold; font-size: 1.05rem; } nav a:hover { background-image: linear-gradient(to right, #368fb8, #368fb8); transform: translateY(-2px) scale(1.04); box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18); border: 1px solid #2e7ea1; background-color: #368fb8; transform: scale(1.05); } /* Vollständig abgerundete Navigationsleiste */ nav { border-radius: 18px; margin: 1rem auto; max-width: 950px; } @media (max-width: 768px) { nav { flex-direction: column; align-items: center; } } /* Desktop: Navigation breiter darstellen */ @media (min-width: 1024px) { nav { max-width: 1080px; padding: 1.5rem 2rem; } nav a { border-radius: 32px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); font-weight: bold; letter-spacing: 0.4px; background-image: linear-gradient(to right, #368fb8, #368fb8); color: #ffffff; border: 1px solid #2e7ea1; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); font-weight: bold; letter-spacing: 0.3px; font-size: 1.1rem; padding: 0.8rem 1.6rem; } } /* Mobile: kompakte Darstellung */ @media (max-width: 768px) { nav { padding: 0.8rem; gap: 0.6rem; } nav a { border-radius: 32px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); font-weight: bold; letter-spacing: 0.4px; background-image: linear-gradient(to right, #368fb8, #368fb8); color: #ffffff; border: 1px solid #2e7ea1; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); font-weight: bold; letter-spacing: 0.3px; padding: 0.6rem 1rem; font-size: 1rem; } } button[type="submit"] { background-color: #368fb8; color: #ffffff; padding: 0.7rem 1.4rem; border-radius: 24px; font-size: 1.05rem; font-weight: bold; font-family: 'Times New Roman', Times, serif; text-decoration: none; transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.05); display: inline-block; border: none; cursor: pointer; background-color: #368fb8; color: white; padding: 0.9rem 1.6rem; border: none; border-radius: 24px; font-size: 1.1rem; font-weight: bold; font-family: 'Times New Roman', Times, serif; cursor: pointer; transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; font-family: 'Times New Roman', Times, serif; background-color: #368fb8; color: white; padding: 0.8rem 1.6rem; font-size: 1.1rem; border: none; border-radius: 10px; cursor: pointer; margin-top: 1rem; transition: background 0.3s ease, transform 0.2s ease; } background-color: #368fb8; color: white; padding: 0.8rem 1.6rem; font-size: 1.1rem; border: none; border-radius: 10px; cursor: pointer; margin-top: 1rem; transition: background 0.3s ease, transform 0.2s ease; } button[type="submit"]:hover { background-color: #368fb8; transform: scale(1.05); box-shadow: 0 0 8px rgba(0, 119, 182, 0.3); background-color: #2e7ea1; transform: scale(1.05); box-shadow: 0 0 8px rgba(0, 119, 182, 0.3); background-color: #2e7ea1; transform: scale(1.05); box-shadow: 0 0 10px rgba(0, 119, 182, 0.3); } background-color: #2e7ea1; transform: scale(1.05); box-shadow: 0 0 10px rgba(2, 62, 138, 0.3); } @media (max-width: 768px) { nav { background-color: #368fb8; padding: 1rem; border-radius: 12px; } nav a { display: block; width: 100%; background: linear-gradient(to right, #0096c7, #368fb8); border-radius: 12px; padding: 0.8rem; margin-bottom: 0.5rem; text-align: center; font-weight: bold; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); } nav a:hover { background: linear-gradient(to right, #368fb8, #2e7ea1); transform: scale(1.03); } } @media (max-width: 768px) { body { background-size: 70% !important; } } @media (max-width: 480px) { body { background-size: 90% !important; } } @media (max-width: 768px) { body { background-size: 110% !important; } } @media (max-width: 480px) { body { background-size: 140% !important; } } @media (max-width: 768px) { nav { background-color: #368fb8; padding: 1rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); } nav a { display: block; width: 100%; background: linear-gradient(145deg, #0096c7, #368fb8); border-radius: 14px; padding: 1rem; margin-bottom: 0.75rem; text-align: center; font-weight: bold; font-size: 1.1rem; color: #ffffff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); } nav a:hover { background: linear-gradient(145deg, #368fb8, #2e7ea1); transform: translateY(-1px) scale(1.04); } } @media (max-width: 768px) { #menu-toggle { display: block; } nav { display: none; flex-direction: column; align-items: center; padding: 1rem; background-color: #368fb8; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin: 1rem; } nav.visible { display: flex; } nav a { width: 100%; margin: 0.3rem 0; } } @media (max-width: 768px) { body { margin: 0; padding: 0; background-attachment: fixed; background-position: center top; background-repeat: no-repeat; background-size: 140% !important; min-height: 100vh; } section { width: 100%; max-width: 100%; box-sizing: border-box; margin: 1rem auto; padding: 1rem 1.2rem; border-radius: 16px; } footer { width: 100%; margin: 0 auto; border-radius: 0; padding: 1.2rem; box-sizing: border-box; } form { width: 100%; max-width: 100%; margin: 1rem 0; padding: 1.2rem; box-sizing: border-box; } } @media (max-width: 768px) { body { background-attachment: fixed !important; background-position: center center !important; background-repeat: no-repeat !important; background-size: 140% !important; overflow-x: hidden; } } @media (max-width: 768px) { nav { display: none !important; } } body::before { content: ""; position: static; top: 0; left: 0; width: 100vw; height: 100vh; background: #e6f4fb url('background-logo.png') no-repeat center center; background-size: 60%; opacity: 0.15; z-index: -1; pointer-events: none; } html, body { height: 100%; overflow-x: hidden; background-color: #e6f4fb; } body::before { content: ""; position: static; top: 0; left: 0; width: 100%; height: 100%; background-image: url('background-logo.png'); background-position: center center; background-repeat: no-repeat; background-size: 60%; opacity: 0.15; z-index: -1; pointer-events: none; will-change: transform; transform: translate3d(0, 0, 0); -webkit-transform: translate3d(0, 0, 0); -webkit-backface-visibility: hidden; }
+* { margin: 0; padding: 0; box-sizing: border-box; transition: all 0.3s ease-in-out; } html { scroll-behavior: smooth; font-size: 16px; } body { font-family: 'Times New Roman', Times, serif; font-size: 1rem; background: #e0f7fa url('background-logo.png') no-repeat center center fixed; background-size: 40%; color: #0a2a43; line-height: 1.6; padding-bottom: 80px; } nav { background: #368fb8; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; } nav a { border-radius: 32px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); font-weight: bold; letter-spacing: 0.4px; background-image: linear-gradient(to right, #368fb8, #368fb8); color: #ffffff; border: 1px solid #2e7ea1; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); font-weight: bold; letter-spacing: 0.3px; color: #ffffff; text-decoration: none; padding: 0.6rem 1.2rem; background-color: #368fb8; border-radius: 4px; } nav a:hover { background-image: linear-gradient(to right, #368fb8, #368fb8); transform: translateY(-2px) scale(1.04); box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18); border: 1px solid #2e7ea1; background-color: #368fb8; } section { max-width: 850px; margin: 3rem auto; padding: 2rem; background-color: rgba(255, 255, 255, 0.88); border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.05); } h2 { font-size: 1.8rem; margin-bottom: 1rem; color: #368fb8; border-bottom: 2px solid #2e7ea1; padding-bottom: 0.4rem; font-weight: normal; } p { margin-bottom: 1.25rem; font-weight: normal; } form { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; background-color: rgba(255, 255, 255, 0.75); padding: 2rem; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.08); } input, textarea { padding: 0.8rem; border-radius: 6px; border: 1px solid #ccc; font-family: 'Times New Roman', Times, serif; font-size: 1rem; } button { background: #368fb8; color: white; padding: 0.9rem; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer; } button:hover { background: #2e7ea1; } footer { background: #e0f7fa; text-align: center; padding: 1rem; font-size: 0.9rem; position: relative; bottom: 0; left: 0; right: 0; } .modal { display: none;  z-index: 1001; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); align-items: center; justify-content: center; } .modal.show { display: flex; animation: pop 0.4s ease-out; } @keyframes pop { 0% { transform: scale(0.95); opacity: 0; } 100% { transform: scale(1); opacity: 1; } } /* Scroll-Effekte visuell abgerundet */ section { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; } section.show { opacity: 1; transform: translateY(0); } body { padding: 0 0 40px 0; margin: 0; background: #e0f7fa url('background-logo.png') no-repeat center center fixed; background-size: 40%; font-family: 'Times New Roman', Times, serif; font-size: 1rem; color: #111; line-height: 1.6; overflow-x: hidden; } section { background-color: rgba(255, 255, 255, 0.75); margin: 2rem auto; padding: 1.5rem; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); max-width: 850px; } footer { background: #e0f7fa; text-align: center; padding: 1rem 1rem 1.5rem 1rem; font-size: 0.9rem; border-top: 1px solid #ccc; margin-top: 2rem; position: relative; bottom: 0; left: 0; right: 0; } form { background-color: rgba(255, 255, 255, 0.75); padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 16px rgba(0,0,0,0.05); max-width: 600px; margin: 2rem auto 1rem auto; } @media (max-width: 768px) { section { margin: 1rem; padding: 1rem; } form { margin: 1rem; padding: 1rem; } } nav { background: #368fb8; padding: 1.2rem 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; border-radius: 0 0 18px 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); } nav a { border-radius: 32px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); font-weight: bold; letter-spacing: 0.4px; background-image: linear-gradient(to right, #368fb8, #368fb8); color: #ffffff; border: 1px solid #2e7ea1; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); font-weight: bold; letter-spacing: 0.3px; color: #ffffff; text-decoration: none; padding: 0.7rem 1.4rem; background-color: #368fb8; border-radius: 24px; transition: background 0.3s ease, transform 0.2s ease; font-weight: bold; font-size: 1.05rem; } nav a:hover { background-image: linear-gradient(to right, #368fb8, #368fb8); transform: translateY(-2px) scale(1.04); box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18); border: 1px solid #2e7ea1; background-color: #368fb8; transform: scale(1.05); } /* Vollständig abgerundete Navigationsleiste */ nav { border-radius: 18px; margin: 1rem auto; max-width: 950px; } @media (max-width: 768px) { nav { flex-direction: column; align-items: center; } } /* Desktop: Navigation breiter darstellen */ @media (min-width: 1024px) { nav { max-width: 1080px; padding: 1.5rem 2rem; } nav a { border-radius: 32px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); font-weight: bold; letter-spacing: 0.4px; background-image: linear-gradient(to right, #368fb8, #368fb8); color: #ffffff; border: 1px solid #2e7ea1; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); font-weight: bold; letter-spacing: 0.3px; font-size: 1.1rem; padding: 0.8rem 1.6rem; } } /* Mobile: kompakte Darstellung */ @media (max-width: 768px) { nav { padding: 0.8rem; gap: 0.6rem; } nav a { border-radius: 32px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); font-weight: bold; letter-spacing: 0.4px; background-image: linear-gradient(to right, #368fb8, #368fb8); color: #ffffff; border: 1px solid #2e7ea1; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); font-weight: bold; letter-spacing: 0.3px; padding: 0.6rem 1rem; font-size: 1rem; } } button[type="submit"] { background-color: #368fb8; color: #ffffff; padding: 0.7rem 1.4rem; border-radius: 24px; font-size: 1.05rem; font-weight: bold; font-family: 'Times New Roman', Times, serif; text-decoration: none; transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.05); display: inline-block; border: none; cursor: pointer; background-color: #368fb8; color: white; padding: 0.9rem 1.6rem; border: none; border-radius: 24px; font-size: 1.1rem; font-weight: bold; font-family: 'Times New Roman', Times, serif; cursor: pointer; transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; font-family: 'Times New Roman', Times, serif; background-color: #368fb8; color: white; padding: 0.8rem 1.6rem; font-size: 1.1rem; border: none; border-radius: 10px; cursor: pointer; margin-top: 1rem; transition: background 0.3s ease, transform 0.2s ease; } background-color: #368fb8; color: white; padding: 0.8rem 1.6rem; font-size: 1.1rem; border: none; border-radius: 10px; cursor: pointer; margin-top: 1rem; transition: background 0.3s ease, transform 0.2s ease; } button[type="submit"]:hover { background-color: #368fb8; transform: scale(1.05); box-shadow: 0 0 8px rgba(0, 119, 182, 0.3); background-color: #2e7ea1; transform: scale(1.05); box-shadow: 0 0 8px rgba(0, 119, 182, 0.3); background-color: #2e7ea1; transform: scale(1.05); box-shadow: 0 0 10px rgba(0, 119, 182, 0.3); } background-color: #2e7ea1; transform: scale(1.05); box-shadow: 0 0 10px rgba(2, 62, 138, 0.3); } @media (max-width: 768px) { nav { background-color: #368fb8; padding: 1rem; border-radius: 12px; } nav a { display: block; width: 100%; background: linear-gradient(to right, #0096c7, #368fb8); border-radius: 12px; padding: 0.8rem; margin-bottom: 0.5rem; text-align: center; font-weight: bold; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); } nav a:hover { background: linear-gradient(to right, #368fb8, #2e7ea1); transform: scale(1.03); } } @media (max-width: 768px) { body { background-size: 70% !important; } } @media (max-width: 480px) { body { background-size: 90% !important; } } @media (max-width: 768px) { body { background-size: 110% !important; } } @media (max-width: 480px) { body { background-size: 140% !important; } } @media (max-width: 768px) { nav { background-color: #368fb8; padding: 1rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); } nav a { display: block; width: 100%; background: linear-gradient(145deg, #0096c7, #368fb8); border-radius: 14px; padding: 1rem; margin-bottom: 0.75rem; text-align: center; font-weight: bold; font-size: 1.1rem; color: #ffffff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); } nav a:hover { background: linear-gradient(145deg, #368fb8, #2e7ea1); transform: translateY(-1px) scale(1.04); } } @media (max-width: 768px) { #menu-toggle { display: block; } nav { display: none; flex-direction: column; align-items: center; padding: 1rem; background-color: #368fb8; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin: 1rem; } nav.visible { display: flex; } nav a { width: 100%; margin: 0.3rem 0; } } @media (max-width: 768px) { body { margin: 0; padding: 0; background-attachment: fixed; background-position: center top; background-repeat: no-repeat; background-size: 140% !important; min-height: 100vh; } section { width: 100%; max-width: 100%; box-sizing: border-box; margin: 1rem auto; padding: 1rem 1.2rem; border-radius: 16px; } footer { width: 100%; margin: 0 auto; border-radius: 0; padding: 1.2rem; box-sizing: border-box; } form { width: 100%; max-width: 100%; margin: 1rem 0; padding: 1.2rem; box-sizing: border-box; } } @media (max-width: 768px) { body { background-attachment: fixed !important; background-position: center center !important; background-repeat: no-repeat !important; background-size: 140% !important; overflow-x: hidden; } } @media (max-width: 768px) { nav { display: none !important; } } body::before { content: ""; position: static; top: 0; left: 0; width: 100vw; height: 100vh; background: #e6f4fb url('background-logo.png') no-repeat center center; background-size: 60%; opacity: 0.15; z-index: -1; pointer-events: none; } html, body { height: 100%; overflow-x: hidden; background-color: #e6f4fb; } body::before { content: ""; position: static; top: 0; left: 0; width: 100%; height: 100%; background-image: url('background-logo.png'); background-position: center center; background-repeat: no-repeat; background-size: 60%; opacity: 0.15; z-index: -1; pointer-events: none; will-change: transform; transform: translate3d(0, 0, 0); -webkit-transform: translate3d(0, 0, 0); -webkit-backface-visibility: hidden; }
 nav a:hover { background-image: linear-gradient(to right, #0077b6, #0077b6); transform: translateY(-2px) scale(1.04); box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18); border: 1px solid #005f8a; background-color: #005f8a !important; transform: scale(1.05); box-shadow: 0 0 8px rgba(2, 62, 138, 0.2); } @media (max-width: 768px) { nav { background-color: #66bde3; padding: 1rem; border-radius: 12px; } nav a { display: block; width: 100%; background: linear-gradient(to right, #0096c7, #0077b6); border-radius: 12px; padding: 0.8rem; margin-bottom: 0.5rem; text-align: center; font-weight: bold; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); } nav a:hover { background: linear-gradient(to right, #0077b6, #005f8a); transform: scale(1.03); } } @media (max-width: 768px) { body { background-size: 70% !important; } } @media (max-width: 480px) { body { background-size: 90% !important; } } @media (max-width: 768px) { body { background-size: 110% !important; } } @media (max-width: 480px) { body { background-size: 140% !important; } } @media (max-width: 768px) { nav { background-color: #66bde3; padding: 1rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); } nav a { display: block; width: 100%; background: linear-gradient(145deg, #0096c7, #0077b6); border-radius: 14px; padding: 1rem; margin-bottom: 0.75rem; text-align: center; font-weight: bold; font-size: 1.1rem; color: #ffffff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); } nav a:hover { background: linear-gradient(145deg, #0077b6, #005f8a); transform: translateY(-1px) scale(1.04); } } @media (max-width: 768px) { #menu-toggle { display: block; } nav { display: none; flex-direction: column; align-items: center; padding: 1rem; background-color: #66bde3; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin: 1rem; } nav.visible { display: flex; } nav a { width: 100%; margin: 0.3rem 0; } } @media (max-width: 768px) { body { margin: 0; padding: 0; background-attachment: fixed; background-position: center top; background-repeat: no-repeat; background-size: 140% !important; min-height: 100vh; } section { width: 100%; max-width: 100%; box-sizing: border-box; margin: 1rem auto; padding: 1rem 1.2rem; border-radius: 16px; } footer { width: 100%; margin: 0 auto; border-radius: 0; padding: 1.2rem; box-sizing: border-box; } form { width: 100%; max-width: 100%; margin: 1rem 0; padding: 1.2rem; box-sizing: border-box; } } @media (max-width: 768px) { body { background-attachment: fixed !important; background-position: center center !important; background-repeat: no-repeat !important; background-size: 140% !important; overflow-x: hidden; } }
 /* Smooth fade-in on scroll */ @keyframes fadeUp { 0% { opacity: 0; transform: translateY(40px); } 100% { opacity: 1; transform: translateY(0); } } section { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; } section.show { animation: fadeUp 0.8s ease-out forwards; } /* Responsive enhancements */ @media (max-width: 768px) { section, form { margin: 1rem; padding: 1rem; } nav { flex-direction: column; align-items: center; } nav a { width: 100%; text-align: center; } } @media (min-width: 1024px) { nav { max-width: 1080px; padding: 1.5rem 2rem; } } /* Mailto behavior: no direct CSS or HTML can trigger the 'choose mail app' prompt — this depends on OS/browser. However, to maximize compatibility, we can ensure a properly formatted mailto link is used. */ @media (max-width: 768px) { nav { background-color: #66bde3; padding: 1rem; border-radius: 12px; } nav a { display: block; width: 100%; background: linear-gradient(to right, #0096c7, #0077b6); border-radius: 12px; padding: 0.8rem; margin-bottom: 0.5rem; text-align: center; font-weight: bold; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); } nav a:hover { background: linear-gradient(to right, #0077b6, #005f8a); transform: scale(1.03); } } @media (max-width: 768px) { body { background-size: 70% !important; } } @media (max-width: 480px) { body { background-size: 90% !important; } } @media (max-width: 768px) { body { background-size: 110% !important; } } @media (max-width: 480px) { body { background-size: 140% !important; } } @media (max-width: 768px) { nav { background-color: #66bde3; padding: 1rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); } nav a { display: block; width: 100%; background: linear-gradient(145deg, #0096c7, #0077b6); border-radius: 14px; padding: 1rem; margin-bottom: 0.75rem; text-align: center; font-weight: bold; font-size: 1.1rem; color: #ffffff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); } nav a:hover { background: linear-gradient(145deg, #0077b6, #005f8a); transform: translateY(-1px) scale(1.04); } } @media (max-width: 768px) { #menu-toggle { display: block; } nav { display: none; flex-direction: column; align-items: center; padding: 1rem; background-color: #66bde3; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin: 1rem; } nav.visible { display: flex; } nav a { width: 100%; margin: 0.3rem 0; } } @media (max-width: 768px) { body { margin: 0; padding: 0; background-attachment: fixed; background-position: center top; background-repeat: no-repeat; background-size: 140% !important; min-height: 100vh; } section { width: 100%; max-width: 100%; box-sizing: border-box; margin: 1rem auto; padding: 1rem 1.2rem; border-radius: 16px; } footer { width: 100%; margin: 0 auto; border-radius: 0; padding: 1.2rem; box-sizing: border-box; } form { width: 100%; max-width: 100%; margin: 1rem 0; padding: 1.2rem; box-sizing: border-box; } } @media (max-width: 768px) { body { background-attachment: fixed !important; background-position: center center !important; background-repeat: no-repeat !important; background-size: 140% !important; overflow-x: hidden; } }
 html { scroll-behavior: smooth; } @media (max-width: 768px) { nav { background-color: #66bde3; padding: 1rem; border-radius: 12px; } nav a { display: block; width: 100%; background: linear-gradient(to right, #0096c7, #0077b6); border-radius: 12px; padding: 0.8rem; margin-bottom: 0.5rem; text-align: center; font-weight: bold; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); } nav a:hover { background: linear-gradient(to right, #0077b6, #005f8a); transform: scale(1.03); } } @media (max-width: 768px) { body { background-size: 70% !important; } } @media (max-width: 480px) { body { background-size: 90% !important; } } @media (max-width: 768px) { body { background-size: 110% !important; } } @media (max-width: 480px) { body { background-size: 140% !important; } } @media (max-width: 768px) { nav { background-color: #66bde3; padding: 1rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); } nav a { display: block; width: 100%; background: linear-gradient(145deg, #0096c7, #0077b6); border-radius: 14px; padding: 1rem; margin-bottom: 0.75rem; text-align: center; font-weight: bold; font-size: 1.1rem; color: #ffffff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); } nav a:hover { background: linear-gradient(145deg, #0077b6, #005f8a); transform: translateY(-1px) scale(1.04); } } @media (max-width: 768px) { #menu-toggle { display: block; } nav { display: none; flex-direction: column; align-items: center; padding: 1rem; background-color: #66bde3; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin: 1rem; } nav.visible { display: flex; } nav a { width: 100%; margin: 0.3rem 0; } } @media (max-width: 768px) { body { margin: 0; padding: 0; background-attachment: fixed; background-position: center top; background-repeat: no-repeat; background-size: 140% !important; min-height: 100vh; } section { width: 100%; max-width: 100%; box-sizing: border-box; margin: 1rem auto; padding: 1rem 1.2rem; border-radius: 16px; } footer { width: 100%; margin: 0 auto; border-radius: 0; padding: 1.2rem; box-sizing: border-box; } form { width: 100%; max-width: 100%; margin: 1rem 0; padding: 1.2rem; box-sizing: border-box; } } @media (max-width: 768px) { body { background-attachment: fixed !important; background-position: center center !important; background-repeat: no-repeat !important; background-size: 140% !important; overflow-x: hidden; } }
@@ -100,30 +100,7 @@ h1, h2, h3 {
     margin-top: -50px;
   }
 }
-/* Confirmation Popup: Vollbild nur auf Smartphones/Tablets */
-@media (max-width: 768px) {
-  #confirmationPopup {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    margin: 0 !important;
-    padding: 1 !important;
-    border-radius: 0 !important;
-  }
-  #confirmationPopup .modal-content {
-    width: 100% !important;
-    height: 100% !important;
-    margin: 0 !important;
-    padding: 1 !important;
-    border-radius: 0 !important;
-    max-width: none !important;
-    max-height: none !important;
-    box-sizing: border-box !important;
-  }
-}
-  </style>
+</style>
 <style>
    /* Modal-Design */
 .modal {
@@ -908,6 +885,45 @@ html, body { overflow-x: hidden; }
   }
 }
 </style>
+
+<style id="lp-clean-modal-2025-08-25">
+/* === Unified Modal Behavior (clean, no layout shift, no fullscreen) === */
+.modal{
+  position: fixed !important;
+  inset: 0 !important;
+  display: none;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(0,0,0,.55) !important;
+  z-index: 10000 !important;
+}
+.modal.show{ display: flex !important; }
+.modal .modal-content{
+  margin: 0 !important;
+  width: auto !important;
+  max-width: min(720px, 92vw) !important;
+  max-height: 88vh !important;
+  overflow: auto !important;
+  border-radius: 14px !important;
+  box-shadow: 0 12px 40px rgba(0,0,0,.25) !important;
+}
+/* Prevent iOS zoom quirks */
+.modal .modal-content input, 
+.modal .modal-content button, 
+.modal .modal-content textarea, 
+.modal .modal-content select{ font-size: 16px; }
+</style>
+
+<style id="lp-mobile-intro-spacing-2025-08-25">
+/* === Mobile: kleiner sauberer Abstand über „Schön, dass du da bist“ === */
+@media (max-width: 767px){
+  #start{ 
+    margin-top: 12px !important; 
+    scroll-margin-top: 16px !important;
+  }
+}
+</style>
+
 </head>
 <body style="padding-top: 100px;">
 <!-- LP-SWIM Confirmation Overlay & Modal (v2) -->
@@ -2062,17 +2078,9 @@ window.onclick = function(event){ /* disabled: outside click should not close mo
     overlay = document.getElementById('popupOverlay');
     modal = document.getElementById('confirmationPopup');
   }
-  function openPopup(){
-    ensureRefs();
-    if (overlay) overlay.classList.add('show');
-    if (modal) modal.classList.add('show');
-    document.body.classList.add('modal-open');
+  function openPopup(){ try{ window.openModal('confirmationPopup'); }catch(e){} }catch(e){}
   }
-  function closePopup(){
-    ensureRefs();
-    if (overlay) overlay.classList.remove('show');
-    if (modal) modal.classList.remove('show');
-    document.body.classList.remove('modal-open');
+  function closePopup(){ try{ window.closeModal('confirmationPopup'); }catch(e){} } }catch(e){}
   }
   // Close interactions
   document.addEventListener('click', function(e){
@@ -2374,8 +2382,69 @@ window.onclick = function(event){ /* disabled: outside click should not close mo
   });
 })();
 </script>
+
+<script id="lp-modal-lock-2025-08-25">
+(function(){
+  function sbWidth(){
+    return Math.max(0, window.innerWidth - document.documentElement.clientWidth);
+  }
+  function lockBody(){
+    var pad = sbWidth();
+    document.documentElement.style.setProperty('--sbw', pad + 'px');
+    document.body.style.overflow = 'hidden';
+    document.body.style.paddingRight = pad + 'px';
+    // Compensate fixed headers if any
+    document.querySelectorAll('nav, .fixed, header[style*="position: fixed"]').forEach(function(el){
+      el.style.paddingRight = pad + 'px';
+    });
+  }
+  function unlockBody(){
+    document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
+    document.querySelectorAll('nav, .fixed, header[style*="position: fixed"]').forEach(function(el){
+      el.style.paddingRight = '';
+    });
+    document.documentElement.style.removeProperty('--sbw');
+  }
+  // Patch global modal helpers if present
+  try {
+    var _openModal = window.openModal;
+    var _closeModal = window.closeModal;
+  } catch(e){}
+  window.openModal = function(id){
+    var el = document.getElementById(id);
+    if(el){ el.classList.add('show'); }
+    lockBody();
+    if (typeof _openModal === 'function') { try{ _openModal(id);}catch(e){} }
+  };
+  window.closeModal = function(id){
+    var el = document.getElementById(id);
+    if(el){ el.classList.remove('show'); }
+    // unlock only if no other modal is open
+    if(!document.querySelector('.modal.show')){ unlockBody(); }
+    if (typeof _closeModal === 'function') { try{ _closeModal(id);}catch(e){} }
+  };
+  // Also hook LP overlay popup logic if used
+  document.addEventListener('click', function(e){
+    if(e.target && e.target.matches('.modal .close,[data-close],[data-action="close"]')){
+      // ensure unlock when all closed (handled above)
+      setTimeout(function(){
+        if(!document.querySelector('.modal.show')){ unlockBody(); }
+      }, 0);
+    }
+  }, true);
+  // ESC closes top-most modal
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      var open = document.querySelector('.modal.show');
+      if(open){
+        open.classList.remove('show');
+        if(!document.querySelector('.modal.show')){ unlockBody(); }
+      }
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
-
-
-
