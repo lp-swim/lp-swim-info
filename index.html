@@ -270,6 +270,43 @@ h3 { font-size: clamp(1.2rem, 2.4vw, 1.75rem); }
   }
 }
 
+
+/* =======================================
+   🖼️ Kontaktbild noch schöner & Mitte-Ausrichtung
+   ======================================= */
+.lp-kontakt-media img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center center; /* zentriert das Bild */
+  border-radius: 1rem;
+  image-rendering: auto;
+  display: block;
+  margin: 0 auto;
+  max-height: 80vh; /* etwas mehr Füllung, aber kein Zuschnitt */
+}
+
+@media (max-width: 768px) {
+  .lp-kontakt-media img {
+    object-fit: cover; /* Auf Handy schön gefüllt */
+    object-position: center center;
+    max-height: none;
+  }
+}
+
+/* =======================================
+   📱 Weniger Leerraum am Seitenende
+   ======================================= */
+footer, .lp-kontakt-section, body {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.lp-kontakt-section {
+  padding-bottom: 1rem !important;
+}
+
 </style>
   </meta>
  </head>
