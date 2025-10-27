@@ -251,7 +251,26 @@ h3 { font-size: clamp(1.2rem, 2.4vw, 1.75rem); }
     border-radius: 16px;
   }
 }
-   </style>
+   
+/* =======================================
+   🖼️ Optimierte Kontaktbild-Darstellung
+   ======================================= */
+.lp-kontakt-media img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain; /* Desktop: nichts abschneiden */
+  border-radius: 1rem;
+  image-rendering: auto;
+}
+
+@media (max-width: 768px) {
+  .lp-kontakt-media img {
+    object-fit: cover; /* Handy: schön gefüllt */
+  }
+}
+
+</style>
   </meta>
  </head>
  <body class="text-gray-700">
@@ -1142,6 +1161,20 @@ h3 { font-size: clamp(1.2rem, 2.4vw, 1.75rem); }
             }
         })();
   </script>
- </body>
-</html>
+ 
+<script>
+// Sanftes Scrollen für alle internen Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const targetId = this.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+</script>
 
+</body>
+</html>
