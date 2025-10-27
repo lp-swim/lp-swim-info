@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="utf-8">
-    <meta content="YlKI4FssjU6jEQDyOzNbdwcIOhv516qFAF1RUyDOV6I" name="google-site-verification"/>
-    <meta content="58B42B8F103EB15114C7AFC816233F91" name="msvalidate.01"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LP-SWIM – Schwimmunterricht im Einzelsetting</title>
-    <meta name="description" content="LP-SWIM bietet personalisierten Schwimmunterricht für Kinder, Jugendliche und Erwachsene. Vom ersten Wasserkontakt bis zur Technikverfeinerung – sicher und effektiv.">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Lukas Prehn">
-    <meta name="theme-color" content="#A7D9F8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="favicon.ico" rel="icon" type="image/x-icon">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="YlKI4FssjU6jEQDyOzNbdwcIOhv516qFAF1RUyDOV6I" name="google-site-verification">
+   <meta content="58B42B8F103EB15114C7AFC816233F91" name="msvalidate.01"/>
+   <meta content="width=device-width, initial-scale=1" name="viewport"/>
+   <title>
+    LP-SWIM – Schwimmunterricht im Einzelsetting
+   </title>
+   <meta content="LP-SWIM bietet personalisierten Schwimmunterricht für Kinder, Jugendliche und Erwachsene. Vom ersten Wasserkontakt bis zur Technikverfeinerung – sicher und effektiv." name="description"/>
+   <meta content="index, follow" name="robots"/>
+   <meta content="Lukas Prehn" name="author"/>
+   <meta content="#A7D9F8" name="theme-color"/>
+   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+   <link href="favicon.ico" rel="icon" type="image/x-icon"/>
+   <script src="https://cdn.tailwindcss.com">
+   </script>
+   <script src="https://unpkg.com/lucide@latest">
+   </script>
+   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
@@ -213,7 +217,9 @@ h3 { font-size: clamp(1.2rem, 2.4vw, 1.75rem); }
 .lp-kontakt-media img {
   width: 100%;
   height: auto;
-  object-fit: contain; /* Damit nichts abgeschnitten wird */
+  max-height: 80vh;
+  object-fit: cover;
+  object-position: center;
   border-radius: 1rem;
 }
 
@@ -226,8 +232,13 @@ h3 { font-size: clamp(1.2rem, 2.4vw, 1.75rem); }
   }
 
   .lp-kontakt-media img {
-    object-fit: cover; /* Auf Handy wieder schön gefüllt */
-  }
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 1rem;
+}
 
   .section-card {
     margin: 1rem;
@@ -240,367 +251,604 @@ h3 { font-size: clamp(1.2rem, 2.4vw, 1.75rem); }
     border-radius: 16px;
   }
 }
-
-</style>
-</head>
-<body class="text-gray-700">
-    <!-- Fixed Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-85 backdrop-blur-lg shadow-lg p-3 md:p-4 flex justify-center items-center gap-4 rounded-b-3xl max-w-7xl mx-auto border-b border-gray-100 animate-fade-in-down" style="animation-delay: 0.2s;">
-        <a href="#start" class="nav-link-item group" aria-label="Startseite">
-            <i data-lucide="home" class="w-5 h-5 mr-2 group-hover:rotate-6 transition-transform"></i>
-            Start
-        </a>
-        <a href="#jugend" class="nav-link-item group" aria-label="Bereich für Kinder & Jugendliche">
-            <i data-lucide="graduation-cap" class="w-5 h-5 mr-2 group-hover:scale-110 transition-transform"></i>
-            Kinder &amp; Jugendliche
-        </a>
-        <a href="#schule" class="nav-link-item group" aria-label="Begleitung für Schulen">
-            <i data-lucide="school" class="w-5 h-5 mr-2 group-hover:shake transition-transform"></i>
-            Schulbegleitung
-        </a>
-        <a href="#erwachsene" class="nav-link-item group" aria-label="Bereich für Erwachsene">
-            <i data-lucide="briefcase" class="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform"></i>
-            Erwachsene
-        </a>
-        <a href="#standort" class="nav-link-item group" aria-label="Standort und Öffnungszeiten">
-            <i data-lucide="map-pin" class="w-5 h-5 mr-2 group-hover:rotate-3 transition-transform"></i>
-            Standort
-        </a>
-        <a href="#kontakt" class="nav-link-item group" aria-label="Kontaktformular">
-            <i data-lucide="mail" class="w-5 h-5 mr-2 group-hover:translate-y-1 transition-transform"></i>
-            Kontakt
-        </a>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="relative overflow-hidden pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center min-h-[60vh] md:min-h-[75vh]">
-        <div class="absolute inset-0 bg-pattern-light opacity-30 animate-pulse-slow"></div>
-        <div class="container relative z-10 flex flex-col md:flex-row items-center gap-12">
-            <div class="hero-content flex-1 text-center md:text-left animate-fade-in-up" style="animation-delay: 0.4s;">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-blue-800 mb-4 leading-tight">
-                    <span class="block text-blue-600">LP-SWIM:</span> Dein Weg zur Wassersicherheit
-                </h1>
-                <p class="text-lg md:text-xl text-blue-700 mb-8 max-w-prose mx-auto md:mx-0">
-                    Individueller Schwimmunterricht im Einzelsetting – vom ersten Wasserkontakt bis zur Technikverfeinerung.
-                </p>
-                <div class="hero-buttons flex flex-col sm:flex-row gap-4">
-                    <a href="#kontakt" class="btn-primary animate-bounce-subtle" aria-label="Termin vereinbaren">
-                        <i data-lucide="calendar-check" class="w-5 h-5"></i>
-                        Termin vereinbaren
-                    </a>
-                    <a href="#jugend" class="btn-secondary" aria-label="Unsere Angebote entdecken">
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                        Angebote entdecken
-                    </a>
-                </div>
-            </div>
-            <div class="flex-1 flex justify-center items-center relative animate-fade-in-right" style="animation-delay: 0.6s;">
-                <div class="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-blue-200 rounded-full flex items-center justify-center shadow-xl animate-float-pulse relative">
-                    <i data-lucide="fish" class="w-32 h-32 md:w-40 md:h-40 text-blue-500 opacity-70 animate-swim-slow"></i>
-                    <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-lg transform rotate-6 animate-spin-slow-reverse">
-                        <i data-lucide="droplet" class="w-10 h-10 text-blue-400"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <main class="container py-12 md:py-20">
-        <!-- Intro Section -->
-        <section id="start" class="section-card animate-in" style="animation-delay: 0.8s;">
-            <h2 id="heading-start" class="text-3xl md:text-4xl font-bold mb-6 text-blue-700">Schön, dass du da bist</h2>
-            <p class="text-gray-700 leading-relaxed mb-4">
-                Mein Name ist Lukas, ich bin 23 Jahre jung und ausgebildete Fachkraft für Bäderbetriebe. Seit meiner Ausbildung begegne ich täglich Menschen aller Altersgruppen mit unterschiedlichsten Leistungsständen. Dabei habe ich festgestellt, dass die steigende Nachfrage nach Schwimmunterricht oft nicht in der nötigen Qualität bedient wird, sodass viele Teilnehmende trotz zahlreicher Stunden weiterhin Schwierigkeiten haben, sich sicher im Wasser zu bewegen.
-            </p>
-            <p class="text-gray-700 leading-relaxed mb-4">
-                Aus diesem Grund habe ich mich dazu entschieden, selbst Schwimmunterricht anzubieten. Jede Einheit umfasst 60 Minuten und findet ausschließlich im Einzelsetting statt. Dieser Ansatz ermöglicht es, gezielt auf Ihre persönlichen Herausforderungen einzugehen. Im Gegensatz zu Gruppenkursen, bei denen verschiedene Lernstände berücksichtigt werden müssen, liegt im Einzelunterricht die volle Aufmerksamkeit auf einer Person.
-            </p>
-            <p class="text-gray-700 leading-relaxed">
-                Die Kurse werden ganzjährig in Viernheim sowie in den Sommermonaten wahlweise auch in Schriesheim abgehalten. Der Erstkontakt erfolgt über das Kontaktformular. Nach Eingang Ihrer Anfrage werden Sie in den Terminverteiler aufgenommen und zum Monatsende über die verfügbaren Termine im Folgemonat informiert. Ihren Wunschtermin können Sie anschließend verbindlich über WhatsApp bestätigen. Unter
-                <a href="https://www.google.com/search?q=von+lp-swim+%E2%80%93+inhaber+lukas+prehn+viernheim+angebotene+dienste" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-700 font-medium transition-colors">
-                    Dienstleistungen <i data-lucide="external-link" class="inline-block w-4 h-4 ml-1"></i>
-                </a>
-                steht Ihnen eine Preisübersicht vorab zur Verfügung.
-            </p>
-        </section>
-
-        <!-- Kinder & Jugendliche Section -->
-        <section id="jugend" class="section-card animate-in" style="animation-delay: 1s;">
-            <h2 id="heading-jugend" class="text-3xl md:text-4xl font-bold mb-6 text-blue-700">Kinder &amp; Jugendliche
-            </h2>
-            <p class="text-gray-700 leading-relaxed mb-4">
-                Viele Kinder und Jugendliche in Deutschland erhalten heute nur eingeschränkten Zugang zu qualitativem Schwimmunterricht. Zeitliche Ressourcen im Familienalltag sind begrenzt, und auch der schulische Schwimmunterricht ist zunehmend durch organisatorische Rahmenbedingungen limitiert. Dies führt häufig zu Unsicherheiten in der Wasserlage, Koordinationsdefiziten und mangelnder Routine bei technischen Abläufen. Ohne gezielte Förderung bleibt der Lernfortschritt eingeschränkt, was sowohl die Sicherheit im Wasser als auch die langfristige Motivation beeinträchtigen kann.
-            </p>
-            <p class="text-gray-700 leading-relaxed">
-                Eine gezielte Einzelbetreuung ermöglicht es, diese Herausforderungen effektiv anzugehen. Der Unterricht wird an Alter, Leistungsstand und persönliche Ziele angepasst. Den Abschluss bildet auf Wunsch die Abnahme offizieller DSA-Abzeichen mit entsprechendem Zertifikat.
-            </p>
-            <div class="mt-8 flex justify-center">
-                <a href="#kontakt" class="btn-primary animate-pulse-light">
-                    <i data-lucide="message-square-plus" class="w-5 h-5"></i>Jetzt Anfragen
-                </a>
-            </div>
-        </section>
-
-        <!-- Schulbegleitung Section -->
-        <section id="schule" class="section-card animate-in" style="animation-delay: 1.2s;">
-            <h2 id="heading-schule" class="text-3xl md:text-4xl font-bold mb-6 text-blue-700">Schulbegleitung
-            </h2>
-            <p class="text-gray-700 leading-relaxed mb-4">
-                Im Schwimmunterricht tragen Lehrkräfte besondere Verantwortung. Sie organisieren den Unterricht, sichern die Aufsicht und fördern die Kinder pädagogisch. Die Anforderungen an Sicherheit und individuelle Förderung stehen dabei oft in einem Spannungsverhältnis zu knappen Ressourcen. Das tragische Unglück vom 18. September 2023, bei dem ein Zweitklässler ertrank, hat die Debatte über Aufsichtspflichten bundesweit verstärkt.
-            </p>
-            <p class="text-gray-700 leading-relaxed mb-4">
-                Trotz Einhaltung aller Vorgaben wurden Lehrkraft und Referendarin vorläufig wegen fahrlässiger Tötung zu Bewährungsstrafen und Geldauflagen verurteilt. Die endgültige Entscheidung wird zwar erst nach der Berufungsverhandlung 2026 erwartet, dennoch macht die Rechtsprechung deutlich, dass die Verantwortung auch dann bei der Lehrkraft bleibt, wenn formale Vorgaben eingehalten werden.
-            </p>
-            <p class="text-gray-700 leading-relaxed">
-                Eine qualifizierte Begleitperson entlastet Lehrkräfte spürbar, verbessert die Aufsicht und ermöglicht eine gezieltere Betreuung der Kinder. So lassen sich Sicherheit und pädagogische Qualität im Unterricht deutlich steigern. Ziel ist es, ein verlässliches und strukturiertes Lernumfeld zu schaffen. Das Angebot richtet sich an Schulen im Raum Mannheim und Umgebung.
-            </p>
-            <div class="mt-8 flex justify-center">
-                <a href="#kontakt" class="btn-secondary">
-                    <i data-lucide="contact" class="w-5 h-5"></i>Für Schulen kontaktieren
-                </a>
-            </div>
-        </section>
-
-        <!-- Erwachsene Section -->
-        <section id="erwachsene" class="section-card animate-in" style="animation-delay: 1.4s;">
-            <h2 id="heading-erwachsene" class="text-3xl md:text-4xl font-bold mb-6 text-blue-700">Erwachsene
-            </h2>
-            <p class="text-gray-700 leading-relaxed mb-4">
-                Für viele Erwachsene ist der Zugang zum Wasser mit Unsicherheiten verbunden. Fehlende Erfahrung, längere Pausen oder negative Erlebnisse sind häufige Gründe. Schwimmen wird oft als Kinderthema betrachtet – dabei ist es eine motorische Fähigkeit, die in jedem Alter erlernt und weiterentwickelt werden kann.
-            </p>
-            <p class="text-gray-700 leading-relaxed mb-4">
-                Dazu kommen emotionale Hürden wie Scham, Angst vor Bewertung oder falscher Stolz. Viele halten sich dadurch zurück, ihre Schwimmkenntnisse offen anzusprechen oder daran zu arbeiten. Risiken werden oft unterschätzt – besonders bei Badeausflügen oder im Urlaub, wo schnell gefährliche Situationen entstehen können.
-            </p>
-            <p class="text-gray-700 leading-relaxed">
-                Individuelles Einzeltraining fördert ein sicheres und kontrolliertes Bewegungsverhalten im Wasser – sei es beim Erlernen von Grundlagen oder der Verbesserung vorhandener Techniken. Dies verbessert nicht nur die körperliche Fitness, sondern auch die Koordination und das Vertrauen in die eigene Leistungsfähigkeit.
-            </p>
-            <div class="mt-8 flex justify-center">
-                <a href="#kontakt" class="btn-primary">
-                    <i data-lucide="hand" class="w-5 h-5"></i>Starte dein Training
-                </a>
-            </div>
-        </section>
-
-        <!-- Standort Section -->
-        <section id="standort" class="section-card animate-in" style="animation-delay: 1.6s;">
-            <h2 id="heading-standort" class="text-3xl md:text-4xl font-bold mb-6 text-blue-700">Standort
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-                <div class="flex flex-col bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm">
-                    <div id="map-consent" class="relative bg-blue-50 aspect-video rounded-lg overflow-hidden flex items-center justify-center border border-blue-200 mb-6 flex-grow">
-                        <div class="text-center p-4">
-                            <div class="w-32 h-32 rounded-full bg-blue-100 mx-auto mb-4 flex items-center justify-center shadow-inner">
-                                <i data-lucide="map" class="w-16 h-16 text-blue-400"></i>
-                            </div>
-                            <button id="load-map" class="btn-primary">
-                                <i data-lucide="map-pin" class="w-5 h-5"></i>Karte laden (Google Maps)
-                            </button>
-                            <p class="text-xs text-gray-500 mt-2">
-                                Beim Laden können Daten an Google übertragen werden.
-                            </p>
-                        </div>
-                    </div>
-                    <div id="map-frame" class="rounded-xl overflow-hidden shadow-lg h-96 hidden flex-grow">
-                        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=49.5376939,8.5809261&amp;hl=de&amp;z=15&amp;output=embed" class="w-full h-full border-0" title="LP‑SWIM – Standort"></iframe>
-                    </div>
-                </div>
-                <div class="flex flex-col p-6 bg-gray-50 rounded-xl border border-gray-200 shadow-sm text-center">
-                    <div class="flex items-center justify-center gap-3 mb-4">
-                        <div class="w-12 h-12 flex-shrink-0 bg-blue-100 rounded-full flex items-center justify-center">
-                            <i data-lucide="award" class="w-6 h-6 text-blue-500"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-900">LP-SWIM – Inhaber Lukas Prehn</h3>
-                    </div>
-                    <hr class="border-t border-gray-200 my-4">
-                    <h4 class="text-lg font-medium text-blue-600 mb-2">Trainerstunden</h4>
-                    <ul class="list-none p-0 mb-6 text-gray-700">
-                        <li class="flex items-center justify-center gap-2 mb-1"><i data-lucide="calendar" class="w-4 h-4 text-blue-400"></i>Täglich: 09:00–18:00 (nach Vereinbarung)</li>
-                        <li class="flex items-center justify-center gap-2"><i data-lucide="info" class="w-4 h-4 text-blue-400"></i>Einzelsetting, 60 Minuten</li>
-                    </ul>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-auto">
-                        <a href="https://www.google.de/maps/place/LP-SWIM+%E2%80%93+Inhaber+Lukas+Prehn/@49.5376939,8.5809261,17z/data=!4m16!1m9!3m8!1s0x66777943db50c52b:0x72759400e8725848!2sLP-SWIM+%E2%80%93+Inhaber+Lukas+Prehn!8m2!3d49.5376939!4d8.5809261!9m1!1b1!16s%2Fg%2F11xv29qq3r!3m5!1s0x66777943db50c52b:0x72759400e8725848!8m2!3d49.5376939!4d8.5809261!16s%2Fg%2F11xv29qq3r?entry=ttu" target="_blank" rel="noopener noreferrer" class="btn-primary w-full sm:w-auto">
-                            <i data-lucide="map" class="w-5 h-5"></i>Google Maps
-                        </a>
-                        <a href="https://www.google.com/search?q=LP+SWIM" target="_blank" rel="noopener noreferrer" class="btn-secondary w-full sm:w-auto">
-                            <i data-lucide="star" class="w-5 h-5"></i>Bewertungen
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Kontakt Section -->
-        <section id="kontakt" class="section-card animate-in" style="animation-delay: 1.8s;">
-            <div class="lp-kontakt-media rounded-2xl overflow-hidden mb-8 shadow-xl">
-                <img src="kontakt-lukas.jpg" alt="Lukas Prehn - LP-SWIM Trainer" class="w-full h-auto object-cover object-center aspect-[4/3] md:aspect-[3/1] animate-image-reveal">
-            </div>
-            <h2 id="heading-kontakt" class="text-3xl md:text-4xl font-bold mb-6 text-blue-700">Kontakt aufnehmen
-            </h2>
-            <p class="text-gray-700 leading-relaxed mb-8">
-                Bitte nennen Sie uns Anschrift, Alter, Leistungsstand und Ziel. Die Daten dienen ausschließlich der Aufnahme in den monatlichen Terminverteiler und der späteren Rechnungsstellung.
-            </p>
-            <form action="https://formspree.io/f/mkgzgywy" method="POST" class="bg-blue-50 p-6 md:p-8 rounded-2xl shadow-lg border border-blue-100 space-y-6">
-                <div class="hidden">
-                    <label for="_gotcha" class="sr-only">Bitte dieses Feld leer lassen:</label>
-                    <input type="text" name="_gotcha" id="_gotcha" tabindex="-1" autocomplete="off" class="hidden">
-                </div>
-
-                <div>
-                    <label for="name" class="block text-blue-800 font-semibold mb-2 text-sm md:text-base">Name</label>
-                    <input type="text" name="name" id="name" placeholder="Max Mustermann" required autocomplete="name"
-                           class="w-full px-4 py-3 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-300 focus:border-blue-300 transition-all duration-200 bg-white shadow-sm text-gray-800">
-                </div>
-
-                <div>
-                    <label for="email" class="block text-blue-800 font-semibold mb-2 text-sm md:text-base">E-Mail</label>
-                    <input type="email" name="email" id="email" placeholder="max.mustermann@example.de" required autocomplete="email"
-                           class="w-full px-4 py-3 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-300 focus:border-blue-300 transition-all duration-200 bg-white shadow-sm text-gray-800">
-                </div>
-
-                <div>
-                    <label for="message" class="block text-blue-800 font-semibold mb-2 text-sm md:text-base">Nachricht</label>
-                    <textarea name="message" id="message" placeholder="Mein 6-jähriger Sohn möchte das Seepferdchen machen. Bisher kann er sich nur über Wasser halten." required rows="6" autocomplete="off"
-                              class="w-full px-4 py-3 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-300 focus:border-blue-300 transition-all duration-200 bg-white shadow-sm text-gray-800"></textarea>
-                </div>
-
-                <div class="flex items-start gap-3">
-                    <input type="checkbox" name="privacy-consent" id="privacy-consent" required
-                           class="mt-1 h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500 transition-colors duration-200">
-                    <label for="privacy-consent" class="text-sm md:text-base text-gray-700">
-                        Ich habe die
-                        <a href="#" onclick="openModal('datenschutzModal'); return false;" class="text-blue-500 hover:text-blue-700 font-medium transition-colors underline">Datenschutzerklärung</a>
-                        gelesen und stimme der Verarbeitung meiner Daten zu.
-                    </label>
-                </div>
-
-                <button type="submit" class="btn-primary w-full justify-center transform active:scale-98">
-                    <i data-lucide="send" class="w-5 h-5"></i>Nachricht senden
-                </button>
-            </form>
-            <div id="form-message" class="mt-6 p-4 bg-green-50 text-green-700 border border-green-200 rounded-lg text-center font-medium hidden animate-fade-in">
-                <i data-lucide="check-circle" class="w-6 h-6 inline-block mr-2"></i>Vielen Dank für Ihre Nachricht!
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-blue-50 text-center py-8 md:py-12 border-t border-blue-100 shadow-inner">
-        <div class="container text-blue-800 text-sm md:text-base">
-            <div class="flex flex-wrap justify-center gap-x-4 gap-y-2 mb-4">
-                <a href="#" onclick="openModal('datenschutzModal'); return false;" class="text-blue-600 hover:text-blue-800 transition-colors font-medium">Datenschutzerklärung</a>
-                <span class="text-gray-400">|</span>
-                <a href="#" onclick="openModal('agbModal'); return false;" class="text-blue-600 hover:text-blue-800 transition-colors font-medium">AGB</a>
-                <span class="text-gray-400">|</span>
-                <a href="#" onclick="openModal('impressumModal'); return false;" class="text-blue-600 hover:text-blue-800 transition-colors font-medium">Impressum</a>
-            </div>
-            <p class="text-gray-600">&copy; 2025 Lukas Prehn – LP-SWIM</p>
-        </div>
-    </footer>
-
-    <!-- Modals -->
-    <div id="datenschutzModal" class="modal fixed inset-0 z-[10000] flex items-center justify-center p-4 hidden">
-        <div class="modal-content relative w-full max-w-2xl mx-auto text-left">
-            <span class="close-button" onclick="closeModal('datenschutzModal')">&times;</span>
-            <h2 class="text-3xl font-bold mb-4 text-blue-700">Datenschutzerklärung</h2>
-            <div class="space-y-4 text-gray-700 text-base max-h-[70vh] overflow-y-auto pr-2">
-                <p><strong>1. Verantwortlicher</strong><br>Lukas Prehn<br>c/o IP-Management #6336<br>Ludwig-Erhard-Straße 18<br>20459 Hamburg, Deutschland<br>lpswim.info@gmail.com</p>
-                <p><strong>2. Grundsätze der Datenverarbeitung</strong><br>Der Schutz personenbezogener Daten hat höchste Priorität. Die Verarbeitung erfolgt ausschließlich gemäß der Datenschutz-Grundverordnung (DSGVO) und dem Bundesdatenschutzgesetz (BDSG). Daten werden nur erhoben, wenn dies gesetzlich zulässig ist oder eine ausdrückliche Einwilligung vorliegt. Rechtsgrundlagen sind Art. 6 Abs. 1 lit. a (Einwilligung), lit. b (Vertrag oder vorvertragliche Maßnahmen) sowie lit. f (berechtigtes Interesse).</p>
-                <p><strong>3. Hosting</strong><br>Diese Website wird über GitHub Pages (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) bereitgestellt. Beim Aufruf werden automatisch IP-Adresse, Datum/Uhrzeit, aufgerufene Seiten/Dateien, Referrer-URL, Browsertyp/-version und Betriebssystem verarbeitet. Die Verarbeitung dient der technischen Bereitstellung, Sicherheit und Stabilität der Website. Eine Zusammenführung mit anderen Daten erfolgt nicht. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Weitere Informationen: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-700 underline">GitHub Pages Datenschutz</a></p>
-                <p><strong>4. Cookies</strong><br>Auf dieser Website werden ausschließlich technisch notwendige Cookies verwendet, die für den Betrieb sowie die grundlegenden Funktionen erforderlich sind. Zusätzlich wird beim Aufruf der Seite eine Abfrage zur Einwilligung in die Verwendung von Google-Analytics-Cookies eingeblendet. Diese Analyse-Cookies werden nur gesetzt, wenn die Nutzung ausdrücklich gestattet wird. Ohne Zustimmung erfolgt keine Verarbeitung zu Zwecken wie Tracking, Analyse, Marketing oder Profilbildung. Rechtsgrundlage hierfür ist Art. 6 Abs. 1 lit. f DSGVO (Einsatz technisch notwendiger Cookies) sowie Art. 6 Abs. 1 lit. a DSGVO (Verwendung von Google Analytics nach erteilter Einwilligung).</p>
-                <p><strong>5. Kontaktformular</strong><br>Zur Kontaktaufnahme steht ein Formular zur Verfügung, betrieben von Formspree (Formspree Inc., 303 Twin Dolphin Dr., Redwood City, CA 94065, USA). Verarbeitet werden Name, E-Mail-Adresse und Ihre Nachricht. Die Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO. Weitere Informationen: <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-700 underline">Formspree Privacy Policy</a></p>
-                <p><strong>6. Rechte der betroffenen Personen</strong><br>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerspruch sowie den Widerruf erteilter Einwilligungen. Zudem besteht das Recht auf Beschwerde bei einer Datenschutzaufsichtsbehörde.</p>
-                <p><strong>7. Stand und Änderungen</strong><br>Diese Datenschutzerklärung gilt ab August 2025. Änderungen können bei technischen Anpassungen oder neuen gesetzlichen Vorgaben erfolgen. Die aktuelle Version ist jederzeit auf dieser Website abrufbar.</p>
-            </div>
-        </div>
+   </style>
+  </meta>
+ </head>
+ <body class="text-gray-700">
+  <!-- Fixed Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-85 backdrop-blur-lg shadow-lg p-3 md:p-4 flex justify-center items-center gap-4 rounded-b-3xl max-w-7xl mx-auto border-b border-gray-100 animate-fade-in-down" style="animation-delay: 0.2s;">
+   <a aria-label="Startseite" class="nav-link-item group" href="#start">
+    <i class="w-5 h-5 mr-2 group-hover:rotate-6 transition-transform" data-lucide="home">
+    </i>
+    Start
+   </a>
+   <a aria-label="Bereich für Kinder &amp; Jugendliche" class="nav-link-item group" href="#jugend">
+    <i class="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" data-lucide="graduation-cap">
+    </i>
+    Kinder &amp; Jugendliche
+   </a>
+   <a aria-label="Begleitung für Schulen" class="nav-link-item group" href="#schule">
+    <i class="w-5 h-5 mr-2 group-hover:shake transition-transform" data-lucide="school">
+    </i>
+    Schulbegleitung
+   </a>
+   <a aria-label="Bereich für Erwachsene" class="nav-link-item group" href="#erwachsene">
+    <i class="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" data-lucide="briefcase">
+    </i>
+    Erwachsene
+   </a>
+   <a aria-label="Standort und Öffnungszeiten" class="nav-link-item group" href="#standort">
+    <i class="w-5 h-5 mr-2 group-hover:rotate-3 transition-transform" data-lucide="map-pin">
+    </i>
+    Standort
+   </a>
+   <a aria-label="Kontaktformular" class="nav-link-item group" href="#kontakt">
+    <i class="w-5 h-5 mr-2 group-hover:translate-y-1 transition-transform" data-lucide="mail">
+    </i>
+    Kontakt
+   </a>
+  </nav>
+  <!-- Hero Section -->
+  <header class="relative overflow-hidden pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center min-h-[60vh] md:min-h-[75vh]">
+   <div class="absolute inset-0 bg-pattern-light opacity-30 animate-pulse-slow">
+   </div>
+   <div class="container relative z-10 flex flex-col md:flex-row items-center gap-12">
+    <div class="hero-content flex-1 text-center md:text-left animate-fade-in-up" style="animation-delay: 0.4s;">
+     <h1 class="text-4xl md:text-6xl font-extrabold text-blue-800 mb-4 leading-tight">
+      <span class="block text-blue-600">
+       LP-SWIM:
+      </span>
+      Weil Sicherheit im Wasser zählt
+     </h1>
+     <p class="text-lg md:text-xl text-blue-700 mb-8 max-w-prose mx-auto md:mx-0">
+      Schwimmunterricht im Einzelsetting – vom ersten Wasserkontakt bis zur Technikverfeinerung.
+     </p>
+     <div class="hero-buttons flex flex-col sm:flex-row gap-4">
+      <a aria-label="Kontaktaufnahme" class="btn-primary animate-bounce-subtle" href="#kontakt">
+       <i class="w-5 h-5" data-lucide="calendar-check">
+       </i>
+       Kontaktaufnahme
+      </a>
+      <a aria-label="Unsere Angebote entdecken" class="btn-secondary" href="#jugend">
+       <i class="w-5 h-5" data-lucide="arrow-right">
+       </i>
+       Angebote entdecken
+      </a>
+     </div>
     </div>
-
-    <div id="agbModal" class="modal fixed inset-0 z-[10000] flex items-center justify-center p-4 hidden">
-        <div class="modal-content relative w-full max-w-2xl mx-auto text-left">
-            <span class="close-button" onclick="closeModal('agbModal')">&times;</span>
-            <h2 class="text-3xl font-bold mb-4 text-blue-700">Allgemeine Geschäftsbedingungen (AGB)</h2>
-            <div class="space-y-4 text-gray-700 text-base max-h-[70vh] overflow-y-auto pr-2">
-                <p><strong>§1 Geltungsbereich</strong><br>Diese AGB gelten für alle zwischen LP-SWIM, vertreten durch den jeweiligen Schwimmlehrer und den Teilnehmenden geschlossenen Verträge über Schwimmunterricht.</p>
-                <p><strong>§2 Vertragsabschluss</strong><br>Der Vertrag kommt mit der schriftlichen Bestätigung des Termins durch den Anbieter LP-SWIM, vertreten durch den jeweiligen Schwimmlehrer, zustande. Mit der Anmeldung verpflichtet sich der Kunde zur verbindlichen Teilnahme. Bei Nichterscheinen gelten die Regelungen gemäß § 5 ‚Stornierung‘.</p>
-                <p><strong>§3 Teilnahmevoraussetzungen</strong><br>Teilnehmende müssen gesund sein und eigenverantwortlich entscheiden können, ob sie am Schwimmunterricht teilnehmen. Bei Minderjährigen sind die Erziehungsberechtigten verantwortlich.</p>
-                <p><strong>§4 Zahlungsbedingungen</strong><br>Die Bezahlung erfolgt ausschließlich per Kartenzahlung vor Ort oder Rechnung mit Zahlungslink via Mail. Bargeld wird nicht angenommen. Der Rechnungsbetrag ist nach Erhalt der Rechnung, spätestens jedoch 24 Stunden vor Beginn der ersten Trainingseinheit, zur Zahlung fällig. Erfolgt die Zahlung nicht rechtzeitig, behalten wir uns vor, den vereinbarten Termin anderweitig zu vergeben. Der Eintrittspreis für die Nutzung des Bades ist nicht im Honorar für die Trainerstunde enthalten. Er ist zusätzlich und unabhängig von der gebuchten Leistung direkt vor Ort zu entrichten.</p>
-                <p><strong>§5 Stornierung</strong><br>Absagen sind spätestens 24 Stunden vor Beginn der gebuchten Trainerstunde kostenfrei möglich. Spätere Absagen oder Nichterscheinen führen zur Berechnung der vollen Kursgebühr. Bei nicht vom Kunden verschuldeten Verhinderungen, insbesondere im Krankheitsfall, besteht die Möglichkeit, einen Ersatztermin zu vereinbaren. Ein Anspruch auf Erstattung des bereits gezahlten Entgelts besteht in diesem Fall nicht.</p>
-                <p><strong>§6 Ausfall des Unterrichts</strong><br>Fällt der Unterricht aufgrund von Krankheit oder sonstigen, vom Schwimmlehrer zu vertretenden Umständen aus, wird ein Ersatztermin angeboten. Ist eine Nachholung nicht möglich, erfolgt eine Rückerstattung des bereits gezahlten Entgelts.</p>
-                <p><strong>§7 Haftung</strong><br>Die Teilnahme erfolgt auf eigene Gefahr. LP-SWIM haftet nur für Vorsatz und grobe Fahrlässigkeit. Für mitgebrachte Wertgegenstände wird keine Haftung übernommen.</p>
-                <p><strong>§8 Schlussbestimmungen</strong><br>Sollten einzelne Bestimmungen dieser AGB unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.</p>
-            </div>
-        </div>
+    <div class="flex-1 flex justify-center items-center relative animate-fade-in-right" style="animation-delay: 0.6s;">
+     <div class="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-blue-200 rounded-full flex items-center justify-center shadow-xl animate-float-pulse relative">
+      <i class="w-32 h-32 md:w-40 md:h-40 text-blue-500 opacity-70 animate-swim-slow" data-lucide="fish">
+      </i>
+      <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-lg transform rotate-6 animate-spin-slow-reverse">
+       <i class="w-10 h-10 text-blue-400" data-lucide="droplet">
+       </i>
+      </div>
+     </div>
     </div>
-
-    <div id="impressumModal" class="modal fixed inset-0 z-[10000] flex items-center justify-center p-4 hidden">
-        <div class="modal-content relative w-full max-w-2xl mx-auto text-left">
-            <span class="close-button" onclick="closeModal('impressumModal')">&times;</span>
-            <h2 class="text-3xl font-bold mb-4 text-blue-700">Impressum</h2>
-            <div class="space-y-4 text-gray-700 text-base max-h-[70vh] overflow-y-auto pr-2">
-                <p>Angaben gemäß § 5 TMG:</p>
-                <p>Lukas Prehn<br>c/o IP-Management #6336<br>Ludwig-Erhard-Straße 18<br>20459 Hamburg<br>Deutschland</p>
-                <p>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:<br>Lukas Prehn, Anschrift wie oben</p>
-            </div>
+   </div>
+  </header>
+  <main class="container py-12 md:py-20">
+   <!-- Intro Section -->
+   <section class="section-card animate-in" id="start" style="animation-delay: 0.8s;">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-700" id="heading-start">
+     Schön, dass du da bist
+    </h2>
+    <p class="text-gray-700 leading-relaxed mb-4">
+     Mein Name ist Lukas, ich bin 23 Jahre jung und ausgebildete Fachkraft für Bäderbetriebe. Seit meiner Ausbildung begegne ich täglich Menschen aller Altersgruppen mit unterschiedlichsten Leistungsständen. Dabei habe ich festgestellt, dass die steigende Nachfrage nach Schwimmunterricht oft nicht in der nötigen Qualität bedient wird, sodass viele Teilnehmende trotz zahlreicher Stunden weiterhin Schwierigkeiten haben, sich sicher im Wasser zu bewegen.
+    </p>
+    <p class="text-gray-700 leading-relaxed mb-4">
+     Aus diesem Grund habe ich mich dazu entschieden, selbst Schwimmunterricht anzubieten. Jede Einheit umfasst 60 Minuten und findet ausschließlich im Einzelsetting statt. Dieser Ansatz ermöglicht es, gezielt auf Ihre persönlichen Herausforderungen einzugehen. Im Gegensatz zu Gruppenkursen, bei denen verschiedene Lernstände berücksichtigt werden müssen, liegt im Einzelunterricht die volle Aufmerksamkeit auf einer Person.
+    </p>
+    <p class="text-gray-700 leading-relaxed">
+     Die Kurse werden ganzjährig in Viernheim sowie in den Sommermonaten wahlweise auch in Schriesheim abgehalten. Der Erstkontakt erfolgt über das Kontaktformular. Nach Eingang Ihrer Anfrage werden Sie in den Terminverteiler aufgenommen und zum Monatsende über die verfügbaren Termine im Folgemonat informiert. Ihren Wunschtermin können Sie anschließend verbindlich über WhatsApp bestätigen.
+    </p>
+   </section>
+   <!-- Kinder & Jugendliche Section -->
+   <section class="section-card animate-in" id="jugend" style="animation-delay: 1s;">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-700" id="heading-jugend">
+     Kinder &amp; Jugendliche
+    </h2>
+    <p class="text-gray-700 leading-relaxed mb-4">
+     Viele Kinder und Jugendliche in Deutschland erhalten heute nur eingeschränkten Zugang zu qualitativem Schwimmunterricht. Zeitliche Ressourcen im Familienalltag sind begrenzt, und auch der schulische Schwimmunterricht ist zunehmend durch organisatorische Rahmenbedingungen limitiert. Dies führt häufig zu Unsicherheiten in der Wasserlage, Koordinationsdefiziten und mangelnder Routine bei technischen Abläufen. Ohne gezielte Förderung bleibt der Lernfortschritt eingeschränkt, was sowohl die Sicherheit im Wasser als auch die langfristige Motivation beeinträchtigen kann.
+    </p>
+    <p class="text-gray-700 leading-relaxed">
+     Eine gezielte Einzelbetreuung ermöglicht es, diese Herausforderungen effektiv anzugehen. Der Unterricht wird an Alter, Leistungsstand und persönliche Ziele angepasst. Den Abschluss bildet auf Wunsch die Abnahme offizieller DSA-Abzeichen mit entsprechendem Zertifikat.
+    </p>
+   </section>
+   <!-- Schulbegleitung Section -->
+   <section class="section-card animate-in" id="schule" style="animation-delay: 1.2s;">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-700" id="heading-schule">
+     Schulbegleitung
+    </h2>
+    <p class="text-gray-700 leading-relaxed mb-4">
+     Im Schwimmunterricht tragen Lehrkräfte besondere Verantwortung. Sie organisieren den Unterricht, sichern die Aufsicht und fördern die Kinder pädagogisch. Die Anforderungen an Sicherheit und individuelle Förderung stehen dabei oft in einem Spannungsverhältnis zu knappen Ressourcen. Das tragische Unglück vom 18. September 2023, bei dem ein Zweitklässler ertrank, hat die Debatte über Aufsichtspflichten bundesweit verstärkt.
+    </p>
+    <p class="text-gray-700 leading-relaxed mb-4">
+     Trotz Einhaltung aller Vorgaben wurden Lehrkraft und Referendarin vorläufig wegen fahrlässiger Tötung zu Bewährungsstrafen und Geldauflagen verurteilt. Die endgültige Entscheidung wird zwar erst nach der Berufungsverhandlung 2026 erwartet, dennoch macht die Rechtsprechung deutlich, dass die Verantwortung auch dann bei der Lehrkraft bleibt, wenn formale Vorgaben eingehalten werden.
+    </p>
+    <p class="text-gray-700 leading-relaxed">
+     Eine qualifizierte Begleitperson entlastet Lehrkräfte spürbar, verbessert die Aufsicht und ermöglicht eine gezieltere Betreuung der Kinder. So lassen sich Sicherheit und pädagogische Qualität im Unterricht deutlich steigern. Ziel ist es, ein verlässliches und strukturiertes Lernumfeld zu schaffen. Das Angebot richtet sich an Schulen im Raum Mannheim und Umgebung.
+    </p>
+   </section>
+   <!-- Erwachsene Section -->
+   <section class="section-card animate-in" id="erwachsene" style="animation-delay: 1.4s;">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-700" id="heading-erwachsene">
+     Erwachsene
+    </h2>
+    <p class="text-gray-700 leading-relaxed mb-4">
+     Für viele Erwachsene ist der Zugang zum Wasser mit Unsicherheiten verbunden. Fehlende Erfahrung, längere Pausen oder negative Erlebnisse sind häufige Gründe. Schwimmen wird oft als Kinderthema betrachtet – dabei ist es eine motorische Fähigkeit, die in jedem Alter erlernt und weiterentwickelt werden kann.
+    </p>
+    <p class="text-gray-700 leading-relaxed mb-4">
+     Dazu kommen emotionale Hürden wie Scham, Angst vor Bewertung oder falscher Stolz. Viele halten sich dadurch zurück, ihre Schwimmkenntnisse offen anzusprechen oder daran zu arbeiten. Risiken werden oft unterschätzt – besonders bei Badeausflügen oder im Urlaub, wo schnell gefährliche Situationen entstehen können.
+    </p>
+    <p class="text-gray-700 leading-relaxed">
+     Individuelles Einzeltraining fördert ein sicheres und kontrolliertes Bewegungsverhalten im Wasser – sei es beim Erlernen von Grundlagen oder der Verbesserung vorhandener Techniken. Dies verbessert nicht nur die körperliche Fitness, sondern auch die Koordination und das Vertrauen in die eigene Leistungsfähigkeit.
+    </p>
+   </section>
+   <!-- Standort Section -->
+   <section class="section-card animate-in" id="standort" style="animation-delay: 1.6s;">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-700" id="heading-standort">
+     Standort
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+     <div class="flex flex-col bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm">
+      <div class="relative bg-blue-50 aspect-video rounded-lg overflow-hidden flex items-center justify-center border border-blue-200 mb-6 flex-grow" id="map-consent">
+       <div class="text-center p-4">
+        <div class="w-32 h-32 rounded-full bg-blue-100 mx-auto mb-4 flex items-center justify-center shadow-inner">
+         <i class="w-16 h-16 text-blue-400" data-lucide="map">
+         </i>
         </div>
+        <button class="btn-primary" id="load-map">
+         <i class="w-5 h-5" data-lucide="map-pin">
+         </i>
+         Karte laden (Google Maps)
+        </button>
+        <p class="text-xs text-gray-500 mt-2">
+         Beim Laden können Daten an Google übertragen werden.
+        </p>
+       </div>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg h-96 hidden flex-grow" id="map-frame">
+       <iframe class="w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=49.5376939,8.5809261&amp;hl=de&amp;z=15&amp;output=embed" title="LP‑SWIM – Standort">
+       </iframe>
+      </div>
+     </div>
+     <div class="flex flex-col p-6 bg-gray-50 rounded-xl border border-gray-200 shadow-sm text-center">
+      <div class="flex items-center justify-center gap-3 mb-4">
+       <div class="w-12 h-12 flex-shrink-0 bg-blue-100 rounded-full flex items-center justify-center">
+        <i class="w-6 h-6 text-blue-500" data-lucide="award">
+        </i>
+       </div>
+       <h3 class="text-xl font-semibold text-gray-900">
+        LP-SWIM – Inhaber Lukas Prehn
+       </h3>
+      </div>
+      <hr class="border-t border-gray-200 my-4"/>
+      <h4 class="text-lg font-medium text-blue-600 mb-2">
+       Trainerstunden
+      </h4>
+      <ul class="list-none p-0 mb-6 text-gray-700">
+       <li class="flex items-center justify-center gap-2 mb-1">
+        <i class="w-4 h-4 text-blue-400" data-lucide="calendar">
+        </i>
+        Täglich: 09:00–18:00 (nach Vereinbarung)
+       </li>
+       <li class="flex items-center justify-center gap-2">
+        <i class="w-4 h-4 text-blue-400" data-lucide="info">
+        </i>
+        Einzelsetting, 60 Minuten
+       </li>
+      </ul>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-auto">
+       <a class="btn-primary w-full sm:w-auto" href="https://www.google.de/maps/place/LP-SWIM+%E2%80%93+Inhaber+Lukas+Prehn/@49.5376939,8.5809261,17z/data=!4m16!1m9!3m8!1s0x66777943db50c52b:0x72759400e8725848!2sLP-SWIM+%E2%80%93+Inhaber+Lukas+Prehn!8m2!3d49.5376939!4d8.5809261!9m1!1b1!16s%2Fg%2F11xv29qq3r!3m5!1s0x66777943db50c52b:0x72759400e8725848!8m2!3d49.5376939!4d8.5809261!16s%2Fg%2F11xv29qq3r?entry=ttu" rel="noopener noreferrer" target="_blank">
+        <i class="w-5 h-5" data-lucide="map">
+        </i>
+        Google Maps
+       </a>
+       <a class="btn-secondary w-full sm:w-auto" href="https://www.google.com/search?q=LP+SWIM" rel="noopener noreferrer" target="_blank">
+        <i class="w-5 h-5" data-lucide="star">
+        </i>
+        Bewertungen
+       </a>
+      </div>
+     </div>
     </div>
-
-    <div id="confirmationPopup" class="modal fixed inset-0 z-[10000] flex items-center justify-center p-4 hidden">
-        <div class="modal-content relative w-full max-w-lg mx-auto text-center">
-            <span class="close-button" onclick="closeModal('confirmationPopup')">&times;</span>
-            <h2 class="text-3xl font-bold mb-4 text-blue-700">Ihre Nachricht wurde erfolgreich übermittelt!</h2>
-            <p class="text-lg text-gray-700 mb-6"><strong>Vielen Dank. Vorab das Wichtigste:</strong></p>
-            <div class="space-y-4 text-gray-700 text-base max-h-[70vh] overflow-y-auto pr-2">
-                <p class="flex items-center gap-3"><i data-lucide="map-pin" class="text-blue-500 w-6 h-6"></i><strong>Standorte:</strong><br>Viernheim ganzjährig, während der Sommermonate wahlweise in Schriesheim</p>
-                <p class="flex items-center gap-3"><i data-lucide="calendar" class="text-blue-500 w-6 h-6"></i><strong>Termine:</strong><br>Mtl. Verteiler per E-Mail / Buchung über WhatsApp</p>
-                <p class="flex items-center gap-3"><i data-lucide="credit-card" class="text-blue-500 w-6 h-6"></i><strong>Zahlung:</strong><br>Zahlungslink per E-Mail, Eintritt vor Ort exklusiv, keine Barzahlung</p>
-                <p class="flex items-center gap-3"><i data-lucide="x-circle" class="text-red-500 w-6 h-6"></i><strong>Absagen:</strong><br>Bis 24 h kostenfrei, danach Berechnung, bei Krankheit Verschiebung möglich</p>
-                <p class="flex items-center gap-3"><i data-lucide="file-text" class="text-blue-500 w-6 h-6"></i><strong>AGB:</strong><br>Siehe Website</p>
-            </div>
-            <button onclick="closeModal('confirmationPopup')" class="btn-primary mt-8 w-full justify-center">
-                <i data-lucide="check" class="w-5 h-5"></i>Verstanden
-            </button>
-        </div>
+   </section>
+   <!-- Kontakt Section -->
+   <section class="section-card animate-in" id="kontakt" style="animation-delay: 1.8s;">
+    <div class="lp-kontakt-media rounded-2xl overflow-hidden mb-8 shadow-xl">
+     <img alt="Lukas Prehn - LP-SWIM Trainer" class="w-full h-auto object-cover object-center aspect-[4/3] md:aspect-[3/1] animate-image-reveal" src="kontakt-lukas.jpg"/>
     </div>
-
-    <!-- Cookie Consent Popup -->
-    <div id="lp-consent-overlay" class="fixed inset-0 z-[100000] bg-gray-900 bg-opacity-60 backdrop-blur-md flex items-center justify-center p-4 hidden animate-fade-in">
-        <div id="lp-consent" class="bg-white rounded-xl shadow-2xl p-6 md:p-8 w-full max-w-xl animate-fade-in-up">
-            <div class="flex items-center gap-3 mb-4">
-                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <i data-lucide="cookie" class="w-6 h-6 text-blue-500"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-blue-700">Datenschutz &amp; Einwilligung</h3>
-            </div>
-            <p class="text-gray-700 mb-4">
-                Wir nutzen <strong>Google Analytics</strong>, um anonyme Nutzungsstatistiken zu erstellen und unser Angebot zu verbessern.
+    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-700" id="heading-kontakt">
+     Kontakt aufnehmen
+    </h2>
+    <p class="text-gray-700 leading-relaxed mb-8">
+     Bitte nennen Sie uns Anschrift, Alter, Leistungsstand und Ziel. Die Daten dienen ausschließlich der Aufnahme in den monatlichen Terminverteiler und der späteren Rechnungsstellung.
+    </p>
+    <form action="https://formspree.io/f/mkgzgywy" class="bg-blue-50 p-6 md:p-8 rounded-2xl shadow-lg border border-blue-100 space-y-6" method="POST">
+     <div class="hidden">
+      <label class="sr-only" for="_gotcha">
+       Bitte dieses Feld leer lassen:
+      </label>
+      <input autocomplete="off" class="hidden" id="_gotcha" name="_gotcha" tabindex="-1" type="text"/>
+     </div>
+     <div>
+      <label class="block text-blue-800 font-semibold mb-2 text-sm md:text-base" for="name">
+       Name
+      </label>
+      <input autocomplete="name" class="w-full px-4 py-3 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-300 focus:border-blue-300 transition-all duration-200 bg-white shadow-sm text-gray-800" id="name" name="name" placeholder="Max Mustermann" required="" type="text"/>
+     </div>
+     <div>
+      <label class="block text-blue-800 font-semibold mb-2 text-sm md:text-base" for="email">
+       E-Mail
+      </label>
+      <input autocomplete="email" class="w-full px-4 py-3 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-300 focus:border-blue-300 transition-all duration-200 bg-white shadow-sm text-gray-800" id="email" name="email" placeholder="max.mustermann@example.de" required="" type="email"/>
+     </div>
+     <div>
+      <label class="block text-blue-800 font-semibold mb-2 text-sm md:text-base" for="message">
+       Nachricht
+      </label>
+      <textarea autocomplete="off" class="w-full px-4 py-3 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-300 focus:border-blue-300 transition-all duration-200 bg-white shadow-sm text-gray-800" id="message" name="message" placeholder="Mein 6-jähriger Sohn möchte das Seepferdchen machen. Bisher kann er sich nur über Wasser halten." required="" rows="6"></textarea>
+     </div>
+     <div class="flex items-start gap-3">
+      <input class="mt-1 h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500 transition-colors duration-200" id="privacy-consent" name="privacy-consent" required="" type="checkbox"/>
+      <label class="text-sm md:text-base text-gray-700" for="privacy-consent">
+       Ich habe die
+       <a class="text-blue-500 hover:text-blue-700 font-medium transition-colors underline" href="#" onclick="openModal('datenschutzModal'); return false;">
+        Datenschutzerklärung
+       </a>
+       gelesen und stimme der Verarbeitung meiner Daten zu.
+      </label>
+     </div>
+     <button class="btn-primary w-full justify-center transform active:scale-98" type="submit">
+      <i class="w-5 h-5" data-lucide="send">
+      </i>
+      Nachricht senden
+     </button>
+    </form>
+    <div class="mt-6 p-4 bg-green-50 text-green-700 border border-green-200 rounded-lg text-center font-medium hidden animate-fade-in" id="form-message">
+     <i class="w-6 h-6 inline-block mr-2" data-lucide="check-circle">
+     </i>
+     Vielen Dank für Ihre Nachricht!
+    </div>
+   </section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-blue-50 text-center py-8 md:py-12 border-t border-blue-100 shadow-inner">
+   <div class="container text-blue-800 text-sm md:text-base">
+    <div class="flex flex-wrap justify-center gap-x-4 gap-y-2 mb-4">
+     <a class="text-blue-600 hover:text-blue-800 transition-colors font-medium" href="#" onclick="openModal('datenschutzModal'); return false;">
+      Datenschutzerklärung
+     </a>
+     <span class="text-gray-400">
+      |
+     </span>
+     <a class="text-blue-600 hover:text-blue-800 transition-colors font-medium" href="#" onclick="openModal('agbModal'); return false;">
+      AGB
+     </a>
+     <span class="text-gray-400">
+      |
+     </span>
+     <a class="text-blue-600 hover:text-blue-800 transition-colors font-medium" href="#" onclick="openModal('impressumModal'); return false;">
+      Impressum
+     </a>
+    </div>
+    <p class="text-gray-600">
+     © 2025 Lukas Prehn – LP-SWIM
+    </p>
+   </div>
+  </footer>
+  <!-- Modals -->
+  <div class="modal fixed inset-0 z-[10000] flex items-center justify-center p-4 hidden" id="datenschutzModal">
+   <div class="modal-content relative w-full max-w-2xl mx-auto text-left">
+    <span class="close-button" onclick="closeModal('datenschutzModal')">
+     ×
+    </span>
+    <h2 class="text-3xl font-bold mb-4 text-blue-700">
+     Datenschutzerklärung
+    </h2>
+    <div class="space-y-4 text-gray-700 text-base max-h-[70vh] overflow-y-auto pr-2">
+     <p>
+      <strong>
+       1. Verantwortlicher
+      </strong>
+      <br/>
+      Lukas Prehn
+      <br/>
+      c/o IP-Management #6336
+      <br/>
+      Ludwig-Erhard-Straße 18
+      <br/>
+      20459 Hamburg, Deutschland
+      <br/>
+      lpswim.info@gmail.com
+     </p>
+     <p>
+      <strong>
+       2. Grundsätze der Datenverarbeitung
+      </strong>
+      <br/>
+      Der Schutz personenbezogener Daten hat höchste Priorität. Die Verarbeitung erfolgt ausschließlich gemäß der Datenschutz-Grundverordnung (DSGVO) und dem Bundesdatenschutzgesetz (BDSG). Daten werden nur erhoben, wenn dies gesetzlich zulässig ist oder eine ausdrückliche Einwilligung vorliegt. Rechtsgrundlagen sind Art. 6 Abs. 1 lit. a (Einwilligung), lit. b (Vertrag oder vorvertragliche Maßnahmen) sowie lit. f (berechtigtes Interesse).
+     </p>
+     <p>
+      <strong>
+       3. Hosting
+      </strong>
+      <br/>
+      Diese Website wird über GitHub Pages (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) bereitgestellt. Beim Aufruf werden automatisch IP-Adresse, Datum/Uhrzeit, aufgerufene Seiten/Dateien, Referrer-URL, Browsertyp/-version und Betriebssystem verarbeitet. Die Verarbeitung dient der technischen Bereitstellung, Sicherheit und Stabilität der Website. Eine Zusammenführung mit anderen Daten erfolgt nicht. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Weitere Informationen:
+      <a class="text-blue-500 hover:text-blue-700 underline" href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener noreferrer" target="_blank">
+       GitHub Pages Datenschutz
+      </a>
+     </p>
+     <p>
+      <strong>
+       4. Cookies
+      </strong>
+      <br/>
+      Auf dieser Website werden ausschließlich technisch notwendige Cookies verwendet, die für den Betrieb sowie die grundlegenden Funktionen erforderlich sind. Zusätzlich wird beim Aufruf der Seite eine Abfrage zur Einwilligung in die Verwendung von Google-Analytics-Cookies eingeblendet. Diese Analyse-Cookies werden nur gesetzt, wenn die Nutzung ausdrücklich gestattet wird. Ohne Zustimmung erfolgt keine Verarbeitung zu Zwecken wie Tracking, Analyse, Marketing oder Profilbildung. Rechtsgrundlage hierfür ist Art. 6 Abs. 1 lit. f DSGVO (Einsatz technisch notwendiger Cookies) sowie Art. 6 Abs. 1 lit. a DSGVO (Verwendung von Google Analytics nach erteilter Einwilligung).
+     </p>
+     <p>
+      <strong>
+       5. Kontaktformular
+      </strong>
+      <br/>
+      Zur Kontaktaufnahme steht ein Formular zur Verfügung, betrieben von Formspree (Formspree Inc., 303 Twin Dolphin Dr., Redwood City, CA 94065, USA). Verarbeitet werden Name, E-Mail-Adresse und Ihre Nachricht. Die Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO. Weitere Informationen:
+      <a class="text-blue-500 hover:text-blue-700 underline" href="https://formspree.io/legal/privacy-policy/" rel="noopener noreferrer" target="_blank">
+       Formspree Privacy Policy
+      </a>
+     </p>
+     <p>
+      <strong>
+       6. Rechte der betroffenen Personen
+      </strong>
+      <br/>
+      Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerspruch sowie den Widerruf erteilter Einwilligungen. Zudem besteht das Recht auf Beschwerde bei einer Datenschutzaufsichtsbehörde.
+     </p>
+     <p>
+      <strong>
+       7. Stand und Änderungen
+      </strong>
+      <br/>
+      Diese Datenschutzerklärung gilt ab August 2025. Änderungen können bei technischen Anpassungen oder neuen gesetzlichen Vorgaben erfolgen. Die aktuelle Version ist jederzeit auf dieser Website abrufbar.
+     </p>
+    </div>
+   </div>
+  </div>
+  <div class="modal fixed inset-0 z-[10000] flex items-center justify-center p-4 hidden" id="agbModal">
+   <div class="modal-content relative w-full max-w-2xl mx-auto text-left">
+    <span class="close-button" onclick="closeModal('agbModal')">
+     ×
+    </span>
+    <h2 class="text-3xl font-bold mb-4 text-blue-700">
+     Allgemeine Geschäftsbedingungen (AGB)
+    </h2>
+    <div class="space-y-4 text-gray-700 text-base max-h-[70vh] overflow-y-auto pr-2">
+     <p>
+      <strong>
+       §1 Geltungsbereich
+      </strong>
+      <br/>
+      Diese AGB gelten für alle zwischen LP-SWIM, vertreten durch den jeweiligen Schwimmlehrer und den Teilnehmenden geschlossenen Verträge über Schwimmunterricht.
+     </p>
+     <p>
+      <strong>
+       §2 Vertragsabschluss
+      </strong>
+      <br/>
+      Der Vertrag kommt mit der schriftlichen Bestätigung des Termins durch den Anbieter LP-SWIM, vertreten durch den jeweiligen Schwimmlehrer, zustande. Mit der Anmeldung verpflichtet sich der Kunde zur verbindlichen Teilnahme. Bei Nichterscheinen gelten die Regelungen gemäß § 5 ‚Stornierung‘.
+     </p>
+     <p>
+      <strong>
+       §3 Teilnahmevoraussetzungen
+      </strong>
+      <br/>
+      Teilnehmende müssen gesund sein und eigenverantwortlich entscheiden können, ob sie am Schwimmunterricht teilnehmen. Bei Minderjährigen sind die Erziehungsberechtigten verantwortlich.
+     </p>
+     <p>
+      <strong>
+       §4 Zahlungsbedingungen
+      </strong>
+      <br/>
+      Die Bezahlung erfolgt ausschließlich per Kartenzahlung vor Ort oder Rechnung mit Zahlungslink via Mail. Bargeld wird nicht angenommen. Der Rechnungsbetrag ist nach Erhalt der Rechnung, spätestens jedoch 24 Stunden vor Beginn der ersten Trainingseinheit, zur Zahlung fällig. Erfolgt die Zahlung nicht rechtzeitig, behalten wir uns vor, den vereinbarten Termin anderweitig zu vergeben. Der Eintrittspreis für die Nutzung des Bades ist nicht im Honorar für die Trainerstunde enthalten. Er ist zusätzlich und unabhängig von der gebuchten Leistung direkt vor Ort zu entrichten.
+     </p>
+     <p>
+      <strong>
+       §5 Stornierung
+      </strong>
+      <br/>
+      Absagen sind spätestens 24 Stunden vor Beginn der gebuchten Trainerstunde kostenfrei möglich. Spätere Absagen oder Nichterscheinen führen zur Berechnung der vollen Kursgebühr. Bei nicht vom Kunden verschuldeten Verhinderungen, insbesondere im Krankheitsfall, besteht die Möglichkeit, einen Ersatztermin zu vereinbaren. Ein Anspruch auf Erstattung des bereits gezahlten Entgelts besteht in diesem Fall nicht.
+     </p>
+     <p>
+      <strong>
+       §6 Ausfall des Unterrichts
+      </strong>
+      <br/>
+      Fällt der Unterricht aufgrund von Krankheit oder sonstigen, vom Schwimmlehrer zu vertretenden Umständen aus, wird ein Ersatztermin angeboten. Ist eine Nachholung nicht möglich, erfolgt eine Rückerstattung des bereits gezahlten Entgelts.
+     </p>
+     <p>
+      <strong>
+       §7 Haftung
+      </strong>
+      <br/>
+      Die Teilnahme erfolgt auf eigene Gefahr. LP-SWIM haftet nur für Vorsatz und grobe Fahrlässigkeit. Für mitgebrachte Wertgegenstände wird keine Haftung übernommen.
+     </p>
+     <p>
+      <strong>
+       §8 Schlussbestimmungen
+      </strong>
+      <br/>
+      Sollten einzelne Bestimmungen dieser AGB unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.
+     </p>
+    </div>
+   </div>
+  </div>
+  <div class="modal fixed inset-0 z-[10000] flex items-center justify-center p-4 hidden" id="impressumModal">
+   <div class="modal-content relative w-full max-w-2xl mx-auto text-left">
+    <span class="close-button" onclick="closeModal('impressumModal')">
+     ×
+    </span>
+    <h2 class="text-3xl font-bold mb-4 text-blue-700">
+     Impressum
+    </h2>
+    <div class="space-y-4 text-gray-700 text-base max-h-[70vh] overflow-y-auto pr-2">
+     <p>
+      Angaben gemäß § 5 TMG:
+     </p>
+     <p>
+      Lukas Prehn
+      <br/>
+      c/o IP-Management #6336
+      <br/>
+      Ludwig-Erhard-Straße 18
+      <br/>
+      20459 Hamburg
+      <br/>
+      Deutschland
+     </p>
+     <p>
+      Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
+      <br/>
+      Lukas Prehn, Anschrift wie oben
+     </p>
+    </div>
+   </div>
+  </div>
+  <div class="modal fixed inset-0 z-[10000] flex items-center justify-center p-4 hidden" id="confirmationPopup">
+   <div class="modal-content relative w-full max-w-lg mx-auto text-center">
+    <span class="close-button" onclick="closeModal('confirmationPopup')">
+     ×
+    </span>
+    <h2 class="text-3xl font-bold mb-4 text-blue-700">
+     Ihre Nachricht wurde erfolgreich übermittelt!
+    </h2>
+    <p class="text-lg text-gray-700 mb-6">
+     <strong>
+      Vielen Dank. Vorab das Wichtigste:
+     </strong>
+    </p>
+    <div class="space-y-4 text-gray-700 text-base max-h-[70vh] overflow-y-auto pr-2">
+     <p class="flex items-center gap-3">
+      <i class="text-blue-500 w-6 h-6" data-lucide="map-pin">
+      </i>
+      <strong>
+       Standorte:
+      </strong>
+      <br/>
+      Viernheim ganzjährig, während der Sommermonate wahlweise in Schriesheim
+     </p>
+     <p class="flex items-center gap-3">
+      <i class="text-blue-500 w-6 h-6" data-lucide="calendar">
+      </i>
+      <strong>
+       Termine:
+      </strong>
+      <br/>
+      Mtl. Verteiler per E-Mail / Buchung über WhatsApp
+     </p>
+     <p class="flex items-center gap-3">
+      <i class="text-blue-500 w-6 h-6" data-lucide="credit-card">
+      </i>
+      <strong>
+       Zahlung:
+      </strong>
+      <br/>
+      Zahlungslink per E-Mail, Eintritt vor Ort exklusiv, keine Barzahlung
+     </p>
+     <p class="flex items-center gap-3">
+      <i class="text-red-500 w-6 h-6" data-lucide="x-circle">
+      </i>
+      <strong>
+       Absagen:
+      </strong>
+      <br/>
+      Bis 24 h kostenfrei, danach Berechnung, bei Krankheit Verschiebung möglich
+     </p>
+     <p class="flex items-center gap-3">
+      <i class="text-blue-500 w-6 h-6" data-lucide="file-text">
+      </i>
+      <strong>
+       AGB:
+      </strong>
+      <br/>
+      Siehe Website
+     </p>
+    </div>
+    <button class="btn-primary mt-8 w-full justify-center" onclick="closeModal('confirmationPopup')">
+     <i class="w-5 h-5" data-lucide="check">
+     </i>
+     Verstanden
+    </button>
+   </div>
+  </div>
+  <!-- Cookie Consent Popup -->
+  <div class="fixed inset-0 z-[100000] bg-gray-900 bg-opacity-60 backdrop-blur-md flex items-center justify-center p-4 hidden animate-fade-in" id="lp-consent-overlay">
+   <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 w-full max-w-xl animate-fade-in-up" id="lp-consent">
+    <div class="flex items-center gap-3 mb-4">
+     <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+      <i class="w-6 h-6 text-blue-500" data-lucide="cookie">
+      </i>
+     </div>
+     <h3 class="text-2xl font-bold text-blue-700">
+      Datenschutz &amp; Einwilligung
+     </h3>
+    </div>
+    <p class="text-gray-700 mb-4">
+     Wir nutzen
+     <strong>
+      Google Analytics
+     </strong>
+     , um anonyme Nutzungsstatistiken zu erstellen und unser Angebot zu verbessern.
                 Google kann dabei Daten verarbeiten. Mehr Infos findest du bei
-                <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-700 underline">Google – Partner‑Websites</a>
-                und in der
-                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-700 underline">Google‑Datenschutzerklärung</a>.
-            </p>
-            <ul class="list-none p-0 mb-6 space-y-2 text-gray-700">
-                <li class="flex items-start gap-3">
-                    <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0 mt-1"></i>
-                    <span>Keine personalisierte Werbung; ausschließlich Reichweitenmessung.</span>
-                </li>
-                <li class="flex items-start gap-3">
-                    <i data-lucide="check-circle" class="w-5 h-5 text-green-500 flex-shrink-0 mt-1"></i>
-                    <span>Du kannst <em>Zustimmen</em> oder <em>Ablehnen</em> – die Seite wird danach freigegeben.</span>
-                </li>
-            </ul>
-            <div class="flex flex-col sm:flex-row gap-3 justify-end">
-                <button id="lp-decline" class="btn-secondary w-full sm:w-auto hover:bg-red-50 hover:border-red-200 hover:text-red-600">
-                    <i data-lucide="x" class="w-5 h-5"></i>Ablehnen
-                </button>
-                <button id="lp-accept" class="btn-primary w-full sm:w-auto">
-                    <i data-lucide="check" class="w-5 h-5"></i>Zustimmen
-                </button>
-            </div>
-        </div>
+     <a class="text-blue-500 hover:text-blue-700 underline" href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">
+      Google – Partner‑Websites
+     </a>
+     und in der
+     <a class="text-blue-500 hover:text-blue-700 underline" href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">
+      Google‑Datenschutzerklärung
+     </a>
+     .
+    </p>
+    <ul class="list-none p-0 mb-6 space-y-2 text-gray-700">
+     <li class="flex items-start gap-3">
+      <i class="w-5 h-5 text-green-500 flex-shrink-0 mt-1" data-lucide="check-circle">
+      </i>
+      <span>
+       Keine personalisierte Werbung; ausschließlich Reichweitenmessung.
+      </span>
+     </li>
+     <li class="flex items-start gap-3">
+      <i class="w-5 h-5 text-green-500 flex-shrink-0 mt-1" data-lucide="check-circle">
+      </i>
+      <span>
+       Du kannst
+       <em>
+        Zustimmen
+       </em>
+       oder
+       <em>
+        Ablehnen
+       </em>
+       – die Seite wird danach freigegeben.
+      </span>
+     </li>
+    </ul>
+    <div class="flex flex-col sm:flex-row gap-3 justify-end">
+     <button class="btn-secondary w-full sm:w-auto hover:bg-red-50 hover:border-red-200 hover:text-red-600" id="lp-decline">
+      <i class="w-5 h-5" data-lucide="x">
+      </i>
+      Ablehnen
+     </button>
+     <button class="btn-primary w-full sm:w-auto" id="lp-accept">
+      <i class="w-5 h-5" data-lucide="check">
+      </i>
+      Zustimmen
+     </button>
     </div>
-
-
-    <script>
-        lucide.createIcons();
+   </div>
+  </div>
+  <script>
+   lucide.createIcons();
 
         // Custom Tailwind animations (moved from style tag)
         const style = document.createElement('style');
@@ -890,7 +1138,6 @@ h3 { font-size: clamp(1.2rem, 2.4vw, 1.75rem); }
                 openBanner(); // Fallback if localStorage is not accessible
             }
         })();
-
-    </script>
-</body>
+  </script>
+ </body>
 </html>
