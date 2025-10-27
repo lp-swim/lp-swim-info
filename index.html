@@ -171,7 +171,77 @@
         section {
             scroll-margin-top: 100px; /* Adjust based on actual nav height */
         }
-    </style>
+    
+/* =======================================
+   ✅ Zusätzliche Responsive-Optimierungen
+   ======================================= */
+
+/* Allgemeine Schriftgrößenanpassung mit clamp() */
+body {
+  font-size: clamp(14px, 1.6vw, 18px);
+  line-height: 1.7;
+}
+
+/* Überschriften etwas flexibler skalieren */
+h1, h2, h3 {
+  line-height: 1.2;
+  word-break: break-word;
+}
+h1 { font-size: clamp(1.8rem, 4vw, 3rem); }
+h2 { font-size: clamp(1.4rem, 3vw, 2.25rem); }
+h3 { font-size: clamp(1.2rem, 2.4vw, 1.75rem); }
+
+/* Modal-Text und Inhalt responsive */
+.modal-content {
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: clamp(1.2rem, 4vw, 2.5rem);
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+/* Modale Überschriften */
+.modal-content h2 {
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+}
+
+/* Links in Modals anpassbar und gut antippbar */
+.modal-content a {
+  word-break: break-word;
+}
+
+/* Kontaktbild-Anpassung */
+.lp-kontakt-media img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* Damit nichts abgeschnitten wird */
+  border-radius: 1rem;
+}
+
+/* Mobile Optimierungen */
+@media (max-width: 768px) {
+  .modal-content {
+    max-height: 90vh;
+    padding: 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .lp-kontakt-media img {
+    object-fit: cover; /* Auf Handy wieder schön gefüllt */
+  }
+
+  .section-card {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  /* Modals auf kleinen Bildschirmen breiter */
+  .modal-content {
+    width: 95%;
+    border-radius: 16px;
+  }
+}
+
+</style>
 </head>
 <body class="text-gray-700">
     <!-- Fixed Navigation -->
@@ -256,8 +326,7 @@
 
         <!-- Kinder & Jugendliche Section -->
         <section id="jugend" class="section-card animate-in" style="animation-delay: 1s;">
-            <h2 id="heading-jugend" class="text-3xl md:text-4xl font-bold mb-6 text-blue-700">
-                <i data-lucide="child" class="w-8 h-8 mr-3 inline-block text-pink-400"></i>Kinder &amp; Jugendliche
+            <h2 id="heading-jugend" class="text-3xl md:text-4xl font-bold mb-6 text-blue-700">Kinder &amp; Jugendliche
             </h2>
             <p class="text-gray-700 leading-relaxed mb-4">
                 Viele Kinder und Jugendliche in Deutschland erhalten heute nur eingeschränkten Zugang zu qualitativem Schwimmunterricht. Zeitliche Ressourcen im Familienalltag sind begrenzt, und auch der schulische Schwimmunterricht ist zunehmend durch organisatorische Rahmenbedingungen limitiert. Dies führt häufig zu Unsicherheiten in der Wasserlage, Koordinationsdefiziten und mangelnder Routine bei technischen Abläufen. Ohne gezielte Förderung bleibt der Lernfortschritt eingeschränkt, was sowohl die Sicherheit im Wasser als auch die langfristige Motivation beeinträchtigen kann.
@@ -274,8 +343,7 @@
 
         <!-- Schulbegleitung Section -->
         <section id="schule" class="section-card animate-in" style="animation-delay: 1.2s;">
-            <h2 id="heading-schule" class="text-3xl md:text-4xl font-bold mb-6 text-blue-700">
-                <i data-lucide="book-open" class="w-8 h-8 mr-3 inline-block text-green-500"></i>Schulbegleitung
+            <h2 id="heading-schule" class="text-3xl md:text-4xl font-bold mb-6 text-blue-700">Schulbegleitung
             </h2>
             <p class="text-gray-700 leading-relaxed mb-4">
                 Im Schwimmunterricht tragen Lehrkräfte besondere Verantwortung. Sie organisieren den Unterricht, sichern die Aufsicht und fördern die Kinder pädagogisch. Die Anforderungen an Sicherheit und individuelle Förderung stehen dabei oft in einem Spannungsverhältnis zu knappen Ressourcen. Das tragische Unglück vom 18. September 2023, bei dem ein Zweitklässler ertrank, hat die Debatte über Aufsichtspflichten bundesweit verstärkt.
@@ -295,8 +363,7 @@
 
         <!-- Erwachsene Section -->
         <section id="erwachsene" class="section-card animate-in" style="animation-delay: 1.4s;">
-            <h2 id="heading-erwachsene" class="text-3xl md:text-4xl font-bold mb-6 text-blue-700">
-                <i data-lucide="user" class="w-8 h-8 mr-3 inline-block text-purple-400"></i>Erwachsene
+            <h2 id="heading-erwachsene" class="text-3xl md:text-4xl font-bold mb-6 text-blue-700">Erwachsene
             </h2>
             <p class="text-gray-700 leading-relaxed mb-4">
                 Für viele Erwachsene ist der Zugang zum Wasser mit Unsicherheiten verbunden. Fehlende Erfahrung, längere Pausen oder negative Erlebnisse sind häufige Gründe. Schwimmen wird oft als Kinderthema betrachtet – dabei ist es eine motorische Fähigkeit, die in jedem Alter erlernt und weiterentwickelt werden kann.
@@ -316,8 +383,7 @@
 
         <!-- Standort Section -->
         <section id="standort" class="section-card animate-in" style="animation-delay: 1.6s;">
-            <h2 id="heading-standort" class="text-3xl md:text-4xl font-bold mb-6 text-blue-700">
-                <i data-lucide="map" class="w-8 h-8 mr-3 inline-block text-orange-500"></i>Standort
+            <h2 id="heading-standort" class="text-3xl md:text-4xl font-bold mb-6 text-blue-700">Standort
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                 <div class="flex flex-col bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm">
@@ -368,8 +434,7 @@
             <div class="lp-kontakt-media rounded-2xl overflow-hidden mb-8 shadow-xl">
                 <img src="kontakt-lukas.jpg" alt="Lukas Prehn - LP-SWIM Trainer" class="w-full h-auto object-cover object-center aspect-[4/3] md:aspect-[3/1] animate-image-reveal">
             </div>
-            <h2 id="heading-kontakt" class="text-3xl md:text-4xl font-bold mb-6 text-blue-700">
-                <i data-lucide="send" class="w-8 h-8 mr-3 inline-block text-cyan-500"></i>Kontakt aufnehmen
+            <h2 id="heading-kontakt" class="text-3xl md:text-4xl font-bold mb-6 text-blue-700">Kontakt aufnehmen
             </h2>
             <p class="text-gray-700 leading-relaxed mb-8">
                 Bitte nennen Sie uns Anschrift, Alter, Leistungsstand und Ziel. Die Daten dienen ausschließlich der Aufnahme in den monatlichen Terminverteiler und der späteren Rechnungsstellung.
