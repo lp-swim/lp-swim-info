@@ -319,6 +319,40 @@ h2 {
   text-wrap: balance;
 }
 
+
+/* =======================================
+   🖼️ Kontaktbild – voll sichtbar, responsiv & zentriert
+   ======================================= */
+.lp-kontakt-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain; /* Zeigt das komplette Bild */
+  object-position: center center; /* Mittig ausgerichtet */
+  border-radius: 1rem;
+  margin: 0 auto;
+  image-rendering: auto;
+  aspect-ratio: 16/9; /* Rechteckige, harmonische Darstellung */
+  max-height: 90vh; /* Damit das Bild nie zu groß wird */
+}
+
+@media (max-width: 1024px) {
+  .lp-kontakt-media img {
+    aspect-ratio: auto;
+    max-height: 70vh;
+    object-fit: cover; /* Auf kleineren Geräten: schön gefüllt */
+  }
+}
+
+@media (max-width: 600px) {
+  .lp-kontakt-media img {
+    object-fit: cover;
+    aspect-ratio: auto;
+    max-height: none;
+  }
+}
+
 </style>
   </meta>
  </head>
@@ -1227,4 +1261,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 </body>
 </html>
-
