@@ -1334,6 +1334,49 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 </script>
 
+
+<!-- ✅ Consent-based Google Analytics 4 Integration -->
+<script>
+  // Consent handling for Google Analytics (DSGVO-konform)
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  function grantConsent() {
+    localStorage.setItem('lp-consent', 'granted');
+    gtag('js', new Date());
+    gtag('config', 'G-T5H2XMBKFL', {
+      'stream_id': '12034434357',
+      'anonymize_ip': true
+    });
+    document.getElementById('lp-consent-overlay').style.display = 'none';
+  }
+
+  function denyConsent() {
+    localStorage.setItem('lp-consent', 'denied');
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied'
+    });
+    document.getElementById('lp-consent-overlay').style.display = 'none';
+  }
+
+  // Load GA library asynchronously but initialize only after consent
+  (function() {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-T5H2XMBKFL";
+    document.head.appendChild(script);
+
+    const consent = localStorage.getItem('lp-consent');
+    if (consent === 'granted') {
+      grantConsent();
+    } else {
+      denyConsent();
+    }
+  })();
+</script>
+<!-- ✅ End of GA Integration -->
+
 </body>
 </html>
 
