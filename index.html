@@ -424,18 +424,6 @@ h2 {
 <!-- ✅ Ende SEO Optimierungen -->
 
 
-<!-- Google Tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T5H2XMBKFL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-T5H2XMBKFL', {
-    'stream_id': '12034434357',
-    'anonymize_ip': true
-  });
-</script>
-
 </head>
  <body class="text-gray-700">
   <!-- Fixed Navigation -->
@@ -1241,6 +1229,35 @@ h2 {
         // Cookie Consent Logic
         (function() {
             var KEY = "lp_cookie_consent_v1";
+            // helper: load GA library and initialize gtag function if needed
+            var _ga_loaded = false;
+            function loadGAScriptAndInit() {
+                if (_ga_loaded) return;
+                _ga_loaded = true;
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = "https://www.googletagmanager.com/gtag/js?id=G-T5H2XMBKFL";
+                s.onload = function() {
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);} window.gtag = gtag;
+                    gtag('js', new Date());
+                    // If user already accepted, configure GA
+                    if (localStorage.getItem(KEY) === 'accepted') {
+                        gtag('config', 'G-T5H2XMBKFL', {
+                            'stream_id': '12034434357',
+                            'anonymize_ip': true
+                        });
+                    } else {
+                        // default deny until consent granted
+                        gtag('consent', 'default', {
+                            'ad_storage': 'denied',
+                            'analytics_storage': 'denied'
+                        });
+                    }
+                };
+                document.head.appendChild(s);
+            }
+    
             var overlay = document.getElementById('lp-consent-overlay');
             var acceptBtn = document.getElementById('lp-accept');
             var declineBtn = document.getElementById('lp-decline');
@@ -1289,12 +1306,16 @@ h2 {
 
             if (acceptBtn) acceptBtn.addEventListener('click', function() {
                 localStorage.setItem(KEY, 'accepted');
-                grantConsent();
+                loadGAScriptAndInit();
+                // ensure consent update after GA is available
+                setTimeout(function(){ grantConsent(); }, 50);
                 closeBanner();
             });
             if (declineBtn) declineBtn.addEventListener('click', function() {
                 localStorage.setItem(KEY, 'declined');
-                denyConsent();
+                // make sure GA remains denied even if loaded
+                loadGAScriptAndInit();
+                setTimeout(function(){ denyConsent(); }, 50);
                 closeBanner();
             });
 
@@ -1310,9 +1331,11 @@ h2 {
                 if (!localStorage.getItem(KEY)) {
                     openBanner();
                 } else if (localStorage.getItem(KEY) === 'accepted') {
-                    grantConsent(); // Ensure gtag is updated if already accepted
+                    loadGAScriptAndInit();
+                    setTimeout(function(){ grantConsent(); }, 50);
                 } else {
-                    denyConsent(); // Ensure gtag is updated if already denied
+                    loadGAScriptAndInit();
+                    setTimeout(function(){ denyConsent(); }, 50);
                 }
             } catch (e) {
                 openBanner(); // Fallback if localStorage is not accessible
@@ -1335,48 +1358,5 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 </script>
 
 
-<!-- ✅ Consent-based Google Analytics 4 Integration -->
-<script>
-  // Consent handling for Google Analytics (DSGVO-konform)
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-
-  function grantConsent() {
-    localStorage.setItem('lp-consent', 'granted');
-    gtag('js', new Date());
-    gtag('config', 'G-T5H2XMBKFL', {
-      'stream_id': '12034434357',
-      'anonymize_ip': true
-    });
-    document.getElementById('lp-consent-overlay').style.display = 'none';
-  }
-
-  function denyConsent() {
-    localStorage.setItem('lp-consent', 'denied');
-    gtag('consent', 'default', {
-      'ad_storage': 'denied',
-      'analytics_storage': 'denied'
-    });
-    document.getElementById('lp-consent-overlay').style.display = 'none';
-  }
-
-  // Load GA library asynchronously but initialize only after consent
-  (function() {
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-T5H2XMBKFL";
-    document.head.appendChild(script);
-
-    const consent = localStorage.getItem('lp-consent');
-    if (consent === 'granted') {
-      grantConsent();
-    } else {
-      denyConsent();
-    }
-  })();
-</script>
-<!-- ✅ End of GA Integration -->
-
 </body>
 </html>
-
