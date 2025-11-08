@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
    <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
    <meta charset="utf-8"/>
    <meta content="YlKI4FssjU6jEQDyOzNbdwcIOhv516qFAF1RUyDOV6I" name="google-site-verification">
    <meta content="58B42B8F103EB15114C7AFC816233F91" name="msvalidate.01"/>
@@ -500,6 +501,17 @@ h2 {
   #confirmationPopup p {
     font-size: clamp(0.9rem, 3.8vw, 1rem);
   }
+}
+
+
+/* ✅ Verbesserte mobile Darstellung & Performance */
+#confirmationPopup {
+  z-index: 999999;
+}
+
+#confirmationPopup .modal-content {
+  -webkit-overflow-scrolling: touch;
+  will-change: transform, opacity;
 }
 
 </style>
@@ -1300,7 +1312,7 @@ h2 {
                             formMessage.textContent = 'Vielen Dank für Ihre Nachricht! Sie erhalten in Kürze eine Bestätigung.';
                             formMessage.classList.remove('hidden');
                             formMessage.classList.add('bg-green-100', 'border-green-300', 'text-green-800');
-                            openModal('confirmationPopup');
+                            setTimeout(() => openModal('confirmationPopup'), 150);
                         } else {
                             formMessage.textContent = 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.';
                             formMessage.classList.remove('hidden');
@@ -1479,4 +1491,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 </body>
 </html>
-
