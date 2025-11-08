@@ -137,13 +137,15 @@
             backdrop-filter: blur(8px);
         }
         .modal-content {
-  overflow: visible !important; /* Nur ein Scrollbalken sichtbar */
-            background-color: white;
-            border-radius: 24px;
-            padding: 2.5rem;
-            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
-            border: 1px solid #e2e8f0;
-        }
+  background-color: white;
+  border-radius: 24px;
+  padding: 2.5rem 2.5rem 3.5rem 2.5rem; /* zusätzlicher Leerraum unten */
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+  border: 1px solid #e2e8f0;
+  max-height: 85vh;
+  overflow-y: auto; /* Scrollbar nur bei Bedarf */
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
         .close-button {
             color: #4b5563;
             font-size: 2rem;
@@ -195,16 +197,20 @@ h3 { font-size: clamp(1.2rem, 2.4vw, 1.75rem); }
 
 /* Modal-Text und Inhalt responsive */
 .modal-content {
-  overflow: visible !important; /* Nur ein Scrollbalken sichtbar */
+  background-color: white;
+  border-radius: 24px;
+  padding: 2.5rem 2.5rem 3.5rem 2.5rem; /* zusätzlicher Leerraum unten */
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+  border: 1px solid #e2e8f0;
   max-height: 85vh;
-  
-  padding: clamp(1.2rem, 4vw, 2.5rem);
+  overflow-y: auto; /* Scrollbar nur bei Bedarf */
   font-size: clamp(0.9rem, 2.5vw, 1rem);
 }
 
 /* Modale Überschriften */
 .modal-content h2 {
-  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  line-height: 1.3;
 }
 
 /* Links in Modals anpassbar und gut antippbar */
@@ -225,11 +231,15 @@ h3 { font-size: clamp(1.2rem, 2.4vw, 1.75rem); }
 /* Mobile Optimierungen */
 @media (max-width: 768px) {
   .modal-content {
-  overflow: visible !important; /* Nur ein Scrollbalken sichtbar */
-    max-height: 90vh;
-    padding: 1.25rem;
-    font-size: 0.95rem;
-  }
+  background-color: white;
+  border-radius: 24px;
+  padding: 2.5rem 2.5rem 3.5rem 2.5rem; /* zusätzlicher Leerraum unten */
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+  border: 1px solid #e2e8f0;
+  max-height: 85vh;
+  overflow-y: auto; /* Scrollbar nur bei Bedarf */
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
 
   .lp-kontakt-media img {
   width: 100%;
@@ -247,10 +257,15 @@ h3 { font-size: clamp(1.2rem, 2.4vw, 1.75rem); }
 
   /* Modals auf kleinen Bildschirmen breiter */
   .modal-content {
-  overflow: visible !important; /* Nur ein Scrollbalken sichtbar */
-    width: 95%;
-    border-radius: 16px;
-  }
+  background-color: white;
+  border-radius: 24px;
+  padding: 2.5rem 2.5rem 3.5rem 2.5rem; /* zusätzlicher Leerraum unten */
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+  border: 1px solid #e2e8f0;
+  max-height: 85vh;
+  overflow-y: auto; /* Scrollbar nur bei Bedarf */
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
 }
 
 .lp-kontakt-media img {
@@ -420,7 +435,6 @@ h2 {
 }
 </script>
 <!-- ✅ Ende SEO Optimierungen -->
-
 
 </head>
  <body class="text-gray-700">
@@ -788,7 +802,8 @@ h2 {
        §1 Geltungsbereich
       </strong>
       <br/>
-      Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle zwischen LP-SWIM, vertreten durch die jeweils mit der Durchführung beauftragte Lehr- oder Betreuungsperson (nachfolgend „Dienstleister“ genannt), und den Teilnehmenden geschlossenen Verträge über die Inanspruchnahme von Dienstleistungen aus dem Leistungsangebot von LP-SWIM. Dieses umfasst insbesondere Schwimmunterricht sowie die Begleitung und Betreuung von Teilnehmenden im Rahmen schulischer oder außerschulischer Aktivitäten wie Schulschwimmen, Freizeitgruppen oder Ferienprogramme, einschließlich aller damit verbundenen pädagogischen, sportlichen und organisatorischen Leistungen. Teilnehmende im Sinne dieser AGB sind alle Personen, die Leistungen von LP-SWIM in Anspruch nehmen oder für die solche Leistungen durch Dritte – insbesondere Eltern, Erziehungsberechtigte, Schulen, Vereine oder sonstige Institutionen – gebucht werden. Diese AGB gelten gleichermaßen gegenüber den Teilnehmenden und den jeweiligen Vertragspartnern. Der Vertrag kommt mit der ausdrücklichen Bestätigung der Buchung durch LP-SWIM zustande; mit Zugang der Zahlungsaufforderung und anschließender Terminbestätigung gilt die Buchung als verbindlich und für beide Parteien rechtswirksam.
+      Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle zwischen LP-SWIM, vertreten durch die jeweils mit der Durchführung beauftragte Lehr- oder Betreuungsperson (nachfolgend „Dienstleister“ genannt), und den Teilnehmenden geschlossenen Verträge über die Inanspruchnahme von Dienstleistungen aus dem Leistungsangebot von LP-SWIM. Dieses umfasst insbesondere Schwimmunterricht sowie die Begleitung und Betreuung von Teilnehmenden im Rahmen schulischer oder außerschulischer Aktivitäten wie Schulschwimmen, Freizeitgruppen oder Ferienprogramme, einschließlich aller damit verbundenen pädagogischen, sportlichen und organisatorischen Leistungen.</p>
+<p class="mb-4">Teilnehmende im Sinne dieser AGB sind alle Personen, die Leistungen von LP-SWIM in Anspruch nehmen oder für die solche Leistungen durch Dritte – insbesondere Eltern, Erziehungsberechtigte, Schulen, Vereine oder sonstige Institutionen – gebucht werden. Diese AGB gelten gleichermaßen gegenüber den Teilnehmenden und den jeweiligen Vertragspartnern. Der Vertrag kommt mit der ausdrücklichen Bestätigung der Buchung durch LP-SWIM zustande; mit Zugang der Zahlungsaufforderung und anschließender Terminbestätigung gilt die Buchung als verbindlich und für beide Parteien rechtswirksam.
      </p>
      <p>
       <strong>
@@ -802,35 +817,40 @@ h2 {
        §3 Teilnahmevoraussetzungen
       </strong>
       <br/>
-      Die Teilnahme setzt einen gesundheitlich unbedenklichen Zustand der Teilnehmenden voraus. Jede teilnehmende Person ist selbst dafür verantwortlich, ihre körperliche Eignung für den Schwimmunterricht sicherzustellen und eigenverantwortlich über die Teilnahme zu entscheiden. Bei minderjährigen Teilnehmenden obliegt diese Verantwortung den Erziehungsberechtigten. Der Anbieter LP-SWIM sowie die durch ihn beauftragten Lehr- oder Betreuungspersonen übernehmen keine Haftung für gesundheitliche Risiken, Verletzungen oder sonstige Schäden, die infolge einer unzutreffenden Selbsteinschätzung oder aufgrund verschwiegerner gesundheitlicher Beeinträchtigungen entstehen, sofern diese nicht auf vorsätzliches oder grob fahrlässiges Verhalten des Dienstleisters zurückzuführen sind.
+      Die Teilnahme setzt einen gesundheitlich unbedenklichen Zustand der Teilnehmenden voraus. Jede teilnehmende Person ist selbst dafür verantwortlich, ihre körperliche Eignung für den Schwimmunterricht sicherzustellen und eigenverantwortlich über die Teilnahme zu entscheiden. Bei minderjährigen Teilnehmenden obliegt diese Verantwortung den Erziehungsberechtigten.</p>
+<p class="mb-4">Der Anbieter LP-SWIM sowie die durch ihn beauftragten Lehr- oder Betreuungspersonen übernehmen keine Haftung für gesundheitliche Risiken, Verletzungen oder sonstige Schäden, die infolge einer unzutreffenden Selbsteinschätzung oder aufgrund verschwiegerner gesundheitlicher Beeinträchtigungen entstehen, sofern diese nicht auf vorsätzliches oder grob fahrlässiges Verhalten des Dienstleisters zurückzuführen sind.
      </p>
      <p>
       <strong>
        §4 Zahlungsbedingungen
       </strong>
       <br/>
-      Die Vergütung der vereinbarten Leistung erfolgt auf Grundlage einer vom Dienstleister ausgestellten elektronischen Rechnung, die dem Vertragspartner per E-Mail mit einem Zahlungslink übermittelt wird. Barzahlungen sind ausgeschlossen. Der Rechnungsbetrag ist unmittelbar nach Erhalt der Rechnung, spätestens jedoch innerhalb der vom Dienstleister gesetzten Zahlungsfrist, vollständig über den bereitgestellten Zahlungslink zu begleichen. Erfolgt keine fristgerechte Zahlung, ist der Dienstleister berechtigt, die Leistung zu stornieren, den Termin anderweitig zu vergeben oder vom Vertrag zurückzutreten. Ansprüche auf Ersatz entstandener Aufwendungen oder Schadensersatz bleiben vorbehalten. Bei Dienstleistungen wie Schwimmunterricht ist der Eintrittspreis für die jeweilige Schwimm- oder Betriebsstätte nicht im Honorar enthalten und vom Teilnehmenden bzw. Vertragspartner zusätzlich direkt an den Betreiber der Einrichtung zu entrichten. Mit der Annahme dieser Bedingungen stimmt der Vertragspartner der elektronischen Rechnungsstellung und Übermittlung per E-Mail zu.
+      Die Vergütung der vereinbarten Leistung erfolgt auf Grundlage einer vom Dienstleister ausgestellten elektronischen Rechnung, die dem Vertragspartner per E-Mail mit einem Zahlungslink übermittelt wird. Barzahlungen sind ausgeschlossen. Der Rechnungsbetrag ist unmittelbar nach Erhalt der Rechnung, spätestens jedoch innerhalb der vom Dienstleister gesetzten Zahlungsfrist, vollständig über den bereitgestellten Zahlungslink zu begleichen. Erfolgt keine fristgerechte Zahlung, ist der Dienstleister berechtigt, die Leistung zu stornieren, den Termin anderweitig zu vergeben oder vom Vertrag zurückzutreten.</p>
+<p class="mb-4">Ansprüche auf Ersatz entstandener Aufwendungen oder Schadensersatz bleiben vorbehalten. Bei Dienstleistungen wie Schwimmunterricht ist der Eintrittspreis für die jeweilige Schwimm- oder Betriebsstätte nicht im Honorar enthalten und vom Teilnehmenden bzw. Vertragspartner zusätzlich direkt an den Betreiber der Einrichtung zu entrichten. Mit der Annahme dieser Bedingungen stimmt der Vertragspartner der elektronischen Rechnungsstellung und Übermittlung per E-Mail zu.
      </p>
      <p>
       <strong>
        §5 Stornierung und Rücktritt 
       </strong>
       <br/>
-      Absagen oder Terminänderungen von Unterrichtseinheiten sind spätestens 24 Stunden vor Beginn der gebuchten Leistung beim Dienstleister mitzuteilen und innerhalb dieser Frist kostenfrei möglich. Für andere Dienstleistungen, insbesondere Begleit- und Betreuungstätigkeiten im Rahmen von Schulschwimmen, Freizeitgruppen oder vergleichbaren Einsätzen, gilt eine Frist von 48 Stunden vor dem vereinbarten Beginn. Bei späteren Absagen oder Nichterscheinen wird die volle vereinbarte Vergütung berechnet; ein Anspruch auf Erstattung besteht nicht. Liegt eine vom Vertragspartner oder Teilnehmenden nicht zu vertretende Verhinderung vor, insbesondere im Krankheitsfall, kann der Dienstleister nach eigenem Ermessen einen Ersatztermin anbieten. Ein Anspruch auf die Gewährung eines Ersatztermins oder auf Rückerstattung bereits gezahlter Entgelte besteht jedoch nicht.
+      Absagen oder Terminänderungen von Unterrichtseinheiten sind spätestens 24 Stunden vor Beginn der gebuchten Leistung beim Dienstleister mitzuteilen und innerhalb dieser Frist kostenfrei möglich. Für andere Dienstleistungen, insbesondere Begleit- und Betreuungstätigkeiten im Rahmen von Schulschwimmen, Freizeitgruppen oder vergleichbaren Einsätzen, gilt eine Frist von 48 Stunden vor dem vereinbarten Beginn. Bei späteren Absagen oder Nichterscheinen wird die volle vereinbarte Vergütung berechnet; ein Anspruch auf Erstattung besteht nicht.</p>
+<p class="mb-4">Liegt eine vom Vertragspartner oder Teilnehmenden nicht zu vertretende Verhinderung vor, insbesondere im Krankheitsfall, kann der Dienstleister nach eigenem Ermessen einen Ersatztermin anbieten. Ein Anspruch auf die Gewährung eines Ersatztermins oder auf Rückerstattung bereits gezahlter Entgelte besteht jedoch nicht.
      </p>
      <p>
       <strong>
        §6 Ausfall von Leistungen 
       </strong>
       <br/>
-      Fallen der Unterricht oder andere vereinbarte Dienstleistungen, insbesondere Begleit- und Betreuungstätigkeiten im Rahmen von Schulschwimmen, Freizeitgruppen oder vergleichbaren Einsätzen, aufgrund von Krankheit oder sonstigen, vom Dienstleister zu vertretenden Umständen aus, wird ein Ersatztermin angeboten. Ist eine Nachholung aus organisatorischen oder zeitlichen Gründen nicht möglich oder dem Vertragspartner unzumutbar, erfolgt eine Rückerstattung des bereits gezahlten Entgelts. Weitergehende Ansprüche, insbesondere auf Schadensersatz, sind ausgeschlossen.
+      Fallen der Unterricht oder andere vereinbarte Dienstleistungen, insbesondere Begleit- und Betreuungstätigkeiten im Rahmen von Schulschwimmen, Freizeitgruppen oder vergleichbaren Einsätzen, aufgrund von Krankheit oder sonstigen, vom Dienstleister zu vertretenden Umständen aus, wird ein Ersatztermin angeboten.</p>
+<p class="mb-4">Ist eine Nachholung aus organisatorischen oder zeitlichen Gründen nicht möglich oder dem Vertragspartner unzumutbar, erfolgt eine Rückerstattung des bereits gezahlten Entgelts. Weitergehende Ansprüche, insbesondere auf Schadensersatz, sind ausgeschlossen.
      </p>
      <p>
       <strong>
        §7 Haftung
       </strong>
       <br/>
-      Die Teilnahme erfolgt auf eigene Gefahr. Der Dienstleister haftet nur für Schäden, die auf vorsätzliches oder grob fahrlässiges Verhalten zurückzuführen sind. Eine Haftung für einfache Fahrlässigkeit, insbesondere für Sachschäden oder den Verlust mitgebrachter Wertgegenstände, ist ausgeschlossen. Dies gilt nicht für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit, die auf einer fahrlässigen Pflichtverletzung des Dienstleisters oder auf einer vorsätzlichen oder fahrlässigen Pflichtverletzung eines gesetzlichen Vertreters oder Erfüllungsgehilfen beruhen.
+      Die Teilnahme erfolgt auf eigene Gefahr. Der Dienstleister haftet nur für Schäden, die auf vorsätzliches oder grob fahrlässiges Verhalten zurückzuführen sind. Eine Haftung für einfache Fahrlässigkeit, insbesondere für Sachschäden oder den Verlust mitgebrachter Wertgegenstände, ist ausgeschlossen. Dies gilt nicht für Schäden aus der</p>
+<p class="mb-4">Verletzung des Lebens, des Körpers oder der Gesundheit, die auf einer fahrlässigen Pflichtverletzung des Dienstleisters oder auf einer vorsätzlichen oder fahrlässigen Pflichtverletzung eines gesetzlichen Vertreters oder Erfüllungsgehilfen beruhen.
      </p>
      <p>
       <strong>
@@ -1348,16 +1368,5 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 </script>
 
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
