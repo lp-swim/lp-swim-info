@@ -1299,7 +1299,7 @@ h2 {
 
                         if (response.ok) {
                             form.reset();
-                            formMessage.textContent = 'Vielen Dank für Ihre Nachricht! Sie erhalten in Kürze eine Bestätigung.';
+                            formMessage.textContent = 'Vielen Dank für Ihre Nachricht!';
                             formMessage.classList.remove('hidden');
                             formMessage.classList.add('bg-green-100', 'border-green-300', 'text-green-800');
                             setTimeout(() => openModal('confirmationPopup'), 150);
@@ -1481,4 +1481,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 </body>
 </html>
-
