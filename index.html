@@ -383,6 +383,22 @@ h2 {
   }
 }
 
+
+/* Scrollleisten in Modals ausblenden (aber Funktion erhalten) */
+.modal-content::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+.modal-content {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Kein Scrollbalken & kein Scrollen im Bestätigungs-Popup */
+#confirmationPopup .modal-content {
+  max-height: none;
+  overflow: visible;
+}
+
 </style>
   </meta>
  
@@ -895,9 +911,7 @@ h2 {
   </div>
   <div class="modal fixed inset-0 z-[10000] flex items-center justify-center p-4 hidden" id="confirmationPopup">
    <div class="modal-content relative w-full max-w-lg mx-auto text-center">
-    <span class="close-button" onclick="closeModal('confirmationPopup')">
-     ×
-    </span>
+    
     <h2 class="text-3xl font-bold mb-4 text-blue-700">
      Ihre Nachricht wurde erfolgreich übermittelt!
     </h2>
@@ -1362,6 +1376,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 </body>
 </html>
-
-
-
