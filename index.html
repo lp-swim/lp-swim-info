@@ -12,7 +12,7 @@
 <meta content="index, follow" name="robots"/>
 <meta content="Lukas Prehn" name="author"/>
 <meta content="#A7D9F8" name="theme-color"/>
-<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <link href="favicon.ico" rel="icon" type="image/x-icon"/>
 <script src="https://cdn.tailwindcss.com">
 </script>
@@ -556,11 +556,117 @@ header, .hero, .hero-content {
     padding-bottom: 2rem !important;
   }
 }
+
+/* 💻 Tablet Optimization (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Hero-Bereich etwas größer, aber kompakt */
+  .hero-content {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    text-align: center !important;
+  }
+  .hero-content h1 {
+    font-size: clamp(1.8rem, 4vw, 2.4rem) !important;
+    line-height: 1.25 !important;
+  }
+  .hero-content p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem) !important;
+    max-width: 90% !important;
+    margin: 0 auto 1.5rem auto !important;
+  }
+
+  /* Buttons nebeneinander mit harmonischem Abstand */
+  .hero-content .btn-primary,
+  .hero-content .btn-secondary {
+    display: inline-block !important;
+    width: 40% !important;
+    margin: 0.5rem 0.5rem !important;
+    border-radius: 1.5rem !important;
+    padding: 1rem 1.25rem !important;
+    font-weight: 600 !important;
+  }
+
+  /* Kontaktformular mittig, angenehme Breite */
+  #kontakt form {
+    width: 80% !important;
+    max-width: 640px !important;
+    margin: 2rem auto !important;
+    padding: 2rem 2rem !important;
+    border-radius: 1.5rem !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  #kontakt input,
+  #kontakt textarea {
+    width: 100% !important;
+    font-size: 1.05rem !important;
+    border-radius: 0.75rem !important;
+  }
+
+  /* Überschriften leicht vergrößert */
+  h2, h3 {
+    font-size: clamp(1.5rem, 3vw, 1.9rem) !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+  }
+}
+
+/* 💬 Mobile Contact Form Clean Design */
+@media (max-width: 768px) {
+
+  /* Kontaktformular natürlich integriert ohne extra Kasten */
+  #kontakt form {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 1.5rem 1rem !important;
+    margin: 0 auto !important;
+  }
+
+  /* Eingabefelder modern und luftig */
+  #kontakt input,
+  #kontakt textarea {
+    border-radius: 0.75rem !important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    background: rgba(255,255,255,0.95) !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+    width: 100% !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Labels und Checkbox sauber angeordnet */
+  #kontakt label {
+    display: block !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.4rem !important;
+  }
+  #kontakt input[type="checkbox"] {
+    width: auto !important;
+    margin-right: 0.5rem !important;
+  }
+
+  /* Senden-Button zentriert, optisch klar */
+  #kontakt button[type="submit"] {
+    display: block !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 1rem auto 0 auto !important;
+    border-radius: 1.5rem !important;
+    padding: 0.9rem !important;
+    font-weight: 600 !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08) !important;
+  }
+}
 </style>
 <!-- ✅ SEO Optimierungen -->
 <!-- Open Graph (Facebook, LinkedIn, etc.) -->
 <meta content="LP-SWIM – Schwimmunterricht im Einzelsetting" property="og:title"/>
-<meta content="Ob als Begleitperson im Schulschwimmen oder im Einzeltraining – vom ersten sicheren Wasserkontakt bis zur Verfeinerung der Schwimmtechnik." property="og:description"/>
+<meta content="Ob als Begleitperson im Schulschwimmen oder im Einzeltraining – vom ersten sicheren Wasserkontakt bis zur Verfeinerung der Schwimmtechnik." property="og:description">
 <meta content="website" property="og:type"/>
 <meta content="https://lp-swim.github.io/lp-swim-info/" property="og:url"/>
 <meta content="https://lp-swim.github.io/lp-swim-info/kontakt-lukas.jpg" property="og:image"/>
