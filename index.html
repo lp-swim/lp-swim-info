@@ -515,21 +515,26 @@ h2 {
 }
 
 
+
 /* ============================
-   📱 Kleinere Schrift in Modals (nur mobil)
+   📱 Mobile Schriftanpassung für Modals
    ============================ */
 @media (max-width: 768px) {
+  /* Fließtext kleiner */
   #agbModal .modal-content,
   #datenschutzModal .modal-content,
   #impressumModal .modal-content {
-    font-size: clamp(0.8rem, 2.8vw, 0.95rem) !important;
+    font-size: clamp(0.8rem, 2.6vw, 0.9rem) !important;
     line-height: 1.6 !important;
   }
 
+  /* Überschriften größer und markanter */
   #agbModal .modal-content h2,
   #datenschutzModal .modal-content h2,
   #impressumModal .modal-content h2 {
-    font-size: clamp(1rem, 3.5vw, 1.4rem) !important;
+    font-size: clamp(1.5rem, 5vw, 1.8rem) !important;
+    line-height: 1.3 !important;
+    margin-bottom: 1rem !important;
   }
 }
 
