@@ -7,13 +7,12 @@
 <meta content="YlKI4FssjU6jEQDyOzNbdwcIOhv516qFAF1RUyDOV6I" name="google-site-verification"/>
 <meta content="58B42B8F103EB15114C7AFC816233F91" name="msvalidate.01"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-
 <meta content="Ob als Begleitperson im Schulschwimmen oder im Einzeltraining – vom ersten sicheren Wasserkontakt bis zur Verfeinerung der Schwimmtechnik." name="description"/>
 <link href="https://lp-swim.github.io/lp-swim-info/" rel="canonical"/>
-<meta content="index, follow" name="robots">
-<meta content="Lukas Prehn" name="author"/>
-<meta content="#A7D9F8" name="theme-color">
-<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="index, follow" name="robots"/>
+<meta content="Lukas Prehn" name="author">
+<meta content="#A7D9F8" name="theme-color"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
 <link href="favicon.ico" rel="icon" type="image/x-icon"/>
 <script src="https://cdn.tailwindcss.com">
 </script>
@@ -406,6 +405,34 @@ to {opacity: 1;
   #kontakt textarea {
     font-size: 1rem !important;
   }
+}
+
+/* 📱 Mobile-Fixes */
+@media (max-width: 768px) {
+  /* Überschriften in einer Zeile halten */
+  h2, h3, h1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Kontaktformular breiter machen */
+  #kontakt form {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 2rem 1.5rem !important;
+  }
+
+  #kontakt input,
+  #kontakt textarea {
+    width: 100% !important;
+  }
+}
+
+/* Entfernt unnötigen Abstand oben beim Laden */
+header, .hero, .hero-content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 </style>
 </meta>
