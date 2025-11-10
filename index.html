@@ -7,10 +7,9 @@
 <meta content="YlKI4FssjU6jEQDyOzNbdwcIOhv516qFAF1RUyDOV6I" name="google-site-verification"/>
 <meta content="58B42B8F103EB15114C7AFC816233F91" name="msvalidate.01"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-
 <meta content="Ob als Begleitperson im Schulschwimmen oder im Einzeltraining – vom ersten sicheren Wasserkontakt bis zur Verfeinerung der Schwimmtechnik." name="description"/>
 <link href="https://lp-swim.github.io/lp-swim-info/" rel="canonical"/>
-<meta content="index, follow" name="robots">
+<meta content="index, follow" name="robots"/>
 <meta content="Lukas Prehn" name="author"/>
 <meta content="#A7D9F8" name="theme-color">
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
@@ -407,8 +406,93 @@ to {opacity: 1;
     font-size: 1rem !important;
   }
 }
+
+/* 📱 Mobile-Fixes */
+@media (max-width: 768px) {
+  /* Überschriften in einer Zeile halten */
+  h2, h3, h1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Kontaktformular breiter machen */
+  #kontakt form {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 2rem 1.5rem !important;
+  }
+
+  #kontakt input,
+  #kontakt textarea {
+    width: 100% !important;
+  }
+}
+
+/* Entfernt unnötigen Abstand oben beim Laden */
+header, .hero, .hero-content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* 📱 Final Mobile Clean Optimization */
+@media (max-width: 768px) {
+
+  /* Entfernt jeglichen Abstand oben beim Laden */
+  header, .hero, .hero-content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* Überschriften natürlich umbrechen lassen, aber harmonisch skalieren */
+  h1, h2, h3 {
+    white-space: normal !important;
+    text-overflow: unset !important;
+    overflow: visible !important;
+    word-wrap: break-word !important;
+    font-size: clamp(1.4rem, 5vw, 2rem) !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+  }
+
+  /* Hero-Text kompakter und besser lesbar */
+  .hero-content p {
+    font-size: clamp(0.95rem, 3.2vw, 1.1rem) !important;
+    text-align: center !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Buttons ordentlich zentrieren und nicht zu groß */
+  .hero-content .btn-primary,
+  .hero-content .btn-secondary {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+  }
+
+  /* Kontaktformular angenehmer in der Breite */
+  #kontakt form {
+    width: 100% !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    padding: 2rem 1.5rem !important;
+  }
+
+  #kontakt input,
+  #kontakt textarea {
+    width: 100% !important;
+    font-size: 1rem !important;
+  }
+
+  /* Allgemeine Abstände */
+  section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
 </style>
-</meta>
 <!-- ✅ SEO Optimierungen -->
 <!-- Open Graph (Facebook, LinkedIn, etc.) -->
 <meta content="LP-SWIM – Schwimmunterricht im Einzelsetting" property="og:title"/>
