@@ -6,14 +6,14 @@
 <meta charset="utf-8"/>
 <meta content="YlKI4FssjU6jEQDyOzNbdwcIOhv516qFAF1RUyDOV6I" name="google-site-verification"/>
 <meta content="58B42B8F103EB15114C7AFC816233F91" name="msvalidate.01"/>
-<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>
     LP-SWIM – Schwimmunterricht im Einzelsetting
    </title>
-<meta content="Ob als Begleitperson im Schulschwimmen oder im Einzeltraining – vom ersten sicheren Wasserkontakt bis zur Verfeinerung der Schwimmtechnik." name="description"/>
+<meta content="Ob als Begleitperson im Schulschwimmen oder im Einzeltraining – vom ersten sicheren Wasserkontakt bis zur Verfeinerung der Schwimmtechnik." name="description">
 <link href="https://lp-swim.github.io/lp-swim-info/" rel="canonical"/>
-<meta content="index, follow" name="robots">
-<meta content="Lukas Prehn" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="Lukas Prehn" name="author">
 <meta content="#A7D9F8" name="theme-color"/>
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <link href="favicon.ico" rel="icon" type="image/x-icon"/>
@@ -358,6 +358,57 @@ to {opacity: 1;
   transform: translateY(-3px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
 }
+
+/* 📱 Mobile-Optimierungen für bessere Darstellung */
+@media (max-width: 768px) {
+  /* Hero-Bereich – weniger Leerraum */
+  header {
+    padding-top: 4rem !important;
+    padding-bottom: 2rem !important;
+  }
+  .hero-content h1 {
+    font-size: clamp(1.8rem, 5vw, 2.4rem) !important;
+    text-align: center !important;
+  }
+  .hero-content p {
+    font-size: clamp(1rem, 3.5vw, 1.2rem) !important;
+    text-align: center !important;
+  }
+
+  /* Karte quadratisch und kompakt */
+  #standort .h-96 {
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+  }
+  #map-frame iframe {
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+
+  /* Buttons untereinander und gleich breit */
+  #standort .flex.flex-col.sm\:flex-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+  }
+  #standort .btn-primary,
+  #standort .btn-secondary {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Kontaktformular kompakter und angenehmer */
+  #kontakt form {
+    padding: 2rem 1.5rem !important;
+  }
+  #kontakt input, 
+  #kontakt textarea {
+    font-size: 1rem !important;
+  }
+}
 </style>
 </meta>
 <!-- ✅ SEO Optimierungen -->
@@ -694,9 +745,9 @@ to {opacity: 1;
       c/o IP-Management #6336
       <br/>
       Ludwig-Erhard-Straße 18
-      <br>
-      20459 Hamburg, Deutschland
       <br/>
+      20459 Hamburg, Deutschland
+      <br>
       lpswim.info@gmail.com
      </br></p>
 <p>
