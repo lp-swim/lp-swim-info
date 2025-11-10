@@ -529,13 +529,45 @@ h2 {
   }
 
   /* Überschriften größer und markanter */
-  #agbModal .modal-content h2,
-  #datenschutzModal .modal-content h2,
-  #impressumModal .modal-content h2 {
-    font-size: clamp(1.5rem, 5vw, 1.8rem) !important;
-    line-height: 1.3 !important;
-    margin-bottom: 1rem !important;
   }
+
+
+/* ============================
+   🧭 Popup Schriftgrößenanpassung
+   ============================ */
+
+/* Desktop: Überschrift auf eine Zeile begrenzen */
+/* Mobil: Überschrift und Text kleiner, übersichtlicher */
+@media (max-width: 768px) {
+  #agbModal .modal-content,
+  #datenschutzModal .modal-content,
+  #impressumModal .modal-content {
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem) !important;
+    line-height: 1.5 !important;
+  }
+
+  #agbModal .modal-content p,
+  #datenschutzModal .modal-content p,
+  #impressumModal .modal-content p,
+  #agbModal .modal-content li,
+  #datenschutzModal .modal-content li,
+  #impressumModal .modal-content li {
+    font-size: clamp(0.78rem, 2.4vw, 0.88rem) !important;
+    line-height: 1.55 !important;
+  }
+}
+
+
+/* ✅ Popup-Überschrift vollständig sichtbar */
+#agbModal .modal-content h2,
+#datenschutzModal .modal-content h2,
+#impressumModal .modal-content h2 {
+  font-size: clamp(1.0rem, 2.2vw, 1.6rem) !important;
+  line-height: 1.25 !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: initial !important;
+  padding-right: 2.5rem !important;
 }
 
 </style>
