@@ -11,8 +11,8 @@
 <link href="https://lp-swim.github.io/lp-swim-info/" rel="canonical"/>
 <meta content="index, follow" name="robots"/>
 <meta content="Lukas Prehn" name="author"/>
-<meta content="#A7D9F8" name="theme-color">
-<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="#A7D9F8" name="theme-color"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
 <link href="favicon.ico" rel="icon" type="image/x-icon"/>
 <script src="https://cdn.tailwindcss.com">
 </script>
@@ -487,6 +487,70 @@ header, .hero, .hero-content {
   }
 
   /* Allgemeine Abstände */
+  section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+
+/* 🌊 Final Mobile Polishing */
+@media (max-width: 768px) {
+
+  /* Entferne restlichen Abstand ganz oben */
+  body, html, header, .hero, .hero-content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* Hero-Bereich kompakter und zentriert */
+  .hero-content {
+    padding-top: 0.5rem !important;
+    padding-bottom: 1rem !important;
+  }
+  .hero-content h1 {
+    margin-top: 0 !important;
+    font-size: clamp(1.6rem, 5vw, 2.1rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Button-Gruppe wie früher: elegant, weich, gleichmäßig */
+  .hero-content .btn-primary,
+  .hero-content .btn-secondary {
+    display: block !important;
+    width: 85% !important;
+    max-width: 340px !important;
+    margin: 0.6rem auto !important;
+    border-radius: 1.5rem !important;
+    padding: 0.9rem 1rem !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+  }
+
+  /* Kontaktformular schöner und breiter */
+  #kontakt form {
+    width: 90% !important;
+    max-width: 480px !important;
+    margin: 1rem auto !important;
+    padding: 1.8rem 1.5rem !important;
+    border-radius: 1.25rem !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  #kontakt input,
+  #kontakt textarea {
+    width: 100% !important;
+    border-radius: 0.75rem !important;
+    padding: 0.75rem !important;
+    font-size: 1rem !important;
+  }
+
+  #kontakt label {
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* Angenehmere Abstände gesamt */
   section {
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
