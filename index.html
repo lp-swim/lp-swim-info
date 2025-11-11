@@ -106,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {font-weight: 700;
             transition: transform 0.2s ease;}
 .close-button:hover {transform: scale(1.1);
             color: #1f2937;}
-@media (max-width: 768px) {.lp-kontakt-media img {
+@media (max-width: 1024px) {.lp-kontakt-media img {
     object-fit: cover; 
     object-position: center center;
     max-height: none;}
@@ -153,7 +153,7 @@ h3 {font-size: clamp(1.2rem, 2.4vw, 1.75rem);}
   object-position: center;
   border-radius: 1rem;}
 /* Mobile Optimierungen */
-@media (max-width: 768px) {.modal-content {
+@media (max-width: 1024px) {.modal-content {
   background-color: white;
   border-radius: 24px;
   padding: 2.5rem 2.5rem 3.5rem 2.5rem; /* zusätzlicher Leerraum unten */
@@ -285,7 +285,7 @@ to {opacity: 1;
 }
 
 /* Mobile Optimierung */
-@media (max-width: 768px) {#confirmationPopup .modal-content {
+@media (max-width: 1024px) {#confirmationPopup .modal-content {
     max-width: 92%;
     padding: 1.5rem 1.25rem 1.75rem;
     max-height: calc(100vh - 1.5rem);
@@ -299,7 +299,7 @@ to {opacity: 1;
 /* ============================
    📱 Mobile Schriftanpassung für Modals
    ============================ */
-@media (max-width: 768px) {/* Fließtext kleiner */
+@media (max-width: 1024px) {/* Fließtext kleiner */
   #agbModal .modal-content,
   #datenschutzModal .modal-content,
   #impressumModal .modal-content {
@@ -315,7 +315,7 @@ to {opacity: 1;
 
 /* Desktop: Überschrift auf eine Zeile begrenzen */
 /* Mobil: Überschrift und Text kleiner, übersichtlicher */
-@media (max-width: 768px) {#agbModal .modal-content,
+@media (max-width: 1024px) {#agbModal .modal-content,
   #datenschutzModal .modal-content,
   #impressumModal .modal-content {
     font-size: clamp(0.8rem, 2.5vw, 0.9rem) !important;
@@ -357,7 +357,7 @@ to {opacity: 1;
 }
 
 /* 📱 Mobile-Optimierungen für bessere Darstellung */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   /* Hero-Bereich – weniger Leerraum */
   header {
     padding-top: 4rem !important;
@@ -408,7 +408,7 @@ to {opacity: 1;
 }
 
 /* 📱 Mobile-Fixes */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   /* Überschriften in einer Zeile halten */
   h2, h3, h1 {
     white-space: nowrap;
@@ -436,7 +436,7 @@ header, .hero, .hero-content {
 }
 
 /* 📱 Final Mobile Clean Optimization */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
   /* Entfernt jeglichen Abstand oben beim Laden */
   header, .hero, .hero-content {
@@ -494,7 +494,7 @@ header, .hero, .hero-content {
 }
 
 /* 🌊 Final Mobile Polishing */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
   /* Entferne restlichen Abstand ganz oben */
   body, html, header, .hero, .hero-content {
@@ -613,7 +613,7 @@ header, .hero, .hero-content {
 }
 
 /* 💬 Mobile Contact Form Clean Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
   /* Kontaktformular natürlich integriert ohne extra Kasten */
   #kontakt form {
@@ -664,7 +664,7 @@ header, .hero, .hero-content {
 }
 
 /* 📩 Kontaktbereich auf Mobilgeräten breiter & harmonisch */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   #kontakt {
     width: 100% !important;
     max-width: none !important;
@@ -689,7 +689,7 @@ header, .hero, .hero-content {
 }
 
 /* 🌟 Final Mobile Polish – Hero spacing, button sizing, footer transition */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
   /* Minimal luftiger Abstand oben (LP-SWIM Titelbereich) */
   .hero-content {
@@ -798,6 +798,15 @@ header, .hero, .hero-content {
   justify-content: center !important;
   text-align: center !important;
 }
+
+/* 📱 Pop-up headings linksbündig auf mobilen Geräten */
+@media (max-width: 1024px) {
+  #agbModal h2,
+  #datenschutzModal h2,
+  #impressumModal h2 {
+    text-align: left !important;
+  }
+}
 </style>
 <!-- ✅ SEO Optimierungen -->
 <!-- Open Graph (Facebook, LinkedIn, etc.) -->
@@ -809,10 +818,10 @@ header, .hero, .hero-content {
 <!-- Twitter Card -->
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="LP-SWIM – Schwimmunterricht im Einzelsetting" name="twitter:title"/>
-<meta content="Ob als Begleitperson im Schulschwimmen oder im Einzeltraining – vom ersten sicheren Wasserkontakt bis zur Verfeinerung der Schwimmtechnik." name="twitter:description">
+<meta content="Ob als Begleitperson im Schulschwimmen oder im Einzeltraining – vom ersten sicheren Wasserkontakt bis zur Verfeinerung der Schwimmtechnik." name="twitter:description"/>
 <meta content="https://lp-swim.github.io/lp-swim-info/kontakt-lukas.jpg" name="twitter:image"/>
 <!-- Erweiterte Robots-Anweisungen -->
-<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots">
 <meta content="index, follow" name="googlebot"/>
 <meta content="index, follow" name="bingbot"/>
 <!-- Sitemap Hinweis -->
