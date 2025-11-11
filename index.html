@@ -732,30 +732,25 @@ header, .hero, .hero-content {
   }
 }
 
-/* 📏 Einheitliche Breite aller Textabschnitte auf Mobilgeräten */
-@media (max-width: 768px) {
-  .section-card {
-    width: 95% !important;
-    max-width: 95% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
+/* 🎨 Einheitliche Hintergrundfarbe & zentrierte Buttons */
+.section-card {
+  background-color: #eff6ff !important; /* entspricht bg-blue-50 */
+  border-radius: 1.5rem !important;
+  padding: 2rem !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05) !important;
+}
 
-  /* Kontaktbereich weiterhin harmonisch integriert */
-  #kontakt, #kontakt form {
-    width: 95% !important;
-    max-width: 95% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  /* Einheitliche Innenabstände */
-  section {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
+/* Buttons perfekt zentrieren */
+.hero-content .btn-primary,
+.hero-content .btn-secondary {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  text-align: center !important;
+  border-radius: 1.25rem !important;
+  padding: 0.7rem 1rem !important;
+  font-weight: 600 !important;
 }
 </style>
 <!-- ✅ SEO Optimierungen -->
