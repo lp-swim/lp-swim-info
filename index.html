@@ -807,6 +807,23 @@ header, .hero, .hero-content {
     text-align: left !important;
   }
 }
+
+/* ✉️ Button 'Nachricht senden' – Text mittig zentrieren */
+#kontakt button[type="submit"] {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  font-weight: 600 !important;
+}
+
+/* 📱 LP-SWIM Überschrift – auf mobilen Geräten minimal größer */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: clamp(1.8rem, 6vw, 2.3rem) !important;
+    line-height: 1.25 !important;
+  }
+}
 </style>
 <!-- ✅ SEO Optimierungen -->
 <!-- Open Graph (Facebook, LinkedIn, etc.) -->
@@ -821,8 +838,8 @@ header, .hero, .hero-content {
 <meta content="Ob als Begleitperson im Schulschwimmen oder im Einzeltraining – vom ersten sicheren Wasserkontakt bis zur Verfeinerung der Schwimmtechnik." name="twitter:description"/>
 <meta content="https://lp-swim.github.io/lp-swim-info/kontakt-lukas.jpg" name="twitter:image"/>
 <!-- Erweiterte Robots-Anweisungen -->
-<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots">
-<meta content="index, follow" name="googlebot"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="index, follow" name="googlebot">
 <meta content="index, follow" name="bingbot"/>
 <!-- Sitemap Hinweis -->
 <link href="https://lp-swim.github.io/lp-swim-info/sitemap.xml" rel="sitemap" title="Sitemap" type="application/xml"/>
