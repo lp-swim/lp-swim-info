@@ -687,13 +687,57 @@ header, .hero, .hero-content {
     padding: 0 !important;
   }
 }
+
+/* 🌟 Final Mobile Polish – Hero spacing, button sizing, footer transition */
+@media (max-width: 768px) {
+
+  /* Minimal luftiger Abstand oben (LP-SWIM Titelbereich) */
+  .hero-content {
+    margin-top: 0.5rem !important;
+    padding-top: 0.8rem !important;
+  }
+  .hero-content h1 {
+    margin-top: 0 !important;
+    font-size: clamp(1.6rem, 5vw, 2.1rem) !important;
+    line-height: 1.25 !important;
+  }
+
+  /* Buttons minimal schmaler, aber gleichmäßig */
+  .hero-content .btn-primary,
+  .hero-content .btn-secondary {
+    display: block !important;
+    width: 85% !important;
+    max-width: 320px !important;
+    margin: 0.5rem auto !important;
+    border-radius: 1.25rem !important;
+    padding: 0.7rem 0.9rem !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+  }
+
+  /* Kontaktformular Abstand unten weicher & angenehmer */
+  #kontakt {
+    padding-bottom: 3rem !important;
+  }
+
+  /* Abstand nach Senden-Button leicht erhöhen */
+  #kontakt button[type="submit"] {
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Footer sanfter Übergang */
+  footer {
+    padding-top: 2rem !important;
+  }
+}
 </style>
 <!-- ✅ SEO Optimierungen -->
 <!-- Open Graph (Facebook, LinkedIn, etc.) -->
 <meta content="LP-SWIM – Schwimmunterricht im Einzelsetting" property="og:title"/>
 <meta content="Ob als Begleitperson im Schulschwimmen oder im Einzeltraining – vom ersten sicheren Wasserkontakt bis zur Verfeinerung der Schwimmtechnik." property="og:description"/>
-<meta content="website" property="og:type">
-<meta content="https://lp-swim.github.io/lp-swim-info/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://lp-swim.github.io/lp-swim-info/" property="og:url">
 <meta content="https://lp-swim.github.io/lp-swim-info/kontakt-lukas.jpg" property="og:image"/>
 <!-- Twitter Card -->
 <meta content="summary_large_image" name="twitter:card"/>
