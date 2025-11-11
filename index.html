@@ -731,14 +731,40 @@ header, .hero, .hero-content {
     padding-top: 2rem !important;
   }
 }
+
+/* 📏 Einheitliche Breite aller Textabschnitte auf Mobilgeräten */
+@media (max-width: 768px) {
+  .section-card {
+    width: 95% !important;
+    max-width: 95% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Kontaktbereich weiterhin harmonisch integriert */
+  #kontakt, #kontakt form {
+    width: 95% !important;
+    max-width: 95% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Einheitliche Innenabstände */
+  section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
 </style>
 <!-- ✅ SEO Optimierungen -->
 <!-- Open Graph (Facebook, LinkedIn, etc.) -->
 <meta content="LP-SWIM – Schwimmunterricht im Einzelsetting" property="og:title"/>
 <meta content="Ob als Begleitperson im Schulschwimmen oder im Einzeltraining – vom ersten sicheren Wasserkontakt bis zur Verfeinerung der Schwimmtechnik." property="og:description"/>
 <meta content="website" property="og:type"/>
-<meta content="https://lp-swim.github.io/lp-swim-info/" property="og:url">
-<meta content="https://lp-swim.github.io/lp-swim-info/kontakt-lukas.jpg" property="og:image"/>
+<meta content="https://lp-swim.github.io/lp-swim-info/" property="og:url"/>
+<meta content="https://lp-swim.github.io/lp-swim-info/kontakt-lukas.jpg" property="og:image">
 <!-- Twitter Card -->
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="LP-SWIM – Schwimmunterricht im Einzelsetting" name="twitter:title"/>
