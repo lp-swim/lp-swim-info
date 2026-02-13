@@ -40,19 +40,21 @@
     </script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        /* ÄNDERUNG 1: Schriftart Tinos importieren */
+        @import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400&display=swap');
         
         /* --- Base Styles --- */
         html { scroll-behavior: smooth; }
         body {
-            font-family: 'Poppins', sans-serif;
+            /* ÄNDERUNG 1: Schriftart im Body anwenden */
+            font-family: 'Tinos', serif;
             background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
             background-attachment: fixed;
             color: #334155;
             line-height: 1.7;
             overflow-x: hidden;
             padding-top: 80px;
-            font-size: clamp(14px, 1.6vw, 18px);
+            font-size: clamp(16px, 1.8vw, 20px); /* Etwas größer für Lesbarkeit bei Serif */
         }
         
         h1, h2, h3, h4, h5, h6 { font-weight: 700; color: #1a202c; line-height: 1.2; word-break: break-word; }
@@ -117,13 +119,27 @@
             box-shadow: 0 8px 20px rgba(147, 197, 253, 0.3);
         }
 
-        /* Forms */
-        #kontakt form { padding: 2rem 1.5rem !important; }
+        /* Forms - CSS Bereinigung für den neuen Look */
+        #kontakt form { 
+            /* Reset für den "kein Kasten im Kasten" Look */
+            padding: 0 !important; 
+            background: transparent !important;
+            box-shadow: none !important;
+            border: none !important;
+            width: 100% !important;
+            margin: 0 auto !important;
+        }
         #kontakt input, #kontakt textarea {
-            width: 100% !important; border-radius: 0.75rem !important;
-            border: 1px solid rgba(0,0,0,0.1) !important; background: rgba(255,255,255,0.95) !important;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important; padding: 0.75rem 1rem !important;
-            font-size: 1rem !important; margin-bottom: 1rem !important;
+            width: 100% !important; border-radius: 0.5rem !important; /* Etwas eckiger für Tinos */
+            border: 1px solid rgba(0,0,0,0.15) !important; background: rgba(255,255,255,1) !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03) !important; padding: 0.9rem 1rem !important;
+            font-size: 1.05rem !important; margin-bottom: 1rem !important;
+            font-family: 'Tinos', serif !important;
+        }
+        #kontakt input:focus, #kontakt textarea:focus {
+            border-color: #3b82f6 !important;
+            outline: none !important;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
         }
         #kontakt button[type="submit"] { margin-bottom: 1.5rem !important; }
 
@@ -419,7 +435,8 @@
         <p class="text-gray-700 leading-relaxed mb-8">
             Nach Eingang Ihrer Anfrage erhalten Sie eine Übersicht aller Informationen zum weiteren Ablauf. Bitte prüfen Sie Ihr E-Mail Postfach nach 48 Stunden.
         </p>
-        <form action="https://formspree.io/f/mkgzgywy" class="bg-blue-50 p-6 md:p-8 rounded-2xl shadow-lg border border-blue-100 space-y-6" method="POST">
+        
+        <form action="https://formspree.io/f/mkgzgywy" class="w-full max-w-2xl mx-auto space-y-6" method="POST">
             <div class="hidden">
                 <label class="sr-only" for="_gotcha">Bitte dieses Feld leer lassen:</label>
                 <input autocomplete="off" class="hidden" id="_gotcha" name="_gotcha" tabindex="-1" type="text"/>
@@ -436,16 +453,17 @@
                 <label class="block text-blue-800 font-semibold mb-2 text-sm md:text-base" for="message">Nachricht</label>
                 <textarea autocomplete="off" class="w-full px-4 py-3 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-300 focus:border-blue-300 transition-all duration-200 bg-white shadow-sm text-gray-800" id="message" name="message" placeholder="Ich möchte eine private Schwimmstunde buchen. Was ist der nächste Schritt?" required="" rows="6"></textarea>
             </div>
-            <div class="flex items-start gap-3">
-                <input class="mt-1 h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500 transition-colors duration-200" id="privacy-consent" name="privacy-consent" required="" type="checkbox"/>
+            <div class="flex items-center justify-center gap-3 text-center mt-2">
+                <input class="h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500 transition-colors duration-200" id="privacy-consent" name="privacy-consent" required="" type="checkbox"/>
                 <label class="text-sm md:text-base text-gray-700" for="privacy-consent">
-                    Ich habe die <a class="text-blue-500 hover:text-blue-700 font-medium transition-colors underline" href="#" onclick="openModal('datenschutzModal'); return false;">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.
+                    Ich habe die <a class="text-blue-500 hover:text-blue-700 font-medium transition-colors underline" href="#" onclick="openModal('datenschutzModal'); return false;">Datenschutzerklärung</a> gelesen und stimme zu.
                 </label>
             </div>
-            <button class="btn-primary w-full justify-center transform active:scale-98" type="submit">
+            <button class="btn-primary w-full justify-center transform active:scale-98 mt-6" type="submit">
                 <i class="w-5 h-5" data-lucide="send"></i> Nachricht senden
             </button>
         </form>
+        
         <div class="mt-6 p-4 bg-green-50 text-green-700 border border-green-200 rounded-lg text-center font-medium hidden animate-fade-in" id="form-message">
             <i class="w-6 h-6 inline-block mr-2" data-lucide="check-circle"></i> Vielen Dank für Ihre Nachricht!
         </div>
@@ -805,5 +823,3 @@
 </script>
 </body>
 </html>
-
-
