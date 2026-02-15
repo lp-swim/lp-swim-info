@@ -16,6 +16,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -48,14 +49,15 @@
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
             background-attachment: fixed;
-            color: #334155;
+            color: #334155; /* Slate-700 für einheitliche Textfarbe */
             line-height: 1.7;
             overflow-x: hidden;
             padding-top: 80px;
             font-size: clamp(14px, 1.6vw, 18px);
         }
         
-        h1, h2, h3, h4, h5, h6 { font-weight: 700; color: #1a202c; line-height: 1.2; word-break: break-word; }
+        /* Einheitliche Überschriften */
+        h1, h2, h3, h4, h5, h6 { font-weight: 700; color: #1e3a8a; line-height: 1.2; word-break: break-word; } /* Dark Blue/Slate */
         h1 { font-size: clamp(1.8rem, 4vw, 3rem); }
         h2 { font-size: clamp(1.3rem, 3vw, 1.9rem) !important; text-wrap: balance; }
         h3 { font-size: clamp(1.2rem, 2.4vw, 1.75rem); }
@@ -69,7 +71,7 @@
         .section-card, #standort {
             background: linear-gradient(to bottom, #f2f7ff 0%, #ffffff 90%) !important;
             border-radius: 1.5rem !important;
-            padding: 2rem 1rem !important; /* Unified padding */
+            padding: 2rem 1rem !important;
             box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05) !important;
             margin: 1rem auto;
             width: 95% !important;
@@ -146,7 +148,7 @@
         #confirmationPopup.flex { display: flex; }
 
         /* --- Animations (Moved from JS) --- */
-        .section-card.animate-in { opacity: 1; transform: translateY(0); }
+        .section-card.animate-in, .animate-in { opacity: 1; transform: translateY(0); }
         
         @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
         .animate-fade-in-down { animation: fadeInDown 0.6s ease-out forwards; }
@@ -256,7 +258,7 @@
         }
     </style>
 </head>
-<body class="text-gray-700">
+<body class="text-slate-700">
 
 <nav class="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-85 backdrop-blur-lg shadow-lg p-3 md:p-4 flex justify-center items-center gap-4 rounded-b-3xl max-w-7xl mx-auto border-b border-gray-100 animate-fade-in-down" style="animation-delay: 0.2s;">
     <a aria-label="Startseite" class="nav-link-item group" href="#start">
@@ -316,52 +318,52 @@
 <main class="container py-12 md:py-20">
     <section class="section-card animate-in" id="start" style="animation-delay: 0.8s;">
         <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-700" id="heading-start">Schön, dass du da bist</h2>
-        <p class="text-gray-700 leading-relaxed mb-4">
+        <p class="text-slate-700 leading-relaxed mb-4">
             Ich heiße Lukas, bin 23 Jahre jung und begleite als ausgebildete Fachkraft täglich Menschen aller Altersgruppen auf verschiedenen Leistungsniveaus im Wasser. Da der Schwimmunterricht in Schulen häufig an Kapazitätsgrenzen stößt und eine individuelle Förderung organisatorisch bedingt kaum möglich ist, liegt mein Schwerpunkt darauf, ergänzend gezielt jene Aspekte zu vertiefen, welche im Gruppenunterricht zu kurz kommen.
         </p>
-        <p class="text-gray-700 leading-relaxed mb-4">
+        <p class="text-slate-700 leading-relaxed mb-4">
             Eine Trainingseinheit umfasst 60 Minuten und findet ausschließlich im Einzelsetting statt. Während in klassischen Kursen viele verschiedene Niveaus gleichzeitig berücksichtigt werden müssen, gehört meine ungeteilte Aufmerksamkeit in dieser Zeit ausschließlich dem persönlichen Fortschritt. Durch diesen Ansatz lassen sich vorhandene Lücken effizient schließen sowie die Sicherheit und Freude am Schwimmen nachhaltig steigern.
         </p>
-        <p class="text-gray-700 leading-relaxed">
+        <p class="text-slate-700 leading-relaxed">
             Das Training findet in Viernheim von Oktober bis April im <a class="text-blue-600 hover:text-blue-800 underline" href="https://www.stadtwerke-viernheim.de/preise-leistungen/baeder-und-sauna/hallenbad" target="_blank" rel="noopener noreferrer">Hallenbad</a> statt und wird in den Sommermonaten von Juni bis August im <a class="text-blue-600 hover:text-blue-800 underline" href="https://www.stadtwerke-viernheim.de/preise-leistungen/baeder-und-sauna/waldschwimmbad/" target="_blank" rel="noopener noreferrer">Waldschwimmbad</a> fortgeführt. Der Erstkontakt erfolgt über das Kontaktformular, woraufhin die Aufnahme in den Terminverteiler erfolgt. Jeweils am Monatsende wird eine Übersicht der freien Termine für den Folgemonat versendet. Die Buchung erfolgt anschließend verbindlich nach dem in der E-Mail beschriebenen Ablauf.
         </p>
     </section>
 
     <section class="section-card animate-in" id="jugend" style="animation-delay: 1s;">
         <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-700" id="heading-jugend">Kinder & Jugendliche</h2>
-        <p class="text-gray-700 leading-relaxed mb-4">
+        <p class="text-slate-700 leading-relaxed mb-4">
             Viele Kinder und Jugendliche in Deutschland erhalten heute nur eingeschränkten Zugang zu qualitativem Schwimmunterricht. Zeitliche Ressourcen im Familienalltag sind begrenzt, und auch der schulische Schwimmunterricht ist zunehmend durch organisatorische Rahmenbedingungen limitiert.
         </p>
-        <p class="text-gray-700 leading-relaxed mb-4">
+        <p class="text-slate-700 leading-relaxed mb-4">
             Dies führt häufig zu Unsicherheiten in der Wasserlage, Koordinationsdefiziten und mangelnder Routine bei technischen Abläufen. Ohne gezielte Förderung bleibt der Lernfortschritt eingeschränkt, was sowohl die Sicherheit im Wasser als auch die langfristige Motivation beeinträchtigen kann.
         </p>
-        <p class="text-gray-700 leading-relaxed">
+        <p class="text-slate-700 leading-relaxed">
             Eine gezielte Einzelbetreuung ermöglicht es, diese Herausforderungen effektiv anzugehen. Der Unterricht wird an Alter, Leistungsstand und persönliche Ziele angepasst. Den Abschluss bildet auf Wunsch die Abnahme offizieller DSA-Abzeichen mit entsprechendem Zertifikat.
         </p>
     </section>
 
     <section class="section-card animate-in" id="schule" style="animation-delay: 1.2s;">
         <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-700" id="heading-schule">Schulbegleitung</h2>
-        <p class="text-gray-700 leading-relaxed mb-4">
+        <p class="text-slate-700 leading-relaxed mb-4">
             Im Schwimmunterricht tragen Lehrkräfte besondere Verantwortung. Sie organisieren den Unterricht, sichern die Aufsicht und fördern die Kinder pädagogisch. Die Anforderungen an Sicherheit und individuelle Förderung stehen dabei oft in einem Spannungsverhältnis zu knappen Ressourcen. Das tragische Unglück vom 18. September 2023, bei dem ein Zweitklässler ertrank, hat die Debatte über Aufsichtspflichten bundesweit verstärkt.
         </p>
-        <p class="text-gray-700 leading-relaxed mb-4">
+        <p class="text-slate-700 leading-relaxed mb-4">
             Trotz Einhaltung aller Vorgaben wurden Lehrkraft und Referendarin im Zusammenhang mit dem Vorfall vorläufig zu Bewährungsstrafen und Geldauflagen verurteilt. Die endgültige Entscheidung steht zwar noch aus, macht jedoch bereits deutlich, dass Lehrkräfte eine besonders hohe Verantwortung tragen – auch dann, wenn sie alle formalen Vorgaben gewissenhaft erfüllen.
         </p>
-        <p class="text-gray-700 leading-relaxed">
+        <p class="text-slate-700 leading-relaxed">
             Eine qualifizierte Begleitperson entlastet Lehrkräfte spürbar, verbessert die Aufsicht und ermöglicht eine gezieltere Betreuung der Kinder. So lassen sich Sicherheit und pädagogische Qualität im Unterricht deutlich steigern. Ziel ist es, ein verlässliches und strukturiertes Lernumfeld zu schaffen. Das Angebot richtet sich an Schulen im Raum Mannheim und Umgebung.
         </p>
     </section>
 
     <section class="section-card animate-in" id="erwachsene" style="animation-delay: 1.4s;">
         <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-700" id="heading-erwachsene">Erwachsene</h2>
-        <p class="text-gray-700 leading-relaxed mb-4">
+        <p class="text-slate-700 leading-relaxed mb-4">
             Für viele Erwachsene ist der Zugang zum Wasser mit Unsicherheiten verbunden. Fehlende Erfahrung, längere Pausen oder negative Erlebnisse sind häufige Gründe. Schwimmen wird oft als Kinderthema betrachtet – dabei ist es eine motorische Fähigkeit, die in jedem Alter erlernt und weiterentwickelt werden kann.
         </p>
-        <p class="text-gray-700 leading-relaxed mb-4">
+        <p class="text-slate-700 leading-relaxed mb-4">
             Dazu kommen emotionale Hürden wie Scham, Angst vor Bewertung oder falscher Stolz. Viele halten sich dadurch zurück, ihre Schwimmkenntnisse offen anzusprechen oder daran zu arbeiten. Risiken werden oft unterschätzt – besonders bei Badeausflügen oder im Urlaub, wo schnell gefährliche Situationen entstehen können.
         </p>
-        <p class="text-gray-700 leading-relaxed">
+        <p class="text-slate-700 leading-relaxed">
             Individuelles Einzeltraining fördert ein sicheres und kontrolliertes Bewegungsverhalten im Wasser – sei es beim Erlernen von Grundlagen oder der Verbesserung vorhandener Techniken. Dies verbessert nicht nur die körperliche Fitness, sondern auch die Koordination und das Vertrauen in die eigene Leistungsfähigkeit.
         </p>
     </section>
@@ -380,7 +382,7 @@
                 </div>
                 <hr class="border-t border-gray-200 my-4"/>
                 <h4 class="text-lg font-medium text-blue-600 mb-2">Trainerstunden</h4>
-                <ul class="list-none p-0 mb-6 text-gray-700">
+                <ul class="list-none p-0 mb-6 text-slate-700">
                     <li class="flex items-center justify-center gap-2 mb-1">
                         <i class="w-4 h-4 text-blue-400" data-lucide="calendar-days"></i> Täglich 10–18 Uhr<br/>(nach Terminbestätigung)
                     </li>
@@ -396,7 +398,7 @@
     </section>
 
     <section class="animate-in mx-auto w-[95%] max-w-[95%] my-8" id="kontakt" style="animation-delay: 1.8s; scroll-margin-top: 100px;">
-        <div class="bg-white rounded-[1.5rem] shadow-xl overflow-hidden border border-gray-100 flex flex-col lg:flex-row">
+        <div class="bg-white rounded-[1.5rem] shadow-xl overflow-hidden border border-gray-100 flex flex-col lg:flex-row font-sans">
             <div class="relative h-64 lg:h-auto w-full lg:w-5/12 overflow-hidden bg-blue-100 group">
                 <img alt="Lukas Prehn - LP-SWIM Trainer" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src="kontakt-lukas.jpg"/>
                 <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-900/40 to-transparent"></div>
@@ -413,11 +415,11 @@
                 </div>
             </div>
 
-            <div class="w-full lg:w-7/12 p-6 md:p-10 lg:p-14 bg-white relative">
-                <div class="max-w-xl mx-auto">
+            <div class="w-full lg:w-7/12 p-8 md:p-12 lg:p-16 bg-white relative flex flex-col justify-center">
+                <div class="max-w-xl mx-auto w-full">
                     <div class="mb-8">
-                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Schreib mir</h2>
-                        <p class="text-gray-500">
+                        <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-3">Schreib mir</h2>
+                        <p class="text-slate-600">
                             Fülle das Formular aus und ich melde mich in der Regel innerhalb von 48 Stunden bei dir.
                         </p>
                     </div>
@@ -430,33 +432,33 @@
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="relative group">
-                                <label class="block text-sm font-medium text-gray-700 mb-1 ml-1" for="name">Dein Name</label>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2 ml-1" for="name">Dein Name</label>
                                 <div class="relative">
                                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                        <i class="w-5 h-5 text-gray-400 group-focus-within:text-blue-500 transition-colors" data-lucide="user"></i>
+                                        <i class="w-5 h-5 text-slate-400 group-focus-within:text-blue-500 transition-colors" data-lucide="user"></i>
                                     </div>
-                                    <input autocomplete="name" class="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-100 focus:border-blue-500 transition-all outline-none text-gray-800" id="name" name="name" placeholder="Max Mustermann" required="" type="text"/>
+                                    <input autocomplete="name" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-100 focus:border-blue-500 transition-all outline-none text-slate-800 placeholder:text-slate-400" id="name" name="name" placeholder="Max Mustermann" required="" type="text"/>
                                 </div>
                             </div>
 
                             <div class="relative group">
-                                <label class="block text-sm font-medium text-gray-700 mb-1 ml-1" for="email">Deine E-Mail</label>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2 ml-1" for="email">Deine E-Mail</label>
                                 <div class="relative">
                                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                        <i class="w-5 h-5 text-gray-400 group-focus-within:text-blue-500 transition-colors" data-lucide="mail"></i>
+                                        <i class="w-5 h-5 text-slate-400 group-focus-within:text-blue-500 transition-colors" data-lucide="mail"></i>
                                     </div>
-                                    <input autocomplete="email" class="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-100 focus:border-blue-500 transition-all outline-none text-gray-800" id="email" name="email" placeholder="max@beispiel.de" required="" type="email"/>
+                                    <input autocomplete="email" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-100 focus:border-blue-500 transition-all outline-none text-slate-800 placeholder:text-slate-400" id="email" name="email" placeholder="max@beispiel.de" required="" type="email"/>
                                 </div>
                             </div>
                         </div>
 
                         <div class="relative group">
-                            <label class="block text-sm font-medium text-gray-700 mb-1 ml-1" for="message">Deine Nachricht</label>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2 ml-1" for="message">Deine Nachricht</label>
                             <div class="relative">
                                 <div class="absolute top-3 left-3 pointer-events-none">
-                                    <i class="w-5 h-5 text-gray-400 group-focus-within:text-blue-500 transition-colors" data-lucide="message-square"></i>
+                                    <i class="w-5 h-5 text-slate-400 group-focus-within:text-blue-500 transition-colors" data-lucide="message-square"></i>
                                 </div>
-                                <textarea autocomplete="off" class="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-100 focus:border-blue-500 transition-all outline-none text-gray-800 resize-none" id="message" name="message" placeholder="Wie kann ich dir helfen?" required="" rows="4"></textarea>
+                                <textarea autocomplete="off" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-100 focus:border-blue-500 transition-all outline-none text-slate-800 placeholder:text-slate-400 resize-none" id="message" name="message" placeholder="Wie kann ich dir helfen?" required="" rows="4"></textarea>
                             </div>
                         </div>
 
@@ -464,13 +466,13 @@
                              <div class="flex items-center h-5">
                                 <input class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 cursor-pointer" id="privacy-consent" name="privacy-consent" required="" type="checkbox"/>
                              </div>
-                             <label class="text-sm text-gray-600" for="privacy-consent">
+                             <label class="text-sm text-slate-600" for="privacy-consent">
                                 Ich habe die <a class="text-blue-600 hover:text-blue-800 font-medium underline decoration-blue-300 hover:decoration-blue-800 transition-all" href="#" onclick="openModal('datenschutzModal'); return false;">Datenschutzerklärung</a> gelesen und stimme zu.
                             </label>
                         </div>
 
                         <div class="pt-2">
-                            <button class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold shadow-lg shadow-blue-500/20 transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 group" type="submit">
+                            <button class="w-full py-3.5 px-6 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold shadow-lg shadow-blue-500/30 transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 group" type="submit">
                                 <span>Nachricht absenden</span>
                                 <i class="w-5 h-5 group-hover:translate-x-1 transition-transform" data-lucide="send"></i>
                             </button>
@@ -503,7 +505,7 @@
     <div class="modal-content relative w-full max-w-2xl mx-auto text-left">
         <span class="close-button" onclick="closeModal('datenschutzModal')">×</span>
         <h2 class="text-3xl font-bold mb-4 text-blue-700">Datenschutzerklärung | Stand 01. August 2025</h2>
-        <div class="space-y-4 text-gray-700 text-base max-h-[70vh] overflow-y-auto pr-2">
+        <div class="space-y-4 text-slate-700 text-base max-h-[70vh] overflow-y-auto pr-2">
             <p><strong>1. Verantwortlicher</strong><br/>Lukas Prehn<br/>c/o IP-Management #6336<br/>Ludwig-Erhard-Straße 18<br/>20459 Hamburg, Deutschland<br/>lpswim.info@gmail.com</p>
             <p><strong>2. Grundsätze der Datenverarbeitung</strong><br/>Der Schutz personenbezogener Daten hat höchste Priorität. Die Verarbeitung erfolgt ausschließlich gemäß der Datenschutz-Grundverordnung (DSGVO) und dem Bundesdatenschutzgesetz (BDSG). Daten werden nur erhoben, wenn dies gesetzlich zulässig ist oder eine ausdrückliche Einwilligung vorliegt. Rechtsgrundlagen sind Art. 6 Abs. 1 lit. a (Einwilligung), lit. b (Vertrag oder vorvertragliche Maßnahmen) sowie lit. f (berechtigtes Interesse).</p>
             <p><strong>3. Hosting</strong><br/>Diese Website wird über GitHub Pages (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) bereitgestellt. Beim Aufruf werden automatisch IP-Adresse, Datum/Uhrzeit, aufgerufene Seiten/Dateien, Referrer-URL, Browsertyp/-version und Betriebssystem verarbeitet. Die Verarbeitung dient der technischen Bereitstellung, Sicherheit und Stabilität der Website. Eine Zusammenführung mit anderen Daten erfolgt nicht. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Weitere Informationen: <a class="text-blue-500 hover:text-blue-700 underline" href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener noreferrer" target="_blank">GitHub Pages Datenschutz</a></p>
@@ -518,7 +520,7 @@
     <div class="modal-content relative w-full max-w-2xl mx-auto text-left">
         <span class="close-button" onclick="closeModal('agbModal')">×</span>
         <h2 class="text-3xl font-bold mb-4 text-blue-700">AGB | Stand 01. August 2025</h2>
-        <div class="space-y-4 text-gray-700 text-base max-h-[70vh] overflow-y-auto pr-2">
+        <div class="space-y-4 text-slate-700 text-base max-h-[70vh] overflow-y-auto pr-2">
             <p><strong>§1 Geltungsbereich</strong><br/>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle zwischen LP-SWIM, vertreten durch die jeweils mit der Durchführung beauftragte Lehr- oder Betreuungsperson (nachfolgend „Dienstleister“ genannt), und den Teilnehmenden geschlossenen Verträge über die Inanspruchnahme von Dienstleistungen aus dem Leistungsangebot von LP-SWIM. Dieses umfasst insbesondere Schwimmunterricht sowie die Begleitung und Betreuung von Teilnehmenden im Rahmen schulischer oder außerschulischer Aktivitäten wie Schulschwimmen, Freizeitgruppen oder Ferienprogramme, einschließlich aller damit verbundenen pädagogischen, sportlichen und organisatorischen Leistungen.</p>
             <p class="mb-4">Teilnehmende im Sinne dieser AGB sind alle Personen, die Leistungen von LP-SWIM in Anspruch nehmen oder für die solche Leistungen durch Dritte – insbesondere Eltern, Erziehungsberechtigte, Schulen, Vereine oder sonstige Institutionen – gebucht werden. Diese AGB gelten gleichermaßen gegenüber den Teilnehmenden und den jeweiligen Vertragspartnern. Der Vertrag kommt mit der ausdrücklichen Bestätigung der Buchung durch LP-SWIM zustande; mit Zugang der Zahlungsaufforderung und anschließender Terminbestätigung gilt die Buchung als verbindlich und für beide Parteien rechtswirksam.</p>
             <p><strong>§2 Vertragsabschluss</strong><br/>Der Vertrag gilt mit der schriftlichen oder elektronischen Bestätigung des Termins durch den Dienstleister als rechtsverbindlich geschlossen. Mit der Anmeldung erklärt der Vertragspartner die verbindliche Teilnahme an der vereinbarten Dienstleistung. Das Nichterscheinen oder Nichtantreten gilt als Nichtinanspruchnahme der Leistung; in diesem Fall finden die Bestimmungen gemäß "§ 5 Stornierung und Rücktritt" Anwendung.</p>
@@ -541,7 +543,7 @@
     <div class="modal-content relative w-full max-w-2xl mx-auto text-left">
         <span class="close-button" onclick="closeModal('impressumModal')">×</span>
         <h2 class="text-3xl font-bold mb-4 text-blue-700">Impressum</h2>
-        <div class="space-y-4 text-gray-700 text-base max-h-[70vh] overflow-y-auto pr-2">
+        <div class="space-y-4 text-slate-700 text-base max-h-[70vh] overflow-y-auto pr-2">
             <p>Angaben gemäß § 5 TMG:</p>
             <p>Lukas Prehn<br/>c/o IP-Management #6336<br/>Ludwig-Erhard-Straße 18<br/>20459 Hamburg<br/>Deutschland</p>
             <p>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:<br/>Lukas Prehn, Anschrift wie oben</p>
@@ -552,7 +554,7 @@
 <div class="modal fixed inset-0 z-[10000] items-center justify-center p-4 hidden" id="confirmationPopup">
     <div class="modal-content relative w-full max-w-lg mx-auto text-center">
         <h2 class="text-3xl font-bold mb-4 text-blue-700">Ihre Nachricht wurde erfolgreich übermittelt!</h2>
-        <div class="space-y-4 text-gray-700 text-base max-h-[70vh] overflow-y-auto pr-2">
+        <div class="space-y-4 text-slate-700 text-base max-h-[70vh] overflow-y-auto pr-2">
             <p class="flex items-center gap-3">
                 <i class="text-blue-500 w-6 h-6" data-lucide="map-pinned"></i>
                 <strong>Standorte:</strong><br/>Viernheim – Hallenbad 01.10.–30.04. u. Waldschwimmbad 01.06.–31.08.
@@ -580,11 +582,11 @@
             </div>
             <h3 class="text-2xl font-bold text-blue-700">Datenschutz & Einwilligung</h3>
         </div>
-        <p class="text-gray-700 mb-4">
+        <p class="text-slate-700 mb-4">
             Wir nutzen <strong>Google Analytics</strong>, um anonyme Nutzungsstatistiken zu erstellen und unser Angebot zu verbessern.
             Google kann dabei Daten verarbeiten. Mehr Infos findest du bei <a class="text-blue-500 hover:text-blue-700 underline" href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">Google – Partner‑Websites</a> und in der <a class="text-blue-500 hover:text-blue-700 underline" href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google‑Datenschutzerklärung</a>.
         </p>
-        <ul class="list-none p-0 mb-6 space-y-2 text-gray-700">
+        <ul class="list-none p-0 mb-6 space-y-2 text-slate-700">
             <li class="flex items-start gap-3">
                 <i class="w-5 h-5 text-green-500 flex-shrink-0 mt-1" data-lucide="check-circle"></i>
                 <span>Keine personalisierte Werbung; ausschließlich Reichweitenmessung.</span>
@@ -698,7 +700,7 @@
    // Placeholder typing animation for message field
    document.addEventListener('DOMContentLoaded', () => {
        const msgField = document.getElementById("message");
-       const placeholderText = "Wie kann ich dir helfen?"; // Shortened for new design
+       const placeholderText = "Wie kann ich dir helfen?"; 
        let typed = false;
 
        const checkVisibility = () => {
@@ -726,7 +728,7 @@
        }
    });
 
-   // Cookie Consent Logic
+   // Cookie Consent Logic (unchanged)
    (function() {
        var KEY = "lp_cookie_consent_v1";
        var _ga_loaded = false;
