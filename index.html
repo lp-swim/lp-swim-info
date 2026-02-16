@@ -405,38 +405,43 @@
     </div>
 </div>
 
-<div id="lp-consent-overlay" class="fixed inset-0 z-[100] bg-slate-900/40 backdrop-blur-sm hidden items-end sm:items-center justify-center p-4 transition-opacity duration-300 opacity-0">
-    <div class="bg-white/95 backdrop-blur-xl w-full max-w-lg rounded-3xl shadow-2xl border border-white/50 p-6 sm:p-8 transform transition-all duration-300 scale-95 translate-y-4">
+<div id="lp-consent-overlay" class="fixed inset-0 z-[100] bg-slate-900/30 backdrop-blur-[2px] hidden items-end sm:items-center justify-center p-4 transition-all duration-500 opacity-0">
+    <div class="bg-white/90 backdrop-blur-xl w-full max-w-lg rounded-[2rem] shadow-2xl shadow-blue-900/10 border border-white/60 p-6 sm:p-8 transform transition-all duration-500 cubic-bezier(0.34, 1.56, 0.64, 1) scale-95 translate-y-8">
         
         <div class="flex items-start gap-5">
-            <div class="p-3.5 bg-blue-50 text-blue-600 rounded-2xl shrink-0 shadow-sm border border-blue-100">
-                <i data-lucide="shield-check" class="w-7 h-7"></i>
+            <div class="group p-4 bg-blue-50/80 text-blue-600 rounded-2xl shrink-0 shadow-sm border border-blue-100/50 hover:bg-blue-100 transition-colors duration-300">
+                <i data-lucide="cookie" class="w-8 h-8 group-hover:rotate-12 transition-transform duration-300"></i>
             </div>
+            
             <div class="space-y-3">
-                <h3 class="font-bold text-xl text-blue-900">Datenschutz & Transparenz</h3>
-                <div class="text-slate-600 text-sm leading-relaxed space-y-2">
+                <h3 class="font-bold text-xl text-blue-900 tracking-tight">Kekse & Datenschutz</h3>
+                <div class="text-slate-600 text-sm leading-relaxed space-y-3">
                     <p>
-                        Wir nutzen <strong>Google Analytics</strong> ausschließlich zur technischen Analyse, um Fehler zu beheben und die Performance der Seite zu verbessern.
+                        Wir nutzen <strong>Google Analytics</strong> rein technisch, um zu verstehen, ob auf der Website alles rund läuft.
                     </p>
-                    <p class="text-xs text-slate-500 bg-slate-50 p-3 rounded-lg border border-slate-100">
-                        <i class="inline-block w-3 h-3 mr-1 align-middle" data-lucide="info"></i>
-                        Ihre IP-Adresse wird bei uns anonymisiert. Google verarbeitet Daten jedoch gemäß ihrer eigenen 
-                        <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline hover:text-blue-800 decoration-blue-300 underline-offset-2">Datenschutzerklärung</a>.
-                    </p>
-                    <p>
-                        Weitere Details finden Sie in unserer <button onclick="openModal('datenschutzModal')" class="text-blue-600 font-medium hover:underline">Datenschutzerklärung</button>.
+                    
+                    <div class="text-xs text-slate-500 bg-slate-50/80 p-3 rounded-xl border border-slate-100 flex items-start gap-2">
+                        <i class="shrink-0 w-4 h-4 text-blue-400 mt-0.5" data-lucide="info"></i>
+                        <span>
+                            Deine IP wird anonymisiert. Google verarbeitet Daten jedoch nach eigener 
+                            <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer" class="text-blue-600 font-medium hover:text-blue-800 underline decoration-blue-200 underline-offset-2 transition-colors">Datenschutzerklärung</a>.
+                        </span>
+                    </div>
+
+                    <p class="text-xs">
+                        Mehr Infos findest du in der <button onclick="openModal('datenschutzModal')" class="text-blue-600 font-medium hover:underline decoration-blue-300 underline-offset-2">Datenschutzerklärung</button>.
                     </p>
                 </div>
             </div>
         </div>
 
-        <div class="flex flex-col-reverse sm:flex-row gap-3 mt-8 pt-6 border-t border-slate-100">
-            <button id="lp-decline" class="flex-1 px-5 py-3 text-sm font-semibold text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-xl transition-all border border-transparent hover:border-slate-200">
-                Nur Essenzielle nutzen
+        <div class="flex flex-col-reverse sm:flex-row gap-3 mt-8 pt-6 border-t border-slate-100/60">
+            <button id="lp-decline" class="flex-1 px-5 py-3.5 text-sm font-semibold text-slate-500 hover:bg-slate-50 hover:text-slate-800 rounded-xl transition-all border border-transparent hover:border-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-200">
+                Ablehnen
             </button>
-            <button id="lp-accept" class="flex-1 px-5 py-3 text-sm font-bold bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all flex justify-center items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4"></i>
-                Einverstanden
+            <button id="lp-accept" class="flex-1 px-5 py-3.5 text-sm font-bold bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-600/40 hover:-translate-y-0.5 active:translate-y-0 transition-all flex justify-center items-center gap-2 group focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                <i data-lucide="check" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+                Alles klar!
             </button>
         </div>
     </div>
@@ -446,17 +451,33 @@
     // 1. Initialisierung Icons
     lucide.createIcons();
 
-    // 2. Modal-Logik (Standard)
+    // Globale Variable für Banner-Logik
+    let isBannerTemporarilyHidden = false;
+
+    // 2. Modal-Logik (Verbessert & Intelligent)
     function openModal(id) {
         const modal = document.getElementById(id);
         const overlay = document.getElementById('modal-overlay');
         const content = modal.querySelector('.modal-anim');
+        const cookieBanner = document.getElementById('lp-consent-overlay');
+
+        // INTELLIGENTER CHECK: Ist das Cookie Banner gerade offen?
+        if (cookieBanner && !cookieBanner.classList.contains('hidden') && !cookieBanner.classList.contains('opacity-0')) {
+            // Banner sanft ausblenden, damit man das Modal lesen kann
+            cookieBanner.classList.add('opacity-0', 'pointer-events-none');
+            // Merken, dass wir es ausgeblendet haben
+            isBannerTemporarilyHidden = true;
+        }
+
         if (modal) {
             overlay.classList.remove('hidden');
             setTimeout(() => overlay.classList.remove('opacity-0'), 10);
             
             modal.classList.remove('hidden');
             modal.classList.add('flex');
+            
+            // Z-Index Hack: Sicherstellen, dass das Modal IMMER über allem liegt
+            modal.style.zIndex = "9999"; 
             
             setTimeout(() => {
                 content.classList.remove('scale-95', 'opacity-0');
@@ -471,6 +492,8 @@
         const modal = document.getElementById(id);
         const overlay = document.getElementById('modal-overlay');
         const content = modal.querySelector('.modal-anim');
+        const cookieBanner = document.getElementById('lp-consent-overlay');
+
         if (modal) {
             content.classList.remove('scale-100', 'opacity-100');
             content.classList.add('scale-95', 'opacity-0');
@@ -478,14 +501,28 @@
             setTimeout(() => {
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');
+                modal.style.zIndex = ""; // Reset Z-Index
                 
                 const anyOpen = document.querySelectorAll('[id$="Modal"]:not(.hidden), #confirmationPopup:not(.hidden)').length > 0;
+                
                 if(!anyOpen) {
                     overlay.classList.add('opacity-0');
                     setTimeout(() => {
                         overlay.classList.add('hidden');
-                        document.body.classList.remove('overflow-hidden');
+                        // Nur Scrollbar freigeben, wenn das Banner NICHT da ist
+                        if (!isBannerTemporarilyHidden) {
+                            document.body.classList.remove('overflow-hidden');
+                        }
                     }, 300);
+
+                    // INTELLIGENT: War das Banner vorher da? Dann zeig es wieder an!
+                    if (isBannerTemporarilyHidden && cookieBanner) {
+                        // Kurze Verzögerung für schöne Animation (Modal weg -> Banner her)
+                        setTimeout(() => {
+                            cookieBanner.classList.remove('opacity-0', 'pointer-events-none');
+                            isBannerTemporarilyHidden = false; // Reset status
+                        }, 300);
+                    }
                 }
             }, 300);
         }
@@ -495,20 +532,15 @@
         document.querySelectorAll('[id$="Modal"].flex, #confirmationPopup.flex').forEach(m => closeModal(m.id));
     }
 
-    // 3. Google Analytics Integration (MIT DEINER ID)
+    // 3. Google Analytics Integration
     (function() {
-        // Hier sind deine Daten hinterlegt
         const GA_MEASUREMENT_ID = "G-T5H2XMBKFL"; 
-        // Stream ID 12034434357 ist mit dieser Mess-ID verknüpft
-        
-        const STORAGE_KEY = "lp_cookie_consent_v3"; // Versionierung für sauberen Neustart
+        const STORAGE_KEY = "lp_cookie_consent_v5"; // Versionierung
         
         const overlay = document.getElementById('lp-consent-overlay');
         const card = overlay.querySelector('div');
 
-        // Funktion zum Laden von GA4
         function loadGAScriptAndInit() {
-            // Script Tag dynamisch erstellen
             const script = document.createElement('script');
             script.async = true;
             script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_MEASUREMENT_ID;
@@ -517,56 +549,56 @@
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 window.gtag = gtag;
-                
                 gtag('js', new Date());
-                
-                // Konfiguration mit Anonymisierung und technischem Fokus
                 gtag('config', GA_MEASUREMENT_ID, {
-                    'anonymize_ip': true,            // Wichtig für DSGVO
+                    'anonymize_ip': true,
                     'cookie_flags': 'SameSite=None;Secure'
                 });
             };
-            
             document.head.appendChild(script);
         }
 
         function showBanner() {
+            // Nur anzeigen, wenn noch keine Entscheidung getroffen wurde!
+            if (localStorage.getItem(STORAGE_KEY)) return;
+
             overlay.classList.remove('hidden');
             overlay.classList.add('flex');
-            // Animation starten
+            
             setTimeout(() => {
                 overlay.classList.remove('opacity-0');
-                card.classList.remove('scale-95', 'translate-y-4');
+                card.classList.remove('scale-95', 'translate-y-8');
                 card.classList.add('scale-100', 'translate-y-0');
-            }, 50);
+            }, 100);
+            
             document.body.classList.add('overflow-hidden');
+            lucide.createIcons();
         }
 
         function hideBanner() {
-            // Animation beenden
             overlay.classList.add('opacity-0');
-            card.classList.add('scale-95', 'translate-y-4');
+            card.classList.add('scale-95', 'translate-y-8');
             card.classList.remove('scale-100', 'translate-y-0');
             
             setTimeout(() => {
                 overlay.classList.add('hidden');
                 overlay.classList.remove('flex');
                 document.body.classList.remove('overflow-hidden');
-            }, 300);
+            }, 500);
         }
 
-        // Check: Hat der Nutzer schon entschieden?
+        // Logic Check beim Laden
         const consent = localStorage.getItem(STORAGE_KEY);
         
         if (!consent) {
-            // Wenn nein: Banner anzeigen (kurze Verzögerung für nice UX)
-            setTimeout(showBanner, 1000);
+            // User hat noch nie entschieden -> Banner zeigen
+            setTimeout(showBanner, 1500);
         } else if (consent === 'accepted') {
-            // Wenn ja und akzeptiert: GA sofort laden
+            // User hat bereits zugestimmt -> GA laden, Banner NICHT zeigen
             loadGAScriptAndInit();
-        }
+        } 
+        // else if (consent === 'declined') -> Nichts tun, Banner bleibt weg.
 
-        // Button Event Listener
         document.getElementById('lp-accept').onclick = () => {
             localStorage.setItem(STORAGE_KEY, 'accepted');
             loadGAScriptAndInit();
@@ -579,7 +611,7 @@
         };
     })();
 
-    // 4. Form handling (Kontaktformular)
+    // 4. Form handling
     const form = document.getElementById('contactForm');
     const formMessage = document.getElementById('form-message');
     
@@ -621,7 +653,7 @@
         });
     }
 
-    // 5. Typewriter Effekt
+    // 5. Typewriter
     document.addEventListener('DOMContentLoaded', () => {
         const msgField = document.getElementById("message");
         const placeholderText = "Ich würde gerne meine Technik verbessern. Wie läuft die Buchung ab?";
@@ -649,7 +681,7 @@
         checkVisibility();
     });
 
-    // 6. Smooth Scroll Fallback
+    // 6. Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href').substring(1);
@@ -663,6 +695,7 @@
 </script>
 </body>
 </html>
+
 
 
 
