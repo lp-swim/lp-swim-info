@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="de" class="scroll-smooth">
+
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>LP‑SWIM | Weil Sicherheit im Wasser zählt</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-    <meta name="description" content="Ob als Begleitperson im Schulschwimmen oder im Einzeltraining – vom ersten sicheren Wasserkontakt bis zur Verfeinerung der Schwimmtechnik."/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Ob als Begleitperson im Schulschwimmen oder im Einzeltraining – vom ersten sicheren Wasserkontakt bis zur Verfeinerung der Schwimmtechnik." />
     <link rel="canonical" href="https://lp-swim.github.io/lp-swim-info/" />
-    
-    <meta content="YlKI4FssjU6jEQDyOzNbdwcIOhv516qFAF1RUyDOV6I" name="google-site-verification"/>
-    <meta content="58B42B8F103EB15114C7AFC816233F91" name="msvalidate.01"/>
-    <meta name="robots" content="index, follow"/>
-    <meta name="theme-color" content="#EFF6FF"/>
-    
-    <link href="favicon.ico" rel="icon" type="image/x-icon"/>
-    <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+
+    <meta content="YlKI4FssjU6jEQDyOzNbdwcIOhv516qFAF1RUyDOV6I" name="google-site-verification" />
+    <meta content="58B42B8F103EB15114C7AFC816233F91" name="msvalidate.01" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#EFF6FF" />
+
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Poppins', 'sans-serif'] },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif']
+                    },
                     animation: {
                         'fade-in-down': 'fadeInDown 0.6s ease-out forwards',
                         'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
@@ -35,12 +39,30 @@
                         'shake': 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
                     },
                     keyframes: {
-                        fadeInDown: { '0%': { opacity: '0', transform: 'translateY(-20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
-                        fadeInUp: { '0%': { opacity: '0', transform: 'translateY(30px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
-                        floatPulse: { '0%, 100%': { transform: 'translateY(0) scale(1)' }, '50%': { transform: 'translateY(-10px) scale(1.02)' } },
-                        swimSlow: { '0%, 100%': { transform: 'translateX(0)' }, '50%': { transform: 'translateX(10px) rotate(5deg)' } },
-                        spinSlowReverse: { 'from': { transform: 'rotate(0deg)' }, 'to': { transform: 'rotate(-360deg)' } },
-                        bounceSubtle: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-5px)' } },
+                        fadeInDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        floatPulse: {
+                            '0%, 100%': { transform: 'translateY(0) scale(1)' },
+                            '50%': { transform: 'translateY(-10px) scale(1.02)' }
+                        },
+                        swimSlow: {
+                            '0%, 100%': { transform: 'translateX(0)' },
+                            '50%': { transform: 'translateX(10px) rotate(5deg)' }
+                        },
+                        spinSlowReverse: {
+                            'from': { transform: 'rotate(0deg)' },
+                            'to': { transform: 'rotate(-360deg)' }
+                        },
+                        bounceSubtle: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-5px)' }
+                        },
                         shake: {
                             '10%, 90%': { transform: 'translate3d(-1px, 0, 0)' },
                             '20%, 80%': { transform: 'translate3d(2px, 0, 0)' },
@@ -52,8 +74,6 @@
             }
         }
     </script>
-    
-    <script src="https://unpkg.com/lucide@latest"></script>
 
     <script type="application/ld+json">
     {
@@ -83,10 +103,13 @@
             background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
             background-attachment: fixed;
         }
-        section { scroll-margin-top: 100px; }
+        section {
+            scroll-margin-top: 100px;
+        }
         .bg-pattern-light {
             background-image: radial-gradient(#e0f2fe 1px, transparent 1px), radial-gradient(#e0f2fe 1px, transparent 1px);
-            background-size: 20px 20px; background-position: 0 0, 10px 10px;
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
         }
         .glass-card {
             background: linear-gradient(to bottom, rgba(242, 247, 255, 0.90) 0%, rgba(255, 255, 255, 0.95) 90%);
@@ -103,910 +126,905 @@
             background-color: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
         }
-        .modal-anim { transition: all 0.3s ease-out; }
-        
-        /* Mobile adjustments consistent with Code 1 */
+        .modal-anim {
+            transition: all 0.3s ease-out;
+        }
+        /* Mobile adjustments */
         @media (max-width: 1024px) {
             #desktop-nav { display: none !important; }
             h1 { word-wrap: break-word; }
         }
     </style>
 </head>
+
 <body class="text-slate-700 antialiased pt-0 md:pt-20 overflow-x-hidden selection:bg-blue-200">
 
-<nav id="desktop-nav" class="fixed top-0 inset-x-0 z-50 glass-nav shadow-md p-3 md:p-4 rounded-b-3xl max-w-7xl mx-auto border-b border-gray-100 animate-fade-in-down flex justify-center items-center gap-2">
-    <a aria-label="Startseite" class="flex items-center px-4 py-2 rounded-full font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 transition-all group" href="#start">
-        <i class="w-5 h-5 mr-2 group-hover:rotate-6 transition-transform" data-lucide="home"></i> Start
-    </a>
-    <a aria-label="Kinder & Jugendliche" class="flex items-center px-4 py-2 rounded-full font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 transition-all group" href="#jugend">
-        <i class="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" data-lucide="graduation-cap"></i> Kinder & Jugend
-    </a>
-    <a aria-label="Schulbegleitung" class="flex items-center px-4 py-2 rounded-full font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 transition-all group" href="#schule">
-        <i class="w-5 h-5 mr-2 group-hover:shake transition-transform" data-lucide="school"></i> Schulbegleitung
-    </a>
-    <a aria-label="Erwachsene" class="flex items-center px-4 py-2 rounded-full font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 transition-all group" href="#erwachsene">
-        <i class="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" data-lucide="briefcase"></i> Erwachsene
-    </a>
-    <a aria-label="Standort" class="flex items-center px-4 py-2 rounded-full font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 transition-all group" href="#standort">
-        <i class="w-5 h-5 mr-2 group-hover:rotate-3 transition-transform" data-lucide="map-pinned"></i> Standort
-    </a>
-    <a aria-label="Kontakt" class="flex items-center px-4 py-2 rounded-full font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 transition-all group" href="#kontakt">
-        <i class="w-5 h-5 mr-2 group-hover:translate-y-1 transition-transform" data-lucide="send"></i> Kontakt
-    </a>
-</nav>
+    <nav id="desktop-nav" class="fixed top-0 inset-x-0 z-50 glass-nav shadow-md p-3 md:p-4 rounded-b-3xl max-w-7xl mx-auto border-b border-gray-100 animate-fade-in-down flex justify-center items-center gap-2">
+        <a aria-label="Startseite" class="flex items-center px-4 py-2 rounded-full font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 transition-all group" href="#start">
+            <i class="w-5 h-5 mr-2 group-hover:rotate-6 transition-transform" data-lucide="home"></i> Start
+        </a>
+        <a aria-label="Kinder & Jugendliche" class="flex items-center px-4 py-2 rounded-full font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 transition-all group" href="#jugend">
+            <i class="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" data-lucide="graduation-cap"></i> Kinder & Jugend
+        </a>
+        <a aria-label="Schulbegleitung" class="flex items-center px-4 py-2 rounded-full font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 transition-all group" href="#schule">
+            <i class="w-5 h-5 mr-2 group-hover:shake transition-transform" data-lucide="school"></i> Schulbegleitung
+        </a>
+        <a aria-label="Erwachsene" class="flex items-center px-4 py-2 rounded-full font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 transition-all group" href="#erwachsene">
+            <i class="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" data-lucide="briefcase"></i> Erwachsene
+        </a>
+        <a aria-label="Standort" class="flex items-center px-4 py-2 rounded-full font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 transition-all group" href="#standort">
+            <i class="w-5 h-5 mr-2 group-hover:rotate-3 transition-transform" data-lucide="map-pinned"></i> Standort
+        </a>
+        <a aria-label="Kontakt" class="flex items-center px-4 py-2 rounded-full font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 transition-all group" href="#kontakt">
+            <i class="w-5 h-5 mr-2 group-hover:translate-y-1 transition-transform" data-lucide="send"></i> Kontakt
+        </a>
+    </nav>
 
-<header class="relative overflow-hidden pt-8 pb-16 md:pt-32 md:pb-24 flex items-center justify-center min-h-[60vh] md:min-h-[75vh]">
-    <div class="absolute inset-0 bg-pattern-light opacity-40 animate-pulse"></div>
-    <div class="container max-w-7xl mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center gap-12">
-        <div class="flex-1 text-center md:text-left animate-fade-in-up">
-            <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold text-blue-900 mb-6 leading-tight">
-                <span class="block text-blue-600 text-xl md:text-3xl font-bold mb-2 uppercase tracking-wide">LP-SWIM</span>
-                Weil Sicherheit im <br class="hidden md:block" />Wasser zählt
-            </h1>
-            <p class="text-base sm:text-lg md:text-xl text-blue-700/90 mb-8 max-w-2xl mx-auto md:mx-0 leading-relaxed">
-                Schwimmunterricht im Einzelsetting – vom ersten Wasserkontakt bis zur Technikverfeinerung
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <a class="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold shadow-lg hover:-translate-y-1 transition-all animate-bounce-subtle" href="#kontakt">
-                    <i class="w-5 h-5 mr-2" data-lucide="mail"></i> Kontaktaufnahme
-                </a>
-                <a class="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 rounded-full bg-blue-50 text-blue-700 font-semibold border border-blue-200 hover:bg-blue-100 hover:-translate-y-1 transition-all" href="#jugend">
-                    <i class="w-5 h-5 mr-2" data-lucide="arrow-right"></i> Angebote
-                </a>
-                <button onclick="openModal('preisModal')" class="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 rounded-full bg-white text-blue-700 font-semibold border border-blue-200 hover:bg-blue-50 hover:-translate-y-1 transition-all">
-                    <i class="w-5 h-5 mr-2" data-lucide="euro"></i> Preisübersicht
-                </button>
-            </div>
-        </div>
-
-        <div class="flex-1 flex justify-center items-center relative animate-fade-in-down delay-200">
-            <div class="w-56 h-56 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-blue-200/50 rounded-full flex items-center justify-center shadow-2xl animate-float-pulse relative backdrop-blur-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-28 h-28 md:w-40 md:h-40 text-blue-600 opacity-80 animate-swim-slow">
-                    <path style="transform: scale(1.08); transform-origin: center;" fill="currentColor" d="M260.004 19.164c-9.648 1.39-19.07 2.235-23.43 4.054c-2.557 1.067-2.826 1.534-3.11 2.4c-.282.863-.543 3.853 1.932 9.88l3.643 8.873l-9.085 3.073c-28.644 9.69-47.62 38.362-48.017 63.627c-.696 44.055 39.936 82.666 61.355 119.49c6.824 11.732 4.738 25.54-.455 39.22c-5.193 13.676-13.8 28.374-23.465 44.36c-19.33 31.972-42.898 68.978-52.547 106.822c-6.672 26.167 3.367 43.43 19.096 55.682c15.73 12.253 38.023 17.54 50.17 15.902c19.262-2.595 32.47-15.11 39.91-30.416c7.44-15.305 7.876-33.077 3.17-42.47c-3.16-6.31-9.583-11.794-16.926-15.014s-15.397-3.924-20.447-2.48c-16.272 4.65-21.495 15.99-22.44 28.195c-.404 5.208.382 10.223 1.61 14.37c2.89-4.933 6.16-9.945 9.764-14.31c3.488-4.22 7.043-8.04 12.565-10.255c2.76-1.107 6.33-1.676 9.868-.705c3.537.972 6.495 3.364 8.492 6.053c3.54 4.77 4.53 10.117 4.555 15.86c.024 5.746-1.222 11.948-4.322 17.796c-6.202 11.696-21.378 20.488-41.666 16.45c-17.63-3.51-30.796-14.66-35.545-29.497s-1.416-32.257 9.16-48.82c22.857-35.8 62.226-57.237 93.674-80.788c15.724-11.776 29.463-23.952 38.73-37.89c9.267-13.94 14.37-29.483 13.02-49.9c-1.37-20.728-15.83-40.585-36.8-58.366c-20.97-17.783-47.835-33.06-71.06-44.968l-.004-.002l-.006-.002c-3.178-1.635-5.58-4.987-6.383-7.943c-.8-2.957-.547-5.49-.054-7.727c.984-4.473 3.063-8.143 5.878-11.404c2.815-3.262 6.48-7.02 13.35-6.627c3.434.196 7.09 2.23 9.175 4.803c1.98 2.443 2.96 5.102 3.602 7.96c.035-.044.51.51 2.578 1.336c2.998 1.2 8.278 2.27 14.746 2.65c12.935.754 30.663-1 47.942-5.302c18.94-4.715 38.375-.027 54.477 4.852c3.38 1.024 5.777 1.828 8.823 2.826c-.08-.308-.25-.606-.32-.914c-2.138-9.455-.64-18.675 1.34-26.57c.6-2.397 1.268-4.403 1.925-6.547c-12.96 4.157-28.064 6.265-42.94 4.624c-18.95-2.09-38.058-11.507-47.237-30.97c-10.787-2.446-18.605-8.153-24.193-14.274c-5.4-5.917-9.345-11.812-14.103-16.996zm11.46 37.718c7.955 0 14.403 6.28 14.403 14.03c0 7.748-6.448 14.03-14.402 14.03s-14.402-6.282-14.402-14.03c0-7.75 6.448-14.03 14.402-14.03zm-46.49 86.364c45.517 40.05 69.796 73.63 73.883 104.927c2.044 15.65-1.495 30.552-9.78 43.48c-8.286 12.926-20.992 23.986-37.276 33.895l-9.357-15.377c14.73-8.96 25.218-18.464 31.48-28.23c6.26-9.768 8.62-19.69 7.085-31.435c-3.068-23.488-23.848-54.964-67.924-93.746zm-101.453 19.77c11.56 35.447 39.336 66.16 72.933 93.74c1.728-6.023 3.852-12.013 7.01-17.6c3.29-5.82 7.986-11.18 13.998-15.04c-10.137-14.124-22.746-29.812-33.214-47.34a54 54 0 0 1-2.85-.09c-8.232-.495-18.54-2.312-29.166-4.85c-10.046-2.398-20.136-5.463-28.71-8.82z"/>
-                </svg>
-                <div class="absolute -bottom-4 -left-4 w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center shadow-lg transform rotate-6 animate-spin-slow-reverse">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 md:w-10 md:h-10 text-blue-400">
-                        <path fill="currentColor" d="M21.785 8.9a10.18 10.18 0 0 0-9.76-7.15c-1.058 0-2.11.158-3.12.47a10.28 10.28 0 0 0-6.69 6.69a10.1 10.1 0 0 0-.46 3.09a10.22 10.22 0 0 0 10.22 10.25a9.9 9.9 0 0 0 3.12-.48a10.28 10.28 0 0 0 6.69-6.69a10.1 10.1 0 0 0 .46-3.08v-.09a10.2 10.2 0 0 0-.46-3.01M12.005 3a10.4 10.4 0 0 1 2.42.28l-.65 3.23a6.73 6.73 0 0 0-3.59 0l-.65-3.23a10 10 0 0 1 2.47-.28m-5.56 10.68l-3.08.61a10.05 10.05 0 0 1 0-4.67l3.09.61a6.3 6.3 0 0 0 0 3.45zm5.55 7.3a10 10 0 0 1-2.46-.3l.65-3.25c.59.16 1.199.24 1.81.24a6.2 6.2 0 0 0 1.82-.26l.65 3.26a11.4 11.4 0 0 1-2.47.35zm4.09-7.3a4.27 4.27 0 0 1-2.36 2.36a4.4 4.4 0 0 1-3.45 0a4.32 4.32 0 0 1-2.37-2.36a4.5 4.5 0 0 1-.35-1.73a4.5 4.5 0 0 1 2.72-4.09a4.4 4.4 0 0 1 1.72-.35a4.5 4.5 0 0 1 4.1 2.72c.23.547.35 1.136.35 1.73a4.3 4.3 0 0 1-.36 1.72m1.48 0c.151-.561.229-1.14.23-1.72a6 6 0 0 0-.25-1.73l3.11-.61c.36 1.536.36 3.134 0 4.67z"/>
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<main class="container max-w-7xl mx-auto px-4 py-8 md:py-20 space-y-12 md:space-y-16">
-
-    <section class="glass-card rounded-3xl p-6 md:p-12 transform hover:-translate-y-1 transition-all duration-300" id="start">
-        <h2 class="text-center md:text-left text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-blue-800">Schön, dass du da bist</h2>
-        <div class="space-y-4 text-slate-700 leading-relaxed text-base md:text-lg text-justify hyphens-auto">
-            <p>Ich heiße Lukas, bin 23 Jahre jung und begleite als ausgebildete Fachkraft täglich Menschen aller Altersgruppen auf verschiedenen Leistungsniveaus im Wasser. Da der Schwimmunterricht in Schulen häufig an Kapazitätsgrenzen stößt und eine individuelle Förderung organisatorisch bedingt kaum möglich ist, liegt mein Schwerpunkt darauf, ergänzend gezielt jene Aspekte zu vertiefen, welche im Gruppenunterricht zu kurz kommen.</p>
-            <p>Eine Trainingseinheit umfasst 60 Minuten und findet ausschließlich im Einzelsetting statt. Während in klassischen Kursen viele verschiedene Niveaus gleichzeitig berücksichtigt werden müssen, gehört meine ungeteilte Aufmerksamkeit in dieser Zeit ausschließlich dem persönlichen Fortschritt. Durch diesen Ansatz lassen sich vorhandene Lücken effizient schließen sowie die Sicherheit und Freude am Schwimmen nachhaltig steigern.</p>
-            <p class="font-medium text-blue-900 bg-blue-50 p-4 rounded-xl border-l-4 border-blue-400">
-            Das Training findet in Viernheim von Oktober bis April im <a class="text-blue-600 hover:text-blue-800 underline decoration-2 decoration-blue-200" href="https://www.stadtwerke-viernheim.de/preise-leistungen/baeder-und-sauna/hallenbad" target="_blank" rel="noopener noreferrer">Hallenbad</a> statt und wird in den Sommermonaten (Juni–August) im <a class="text-blue-600 hover:text-blue-800 underline decoration-2 decoration-blue-200" href="https://www.stadtwerke-viernheim.de/preise-leistungen/baeder-und-sauna/waldschwimmbad/" target="_blank" rel="noopener noreferrer">Waldschwimmbad</a> fortgeführt. Nach dem Erstkontakt über das Kontaktformular werden Sie direkt in unseren Terminverteiler aufgenommen.</p>
-        </div>
-    </section>
-
-    <section class="glass-card rounded-3xl p-6 md:p-12 transform hover:-translate-y-1 transition-all" id="jugend">
-        <h2 class="text-center md:text-left text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-blue-800">Kinder & Jugendliche</h2>
-        <div class="space-y-4 text-slate-700 leading-relaxed text-base md:text-lg text-justify hyphens-auto">
-            <p>Qualitativer Schwimmunterricht ist für viele Kinder und Jugendliche heutzutage leider keine Selbstverständlichkeit mehr. Im Familienalltag fehlen oft die zeitlichen Kapazitäten, während das Schulschwimmen durch große Gruppen und knappe Wasserzeiten zunehmend an organisatorische Grenzen stößt.</p>
-            <p>Diese fehlende Routine führt schnell zu unsicheren Bewegungsabläufen und einer instabilen Lage im Wasser. Ohne direkte Korrektur schleifen sich technische Fehler dauerhaft ein, was nicht nur die Sicherheit gefährdet, sondern langfristig auch die natürliche Freude an der Bewegung ausbremst.</p>
-            <p>Das Einzeltraining bietet hier den nötigen Raum, um solche Lücken effizient und vor allem nachhaltig zu schließen. Wir richten das Lerntempo am individuellen Entwicklungsstand aus und fokussieren uns auf die persönlichen Ziele – bis hin zur erfolgreichen Abnahme der offiziellen Schwimmabzeichen.</p>
-        </div>
-    </section>
-
-    <section class="glass-card rounded-3xl p-6 md:p-12 transform hover:-translate-y-1 transition-all" id="schule">
-        <h2 class="text-center md:text-left text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-blue-800">Schulbegleitung</h2>
-        <div class="space-y-4 text-slate-700 leading-relaxed text-base md:text-lg text-justify hyphens-auto">
-            <p>Im Schwimmunterricht tragen Lehrkräfte besondere Verantwortung. Sie organisieren den Unterricht, sichern die Aufsicht und fördern die Kinder pädagogisch. Die Anforderungen an Sicherheit und individuelle Förderung stehen dabei oft in einem Spannungsverhältnis zu knappen Ressourcen. Das tragische Unglück vom 18. September 2023, bei dem ein Zweitklässler ertrank, hat die Debatte über Aufsichtspflichten bundesweit verstärkt.</p>
-            <p>Trotz Einhaltung aller Vorgaben wurden Lehrkraft und Referendarin im Zusammenhang mit dem Vorfall vorläufig zu Bewährungsstrafen und Geldauflagen verurteilt. Die endgültige Entscheidung steht zwar noch aus, macht jedoch bereits deutlich, dass Lehrkräfte eine besonders hohe Verantwortung tragen – auch dann, wenn sie alle formalen Vorgaben gewissenhaft erfüllen.</p>
-            <p>Eine qualifizierte Begleitperson entlastet Lehrkräfte spürbar, verbessert die Aufsicht und ermöglicht eine gezieltere Betreuung der Kinder. So lassen sich Sicherheit und pädagogische Qualität im Unterricht deutlich steigern. Ziel ist es, ein verlässliches und strukturiertes Lernumfeld zu schaffen. Das Angebot richtet sich an Schulen im Raum Mannheim und Umgebung.</p>
-        </div>
-    </section>
-
-    <section class="glass-card rounded-3xl p-6 md:p-12 transform hover:-translate-y-1 transition-all" id="erwachsene">
-        <h2 class="text-center md:text-left text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-blue-800">Erwachsene</h2>
-        <div class="space-y-4 text-slate-700 leading-relaxed text-base md:text-lg text-justify hyphens-auto">
-            <p>Für viele Erwachsene ist der Zugang zum Wasser mit Unsicherheiten oder Scham verbunden. Oft hält sich der Trugschluss, Schwimmen sei ein reines Kinderthema. Doch Wasserkompetenz ist keine Frage des Alters – sie lässt sich jederzeit neu erlernen oder nach längeren Pausen wieder auffrischen.</p>
-            <p>UUnsicherheiten werden gerade im Urlaub oder in offenen Gewässern schnell unterschätzt. Ein individuelles Einzeltraining baut Ängste ab und schafft die nötige Routine für sicheres Bewegungsverhalten. Das steigert nicht nur die körperliche Fitness, sondern stärkt auch das Vertrauen in die eigene Leistungsfähigkeit.</p>
-            <p>Für Geübte liegt der Fokus auf gezielter Technikoptimierung. Ob Wasserlage, Armzug oder Atmung – durch die Arbeit an Details wird der Schwimmstil effizienter und kraftsparender. Dieses Training eignet sich ideal für den Feinschliff im Wettkampfsport oder um persönliche sportliche Ziele zu erreichen.</p>
-        </div>
-    </section>
-
-    <section class="glass-card rounded-3xl p-6 md:p-8" id="standort">
-        <h2 class="text-center md:text-left text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-blue-800">Standort & Details</h2>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-            <div class="bg-gray-100 rounded-2xl overflow-hidden border border-gray-200 h-64 md:h-96 min-h-[250px] relative cursor-pointer group" onclick="window.open('https://www.google.de/maps/place/LP-SWIM+%E2%80%93+Inhaber+Lukas+Prehn/@49.5376939,8.5809261,17z/data=!4m16!1m9!3m8!1s0x66777943db50c52b:0x72759400e8725848!2sLP-SWIM+%E2%80%93+Inhaber+Lukas+Prehn!8m2!3d49.5376939!4d8.5809261!9m1!1b1!16s%2Fg%2F11xv29qq3r!3m5!1s0x66777943db50c52b:0x72759400e8725848!8m2!3d49.5376939!4d8.5809261!16s%2Fg%2F11xv29qq3r?entry=ttu', '_blank')">
-                <iframe class="w-full h-full border-0 pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-700" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2590.283188826798!2d8.57835117750849!3d49.53769397143242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x66777943db50c52b%3A0x72759400e8725848!2sLP-SWIM%20%E2%80%93%20Inhaber%20Lukas%20Prehn!5e0!3m2!1sde!2sde!4v1709210000000!5m2!1sde!2sde" title="LP-SWIM Standortkarte"></iframe>
-            </div>
-            <div class="flex flex-col p-6 md:p-8 bg-white/60 rounded-2xl border border-gray-100 text-center backdrop-blur-sm">
-                <div class="flex justify-center mb-6">
-                    <img alt="LP-SWIM Logo" class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full shadow-md shadow-blue-100 object-cover" src="favicon.ico"/>
-                </div>
-                <h4 class="text-xl font-bold text-blue-900 mb-2">Trainerstunden</h4>
-                
-                <div class="flex flex-col gap-4 mb-8 text-slate-600">
-                    <div class="flex flex-col items-center justify-center">
-                        <div class="flex items-center gap-2">
-                             <i data-lucide="calendar-days" class="w-4 h-4 text-blue-500 shrink-0"></i>
-                             <span class="font-medium">Täglich 10:00 – 18:00 Uhr</span>
-                        </div>
-                        <span class="text-sm text-slate-500">(nach Terminbestätigung)</span>
-                    </div>
-                    
-                    <div class="flex items-center justify-center gap-2">
-                        <i data-lucide="clock" class="w-4 h-4 text-blue-500 shrink-0"></i>
-                        <span>Einzelunterricht à 60 min</span>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-auto">
-                    <a class="flex items-center justify-center px-4 py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200" href="https://www.google.com/maps/dir//LP-SWIM+%E2%80%93+Inhaber+Lukas+Prehn,+Schulstra%C3%9Fe+9,+68519+Viernheim/@49.4556502,8.4280417,11z/data=!3m1!5s0x4797d01d72d4f93d:0x4e811ba7f56f8163!4m8!4m7!1m0!1m5!1m1!1s0x66777943db50c52b:0x72759400e8725848!2m2!1d8.5805277!2d49.5377236?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D" rel="noopener noreferrer" target="_blank">
-                        <i class="w-4 h-4 mr-2" data-lucide="car-front"></i> Route
-                    </a>
-                    <a class="flex items-center justify-center px-4 py-3 rounded-xl bg-white border border-blue-200 text-blue-700 font-semibold hover:bg-blue-50 transition-all" href="https://www.google.com/search?sca_esv=9783dddf2c54e777&q=rezensionen+f%C3%BCr+lp-swim+%E2%80%93+inhaber+lukas+prehn+viernheim&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-BUVbdJ3hDQHRBRaYHFinyzPc7d2gswAL4lqHCD2DHMRrF6KlVjIkGsex9oamelGppwJnF3j8v3ziPYyxTFlbyvzDVdejHoBlRwn94f2LUq9hvfOjqE-1-Hc2oVbfEgzxv4eqevOr3oIbfcY4q77sAj49t6AgxXbLe6IyrZdJ1sKaufN0y37xicjzA5cIFiAMpdL1ug&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOaPpBe8_8HTfqdo64xx6ynjmo479J_TQXJJA2mU8O2Pm0WB2coG0U1TumygcRV6YupVbH_dXxZXKZkR9O-7YDAWBDTHGrUEqK9rsLwIgVyOkhu-_EJMfGxSNm6ZwlUN1o3nmw3vQhGt5WT_SMZ1iZnJ41t2T&sa=X&ved=2ahUKEwjj5L7z0tuSAxVd3QIHHfraPJUQxKsJKAR6BAgQEAE&ictx=1&stq=1&cs=1&lei=J9CRaaO1It26i-gP-rXzqQk" rel="noopener noreferrer" target="_blank">
-                        <i class="w-4 h-4 mr-2" data-lucide="star"></i> Bewertungen
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="glass-card rounded-3xl p-6 md:p-12" id="kontakt">
-        <h2 class="text-center md:text-left text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-blue-800">Kontaktaufnahme</h2>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div class="relative min-h-[300px] md:min-h-[400px] lg:h-auto rounded-2xl overflow-hidden shadow-xl group">
-                <img alt="Lukas Prehn" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src="kontakt-lukas.jpg" loading="lazy"/>
-                <div class="absolute inset-0 bg-gradient-to-t from-blue-900/50 via-transparent to-transparent"></div>
-            </div>
+    <header class="relative overflow-hidden pt-8 pb-16 md:pt-32 md:pb-24 flex items-center justify-center min-h-[60vh] md:min-h-[75vh]">
+        <div class="absolute inset-0 bg-pattern-light opacity-40 animate-pulse"></div>
+        <div class="container max-w-7xl mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center gap-12">
             
-            <div class="flex flex-col justify-center">
-                <p class="text-slate-700 mb-6 text-base md:text-lg">
-                    Bereit für den Sprung ins Wasser? Nachricht senden und nach 48 Stunden das Postfach checken.
+            <div class="flex-1 text-center md:text-left animate-fade-in-up">
+                <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold text-blue-900 mb-6 leading-tight">
+                    <span class="block text-blue-600 text-xl md:text-3xl font-bold mb-2 uppercase tracking-wide">LP-SWIM</span>
+                    Weil Sicherheit im <br class="hidden md:block" />Wasser zählt
+                </h1>
+                <p class="text-base sm:text-lg md:text-xl text-blue-700/90 mb-8 max-w-2xl mx-auto md:mx-0 leading-relaxed">
+                    Schwimmunterricht im Einzelsetting – vom ersten Wasserkontakt bis zur Technikverfeinerung
                 </p>
-
-                <form action="https://formspree.io/f/mkgzgywy" method="POST" class="space-y-5" id="contactForm">
-                    <div class="hidden">
-                        <label class="sr-only" for="_gotcha">Bitte dieses Feld leer lassen:</label>
-                        <input autocomplete="off" class="hidden" id="_gotcha" name="_gotcha" tabindex="-1" type="text"/>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="relative">
-                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <i class="w-5 h-5 text-slate-400" data-lucide="user"></i>
-                            </div>
-                            <input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 bg-white text-base" name="name" placeholder="Dein Name" required type="text" autocomplete="name"/>
-                        </div>
-                        <div class="relative">
-                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <i class="w-5 h-5 text-slate-400" data-lucide="mail"></i>
-                            </div>
-                            <input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 bg-white text-base" name="email" placeholder="Deine E-Mail" required type="email" autocomplete="email"/>
-                        </div>
-                    </div>
-                    
-                    <div class="relative">
-                        <div class="absolute top-3 left-3 pointer-events-none">
-                            <i class="w-5 h-5 text-slate-400" data-lucide="message-square"></i>
-                        </div>
-                        <textarea class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 h-32 resize-none bg-white text-base" name="message" id="message" placeholder="" required></textarea>
-                    </div>
-
-                    <div class="flex items-start gap-3">
-                        <input class="mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500 cursor-pointer" id="privacy-consent" name="privacy-consent" required type="checkbox"/>
-                        <label class="text-sm text-slate-600 leading-snug cursor-pointer" for="privacy-consent">
-                            Ich habe die <button type="button" class="text-blue-600 hover:underline font-medium" onclick="openModal('datenschutzModal')">Datenschutzerklärung</button> gelesen und stimme zu.
-                        </label>
-                    </div>
-                    
-                    <button class="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 group" type="submit">
-                        <span>Nachricht absenden</span>
-                        <i class="w-5 h-5 group-hover:translate-x-1 transition-transform" data-lucide="send"></i>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a class="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold shadow-lg hover:-translate-y-1 transition-all animate-bounce-subtle" href="#kontakt">
+                        <i class="w-5 h-5 mr-2" data-lucide="mail"></i> Kontaktaufnahme
+                    </a>
+                    <a class="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 rounded-full bg-blue-50 text-blue-700 font-semibold border border-blue-200 hover:bg-blue-100 hover:-translate-y-1 transition-all" href="#jugend">
+                        <i class="w-5 h-5 mr-2" data-lucide="arrow-right"></i> Angebote
+                    </a>
+                    <button onclick="openModal('preisModal')" class="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 rounded-full bg-white text-blue-700 font-semibold border border-blue-200 hover:bg-blue-50 hover:-translate-y-1 transition-all">
+                        <i class="w-5 h-5 mr-2" data-lucide="euro"></i> Preisübersicht
                     </button>
-                </form>
-                
-                <div class="mt-4 p-4 rounded-xl text-center font-medium hidden animate-fade-in" id="form-message"></div>
+                </div>
             </div>
-        </div>
-    </section>
-</main>
 
-<footer class="bg-blue-50/80 border-t border-blue-100 py-10 text-center backdrop-blur-sm">
-    <div class="container mx-auto px-4">
-        <div class="flex flex-wrap justify-center gap-6 mb-6 text-sm font-medium text-blue-800">
-            <button onclick="openModal('datenschutzModal')" class="hover:text-blue-600 hover:underline">Datenschutzerklärung</button>
-            <span class="text-blue-200">|</span>
-            <button onclick="openModal('agbModal')" class="hover:text-blue-600 hover:underline">AGB</button>
-            <span class="text-blue-200">|</span>
-            <button onclick="openModal('impressumModal')" class="hover:text-blue-600 hover:underline">Impressum</button>
-        </div>
-        <p class="text-slate-500 text-sm">© 2026 LP-SWIM<br>Alle Rechte vorbehalten</p>
-    </div>
-</footer>
-
-<div id="modal-overlay" class="fixed inset-0 z-[60] bg-slate-900/60 backdrop-blur-sm hidden transition-opacity opacity-0" onclick="closeAllModals()"></div>
-
-<div class="fixed inset-0 z-[70] hidden items-center justify-center p-4 pointer-events-none" id="impressumModal">
-    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 modal-anim">
-        <div class="p-6 border-b flex justify-between items-center bg-gray-50 rounded-t-2xl">
-            <h2 class="text-xl font-bold text-blue-800">Impressum</h2>
-            <button onclick="closeModal('impressumModal')" class="p-2 hover:bg-gray-200 rounded-full transition-colors">
-                <i data-lucide="x" class="w-6 h-6 text-gray-500"></i>
-            </button>
-        </div>
-
-        <div class="p-6 overflow-y-auto space-y-6 text-sm text-slate-700 leading-relaxed">
-            
-            <section>
-                <h4 class="font-bold text-lg text-blue-700 mb-2">Angaben gemäß § 5 TMG</h4>
-                <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100 flex items-start gap-3">
-                    <div class="bg-white p-2 rounded-full text-blue-600 shadow-sm">
-                        <i data-lucide="map-pin" class="w-5 h-5"></i>
-                    </div>
-                    <div>
-                        <p class="font-semibold text-blue-900 mb-1">Anschrift</p>
-                        <p>
-                            Lukas Prehn<br>
-                            c/o IP-Management #6336<br>
-                            Ludwig-Erhard-Straße 18<br>
-                            20459 Hamburg<br>
-                            Deutschland
-                        </p>
+            <div class="flex-1 flex justify-center items-center relative animate-fade-in-down delay-200">
+                <div class="w-56 h-56 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-blue-200/50 rounded-full flex items-center justify-center shadow-2xl animate-float-pulse relative backdrop-blur-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-28 h-28 md:w-40 md:h-40 text-blue-600 opacity-80 animate-swim-slow">
+                        <path style="transform: scale(1.08); transform-origin: center;" fill="currentColor" d="M260.004 19.164c-9.648 1.39-19.07 2.235-23.43 4.054c-2.557 1.067-2.826 1.534-3.11 2.4c-.282.863-.543 3.853 1.932 9.88l3.643 8.873l-9.085 3.073c-28.644 9.69-47.62 38.362-48.017 63.627c-.696 44.055 39.936 82.666 61.355 119.49c6.824 11.732 4.738 25.54-.455 39.22c-5.193 13.676-13.8 28.374-23.465 44.36c-19.33 31.972-42.898 68.978-52.547 106.822c-6.672 26.167 3.367 43.43 19.096 55.682c15.73 12.253 38.023 17.54 50.17 15.902c19.262-2.595 32.47-15.11 39.91-30.416c7.44-15.305 7.876-33.077 3.17-42.47c-3.16-6.31-9.583-11.794-16.926-15.014s-15.397-3.924-20.447-2.48c-16.272 4.65-21.495 15.99-22.44 28.195c-.404 5.208.382 10.223 1.61 14.37c2.89-4.933 6.16-9.945 9.764-14.31c3.488-4.22 7.043-8.04 12.565-10.255c2.76-1.107 6.33-1.676 9.868-.705c3.537.972 6.495 3.364 8.492 6.053c3.54 4.77 4.53 10.117 4.555 15.86c.024 5.746-1.222 11.948-4.322 17.796c-6.202 11.696-21.378 20.488-41.666 16.45c-17.63-3.51-30.796-14.66-35.545-29.497s-1.416-32.257 9.16-48.82c22.857-35.8 62.226-57.237 93.674-80.788c15.724-11.776 29.463-23.952 38.73-37.89c9.267-13.94 14.37-29.483 13.02-49.9c-1.37-20.728-15.83-40.585-36.8-58.366c-20.97-17.783-47.835-33.06-71.06-44.968l-.004-.002l-.006-.002c-3.178-1.635-5.58-4.987-6.383-7.943c-.8-2.957-.547-5.49-.054-7.727c.984-4.473 3.063-8.143 5.878-11.404c2.815-3.262 6.48-7.02 13.35-6.627c3.434.196 7.09 2.23 9.175 4.803c1.98 2.443 2.96 5.102 3.602 7.96c.035-.044.51.51 2.578 1.336c2.998 1.2 8.278 2.27 14.746 2.65c12.935.754 30.663-1 47.942-5.302c18.94-4.715 38.375-.027 54.477 4.852c3.38 1.024 5.777 1.828 8.823 2.826c-.08-.308-.25-.606-.32-.914c-2.138-9.455-.64-18.675 1.34-26.57c.6-2.397 1.268-4.403 1.925-6.547c-12.96 4.157-28.064 6.265-42.94 4.624c-18.95-2.09-38.058-11.507-47.237-30.97c-10.787-2.446-18.605-8.153-24.193-14.274c-5.4-5.917-9.345-11.812-14.103-16.996zm11.46 37.718c7.955 0 14.403 6.28 14.403 14.03c0 7.748-6.448 14.03-14.402 14.03s-14.402-6.282-14.402-14.03c0-7.75 6.448-14.03 14.402-14.03zm-46.49 86.364c45.517 40.05 69.796 73.63 73.883 104.927c2.044 15.65-1.495 30.552-9.78 43.48c-8.286 12.926-20.992 23.986-37.276 33.895l-9.357-15.377c14.73-8.96 25.218-18.464 31.48-28.23c6.26-9.768 8.62-19.69 7.085-31.435c-3.068-23.488-23.848-54.964-67.924-93.746zm-101.453 19.77c11.56 35.447 39.336 66.16 72.933 93.74c1.728-6.023 3.852-12.013 7.01-17.6c3.29-5.82 7.986-11.18 13.998-15.04c-10.137-14.124-22.746-29.812-33.214-47.34a54 54 0 0 1-2.85-.09c-8.232-.495-18.54-2.312-29.166-4.85c-10.046-2.398-20.136-5.463-28.71-8.82z"/>
+                    </svg>
+                    <div class="absolute -bottom-4 -left-4 w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center shadow-lg transform rotate-6 animate-spin-slow-reverse">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 md:w-10 md:h-10 text-blue-400">
+                            <path fill="currentColor" d="M21.785 8.9a10.18 10.18 0 0 0-9.76-7.15c-1.058 0-2.11.158-3.12.47a10.28 10.28 0 0 0-6.69 6.69a10.1 10.1 0 0 0-.46 3.09a10.22 10.22 0 0 0 10.22 10.25a9.9 9.9 0 0 0 3.12-.48a10.28 10.28 0 0 0 6.69-6.69a10.1 10.1 0 0 0 .46-3.08v-.09a10.2 10.2 0 0 0-.46-3.01M12.005 3a10.4 10.4 0 0 1 2.42.28l-.65 3.23a6.73 6.73 0 0 0-3.59 0l-.65-3.23a10 10 0 0 1 2.47-.28m-5.56 10.68l-3.08.61a10.05 10.05 0 0 1 0-4.67l3.09.61a6.3 6.3 0 0 0 0 3.45zm5.55 7.3a10 10 0 0 1-2.46-.3l.65-3.25c.59.16 1.199.24 1.81.24a6.2 6.2 0 0 0 1.82-.26l.65 3.26a11.4 11.4 0 0 1-2.47.35zm4.09-7.3a4.27 4.27 0 0 1-2.36 2.36a4.4 4.4 0 0 1-3.45 0a4.32 4.32 0 0 1-2.37-2.36a4.5 4.5 0 0 1-.35-1.73a4.5 4.5 0 0 1 2.72-4.09a4.4 4.4 0 0 1 1.72-.35a4.5 4.5 0 0 1 4.1 2.72c.23.547.35 1.136.35 1.73a4.3 4.3 0 0 1-.36 1.72m1.48 0c.151-.561.229-1.14.23-1.72a6 6 0 0 0-.25-1.73l3.11-.61c.36 1.536.36 3.134 0 4.67z"/>
+                        </svg>
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
+    </header>
 
-            <section>
-                <h4 class="font-bold text-lg text-blue-700 mb-2">Kontakt</h4>
-                <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100 flex items-start gap-3">
-                     <div class="bg-white p-2 rounded-full text-blue-600 shadow-sm">
-                        <i data-lucide="mail" class="w-5 h-5"></i>
+    <main class="container max-w-7xl mx-auto px-4 py-8 md:py-20 space-y-12 md:space-y-16">
+
+        <section class="glass-card rounded-3xl p-6 md:p-12 transform hover:-translate-y-1 transition-all duration-300" id="start">
+            <h2 class="text-center md:text-left text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-blue-800">Schön, dass du da bist</h2>
+            <div class="space-y-4 text-slate-700 leading-relaxed text-base md:text-lg text-justify hyphens-auto">
+                <p>Ich heiße Lukas, bin 23 Jahre jung und begleite als ausgebildete Fachkraft täglich Menschen aller Altersgruppen auf verschiedenen Leistungsniveaus im Wasser. Da der Schwimmunterricht in Schulen häufig an Kapazitätsgrenzen stößt und eine individuelle Förderung organisatorisch bedingt kaum möglich ist, liegt mein Schwerpunkt darauf, ergänzend gezielt jene Aspekte zu vertiefen, welche im Gruppenunterricht zu kurz kommen.</p>
+                <p>Eine Trainingseinheit umfasst 60 Minuten und findet ausschließlich im Einzelsetting statt. Während in klassischen Kursen viele verschiedene Niveaus gleichzeitig berücksichtigt werden müssen, gehört meine ungeteilte Aufmerksamkeit in dieser Zeit ausschließlich dem persönlichen Fortschritt. Durch diesen Ansatz lassen sich vorhandene Lücken effizient schließen sowie die Sicherheit und Freude am Schwimmen nachhaltig steigern.</p>
+                <p class="font-medium text-blue-900 bg-blue-50 p-4 rounded-xl border-l-4 border-blue-400">
+                    Das Training findet in Viernheim von Oktober bis April im <a class="text-blue-600 hover:text-blue-800 underline decoration-2 decoration-blue-200" href="https://www.stadtwerke-viernheim.de/preise-leistungen/baeder-und-sauna/hallenbad" target="_blank" rel="noopener noreferrer">Hallenbad</a> statt und wird in den Sommermonaten (Juni–August) im <a class="text-blue-600 hover:text-blue-800 underline decoration-2 decoration-blue-200" href="https://www.stadtwerke-viernheim.de/preise-leistungen/baeder-und-sauna/waldschwimmbad/" target="_blank" rel="noopener noreferrer">Waldschwimmbad</a> fortgeführt. Nach dem Erstkontakt über das Kontaktformular werden Sie direkt in unseren Terminverteiler aufgenommen.
+                </p>
+            </div>
+        </section>
+
+        <section class="glass-card rounded-3xl p-6 md:p-12 transform hover:-translate-y-1 transition-all" id="jugend">
+            <h2 class="text-center md:text-left text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-blue-800">Kinder & Jugendliche</h2>
+            <div class="space-y-4 text-slate-700 leading-relaxed text-base md:text-lg text-justify hyphens-auto">
+                <p>Qualitativer Schwimmunterricht ist für viele Kinder und Jugendliche heutzutage leider keine Selbstverständlichkeit mehr. Im Familienalltag fehlen oft die zeitlichen Kapazitäten, während das Schulschwimmen durch große Gruppen und knappe Wasserzeiten zunehmend an organisatorische Grenzen stößt.</p>
+                <p>Diese fehlende Routine führt schnell zu unsicheren Bewegungsabläufen und einer instabilen Lage im Wasser. Ohne direkte Korrektur schleifen sich technische Fehler dauerhaft ein, was nicht nur die Sicherheit gefährdet, sondern langfristig auch die natürliche Freude an der Bewegung ausbremst.</p>
+                <p>Das Einzeltraining bietet hier den nötigen Raum, um solche Lücken effizient und vor allem nachhaltig zu schließen. Wir richten das Lerntempo am individuellen Entwicklungsstand aus und fokussieren uns auf die persönlichen Ziele – bis hin zur erfolgreichen Abnahme der offiziellen Schwimmabzeichen.</p>
+            </div>
+        </section>
+
+        <section class="glass-card rounded-3xl p-6 md:p-12 transform hover:-translate-y-1 transition-all" id="schule">
+            <h2 class="text-center md:text-left text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-blue-800">Schulbegleitung</h2>
+            <div class="space-y-4 text-slate-700 leading-relaxed text-base md:text-lg text-justify hyphens-auto">
+                <p>Im Schwimmunterricht tragen Lehrkräfte besondere Verantwortung. Sie organisieren den Unterricht, sichern die Aufsicht und fördern die Kinder pädagogisch. Die Anforderungen an Sicherheit und individuelle Förderung stehen dabei oft in einem Spannungsverhältnis zu knappen Ressourcen. Das tragische Unglück vom 18. September 2023, bei dem ein Zweitklässler ertrank, hat die Debatte über Aufsichtspflichten bundesweit verstärkt.</p>
+                <p>Trotz Einhaltung aller Vorgaben wurden Lehrkraft und Referendarin im Zusammenhang mit dem Vorfall vorläufig zu Bewährungsstrafen und Geldauflagen verurteilt. Die endgültige Entscheidung steht zwar noch aus, macht jedoch bereits deutlich, dass Lehrkräfte eine besonders hohe Verantwortung tragen – auch dann, wenn sie alle formalen Vorgaben gewissenhaft erfüllen.</p>
+                <p>Eine qualifizierte Begleitperson entlastet Lehrkräfte spürbar, verbessert die Aufsicht und ermöglicht eine gezieltere Betreuung der Kinder. So lassen sich Sicherheit und pädagogische Qualität im Unterricht deutlich steigern. Ziel ist es, ein verlässliches und strukturiertes Lernumfeld zu schaffen. Das Angebot richtet sich an Schulen im Raum Mannheim und Umgebung.</p>
+            </div>
+        </section>
+
+        <section class="glass-card rounded-3xl p-6 md:p-12 transform hover:-translate-y-1 transition-all" id="erwachsene">
+            <h2 class="text-center md:text-left text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-blue-800">Erwachsene</h2>
+            <div class="space-y-4 text-slate-700 leading-relaxed text-base md:text-lg text-justify hyphens-auto">
+                <p>Für viele Erwachsene ist der Zugang zum Wasser mit Unsicherheiten oder Scham verbunden. Oft hält sich der Trugschluss, Schwimmen sei ein reines Kinderthema. Doch Wasserkompetenz ist keine Frage des Alters – sie lässt sich jederzeit neu erlernen oder nach längeren Pausen wieder auffrischen.</p>
+                <p>Unsicherheiten werden gerade im Urlaub oder in offenen Gewässern schnell unterschätzt. Ein individuelles Einzeltraining baut Ängste ab und schafft die nötige Routine für sicheres Bewegungsverhalten. Das steigert nicht nur die körperliche Fitness, sondern stärkt auch das Vertrauen in die eigene Leistungsfähigkeit.</p>
+                <p>Für Geübte liegt der Fokus auf gezielter Technikoptimierung. Ob Wasserlage, Armzug oder Atmung – durch die Arbeit an Details wird der Schwimmstil effizienter und kraftsparender. Dieses Training eignet sich ideal für den Feinschliff im Wettkampfsport oder um persönliche sportliche Ziele zu erreichen.</p>
+            </div>
+        </section>
+
+        <section class="glass-card rounded-3xl p-6 md:p-8" id="standort">
+            <h2 class="text-center md:text-left text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-blue-800">Standort & Details</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                <div class="bg-gray-100 rounded-2xl overflow-hidden border border-gray-200 h-64 md:h-96 min-h-[250px] relative cursor-pointer group" onclick="window.open('https://www.google.de/maps/place/LP-SWIM+%E2%80%93+Inhaber+Lukas+Prehn/@49.5376939,8.5809261,17z/data=!4m16!1m9!3m8!1s0x66777943db50c52b:0x72759400e8725848!2sLP-SWIM+%E2%80%93+Inhaber+Lukas+Prehn!8m2!3d49.5376939!4d8.5809261!9m1!1b1!16s%2Fg%2F11xv29qq3r!3m5!1s0x66777943db50c52b:0x72759400e8725848!8m2!3d49.5376939!4d8.5809261!16s%2Fg%2F11xv29qq3r?entry=ttu', '_blank')">
+                    <iframe class="w-full h-full border-0 pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-700" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2590.283188826798!2d8.57835117750849!3d49.53769397143242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x66777943db50c52b%3A0x72759400e8725848!2sLP-SWIM%20%E2%80%93%20Inhaber%20Lukas%20Prehn!5e0!3m2!1sde!2sde!4v1709210000000!5m2!1sde!2sde" title="LP-SWIM Standortkarte"></iframe>
+                </div>
+                <div class="flex flex-col p-6 md:p-8 bg-white/60 rounded-2xl border border-gray-100 text-center backdrop-blur-sm">
+                    <div class="flex justify-center mb-6">
+                        <img alt="LP-SWIM Logo" class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full shadow-md shadow-blue-100 object-cover" src="favicon.ico" />
                     </div>
-                    <div>
-                        <p class="font-semibold text-blue-900 mb-1">E-Mail</p>
-                        <a href="mailto:lpswim.info@gmail.com" class="text-blue-600 hover:underline decoration-blue-200 flex items-center gap-1">
-                            lpswim.info@gmail.com
+                    <h4 class="text-xl font-bold text-blue-900 mb-2">Trainerstunden</h4>
+
+                    <div class="flex flex-col gap-4 mb-8 text-slate-600">
+                        <div class="flex flex-col items-center justify-center">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="calendar-days" class="w-4 h-4 text-blue-500 shrink-0"></i>
+                                <span class="font-medium">Täglich 10:00 – 18:00 Uhr</span>
+                            </div>
+                            <span class="text-sm text-slate-500">(nach Terminbestätigung)</span>
+                        </div>
+
+                        <div class="flex items-center justify-center gap-2">
+                            <i data-lucide="clock" class="w-4 h-4 text-blue-500 shrink-0"></i>
+                            <span>Einzelunterricht à 60 min</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-auto">
+                        <a class="flex items-center justify-center px-4 py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200" href="https://www.google.com/maps/dir//LP-SWIM+%E2%80%93+Inhaber+Lukas+Prehn,+Schulstra%C3%9Fe+9,+68519+Viernheim/@49.4556502,8.4280417,11z/data=!3m1!5s0x4797d01d72d4f93d:0x4e811ba7f56f8163!4m8!4m7!1m0!1m5!1m1!1s0x66777943db50c52b:0x72759400e8725848!2m2!1d8.5805277!2d49.5377236?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D" rel="noopener noreferrer" target="_blank">
+                            <i class="w-4 h-4 mr-2" data-lucide="car-front"></i> Route
+                        </a>
+                        <a class="flex items-center justify-center px-4 py-3 rounded-xl bg-white border border-blue-200 text-blue-700 font-semibold hover:bg-blue-50 transition-all" href="https://www.google.com/search?sca_esv=9783dddf2c54e777&q=rezensionen+f%C3%BCr+lp-swim+%E2%80%93+inhaber+lukas+prehn+viernheim&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-BUVbdJ3hDQHRBRaYHFinyzPc7d2gswAL4lqHCD2DHMRrF6KlVjIkGsex9oamelGppwJnF3j8v3ziPYyxTFlbyvzDVdejHoBlRwn94f2LUq9hvfOjqE-1-Hc2oVbfEgzxv4eqevOr3oIbfcY4q77sAj49t6AgxXbLe6IyrZdJ1sKaufN0y37xicjzA5cIFiAMpdL1ug&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOaPpBe8_8HTfqdo64xx6ynjmo479J_TQXJJA2mU8O2Pm0WB2coG0U1TumygcRV6YupVbH_dXxZXKZkR9O-7YDAWBDTHGrUEqK9rsLwIgVyOkhu-_EJMfGxSNm6ZwlUN1o3nmw3vQhGt5WT_SMZ1iZnJ41t2T&sa=X&ved=2ahUKEwjj5L7z0tuSAxVd3QIHHfraPJUQxKsJKAR6BAgQEAE&ictx=1&stq=1&cs=1&lei=J9CRaaO1It26i-gP-rXzqQk" rel="noopener noreferrer" target="_blank">
+                            <i class="w-4 h-4 mr-2" data-lucide="star"></i> Bewertungen
                         </a>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section>
-                <h4 class="font-bold text-lg text-blue-700 mb-2">EU-Streitschlichtung</h4>
-                <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
-                    <p class="mb-2">
-                        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
-                        <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">https://ec.europa.eu/consumers/odr/</a>.
-                    </p>
-                    <p class="text-xs text-slate-500">
-                        Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
-                    </p>
+        <section class="glass-card rounded-3xl p-6 md:p-12" id="kontakt">
+            <h2 class="text-center md:text-left text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-blue-800">Kontaktaufnahme</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="relative min-h-[300px] md:min-h-[400px] lg:h-auto rounded-2xl overflow-hidden shadow-xl group">
+                    <img alt="Lukas Prehn" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src="kontakt-lukas.jpg" loading="lazy" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/50 via-transparent to-transparent"></div>
                 </div>
-            </section>
 
-        </div>
-    </div>
-</div>
-
-<div class="fixed inset-0 z-[70] hidden items-center justify-center p-4 pointer-events-none" id="datenschutzModal">
-    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 modal-anim">
-        <div class="p-6 border-b flex justify-between items-center bg-gray-50 rounded-t-2xl">
-            <h2 class="text-xl font-bold text-blue-800">Datenschutzerklärung<br>Stand: Februar 2026</h2>
-            <button onclick="closeModal('datenschutzModal')" class="p-2 hover:bg-gray-200 rounded-full transition-colors"><i data-lucide="x" class="w-6 h-6 text-gray-500"></i></button>
-        </div>
-<div class="p-6 overflow-y-auto space-y-6 text-sm text-slate-700 leading-relaxed">
-
-    <section>
-        <h4 class="font-bold text-lg text-blue-700 mb-2">1. Datenschutz auf einen Blick</h4>
-        
-        <div class="space-y-3">
-            <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
-                <p class="font-semibold text-blue-900 mb-1">Allgemeine Hinweise</p>
-                <p class="mb-1">
-                    Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.
-                </p>
-            </div>
-
-            <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
-                <p class="font-semibold text-blue-900 mb-1">Verantwortliche Stelle</p>
-                <p class="mb-1">
-                    Lukas Prehn<br>
-                    c/o IP-Management #6336<br>            
-                    Ludwig-Erhard-Straße 18<br>
-                    20459 Hamburg<br>
-                    Deutschland
-                </p>
-                <a href="mailto:lpswim.info@gmail.com" class="text-blue-600 hover:underline decoration-blue-200 text-xs flex items-center gap-1 mt-2">
-                    <i data-lucide="mail" class="w-3 h-3"></i> lpswim.info@gmail.com
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h4 class="font-bold text-lg text-blue-700 mb-2">2. Hosting & Content Delivery Networks (CDN)</h4>
-        
-        <div class="space-y-3">
-            <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
-                <p class="font-semibold text-blue-900 mb-1">GitHub Pages</p>
-                <p class="mb-1">
-                    Wir hosten diese Website bei <em>GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA</em>. 
-                    Beim Aufruf unserer Webseite erfassen die Server von GitHub automatisch Informationen in sogenannten Server-Log-Dateien (z. B. IP-Adresse, Browser, Uhrzeit). Dies ist technisch notwendig, um die Sicherheit und Stabilität der Webseite zu gewährleisten.
-                    Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (Berechtigtes Interesse).
-                </p>
-                <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline decoration-blue-200 text-xs flex items-center gap-1 mt-2">
-                    <i data-lucide="external-link" class="w-3 h-3"></i> Datenschutzerklärung von GitHub
-                </a>
-            </div>
-
-            <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
-                <p class="font-semibold text-blue-900 mb-1">Externe Bibliotheken (CDNs)</p>
-                <p class="mb-1">
-                    Zur optischen Gestaltung nutzen wir <em>Tailwind CSS</em> und Icons von <em>Lucide</em> (über unpkg.com). Diese Dateien werden von externen Servern geladen, wodurch Ihre IP-Adresse an diese Dienste übermittelt werden kann. Dies dient einer einheitlichen und fehlerfreien Darstellung.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h4 class="font-bold text-lg text-blue-700 mb-2">3. Datenerfassung auf dieser Website</h4>
-        <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
-            <p class="font-semibold text-blue-900 mb-1">Kontaktformular (Formspree)</p>
-            <p class="mb-1">
-                Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben (Name, E-Mail, Nachricht) zwecks Bearbeitung der Anfrage und für Anschlussfragen bei uns gespeichert.
-                Wir nutzen hierfür den Dienstleister <em>Formspree Inc. (USA)</em>. Ihre Daten werden verschlüsselt übertragen. 
-                Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen (z. B. Kursbuchung) erforderlich ist.
-            </p>
-            <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline decoration-blue-200 text-xs flex items-center gap-1 mt-2">
-                <i data-lucide="external-link" class="w-3 h-3"></i> Datenschutzerklärung von Formspree
-            </a>
-        </div>
-    </section>
-
-    <section>
-        <h4 class="font-bold text-lg text-blue-700 mb-2">4. Analyse-Tools</h4>
-        
-        <div class="space-y-3">
-            <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
-                <p class="font-semibold text-blue-900 mb-1">Google Analytics 4</p>
-                <p class="mb-1">
-                    Soweit Sie Ihre Einwilligung erklärt haben (über unseren Cookie-Banner beim ersten Besuch), nutzen wir Google Analytics 4 der <em>Google Ireland Limited</em>.
-                    Der Dienst verwendet „Cookies“. Die durch das Cookie erzeugten Informationen über Ihre Benutzung dieser Webseite werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert.
-                </p>
-                <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline decoration-blue-200 text-xs flex items-center gap-1 mt-2">
-                    <i data-lucide="external-link" class="w-3 h-3"></i> Datenschutzerklärung von Google
-                </a>
-            </div>
-
-            <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
-                <p class="font-semibold text-blue-900 mb-1">IP-Anonymisierung</p>
-                <p class="mb-1">
-                    Wir haben die IP-Anonymisierung aktiviert. Dadurch wird Ihre IP-Adresse von Google innerhalb der EU gekürzt.
-                    Rechtsgrundlage: Ihre Einwilligung gem. Art. 6 Abs. 1 lit. a DSGVO. Sie können diese jederzeit widerrufen, indem Sie die Seite neu laden und die Einstellungen ändern.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h4 class="font-bold text-lg text-blue-700 mb-2">5. Externe Dienste & Partner</h4>
-        
-        <div class="space-y-3">
-            <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
-                <p class="font-semibold text-blue-900 mb-1">Google Maps (Weiterleitung)</p>
-                <p class="mb-1">
-                    Wir nutzen keine direkt eingebettete Karte, die beim Laden der Seite Daten überträgt. Die Karte auf unserer Seite ist ein Link. 
-                    Erst wenn Sie aktiv auf die Karte oder den Button „Route“ klicken, werden Sie zu Google Maps weitergeleitet. 
-                    Ab diesem Zeitpunkt verarbeitet Google Ihre Daten (Standort, IP) zur Routenplanung.
-                </p>
-                <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline decoration-blue-200 text-xs flex items-center gap-1 mt-2">
-                    <i data-lucide="external-link" class="w-3 h-3"></i> Google Privacy Policy
-                </a>
-            </div>
-
-            <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
-                <p class="font-semibold text-blue-900 mb-1">Stadtwerke Viernheim (Bäder)</p>
-                <p class="mb-1">
-                    Für die Durchführung der Trainerstunden nutzen wir die Infrastruktur der Stadtwerke Viernheim (Hallenbad & Waldschwimmbad).
-                    Wir verlinken auf deren Website, um Ihnen Informationen zu Eintrittspreisen und Öffnungszeiten bereitzustellen.
-                    Wenn Sie diese Links anklicken, verlassen Sie unser Angebot. Für die Datenverarbeitung auf den Seiten der Stadtwerke ist allein der Betreiber verantwortlich.
-                </p>
-                <a href="https://www.stadtwerke-viernheim.de/datenschutz" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline decoration-blue-200 text-xs flex items-center gap-1 mt-2">
-                    <i data-lucide="external-link" class="w-3 h-3"></i> Datenschutzerklärung Stadtwerke Viernheim
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h4 class="font-bold text-lg text-blue-700 mb-2">6. Ihre Rechte</h4>
-                <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
-                    <p class="font-semibold text-blue-900 mb-1">Auskunft, Löschung & Widerruf</p>
-                    <p class="mb-1">
-                        Sie haben jederzeit das Recht auf unentgeltliche <strong class="text-blue-900">Auskunft</strong> über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten. 
-                        Sie haben außerdem ein Recht auf <strong class="text-blue-900">Berichtigung</strong>, <strong class="text-blue-900">Sperrung</strong> oder <strong class="text-blue-900">Löschung</strong> dieser Daten. 
-                        Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese jederzeit für die Zukunft <strong class="text-blue-900">widerrufen</strong>.
-                        Des Weiteren steht Ihnen ein <strong class="text-blue-900">Beschwerderecht</strong> bei der zuständigen Aufsichtsbehörde zu.
+                <div class="flex flex-col justify-center">
+                    <p class="text-slate-700 mb-6 text-base md:text-lg">
+                        Bereit für den Sprung ins Wasser? Nachricht senden und nach 48 Stunden das Postfach checken.
                     </p>
+
+                    <form action="https://formspree.io/f/mkgzgywy" method="POST" class="space-y-5" id="contactForm">
+                        <div class="hidden">
+                            <label class="sr-only" for="_gotcha">Bitte dieses Feld leer lassen:</label>
+                            <input autocomplete="off" class="hidden" id="_gotcha" name="_gotcha" tabindex="-1" type="text" />
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="w-5 h-5 text-slate-400" data-lucide="user"></i>
+                                </div>
+                                <input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 bg-white text-base" name="name" placeholder="Dein Name" required type="text" autocomplete="name" />
+                            </div>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="w-5 h-5 text-slate-400" data-lucide="mail"></i>
+                                </div>
+                                <input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 bg-white text-base" name="email" placeholder="Deine E-Mail" required type="email" autocomplete="email" />
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div class="absolute top-3 left-3 pointer-events-none">
+                                <i class="w-5 h-5 text-slate-400" data-lucide="message-square"></i>
+                            </div>
+                            <textarea class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 h-32 resize-none bg-white text-base" name="message" id="message" placeholder="" required></textarea>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <input class="mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500 cursor-pointer" id="privacy-consent" name="privacy-consent" required type="checkbox" />
+                            <label class="text-sm text-slate-600 leading-snug cursor-pointer" for="privacy-consent">
+                                Ich habe die <button type="button" class="text-blue-600 hover:underline font-medium" onclick="openModal('datenschutzModal')">Datenschutzerklärung</button> gelesen und stimme zu.
+                            </label>
+                        </div>
+
+                        <button class="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 group" type="submit">
+                            <span>Nachricht absenden</span>
+                            <i class="w-5 h-5 group-hover:translate-x-1 transition-transform" data-lucide="send"></i>
+                        </button>
+                    </form>
+
+                    <div class="mt-4 p-4 rounded-xl text-center font-medium hidden animate-fade-in" id="form-message"></div>
                 </div>
-            </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-blue-50/80 border-t border-blue-100 py-10 text-center backdrop-blur-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-6 mb-6 text-sm font-medium text-blue-800">
+                <button onclick="openModal('datenschutzModal')" class="hover:text-blue-600 hover:underline">Datenschutzerklärung</button>
+                <span class="text-blue-200">|</span>
+                <button onclick="openModal('agbModal')" class="hover:text-blue-600 hover:underline">AGB</button>
+                <span class="text-blue-200">|</span>
+                <button onclick="openModal('impressumModal')" class="hover:text-blue-600 hover:underline">Impressum</button>
+            </div>
+            <p class="text-slate-500 text-sm">© 2026 LP-SWIM<br>Alle Rechte vorbehalten</p>
         </div>
-    </div>
-</div>
+    </footer>
 
-<div class="fixed inset-0 z-[70] hidden items-center justify-center p-4 pointer-events-none" id="agbModal">
-    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 modal-anim">
-        <div class="p-6 border-b flex justify-between items-center bg-gray-50 rounded-t-2xl">
-            <h2 class="text-xl font-bold text-blue-800">Allgemeine Geschäftsbedingungen<br>Stand: Februar 2026</h2>
-            <button onclick="closeModal('agbModal')" class="p-2 hover:bg-gray-200 rounded-full transition-colors">
-                <i data-lucide="x" class="w-6 h-6 text-gray-500"></i>
-            </button>
-        </div>
+    <div id="modal-overlay" class="fixed inset-0 z-[60] bg-slate-900/60 backdrop-blur-sm hidden transition-opacity opacity-0" onclick="closeAllModals()"></div>
 
-        <div class="p-6 overflow-y-auto space-y-6 text-sm text-slate-700 leading-relaxed">
+    <div class="fixed inset-0 z-[70] hidden items-center justify-center p-4 pointer-events-none" id="impressumModal">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 modal-anim">
+            <div class="p-6 border-b flex justify-between items-center bg-gray-50 rounded-t-2xl">
+                <h2 class="text-xl font-bold text-blue-800">Impressum</h2>
+                <button onclick="closeModal('impressumModal')" class="p-2 hover:bg-gray-200 rounded-full transition-colors">
+                    <i data-lucide="x" class="w-6 h-6 text-gray-500"></i>
+                </button>
+            </div>
 
-            <section>
-                <h4 class="font-bold text-lg text-blue-700 mb-2">§1 Geltungsbereich & Vertretung</h4>
-                <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100 space-y-2">
-                    <p>
-                        Diese AGB gelten für alle Verträge zwischen <strong>LP-SWIM (Lukas Prehn)</strong> und den Kunden über Schwimmunterricht und Schulbegleitung.
-                    </p>
-                    <div class="flex items-start gap-2 pt-2">
-                        <i data-lucide="users" class="w-4 h-4 text-blue-600 mt-0.5 shrink-0"></i>
-                        <p>
-                            <strong>Leistungserbringung durch Dritte:</strong> LP-SWIM ist berechtigt, die geschuldete Leistung auch durch qualifizierte Erfüllungsgehilfen (z. B. angestellte Trainer oder Vertretungskräfte) erbringen zu lassen. Der Vertrag kommt mit LP-SWIM zustande, ein Anspruch auf Durchführung durch eine bestimmte Person besteht grundsätzlich nicht, es sei denn, dies wurde schriftlich fixiert.
-                        </p>
-                    </div>
-                </div>
-            </section>
+            <div class="p-6 overflow-y-auto space-y-6 text-sm text-slate-700 leading-relaxed">
 
-            <section>
-                <h4 class="font-bold text-lg text-blue-700 mb-2">§2 Vertragsschluss & Buchungsablauf</h4>
-                <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100 space-y-4">
-                    
-                    <div class="flex items-start gap-3">
-                        <div class="bg-white p-2 rounded-lg text-blue-600 shadow-sm mt-1 shrink-0">
-                            <i data-lucide="user-plus" class="w-4 h-4"></i>
+                <section>
+                    <h4 class="font-bold text-lg text-blue-700 mb-2">Angaben gemäß § 5 TMG</h4>
+                    <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100 flex items-start gap-3">
+                        <div class="bg-white p-2 rounded-full text-blue-600 shadow-sm">
+                            <i data-lucide="map-pin" class="w-5 h-5"></i>
                         </div>
                         <div>
-                            <p class="font-semibold text-blue-900">1. Aufnahme & Verteiler</p>
-                            <p>Der Erstkontakt erfolgt über das Kontaktformular. Mit Übermittlung der Daten (Leistungsstand, Ziele, Rechnungsanschrift) wird der Interessent unverbindlich in den monatlichen E-Mail-Verteiler aufgenommen.</p>
+                            <p class="font-semibold text-blue-900 mb-1">Anschrift</p>
+                            <p>
+                                Lukas Prehn<br>
+                                c/o IP-Management #6336<br>
+                                Ludwig-Erhard-Straße 18<br>
+                                20459 Hamburg<br>
+                                Deutschland
+                            </p>
                         </div>
                     </div>
+                </section>
 
-                    <div class="flex items-start gap-3">
-                        <div class="bg-white p-2 rounded-lg text-blue-600 shadow-sm mt-1 shrink-0">
-                            <i data-lucide="calendar-check" class="w-4 h-4"></i>
+                <section>
+                    <h4 class="font-bold text-lg text-blue-700 mb-2">Kontakt</h4>
+                    <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100 flex items-start gap-3">
+                        <div class="bg-white p-2 rounded-full text-blue-600 shadow-sm">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
                         </div>
                         <div>
-                            <p class="font-semibold text-blue-900">2. Terminbuchung</p>
-                            <p>Die Terminvergabe erfolgt monatlich. Buchungswünsche sind vorrangig über den in der Mail verlinkten WhatsApp-Chat mitzuteilen. Die Vergabe erfolgt nach Eingang.</p>
+                            <p class="font-semibold text-blue-900 mb-1">E-Mail</p>
+                            <a href="mailto:lpswim.info@gmail.com" class="text-blue-600 hover:underline decoration-blue-200 flex items-center gap-1">
+                                lpswim.info@gmail.com
+                            </a>
                         </div>
                     </div>
+                </section>
 
-                    <div class="flex items-start gap-3">
-                        <div class="bg-white p-2 rounded-lg text-blue-600 shadow-sm mt-1 shrink-0">
-                            <i data-lucide="file-signature" class="w-4 h-4"></i>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-blue-900">3. Verbindlicher Vertragsschluss</p>
-                            <p>Mit Zugang der Rechnung oder einer expliziten Terminbestätigung gilt der Termin als <strong>fest gebucht</strong>. Ab diesem Zeitpunkt gelten die Stornierungsbedingungen gemäß §4.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <section>
-                <h4 class="font-bold text-lg text-blue-700 mb-2">§3 Vergütung & Zahlungsverzug</h4>
-                <div class="space-y-3">
+                <section>
+                    <h4 class="font-bold text-lg text-blue-700 mb-2">EU-Streitschlichtung</h4>
                     <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
-                        <p class="font-semibold text-blue-900 mb-1">Vorkasse & Fristen</p>
+                        <p class="mb-2">
+                            Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+                            <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">https://ec.europa.eu/consumers/odr/</a>.
+                        </p>
+                        <p class="text-xs text-slate-500">
+                            Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+                        </p>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed inset-0 z-[70] hidden items-center justify-center p-4 pointer-events-none" id="datenschutzModal">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 modal-anim">
+            <div class="p-6 border-b flex justify-between items-center bg-gray-50 rounded-t-2xl">
+                <h2 class="text-xl font-bold text-blue-800">Datenschutzerklärung<br>Stand: Februar 2026</h2>
+                <button onclick="closeModal('datenschutzModal')" class="p-2 hover:bg-gray-200 rounded-full transition-colors"><i data-lucide="x" class="w-6 h-6 text-gray-500"></i></button>
+            </div>
+            <div class="p-6 overflow-y-auto space-y-6 text-sm text-slate-700 leading-relaxed">
+
+                <section>
+                    <h4 class="font-bold text-lg text-blue-700 mb-2">1. Datenschutz auf einen Blick</h4>
+
+                    <div class="space-y-3">
+                        <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
+                            <p class="font-semibold text-blue-900 mb-1">Allgemeine Hinweise</p>
+                            <p class="mb-1">
+                                Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.
+                            </p>
+                        </div>
+
+                        <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
+                            <p class="font-semibold text-blue-900 mb-1">Verantwortliche Stelle</p>
+                            <p class="mb-1">
+                                Lukas Prehn<br>
+                                c/o IP-Management #6336<br>
+                                Ludwig-Erhard-Straße 18<br>
+                                20459 Hamburg<br>
+                                Deutschland
+                            </p>
+                            <a href="mailto:lpswim.info@gmail.com" class="text-blue-600 hover:underline decoration-blue-200 text-xs flex items-center gap-1 mt-2">
+                                <i data-lucide="mail" class="w-3 h-3"></i> lpswim.info@gmail.com
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h4 class="font-bold text-lg text-blue-700 mb-2">2. Hosting & Content Delivery Networks (CDN)</h4>
+
+                    <div class="space-y-3">
+                        <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
+                            <p class="font-semibold text-blue-900 mb-1">GitHub Pages</p>
+                            <p class="mb-1">
+                                Wir hosten diese Website bei <em>GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA</em>.
+                                Beim Aufruf unserer Webseite erfassen die Server von GitHub automatisch Informationen in sogenannten Server-Log-Dateien (z. B. IP-Adresse, Browser, Uhrzeit). Dies ist technisch notwendig, um die Sicherheit und Stabilität der Webseite zu gewährleisten.
+                                Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (Berechtigtes Interesse).
+                            </p>
+                            <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline decoration-blue-200 text-xs flex items-center gap-1 mt-2">
+                                <i data-lucide="external-link" class="w-3 h-3"></i> Datenschutzerklärung von GitHub
+                            </a>
+                        </div>
+
+                        <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
+                            <p class="font-semibold text-blue-900 mb-1">Externe Bibliotheken (CDNs)</p>
+                            <p class="mb-1">
+                                Zur optischen Gestaltung nutzen wir <em>Tailwind CSS</em> und Icons von <em>Lucide</em> (über unpkg.com). Diese Dateien werden von externen Servern geladen, wodurch Ihre IP-Adresse an diese Dienste übermittelt werden kann. Dies dient einer einheitlichen und fehlerfreien Darstellung.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h4 class="font-bold text-lg text-blue-700 mb-2">3. Datenerfassung auf dieser Website</h4>
+                    <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
+                        <p class="font-semibold text-blue-900 mb-1">Kontaktformular (Formspree)</p>
+                        <p class="mb-1">
+                            Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben (Name, E-Mail, Nachricht) zwecks Bearbeitung der Anfrage und für Anschlussfragen bei uns gespeichert.
+                            Wir nutzen hierfür den Dienstleister <em>Formspree Inc. (USA)</em>. Ihre Daten werden verschlüsselt übertragen.
+                            Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen (z. B. Kursbuchung) erforderlich ist.
+                        </p>
+                        <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline decoration-blue-200 text-xs flex items-center gap-1 mt-2">
+                            <i data-lucide="external-link" class="w-3 h-3"></i> Datenschutzerklärung von Formspree
+                        </a>
+                    </div>
+                </section>
+
+                <section>
+                    <h4 class="font-bold text-lg text-blue-700 mb-2">4. Analyse-Tools</h4>
+
+                    <div class="space-y-3">
+                        <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
+                            <p class="font-semibold text-blue-900 mb-1">Google Analytics 4</p>
+                            <p class="mb-1">
+                                Soweit Sie Ihre Einwilligung erklärt haben (über unseren Cookie-Banner beim ersten Besuch), nutzen wir Google Analytics 4 der <em>Google Ireland Limited</em>.
+                                Der Dienst verwendet „Cookies“. Die durch das Cookie erzeugten Informationen über Ihre Benutzung dieser Webseite werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert.
+                            </p>
+                            <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline decoration-blue-200 text-xs flex items-center gap-1 mt-2">
+                                <i data-lucide="external-link" class="w-3 h-3"></i> Datenschutzerklärung von Google
+                            </a>
+                        </div>
+
+                        <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
+                            <p class="font-semibold text-blue-900 mb-1">IP-Anonymisierung</p>
+                            <p class="mb-1">
+                                Wir haben die IP-Anonymisierung aktiviert. Dadurch wird Ihre IP-Adresse von Google innerhalb der EU gekürzt.
+                                Rechtsgrundlage: Ihre Einwilligung gem. Art. 6 Abs. 1 lit. a DSGVO. Sie können diese jederzeit widerrufen, indem Sie die Seite neu laden und die Einstellungen ändern.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h4 class="font-bold text-lg text-blue-700 mb-2">5. Externe Dienste & Partner</h4>
+
+                    <div class="space-y-3">
+                        <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
+                            <p class="font-semibold text-blue-900 mb-1">Google Maps (Weiterleitung)</p>
+                            <p class="mb-1">
+                                Wir nutzen keine direkt eingebettete Karte, die beim Laden der Seite Daten überträgt. Die Karte auf unserer Seite ist ein Link.
+                                Erst wenn Sie aktiv auf die Karte oder den Button „Route“ klicken, werden Sie zu Google Maps weitergeleitet.
+                                Ab diesem Zeitpunkt verarbeitet Google Ihre Daten (Standort, IP) zur Routenplanung.
+                            </p>
+                            <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline decoration-blue-200 text-xs flex items-center gap-1 mt-2">
+                                <i data-lucide="external-link" class="w-3 h-3"></i> Google Privacy Policy
+                            </a>
+                        </div>
+
+                        <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
+                            <p class="font-semibold text-blue-900 mb-1">Stadtwerke Viernheim (Bäder)</p>
+                            <p class="mb-1">
+                                Für die Durchführung der Trainerstunden nutzen wir die Infrastruktur der Stadtwerke Viernheim (Hallenbad & Waldschwimmbad).
+                                Wir verlinken auf deren Website, um Ihnen Informationen zu Eintrittspreisen und Öffnungszeiten bereitzustellen.
+                                Wenn Sie diese Links anklicken, verlassen Sie unser Angebot. Für die Datenverarbeitung auf den Seiten der Stadtwerke ist allein der Betreiber verantwortlich.
+                            </p>
+                            <a href="https://www.stadtwerke-viernheim.de/datenschutz" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline decoration-blue-200 text-xs flex items-center gap-1 mt-2">
+                                <i data-lucide="external-link" class="w-3 h-3"></i> Datenschutzerklärung Stadtwerke Viernheim
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h4 class="font-bold text-lg text-blue-700 mb-2">6. Ihre Rechte</h4>
+                    <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
+                        <p class="font-semibold text-blue-900 mb-1">Auskunft, Löschung & Widerruf</p>
+                        <p class="mb-1">
+                            Sie haben jederzeit das Recht auf unentgeltliche <strong class="text-blue-900">Auskunft</strong> über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten.
+                            Sie haben außerdem ein Recht auf <strong class="text-blue-900">Berichtigung</strong>, <strong class="text-blue-900">Sperrung</strong> oder <strong class="text-blue-900">Löschung</strong> dieser Daten.
+                            Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese jederzeit für die Zukunft <strong class="text-blue-900">widerrufen</strong>.
+                            Des Weiteren steht Ihnen ein <strong class="text-blue-900">Beschwerderecht</strong> bei der zuständigen Aufsichtsbehörde zu.
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed inset-0 z-[70] hidden items-center justify-center p-4 pointer-events-none" id="agbModal">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 modal-anim">
+            <div class="p-6 border-b flex justify-between items-center bg-gray-50 rounded-t-2xl">
+                <h2 class="text-xl font-bold text-blue-800">Allgemeine Geschäftsbedingungen<br>Stand: Februar 2026</h2>
+                <button onclick="closeModal('agbModal')" class="p-2 hover:bg-gray-200 rounded-full transition-colors">
+                    <i data-lucide="x" class="w-6 h-6 text-gray-500"></i>
+                </button>
+            </div>
+
+            <div class="p-6 overflow-y-auto space-y-6 text-sm text-slate-700 leading-relaxed">
+
+                <section>
+                    <h4 class="font-bold text-lg text-blue-700 mb-2">§1 Geltungsbereich & Vertretung</h4>
+                    <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100 space-y-2">
                         <p>
-                            Der Rechnungsbetrag ist bis zum angegebenen Fälligkeitsdatum zu begleichen. Geht die Zahlung nicht fristgerecht ein, ist LP-SWIM berechtigt, vom Vertrag zurückzutreten und den Termin anderweitig zu vergeben. Der Zahlungsanspruch bleibt bei kurzfristigem Rücktritt gemäß §4 bestehen.
+                            Diese AGB gelten für alle Verträge zwischen <strong>LP-SWIM (Lukas Prehn)</strong> und den Kunden über Schwimmunterricht und Schulbegleitung.
+                        </p>
+                        <div class="flex items-start gap-2 pt-2">
+                            <i data-lucide="users" class="w-4 h-4 text-blue-600 mt-0.5 shrink-0"></i>
+                            <p>
+                                <strong>Leistungserbringung durch Dritte:</strong> LP-SWIM ist berechtigt, die geschuldete Leistung auch durch qualifizierte Erfüllungsgehilfen (z. B. angestellte Trainer oder Vertretungskräfte) erbringen zu lassen. Der Vertrag kommt mit LP-SWIM zustande, ein Anspruch auf Durchführung durch eine bestimmte Person besteht grundsätzlich nicht, es sei denn, dies wurde schriftlich fixiert.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h4 class="font-bold text-lg text-blue-700 mb-2">§2 Vertragsschluss & Buchungsablauf</h4>
+                    <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100 space-y-4">
+
+                        <div class="flex items-start gap-3">
+                            <div class="bg-white p-2 rounded-lg text-blue-600 shadow-sm mt-1 shrink-0">
+                                <i data-lucide="user-plus" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-blue-900">1. Aufnahme & Verteiler</p>
+                                <p>Der Erstkontakt erfolgt über das Kontaktformular. Mit Übermittlung der Daten (Leistungsstand, Ziele, Rechnungsanschrift) wird der Interessent unverbindlich in den monatlichen E-Mail-Verteiler aufgenommen.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="bg-white p-2 rounded-lg text-blue-600 shadow-sm mt-1 shrink-0">
+                                <i data-lucide="calendar-check" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-blue-900">2. Terminbuchung</p>
+                                <p>Die Terminvergabe erfolgt monatlich. Buchungswünsche sind vorrangig über den in der Mail verlinkten WhatsApp-Chat mitzuteilen. Die Vergabe erfolgt nach Eingang.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="bg-white p-2 rounded-lg text-blue-600 shadow-sm mt-1 shrink-0">
+                                <i data-lucide="file-signature" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-blue-900">3. Verbindlicher Vertragsschluss</p>
+                                <p>Mit Zugang der Rechnung oder einer expliziten Terminbestätigung gilt der Termin als <strong>fest gebucht</strong>. Ab diesem Zeitpunkt gelten die Stornierungsbedingungen gemäß §4.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section>
+                    <h4 class="font-bold text-lg text-blue-700 mb-2">§3 Vergütung & Zahlungsverzug</h4>
+                    <div class="space-y-3">
+                        <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
+                            <p class="font-semibold text-blue-900 mb-1">Vorkasse & Fristen</p>
+                            <p>
+                                Der Rechnungsbetrag ist bis zum angegebenen Fälligkeitsdatum zu begleichen. Geht die Zahlung nicht fristgerecht ein, ist LP-SWIM berechtigt, vom Vertrag zurückzutreten und den Termin anderweitig zu vergeben. Der Zahlungsanspruch bleibt bei kurzfristigem Rücktritt gemäß §4 bestehen.
+                            </p>
+                        </div>
+
+                        <div class="bg-orange-50 p-3 rounded-xl border border-orange-100 text-orange-800 flex items-start gap-3">
+                            <i data-lucide="ticket" class="w-5 h-5 shrink-0 mt-0.5"></i>
+                            <p class="text-xs sm:text-sm font-medium">
+                                Hinweis: Der Eintritt in das Schwimmbad ist <strong>nicht</strong> im Honorar enthalten und muss separat an der Kasse entrichtet werden.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h4 class="font-bold text-lg text-blue-700 mb-2">§4 Stornierung, Ausfall & Rückerstattung</h4>
+                    <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100 space-y-4">
+
+                        <div>
+                            <p class="font-semibold text-blue-900 mb-1 flex items-center gap-2">
+                                <i data-lucide="clock" class="w-4 h-4"></i> Absage durch den Kunden (48h-Frist)
+                            </p>
+                            <p class="mb-2">
+                                Vereinbarte Termine sind verbindlich. Eine kostenfreie Stornierung oder Verschiebung ist nur bis <strong>48 Stunden vor Beginn</strong> des Termins möglich.
+                            </p>
+                            <ul class="list-disc list-inside pl-2 space-y-1 text-slate-600">
+                                <li><strong>Rechtzeitige Absage (> 48h):</strong> Der Termin wird kostenfrei storniert oder verschoben.</li>
+                                <li><strong>Verspätete Absage (< 48h) / Nichterscheinen:</strong> Es wird das <strong>volle Honorar</strong> als Ausfallentschädigung fällig (§ 615 BGB), da der Termin so kurzfristig nicht neu belegt werden kann. Dies gilt unabhängig vom Grund der Absage.</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-t border-blue-200 pt-3">
+                            <p class="font-semibold text-blue-900 mb-1 flex items-center gap-2">
+                                <i data-lucide="refresh-cw" class="w-4 h-4"></i> Absage durch LP-SWIM
+                            </p>
+                            <p class="mb-2">
+                                Sollte ein Termin seitens LP-SWIM (z. B. wegen Krankheit des Trainers, technischer Defekte im Bad oder höherer Gewalt) nicht stattfinden können, gilt folgende Regelung:
+                            </p>
+                            <ol class="list-decimal list-inside pl-2 space-y-1 text-slate-600">
+                                <li><strong>Vorrangig Ersatztermin:</strong> Es wird primär ein Ersatztermin angeboten. Das Guthaben bleibt bestehen.</li>
+                                <li><strong>Rückerstattung:</strong> Ein Anspruch auf Rückzahlung des Honorars besteht <strong>ausschließlich</strong> dann, wenn LP-SWIM aus eigenem Verschulden keinen Ersatztermin innerhalb eines angemessenen Zeitraums anbieten kann.</li>
+                            </ol>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section>
+                    <h4 class="font-bold text-lg text-blue-700 mb-2">§5 Haftung</h4>
+                    <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100 space-y-2">
+                        <p>
+                            Die Teilnahme erfolgt auf eigene Gefahr. LP-SWIM haftet nur für Schäden, die auf einer vorsätzlichen oder grob fahrlässigen Pflichtverletzung durch LP-SWIM oder dessen Erfüllungsgehilfen beruhen.
+                        </p>
+                        <p>
+                            Für die Garderobe und Wertsachen wird keine Haftung übernommen. Ergänzend gilt die AGB der Stadtwerke Viernheim.
                         </p>
                     </div>
+                </section>
 
-                    <div class="bg-orange-50 p-3 rounded-xl border border-orange-100 text-orange-800 flex items-start gap-3">
-                        <i data-lucide="ticket" class="w-5 h-5 shrink-0 mt-0.5"></i>
-                        <p class="text-xs sm:text-sm font-medium">
-                            Hinweis: Der Eintritt in das Schwimmbad ist <strong>nicht</strong> im Honorar enthalten und muss separat an der Kasse entrichtet werden.
+                <section>
+                    <h4 class="font-bold text-lg text-blue-700 mb-2">§6 Schlussbestimmungen</h4>
+                    <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
+                        <p>
+                            Sollten einzelne Bestimmungen dieses Vertrages unwirksam oder undurchführbar sein, bleibt die Wirksamkeit der übrigen Bestimmungen hiervon unberührt (Salvatorische Klausel). Es gilt deutsches Recht.
                         </p>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section>
-                <h4 class="font-bold text-lg text-blue-700 mb-2">§4 Stornierung, Ausfall & Rückerstattung</h4>
-                <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100 space-y-4">
-                    
-                    <div>
-                        <p class="font-semibold text-blue-900 mb-1 flex items-center gap-2">
-                            <i data-lucide="clock" class="w-4 h-4"></i> Absage durch den Kunden (48h-Frist)
-                        </p>
-                        <p class="mb-2">
-                            Vereinbarte Termine sind verbindlich. Eine kostenfreie Stornierung oder Verschiebung ist nur bis <strong>48 Stunden vor Beginn</strong> des Termins möglich.
-                        </p>
-                        <ul class="list-disc list-inside pl-2 space-y-1 text-slate-600">
-                            <li><strong>Rechtzeitige Absage (> 48h):</strong> Der Termin wird kostenfrei storniert oder verschoben.</li>
-                            <li><strong>Verspätete Absage (< 48h) / Nichterscheinen:</strong> Es wird das <strong>volle Honorar</strong> als Ausfallentschädigung fällig (§ 615 BGB), da der Termin so kurzfristig nicht neu belegt werden kann. Dies gilt unabhängig vom Grund der Absage.</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="border-t border-blue-200 pt-3">
-                        <p class="font-semibold text-blue-900 mb-1 flex items-center gap-2">
-                            <i data-lucide="refresh-cw" class="w-4 h-4"></i> Absage durch LP-SWIM
-                        </p>
-                        <p class="mb-2">
-                            Sollte ein Termin seitens LP-SWIM (z. B. wegen Krankheit des Trainers, technischer Defekte im Bad oder höherer Gewalt) nicht stattfinden können, gilt folgende Regelung:
-                        </p>
-                        <ol class="list-decimal list-inside pl-2 space-y-1 text-slate-600">
-                            <li><strong>Vorrangig Ersatztermin:</strong> Es wird primär ein Ersatztermin angeboten. Das Guthaben bleibt bestehen.</li>
-                            <li><strong>Rückerstattung:</strong> Ein Anspruch auf Rückzahlung des Honorars besteht <strong>ausschließlich</strong> dann, wenn LP-SWIM aus eigenem Verschulden keinen Ersatztermin innerhalb eines angemessenen Zeitraums anbieten kann.</li>
-                        </ol>
-                    </div>
-
-                </div>
-            </section>
-
-            <section>
-                <h4 class="font-bold text-lg text-blue-700 mb-2">§5 Haftung</h4>
-                <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100 space-y-2">
-                    <p>
-                        Die Teilnahme erfolgt auf eigene Gefahr. LP-SWIM haftet nur für Schäden, die auf einer vorsätzlichen oder grob fahrlässigen Pflichtverletzung durch LP-SWIM oder dessen Erfüllungsgehilfen beruhen.
-                    </p>
-                    <p>
-                        Für die Garderobe und Wertsachen wird keine Haftung übernommen. Ergänzend gilt die AGB der Stadtwerke Viernheim.
-                    </p>
-                </div>
-            </section>
-
-            <section>
-                <h4 class="font-bold text-lg text-blue-700 mb-2">§6 Schlussbestimmungen</h4>
-                <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
-                    <p>
-                        Sollten einzelne Bestimmungen dieses Vertrages unwirksam oder undurchführbar sein, bleibt die Wirksamkeit der übrigen Bestimmungen hiervon unberührt (Salvatorische Klausel). Es gilt deutsches Recht.
-                    </p>
-                </div>
-            </section>
-
-        </div>
-    </div>
-</div>
-
-<div class="fixed inset-0 z-[70] hidden items-center justify-center p-4 pointer-events-none" id="preisModal">
-    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 modal-anim">
-        <div class="p-4 border-b flex justify-between items-center">
-            <h2 class="text-lg font-bold text-blue-800">Preisübersicht</h2>
-            <button onclick="closeModal('preisModal')" class="p-2 hover:bg-gray-200 rounded-full transition-colors"><i data-lucide="x" class="w-6 h-6 text-gray-500"></i></button>
-        </div>
-        <div class="p-2 flex-grow overflow-auto bg-gray-50 flex items-center justify-center">
-            <img src="https://raw.githubusercontent.com/lp-swim/lp-swim-info/refs/heads/main/Preisliste%2001.11.2025.png" alt="Preisliste" class="max-w-full h-auto rounded-lg shadow-sm"/>
-        </div>
-    </div>
-</div>
-
-<div class="fixed inset-0 z-[80] hidden items-center justify-center p-4 pointer-events-none" id="confirmationPopup">
-    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg p-8 pointer-events-auto transform scale-95 opacity-0 modal-anim text-center">
-        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i class="w-8 h-8 text-green-600" data-lucide="check"></i>
-        </div>
-        <h2 class="text-2xl font-bold mb-4 text-blue-700">Nachricht gesendet!</h2>
-        <div class="space-y-4 text-slate-700 text-base text-left bg-blue-50 p-4 rounded-xl mb-6">
-            <p class="flex items-center gap-3"><i class="text-blue-500 w-5 h-5" data-lucide="map-pinned"></i> Viernheim: HB (Okt.–Apr.) | FB (Jun.–Aug.)</p>
-            <p class="flex items-center gap-3"><i class="text-blue-500 w-5 h-5" data-lucide="calendar-days"></i> Monatliche Terminübersicht via Verteiler</p>
-            <p class="flex items-center gap-3"><i class="text-blue-500 w-5 h-5" data-lucide="euro"></i> Zahlungslink via Mail | Eintritt exklusiv</p>
-        </div>
-        <button class="w-full py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors" onclick="closeModal('confirmationPopup')">
-            Verstanden
-        </button>
-    </div>
-</div>
-
-<div id="lp-consent-overlay" class="fixed inset-0 z-[100] bg-slate-900/30 backdrop-blur-[2px] hidden items-end sm:items-center justify-center p-4 transition-all duration-500 opacity-0">
-    <div class="bg-white/90 backdrop-blur-xl w-full max-w-lg rounded-[2rem] shadow-2xl shadow-blue-900/10 border border-white/60 p-6 sm:p-8 transform transition-all duration-500 cubic-bezier(0.34, 1.56, 0.64, 1) scale-95 translate-y-8">
-        
-        <div class="flex items-start gap-5">
-            <div class="group p-4 bg-blue-50/80 text-blue-600 rounded-2xl shrink-0 shadow-sm border border-blue-100/50 hover:bg-blue-100 transition-colors duration-300">
-                <i data-lucide="cookie" class="w-8 h-8 group-hover:rotate-12 transition-transform duration-300"></i>
-            </div>
-            
-            <div class="space-y-3">
-                <h3 class="font-bold text-xl text-blue-900 tracking-tight">Kekse & Datenschutz</h3>
-                <div class="text-slate-600 text-sm leading-relaxed space-y-3">
-                    <p>
-                        Wir nutzen <strong>Google Analytics</strong> rein technisch, um zu verstehen, ob auf der Website alles rund läuft.
-                    </p>
-                    
-                    <div class="text-xs text-slate-500 bg-slate-50/80 p-3 rounded-xl border border-slate-100 flex items-start gap-2">
-                        <i class="shrink-0 w-4 h-4 text-blue-400 mt-0.5" data-lucide="info"></i>
-                        <span>
-                            Deine IP wird anonymisiert. Google verarbeitet Daten jedoch nach eigener 
-                            <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer" class="text-blue-600 font-medium hover:text-blue-800 underline decoration-blue-200 underline-offset-2 transition-colors">Datenschutzerklärung</a>.
-                        </span>
-                    </div>
-
-                    <p class="text-xs">
-                        Wie wir Ihre Daten verarbeiten, erfahren Sie in unserer <button onclick="openModal('datenschutzModal')" class="text-blue-600 font-medium hover:underline decoration-blue-300 underline-offset-2">Datenschutzerklärung</button>.
-                    </p>
-                </div>
             </div>
         </div>
+    </div>
 
-        <div class="flex flex-col-reverse sm:flex-row gap-3 mt-8 pt-6 border-t border-slate-100/60">
-            <button id="lp-decline" class="flex-1 px-5 py-3.5 text-sm font-semibold text-slate-500 hover:bg-slate-50 hover:text-slate-800 rounded-xl transition-all border border-transparent hover:border-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-200">
-                Ablehnen
-            </button>
-            <button id="lp-accept" class="flex-1 px-5 py-3.5 text-sm font-bold bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-600/40 hover:-translate-y-0.5 active:translate-y-0 transition-all flex justify-center items-center gap-2 group focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                <i data-lucide="check" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
-                Annehmen
+    <div class="fixed inset-0 z-[70] hidden items-center justify-center p-4 pointer-events-none" id="preisModal">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 modal-anim">
+            <div class="p-4 border-b flex justify-between items-center">
+                <h2 class="text-lg font-bold text-blue-800">Preisübersicht</h2>
+                <button onclick="closeModal('preisModal')" class="p-2 hover:bg-gray-200 rounded-full transition-colors"><i data-lucide="x" class="w-6 h-6 text-gray-500"></i></button>
+            </div>
+            <div class="p-2 flex-grow overflow-auto bg-gray-50 flex items-center justify-center">
+                <img src="https://raw.githubusercontent.com/lp-swim/lp-swim-info/refs/heads/main/Preisliste%2001.11.2025.png" alt="Preisliste" class="max-w-full h-auto rounded-lg shadow-sm" />
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed inset-0 z-[80] hidden items-center justify-center p-4 pointer-events-none" id="confirmationPopup">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg p-8 pointer-events-auto transform scale-95 opacity-0 modal-anim text-center">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="w-8 h-8 text-green-600" data-lucide="check"></i>
+            </div>
+            <h2 class="text-2xl font-bold mb-4 text-blue-700">Nachricht gesendet!</h2>
+            <div class="space-y-4 text-slate-700 text-base text-left bg-blue-50 p-4 rounded-xl mb-6">
+                <p class="flex items-center gap-3"><i class="text-blue-500 w-5 h-5" data-lucide="map-pinned"></i> Viernheim: HB (Okt.–Apr.) | FB (Jun.–Aug.)</p>
+                <p class="flex items-center gap-3"><i class="text-blue-500 w-5 h-5" data-lucide="calendar-days"></i> Monatliche Terminübersicht via Verteiler</p>
+                <p class="flex items-center gap-3"><i class="text-blue-500 w-5 h-5" data-lucide="euro"></i> Zahlungslink via Mail | Eintritt exklusiv</p>
+            </div>
+            <button class="w-full py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors" onclick="closeModal('confirmationPopup')">
+                Verstanden
             </button>
         </div>
     </div>
-</div>
 
-<script>
-    // 1. Initialisierung Icons
-    lucide.createIcons();
+    <div id="lp-consent-overlay" class="fixed inset-0 z-[100] bg-slate-900/30 backdrop-blur-[2px] hidden items-end sm:items-center justify-center p-4 transition-all duration-500 opacity-0">
+        <div class="bg-white/90 backdrop-blur-xl w-full max-w-lg rounded-[2rem] shadow-2xl shadow-blue-900/10 border border-white/60 p-6 sm:p-8 transform transition-all duration-500 cubic-bezier(0.34, 1.56, 0.64, 1) scale-95 translate-y-8">
 
-    // Globale Variable für Banner-Logik
-    let isBannerTemporarilyHidden = false;
+            <div class="flex items-start gap-5">
+                <div class="group p-4 bg-blue-50/80 text-blue-600 rounded-2xl shrink-0 shadow-sm border border-blue-100/50 hover:bg-blue-100 transition-colors duration-300">
+                    <i data-lucide="cookie" class="w-8 h-8 group-hover:rotate-12 transition-transform duration-300"></i>
+                </div>
 
-    // 2. Modal-Logik (Verbessert & Intelligent)
-    function openModal(id) {
-        const modal = document.getElementById(id);
-        const overlay = document.getElementById('modal-overlay');
-        const content = modal.querySelector('.modal-anim');
-        const cookieBanner = document.getElementById('lp-consent-overlay');
+                <div class="space-y-3">
+                    <h3 class="font-bold text-xl text-blue-900 tracking-tight">Kekse & Datenschutz</h3>
+                    <div class="text-slate-600 text-sm leading-relaxed space-y-3">
+                        <p>
+                            Wir nutzen <strong>Google Analytics</strong> rein technisch, um zu verstehen, ob auf der Website alles rund läuft.
+                        </p>
 
-        // INTELLIGENTER CHECK: Ist das Cookie Banner gerade offen?
-        if (cookieBanner && !cookieBanner.classList.contains('hidden') && !cookieBanner.classList.contains('opacity-0')) {
-            // Banner sanft ausblenden, damit man das Modal lesen kann
-            cookieBanner.classList.add('opacity-0', 'pointer-events-none');
-            // Merken, dass wir es ausgeblendet haben
-            isBannerTemporarilyHidden = true;
+                        <div class="text-xs text-slate-500 bg-slate-50/80 p-3 rounded-xl border border-slate-100 flex items-start gap-2">
+                            <i class="shrink-0 w-4 h-4 text-blue-400 mt-0.5" data-lucide="info"></i>
+                            <span>
+                                Deine IP wird anonymisiert. Google verarbeitet Daten jedoch nach eigener
+                                <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer" class="text-blue-600 font-medium hover:text-blue-800 underline decoration-blue-200 underline-offset-2 transition-colors">Datenschutzerklärung</a>.
+                            </span>
+                        </div>
+
+                        <p class="text-xs">
+                            Wie wir Ihre Daten verarbeiten, erfahren Sie in unserer <button onclick="openModal('datenschutzModal')" class="text-blue-600 font-medium hover:underline decoration-blue-300 underline-offset-2">Datenschutzerklärung</button>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col-reverse sm:flex-row gap-3 mt-8 pt-6 border-t border-slate-100/60">
+                <button id="lp-decline" class="flex-1 px-5 py-3.5 text-sm font-semibold text-slate-500 hover:bg-slate-50 hover:text-slate-800 rounded-xl transition-all border border-transparent hover:border-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-200">
+                    Ablehnen
+                </button>
+                <button id="lp-accept" class="flex-1 px-5 py-3.5 text-sm font-bold bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-600/40 hover:-translate-y-0.5 active:translate-y-0 transition-all flex justify-center items-center gap-2 group focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                    <i data-lucide="check" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+                    Annehmen
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 1. Initialisierung Icons
+        lucide.createIcons();
+
+        // Globale Variable für Banner-Logik
+        let isBannerTemporarilyHidden = false;
+
+        // 2. Modal-Logik (Verbessert & Intelligent)
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            const overlay = document.getElementById('modal-overlay');
+            const content = modal.querySelector('.modal-anim');
+            const cookieBanner = document.getElementById('lp-consent-overlay');
+
+            // INTELLIGENTER CHECK: Ist das Cookie Banner gerade offen?
+            if (cookieBanner && !cookieBanner.classList.contains('hidden') && !cookieBanner.classList.contains('opacity-0')) {
+                // Banner sanft ausblenden, damit man das Modal lesen kann
+                cookieBanner.classList.add('opacity-0', 'pointer-events-none');
+                // Merken, dass wir es ausgeblendet haben
+                isBannerTemporarilyHidden = true;
+            }
+
+            if (modal) {
+                overlay.classList.remove('hidden');
+                setTimeout(() => overlay.classList.remove('opacity-0'), 10);
+
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+
+                // Z-Index Hack: Sicherstellen, dass das Modal IMMER über allem liegt
+                modal.style.zIndex = "9999";
+
+                setTimeout(() => {
+                    content.classList.remove('scale-95', 'opacity-0');
+                    content.classList.add('scale-100', 'opacity-100');
+                }, 10);
+
+                document.body.classList.add('overflow-hidden');
+            }
         }
 
-        if (modal) {
-            overlay.classList.remove('hidden');
-            setTimeout(() => overlay.classList.remove('opacity-0'), 10);
-            
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            
-            // Z-Index Hack: Sicherstellen, dass das Modal IMMER über allem liegt
-            modal.style.zIndex = "9999"; 
-            
-            setTimeout(() => {
-                content.classList.remove('scale-95', 'opacity-0');
-                content.classList.add('scale-100', 'opacity-100');
-            }, 10);
-            
-            document.body.classList.add('overflow-hidden');
-        }
-    }
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            const overlay = document.getElementById('modal-overlay');
+            const content = modal.querySelector('.modal-anim');
+            const cookieBanner = document.getElementById('lp-consent-overlay');
 
-    function closeModal(id) {
-        const modal = document.getElementById(id);
-        const overlay = document.getElementById('modal-overlay');
-        const content = modal.querySelector('.modal-anim');
-        const cookieBanner = document.getElementById('lp-consent-overlay');
+            if (modal) {
+                content.classList.remove('scale-100', 'opacity-100');
+                content.classList.add('scale-95', 'opacity-0');
 
-        if (modal) {
-            content.classList.remove('scale-100', 'opacity-100');
-            content.classList.add('scale-95', 'opacity-0');
-            
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-                modal.style.zIndex = ""; // Reset Z-Index
-                
-                const anyOpen = document.querySelectorAll('[id$="Modal"]:not(.hidden), #confirmationPopup:not(.hidden)').length > 0;
-                
-                if(!anyOpen) {
-                    overlay.classList.add('opacity-0');
-                    setTimeout(() => {
-                        overlay.classList.add('hidden');
-                        // Nur Scrollbar freigeben, wenn das Banner NICHT da ist
-                        if (!isBannerTemporarilyHidden) {
-                            document.body.classList.remove('overflow-hidden');
-                        }
-                    }, 300);
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                    modal.style.zIndex = ""; // Reset Z-Index
 
-                    // INTELLIGENT: War das Banner vorher da? Dann zeig es wieder an!
-                    if (isBannerTemporarilyHidden && cookieBanner) {
-                        // Kurze Verzögerung für schöne Animation (Modal weg -> Banner her)
+                    const anyOpen = document.querySelectorAll('[id$="Modal"]:not(.hidden), #confirmationPopup:not(.hidden)').length > 0;
+
+                    if (!anyOpen) {
+                        overlay.classList.add('opacity-0');
                         setTimeout(() => {
-                            cookieBanner.classList.remove('opacity-0', 'pointer-events-none');
-                            isBannerTemporarilyHidden = false; // Reset status
+                            overlay.classList.add('hidden');
+                            // Nur Scrollbar freigeben, wenn das Banner NICHT da ist
+                            if (!isBannerTemporarilyHidden) {
+                                document.body.classList.remove('overflow-hidden');
+                            }
                         }, 300);
+
+                        // INTELLIGENT: War das Banner vorher da? Dann zeig es wieder an!
+                        if (isBannerTemporarilyHidden && cookieBanner) {
+                            // Kurze Verzögerung für schöne Animation (Modal weg -> Banner her)
+                            setTimeout(() => {
+                                cookieBanner.classList.remove('opacity-0', 'pointer-events-none');
+                                isBannerTemporarilyHidden = false; // Reset status
+                            }, 300);
+                        }
                     }
-                }
-            }, 300);
-        }
-    }
-
-    function closeAllModals() {
-        document.querySelectorAll('[id$="Modal"].flex, #confirmationPopup.flex').forEach(m => closeModal(m.id));
-    }
-
-    // 3. Google Analytics Integration
-    (function() {
-        const GA_MEASUREMENT_ID = "G-T5H2XMBKFL"; 
-        const STORAGE_KEY = "lp_cookie_consent_v5"; // Versionierung
-        
-        const overlay = document.getElementById('lp-consent-overlay');
-        const card = overlay.querySelector('div');
-
-        function loadGAScriptAndInit() {
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_MEASUREMENT_ID;
-            
-            script.onload = function() {
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                window.gtag = gtag;
-                gtag('js', new Date());
-                gtag('config', GA_MEASUREMENT_ID, {
-                    'anonymize_ip': true,
-                    'cookie_flags': 'SameSite=None;Secure'
-                });
-            };
-            document.head.appendChild(script);
+                }, 300);
+            }
         }
 
-        function showBanner() {
-            // Nur anzeigen, wenn noch keine Entscheidung getroffen wurde!
-            if (localStorage.getItem(STORAGE_KEY)) return;
-
-            overlay.classList.remove('hidden');
-            overlay.classList.add('flex');
-            
-            setTimeout(() => {
-                overlay.classList.remove('opacity-0');
-                card.classList.remove('scale-95', 'translate-y-8');
-                card.classList.add('scale-100', 'translate-y-0');
-            }, 100);
-            
-            document.body.classList.add('overflow-hidden');
-            lucide.createIcons();
+        function closeAllModals() {
+            document.querySelectorAll('[id$="Modal"].flex, #confirmationPopup.flex').forEach(m => closeModal(m.id));
         }
 
-        function hideBanner() {
-            overlay.classList.add('opacity-0');
-            card.classList.add('scale-95', 'translate-y-8');
-            card.classList.remove('scale-100', 'translate-y-0');
-            
-            setTimeout(() => {
-                overlay.classList.add('hidden');
-                overlay.classList.remove('flex');
-                document.body.classList.remove('overflow-hidden');
-            }, 500);
-        }
+        // 3. Google Analytics Integration
+        (function() {
+            const GA_MEASUREMENT_ID = "G-T5H2XMBKFL";
+            const STORAGE_KEY = "lp_cookie_consent_v5"; // Versionierung
 
-        // Logic Check beim Laden
-        const consent = localStorage.getItem(STORAGE_KEY);
-        
-        if (!consent) {
-            // User hat noch nie entschieden -> Banner zeigen
-            setTimeout(showBanner, 1500);
-        } else if (consent === 'accepted') {
-            // User hat bereits zugestimmt -> GA laden, Banner NICHT zeigen
-            loadGAScriptAndInit();
-        } 
-        // else if (consent === 'declined') -> Nichts tun, Banner bleibt weg.
+            const overlay = document.getElementById('lp-consent-overlay');
+            const card = overlay.querySelector('div');
 
-        document.getElementById('lp-accept').onclick = () => {
-            localStorage.setItem(STORAGE_KEY, 'accepted');
-            loadGAScriptAndInit();
-            hideBanner();
-        };
+            function loadGAScriptAndInit() {
+                const script = document.createElement('script');
+                script.async = true;
+                script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_MEASUREMENT_ID;
 
-        document.getElementById('lp-decline').onclick = () => {
-            localStorage.setItem(STORAGE_KEY, 'declined');
-            hideBanner();
-        };
-    })();
+                script.onload = function() {
+                    window.dataLayer = window.dataLayer || [];
 
-    // 4. Form handling
-    const form = document.getElementById('contactForm');
-    const formMessage = document.getElementById('form-message');
-    
-    if (form) {
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const btn = form.querySelector('button[type="submit"]');
-            const originalContent = btn.innerHTML;
-            
-            btn.disabled = true;
-            btn.innerHTML = '<span class="animate-pulse">Sende...</span>';
-            
-            try {
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: new FormData(form),
-                    headers: { 'Accept': 'application/json' }
-                });
-                
-                if (response.ok) {
-                    form.reset();
-                    btn.innerHTML = originalContent;
-                    btn.disabled = false;
-                    openModal('confirmationPopup');
-                    
-                    formMessage.innerHTML = '<div class="flex items-center justify-center gap-2 text-green-700 bg-green-50 border border-green-200 p-3 rounded-lg"><i data-lucide="check-circle" class="w-5 h-5"></i> Nachricht gesendet!</div>';
-                    formMessage.classList.remove('hidden');
-                    lucide.createIcons();
-                } else {
-                    throw new Error('Form error');
-                }
-            } catch (err) {
-                btn.innerHTML = originalContent;
-                btn.disabled = false;
-                formMessage.innerHTML = '<div class="flex items-center justify-center gap-2 text-red-700 bg-red-50 border border-red-200 p-3 rounded-lg"><i data-lucide="alert-circle" class="w-5 h-5"></i> Fehler beim Senden.</div>';
-                formMessage.classList.remove('hidden');
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    window.gtag = gtag;
+                    gtag('js', new Date());
+                    gtag('config', GA_MEASUREMENT_ID, {
+                        'anonymize_ip': true,
+                        'cookie_flags': 'SameSite=None;Secure'
+                    });
+                };
+                document.head.appendChild(script);
+            }
+
+            function showBanner() {
+                // Nur anzeigen, wenn noch keine Entscheidung getroffen wurde!
+                if (localStorage.getItem(STORAGE_KEY)) return;
+
+                overlay.classList.remove('hidden');
+                overlay.classList.add('flex');
+
+                setTimeout(() => {
+                    overlay.classList.remove('opacity-0');
+                    card.classList.remove('scale-95', 'translate-y-8');
+                    card.classList.add('scale-100', 'translate-y-0');
+                }, 100);
+
+                document.body.classList.add('overflow-hidden');
                 lucide.createIcons();
             }
-        });
-    }
 
-    // 5. Typewriter
-    document.addEventListener('DOMContentLoaded', () => {
-        const msgField = document.getElementById("message");
-        const placeholderText = "Ich würde gerne meine Technik verbessern. Wie läuft die Buchung ab?";
-        let typed = false;
+            function hideBanner() {
+                overlay.classList.add('opacity-0');
+                card.classList.add('scale-95', 'translate-y-8');
+                card.classList.remove('scale-100', 'translate-y-0');
 
-        const checkVisibility = () => {
-            if(!msgField) return;
-            const fieldTop = msgField.getBoundingClientRect().top;
-            const screenHeight = window.innerHeight;
-
-            if (!typed && fieldTop < screenHeight - 100) {
-                let i = 0;
-                typed = true;
-                msgField.placeholder = ""; 
-                const typeInterval = setInterval(() => {
-                    msgField.placeholder += placeholderText.charAt(i);
-                    i++;
-                    if (i >= placeholderText.length) clearInterval(typeInterval);
-                }, 40);
-                window.removeEventListener('scroll', checkVisibility);
+                setTimeout(() => {
+                    overlay.classList.add('hidden');
+                    overlay.classList.remove('flex');
+                    document.body.classList.remove('overflow-hidden');
+                }, 500);
             }
-        };
-        
-        window.addEventListener('scroll', checkVisibility);
-        checkVisibility();
-    });
 
-    // 6. Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href').substring(1);
-            const target = document.getElementById(targetId);
-            if (target) {
+            // Logic Check beim Laden
+            const consent = localStorage.getItem(STORAGE_KEY);
+
+            if (!consent) {
+                // User hat noch nie entschieden -> Banner zeigen
+                setTimeout(showBanner, 1500);
+            } else if (consent === 'accepted') {
+                // User hat bereits zugestimmt -> GA laden, Banner NICHT zeigen
+                loadGAScriptAndInit();
+            }
+            // else if (consent === 'declined') -> Nichts tun, Banner bleibt weg.
+
+            document.getElementById('lp-accept').onclick = () => {
+                localStorage.setItem(STORAGE_KEY, 'accepted');
+                loadGAScriptAndInit();
+                hideBanner();
+            };
+
+            document.getElementById('lp-decline').onclick = () => {
+                localStorage.setItem(STORAGE_KEY, 'declined');
+                hideBanner();
+            };
+        })();
+
+        // 4. Form handling
+        const form = document.getElementById('contactForm');
+        const formMessage = document.getElementById('form-message');
+
+        if (form) {
+            form.addEventListener('submit', async function(e) {
                 e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
+                const btn = form.querySelector('button[type="submit"]');
+                const originalContent = btn.innerHTML;
+
+                btn.disabled = true;
+                btn.innerHTML = '<span class="animate-pulse">Sende...</span>';
+
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        form.reset();
+                        btn.innerHTML = originalContent;
+                        btn.disabled = false;
+                        openModal('confirmationPopup');
+
+                        formMessage.innerHTML = '<div class="flex items-center justify-center gap-2 text-green-700 bg-green-50 border border-green-200 p-3 rounded-lg"><i data-lucide="check-circle" class="w-5 h-5"></i> Nachricht gesendet!</div>';
+                        formMessage.classList.remove('hidden');
+                        lucide.createIcons();
+                    } else {
+                        throw new Error('Form error');
+                    }
+                } catch (err) {
+                    btn.innerHTML = originalContent;
+                    btn.disabled = false;
+                    formMessage.innerHTML = '<div class="flex items-center justify-center gap-2 text-red-700 bg-red-50 border border-red-200 p-3 rounded-lg"><i data-lucide="alert-circle" class="w-5 h-5"></i> Fehler beim Senden.</div>';
+                    formMessage.classList.remove('hidden');
+                    lucide.createIcons();
+                }
+            });
+        }
+
+        // 5. Typewriter
+        document.addEventListener('DOMContentLoaded', () => {
+            const msgField = document.getElementById("message");
+            const placeholderText = "Ich würde gerne meine Technik verbessern. Wie läuft die Buchung ab?";
+            let typed = false;
+
+            const checkVisibility = () => {
+                if (!msgField) return;
+                const fieldTop = msgField.getBoundingClientRect().top;
+                const screenHeight = window.innerHeight;
+
+                if (!typed && fieldTop < screenHeight - 100) {
+                    let i = 0;
+                    typed = true;
+                    msgField.placeholder = "";
+                    const typeInterval = setInterval(() => {
+                        msgField.placeholder += placeholderText.charAt(i);
+                        i++;
+                        if (i >= placeholderText.length) clearInterval(typeInterval);
+                    }, 40);
+                    window.removeEventListener('scroll', checkVisibility);
+                }
+            };
+
+            window.addEventListener('scroll', checkVisibility);
+            checkVisibility();
         });
-    });
-</script>
+
+        // 6. Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href').substring(1);
+                const target = document.getElementById(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
