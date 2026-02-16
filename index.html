@@ -1,21 +1,60 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="scroll-smooth">
 <head>
     <meta charset="utf-8"/>
     <title>LP‑SWIM | Weil Sicherheit im Wasser zählt</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
     <meta name="description" content="Ob als Begleitperson im Schulschwimmen oder im Einzeltraining – vom ersten sicheren Wasserkontakt bis zur Verfeinerung der Schwimmtechnik."/>
     <link rel="canonical" href="https://lp-swim.github.io/lp-swim-info/" />
+    
     <meta content="YlKI4FssjU6jEQDyOzNbdwcIOhv516qFAF1RUyDOV6I" name="google-site-verification"/>
     <meta content="58B42B8F103EB15114C7AFC816233F91" name="msvalidate.01"/>
-    <meta content="index, follow" name="robots"/>
-    <meta content="#A7D9F8" name="theme-color"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="theme-color" content="#EFF6FF"/>
+    
     <link href="favicon.ico" rel="icon" type="image/x-icon"/>
     <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-    <link href="https://lp-swim.github.io/lp-swim-info/sitemap.xml" rel="sitemap" title="Sitemap" type="application/xml"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Poppins', 'sans-serif'] },
+                    animation: {
+                        'fade-in-down': 'fadeInDown 0.6s ease-out forwards',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'float-pulse': 'floatPulse 4s ease-in-out infinite',
+                        'swim-slow': 'swimSlow 6s ease-in-out infinite',
+                        'spin-slow-reverse': 'spinSlowReverse 10s linear infinite',
+                        'bounce-subtle': 'bounceSubtle 2s infinite',
+                        'shake': 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
+                    },
+                    keyframes: {
+                        fadeInDown: { '0%': { opacity: '0', transform: 'translateY(-20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+                        fadeInUp: { '0%': { opacity: '0', transform: 'translateY(30px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+                        floatPulse: { '0%, 100%': { transform: 'translateY(0) scale(1)' }, '50%': { transform: 'translateY(-10px) scale(1.02)' } },
+                        swimSlow: { '0%, 100%': { transform: 'translateX(0)' }, '50%': { transform: 'translateX(10px) rotate(5deg)' } },
+                        spinSlowReverse: { 'from': { transform: 'rotate(0deg)' }, 'to': { transform: 'rotate(-360deg)' } },
+                        bounceSubtle: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-5px)' } },
+                        shake: {
+                            '10%, 90%': { transform: 'translate3d(-1px, 0, 0)' },
+                            '20%, 80%': { transform: 'translate3d(2px, 0, 0)' },
+                            '30%, 50%, 70%': { transform: 'translate3d(-4px, 0, 0)' },
+                            '40%, 60%': { transform: 'translate3d(4px, 0, 0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -40,807 +79,550 @@
     </script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        
-        /* --- Base Styles --- */
-        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
             background-attachment: fixed;
-            color: #334155; /* Slate-700 für einheitliche Textfarbe */
-            line-height: 1.7;
-            overflow-x: hidden;
-            padding-top: 80px;
-            font-size: clamp(14px, 1.6vw, 18px);
         }
-        
-        /* Einheitliche Überschriften */
-        h1, h2, h3, h4, h5, h6 { font-weight: 700; color: #1e3a8a; line-height: 1.2; word-break: break-word; } /* Dark Blue/Slate */
-        h1 { font-size: clamp(1.8rem, 4vw, 3rem); }
-        h2 { font-size: clamp(1.3rem, 3vw, 1.9rem) !important; text-wrap: balance; }
-        h3 { font-size: clamp(1.2rem, 2.4vw, 1.75rem); }
-
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
         section { scroll-margin-top: 100px; }
-        footer, .lp-kontakt-section, body { padding-bottom: 0 !important; margin-bottom: 0 !important; }
-
-        /* --- Components --- */
-        /* Cards - Einheitliches Design für ALLE Sektionen inklusive Kontakt */
-        .section-card, #standort, #kontakt {
-            background: linear-gradient(to bottom, #f2f7ff 0%, #ffffff 90%) !important;
-            border-radius: 1.5rem !important;
-            padding: 2rem 1rem !important;
-            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05) !important;
-            margin: 1rem auto;
-            width: 95% !important;
-            max-width: 95% !important;
-            border: 1px solid rgba(229, 231, 235, 0.5);
-            backdrop-filter: blur(6px);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .section-card:hover, #kontakt:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1); }
-        .section-card p { text-align: justify; text-justify: inter-word; hyphens: auto; }
-
-        /* Navigation */
-        .nav-link-item {
-            position: relative; display: flex; align-items: center; padding: 0.75rem 1.25rem;
-            border-radius: 9999px; font-weight: 500; color: #2563eb; text-decoration: none;
-            transition: all 0.3s ease; white-space: nowrap;
-        }
-        .nav-link-item::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            border-radius: 9999px; background-color: #dbeafe; opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease; transform: scale(0.9); z-index: -1;
-        }
-        .nav-link-item:hover::before { opacity: 1; transform: scale(1); }
-        .nav-link-item:hover { color: #1d4ed8; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); }
-
-        /* Buttons */
-        .btn-primary, .btn-secondary {
-            border-radius: 9999px; font-weight: 600; transition: all 0.3s ease;
-            display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; text-align: center;
-        }
-        .btn-primary {
-            background: linear-gradient(to right, #3b82f6, #2563eb); color: white;
-            padding: 0.9rem 1.8rem; box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px); box-shadow: 0 12px 25px rgba(59, 130, 246, 0.4);
-            background: linear-gradient(to right, #2563eb, #1d4ed8);
-        }
-        .btn-secondary {
-            background-color: #e0f2fe; color: #2563eb; padding: 0.9rem 1.8rem;
-            border: 1px solid #93c5fd;
-        }
-        .btn-secondary:hover {
-            background-color: #d0efff; transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(147, 197, 253, 0.3);
-        }
-
-        /* Images */
-        .lp-kontakt-media img {
-            width: 100%; height: auto; max-width: 100%; object-fit: cover;
-            border-radius: 1rem; display: block; margin: 0 auto;
-        }
-
-        /* Modals */
-        .modal { background-color: rgba(0, 0, 0, 0.6); backdrop-filter: blur(8px); }
-        .modal-content {
-            background-color: white; border-radius: 24px;
-            padding: 2.5rem; box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
-            border: 1px solid #e2e8f0; max-height: 85vh; overflow-y: auto;
-            scrollbar-width: none;
-        }
-        .modal-content::-webkit-scrollbar { width: 0px; background: transparent; }
-        .close-button {
-            color: #4b5563; font-size: 2rem; font-weight: 300; position: absolute;
-            top: 1rem; right: 1.5rem; cursor: pointer; transition: transform 0.2s ease;
-        }
-        .close-button:hover { transform: scale(1.1); color: #1f2937; }
-
-        /* Confirmation Popup */
-        #confirmationPopup {
-            display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(6px); z-index: 99999; justify-content: center; align-items: center; padding: 1rem;
-        }
-        #confirmationPopup.flex { display: flex; }
-
-        /* --- Animations --- */
-        .section-card.animate-in, .animate-in { opacity: 1; transform: translateY(0); }
-        
-        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-fade-in-down { animation: fadeInDown 0.6s ease-out forwards; }
-
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
-
-        @keyframes fadeInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
-        .animate-fade-in-right { animation: fadeInRight 0.8s ease-out forwards; }
-
-        @keyframes floatPulse { 
-            0% { transform: translateY(0px) scale(1); } 
-            50% { transform: translateY(-10px) scale(1.02); } 
-            100% { transform: translateY(0px) scale(1); } 
-        }
-        .animate-float-pulse { animation: floatPulse 4s ease-in-out infinite; }
-
-        @keyframes swimSlow { 
-            0% { transform: translateX(0px); } 
-            50% { transform: translateX(10px) rotate(5deg); } 
-            100% { transform: translateX(0px); } 
-        }
-        .animate-swim-slow { animation: swimSlow 6s ease-in-out infinite; }
-
-        @keyframes spinSlowReverse { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
-        .animate-spin-slow-reverse { animation: spinSlowReverse 10s linear infinite; }
-
-        @keyframes imageReveal { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
-        .animate-image-reveal { animation: imageReveal 0.7s ease-out forwards; }
-
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
-
-        @keyframes pulseSlow { 0% { opacity: 0.3; } 50% { opacity: 0.4; } 100% { opacity: 0.3; } }
-        .animate-pulse-slow { animation: pulseSlow 8s ease-in-out infinite; }
-        
-        @keyframes bounceSubtle { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
-        .animate-bounce-subtle { animation: bounceSubtle 2s infinite; }
-
-        /* Pattern for hero section */
         .bg-pattern-light {
             background-image: radial-gradient(#e0f2fe 1px, transparent 1px), radial-gradient(#e0f2fe 1px, transparent 1px);
             background-size: 20px 20px; background-position: 0 0, 10px 10px;
         }
-
-        /* Hover Effects */
-        .group-hover\:rotate-6:hover { transform: rotate(6deg); }
-        .group-hover\:scale-110:hover { transform: scale(1.1); }
-        .group-hover\:shake:hover { animation: shake 0.3s cubic-bezier(.36,.07,.19,.97) both; transform: translate3d(0, 0, 0); }
-        @keyframes shake {
-            10%, 90% { transform: translate3d(-1px, 0, 0); }
-            20%, 80% { transform: translate3d(2px, 0, 0); }
-            30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
-            40%, 60% { transform: translate3d(4px, 0, 0); }
+        .glass-card {
+            background: linear-gradient(to bottom, rgba(242, 247, 255, 0.90) 0%, rgba(255, 255, 255, 0.95) 90%);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(229, 231, 235, 0.6);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .group-hover\:translate-x-1:hover { transform: translateX(4px); }
-        .group-hover\:rotate-3:hover { transform: rotate(3deg); }
-        .group-hover\:translate-y-1:hover { transform: translateY(4px); }
-
-        /* --- RESPONSIVE OPTIMIZATIONS --- */
+        .glass-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+        }
+        .glass-nav {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        .modal-anim { transition: all 0.3s ease-out; }
         
-        /* Desktop specific */
-        @media (min-width: 1024px) {
-            .lp-kontakt-media img { max-width: 70%; margin-left: auto; margin-right: auto; }
-        }
-
-        /* Tablet (768px - 1024px) */
-        @media (min-width: 768px) and (max-width: 1024px) {
-            .hero-content { padding-top: 2rem !important; padding-bottom: 2rem !important; text-align: center !important; }
-            .hero-content h1 { font-size: clamp(1.8rem, 4vw, 2.4rem) !important; }
-            .hero-content .btn-primary, .hero-content .btn-secondary {
-                display: inline-flex !important; width: 40% !important; margin: 0.5rem !important;
-            }
-        }
-
-        /* Mobile (Max 1024px) */
+        /* Mobile adjustments consistent with Code 1 */
         @media (max-width: 1024px) {
-            nav { display: none !important; } /* Mobile nav hidden */
-            
-            /* Reset Spacing */
-            body, html, header, .hero, .hero-content { margin-top: 0 !important; padding-top: 0 !important; }
-            section { padding-top: 2rem !important; padding-bottom: 2rem !important; }
-            
-            /* Typography */
-            h1, h2, h3 { 
-                white-space: normal !important; overflow: visible !important; 
-                text-align: center !important; word-wrap: break-word !important; 
-            }
-            .hero-content h1 { font-size: clamp(1.6rem, 5vw, 2.1rem) !important; margin-top: 0.5rem !important; }
-            .hero-content p { font-size: clamp(0.95rem, 3.2vw, 1.1rem) !important; text-align: center !important; }
-
-            /* Buttons */
-            .hero-content .btn-primary, .hero-content .btn-secondary {
-                display: flex !important; width: 85% !important; max-width: 320px !important;
-                margin: 0.5rem auto !important;
-            }
-
-            /* Map */
-            #standort .h-96, #map-frame iframe { height: auto !important; aspect-ratio: 1 / 1 !important; }
-            
-            /* Kontakt / Formular */
-            #kontakt button[type="submit"] { display: flex !important; width: 100% !important; max-width: 100% !important; margin-top: 1rem !important; }
-            
-            /* Modals Mobile */
-            .modal-content { padding: 1.5rem 1.25rem !important; font-size: inherit !important; }
-            #agbModal h2, #datenschutzModal h2, #impressumModal h2 { text-align: left !important; }
+            #desktop-nav { display: none !important; }
+            h1 { word-wrap: break-word; }
         }
     </style>
 </head>
-<body class="text-slate-700">
+<body class="text-slate-700 antialiased pt-20 overflow-x-hidden selection:bg-blue-200">
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-85 backdrop-blur-lg shadow-lg p-3 md:p-4 flex justify-center items-center gap-4 rounded-b-3xl max-w-7xl mx-auto border-b border-gray-100 animate-fade-in-down" style="animation-delay: 0.2s;">
-    <a aria-label="Startseite" class="nav-link-item group" href="#start">
+<nav id="desktop-nav" class="fixed top-0 inset-x-0 z-50 glass-nav shadow-md p-3 md:p-4 rounded-b-3xl max-w-7xl mx-auto border-b border-gray-100 animate-fade-in-down flex justify-center items-center gap-2">
+    <a aria-label="Startseite" class="flex items-center px-4 py-2 rounded-full font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 transition-all group" href="#start">
         <i class="w-5 h-5 mr-2 group-hover:rotate-6 transition-transform" data-lucide="home"></i> Start
     </a>
-    <a aria-label="Bereich für Kinder & Jugendliche" class="nav-link-item group" href="#jugend">
-        <i class="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" data-lucide="graduation-cap"></i> Kinder & Jugendliche
+    <a aria-label="Kinder & Jugendliche" class="flex items-center px-4 py-2 rounded-full font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 transition-all group" href="#jugend">
+        <i class="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" data-lucide="graduation-cap"></i> Kinder & Jugend
     </a>
-    <a aria-label="Begleitung für Schulen" class="nav-link-item group" href="#schule">
+    <a aria-label="Schulbegleitung" class="flex items-center px-4 py-2 rounded-full font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 transition-all group" href="#schule">
         <i class="w-5 h-5 mr-2 group-hover:shake transition-transform" data-lucide="school"></i> Schulbegleitung
     </a>
-    <a aria-label="Bereich für Erwachsene" class="nav-link-item group" href="#erwachsene">
+    <a aria-label="Erwachsene" class="flex items-center px-4 py-2 rounded-full font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 transition-all group" href="#erwachsene">
         <i class="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" data-lucide="briefcase"></i> Erwachsene
     </a>
-    <a aria-label="Standort und Öffnungszeiten" class="nav-link-item group" href="#standort">
+    <a aria-label="Standort" class="flex items-center px-4 py-2 rounded-full font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 transition-all group" href="#standort">
         <i class="w-5 h-5 mr-2 group-hover:rotate-3 transition-transform" data-lucide="map-pinned"></i> Standort
     </a>
-    <a aria-label="Kontaktformular" class="nav-link-item group" href="#kontakt">
+    <a aria-label="Kontakt" class="flex items-center px-4 py-2 rounded-full font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 transition-all group" href="#kontakt">
         <i class="w-5 h-5 mr-2 group-hover:translate-y-1 transition-transform" data-lucide="send"></i> Kontakt
     </a>
 </nav>
 
-<header class="relative overflow-hidden pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center min-h-[60vh] md:min-h-[75vh]">
-    <div class="absolute inset-0 bg-pattern-light opacity-30 animate-pulse-slow"></div>
-    <div class="container relative z-10 flex flex-col md:flex-row items-center gap-12">
-        <div class="hero-content flex-1 text-center md:text-left animate-fade-in-up" style="animation-delay: 0.4s;">
-            <h1 class="text-4xl md:text-6xl font-extrabold text-blue-800 mb-4 leading-tight">
-                <span class="block text-blue-600">LP-SWIM</span>
-                Weil Sicherheit im Wasser zählt
+<header class="relative overflow-hidden pt-12 pb-16 md:pt-32 md:pb-24 flex items-center justify-center min-h-[60vh] md:min-h-[75vh]">
+    <div class="absolute inset-0 bg-pattern-light opacity-40 animate-pulse"></div>
+    <div class="container max-w-7xl mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1 text-center md:text-left animate-fade-in-up">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-blue-900 mb-6 leading-tight">
+                <span class="block text-blue-600 text-2xl md:text-3xl font-bold mb-2 uppercase tracking-wide">LP-SWIM</span>
+                Weil Sicherheit im <br class="hidden md:block" />Wasser zählt
             </h1>
-            <p class="text-lg md:text-xl text-blue-700 mb-8 max-w-prose mx-auto md:mx-0">
+            <p class="text-lg md:text-xl text-blue-700/90 mb-8 max-w-2xl mx-auto md:mx-0 leading-relaxed">
                 Schwimmunterricht im Einzelsetting – vom ersten Wasserkontakt bis zur Technikverfeinerung
             </p>
-            <div class="hero-buttons flex flex-col sm:flex-row gap-4">
-                <a aria-label="Kontaktaufnahme" class="btn-primary animate-bounce-subtle" href="#kontakt">
-                    <i class="w-5 h-5" data-lucide="mail"></i> Kontaktaufnahme
+            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <a class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold shadow-lg hover:-translate-y-1 transition-all animate-bounce-subtle" href="#kontakt">
+                    <i class="w-5 h-5 mr-2" data-lucide="mail"></i> Kontaktaufnahme
                 </a>
-                <a aria-label="Unsere Angebote entdecken" class="btn-secondary" href="#jugend">
-                    <i class="w-5 h-5" data-lucide="arrow-right"></i> Angebote
+                <a class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-blue-50 text-blue-700 font-semibold border border-blue-200 hover:bg-blue-100 hover:-translate-y-1 transition-all" href="#jugend">
+                    <i class="w-5 h-5 mr-2" data-lucide="arrow-right"></i> Angebote
                 </a>
-                <a aria-label="Preisübersicht anzeigen" class="btn-secondary" href="https://raw.githubusercontent.com/lp-swim/lp-swim-info/refs/heads/main/Preisliste%2001.11.2025.png" rel="noopener noreferrer" target="_blank">
-                    <i class="w-5 h-5" data-lucide="euro"></i> Preisübersicht
-                </a>
+                <button onclick="openModal('preisModal')" class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-white text-blue-700 font-semibold border border-blue-200 hover:bg-blue-50 hover:-translate-y-1 transition-all">
+                    <i class="w-5 h-5 mr-2" data-lucide="euro"></i> Preisübersicht
+                </button>
             </div>
         </div>
-        <div class="flex-1 flex justify-center items-center relative animate-fade-in-right" style="animation-delay: 0.6s;">
-            <div class="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-blue-200 rounded-full flex items-center justify-center shadow-xl animate-float-pulse relative">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-32 h-32 md:w-40 md:h-40 text-blue-500 opacity-70 animate-swim-slow">
+
+        <div class="flex-1 flex justify-center items-center relative animate-fade-in-down delay-200">
+            <div class="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-blue-200/50 rounded-full flex items-center justify-center shadow-2xl animate-float-pulse relative backdrop-blur-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-32 h-32 md:w-40 md:h-40 text-blue-600 opacity-80 animate-swim-slow">
                     <path style="transform: scale(1.08); transform-origin: center;" fill="currentColor" d="M260.004 19.164c-9.648 1.39-19.07 2.235-23.43 4.054c-2.557 1.067-2.826 1.534-3.11 2.4c-.282.863-.543 3.853 1.932 9.88l3.643 8.873l-9.085 3.073c-28.644 9.69-47.62 38.362-48.017 63.627c-.696 44.055 39.936 82.666 61.355 119.49c6.824 11.732 4.738 25.54-.455 39.22c-5.193 13.676-13.8 28.374-23.465 44.36c-19.33 31.972-42.898 68.978-52.547 106.822c-6.672 26.167 3.367 43.43 19.096 55.682c15.73 12.253 38.023 17.54 50.17 15.902c19.262-2.595 32.47-15.11 39.91-30.416c7.44-15.305 7.876-33.077 3.17-42.47c-3.16-6.31-9.583-11.794-16.926-15.014s-15.397-3.924-20.447-2.48c-16.272 4.65-21.495 15.99-22.44 28.195c-.404 5.208.382 10.223 1.61 14.37c2.89-4.933 6.16-9.945 9.764-14.31c3.488-4.22 7.043-8.04 12.565-10.255c2.76-1.107 6.33-1.676 9.868-.705c3.537.972 6.495 3.364 8.492 6.053c3.54 4.77 4.53 10.117 4.555 15.86c.024 5.746-1.222 11.948-4.322 17.796c-6.202 11.696-21.378 20.488-41.666 16.45c-17.63-3.51-30.796-14.66-35.545-29.497s-1.416-32.257 9.16-48.82c22.857-35.8 62.226-57.237 93.674-80.788c15.724-11.776 29.463-23.952 38.73-37.89c9.267-13.94 14.37-29.483 13.02-49.9c-1.37-20.728-15.83-40.585-36.8-58.366c-20.97-17.783-47.835-33.06-71.06-44.968l-.004-.002l-.006-.002c-3.178-1.635-5.58-4.987-6.383-7.943c-.8-2.957-.547-5.49-.054-7.727c.984-4.473 3.063-8.143 5.878-11.404c2.815-3.262 6.48-7.02 13.35-6.627c3.434.196 7.09 2.23 9.175 4.803c1.98 2.443 2.96 5.102 3.602 7.96c.035-.044.51.51 2.578 1.336c2.998 1.2 8.278 2.27 14.746 2.65c12.935.754 30.663-1 47.942-5.302c18.94-4.715 38.375-.027 54.477 4.852c3.38 1.024 5.777 1.828 8.823 2.826c-.08-.308-.25-.606-.32-.914c-2.138-9.455-.64-18.675 1.34-26.57c.6-2.397 1.268-4.403 1.925-6.547c-12.96 4.157-28.064 6.265-42.94 4.624c-18.95-2.09-38.058-11.507-47.237-30.97c-10.787-2.446-18.605-8.153-24.193-14.274c-5.4-5.917-9.345-11.812-14.103-16.996zm11.46 37.718c7.955 0 14.403 6.28 14.403 14.03c0 7.748-6.448 14.03-14.402 14.03s-14.402-6.282-14.402-14.03c0-7.75 6.448-14.03 14.402-14.03zm-46.49 86.364c45.517 40.05 69.796 73.63 73.883 104.927c2.044 15.65-1.495 30.552-9.78 43.48c-8.286 12.926-20.992 23.986-37.276 33.895l-9.357-15.377c14.73-8.96 25.218-18.464 31.48-28.23c6.26-9.768 8.62-19.69 7.085-31.435c-3.068-23.488-23.848-54.964-67.924-93.746zm-101.453 19.77c11.56 35.447 39.336 66.16 72.933 93.74c1.728-6.023 3.852-12.013 7.01-17.6c3.29-5.82 7.986-11.18 13.998-15.04c-10.137-14.124-22.746-29.812-33.214-47.34a54 54 0 0 1-2.85-.09c-8.232-.495-18.54-2.312-29.166-4.85c-10.046-2.398-20.136-5.463-28.71-8.82z"/>
                 </svg>
-            <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-lg transform rotate-6 animate-spin-slow-reverse">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 h-10 text-blue-400">
-                    <path fill="currentColor" d="M21.785 8.9a10.18 10.18 0 0 0-9.76-7.15c-1.058 0-2.11.158-3.12.47a10.28 10.28 0 0 0-6.69 6.69a10.1 10.1 0 0 0-.46 3.09a10.22 10.22 0 0 0 10.22 10.25a9.9 9.9 0 0 0 3.12-.48a10.28 10.28 0 0 0 6.69-6.69a10.1 10.1 0 0 0 .46-3.08v-.09a10.2 10.2 0 0 0-.46-3.01M12.005 3a10.4 10.4 0 0 1 2.42.28l-.65 3.23a6.73 6.73 0 0 0-3.59 0l-.65-3.23a10 10 0 0 1 2.47-.28m-5.56 10.68l-3.08.61a10.05 10.05 0 0 1 0-4.67l3.09.61a6.3 6.3 0 0 0 0 3.45zm5.55 7.3a10 10 0 0 1-2.46-.3l.65-3.25c.59.16 1.199.24 1.81.24a6.2 6.2 0 0 0 1.82-.26l.65 3.26a11.4 11.4 0 0 1-2.47.35zm4.09-7.3a4.27 4.27 0 0 1-2.36 2.36a4.4 4.4 0 0 1-3.45 0a4.32 4.32 0 0 1-2.37-2.36a4.5 4.5 0 0 1-.35-1.73a4.5 4.5 0 0 1 2.72-4.09a4.4 4.4 0 0 1 1.72-.35a4.5 4.5 0 0 1 4.1 2.72c.23.547.35 1.136.35 1.73a4.3 4.3 0 0 1-.36 1.72m1.48 0c.151-.561.229-1.14.23-1.72a6 6 0 0 0-.25-1.73l3.11-.61c.36 1.536.36 3.134 0 4.67z"/>
-                </svg>
+                <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-lg transform rotate-6 animate-spin-slow-reverse">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 h-10 text-blue-400">
+                        <path fill="currentColor" d="M21.785 8.9a10.18 10.18 0 0 0-9.76-7.15c-1.058 0-2.11.158-3.12.47a10.28 10.28 0 0 0-6.69 6.69a10.1 10.1 0 0 0-.46 3.09a10.22 10.22 0 0 0 10.22 10.25a9.9 9.9 0 0 0 3.12-.48a10.28 10.28 0 0 0 6.69-6.69a10.1 10.1 0 0 0 .46-3.08v-.09a10.2 10.2 0 0 0-.46-3.01M12.005 3a10.4 10.4 0 0 1 2.42.28l-.65 3.23a6.73 6.73 0 0 0-3.59 0l-.65-3.23a10 10 0 0 1 2.47-.28m-5.56 10.68l-3.08.61a10.05 10.05 0 0 1 0-4.67l3.09.61a6.3 6.3 0 0 0 0 3.45zm5.55 7.3a10 10 0 0 1-2.46-.3l.65-3.25c.59.16 1.199.24 1.81.24a6.2 6.2 0 0 0 1.82-.26l.65 3.26a11.4 11.4 0 0 1-2.47.35zm4.09-7.3a4.27 4.27 0 0 1-2.36 2.36a4.4 4.4 0 0 1-3.45 0a4.32 4.32 0 0 1-2.37-2.36a4.5 4.5 0 0 1-.35-1.73a4.5 4.5 0 0 1 2.72-4.09a4.4 4.4 0 0 1 1.72-.35a4.5 4.5 0 0 1 4.1 2.72c.23.547.35 1.136.35 1.73a4.3 4.3 0 0 1-.36 1.72m1.48 0c.151-.561.229-1.14.23-1.72a6 6 0 0 0-.25-1.73l3.11-.61c.36 1.536.36 3.134 0 4.67z"/>
+                    </svg>
+                </div>
             </div>
         </div>
     </div>
 </header>
 
-<main class="container py-12 md:py-20">
-    <section class="section-card animate-in" id="start" style="animation-delay: 0.8s;">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-700" id="heading-start">Schön, dass du da bist</h2>
-        <p class="text-slate-700 leading-relaxed mb-4">
-            Ich heiße Lukas, bin 23 Jahre jung und begleite als ausgebildete Fachkraft täglich Menschen aller Altersgruppen auf verschiedenen Leistungsniveaus im Wasser. Da der Schwimmunterricht in Schulen häufig an Kapazitätsgrenzen stößt und eine individuelle Förderung organisatorisch bedingt kaum möglich ist, liegt mein Schwerpunkt darauf, ergänzend gezielt jene Aspekte zu vertiefen, welche im Gruppenunterricht zu kurz kommen.
-        </p>
-        <p class="text-slate-700 leading-relaxed mb-4">
-            Eine Trainingseinheit umfasst 60 Minuten und findet ausschließlich im Einzelsetting statt. Während in klassischen Kursen viele verschiedene Niveaus gleichzeitig berücksichtigt werden müssen, gehört meine ungeteilte Aufmerksamkeit in dieser Zeit ausschließlich dem persönlichen Fortschritt. Durch diesen Ansatz lassen sich vorhandene Lücken effizient schließen sowie die Sicherheit und Freude am Schwimmen nachhaltig steigern.
-        </p>
-        <p class="text-slate-700 leading-relaxed">
-            Das Training findet in Viernheim von Oktober bis April im <a class="text-blue-600 hover:text-blue-800 underline" href="https://www.stadtwerke-viernheim.de/preise-leistungen/baeder-und-sauna/hallenbad" target="_blank" rel="noopener noreferrer">Hallenbad</a> statt und wird in den Sommermonaten von Juni bis August im <a class="text-blue-600 hover:text-blue-800 underline" href="https://www.stadtwerke-viernheim.de/preise-leistungen/baeder-und-sauna/waldschwimmbad/" target="_blank" rel="noopener noreferrer">Waldschwimmbad</a> fortgeführt. Nach dem Erstkontakt über das Kontaktformular werden Sie direkt in unseren Terminverteiler aufgenommen. Jeweils am Monatsende wird eine Übersicht der freien Termine für den Folgemonat versendet. Die Buchung erfolgt anschließend verbindlich nach dem in der E-Mail beschriebenen Ablauf.
-        </p>
-    </section>
+<main class="container max-w-7xl mx-auto px-4 py-12 md:py-20 space-y-16">
 
-    <section class="section-card animate-in" id="jugend" style="animation-delay: 1s;">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-700" id="heading-jugend">Kinder & Jugendliche</h2>
-        <p class="text-slate-700 leading-relaxed mb-4">
-            Qualitativer Schwimmunterricht ist für viele Kinder und Jugendliche heutzutage leider keine Selbstverständlichkeit mehr. Im Familienalltag fehlen oft die zeitlichen Kapazitäten, während das Schulschwimmen durch große Gruppen und knappe Wasserzeiten zunehmend an organisatorische Grenzen stößt.
-        </p>
-        <p class="text-slate-700 leading-relaxed mb-4">
-            Diese fehlende Routine führt schnell zu unsicheren Bewegungsabläufen und einer instabilen Lage im Wasser. Ohne direkte Korrektur schleifen sich technische Fehler dauerhaft ein, was nicht nur die Sicherheit gefährdet, sondern langfristig auch die natürliche Freude an der Bewegung ausbremst.
-        </p>
-        <p class="text-slate-700 leading-relaxed">
-            Das Einzeltraining bietet hier den nötigen Raum, um solche Lücken effizient und vor allem nachhaltig zu schließen. Wir richten das Lerntempo am individuellen Entwicklungsstand aus und fokussieren uns auf die persönlichen Ziele – bis hin zur erfolgreichen Abnahme der offiziellen Schwimmabzeichen.
-        </p>
-    </section>
-
-    <section class="section-card animate-in" id="schule" style="animation-delay: 1.2s;">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-700" id="heading-schule">Schulbegleitung</h2>
-        <p class="text-slate-700 leading-relaxed mb-4">
-            Im Schwimmunterricht tragen Lehrkräfte besondere Verantwortung. Sie organisieren den Unterricht, sichern die Aufsicht und fördern die Kinder pädagogisch. Die Anforderungen an Sicherheit und individuelle Förderung stehen dabei oft in einem Spannungsverhältnis zu knappen Ressourcen. Das tragische Unglück vom 18. September 2023, bei dem ein Zweitklässler ertrank, hat die Debatte über Aufsichtspflichten bundesweit verstärkt.
-        </p>
-        <p class="text-slate-700 leading-relaxed mb-4">
-            Trotz Einhaltung aller Vorgaben wurden Lehrkraft und Referendarin im Zusammenhang mit dem Vorfall vorläufig zu Bewährungsstrafen und Geldauflagen verurteilt. Die endgültige Entscheidung steht zwar noch aus, macht jedoch bereits deutlich, dass Lehrkräfte eine besonders hohe Verantwortung tragen – auch dann, wenn sie alle formalen Vorgaben gewissenhaft erfüllen.
-        </p>
-        <p class="text-slate-700 leading-relaxed">
-            Eine qualifizierte Begleitperson entlastet Lehrkräfte spürbar, verbessert die Aufsicht und ermöglicht eine gezieltere Betreuung der Kinder. So lassen sich Sicherheit und pädagogische Qualität im Unterricht deutlich steigern. Ziel ist es, ein verlässliches und strukturiertes Lernumfeld zu schaffen. Das Angebot richtet sich an Schulen im Raum Mannheim und Umgebung.
-        </p>
-    </section>
-
-    <section class="section-card animate-in" id="erwachsene" style="animation-delay: 1.4s;">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-700" id="heading-erwachsene">Erwachsene</h2>
-        <p class="text-slate-700 leading-relaxed mb-4">
-            Für viele Erwachsene ist der Zugang zum Wasser mit Unsicherheiten oder Scham verbunden. Oft hält sich der Trugschluss, Schwimmen sei ein reines Kinderthema. Doch Wasserkompetenz ist keine Frage des Alters – sie lässt sich jederzeit neu erlernen oder nach längeren Pausen wieder auffrischen.
-        </p>
-        <p class="text-slate-700 leading-relaxed mb-4">
-            Unsicherheiten werden gerade im Urlaub oder in offenen Gewässern schnell unterschätzt. Ein individuelles Einzeltraining baut Ängste ab und schafft die nötige Routine für sicheres Bewegungsverhalten. Das steigert nicht nur die körperliche Fitness, sondern stärkt auch das Vertrauen in die eigene Leistungsfähigkeit.
-        </p>
-        <p class="text-slate-700 leading-relaxed">
-            Für Geübte liegt der Fokus auf gezielter Technikoptimierung. Ob Wasserlage, Armzug oder Atmung – durch die Arbeit an Details wird der Schwimmstil effizienter und kraftsparender. Dieses Training eignet sich ideal für den Feinschliff im Wettkampfsport oder um persönliche sportliche Ziele schneller zu erreichen.
-        </p>
-    </section>
-
-<section class="section-card animate-in" id="standort" style="animation-delay: 1.6s;">
-    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-700" id="heading-standort">Standort</h2>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-        
-        <div class="flex flex-col bg-gray-50 rounded-xl border border-gray-200 shadow-sm overflow-hidden">
-            <div class="h-96 flex-grow cursor-pointer" id="map-frame" onclick="window.open('https://maps.app.goo.gl/DJaBbxXfMwjRJk5B7', '_blank')">
-                <iframe class="w-full h-full border-0 pointer-events-none" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2589.1814661445947!2d8.577947411949383!3d49.53772705254116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x66777943db50c52b%3A0x72759400e8725848!2sLP-SWIM%20%E2%80%93%20Inhaber%20Lukas%20Prehn!5e0!3m2!1sde!2sde!4v1771017856044!5m2!1sde!2sde" title="LP-SWIM – Standort"></iframe>
-            </div>
+    <section class="glass-card rounded-3xl p-8 md:p-12 transform hover:-translate-y-1 transition-all duration-300" id="start">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-800">Schön, dass du da bist</h2>
+        <div class="space-y-4 text-slate-700 leading-relaxed text-lg text-justify hyphens-auto">
+            <p>
+                Ich heiße Lukas, bin 23 Jahre jung und begleite als ausgebildete Fachkraft täglich Menschen aller Altersgruppen auf verschiedenen Leistungsniveaus im Wasser. Da der Schwimmunterricht in Schulen häufig an Kapazitätsgrenzen stößt und eine individuelle Förderung organisatorisch bedingt kaum möglich ist, liegt mein Schwerpunkt darauf, ergänzend gezielt jene Aspekte zu vertiefen, welche im Gruppenunterricht zu kurz kommen.
+            </p>
+            <p>
+                Eine Trainingseinheit umfasst 60 Minuten und findet ausschließlich im Einzelsetting statt. Während in klassischen Kursen viele verschiedene Niveaus gleichzeitig berücksichtigt werden müssen, gehört meine ungeteilte Aufmerksamkeit in dieser Zeit ausschließlich dem persönlichen Fortschritt. Durch diesen Ansatz lassen sich vorhandene Lücken effizient schließen sowie die Sicherheit und Freude am Schwimmen nachhaltig steigern.
+            </p>
+            <p class="font-medium text-blue-900 bg-blue-50 p-4 rounded-xl border-l-4 border-blue-400">
+                Das Training findet in Viernheim von Oktober bis April im <a class="text-blue-600 hover:text-blue-800 underline decoration-2 decoration-blue-200" href="https://www.stadtwerke-viernheim.de/preise-leistungen/baeder-und-sauna/hallenbad" target="_blank" rel="noopener noreferrer">Hallenbad</a> statt und wird in den Sommermonaten (Juni–August) im <a class="text-blue-600 hover:text-blue-800 underline decoration-2 decoration-blue-200" href="https://www.stadtwerke-viernheim.de/preise-leistungen/baeder-und-sauna/waldschwimmbad/" target="_blank" rel="noopener noreferrer">Waldschwimmbad</a> fortgeführt. Nach dem Erstkontakt über das Kontaktformular werden Sie direkt in unseren Terminverteiler aufgenommen.
+            </p>
         </div>
+    </section>
 
-        <div class="flex flex-col p-6 bg-gray-50 rounded-xl border border-gray-200 shadow-sm text-center">
-            <div class="flex justify-center mb-4">
-                <img alt="LP-SWIM Logo" class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full shadow-md shadow-blue-100 object-cover" src="favicon.ico"/>
-            </div>
-            <hr class="border-t border-gray-200 my-4"/>
-            <h4 class="text-lg font-medium text-blue-600 mb-2">Trainerstunden</h4>
-            <ul class="list-none p-0 mb-6 text-slate-700">
-                <li class="flex items-center justify-center gap-2 mb-1">
-                    <i class="w-4 h-4 text-blue-400" data-lucide="calendar-days"></i> Täglich 10–18 Uhr<br/>(nach Terminbestätigung)
-                </li>
-                <li class="flex items-center justify-center gap-2">
-                    <i class="w-4 h-4 text-blue-400" data-lucide="clock-fading"></i> Einzelunterricht à 60 min
-                </li>
-            </ul>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-auto">
-                <a class="btn-primary w-full sm:w-auto" href="https://www.google.de/maps/place/LP-SWIM+%E2%80%93+Inhaber+Lukas+Prehn/@49.5376939,8.5809261,17z/data=!4m16!1m9!3m8!1s0x66777943db50c52b:0x72759400e8725848!2sLP-SWIM+%E2%80%93+Inhaber+Lukas+Prehn!8m2!3d49.5376939!4d8.5809261!9m1!1b1!16s%2Fg%2F11xv29qq3r!3m5!1s0x66777943db50c52b:0x72759400e8725848!8m2!3d49.5376939!4d8.5809261!16s%2Fg%2F11xv29qq3r?entry=ttu" rel="noopener noreferrer" target="_blank"><i class="w-5 h-5" data-lucide="map"></i> Google Maps</a>
-                <a class="btn-secondary w-full sm:w-auto" href="https://www.google.com/search?sca_esv=9783dddf2c54e777&q=rezensionen+f%C3%BCr+lp-swim+%E2%80%93+inhaber+lukas+prehn+viernheim&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-BUVbdJ3hDQHRBRaYHFinyzPc7d2gswAL4lqHCD2DHMRrF6KlVjIkGsex9oamelGppwJnF3j8v3ziPYyxTFlbyvzDVdejHoBlRwn94f2LUq9hvfOjqE-1-Hc2oVbfEgzxv4eqevOr3oIbfcY4q77sAj49t6AgxXbLe6IyrZdJ1sKaufN0y37xicjzA5cIFiAMpdL1ug&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOaPpBe8_8HTfqdo64xx6ynjmo479J_TQXJJA2mU8O2Pm0WB2coG0U1TumygcRV6YupVbH_dXxZXKZkR9O-7YDAWBDTHGrUEqK9rsLwIgVyOkhu-_EJMfGxSNm6ZwlUN1o3nmw3vQhGt5WT_SMZ1iZnJ41t2T&sa=X&ved=2ahUKEwjj5L7z0tuSAxVd3QIHHfraPJUQxKsJKAR6BAgQEAE&ictx=1&stq=1&cs=1&lei=J9CRaaO1It26i-gP-rXzqQk" rel="noopener noreferrer" target="_blank"><i class="w-5 h-5" data-lucide="star"></i> Bewertungen</a>
-            </div>
+    <section class="glass-card rounded-3xl p-8 md:p-12 transform hover:-translate-y-1 transition-all" id="jugend">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-800">Kinder & Jugendliche</h2>
+        <div class="space-y-4 text-slate-700 leading-relaxed text-lg text-justify">
+            <p>Qualitativer Schwimmunterricht ist für viele Kinder und Jugendliche heutzutage leider keine Selbstverständlichkeit mehr. Im Familienalltag fehlen oft die zeitlichen Kapazitäten, während das Schulschwimmen durch große Gruppen und knappe Wasserzeiten zunehmend an organisatorische Grenzen stößt.</p>
+            <p>Diese fehlende Routine führt schnell zu unsicheren Bewegungsabläufen und einer instabilen Lage im Wasser. Ohne direkte Korrektur schleifen sich technische Fehler dauerhaft ein, was nicht nur die Sicherheit gefährdet, sondern langfristig auch die natürliche Freude an der Bewegung ausbremst.</p>
+            <p>Das Einzeltraining bietet hier den nötigen Raum, um solche Lücken effizient und vor allem nachhaltig zu schließen. Wir richten das Lerntempo am individuellen Entwicklungsstand aus und fokussieren uns auf die persönlichen Ziele – bis hin zur erfolgreichen Abnahme der offiziellen Schwimmabzeichen.</p>
         </div>
-    </div>
-</section>
+    </section>
 
-    <section class="section-card animate-in" id="kontakt" style="animation-delay: 1.8s;">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-700" id="heading-kontakt">Kontaktaufnahme</h2>
+    <section class="glass-card rounded-3xl p-8 md:p-12 transform hover:-translate-y-1 transition-all" id="schule">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-800">Schulbegleitung</h2>
+        <div class="space-y-4 text-slate-700 leading-relaxed text-lg text-justify">
+            <p>Im Schwimmunterricht tragen Lehrkräfte besondere Verantwortung. Sie organisieren den Unterricht, sichern die Aufsicht und fördern die Kinder pädagogisch. Die Anforderungen an Sicherheit und individuelle Förderung stehen dabei oft in einem Spannungsverhältnis zu knappen Ressourcen. Das tragische Unglück vom 18. September 2023, bei dem ein Zweitklässler ertrank, hat die Debatte über Aufsichtspflichten bundesweit verstärkt.</p>
+            <p>Trotz Einhaltung aller Vorgaben wurden Lehrkraft und Referendarin im Zusammenhang mit dem Vorfall vorläufig zu Bewährungsstrafen verurteilt. Dies macht deutlich, dass Lehrkräfte eine besonders hohe Verantwortung tragen. Eine qualifizierte Begleitperson entlastet Lehrkräfte spürbar, verbessert die Aufsicht und ermöglicht eine gezieltere Betreuung der Kinder.</p>
+            <p>Das Angebot richtet sich an Schulen im Raum Mannheim und Umgebung, um ein verlässliches und strukturiertes Lernumfeld zu schaffen.</p>
+        </div>
+    </section>
+
+    <section class="glass-card rounded-3xl p-8 md:p-12 transform hover:-translate-y-1 transition-all" id="erwachsene">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-800">Erwachsene</h2>
+        <div class="space-y-4 text-slate-700 leading-relaxed text-lg text-justify">
+            <p>Für viele Erwachsene ist der Zugang zum Wasser mit Unsicherheiten oder Scham verbunden. Oft hält sich der Trugschluss, Schwimmen sei ein reines Kinderthema. Doch Wasserkompetenz ist keine Frage des Alters – sie lässt sich jederzeit neu erlernen oder nach längeren Pausen wieder auffrischen.</p>
+            <p>Unsicherheiten werden gerade im Urlaub oder in offenen Gewässern schnell unterschätzt. Ein individuelles Einzeltraining baut Ängste ab und schafft die nötige Routine für sicheres Bewegungsverhalten. Das steigert nicht nur die körperliche Fitness, sondern stärkt auch das Vertrauen in die eigene Leistungsfähigkeit.</p>
+            <p>Für Geübte liegt der Fokus auf gezielter Technikoptimierung. Ob Wasserlage, Armzug oder Atmung – durch die Arbeit an Details wird der Schwimmstil effizienter und kraftsparender. Dieses Training eignet sich ideal für den Feinschliff im Wettkampfsport.</p>
+        </div>
+    </section>
+
+    <section class="glass-card rounded-3xl p-6 md:p-8" id="standort">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-blue-800 text-center">Standort & Details</h2>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-            
-            <div class="flex flex-col min-h-[400px]">
-                <div class="relative w-full h-full rounded-xl overflow-hidden shadow-lg group">
-                    <img alt="Lukas Prehn - LP-SWIM Trainer" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src="kontakt-lukas.jpg"/>
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/50 via-transparent to-transparent"></div>
+            <div class="bg-gray-100 rounded-2xl overflow-hidden border border-gray-200 h-96 min-h-[300px] relative cursor-pointer group" onclick="window.open('https://www.google.de/maps/place/LP-SWIM+%E2%80%93+Inhaber+Lukas+Prehn/@49.5376939,8.5809261,17z/data=!4m16!1m9!3m8!1s0x66777943db50c52b:0x72759400e8725848!2sLP-SWIM+%E2%80%93+Inhaber+Lukas+Prehn!8m2!3d49.5376939!4d8.5809261!9m1!1b1!16s%2Fg%2F11xv29qq3r!3m5!1s0x66777943db50c52b:0x72759400e8725848!8m2!3d49.5376939!4d8.5809261!16s%2Fg%2F11xv29qq3r?entry=ttu', '_blank')">
+                <iframe class="w-full h-full border-0 pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-700" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2590.283188826798!2d8.57835117750849!3d49.53769397143242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x66777943db50c52b%3A0x72759400e8725848!2sLP-SWIM%20%E2%80%93%20Inhaber%20Lukas%20Prehn!5e0!3m2!1sde!2sde!4v1709210000000!5m2!1sde!2sde" title="LP-SWIM Standortkarte"></iframe>
+            </div>
+            <div class="flex flex-col p-8 bg-white/60 rounded-2xl border border-gray-100 text-center backdrop-blur-sm">
+                <div class="flex justify-center mb-6">
+                    <img alt="LP-SWIM Logo" class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full shadow-md shadow-blue-100 object-cover" src="favicon.ico"/>
+                </div>
+                <h4 class="text-xl font-bold text-blue-900 mb-2">Trainerstunden</h4>
+                <div class="space-y-3 mb-8 text-slate-600">
+                    <p class="flex items-center justify-center gap-2"><i data-lucide="calendar-days" class="w-4 h-4 text-blue-500"></i> Täglich 10:00 – 18:00 Uhr<br/><span class="text-sm">(nach Terminbestätigung)</span></p>
+                    <p class="flex items-center justify-center gap-2"><i data-lucide="clock" class="w-4 h-4 text-blue-500"></i> Einzelunterricht à 60 min</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-auto">
+                    <a class="flex items-center justify-center px-4 py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200" href="https://www.google.de/maps/place/LP-SWIM+%E2%80%93+Inhaber+Lukas+Prehn/@49.5376939,8.5809261,17z/data=!4m16!1m9!3m8!1s0x66777943db50c52b:0x72759400e8725848!2sLP-SWIM+%E2%80%93+Inhaber+Lukas+Prehn!8m2!3d49.5376939!4d8.5809261!9m1!1b1!16s%2Fg%2F11xv29qq3r!3m5!1s0x66777943db50c52b:0x72759400e8725848!8m2!3d49.5376939!4d8.5809261!16s%2Fg%2F11xv29qq3r?entry=ttu" rel="noopener noreferrer" target="_blank">
+                        <i class="w-4 h-4 mr-2" data-lucide="map"></i> Google Maps
+                    </a>
+                    <a class="flex items-center justify-center px-4 py-3 rounded-xl bg-white border border-blue-200 text-blue-700 font-semibold hover:bg-blue-50 transition-all" href="https://www.google.com/search?sca_esv=9783dddf2c54e777&q=rezensionen+f%C3%BCr+lp-swim+%E2%80%93+inhaber+lukas+prehn+viernheim&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-BUVbdJ3hDQHRBRaYHFinyzPc7d2gswAL4lqHCD2DHMRrF6KlVjIkGsex9oamelGppwJnF3j8v3ziPYyxTFlbyvzDVdejHoBlRwn94f2LUq9hvfOjqE-1-Hc2oVbfEgzxv4eqevOr3oIbfcY4q77sAj49t6AgxXbLe6IyrZdJ1sKaufN0y37xicjzA5cIFiAMpdL1ug&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOaPpBe8_8HTfqdo64xx6ynjmo479J_TQXJJA2mU8O2Pm0WB2coG0U1TumygcRV6YupVbH_dXxZXKZkR9O-7YDAWBDTHGrUEqK9rsLwIgVyOkhu-_EJMfGxSNm6ZwlUN1o3nmw3vQhGt5WT_SMZ1iZnJ41t2T&sa=X&ved=2ahUKEwjj5L7z0tuSAxVd3QIHHfraPJUQxKsJKAR6BAgQEAE&ictx=1&stq=1&cs=1&lei=J9CRaaO1It26i-gP-rXzqQk" rel="noopener noreferrer" target="_blank">
+                        <i class="w-4 h-4 mr-2" data-lucide="star"></i> Bewertungen
+                    </a>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="flex flex-col justify-center p-2">
+    <section class="glass-card rounded-3xl p-8 md:p-12" id="kontakt">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-blue-800">Kontaktaufnahme</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="relative min-h-[400px] lg:h-auto rounded-2xl overflow-hidden shadow-xl group">
+                <img alt="Lukas Prehn" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src="kontakt-lukas.jpg" loading="lazy"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-blue-900/50 via-transparent to-transparent"></div>
+            </div>
+            
+            <div class="flex flex-col justify-center">
                 <p class="text-slate-700 mb-6">
                     Bereit für den Sprung ins Wasser? Nachricht senden und nach 48 Stunden das Postfach checken.
                 </p>
 
-                <form action="https://formspree.io/f/mkgzgywy" class="space-y-5" method="POST">
+                <form action="https://formspree.io/f/mkgzgywy" method="POST" class="space-y-5" id="contactForm">
                     <div class="hidden">
                         <label class="sr-only" for="_gotcha">Bitte dieses Feld leer lassen:</label>
                         <input autocomplete="off" class="hidden" id="_gotcha" name="_gotcha" tabindex="-1" type="text"/>
                     </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        <div class="relative group">
-                            <label class="block text-sm font-semibold text-slate-700 mb-2 ml-1" for="name">Dein Name</label>
-                            <div class="relative">
-                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <i class="w-5 h-5 text-slate-400 group-focus-within:text-blue-500 transition-colors" data-lucide="user"></i>
-                                </div>
-                                <input autocomplete="name" class="w-full pl-10 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-100 focus:border-blue-500 transition-all outline-none text-slate-800 placeholder:text-slate-400" id="name" name="name" placeholder="Max Mustermann" required="" type="text"/>
-                            </div>
-                        </div>
-
-                        <div class="relative group">
-                            <label class="block text-sm font-semibold text-slate-700 mb-2 ml-1" for="email">Deine E-Mail</label>
-                            <div class="relative">
-                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <i class="w-5 h-5 text-slate-400 group-focus-within:text-blue-500 transition-colors" data-lucide="mail"></i>
-                                </div>
-                                <input autocomplete="email" class="w-full pl-10 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-100 focus:border-blue-500 transition-all outline-none text-slate-800 placeholder:text-slate-400" id="email" name="email" placeholder="max@beispiel.de" required="" type="email"/>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="relative group">
-                        <label class="block text-sm font-semibold text-slate-700 mb-2 ml-1" for="message">Deine Nachricht</label>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="relative">
-                            <div class="absolute top-3 left-3 pointer-events-none">
-                                <i class="w-5 h-5 text-slate-400 group-focus-within:text-blue-500 transition-colors" data-lucide="message-square"></i>
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="w-5 h-5 text-slate-400" data-lucide="user"></i>
                             </div>
-                            <textarea autocomplete="off" class="w-full pl-10 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-100 focus:border-blue-500 transition-all outline-none text-slate-800 placeholder:text-slate-400 resize-none" id="message" name="message" placeholder="Ich würde gerne meine Technik verbessern. Wie läuft die Buchung ab?" required="" rows="4"></textarea>
+                            <input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 bg-white" name="name" placeholder="Dein Name" required type="text" autocomplete="name"/>
+                        </div>
+                        <div class="relative">
+                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="w-5 h-5 text-slate-400" data-lucide="mail"></i>
+                            </div>
+                            <input class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 bg-white" name="email" placeholder="Deine E-Mail" required type="email" autocomplete="email"/>
                         </div>
                     </div>
+                    
+                    <div class="relative">
+                        <div class="absolute top-3 left-3 pointer-events-none">
+                            <i class="w-5 h-5 text-slate-400" data-lucide="message-square"></i>
+                        </div>
+                        <textarea class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 h-32 resize-none bg-white" name="message" id="message" placeholder="" required></textarea>
+                    </div>
 
-                    <div class="flex items-start gap-3 pt-2">
-                         <div class="flex items-center h-5">
-                            <input class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 cursor-pointer" id="privacy-consent" name="privacy-consent" required="" type="checkbox"/>
-                         </div>
-                         <label class="text-sm text-slate-600" for="privacy-consent">
-                            Ich habe die <a class="text-blue-600 hover:text-blue-800 font-medium underline decoration-blue-300 hover:decoration-blue-800 transition-all" href="#" onclick="openModal('datenschutzModal'); return false;">Datenschutzerklärung</a> gelesen und stimme zu.
+                    <div class="flex items-start gap-3">
+                        <input class="mt-1 w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500 cursor-pointer" id="privacy-consent" name="privacy-consent" required type="checkbox"/>
+                        <label class="text-sm text-slate-600 leading-snug cursor-pointer" for="privacy-consent">
+                            Ich habe die <button type="button" class="text-blue-600 hover:underline font-medium" onclick="openModal('datenschutzModal')">Datenschutzerklärung</button> gelesen und stimme zu.
                         </label>
                     </div>
-
-                    <div class="pt-2">
-                        <button class="w-full py-3.5 px-6 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold shadow-lg shadow-blue-500/30 transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 group" type="submit">
-                            <span>Nachricht absenden</span>
-                            <i class="w-5 h-5 group-hover:translate-x-1 transition-transform" data-lucide="send"></i>
-                        </button>
-                    </div>
+                    
+                    <button class="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold shadow-lg shadow-blue-500/30 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 group" type="submit">
+                        <span>Nachricht absenden</span>
+                        <i class="w-5 h-5 group-hover:translate-x-1 transition-transform" data-lucide="send"></i>
+                    </button>
                 </form>
-
-                <div class="mt-6 p-4 rounded-xl text-center font-medium hidden animate-fade-in" id="form-message"></div>
+                
+                <div class="mt-4 p-4 rounded-xl text-center font-medium hidden animate-fade-in" id="form-message"></div>
             </div>
         </div>
     </section>
-
 </main>
 
-<footer class="bg-blue-50 text-center py-8 md:py-12 border-t border-blue-100 shadow-inner">
-    <div class="container text-blue-800 text-sm md:text-base">
-        <div class="flex flex-wrap justify-center gap-x-4 gap-y-2 mb-4">
-            <a class="text-blue-600 hover:text-blue-800 transition-colors font-medium" href="#" onclick="openModal('datenschutzModal'); return false;">Datenschutzerklärung</a>
-            <span class="text-gray-400">|</span>
-            <a class="text-blue-600 hover:text-blue-800 transition-colors font-medium" href="#" onclick="openModal('agbModal'); return false;">AGB</a>
-            <span class="text-gray-400">|</span>
-            <a class="text-blue-600 hover:text-blue-800 transition-colors font-medium" href="#" onclick="openModal('impressumModal'); return false;">Impressum</a>
+<footer class="bg-blue-50/80 border-t border-blue-100 py-10 text-center backdrop-blur-sm">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-wrap justify-center gap-6 mb-6 text-sm font-medium text-blue-800">
+            <button onclick="openModal('datenschutzModal')" class="hover:text-blue-600 hover:underline">Datenschutzerklärung</button>
+            <span class="text-blue-200">|</span>
+            <button onclick="openModal('agbModal')" class="hover:text-blue-600 hover:underline">AGB</button>
+            <span class="text-blue-200">|</span>
+            <button onclick="openModal('impressumModal')" class="hover:text-blue-600 hover:underline">Impressum</button>
         </div>
-        <p class="text-gray-600">© 2026 LP-SWIM<br>Alle Rechte vorbehalten</p>
+        <p class="text-slate-500 text-sm">© 2026 LP-SWIM<br>Alle Rechte vorbehalten</p>
     </div>
 </footer>
 
-<div class="modal fixed inset-0 z-[10000] flex items-center justify-center p-4 hidden" id="datenschutzModal">
-    <div class="modal-content relative w-full max-w-2xl mx-auto text-left">
-        <span class="close-button" onclick="closeModal('datenschutzModal')">×</span>
-        <h2 class="text-3xl font-bold mb-4 text-blue-700">Datenschutzerklärung | Stand 01. August 2025</h2>
-        <div class="space-y-4 text-slate-700 max-h-[70vh] overflow-y-auto pr-2">
-            <p><strong>1. Verantwortlicher</strong><br/>Lukas Prehn<br/>c/o IP-Management #6336<br/>Ludwig-Erhard-Straße 18<br/>20459 Hamburg, Deutschland<br/>lpswim.info@gmail.com</p>
-            <p><strong>2. Grundsätze der Datenverarbeitung</strong><br/>Der Schutz personenbezogener Daten hat höchste Priorität. Die Verarbeitung erfolgt ausschließlich gemäß der Datenschutz-Grundverordnung (DSGVO) und dem Bundesdatenschutzgesetz (BDSG). Daten werden nur erhoben, wenn dies gesetzlich zulässig ist oder eine ausdrückliche Einwilligung vorliegt. Rechtsgrundlagen sind Art. 6 Abs. 1 lit. a (Einwilligung), lit. b (Vertrag oder vorvertragliche Maßnahmen) sowie lit. f (berechtigtes Interesse).</p>
-            <p><strong>3. Hosting</strong><br/>Diese Website wird über GitHub Pages (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) bereitgestellt. Beim Aufruf werden automatisch IP-Adresse, Datum/Uhrzeit, aufgerufene Seiten/Dateien, Referrer-URL, Browsertyp/-version und Betriebssystem verarbeitet. Die Verarbeitung dient der technischen Bereitstellung, Sicherheit und Stabilität der Website. Eine Zusammenführung mit anderen Daten erfolgt nicht. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Weitere Informationen: <a class="text-blue-500 hover:text-blue-700 underline" href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener noreferrer" target="_blank">GitHub Pages Datenschutz</a></p>
-            <p><strong>4. Cookies</strong><br/>Auf dieser Website werden ausschließlich technisch notwendige Cookies verwendet, die für den Betrieb sowie die grundlegenden Funktionen erforderlich sind. Zusätzlich wird beim Aufruf der Seite eine Abfrage zur Einwilligung in die Verwendung von Google-Analytics-Cookies eingeblendet. Diese Analyse-Cookies werden nur gesetzt, wenn die Nutzung ausdrücklich gestattet wird. Ohne Zustimmung erfolgt keine Verarbeitung zu Zwecken wie Tracking, Analyse, Marketing oder Profilbildung. Rechtsgrundlage hierfür ist Art. 6 Abs. 1 lit. f DSGVO (Einsatz technisch notwendiger Cookies) sowie Art. 6 Abs. 1 lit. a DSGVO (Verwendung von Google Analytics nach erteilter Einwilligung).</p>
-            <p><strong>5. Kontaktformular</strong><br/>Zur Kontaktaufnahme steht ein Formular zur Verfügung, betrieben von Formspree (Formspree Inc., 303 Twin Dolphin Dr., Redwood City, CA 94065, USA). Verarbeitet werden Name, E-Mail-Adresse und Ihre Nachricht. Die Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO. Weitere Informationen: <a class="text-blue-500 hover:text-blue-700 underline" href="https://formspree.io/legal/privacy-policy/" rel="noopener noreferrer" target="_blank">Formspree Privacy Policy</a></p>
-            <p><strong>6. Rechte der betroffenen Personen</strong><br/>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerspruch sowie den Widerruf erteilter Einwilligungen. Zudem besteht das Recht auf Beschwerde bei einer Datenschutzaufsichtsbehörde.</p>
-        </div>
-    </div>
-</div>
+<div id="modal-overlay" class="fixed inset-0 z-[60] bg-slate-900/60 backdrop-blur-sm hidden transition-opacity opacity-0" onclick="closeAllModals()"></div>
 
-<div class="modal fixed inset-0 z-[10000] flex items-center justify-center p-4 hidden" id="agbModal">
-    <div class="modal-content relative w-full max-w-2xl mx-auto text-left">
-        <span class="close-button" onclick="closeModal('agbModal')">×</span>
-        <h2 class="text-3xl font-bold mb-4 text-blue-700">AGB | Stand 01. August 2025</h2>
-        <div class="space-y-4 text-slate-700 max-h-[70vh] overflow-y-auto pr-2">
-            <p><strong>§1 Geltungsbereich</strong><br/>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle zwischen LP-SWIM, vertreten durch die jeweils mit der Durchführung beauftragte Lehr- oder Betreuungsperson (nachfolgend „Dienstleister“ genannt), und den Teilnehmenden geschlossenen Verträge über die Inanspruchnahme von Dienstleistungen aus dem Leistungsangebot von LP-SWIM. Dieses umfasst insbesondere Schwimmunterricht sowie die Begleitung und Betreuung von Teilnehmenden im Rahmen schulischer oder außerschulischer Aktivitäten wie Schulschwimmen, Freizeitgruppen oder Ferienprogramme, einschließlich aller damit verbundenen pädagogischen, sportlichen und organisatorischen Leistungen.</p>
-            <p class="mb-4">Teilnehmende im Sinne dieser AGB sind alle Personen, die Leistungen von LP-SWIM in Anspruch nehmen oder für die solche Leistungen durch Dritte – insbesondere Eltern, Erziehungsberechtigte, Schulen, Vereine oder sonstige Institutionen – gebucht werden. Diese AGB gelten gleichermaßen gegenüber den Teilnehmenden und den jeweiligen Vertragspartnern. Der Vertrag kommt mit der ausdrücklichen Bestätigung der Buchung durch LP-SWIM zustande; mit Zugang der Zahlungsaufforderung und anschließender Terminbestätigung gilt die Buchung als verbindlich und für beide Parteien rechtswirksam.</p>
-            <p><strong>§2 Vertragsabschluss</strong><br/>Der Vertrag gilt mit der schriftlichen oder elektronischen Bestätigung des Termins durch den Dienstleister als rechtsverbindlich geschlossen. Mit der Anmeldung erklärt der Vertragspartner die verbindliche Teilnahme an der vereinbarten Dienstleistung. Das Nichterscheinen oder Nichtantreten gilt als Nichtinanspruchnahme der Leistung; in diesem Fall finden die Bestimmungen gemäß "§ 5 Stornierung und Rücktritt" Anwendung.</p>
-            <p><strong>§3 Teilnahmevoraussetzungen</strong><br/>Die Teilnahme setzt einen gesundheitlich unbedenklichen Zustand der Teilnehmenden voraus. Jede teilnehmende Person ist selbst dafür verantwortlich, ihre körperliche Eignung für den Schwimmunterricht sicherzustellen und eigenverantwortlich über die Teilnahme zu entscheiden. Bei minderjährigen Teilnehmenden obliegt diese Verantwortung den Erziehungsberechtigten.</p>
-            <p class="mb-4">Der Anbieter LP-SWIM sowie die durch ihn beauftragten Lehr- oder Betreuungspersonen übernehmen keine Haftung für gesundheitliche Risiken, Verletzungen oder sonstige Schäden, die infolge einer unzutreffenden Selbsteinschätzung oder aufgrund verschwiegerner gesundheitlicher Beeinträchtigungen entstehen, sofern diese nicht auf vorsätzliches oder grob fahrlässiges Verhalten des Dienstleisters zurückzuführen sind.</p>
-            <p><strong>§4 Zahlungsbedingungen</strong><br/>Die Vergütung der vereinbarten Leistung erfolgt auf Grundlage einer vom Dienstleister ausgestellten elektronischen Rechnung, die dem Vertragspartner per E-Mail mit einem Zahlungslink übermittelt wird. Barzahlungen sind ausgeschlossen. Der Rechnungsbetrag ist unmittelbar nach Erhalt der Rechnung, spätestens jedoch innerhalb der vom Dienstleister gesetzten Zahlungsfrist, vollständig über den bereitgestellten Zahlungslink zu begleichen. Erfolgt keine fristgerechte Zahlung, ist der Dienstleister berechtigt, die Leistung zu stornieren, den Termin anderweitig zu vergeben oder vom Vertrag zurückzutreten.</p>
-            <p class="mb-4">Ansprüche auf Ersatz entstandener Aufwendungen oder Schadensersatz bleiben vorbehalten. Bei Dienstleistungen wie Schwimmunterricht ist der Eintrittspreis für die jeweilige Schwimm- oder Betriebsstätte nicht im Honorar enthalten und vom Teilnehmenden bzw. Vertragspartner zusätzlich direkt an den Betreiber der Einrichtung zu entrichten. Mit der Annahme dieser Bedingungen stimmt der Vertragspartner der elektronischen Rechnungsstellung und Übermittlung per E-Mail zu.</p>
-            <p><strong>§5 Stornierung und Rücktritt</strong><br/>Absagen oder Terminänderungen von Unterrichtseinheiten sind spätestens 24 Stunden vor Beginn der gebuchten Leistung beim Dienstleister mitzuteilen und innerhalb dieser Frist kostenfrei möglich. Für andere Dienstleistungen, insbesondere Begleit- und Betreuungstätigkeiten im Rahmen von Schulschwimmen, Freizeitgruppen oder vergleichbaren Einsätzen, gilt eine Frist von 48 Stunden vor dem vereinbarten Beginn.</p>
-            <p class="mb-4">Bei späteren Absagen oder Nichterscheinen wird die volle vereinbarte Vergütung berechnet; ein Anspruch auf Erstattung besteht nicht. Liegt eine vom Vertragspartner oder Teilnehmenden nicht zu vertretende Verhinderung vor, insbesondere im Krankheitsfall, kann der Dienstleister nach eigenem Ermessen einen Ersatztermin anbieten. Ein Anspruch auf die Gewährung eines Ersatztermins oder auf Rückerstattung bereits gezahlter Entgelte besteht jedoch nicht.</p>
-            <p><strong>§6 Ausfall von Leistungen</strong><br/>Fallen der Unterricht oder andere vereinbarte Dienstleistungen, insbesondere Begleit- und Betreuungstätigkeiten im Rahmen von Schulschwimmen, Freizeitgruppen oder vergleichbaren Einsätzen, aufgrund von Krankheit oder sonstigen, vom Dienstleister zu vertretenden Umständen aus, wird ein Ersatztermin angeboten.</p>
-            <p class="mb-4">Ist eine Nachholung aus organisatorischen oder zeitlichen Gründen nicht möglich oder dem Vertragspartner unzumutbar, erfolgt eine Rückerstattung des bereits gezahlten Entgelts. Weitergehende Ansprüche, insbesondere auf Schadensersatz, sind ausgeschlossen.</p>
-            <p><strong>§7 Haftung</strong><br/>Die Teilnahme erfolgt auf eigene Gefahr. Der Dienstleister haftet nur für Schäden, die auf vorsätzliches oder grob fahrlässiges Verhalten zurückzuführen sind. Eine Haftung für einfache Fahrlässigkeit, insbesondere für Sachschäden oder den Verlust mitgebrachter Wertgegenstände, ist ausgeschlossen.</p>
-            <p class="mb-4">Dies gilt nicht für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit, die auf einer fahrlässigen Pflichtverletzung des Dienstleisters oder auf einer vorsätzlichen oder fahrlässigen Pflichtverletzung eines gesetzlichen Vertreters oder Erfüllungsgehilfen beruhen.</p>
-            <p><strong>§8 Schlussbestimmungen</strong><br/>Sollten einzelne Bestimmungen dieser AGB unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.</p>
+<div class="fixed inset-0 z-[70] hidden items-center justify-center p-4 pointer-events-none" id="impressumModal">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 modal-anim">
+        <div class="p-6 border-b flex justify-between items-center bg-gray-50 rounded-t-2xl">
+            <h2 class="text-xl font-bold text-blue-800">Impressum</h2>
+            <button onclick="closeModal('impressumModal')" class="p-2 hover:bg-gray-200 rounded-full transition-colors"><i data-lucide="x" class="w-6 h-6 text-gray-500"></i></button>
         </div>
-    </div>
-</div>
-
-<div class="modal fixed inset-0 z-[10000] flex items-center justify-center p-4 hidden" id="impressumModal">
-    <div class="modal-content relative w-full max-w-2xl mx-auto text-left">
-        <span class="close-button" onclick="closeModal('impressumModal')">×</span>
-        <h2 class="text-3xl font-bold mb-4 text-blue-700">Impressum</h2>
-        <div class="space-y-4 text-slate-700 max-h-[70vh] overflow-y-auto pr-2">
+        <div class="p-6 overflow-y-auto space-y-4 text-sm text-slate-700">
             <p><strong>Angaben gemäß § 5 TMG</strong><br/>Lukas Prehn<br/>c/o IP-Management #6336<br/>Ludwig-Erhard-Straße 18<br/>20459 Hamburg<br/>Deutschland</p>
             <p><strong>Kontakt</strong><br/>E-Mail: lpswim.info@gmail.com</p>
         </div>
     </div>
 </div>
 
-<div class="modal fixed inset-0 z-[10000] items-center justify-center p-4 hidden" id="confirmationPopup">
-    <div class="modal-content relative w-full max-w-lg mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-4 text-blue-700">Ihre Nachricht wurde erfolgreich übermittelt!</h2>
-        <div class="space-y-4 text-slate-700 text-base max-h-[70vh] overflow-y-auto pr-2">
-            <p class="flex items-center gap-3">
-                <i class="text-blue-500 w-6 h-6" data-lucide="map-pinned"></i>
-                <strong>Standorte:</strong><br/>Viernheim (Hallenbad Okt.–Apr. / Freibad Jun.–Aug.)
-            </p>
-            <p class="flex items-center gap-3">
-                <i class="text-blue-500 w-6 h-6" data-lucide="calendar-days"></i>
-                <strong>Termine:</strong><br/>Mtl. Termine via. Verteiler & WhatsApp-Buchung
-            </p>
-            <p class="flex items-center gap-3">
-                <i class="text-blue-500 w-6 h-6" data-lucide="mail-open"></i>
-                <strong>Zahlung:</strong><br/>Zahlungslink via Mail. Eintritt vor Ort exklusiv.
-            </p>
+<div class="fixed inset-0 z-[70] hidden items-center justify-center p-4 pointer-events-none" id="datenschutzModal">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 modal-anim">
+        <div class="p-6 border-b flex justify-between items-center bg-gray-50 rounded-t-2xl">
+            <h2 class="text-xl font-bold text-blue-800">Datenschutzerklärung</h2>
+            <button onclick="closeModal('datenschutzModal')" class="p-2 hover:bg-gray-200 rounded-full transition-colors"><i data-lucide="x" class="w-6 h-6 text-gray-500"></i></button>
         </div>
-        <button class="btn-primary mt-8 w-full justify-center" onclick="closeModal('confirmationPopup')">
-            <i class="w-5 h-5" data-lucide="check"></i> Verstanden
+        <div class="p-6 overflow-y-auto space-y-4 text-sm text-slate-700">
+            <h3 class="font-bold text-lg text-blue-700 mb-2">Stand 01. August 2025</h3>
+            <p><strong>1. Verantwortlicher</strong><br/>Lukas Prehn<br/>c/o IP-Management #6336<br/>Ludwig-Erhard-Straße 18<br/>20459 Hamburg, Deutschland<br/>lpswim.info@gmail.com</p>
+            <p><strong>2. Grundsätze der Datenverarbeitung</strong><br/>Der Schutz personenbezogener Daten hat höchste Priorität. Die Verarbeitung erfolgt ausschließlich gemäß der Datenschutz-Grundverordnung (DSGVO) und dem Bundesdatenschutzgesetz (BDSG). Daten werden nur erhoben, wenn dies gesetzlich zulässig ist oder eine ausdrückliche Einwilligung vorliegt.</p>
+            <p><strong>3. Hosting</strong><br/>Diese Website wird über GitHub Pages bereitgestellt. Beim Aufruf werden IP-Adresse, Datum/Uhrzeit etc. verarbeitet. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
+            <p><strong>4. Cookies & Analytics</strong><br/>Wir verwenden technisch notwendige Cookies. Google Analytics Cookies werden nur nach Ihrer expliziten Zustimmung im Cookie-Banner gesetzt.</p>
+            <p><strong>5. Kontaktformular</strong><br/>Die Daten des Kontaktformulars werden über Formspree Inc. (USA) verarbeitet. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
+            <p><strong>6. Ihre Rechte</strong><br/>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Widerspruch.</p>
+        </div>
+    </div>
+</div>
+
+<div class="fixed inset-0 z-[70] hidden items-center justify-center p-4 pointer-events-none" id="agbModal">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 modal-anim">
+        <div class="p-6 border-b flex justify-between items-center bg-gray-50 rounded-t-2xl">
+            <h2 class="text-xl font-bold text-blue-800">Allgemeine Geschäftsbedingungen</h2>
+            <button onclick="closeModal('agbModal')" class="p-2 hover:bg-gray-200 rounded-full transition-colors"><i data-lucide="x" class="w-6 h-6 text-gray-500"></i></button>
+        </div>
+        <div class="p-6 overflow-y-auto space-y-4 text-sm text-slate-700">
+            <h3 class="font-bold text-lg text-blue-700 mb-2">Stand 01. August 2025</h3>
+            <p><strong>§1 Geltungsbereich</strong><br/>Diese AGB gelten für alle Verträge zwischen LP-SWIM und den Teilnehmenden über Schwimmunterricht und Betreuung.</p>
+            <p><strong>§2 Teilnahmevoraussetzungen</strong><br/>Die Teilnahme setzt einen gesundheitlich unbedenklichen Zustand voraus. Die Teilnahme erfolgt auf eigene Gefahr.</p>
+            <p><strong>§3 Stornierung und Rücktritt</strong><br/>Absagen für Unterricht müssen 24 Stunden vorher, für Schulbegleitung 48 Stunden vorher erfolgen. Bei verspäteter Absage wird das volle Honorar fällig.</p>
+            <p><strong>§4 Zahlungsbedingungen</strong><br/>Zahlung erfolgt per elektronischer Rechnung/Zahlungslink. Eintrittspreise sind nicht enthalten.</p>
+            <p><strong>§5 Ausfall von Leistungen</strong><br/>Bei Ausfall durch den Dienstleister (Krankheit) wird ein Ersatztermin angeboten oder das Geld erstattet.</p>
+            <p><strong>§6 Haftung</strong><br/>Haftung nur für Vorsatz und grobe Fahrlässigkeit. Keine Haftung für einfache Fahrlässigkeit bei Sachschäden.</p>
+        </div>
+    </div>
+</div>
+
+<div class="fixed inset-0 z-[70] hidden items-center justify-center p-4 pointer-events-none" id="preisModal">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 modal-anim">
+        <div class="p-4 border-b flex justify-between items-center">
+            <h2 class="text-lg font-bold text-blue-800">Preisübersicht</h2>
+            <button onclick="closeModal('preisModal')" class="p-2 hover:bg-gray-200 rounded-full transition-colors"><i data-lucide="x" class="w-6 h-6 text-gray-500"></i></button>
+        </div>
+        <div class="p-2 flex-grow overflow-auto bg-gray-50 flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/lp-swim/lp-swim-info/refs/heads/main/Preisliste%2001.11.2025.png" alt="Preisliste" class="max-w-full h-auto rounded-lg shadow-sm"/>
+        </div>
+    </div>
+</div>
+
+<div class="fixed inset-0 z-[80] hidden items-center justify-center p-4 pointer-events-none" id="confirmationPopup">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg p-8 pointer-events-auto transform scale-95 opacity-0 modal-anim text-center">
+        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="w-8 h-8 text-green-600" data-lucide="check"></i>
+        </div>
+        <h2 class="text-2xl font-bold mb-4 text-blue-700">Nachricht gesendet!</h2>
+        <div class="space-y-4 text-slate-700 text-base text-left bg-blue-50 p-4 rounded-xl mb-6">
+            <p class="flex items-center gap-3"><i class="text-blue-500 w-5 h-5" data-lucide="map-pinned"></i> <strong>Standorte:</strong> Viernheim (Hallenbad / Freibad)</p>
+            <p class="flex items-center gap-3"><i class="text-blue-500 w-5 h-5" data-lucide="calendar-days"></i> <strong>Termine:</strong> Mtl. Termine via Verteiler</p>
+            <p class="flex items-center gap-3"><i class="text-blue-500 w-5 h-5" data-lucide="mail-open"></i> <strong>Zahlung:</strong> Link per Mail. Eintritt extra.</p>
+        </div>
+        <button class="w-full py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors" onclick="closeModal('confirmationPopup')">
+            Verstanden
         </button>
     </div>
 </div>
 
-<div class="fixed inset-0 z-[100000] bg-gray-900 bg-opacity-60 backdrop-blur-md flex items-center justify-center p-4 hidden animate-fade-in" id="lp-consent-overlay">
-    <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 w-full max-w-xl animate-fade-in-up" id="lp-consent">
-        <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <i class="w-6 h-6 text-blue-500" data-lucide="cookie"></i>
+<div id="lp-consent-overlay" class="fixed inset-0 z-[90] bg-gray-900/60 backdrop-blur-md hidden items-end sm:items-center justify-center p-4">
+    <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl p-6 sm:p-8 animate-fade-in-up">
+        <div class="flex items-start gap-4 mb-4">
+            <div class="p-3 bg-blue-100 text-blue-600 rounded-xl shrink-0"><i data-lucide="cookie" class="w-6 h-6"></i></div>
+            <div>
+                <h3 class="font-bold text-xl text-gray-900">Datenschutz & Einwilligung</h3>
+                <p class="text-slate-600 mt-2 text-sm leading-relaxed">
+                    Wir nutzen <strong>Google Analytics</strong> (anonymisiert), um unser Angebot zu verbessern. Keine personalisierte Werbung.
+                    <a href="#" onclick="openModal('datenschutzModal'); return false;" class="text-blue-600 underline">Mehr Infos</a>.
+                </p>
             </div>
-            <h3 class="text-2xl font-bold text-blue-700">Datenschutz & Einwilligung</h3>
         </div>
-        <p class="text-slate-700 mb-4">
-            Wir nutzen <strong>Google Analytics</strong>, um anonyme Nutzungsstatistiken zu erstellen und unser Angebot zu verbessern.
-            Google kann dabei Daten verarbeiten. Mehr Infos findest du bei <a class="text-blue-500 hover:text-blue-700 underline" href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">Google – Partner‑Websites</a> und in der <a class="text-blue-500 hover:text-blue-700 underline" href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google‑Datenschutzerklärung</a>.
-        </p>
-        <ul class="list-none p-0 mb-6 space-y-2 text-slate-700">
-            <li class="flex items-start gap-3">
-                <i class="w-5 h-5 text-green-500 flex-shrink-0 mt-1" data-lucide="check-circle"></i>
-                <span>Keine personalisierte Werbung; ausschließlich Reichweitenmessung.</span>
-            </li>
-            <li class="flex items-start gap-3">
-                <i class="w-5 h-5 text-green-500 flex-shrink-0 mt-1" data-lucide="check-circle"></i>
-                <span>Du kannst <em>Zustimmen</em> oder <em>Ablehnen</em> – die Seite wird danach freigegeben.</span>
-            </li>
-        </ul>
-        <div class="flex flex-col sm:flex-row gap-3 justify-end">
-            <button class="btn-secondary w-full sm:w-auto hover:bg-red-50 hover:border-red-200 hover:text-red-600" id="lp-decline">
-                <i class="w-5 h-5" data-lucide="x"></i> Ablehnen
-            </button>
-            <button class="btn-primary w-full sm:w-auto" id="lp-accept">
-                <i class="w-5 h-5" data-lucide="check"></i> Zustimmen
+        <div class="flex flex-col sm:flex-row gap-3 justify-end mt-6">
+            <button id="lp-decline" class="px-5 py-2.5 text-sm font-medium text-gray-600 hover:bg-red-50 hover:text-red-600 border border-gray-200 rounded-xl transition-colors w-full sm:w-auto">Ablehnen</button>
+            <button id="lp-accept" class="px-6 py-2.5 text-sm font-medium bg-blue-600 text-white hover:bg-blue-700 rounded-xl shadow-lg transition-colors w-full sm:w-auto flex justify-center items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4"></i> Zustimmen
             </button>
         </div>
     </div>
 </div>
 
 <script>
-   lucide.createIcons();
+    // 1. Initialisierung
+    lucide.createIcons();
 
-   // Intersection Observer for section animations
-   const sections = document.querySelectorAll('.section-card, #kontakt');
-   const observer = new IntersectionObserver(entries => {
-       entries.forEach(entry => {
-           if (entry.isIntersecting) {
-               entry.target.classList.add('animate-in');
-               observer.unobserve(entry.target);
-           }
-       });
-   }, {
-       threshold: 0.15, 
-       rootMargin: '0px 0px -50px 0px'
-   });
-   sections.forEach(section => {
-       observer.observe(section);
-   });
+    // 2. Modal-Logik
+    function openModal(id) {
+        const modal = document.getElementById(id);
+        const overlay = document.getElementById('modal-overlay');
+        const content = modal.querySelector('.modal-anim');
+        if (modal) {
+            overlay.classList.remove('hidden');
+            setTimeout(() => overlay.classList.remove('opacity-0'), 10);
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            setTimeout(() => {
+                content.classList.remove('scale-95', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 10);
+            
+            document.body.classList.add('overflow-hidden');
+        }
+    }
 
-   // Modal functionality
-   function openModal(id) {
-       const modal = document.getElementById(id);
-       if (modal) {
-           modal.classList.remove('hidden');
-           modal.classList.add('flex');
-           document.body.classList.add('overflow-hidden');
-       }
-   }
+    function closeModal(id) {
+        const modal = document.getElementById(id);
+        const overlay = document.getElementById('modal-overlay');
+        const content = modal.querySelector('.modal-anim');
+        if (modal) {
+            content.classList.remove('scale-100', 'opacity-100');
+            content.classList.add('scale-95', 'opacity-0');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                
+                // Nur wenn keine anderen Modals offen sind, Overlay schließen
+                const anyOpen = document.querySelectorAll('[id$="Modal"]:not(.hidden), #confirmationPopup:not(.hidden)').length > 0;
+                if(!anyOpen) {
+                    overlay.classList.add('opacity-0');
+                    setTimeout(() => {
+                        overlay.classList.add('hidden');
+                        document.body.classList.remove('overflow-hidden');
+                    }, 300);
+                }
+            }, 300);
+        }
+    }
 
-   function closeModal(id) {
-       const modal = document.getElementById(id);
-       if (modal) {
-           modal.classList.add('hidden');
-           modal.classList.remove('flex');
-           document.body.classList.remove('overflow-hidden');
-       }
-   }
+    function closeAllModals() {
+        document.querySelectorAll('[id$="Modal"].flex, #confirmationPopup.flex').forEach(m => closeModal(m.id));
+    }
 
-   // Contact Form Submission (using Formspree)
-   document.addEventListener('DOMContentLoaded', () => {
-       const form = document.querySelector('#kontakt form');
-       const formMessage = document.getElementById('form-message');
-       const confirmationPopup = document.getElementById('confirmationPopup');
+    // 3. Google Analytics & Cookie Banner Logik
+    (function() {
+        var KEY = "lp_cookie_consent_v1";
+        var _ga_loaded = false;
+        
+        function loadGAScriptAndInit() {
+            if (_ga_loaded) return;
+            _ga_loaded = true;
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = "https://www.googletagmanager.com/gtag/js?id=G-T5H2XMBKFL";
+            s.onload = function() {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);} window.gtag = gtag;
+                gtag('js', new Date());
+                
+                // Check stored consent
+                if (localStorage.getItem(KEY) === 'accepted') {
+                    gtag('config', 'G-T5H2XMBKFL', { 'anonymize_ip': true });
+                    gtag('consent', 'update', {
+                        ad_user_data: 'granted',
+                        ad_personalization: 'granted',
+                        ad_storage: 'granted',
+                        analytics_storage: 'granted'
+                    });
+                } else {
+                    gtag('consent', 'default', {
+                        'ad_storage': 'denied',
+                        'analytics_storage': 'denied'
+                    });
+                }
+            };
+            document.head.appendChild(s);
+        }
 
-       if (form) {
-           form.addEventListener('submit', async function(e) {
-               e.preventDefault();
-               const formData = new FormData(form);
-               const action = form.getAttribute('action');
+        var overlay = document.getElementById('lp-consent-overlay');
+        
+        function openBanner() {
+            overlay.classList.remove('hidden');
+            overlay.classList.add('flex');
+            document.body.classList.add('overflow-hidden');
+        }
 
-               // Button Status ändern
-               const btn = form.querySelector('button[type="submit"]');
-               const originalBtnContent = btn.innerHTML;
-               btn.innerHTML = '<span>Sende...</span>';
-               btn.disabled = true;
+        function closeBanner() {
+            overlay.classList.add('hidden');
+            overlay.classList.remove('flex');
+            document.body.classList.remove('overflow-hidden');
+        }
 
-               try {
-                   const response = await fetch(action, {
-                       method: 'POST',
-                       headers: { 'Accept': 'application/json' },
-                       body: formData
-                   });
+        if (!localStorage.getItem(KEY)) {
+            openBanner(); // Show if no choice made
+        } else if (localStorage.getItem(KEY) === 'accepted') {
+            loadGAScriptAndInit(); // Load immediately if accepted previously
+        }
 
-                   if (response.ok) {
-                       form.reset();
-                       btn.innerHTML = originalBtnContent;
-                       btn.disabled = false;
-                       
-                       // Success Message inline
-                       formMessage.innerHTML = '<div class="flex items-center justify-center gap-2 text-green-700 bg-green-50 border border-green-200 p-3 rounded-lg"><i data-lucide="check-circle"></i> Nachricht gesendet!</div>';
-                       formMessage.classList.remove('hidden');
-                       lucide.createIcons();
-                       
-                       // Popup öffnen
-                       setTimeout(() => openModal('confirmationPopup'), 300);
-                   } else {
-                       throw new Error('Formularfehler');
-                   }
-               } catch (error) {
-                   btn.innerHTML = originalBtnContent;
-                   btn.disabled = false;
-                   formMessage.innerHTML = '<div class="flex items-center justify-center gap-2 text-red-700 bg-red-50 border border-red-200 p-3 rounded-lg"><i data-lucide="alert-circle"></i> Fehler beim Senden.</div>';
-                   formMessage.classList.remove('hidden');
-                   lucide.createIcons();
-               }
-           });
-       }
-   });
+        document.getElementById('lp-accept').onclick = () => {
+            localStorage.setItem(KEY, 'accepted');
+            loadGAScriptAndInit();
+            closeBanner();
+        };
 
-   // Placeholder typing animation for message field
-   document.addEventListener('DOMContentLoaded', () => {
-       const msgField = document.getElementById("message");
-       const placeholderText = "Ich würde gerne meine Technik verbessern. Wie läuft die Buchung ab?"; 
-       let typed = false;
+        document.getElementById('lp-decline').onclick = () => {
+            localStorage.setItem(KEY, 'declined');
+            closeBanner();
+            // Optional: Load GA anyway but with denied consent (for basic hit count without cookies)
+            // loadGAScriptAndInit(); 
+        };
+    })();
 
-       const checkVisibility = () => {
-           const fieldTop = msgField.getBoundingClientRect().top;
-           const screenHeight = window.innerHeight;
+    // 4. Form handling (Formspree AJAX)
+    const form = document.getElementById('contactForm');
+    const formMessage = document.getElementById('form-message');
+    
+    if (form) {
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = form.querySelector('button[type="submit"]');
+            const originalContent = btn.innerHTML;
+            
+            btn.disabled = true;
+            btn.innerHTML = '<span class="animate-pulse">Sende...</span>';
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+                
+                if (response.ok) {
+                    form.reset();
+                    btn.innerHTML = originalContent;
+                    btn.disabled = false;
+                    openModal('confirmationPopup');
+                    
+                    formMessage.innerHTML = '<div class="flex items-center justify-center gap-2 text-green-700 bg-green-50 border border-green-200 p-3 rounded-lg"><i data-lucide="check-circle" class="w-5 h-5"></i> Nachricht gesendet!</div>';
+                    formMessage.classList.remove('hidden');
+                    lucide.createIcons();
+                } else {
+                    throw new Error('Form error');
+                }
+            } catch (err) {
+                btn.innerHTML = originalContent;
+                btn.disabled = false;
+                formMessage.innerHTML = '<div class="flex items-center justify-center gap-2 text-red-700 bg-red-50 border border-red-200 p-3 rounded-lg"><i data-lucide="alert-circle" class="w-5 h-5"></i> Fehler beim Senden.</div>';
+                formMessage.classList.remove('hidden');
+                lucide.createIcons();
+            }
+        });
+    }
 
-           if (!typed && fieldTop < screenHeight - 100) {
-               let i = 0;
-               typed = true;
-               msgField.placeholder = ""; 
-               const typeInterval = setInterval(() => {
-                   msgField.placeholder += placeholderText.charAt(i);
-                   i++;
-                   if (i >= placeholderText.length) {
-                       clearInterval(typeInterval);
-                   }
-               }, 50); 
-               window.removeEventListener('scroll', checkVisibility);
-           }
-       };
+    // 5. Typewriter Effekt
+    document.addEventListener('DOMContentLoaded', () => {
+        const msgField = document.getElementById("message");
+        const placeholderText = "Ich würde gerne meine Technik verbessern. Wie läuft die Buchung ab?";
+        let typed = false;
 
-       if (msgField) {
-           window.addEventListener('scroll', checkVisibility);
-           checkVisibility(); 
-       }
-   });
+        const checkVisibility = () => {
+            if(!msgField) return;
+            const fieldTop = msgField.getBoundingClientRect().top;
+            const screenHeight = window.innerHeight;
 
-   // Cookie Consent Logic (unchanged)
-   (function() {
-       var KEY = "lp_cookie_consent_v1";
-       var _ga_loaded = false;
-       function loadGAScriptAndInit() {
-           if (_ga_loaded) return;
-           _ga_loaded = true;
-           var s = document.createElement('script');
-           s.async = true;
-           s.src = "https://www.googletagmanager.com/gtag/js?id=G-T5H2XMBKFL";
-           s.onload = function() {
-               window.dataLayer = window.dataLayer || [];
-               function gtag(){dataLayer.push(arguments);} window.gtag = gtag;
-               gtag('js', new Date());
-               if (localStorage.getItem(KEY) === 'accepted') {
-                   gtag('config', 'G-T5H2XMBKFL', {
-                       'stream_id': '12034434357',
-                       'anonymize_ip': true
-                   });
-               } else {
-                   gtag('consent', 'default', {
-                       'ad_storage': 'denied',
-                       'analytics_storage': 'denied'
-                   });
-               }
-           };
-           document.head.appendChild(s);
-       }
+            if (!typed && fieldTop < screenHeight - 100) {
+                let i = 0;
+                typed = true;
+                msgField.placeholder = ""; 
+                const typeInterval = setInterval(() => {
+                    msgField.placeholder += placeholderText.charAt(i);
+                    i++;
+                    if (i >= placeholderText.length) clearInterval(typeInterval);
+                }, 40);
+                window.removeEventListener('scroll', checkVisibility);
+            }
+        };
+        
+        window.addEventListener('scroll', checkVisibility);
+        checkVisibility();
+    });
 
-       var overlay = document.getElementById('lp-consent-overlay');
-       var acceptBtn = document.getElementById('lp-accept');
-       var declineBtn = document.getElementById('lp-decline');
-
-       function openBanner() {
-           document.documentElement.classList.add('lp-consent-open');
-           overlay.classList.remove('hidden');
-           overlay.classList.add('flex');
-           document.body.classList.add('overflow-hidden');
-           setTimeout(function(){ acceptBtn && acceptBtn.focus(); }, 60);
-       }
-
-       function closeBanner() {
-           overlay.classList.add('hidden');
-           overlay.classList.remove('flex');
-           document.documentElement.classList.remove('lp-consent-open');
-           document.body.classList.remove('overflow-hidden');
-       }
-
-       function grantConsent() {
-           if (typeof gtag === 'function') {
-               gtag('consent', 'update', {
-                   ad_user_data: 'granted',
-                   ad_personalization: 'granted',
-                   ad_storage: 'granted',
-                   analytics_storage: 'granted'
-               });
-               gtag('event', 'page_view', {
-                   page_location: location.href,
-                   page_path: location.pathname + location.search + location.hash,
-                   page_title: document.title
-               });
-           }
-       }
-
-       function denyConsent() {
-           if (typeof gtag === 'function') {
-               gtag('consent', 'update', {
-                   ad_user_data: 'denied',
-                   ad_personalization: 'denied',
-                   ad_storage: 'denied',
-                   analytics_storage: 'denied'
-               });
-           }
-       }
-
-       if (acceptBtn) acceptBtn.addEventListener('click', function() {
-           localStorage.setItem(KEY, 'accepted');
-           loadGAScriptAndInit();
-           setTimeout(function(){ grantConsent(); }, 50);
-           closeBanner();
-       });
-       if (declineBtn) declineBtn.addEventListener('click', function() {
-           localStorage.setItem(KEY, 'declined');
-           loadGAScriptAndInit();
-           setTimeout(function(){ denyConsent(); }, 50);
-           closeBanner();
-       });
-
-       document.addEventListener('keydown', function(e) {
-           if (!overlay.classList.contains('hidden') && e.key === 'Escape') {
-               localStorage.setItem(KEY, 'declined');
-               denyConsent();
-               closeBanner();
-           }
-       });
-
-       try {
-           if (!localStorage.getItem(KEY)) {
-               openBanner();
-           } else if (localStorage.getItem(KEY) === 'accepted') {
-               loadGAScriptAndInit();
-               setTimeout(function(){ grantConsent(); }, 50);
-           } else {
-               loadGAScriptAndInit();
-               setTimeout(function(){ denyConsent(); }, 50);
-           }
-       } catch (e) {
-           openBanner(); 
-       }
-   })();
-   
-   // Internal Smooth Scroll Fallback
-   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-     anchor.addEventListener('click', function (e) {
-       const targetId = this.getAttribute('href').substring(1);
-       const target = document.getElementById(targetId);
-       if (target) {
-         e.preventDefault();
-         target.scrollIntoView({ behavior: 'smooth' });
-       }
-     });
-   });
+    // 6. Smooth Scroll Fallback
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href').substring(1);
+            const target = document.getElementById(targetId);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
 </script>
 </body>
 </html>
