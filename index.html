@@ -405,32 +405,48 @@
     </div>
 </div>
 
-<div id="lp-consent-overlay" class="fixed inset-0 z-[90] bg-gray-900/60 backdrop-blur-md hidden items-end sm:items-center justify-center p-4">
-    <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl p-6 sm:p-8 animate-fade-in-up">
-        <div class="flex items-start gap-4 mb-4">
-            <div class="p-3 bg-blue-100 text-blue-600 rounded-xl shrink-0"><i data-lucide="cookie" class="w-6 h-6"></i></div>
-            <div>
-                <h3 class="font-bold text-xl text-gray-900">Datenschutz & Einwilligung</h3>
-                <p class="text-slate-600 mt-2 text-sm leading-relaxed">
-                    Wir nutzen <strong>Google Analytics</strong> (anonymisiert), um unser Angebot zu verbessern. Keine personalisierte Werbung.
-                    <a href="#" onclick="openModal('datenschutzModal'); return false;" class="text-blue-600 underline">Mehr Infos</a>.
-                </p>
+<div id="lp-consent-overlay" class="fixed inset-0 z-[100] bg-slate-900/40 backdrop-blur-sm hidden items-end sm:items-center justify-center p-4 transition-opacity duration-300 opacity-0">
+    <div class="bg-white/95 backdrop-blur-xl w-full max-w-lg rounded-3xl shadow-2xl border border-white/50 p-6 sm:p-8 transform transition-all duration-300 scale-95 translate-y-4">
+        
+        <div class="flex items-start gap-5">
+            <div class="p-3.5 bg-blue-50 text-blue-600 rounded-2xl shrink-0 shadow-sm border border-blue-100">
+                <i data-lucide="shield-check" class="w-7 h-7"></i>
+            </div>
+            <div class="space-y-3">
+                <h3 class="font-bold text-xl text-blue-900">Datenschutz & Transparenz</h3>
+                <div class="text-slate-600 text-sm leading-relaxed space-y-2">
+                    <p>
+                        Wir nutzen <strong>Google Analytics</strong> ausschließlich zur technischen Analyse, um Fehler zu beheben und die Performance der Seite zu verbessern.
+                    </p>
+                    <p class="text-xs text-slate-500 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                        <i class="inline-block w-3 h-3 mr-1 align-middle" data-lucide="info"></i>
+                        Ihre IP-Adresse wird bei uns anonymisiert. Google verarbeitet Daten jedoch gemäß ihrer eigenen 
+                        <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline hover:text-blue-800 decoration-blue-300 underline-offset-2">Datenschutzerklärung</a>.
+                    </p>
+                    <p>
+                        Weitere Details finden Sie in unserer <button onclick="openModal('datenschutzModal')" class="text-blue-600 font-medium hover:underline">Datenschutzerklärung</button>.
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 justify-end mt-6">
-            <button id="lp-decline" class="px-5 py-2.5 text-sm font-medium text-gray-600 hover:bg-red-50 hover:text-red-600 border border-gray-200 rounded-xl transition-colors w-full sm:w-auto">Ablehnen</button>
-            <button id="lp-accept" class="px-6 py-2.5 text-sm font-medium bg-blue-600 text-white hover:bg-blue-700 rounded-xl shadow-lg transition-colors w-full sm:w-auto flex justify-center items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4"></i> Zustimmen
+
+        <div class="flex flex-col-reverse sm:flex-row gap-3 mt-8 pt-6 border-t border-slate-100">
+            <button id="lp-decline" class="flex-1 px-5 py-3 text-sm font-semibold text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-xl transition-all border border-transparent hover:border-slate-200">
+                Nur Essenzielle nutzen
+            </button>
+            <button id="lp-accept" class="flex-1 px-5 py-3 text-sm font-bold bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all flex justify-center items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4"></i>
+                Einverstanden
             </button>
         </div>
     </div>
 </div>
 
 <script>
-    // 1. Initialisierung
+    // 1. Initialisierung Icons
     lucide.createIcons();
 
-    // 2. Modal-Logik
+    // 2. Modal-Logik (Standard)
     function openModal(id) {
         const modal = document.getElementById(id);
         const overlay = document.getElementById('modal-overlay');
@@ -463,7 +479,6 @@
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');
                 
-                // Nur wenn keine anderen Modals offen sind, Overlay schließen
                 const anyOpen = document.querySelectorAll('[id$="Modal"]:not(.hidden), #confirmationPopup:not(.hidden)').length > 0;
                 if(!anyOpen) {
                     overlay.classList.add('opacity-0');
@@ -480,76 +495,91 @@
         document.querySelectorAll('[id$="Modal"].flex, #confirmationPopup.flex').forEach(m => closeModal(m.id));
     }
 
-    // 3. Google Analytics & Cookie Banner Logik
+    // 3. Google Analytics Integration (MIT DEINER ID)
     (function() {
-        var KEY = "lp_cookie_consent_v1";
-        var _ga_loaded = false;
+        // Hier sind deine Daten hinterlegt
+        const GA_MEASUREMENT_ID = "G-T5H2XMBKFL"; 
+        // Stream ID 12034434357 ist mit dieser Mess-ID verknüpft
         
+        const STORAGE_KEY = "lp_cookie_consent_v3"; // Versionierung für sauberen Neustart
+        
+        const overlay = document.getElementById('lp-consent-overlay');
+        const card = overlay.querySelector('div');
+
+        // Funktion zum Laden von GA4
         function loadGAScriptAndInit() {
-            if (_ga_loaded) return;
-            _ga_loaded = true;
-            var s = document.createElement('script');
-            s.async = true;
-            s.src = "https://www.googletagmanager.com/gtag/js?id=G-T5H2XMBKFL";
-            s.onload = function() {
+            // Script Tag dynamisch erstellen
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_MEASUREMENT_ID;
+            
+            script.onload = function() {
                 window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);} window.gtag = gtag;
+                function gtag(){dataLayer.push(arguments);}
+                window.gtag = gtag;
+                
                 gtag('js', new Date());
                 
-                // Check stored consent
-                if (localStorage.getItem(KEY) === 'accepted') {
-                    gtag('config', 'G-T5H2XMBKFL', { 'anonymize_ip': true });
-                    gtag('consent', 'update', {
-                        ad_user_data: 'granted',
-                        ad_personalization: 'granted',
-                        ad_storage: 'granted',
-                        analytics_storage: 'granted'
-                    });
-                } else {
-                    gtag('consent', 'default', {
-                        'ad_storage': 'denied',
-                        'analytics_storage': 'denied'
-                    });
-                }
+                // Konfiguration mit Anonymisierung und technischem Fokus
+                gtag('config', GA_MEASUREMENT_ID, {
+                    'anonymize_ip': true,            // Wichtig für DSGVO
+                    'cookie_flags': 'SameSite=None;Secure'
+                });
             };
-            document.head.appendChild(s);
+            
+            document.head.appendChild(script);
         }
 
-        var overlay = document.getElementById('lp-consent-overlay');
-        
-        function openBanner() {
+        function showBanner() {
             overlay.classList.remove('hidden');
             overlay.classList.add('flex');
+            // Animation starten
+            setTimeout(() => {
+                overlay.classList.remove('opacity-0');
+                card.classList.remove('scale-95', 'translate-y-4');
+                card.classList.add('scale-100', 'translate-y-0');
+            }, 50);
             document.body.classList.add('overflow-hidden');
         }
 
-        function closeBanner() {
-            overlay.classList.add('hidden');
-            overlay.classList.remove('flex');
-            document.body.classList.remove('overflow-hidden');
+        function hideBanner() {
+            // Animation beenden
+            overlay.classList.add('opacity-0');
+            card.classList.add('scale-95', 'translate-y-4');
+            card.classList.remove('scale-100', 'translate-y-0');
+            
+            setTimeout(() => {
+                overlay.classList.add('hidden');
+                overlay.classList.remove('flex');
+                document.body.classList.remove('overflow-hidden');
+            }, 300);
         }
 
-        if (!localStorage.getItem(KEY)) {
-            openBanner(); // Show if no choice made
-        } else if (localStorage.getItem(KEY) === 'accepted') {
-            loadGAScriptAndInit(); // Load immediately if accepted previously
-        }
-
-        document.getElementById('lp-accept').onclick = () => {
-            localStorage.setItem(KEY, 'accepted');
+        // Check: Hat der Nutzer schon entschieden?
+        const consent = localStorage.getItem(STORAGE_KEY);
+        
+        if (!consent) {
+            // Wenn nein: Banner anzeigen (kurze Verzögerung für nice UX)
+            setTimeout(showBanner, 1000);
+        } else if (consent === 'accepted') {
+            // Wenn ja und akzeptiert: GA sofort laden
             loadGAScriptAndInit();
-            closeBanner();
+        }
+
+        // Button Event Listener
+        document.getElementById('lp-accept').onclick = () => {
+            localStorage.setItem(STORAGE_KEY, 'accepted');
+            loadGAScriptAndInit();
+            hideBanner();
         };
 
         document.getElementById('lp-decline').onclick = () => {
-            localStorage.setItem(KEY, 'declined');
-            closeBanner();
-            // Optional: Load GA anyway but with denied consent (for basic hit count without cookies)
-            // loadGAScriptAndInit(); 
+            localStorage.setItem(STORAGE_KEY, 'declined');
+            hideBanner();
         };
     })();
 
-    // 4. Form handling (Formspree AJAX)
+    // 4. Form handling (Kontaktformular)
     const form = document.getElementById('contactForm');
     const formMessage = document.getElementById('form-message');
     
@@ -633,6 +663,7 @@
 </script>
 </body>
 </html>
+
 
 
 
