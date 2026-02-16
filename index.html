@@ -331,11 +331,60 @@
     <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 modal-anim">
         <div class="p-6 border-b flex justify-between items-center bg-gray-50 rounded-t-2xl">
             <h2 class="text-xl font-bold text-blue-800">Impressum</h2>
-            <button onclick="closeModal('impressumModal')" class="p-2 hover:bg-gray-200 rounded-full transition-colors"><i data-lucide="x" class="w-6 h-6 text-gray-500"></i></button>
+            <button onclick="closeModal('impressumModal')" class="p-2 hover:bg-gray-200 rounded-full transition-colors">
+                <i data-lucide="x" class="w-6 h-6 text-gray-500"></i>
+            </button>
         </div>
-        <div class="p-6 overflow-y-auto space-y-4 text-sm text-slate-700">
-            <p><strong>Angaben gemäß § 5 TMG</strong><br/>Lukas Prehn<br/>c/o IP-Management #6336<br/>Ludwig-Erhard-Straße 18<br/>20459 Hamburg<br/>Deutschland</p>
-            <p><strong>Kontakt</strong><br/>E-Mail: lpswim.info@gmail.com</p>
+
+        <div class="p-6 overflow-y-auto space-y-6 text-sm text-slate-700 leading-relaxed">
+            
+            <section>
+                <h4 class="font-bold text-lg text-blue-700 mb-2">Angaben gemäß § 5 TMG</h4>
+                <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100 flex items-start gap-3">
+                    <div class="bg-white p-2 rounded-full text-blue-600 shadow-sm">
+                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-blue-900 mb-1">Anschrift</p>
+                        <p>
+                            Lukas Prehn<br>
+                            c/o IP-Management #6336<br>
+                            Ludwig-Erhard-Straße 18<br>
+                            20459 Hamburg<br>
+                            Deutschland
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h4 class="font-bold text-lg text-blue-700 mb-2">Kontakt</h4>
+                <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100 flex items-start gap-3">
+                     <div class="bg-white p-2 rounded-full text-blue-600 shadow-sm">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-blue-900 mb-1">E-Mail</p>
+                        <a href="mailto:lpswim.info@gmail.com" class="text-blue-600 hover:underline decoration-blue-200 flex items-center gap-1">
+                            lpswim.info@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h4 class="font-bold text-lg text-blue-700 mb-2">EU-Streitschlichtung</h4>
+                <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
+                    <p class="mb-2">
+                        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
+                        <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">https://ec.europa.eu/consumers/odr/</a>.
+                    </p>
+                    <p class="text-xs text-slate-500">
+                        Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+                    </p>
+                </div>
+            </section>
+
         </div>
     </div>
 </div>
@@ -821,6 +870,7 @@
 </script>
 </body>
 </html>
+
 
 
 
