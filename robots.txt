@@ -1,9 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /admin/
-Disallow: /private/
-Disallow: /tmp/
-Disallow: /cgi-bin/
-
-Sitemap: https://lp-swim.github.io/lp-swim-info/sitemap.xml
-Sitemap: https://lp-swim.github.io/lp-swim-info/sitemap_index.xml
