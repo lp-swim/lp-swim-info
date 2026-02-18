@@ -47,6 +47,7 @@
                         'float': 'float 8s ease-in-out infinite',
                         'blob': 'blob 10s infinite alternate',
                         'fade-in': 'fadeIn 1s ease-out forwards',
+                        'hop': 'hop 3s ease-in-out infinite', /* NEUE ANIMATION */
                     },
                     keyframes: {
                         marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(-50%)' } },
@@ -55,7 +56,11 @@
                             '0%': { transform: 'translate(0, 0) scale(1)' },
                             '100%': { transform: 'translate(20px, -20px) scale(1.1)' }
                         },
-                        fadeIn: { from: { opacity: 0, transform: 'translateY(10px)' }, to: { opacity: 1, transform: 'translateY(0)' } }
+                        fadeIn: { from: { opacity: 0, transform: 'translateY(10px)' }, to: { opacity: 1, transform: 'translateY(0)' } },
+                        hop: { /* NEUES KEYFRAME FÜR SEEPFERDCHEN */
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-8px)' } 
+                        }
                     }
                 }
             }
@@ -119,8 +124,8 @@
                     Feb. Termine ausgebucht
                 </div>
 
-                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-brand-900 mb-6 leading-tight tracking-tight text-balance">
-                    Weil Sicherheit <br>
+                <h1 class="text-3xl sm:text-5xl lg:text-7xl font-bold text-brand-900 mb-6 leading-tight tracking-tight text-balance">
+                    Weil Sicherheit <br class="hidden md:block">
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-400">im Wasser zählt</span>
                 </h1>
                 
@@ -250,7 +255,7 @@
                 <span>Über mich</span>
             </div>
             <h2 class="text-3xl md:text-4xl font-bold text-brand-900 leading-tight">
-                Schön, dass <br>du da bist
+                Schön, dass <br class="hidden md:block">du da bist
             </h2>
             <div class="h-1 w-12 bg-brand-200 mt-6 rounded-full hidden md:block"></div>
         </div>
@@ -278,7 +283,7 @@
                         <span>Angebot</span>
                     </div>
                     <h2 class="text-3xl md:text-4xl font-bold text-brand-900 leading-tight">
-                        Individuell & <br>Zielgerichtet
+                        Individuell & <br class="hidden md:block">Zielgerichtet
                     </h2>
                     <div class="h-1 w-12 bg-brand-200 mt-6 rounded-full hidden md:block"></div>
                 </div>
@@ -340,7 +345,7 @@
                             <span>Standort & Ablauf</span>
                         </div>
                         <h2 class="text-3xl md:text-4xl font-bold text-brand-900 leading-tight">
-                            Dein Weg <br>ins Wasser
+                            Dein Weg <br class="hidden md:block">ins Wasser
                         </h2>
                         <div class="h-1 w-12 bg-brand-200 mt-6 rounded-full hidden md:block"></div>
                     </div>
@@ -349,7 +354,7 @@
     <div class="space-y-12 relative pl-4 border-l-2 border-brand-100 ml-2">
 
         <div class="relative pl-8">
-            <div class="absolute -left-[21px] -top-1 w-10 h-10 rounded-full bg-white border-2 border-brand-100 flex items-center justify-center text-brand-500 shadow-sm z-10">
+            <div class="animate-hop absolute -left-[21px] -top-1 w-10 h-10 rounded-full bg-white border-2 border-brand-100 flex items-center justify-center text-brand-500 shadow-sm z-10">
                 <svg class="w-5 h-5" viewBox="-2 -2 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                     <path d="m5.72 14.456l1.761-.508l10.603-10.73a.456.456 0 0 0-.003-.64l-.635-.642a.443.443 0 0 0-.632-.003L6.239 12.635zM18.703.664l.635.643c.876.887.884 2.318.016 3.196L8.428 15.561l-3.764 1.084a.9.9 0 0 1-1.11-.623a.9.9 0 0 1-.002-.506l1.095-3.84L15.544.647a2.215 2.215 0 0 1 3.159.016zM7.184 1.817c.496 0 .898.407.898.909a.903.903 0 0 1-.898.909H3.592c-.992 0-1.796.814-1.796 1.817v10.906c0 1.004.804 1.818 1.796 1.818h10.776c.992 0 1.797-.814 1.797-1.818v-3.635c0-.502.402-.909.898-.909s.898.407.898.91v3.634c0 2.008-1.609 3.636-3.593 3.636H3.592C1.608 19.994 0 18.366 0 16.358V5.452c0-2.007 1.608-3.635 3.592-3.635z"/>
                 </svg>
@@ -1069,9 +1074,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
