@@ -61,18 +61,15 @@
     </script>
 
     <style>
-        /* LOKALE SCHRIFTARTEN (DSGVO-Konform) */
         @font-face { font-family: 'Poppins'; font-style: normal; font-weight: 300; src: url('./fonts/poppins-v24-latin-300.woff2') format('woff2'); font-display: swap; }
         @font-face { font-family: 'Poppins'; font-style: normal; font-weight: 400; src: url('./fonts/poppins-v24-latin-regular.woff2') format('woff2'); font-display: swap; }
         @font-face { font-family: 'Poppins'; font-style: normal; font-weight: 500; src: url('./fonts/poppins-v24-latin-500.woff2') format('woff2'); font-display: swap; }
         @font-face { font-family: 'Poppins'; font-style: normal; font-weight: 600; src: url('./fonts/poppins-v24-latin-600.woff2') format('woff2'); font-display: swap; }
         @font-face { font-family: 'Poppins'; font-style: normal; font-weight: 700; src: url('./fonts/poppins-v24-latin-700.woff2') format('woff2'); font-display: swap; }
 
-        /* Global Styles */
         body { background-color: #f0f9ff; color: #334155; }
         section { scroll-margin-top: 100px; }
         
-        /* Glassmorphism */
         .glass-card {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(20px);
@@ -81,20 +78,18 @@
             box-shadow: 0 4px 20px -2px rgba(12, 74, 110, 0.05);
         }
 
-        /* Seamless Marquee Mask */
         .marquee-mask {
             mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
             -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
         }
 
-        /* Ambient Background */
         .ambient-blob {
             position: fixed; filter: blur(80px); z-index: -1; opacity: 0.6;
         }
     </style>
 </head>
 
-<body class="antialiased pb-24 md:pb-0 selection:bg-brand-200 selection:text-brand-900">
+<body class="antialiased pb-0 selection:bg-brand-200 selection:text-brand-900">
 
     <div class="ambient-blob bg-brand-200 w-[40vw] h-[40vw] top-0 left-0 rounded-full animate-blob"></div>
     <div class="ambient-blob bg-blue-100 w-[50vw] h-[50vw] bottom-0 right-0 rounded-full animate-blob" style="animation-delay: -5s;"></div>
@@ -153,7 +148,7 @@
             </div>
         </header>
 
-    <main class="container max-w-7xl mx-auto px-6 space-y-24 pb-16"> <section class="full-width-marquee -mx-6 md:-mx-0">
+    <main class="container max-w-7xl mx-auto px-6 space-y-24 pb-8"> <section class="full-width-marquee -mx-6 md:-mx-0">
             <div class="relative w-full overflow-hidden marquee-mask py-4">
                 <div class="flex w-max animate-marquee gap-6 items-stretch">
     
@@ -221,25 +216,27 @@
         </section>
 
         <section class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row gap-8 md:gap-20 items-start">
-                
-                <div class="md:w-1/3 md:sticky md:top-32">
-                    <div class="inline-flex items-center gap-2 text-brand-600 font-bold tracking-wider uppercase text-xs mb-3">
-                        <i data-lucide="user" class="w-4 h-4"></i>
-                        <span>Über mich</span>
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-900 leading-tight">
-                        Schön, dass <br>du da bist
-                    </h2>
-                    <div class="h-1 w-12 bg-brand-200 mt-6 rounded-full hidden md:block"></div>
+    <div class="glass-card rounded-[2.5rem] p-8 md:p-12">
+        <div class="flex flex-col md:flex-row gap-8 md:gap-20 items-start">
+            
+            <div class="md:w-1/3 md:sticky md:top-32">
+                <div class="inline-flex items-center gap-2 text-brand-600 font-bold tracking-wider uppercase text-xs mb-3">
+                    <i data-lucide="user" class="w-4 h-4"></i>
+                    <span>Über mich</span>
                 </div>
-                
-                <div class="md:w-2/3 space-y-6 text-slate-600 text-lg leading-relaxed font-light text-justify hyphens-auto">
-                    <p>Ich heiße Lukas, bin 23 Jahre jung und begleite als ausgebildete Fachkraft täglich Menschen aller Altersgruppen auf verschiedenen Leistungsniveaus im Wasser. Da der Schwimmunterricht in Schulen häufig an Kapazitätsgrenzen stößt und eine individuelle Förderung organisatorisch bedingt kaum möglich ist, liegt mein Schwerpunkt darauf, ergänzend gezielt jene Aspekte zu vertiefen, welche im Gruppenunterricht zu kurz kommen.</p>
-                    <p>Eine Trainingseinheit umfasst 60 Minuten und findet ausschließlich im Einzelsetting statt. Während in klassischen Kursen viele verschiedene Niveaus gleichzeitig berücksichtigt werden müssen, gehört meine ungeteilte Aufmerksamkeit in dieser Zeit ausschließlich dem persönlichen Fortschritt. Durch diesen Ansatz lassen sich vorhandene Lücken effizient schließen sowie die Sicherheit und Freude am Schwimmen nachhaltig steigern.</p>
-                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-900 leading-tight">
+                    Schön, dass <br>du da bist
+                </h2>
+                <div class="h-1 w-12 bg-brand-200 mt-6 rounded-full hidden md:block"></div>
             </div>
-        </section>
+            
+            <div class="md:w-2/3 space-y-6 text-slate-600 text-lg leading-relaxed font-light text-justify hyphens-auto">
+                <p>Ich heiße Lukas, bin 23 Jahre jung und begleite als ausgebildete Fachkraft täglich Menschen aller Altersgruppen auf verschiedenen Leistungsniveaus im Wasser. Da der Schwimmunterricht in Schulen häufig an Kapazitätsgrenzen stößt und eine individuelle Förderung organisatorisch bedingt kaum möglich ist, liegt mein Schwerpunkt darauf, ergänzend gezielt jene Aspekte zu vertiefen, welche im Gruppenunterricht zu kurz kommen.</p>
+                <p>Eine Trainingseinheit umfasst 60 Minuten und findet ausschließlich im Einzelsetting statt. Während in klassischen Kursen viele verschiedene Niveaus gleichzeitig berücksichtigt werden müssen, gehört meine ungeteilte Aufmerksamkeit in dieser Zeit ausschließlich dem persönlichen Fortschritt. Durch diesen Ansatz lassen sich vorhandene Lücken effizient schließen sowie die Sicherheit und Freude am Schwimmen nachhaltig steigern.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
         <section class="max-w-7xl mx-auto" id="jugend">
             <div class="flex flex-col md:flex-row gap-8 md:gap-20 items-start">
@@ -281,7 +278,7 @@
                         <div class="text-slate-600 space-y-3 text-justify hyphens-auto text-sm leading-relaxed font-light">
                             <p>Im Schwimmunterricht tragen Lehrkräfte besondere Verantwortung. Sie organisieren den Unterricht, sichern die Aufsicht und fördern die Kinder pädagogisch. Die Anforderungen an Sicherheit und individuelle Förderung stehen dabei oft in einem Spannungsverhältnis zu knappen Ressourcen. Das tragische Unglück vom 18. September 2023, bei dem ein Zweitklässler ertrank, hat die Debatte über Aufsichtspflichten bundesweit verstärkt.</p>
                             <p>Trotz Einhaltung aller Vorgaben wurden Lehrkraft und Referendarin im Zusammenhang mit dem Vorfall vorläufig zu Bewährungsstrafen und Geldauflagen verurteilt. Die endgültige Entscheidung steht zwar noch aus, macht jedoch bereits deutlich, dass Lehrkräfte eine besonders hohe Verantwortung tragen – auch dann, wenn sie alle formalen Vorgaben gewissenhaft erfüllen.</p>
-                            <p>Eine qualifizierte Begleitperson entlastet Lehrkräfte spürbar, verbessert die Aufsicht und ermöglicht eine gezieltere Betreuung der Kinder. So lassen sich Sicherheit und pädagogische Qualität im Unterricht deutlich steigern. Ziel ist es, ein verlässliches und strukturiertes Lernumfeld zu schaffen. Das Angebot richtet sich an Schulen im Raum Mannheim und Umgebung.</p>
+                            <p>Eine qualifizierte Begleitperson entlastet Lehrkräfte spürbar, verbessert die Aufsicht und ermöglicht eine gezieltere Betreuung der Kinder. So lassen sich Sicherheit und pädagogische Qualität im Unterricht deutlich steigern. Ziel ist es, ein verlässliches und strukturiertes Lernumfeld zu schärfen. Das Angebot richtet sich an Schulen im Raum Mannheim und Umgebung.</p>
                         </div>
                     </article>
 
@@ -343,7 +340,7 @@
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 break-words">
                             <a href="https://www.stadtwerke-viernheim.de/preise-leistungen/baeder-und-sauna/hallenbad" target="_blank" class="group p-4 rounded-2xl bg-white border border-brand-100 hover:bg-brand-50 transition-colors text-center shadow-sm">
                                 <div class="inline-flex p-2 bg-brand-50 rounded-full text-brand-600 mb-2"><i data-lucide="snowflake" class="w-5 h-5"></i></div>
                                 <span class="block text-xs font-bold uppercase text-brand-400 tracking-wider mb-1">Okt – April</span>
@@ -405,7 +402,7 @@
                                 </div>
                                 <div class="group">
                                     <label class="block text-sm font-medium text-brand-900 mb-2 ml-1">Nachricht</label>
-                                    <textarea class="w-full px-5 py-3.5 rounded-2xl bg-brand-50 border border-brand-100 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all h-36 resize-none" name="message" id="message" required></textarea>
+                                    <textarea class="w-full px-5 py-3.5 rounded-2xl bg-brand-50 border border-brand-100 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all h-36 resize-none" name="message" id="message" placeholder="" required></textarea>
                                 </div>
                             </div>
 
@@ -430,7 +427,7 @@
 
     </main>
 
-    <footer class="bg-white py-12 text-center border-t border-brand-50">
+    <footer class="bg-white py-8 text-center border-t border-brand-50">
         <div class="container mx-auto px-4">
             <div class="flex flex-wrap justify-center gap-6 mb-6 text-sm font-medium text-slate-500">
                 <button onclick="openModal('datenschutzModal')" class="hover:text-brand-600 transition-colors">Datenschutz</button>
@@ -489,9 +486,9 @@
                         </div>
                         <div>
                             <p class="font-semibold text-brand-900 mb-1">E-Mail</p>
-                            <a href="mailto:&#x6C;&#x70;&#x73;&#x77;&#x69;&#x6D;&#x2E;&#x69;&#x6E;&#x66;&#x6F;&#x40;&#x67;&#x6D;&#x61;&#x69;&#x6C;&#x2E;&#x63;&#x6F;&#x6D;" class="text-brand-600 hover:underline decoration-brand-200 text-xs flex items-center gap-1 mt-2">
+                            <a href="mailto:lpswim.info@gmail.com" class="text-brand-600 hover:underline decoration-brand-200 text-xs flex items-center gap-1 mt-2">
                                 <i data-lucide="mail" class="w-3 h-3"></i>
-                                &#x6C;&#x70;&#x73;&#x77;&#x69;&#x6D;&#x2E;&#x69;&#x6E;&#x66;&#x6F;&#x40;&#x67;&#x6D;&#x61;&#x69;&#x6C;&#x2E;&#x63;&#x6F;&#x6D;
+                                lpswim.info@gmail.com
                             </a>
                         </div>
                     </div>
@@ -527,9 +524,9 @@
                                 20459 Hamburg<br>
                                 Deutschland
                             </p>
-                             <a href="mailto:&#x6C;&#x70;&#x73;&#x77;&#x69;&#x6D;&#x2E;&#x69;&#x6E;&#x66;&#x6F;&#x40;&#x67;&#x6D;&#x61;&#x69;&#x6C;&#x2E;&#x63;&#x6F;&#x6D;" class="text-brand-600 hover:underline decoration-brand-200 text-xs flex items-center gap-1 mt-2">
+                             <a href="mailto:lpswim.info@gmail.com" class="text-brand-600 hover:underline decoration-brand-200 text-xs flex items-center gap-1 mt-2">
                                 <i data-lucide="mail" class="w-3 h-3"></i>
-                                &#x6C;&#x70;&#x73;&#x77;&#x69;&#x6D;&#x2E;&#x69;&#x6E;&#x66;&#x6F;&#x40;&#x67;&#x6D;&#x61;&#x69;&#x6C;&#x2E;&#x63;&#x6F;&#x6D;
+                                lpswim.info@gmail.com
                             </a>
                         </div>
                     </div>
@@ -846,21 +843,19 @@
             observer.observe(el);
         });
 
-        // 3. TYPEWRITER EFFEKT (Für das Nachrichtenfeld)
+        // 3. TYPEWRITER EFFEKT
         document.addEventListener('DOMContentLoaded', () => {
             const msgField = document.getElementById("message");
             if(msgField) {
-                msgField.placeholder = ""; // Startet leer
+                msgField.placeholder = ""; 
                 const text = "Ich würde gerne meine Technik verbessern. Wie läuft die Buchung ab?";
                 let i = 0;
-                
-                // Startet nach 500ms (schneller als vorher)
                 setTimeout(() => {
                     const interval = setInterval(() => {
                         msgField.placeholder += text.charAt(i);
                         i++;
                         if (i >= text.length) clearInterval(interval);
-                    }, 40); // Schreibgeschwindigkeit
+                    }, 40);
                 }, 500);
             }
         });
@@ -871,7 +866,6 @@
             const overlay = document.getElementById('modal-overlay');
             const content = modal.querySelector('.modal-anim');
             
-            // Cookie-Banner kurz ausblenden, falls er im Weg ist
             const cookieBanner = document.getElementById('cookie-overlay');
             if(cookieBanner && !cookieBanner.classList.contains('hidden')) {
                 cookieBanner.classList.add('opacity-0', 'pointer-events-none');
@@ -887,7 +881,7 @@
                 content.classList.add('scale-100', 'opacity-100');
             }, 50);
             
-            document.body.classList.add('overflow-hidden'); // Scrollen stoppen
+            document.body.classList.add('overflow-hidden');
         }
 
         function closeModal(id) {
@@ -909,11 +903,9 @@
                     overlay.classList.add('opacity-0');
                     setTimeout(() => overlay.classList.add('hidden'), 300);
                     
-                    // Nur Scroll-Sperre aufheben, wenn auch der Cookie-Banner nicht aktiv ist
                     if(!cookieBanner || cookieBanner.classList.contains('hidden')) {
                         document.body.classList.remove('overflow-hidden');
                     } else {
-                        // Banner wieder einblenden
                         cookieBanner.classList.remove('opacity-0', 'pointer-events-none');
                     }
                 }
@@ -924,7 +916,7 @@
             document.querySelectorAll('[id$="Modal"].flex, #confirmationPopup.flex').forEach(m => closeModal(m.id));
         }
 
-        // 5. FORMULAR LOGIK (Formspree)
+        // 5. FORMULAR LOGIK
         const form = document.getElementById('contactForm');
         const formMessage = document.getElementById('form-message');
         if (form) {
@@ -957,7 +949,7 @@
             });
         }
 
-        // 6. COOKIE-BANNER (Mit Scroll-Lock)
+        // 6. COOKIE-BANNER
         (function() {
             const GA_MEASUREMENT_ID = "G-T5H2XMBKFL"; 
             const STORAGE_KEY = "lp_swim_consent_2026"; 
@@ -971,7 +963,6 @@
                 script.async = true;
                 script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_MEASUREMENT_ID;
                 document.head.appendChild(script);
-
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 window.gtag = gtag;
@@ -980,16 +971,14 @@
             }
 
             function showBanner() {
-                body.classList.add('overflow-hidden'); // Hintergrund sperren
+                body.classList.add('overflow-hidden');
                 overlay.classList.remove('hidden');
                 overlay.classList.add('flex');
-
                 setTimeout(() => {
                     overlay.classList.remove('opacity-0');
                     card.classList.remove('scale-95', 'translate-y-8');
                     card.classList.add('scale-100', 'translate-y-0');
                 }, 50);
-                
                 if(typeof lucide !== 'undefined') lucide.createIcons();
             }
 
@@ -997,12 +986,9 @@
                 overlay.classList.add('opacity-0');
                 card.classList.remove('scale-100', 'translate-y-0');
                 card.classList.add('scale-95', 'translate-y-8');
-
                 setTimeout(() => {
                     overlay.classList.remove('flex');
                     overlay.classList.add('hidden');
-                    
-                    // Nur entsperren, wenn kein anderes Modal offen ist
                     const anyModalOpen = document.querySelectorAll('[id$="Modal"].flex').length > 0;
                     if(!anyModalOpen) {
                         body.classList.remove('overflow-hidden');
@@ -1017,13 +1003,11 @@
                 loadGAScript();
             }
 
-            // Button-Events
             document.getElementById('cookie-accept').onclick = () => {
                 localStorage.setItem(STORAGE_KEY, 'accepted');
                 loadGAScript();
                 hideBanner();
             };
-
             document.getElementById('cookie-decline').onclick = () => {
                 localStorage.setItem(STORAGE_KEY, 'declined');
                 hideBanner();
@@ -1032,6 +1016,3 @@
     </script>
 </body>
 </html>
-
-
-
