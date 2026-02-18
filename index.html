@@ -362,15 +362,22 @@
             </div>
         </section>
 
-       <section class="glass-card rounded-3xl p-6 md:p-8" id="standort">
+ <section class="glass-card rounded-3xl p-6 md:p-8" id="standort">
     <h2 class="text-center md:text-left text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-blue-800">Standort & Details</h2>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-        <div class="bg-gray-100 rounded-2xl overflow-hidden border border-gray-200 h-full min-h-[450px] relative cursor-pointer group" onclick="window.open('https://www.google.de/maps/place/LP-SWIM+%E2%80%93+Inhaber+Lukas+Prehn/@49.5376939,8.5809261,17z/data=!4m16!1m9!3m8!1s0x66777943db50c52b:0x72759400e8725848!2sLP-SWIM+%E2%80%93+Inhaber+Lukas+Prehn!8m2!3d49.5376939!4d8.5809261!9m1!1b1!16s%2Fg%2F11xv29qq3r!3m5!1s0x66777943db50c52b:0x72759400e8725848!8m2!3d49.5376939!4d8.5809261!16s%2Fg%2F11xv29qq3r?entry=ttu', '_blank')">
-            <iframe class="w-full h-full border-0 pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-700" loading="lazy" src="about:blank" title="LP-SWIM Standortkarte"></iframe>
-            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div class="bg-white/80 px-4 py-2 rounded-lg text-blue-800 font-semibold shadow-sm text-sm md:text-base">Karte laden (Datenschutz)</div>
+        
+        <a href="https://www.google.de/maps/place/LP-SWIM+%E2%80%93+Inhaber+Lukas+Prehn/@49.5376939,8.5809261,17z/data=!4m16!1m9!3m8!1s0x66777943db50c52b:0x72759400e8725848!2sLP-SWIM+%E2%80%93+Inhaber+Lukas+Prehn!8m2!3d49.5376939!4d8.5809261!9m1!1b1!16s%2Fg%2F11xv29qq3r!3m5!1s0x66777943db50c52b:0x72759400e8725848!8m2!3d49.5376939!4d8.5809261!16s%2Fg%2F11xv29qq3r?entry=ttu" target="_blank" class="block bg-gray-100 rounded-2xl overflow-hidden border border-gray-200 relative group aspect-square md:aspect-auto md:h-full md:min-h-[450px]">
+            <iframe 
+                class="w-full h-full border-0 grayscale group-hover:grayscale-0 transition-all duration-700 pointer-events-none" 
+                loading="lazy" 
+                src="https://maps.google.com/maps?q=LP-SWIM+Viernheim&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                title="LP-SWIM Standortkarte">
+            </iframe>
+            <div class="absolute inset-0 z-10 bg-transparent"></div>
+            <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-3 py-1.5 rounded-lg text-xs font-bold text-blue-800 shadow-sm">
+                Zum Öffnen klicken
             </div>
-        </div>
+        </a>
         
         <div class="flex flex-col p-6 md:p-8 bg-white/60 rounded-2xl border border-gray-100 text-center backdrop-blur-sm">
             <div class="flex justify-center mb-4">
@@ -425,7 +432,7 @@
                 <a class="flex items-center justify-center px-4 py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200" href="https://www.google.com/maps/dir//LP-SWIM+%E2%80%93+Inhaber+Lukas+Prehn,+Schulstra%C3%9Fe+9,+68519+Viernheim/@49.4556502,8.4280417,11z/data=!3m1!5s0x4797d01d72d4f93d:0x4e811ba7f56f8163!4m8!4m7!1m0!1m5!1m1!1s0x66777943db50c52b:0x72759400e8725848!2m2!1d8.5805277!2d49.5377236?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer"> 
                     <i class="w-4 h-4 mr-2" data-lucide="car-front"></i> Route
                 </a>
-                <a class="flex items-center justify-center px-4 py-3 rounded-xl bg-white border border-blue-200 text-blue-700 font-semibold hover:bg-blue-50 transition-all" href="https://www.google.com/search?sca_esv=9783dddf2c54e777&q=rezensionen+f%C3%BCr+lp-swim+%E2%80%93+inhaber+lukas+prehn+viernheim&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-BUVbdJ3hDQHRBRaYHFinyzPc7d2gswAL4lqHCD2DHMRrF6KlVjIkGsex9oamelGppwJnF3j8v3ziPYyxTFlbyvzDVdejHoBlRwn94f2LUq9hvfOjqE-1-Hc2oVbfEgzxv4eqevOr3oIbfcY4q77sAj49t6AgxXbLe6IyrZdJ1sKaufN0y37xicjzA5cIFiAMpdL1ug&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOaPpBe8_8HTfqdo64xx6ynjmo479J_TQXJJA2mU8O2Pm0WB2coG0U1TumygcRV6YupVbH_dXxZXKZkR9O-7YDAWBDTHGrUEqK9rsLwIgVyOkhu-_EJMfGxSNm6ZwlUN1o3nmw3vQhGt5WT_SMZ1iZnJ41t2T&sa=X&ved=2ahUKEwjj5L7z0tuSAxVd3QIHHfraPJUQxKsJKAR6BAgQEAE&ictx=1&stq=1&cs=1&lei=J9CRaaO1It26i-gP-rXzqQk" rel="noopener noreferrer" target="_blank">
+                <a class="flex items-center justify-center px-4 py-3 rounded-xl bg-white border border-blue-200 text-blue-700 font-semibold hover:bg-blue-50 transition-all" href="https://www.google.com/search?q=rezensionen+f%C3%BCr+lp-swim" rel="noopener noreferrer" target="_blank">
                     <i class="w-4 h-4 mr-2" data-lucide="star"></i> Bewertungen
                 </a>
             </div>
@@ -1193,6 +1200,7 @@
     </script>
 </body>
 </html>
+
 
 
 
