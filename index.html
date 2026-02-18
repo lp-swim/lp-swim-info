@@ -47,7 +47,7 @@
                         'float': 'float 8s ease-in-out infinite',
                         'blob': 'blob 10s infinite alternate',
                         'fade-in': 'fadeIn 1s ease-out forwards',
-                        'hop': 'hop 3s ease-in-out infinite', /* NEUE ANIMATION */
+                        'hop': 'hop 3s ease-in-out infinite',
                     },
                     keyframes: {
                         marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(-50%)' } },
@@ -57,7 +57,7 @@
                             '100%': { transform: 'translate(20px, -20px) scale(1.1)' }
                         },
                         fadeIn: { from: { opacity: 0, transform: 'translateY(10px)' }, to: { opacity: 1, transform: 'translateY(0)' } },
-                        hop: { /* NEUES KEYFRAME FÜR SEEPFERDCHEN */
+                        hop: { 
                             '0%, 100%': { transform: 'translateY(0)' },
                             '50%': { transform: 'translateY(-8px)' } 
                         }
@@ -266,7 +266,7 @@
                 <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
                     <i data-lucide="badge-check" class="w-6 h-6"></i>
                 </div>
-                <h3 class="text-xl font-bold text-brand-900">Qualifikation & Fokus</h3>
+                <h3 class="text-lg sm:text-xl font-bold text-brand-900 tracking-tight">Qualifikation & Fokus</h3>
             </div>
             <p>Ich heiße Lukas, bin 23 Jahre jung und begleite als ausgebildete Fachkraft täglich Menschen aller Altersgruppen auf verschiedenen Leistungsniveaus im Wasser. Da der Schwimmunterricht in Schulen häufig an Kapazitätsgrenzen stößt und eine individuelle Förderung organisatorisch bedingt kaum möglich ist, liegt mein Schwerpunkt darauf, ergänzend gezielt jene Aspekte zu vertiefen, welche im Gruppenunterricht zu kurz kommen.</p>
             <p>Eine Trainingseinheit umfasst 60 Minuten und findet ausschließlich im Einzelsetting statt. Während in klassischen Kursen viele verschiedene Niveaus gleichzeitig berücksichtigt werden müssen, gehört meine ungeteilte Aufmerksamkeit in dieser Zeit ausschließlich dem persönlichen Fortschritt. Durch diesen Ansatz lassen sich vorhandene Lücken effizient schließen sowie die Sicherheit und Freude am Schwimmen nachhaltig steigern.</p>
@@ -295,7 +295,7 @@
                             <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
                                 <i data-lucide="graduation-cap" class="w-6 h-6"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-brand-900">Kinder & Jugendliche</h3>
+                            <h3 class="text-lg sm:text-xl font-bold text-brand-900 tracking-tight">Kinder & Jugendliche</h3>
                         </div>
                         <div class="text-slate-600 space-y-3 text-justify hyphens-auto text-sm leading-relaxed font-light">
                             <p>Qualitativer Schwimmunterricht ist für viele Kinder und Jugendliche heutzutage leider keine Selbstverständlichkeit mehr. Im Familienalltag fehlen oft die zeitlichen Kapazitäten, während das Schulschwimmen durch große Gruppen und knappe Wasserzeiten zunehmend an organisatorische Grenzen stößt.</p>
@@ -309,7 +309,7 @@
                             <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
                                 <i data-lucide="school" class="w-6 h-6"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-brand-900">Schulbegleitung</h3>
+                            <h3 class="text-lg sm:text-xl font-bold text-brand-900 tracking-tight">Schulbegleitung</h3>
                         </div>
                         <div class="text-slate-600 space-y-3 text-justify hyphens-auto text-sm leading-relaxed font-light">
                             <p>Im Schwimmunterricht tragen Lehrkräfte besondere Verantwortung. Sie organisieren den Unterricht, sichern die Aufsicht und fördern die Kinder pädagogisch. Die Anforderungen an Sicherheit und individuelle Förderung stehen dabei oft in einem Spannungsverhältnis zu knappen Ressourcen. Das tragische Unglück vom 18. September 2023, bei dem ein Zweitklässler ertrank, hat die Debatte über Aufsichtspflichten bundesweit verstärkt.</p>
@@ -323,7 +323,7 @@
                             <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
                                 <i data-lucide="briefcase" class="w-6 h-6"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-brand-900">Erwachsene</h3>
+                            <h3 class="text-lg sm:text-xl font-bold text-brand-900 tracking-tight">Erwachsene</h3>
                         </div>
                         <div class="text-slate-600 space-y-3 text-justify hyphens-auto text-sm leading-relaxed font-light">
                             <p>Für viele Erwachsene ist der Zugang zum Wasser mit Unsicherheiten oder Scham verbunden. Oft hält sich der Trugschluss, Schwimmen sei ein reines Kinderthema. Doch Wasserkompetenz ist keine Frage des Alters – sie lässt sich jederzeit neu erlernen oder nach längeren Pausen wieder auffrischen.</p>
@@ -451,15 +451,15 @@
                             <div class="space-y-4">
                                 <div class="group">
                                     <label class="block text-sm font-medium text-brand-900 mb-2 ml-1">Vor- und Zuname</label>
-                                    <input class="w-full px-5 py-3.5 rounded-3xl bg-brand-50 border border-brand-100 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all" name="name" placeholder="Max Mustermann" required type="text" />
+                                    <input class="w-full px-5 py-3.5 rounded-3xl bg-brand-50 border border-brand-100 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all font-sans text-base text-brand-900 placeholder:text-slate-400" name="name" placeholder="Max Mustermann" required type="text" />
                                 </div>
                                 <div class="group">
                                     <label class="block text-sm font-medium text-brand-900 mb-2 ml-1">E-Mail</label>
-                                    <input class="w-full px-5 py-3.5 rounded-3xl bg-brand-50 border border-brand-100 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all" name="email" placeholder="max@beispiel.de" required type="email" />
+                                    <input class="w-full px-5 py-3.5 rounded-3xl bg-brand-50 border border-brand-100 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all font-sans text-base text-brand-900 placeholder:text-slate-400" name="email" placeholder="max@beispiel.de" required type="email" />
                                 </div>
                                 <div class="group">
                                     <label class="block text-sm font-medium text-brand-900 mb-2 ml-1">Nachricht</label>
-                                    <textarea class="w-full px-5 py-3.5 rounded-3xl bg-brand-50 border border-brand-100 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all h-36 resize-none" name="message" id="message" placeholder="" required></textarea>
+                                    <textarea class="w-full px-5 py-3.5 rounded-3xl bg-brand-50 border border-brand-100 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all h-36 resize-none font-sans text-base text-brand-900 placeholder:text-slate-400" name="message" id="message" placeholder="" required></textarea>
                                 </div>
                             </div>
 
