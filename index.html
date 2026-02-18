@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="de" class="scroll-smooth">
 
 <head>
@@ -68,6 +68,19 @@
         font-weight: 700;
         src: url('./fonts/poppins-v24-latin-700.woff2') format('woff2'); 
         font-display: swap;
+    }
+    /* Marquee Animation CSS */
+    @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+        display: flex;
+        width: max-content;
+        animation: marquee 40s linear infinite;
+    }
+    .animate-marquee:hover {
+        animation-play-state: paused;
     }
     </style>
     
@@ -258,16 +271,79 @@
 
     <main class="container max-w-7xl mx-auto px-4 py-8 md:py-20 space-y-12 md:space-y-16">
 
-        <section class="glass-card rounded-3xl p-6 md:p-12 transform hover:-translate-y-1 transition-all duration-300" id="start">
-            <h2 class="text-center md:text-left text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-blue-800">Schön, dass du da bist</h2>
-            <div class="space-y-4 text-slate-700 leading-relaxed text-base md:text-lg text-justify hyphens-auto">
-                <p>Ich heiße Lukas, bin 23 Jahre jung und begleite als ausgebildete Fachkraft täglich Menschen aller Altersgruppen auf verschiedenen Leistungsniveaus im Wasser. Da der Schwimmunterricht in Schulen häufig an Kapazitätsgrenzen stößt und eine individuelle Förderung organisatorisch bedingt kaum möglich ist, liegt mein Schwerpunkt darauf, ergänzend gezielt jene Aspekte zu vertiefen, welche im Gruppenunterricht zu kurz kommen.</p>
-                <p>Eine Trainingseinheit umfasst 60 Minuten und findet ausschließlich im Einzelsetting statt. Während in klassischen Kursen viele verschiedene Niveaus gleichzeitig berücksichtigt werden müssen, gehört meine ungeteilte Aufmerksamkeit in dieser Zeit ausschließlich dem persönlichen Fortschritt. Durch diesen Ansatz lassen sich vorhandene Lücken effizient schließen sowie die Sicherheit und Freude am Schwimmen nachhaltig steigern.</p>
-                <p class="font-medium text-blue-900 bg-blue-50 p-4 rounded-xl border-l-4 border-blue-400">
-                    Das Training findet in Viernheim von Oktober bis April im <a class="text-blue-600 hover:text-blue-800 underline decoration-2 decoration-blue-200" href="https://www.stadtwerke-viernheim.de/preise-leistungen/baeder-und-sauna/hallenbad" target="_blank" rel="noopener noreferrer">Hallenbad</a> statt und wird in den Sommermonaten (Juni–August) im <a class="text-blue-600 hover:text-blue-800 underline decoration-2 decoration-blue-200" href="https://www.stadtwerke-viernheim.de/preise-leistungen/baeder-und-sauna/waldschwimmbad/" target="_blank" rel="noopener noreferrer">Waldschwimmbad</a> fortgeführt. Nach dem Erstkontakt über das Kontaktformular werden Sie direkt in unseren Terminverteiler aufgenommen.
-                </p>
+<section class="glass-card rounded-3xl p-6 md:p-12 transform hover:-translate-y-1 transition-all duration-300" id="start">
+    <h2 class="text-center md:text-left text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-blue-800">Schön, dass du da bist</h2>
+    <div class="space-y-4 text-slate-700 leading-relaxed text-base md:text-lg text-justify hyphens-auto">
+        <p>Ich heiße Lukas, bin 23 Jahre jung und begleite als ausgebildete Fachkraft täglich Menschen aller Altersgruppen auf verschiedenen Leistungsniveaus im Wasser. Da der Schwimmunterricht in Schulen häufig an Kapazitätsgrenzen stößt und eine individuelle Förderung organisatorisch bedingt kaum möglich ist, liegt mein Schwerpunkt darauf, ergänzend gezielt jene Aspekte zu vertiefen, welche im Gruppenunterricht zu kurz kommen.</p>
+        <p>Eine Trainingseinheit umfasst 60 Minuten und findet ausschließlich im Einzelsetting statt. Während in klassischen Kursen viele verschiedene Niveaus gleichzeitig berücksichtigt werden müssen, gehört meine ungeteilte Aufmerksamkeit in dieser Zeit ausschließlich dem persönlichen Fortschritt. Durch diesen Ansatz lassen sich vorhandene Lücken effizient schließen sowie die Sicherheit und Freude am Schwimmen nachhaltig steigern.</p>
+        
+        <div class="mt-12 mb-8 overflow-hidden relative">
+            <div class="flex items-center justify-center gap-4 mb-8">
+                <div class="flex-1 h-px bg-gradient-to-r from-transparent via-blue-200 to-blue-500 opacity-60"></div>
+                <h3 class="text-blue-900 font-bold flex items-center gap-2 shrink-0 tracking-wide uppercase text-sm md:text-base">
+                    <i data-lucide="star" class="w-5 h-5 fill-blue-500 text-blue-500"></i> 
+                    Stimmen vom Beckenrand
+                </h3>
+                <div class="flex-1 h-px bg-gradient-to-l from-transparent via-blue-200 to-blue-500 opacity-60"></div>
             </div>
-        </section>
+
+            <div class="flex animate-marquee gap-6 py-4">
+                <div class="flex gap-6">
+                    <div class="w-72 md:w-80 p-6 rounded-2xl bg-white/40 border border-blue-100 shadow-sm backdrop-blur-sm flex flex-col justify-between hover:bg-white/60 transition-colors">
+                        <p class="italic text-sm md:text-base mb-4 text-slate-600">"Wir sind sehr begeistert. Nach dem leider die Qualität des anderen Schwimmkurs stark abgenommen hat, haben wir uns für einen Privatlehrer (auf Empfehlung) genommen. Das ist und war die beste Entscheidung. Sehr professionell und lieb."</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-blue-800 text-sm">- Marco S.</span>
+                            <div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                        </div>
+                    </div>
+                    <div class="w-72 md:w-80 p-6 rounded-2xl bg-white/40 border border-blue-100 shadow-sm backdrop-blur-sm flex flex-col justify-between hover:bg-white/60 transition-colors">
+                        <p class="italic text-sm md:text-base mb-4 text-slate-600">"Super netter Schwimmlehrer<br>Super Geduld<br>Immer wieder gerne<br>Meine Tochter hat sich sehr wohl gefühlt"</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-blue-800 text-sm">- Kerstin A.</span>
+                            <div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                        </div>
+                    </div>
+                    <div class="w-72 md:w-80 p-6 rounded-2xl bg-white/40 border border-blue-100 shadow-sm backdrop-blur-sm flex flex-col justify-between hover:bg-white/60 transition-colors">
+                        <p class="italic text-sm md:text-base mb-4 text-slate-600">"Professioneller und kindgerechter Schwimmunterricht. Mein acht jähriger Sohn fühlt sich sicher und aufgehoben. Außerdem gibt Herr Prehn gute Tipps zum Üben für zu Hause."</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-blue-800 text-sm">- Jacqueline R.</span>
+                            <div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <div class="w-72 md:w-80 p-6 rounded-2xl bg-white/40 border border-blue-100 shadow-sm backdrop-blur-sm flex flex-col justify-between hover:bg-white/60 transition-colors">
+                        <p class="italic text-sm md:text-base mb-4 text-slate-600">"Freundlicher und professioneller Umgang. Unser Kind fühlte sich sehr wohl und konnte in der ersten Schwimmstunde viele nützliche Tipps bekommen, auf denen wir künftig aufbauen können."</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-blue-800 text-sm">- Marc K.</span>
+                            <div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                        </div>
+                    </div>
+                    <div class="w-72 md:w-80 p-6 rounded-2xl bg-white/40 border border-blue-100 shadow-sm backdrop-blur-sm flex flex-col justify-between hover:bg-white/60 transition-colors">
+                        <p class="italic text-sm md:text-base mb-4 text-slate-600">"Der private Schwimmunterricht bei Lukas war ein voller Erfolg! Er ist unglaublich professionell, geduldig und hat eine fantastische Art, Wissen zu vermitteln. Die Fortschritte sind toll..."</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-blue-800 text-sm">- Katja L.</span>
+                            <div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                        </div>
+                    </div>
+                    <div class="w-72 md:w-80 p-6 rounded-2xl bg-white/40 border border-blue-100 shadow-sm backdrop-blur-sm flex flex-col justify-between hover:bg-white/60 transition-colors">
+                        <p class="italic text-sm md:text-base mb-4 text-slate-600">"Sehr nett und kompetent, mein Sohn hat sich sehr wohl gefühlt und man hat in der ersten Stunde schon Fortschritte gesehen."</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-blue-800 text-sm">- Julia K.</span>
+                            <div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white/60 to-transparent pointer-events-none"></div>
+            <div class="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white/60 to-transparent pointer-events-none"></div>
+        </div>
+
+        <p class="font-medium text-blue-900 bg-blue-50 p-4 rounded-xl border-l-4 border-blue-400">
+            Das Training findet in Viernheim von Oktober bis April im <a class="text-blue-600 hover:text-blue-800 underline decoration-2 decoration-blue-200" href="https://www.stadtwerke-viernheim.de/preise-leistungen/baeder-und-sauna/hallenbad" target="_blank" rel="noopener noreferrer">Hallenbad</a> statt und wird in den Sommermonaten (Juni–August) im <a class="text-blue-600 hover:text-blue-800 underline decoration-2 decoration-blue-200" href="https://www.stadtwerke-viernheim.de/preise-leistungen/baeder-und-sauna/waldschwimmbad/" target="_blank" rel="noopener noreferrer">Waldschwimmbad</a> fortgeführt. Nach dem Erstkontakt über das Kontaktformular werden Sie direkt in unseren Terminverteiler aufgenommen.
+        </p>
+    </div>
+</section>
 
         <section class="glass-card rounded-3xl p-6 md:p-12 transform hover:-translate-y-1 transition-all" id="jugend">
             <h2 class="text-center md:text-left text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-blue-800">Kinder & Jugendliche</h2>
@@ -451,8 +527,8 @@
                         </div>
                         <div>
                             <p class="font-semibold text-blue-900 mb-1">E-Mail</p>
-                            <a href="mailto:&#108;&#112;&#115;&#119;&#105;&#109;&#46;&#105;&#110;&#102;&#111;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" class="text-blue-600 hover:underline decoration-blue-200 flex items-center gap-1">
-                                &#108;&#112;&#115;&#119;&#105;&#109;&#46;&#105;&#110;&#102;&#111;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;
+                            <a href="mailto:lpswim.info@gmail.com" class="text-blue-600 hover:underline decoration-blue-200 text-xs flex items-center gap-1 mt-2">
+                                <i data-lucide="mail" class="w-3 h-3"></i> lpswim.info@gmail.com
                             </a>
                         </div>
                     </div>
@@ -490,7 +566,7 @@
                                 20459 Hamburg<br>
                                 Deutschland
                             </p>
-                            <a href="mailto:&#108;&#112;&#115;&#119;&#105;&#109;&#46;&#105;&#110;&#102;&#111;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" class="text-blue-600 hover:underline decoration-blue-200 text-xs flex items-center gap-1 mt-2">
+                             <a href="mailto:&#108;&#112;&#115;&#119;&#105;&#109;&#46;&#105;&#110;&#102;&#111;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" class="text-blue-600 hover:underline decoration-blue-200 text-xs flex items-center gap-1 mt-2">
                                 <i data-lucide="mail" class="w-3 h-3"></i> &#108;&#112;&#115;&#119;&#105;&#109;&#46;&#105;&#110;&#102;&#111;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;
                             </a>
                         </div>
@@ -585,7 +661,7 @@
                                 Wir verlinken auf deren Website, um Ihnen Informationen zu Eintrittspreisen und Öffnungszeiten bereitzustellen.
                                 Wenn Sie diese Links anklicken, verlassen Sie unser Angebot. Für die Datenverarbeitung auf den Seiten der Stadtwerke ist allein der Betreiber verantwortlich.
                             </p>
-                            <a href="https://www.stadtwerke-viernheim.de/datenschutz" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline decoration-blue-200 text-xs flex items-center gap-1 mt-2">
+                            <a href="https://www.stadtwerke-viernheim.de/infopoint/datenschutz" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline decoration-blue-200 text-xs flex items-center gap-1 mt-2">
                                 <i data-lucide="external-link" class="w-3 h-3"></i> Datenschutzerklärung Stadtwerke Viernheim
                             </a>
                         </div>
@@ -1098,7 +1174,3 @@
     </script>
 </body>
 </html>
-
-
-
-
