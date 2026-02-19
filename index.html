@@ -197,6 +197,13 @@
 
     <main class="container max-w-7xl mx-auto px-6 space-y-24 pb-8"> 
         <section class="full-width-marquee -mx-6 md:-mx-0">
+            <div class="px-6 md:px-0 mb-6 flex items-center justify-center gap-4 max-w-4xl mx-auto">
+            <div class="flex-1 h-px bg-gradient-to-r from-transparent to-brand-300"></div>
+            <div id="review-phrase" class="text-brand-600 font-bold tracking-widest uppercase text-xs sm:text-sm text-center w-[220px] sm:w-[260px] shrink-0 transition-opacity duration-500 opacity-100">
+            Meinungen vom Beckenrand
+            </div>
+            <div class="flex-1 h-px bg-gradient-to-r from-brand-300 to-transparent"></div>
+            </div>            
             <div class="relative w-full overflow-hidden marquee-mask py-4">
                 <div class="flex w-max animate-marquee gap-6 items-stretch">
     
@@ -1048,7 +1055,7 @@
             });
         }
 
-        // 6. COOKIE-BANNER
+      // 6. COOKIE-BANNER
         (function() {
             const GA_MEASUREMENT_ID = "G-T5H2XMBKFL"; 
             const STORAGE_KEY = "lp_swim_consent_2026"; 
@@ -1111,10 +1118,38 @@
                 localStorage.setItem(STORAGE_KEY, 'declined');
                 hideBanner();
             };
+        })(); 
+
+        // 7. WECHSELNDE BEWERTUNGSSPRÜCHE
+        (function() {
+            const phrases = [
+                "Meinungen vom Beckenrand",
+                "Wellen der Begeisterung",
+                "Wasserfeste Meinungen",
+                "Chlorreiche Stimmen"
+            ];
+            let phraseIndex = 0;
+            const phraseElement = document.getElementById('review-phrase');
+
+            if (phraseElement) {
+                setInterval(() => {
+                    
+                    phraseElement.classList.remove('opacity-100');
+                    phraseElement.classList.add('opacity-0');
+                    
+                    setTimeout(() => {
+                        phraseIndex = (phraseIndex + 1) % phrases.length;
+                        phraseElement.textContent = phrases[phraseIndex];
+                        phraseElement.classList.remove('opacity-0');
+                        phraseElement.classList.add('opacity-100');
+                    }, 500); 
+                }, 5000);                
+            }
         })();
     </script>
 </body>
 </html>
+
 
 
 
