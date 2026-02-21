@@ -151,7 +151,6 @@
             transform: translate3d(0, 0, 0);
         }
 
-        /* Safari Performance Boost für Blur-Filter */
         .ambient-blob {
             position: fixed; filter: blur(80px); -webkit-filter: blur(80px); z-index: -1; opacity: 0.6;
             will-change: transform;
@@ -240,15 +239,13 @@
 
     <main class="container max-w-7xl mx-auto px-6 space-y-24 pb-8"> 
         <section class="full-width-marquee -mx-6 md:-mx-0">
-            <div class="px-6 md:px-0 mb-6 flex items-center justify-center max-w-4xl mx-auto w-full">
+            <div class="px-6 md:px-0 mb-6 flex items-center justify-center gap-4 max-w-4xl mx-auto">
                 <div class="flex-1 h-px bg-gradient-to-r from-transparent to-brand-300"></div>
-                <div class="w-[260px] sm:w-[300px] flex justify-center shrink-0">
-                    <div id="review-phrase" class="text-brand-600 font-bold tracking-widest uppercase text-xs sm:text-sm text-center transition-opacity duration-500 opacity-100 w-full">
-                        Meinungen vom Beckenrand
-                    </div>
+                <div class="text-brand-600 font-bold tracking-widest uppercase text-xs sm:text-sm text-center min-w-max px-4 shrink-0">
+                    Meinungen vom Beckenrand
                 </div>
                 <div class="flex-1 h-px bg-gradient-to-r from-brand-300 to-transparent"></div>
-            </div>            
+            </div>          
             
             <div class="relative w-full overflow-hidden marquee-mask py-4">
                 <div class="flex w-max animate-marquee gap-6 items-stretch">
@@ -273,7 +270,7 @@
                             <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
                             <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
                         </div>
-                        <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Wir hatten eine private Schwimmstunde für unser Kind und sind total begeistert! Die Stunde war sehr informativ, kindgerecht und voller wertvoller Tipps. Unser Kind hat sich sofort wohlgefühlt und viel gelernt."</p>
+                        <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Wir hatten eine private Schwimmstunde für unser Kind und sind total begeistert! Die Stunde war sehr informativ, kindgerecht und voller wertvoller Tipps. Unser Kind hat sich sofort wohlgefühlt und viel gelernt. Absolut empfehlenswert – wir kommen sehr gerne wieder!"</p>
                         <p class="font-bold text-brand-900 text-sm">- Verena I.</p>
                     </div>
 
@@ -297,7 +294,7 @@
                             <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
                             <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
                         </div>
-                        <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Wir sind sehr begeistert. Nach dem leider die Qualität des anderen Schwimmkurs stark abgenommen hat, haben wir uns für einen Privatlehrer genommen. Beste Entscheidung!"</p>
+                        <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Wir sind sehr begeistert. Nach dem leider die Qualität des anderen Schwimmkurs stark abgenommen hat, haben wir uns für einen Privatlehrer (auf Empfehlung) genommen. Das ist und war die beste Entscheidung. Sehr professionell und lieb. Fam. Speth"</p>
                         <p class="font-bold text-brand-900 text-sm">- Marco S.</p>
                     </div>
 
@@ -357,7 +354,7 @@
                             <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
                             <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
                         </div>
-                        <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Freundlicher und professioneller Umgang. Unser Kind fühlte sich sehr wohl und konnte in der ersten Schwimmstunde viele nützliche Tipps bekommen."</p>
+                        <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Freundlicher und professioneller Umgang. Unser Kind fühlte sich sehr wohl und konnte in der ersten Schwimmstunde viele nützliche Tipps bekommen, auf denen wir künftig aufbauen können."</p>
                         <p class="font-bold text-brand-900 text-sm">- Marc K.</p>
                     </div>
 
@@ -1197,32 +1194,6 @@
             hideBanner();
         };
     })(); 
-
-    (function() {
-        const phrases = [
-            "Meinungen vom Beckenrand",
-            "Wellen der Begeisterung",
-            "Wasserfeste Meinungen",
-            "Chlorreiche Stimmen"
-        ];
-        let phraseIndex = 0;
-        const phraseElement = document.getElementById('review-phrase');
-
-        if (phraseElement) {
-            setInterval(() => {
-                phraseElement.classList.remove('opacity-100');
-                phraseElement.classList.add('opacity-0');
-                
-                setTimeout(() => {
-                    phraseIndex = (phraseIndex + 1) % phrases.length;
-                    phraseElement.textContent = phrases[phraseIndex];
-                    // ANPASSUNG 2: phraseElement.style.display = 'inline-block'; wurde hier entfernt, da es in Safari Bugs auslöst
-                    phraseElement.classList.remove('opacity-0');
-                    phraseElement.classList.add('opacity-100');
-                }, 500); 
-            }, 5000); // 7 Sekunden waren etwas lang, 5 wirkt flüssiger, kannst du natürlich wieder auf 7000 ändern.
-        }
-    })();
 </script>
 </body>
 </html>
