@@ -142,13 +142,22 @@
             -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
             mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
             -webkit-transform: translate3d(0,0,0); 
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
         }
 
-        .animate-marquee {
+       .animate-marquee {
             display: flex;
             will-change: transform;
             -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
+        }
+
+        .animate-marquee > div {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
         }
 
         .ambient-blob {
@@ -1197,3 +1206,4 @@
 </script>
 </body>
 </html>
+
