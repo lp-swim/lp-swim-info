@@ -31,7 +31,26 @@
     <meta name="twitter:title" content="LP‑SWIM | Weil Sicherheit im Wasser zählt" />
     <meta name="twitter:description" content="Ob als Begleitperson im Schulschwimmen oder im Einzelunterricht – vom ersten sicheren Wasserkontakt bis zur Verfeinerung der Schwimmtechnik." />
     <meta name="twitter:image" content="https://lp-swim.github.io/lp-swim-info/social-preview.jpg" />
-
+    <meta name="thumbnail" content="https://lp-swim.github.io/lp-swim-info/kontakt-lukas.jpg" />
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "LP-SWIM",
+      "image": "https://lp-swim.github.io/lp-swim-info/kontakt-lukas.jpg",
+      "logo": "https://lp-swim.github.io/lp-swim-info/favicon.ico",
+      "description": "Ob als Begleitperson im Schulschwimmen oder im Einzelunterricht – vom ersten sicheren Wasserkontakt bis zur Verfeinerung der Schwimmtechnik.",
+      "url": "https://lp-swim.github.io/lp-swim-info/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Schulstraße 9",
+        "addressLocality": "Viernheim",
+        "postalCode": "68519",
+        "addressCountry": "DE"
+      }
+    }
+    </script>
     <meta name="theme-color" content="#EFF6FF" />
     <meta http-equiv="Content-Security-Policy" content="
         default-src 'self'; 
@@ -50,12 +69,10 @@
 
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
-
     <link rel="preload" href="./fonts/poppins-v24-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./fonts/poppins-v24-latin-700.woff2" as="font" type="font/woff2" crossorigin>
 
     <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js"></script>
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -497,7 +514,7 @@
                         </div>
                         
                         <div class="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-lg group w-full">
-                            <img src="https://lp-swim.github.io/lp-swim-info/kontakt-lukas.jpg" alt="Lukas Prehn" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                            <img src="https://lp-swim.github.io/lp-swim-info/kontakt-lukas.jpg" alt="Lukas Prehn - Ihr Schwimmtrainer" fetchpriority="high" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                             <div class="absolute inset-0 bg-gradient-to-t from-brand-900/80 via-transparent to-transparent flex flex-col justify-end p-6">
                                 <p class="text-white font-bold text-lg">Lukas Prehn</p>
                                 <p class="text-brand-100 text-sm">Inhaber & Trainer</p>
@@ -569,7 +586,7 @@
                 <button onclick="closeModal('preisModal')" class="p-2 hover:bg-brand-50 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen"><i data-lucide="x" class="w-6 h-6 text-slate-400" aria-hidden="true"></i></button>
             </div>
             <div class="flex-grow overflow-hidden bg-brand-50/30 flex items-center justify-center p-4 rounded-b-[2rem]">
-                <img src="https://raw.githubusercontent.com/lp-swim/lp-swim-info/refs/heads/main/Preisliste%2001.11.2025.png" alt="Preisliste" class="max-h-full max-w-full object-contain shadow-lg rounded-xl" loading="lazy" decoding="async" />
+                <img src="https://raw.githubusercontent.com/lp-swim/lp-swim-info/refs/heads/main/Preisliste%2001.11.2025.png" data-nosnippet alt="LP-SWIM Gebührenübersicht" class="max-h-full max-w-full object-contain shadow-lg rounded-xl" loading="lazy" decoding="async" />
             </div>
         </div>
     </div>
@@ -1166,6 +1183,7 @@
     </script>
 </body>
 </html>
+
 
 
 
