@@ -139,8 +139,16 @@
         }
 
         .marquee-mask {
-            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            -webkit-transform: translate3d(0,0,0); /* Erzwingt Hardware-Beschleunigung */
+        }
+
+        .animate-marquee {
+            display: flex;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
         }
 
         .ambient-blob {
@@ -230,135 +238,138 @@
         <section class="full-width-marquee -mx-6 md:-mx-0">
             <div class="px-6 md:px-0 mb-6 flex items-center justify-center gap-4 max-w-4xl mx-auto">
             <div class="flex-1 h-px bg-gradient-to-r from-transparent to-brand-300"></div>
-            <div id="review-phrase" class="text-brand-600 font-bold tracking-widest uppercase text-xs sm:text-sm text-center w-[220px] sm:w-[260px] shrink-0 transition-opacity duration-500 opacity-100">
+            <div id="review-phrase" class="text-brand-600 font-bold tracking-widest uppercase text-xs sm:text-sm text-center min-w-max px-4 shrink-0 transition-opacity duration-500 opacity-100">
             Meinungen vom Beckenrand
             </div>
             <div class="flex-1 h-px bg-gradient-to-r from-brand-300 to-transparent"></div>
             </div>            
+            
             <div class="relative w-full overflow-hidden marquee-mask py-4">
                 <div class="flex w-max animate-marquee gap-6 items-stretch">
     
-<div class="w-[340px] p-6 rounded-3xl bg-white border border-brand-100 shadow-lg shadow-brand-900/5 flex flex-col justify-between">
-    <div class="flex mb-3 gap-1">
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-    </div>
-    <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Die 60 Minuten Schwimmunterricht sind wie im Flug vergangen – leicht in der Kommunikation und sehr interessant gestaltet. Jederzeit wieder!"</p>
-    <p class="font-bold text-brand-900 text-sm">- Diana Y.</p>
-</div>
+                    <div class="w-[340px] shrink-0 p-6 rounded-3xl bg-white border border-brand-100 shadow-lg shadow-brand-900/5 flex flex-col justify-between">
+                        <div class="flex mb-3 gap-1">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Die 60 Minuten Schwimmunterricht sind wie im Flug vergangen – leicht in der Kommunikation und sehr interessant gestaltet. Jederzeit wieder!"</p>
+                        <p class="font-bold text-brand-900 text-sm">- Diana Y.</p>
+                    </div>
 
-<div class="w-[340px] p-6 rounded-3xl bg-white border border-brand-100 shadow-lg shadow-brand-900/5 flex flex-col justify-between">
-    <div class="flex mb-3 gap-1">
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-    </div>
-    <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Wir hatten eine private Schwimmstunde für unser Kind und sind total begeistert! Die Stunde war sehr informativ, kindgerecht und voller wertvoller Tipps. Unser Kind hat sich sofort wohlgefühlt und viel gelernt. Absolut empfehlenswert – wir kommen sehr gerne wieder!"</p>
-    <p class="font-bold text-brand-900 text-sm">- Verena I.</p>
-</div>
+                    <div class="w-[340px] shrink-0 p-6 rounded-3xl bg-white border border-brand-100 shadow-lg shadow-brand-900/5 flex flex-col justify-between">
+                        <div class="flex mb-3 gap-1">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Wir hatten eine private Schwimmstunde für unser Kind und sind total begeistert! Die Stunde war sehr informativ, kindgerecht und voller wertvoller Tipps. Unser Kind hat sich sofort wohlgefühlt und viel gelernt."</p>
+                        <p class="font-bold text-brand-900 text-sm">- Verena I.</p>
+                    </div>
+
+                    <div class="w-[340px] shrink-0 p-6 rounded-3xl bg-white border border-brand-100 shadow-lg shadow-brand-900/5 flex flex-col justify-between">
+                        <div class="flex mb-3 gap-1">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Super netter Schwimmlehrer. Super Geduld. Immer wieder gerne. Meine Tochter hat sich sehr wohl gefühlt."</p>
+                        <p class="font-bold text-brand-900 text-sm">- Kerstin A.</p>
+                    </div>
+
+                    <div class="w-[340px] shrink-0 p-6 rounded-3xl bg-white border border-brand-100 shadow-lg shadow-brand-900/5 flex flex-col justify-between">
+                        <div class="flex mb-3 gap-1">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Wir sind sehr begeistert. Nach dem leider die Qualität des anderen Schwimmkurs stark abgenommen hat, haben wir uns für einen Privatlehrer genommen. Beste Entscheidung!"</p>
+                        <p class="font-bold text-brand-900 text-sm">- Marco S.</p>
+                    </div>
+
+                    <div class="w-[340px] shrink-0 p-6 rounded-3xl bg-white border border-brand-100 shadow-lg shadow-brand-900/5 flex flex-col justify-between">
+                        <div class="flex mb-3 gap-1">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Professioneller und kindgerechter Schwimmunterricht. Mein acht jähriger Sohn fühlt sich sicher und aufgehoben. Außerdem gibt Herr Prehn gute Tipps für zu Hause."</p>
+                        <p class="font-bold text-brand-900 text-sm">- Jacqueline R.</p>
+                    </div>
+
+                    <div class="w-[340px] shrink-0 p-6 rounded-3xl bg-white border border-brand-100 shadow-lg shadow-brand-900/5 flex flex-col justify-between">
+                        <div class="flex mb-3 gap-1">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Der private Schwimmunterricht bei Lukas war ein voller Erfolg! Er ist unglaublich professionell, geduldig und hat eine fantastische Art, Wissen zu vermitteln."</p>
+                        <p class="font-bold text-brand-900 text-sm">- Katja L.</p>
+                    </div>
+
+                    <div class="w-[340px] shrink-0 p-6 rounded-3xl bg-white border border-brand-100 shadow-lg shadow-brand-900/5 flex flex-col justify-between">
+                        <div class="flex mb-3 gap-1">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Top! Absolut empfehlenswert. Lukas kann sehr gut erklären, geht immer auf einen ein. Der Kurs macht sehr viel Spaß und ist effektiv."</p>
+                        <p class="font-bold text-brand-900 text-sm">- Sabine W.</p>
+                    </div>
+
+                    <div class="w-[340px] shrink-0 p-6 rounded-3xl bg-white border border-brand-100 shadow-lg shadow-brand-900/5 flex flex-col justify-between">
+                        <div class="flex mb-3 gap-1">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Sehr nett und kompetent, mein Sohn hat sich sehr wohl gefühlt, und man hat in der ersten Stunde schon Fortschritte gesehen."</p>
+                        <p class="font-bold text-brand-900 text-sm">- Julia Keil.</p>
+                    </div>
+
+                    <div class="w-[340px] shrink-0 p-6 rounded-3xl bg-white border border-brand-100 shadow-lg shadow-brand-900/5 flex flex-col justify-between">
+                        <div class="flex mb-3 gap-1">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Freundlicher und professioneller Umgang. Unser Kind fühlte sich sehr wohl und konnte in der ersten Schwimmstunde viele nützliche Tipps bekommen."</p>
+                        <p class="font-bold text-brand-900 text-sm">- Marc K.</p>
+                    </div>
+
+                    <div class="w-[340px] shrink-0 p-6 rounded-3xl bg-white border border-brand-100 shadow-lg shadow-brand-900/5 flex flex-col justify-between">
+                        <div class="flex mb-3 gap-1">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Die 60 Minuten Schwimmunterricht sind wie im Flug vergangen – leicht in der Kommunikation und sehr interessant gestaltet. Jederzeit wieder!"</p>
+                        <p class="font-bold text-brand-900 text-sm">- Diana Y.</p>
+                    </div>
                     
-<div class="w-[340px] p-6 rounded-3xl bg-white border border-brand-100 shadow-lg shadow-brand-900/5 flex flex-col justify-between">
-    <div class="flex mb-3 gap-1">
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-    </div>
-    <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Super netter Schwimmlehrer. Super Geduld. Immer wieder gerne. Meine Tochter hat sich sehr wohl gefühlt."</p>
-    <p class="font-bold text-brand-900 text-sm">- Kerstin A.</p>
-</div>
-
-<div class="w-[340px] p-6 rounded-3xl bg-white border border-brand-100 shadow-lg shadow-brand-900/5 flex flex-col justify-between">
-    <div class="flex mb-3 gap-1">
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-    </div>
-    <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Wir sind sehr begeistert. Nach dem leider die Qualität des anderen Schwimmkurs stark abgenommen hat, haben wir uns für einen Privatlehrer (auf Empfehlung) genommen. Das ist und war die beste Entscheidung. Sehr professionell und lieb."</p>
-    <p class="font-bold text-brand-900 text-sm">- Marco S.</p>
-</div>
-                    
-<div class="w-[340px] p-6 rounded-3xl bg-white border border-brand-100 shadow-lg shadow-brand-900/5 flex flex-col justify-between">
-    <div class="flex mb-3 gap-1">
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-    </div>
-    <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Professioneller und kindgerechter Schwimmunterricht. Mein acht jähriger Sohn fühlt sich sicher und aufgehoben. Außerdem gibt Herr Prehn gute Tipps zum Üben für zu Hause."</p>
-    <p class="font-bold text-brand-900 text-sm">- Jacqueline R.</p>
-</div>
-
-<div class="w-[340px] p-6 rounded-3xl bg-white border border-brand-100 shadow-lg shadow-brand-900/5 flex flex-col justify-between">
-    <div class="flex mb-3 gap-1">
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-    </div>
-    <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"​Der private Schwimmunterricht bei Lukas war ein voller Erfolg! Er ist unglaublich professionell, geduldig und hat eine fantastische Art, Wissen zu vermitteln. Die Fortschritte, die meine Kinder gemacht haben, sind toll. Besonders toll ist die individuelle Betreuung und dass er sich wirklich die Zeit nimmt, auf …"</p>
-    <p class="font-bold text-brand-900 text-sm">- Katja L.</p>
-</div>
-
-<div class="w-[340px] p-6 rounded-3xl bg-white border border-brand-100 shadow-lg shadow-brand-900/5 flex flex-col justify-between">
-    <div class="flex mb-3 gap-1">
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-    </div>
-    <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Top! Absolut empfehlenswert. Lukas kann sehr gut erklären, geht immer auf einen ein. Der Kurs macht sehr viel Spaß und ist effektiv."</p>
-    <p class="font-bold text-brand-900 text-sm">- Sabine W.</p>
-</div>
-
-<div class="w-[340px] p-6 rounded-3xl bg-white border border-brand-100 shadow-lg shadow-brand-900/5 flex flex-col justify-between">
-    <div class="flex mb-3 gap-1">
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-    </div>
-    <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Sehr nett und kompetent, mein Sohn hat sich sehr wohl gefühlt, und man hat in der ersten Stunde schon Fortschritte gesehen.</p>
-    <p class="font-bold text-brand-900 text-sm">- Julia Keil.</p>
-</div>
-                    
-<div class="w-[340px] p-6 rounded-3xl bg-white border border-brand-100 shadow-lg shadow-brand-900/5 flex flex-col justify-between">
-    <div class="flex mb-3 gap-1">
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-    </div>
-    <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Freundlicher und professioneller Umgang. Unser Kind fühlte sich sehr wohl und konnte in der ersten Schwimmstunde viele nützliche Tipps bekommen, auf denen wir künftig aufbauen können."</p>
-    <p class="font-bold text-brand-900 text-sm">- Marc K.</p>
-</div>
-                    
-<div class="w-[340px] p-6 rounded-3xl bg-white border border-brand-100 shadow-lg shadow-brand-900/5 flex flex-col justify-between">
-    <div class="flex mb-3 gap-1">
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
-    </div>
-    <p class="text-slate-600 text-sm leading-relaxed italic mb-4">"Die 60 Minuten Schwimmunterricht sind wie im Flug vergangen – leicht in der Kommunikation und sehr interessant gestaltet. Jederzeit wieder!"</p>
-    <p class="font-bold text-brand-900 text-sm">- Diana Y.</p>
-</div>
-</div>
-</section>
+                </div>
+            </div>
+        </section>
 
 <section class="max-w-7xl mx-auto">
     <div class="flex flex-col md:flex-row gap-8 md:gap-20 items-start">
@@ -660,9 +671,9 @@
                         </div>
                         <div>
                             <p class="font-semibold text-brand-900 mb-1">E-Mail</p>
-                            <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x6c;&#x70;&#x73;&#x77;&#x69;&#x6d;&#x2e;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;" class="text-brand-600 hover:underline decoration-brand-200 text-xs flex items-center gap-1 mt-2">
+                            <a href="mailto:lpswim.info@gmail.com" class="text-brand-600 hover:underline decoration-brand-200 text-xs flex items-center gap-1 mt-2">
                                 <i data-lucide="mail" class="w-3 h-3"></i>
-                                &#x6c;&#x70;&#x73;&#x77;&#x69;&#x6d;&#x2e;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;
+                                lpswim.info@gmail.com
                             </a>
                         </div>
                     </div>
@@ -698,9 +709,9 @@
                                 20459 Hamburg<br>
                                 Deutschland
                             </p>
-                             <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x6c;&#x70;&#x73;&#x77;&#x69;&#x6d;&#x2e;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;" class="text-brand-600 hover:underline decoration-brand-200 text-xs flex items-center gap-1 mt-2">
+                             <a href="mailto:lpswim.info@gmail.com" class="text-brand-600 hover:underline decoration-brand-200 text-xs flex items-center gap-1 mt-2">
                                 <i data-lucide="mail" class="w-3 h-3"></i>
-                                &#x6c;&#x70;&#x73;&#x77;&#x69;&#x6d;&#x2e;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;
+                                lpswim.info@gmail.com
                             </a>
                         </div>
                     </div>
@@ -821,7 +832,7 @@
         <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 transition-all duration-300 modal-anim">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center">
                 <h2 class="text-xl font-bold text-brand-900">Allgemeine Geschäftsbedingungen<br>Stand: Februar 2026</h2>
-                <button onclick="closeModal('agbModal')" class="p-2 hover:bg-brand-50 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen"><i data-lucide="x" class="w-6 h-6 text-slate-400" aria-hidden="true"></i></button>           
+                <button onclick="closeModal('agbModal')" class="p-2 hover:bg-brand-50 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen"><i data-lucide="x" class="w-6 h-6 text-slate-400" aria-hidden="true"></i></button>            
             </div>
             <div class="p-8 overflow-y-auto space-y-8 text-sm text-slate-600 leading-relaxed">
                 <section>
@@ -1193,13 +1204,13 @@
 
         if (phraseElement) {
             setInterval(() => {
-                
                 phraseElement.classList.remove('opacity-100');
                 phraseElement.classList.add('opacity-0');
                 
                 setTimeout(() => {
                     phraseIndex = (phraseIndex + 1) % phrases.length;
                     phraseElement.textContent = phrases[phraseIndex];
+                    phraseElement.style.display = 'inline-block';     
                     phraseElement.classList.remove('opacity-0');
                     phraseElement.classList.add('opacity-100');
                 }, 500); 
@@ -1209,8 +1220,3 @@
 </script>
 </body>
 </html>
-
-
-
-
-
