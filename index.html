@@ -136,9 +136,6 @@
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.6);
             box-shadow: 0 4px 20px -2px rgba(12, 74, 110, 0.05);
-            -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-            will-change: transform;
         }
         .marquee-mask {
             -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
@@ -161,8 +158,6 @@
         }
         .ambient-blob {
             position: fixed; 
-            filter: blur(80px); 
-            -webkit-filter: blur(80px); 
             z-index: -1; 
             opacity: 0.6;
             will-change: transform;
@@ -177,8 +172,8 @@
 
 <body class="antialiased pb-0 selection:bg-brand-200 selection:text-brand-900">
 
-    <div class="ambient-blob bg-brand-200 w-[40vw] h-[40vw] top-0 left-0 rounded-full animate-blob"></div>
-    <div class="ambient-blob bg-blue-100 w-[50vw] h-[50vw] bottom-0 right-0 rounded-full animate-blob" style="animation-delay: -5s;"></div>
+    <div class="ambient-blob w-[40vw] h-[40vw] top-0 left-0 animate-blob" style="background: radial-gradient(circle, rgba(186,230,253,1) 0%, rgba(186,230,253,0) 70%);"></div>
+    <div class="ambient-blob w-[50vw] h-[50vw] bottom-0 right-0 animate-blob" style="animation-delay: -5s; background: radial-gradient(circle, rgba(219,234,254,1) 0%, rgba(219,234,254,0) 70%);"></div>
 
     <nav class="hidden md:flex fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-md border-b border-white/50 transition-all duration-300">
         <div class="container max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"> <a href="#start" class="text-2xl font-bold tracking-tight text-brand-900 flex items-center gap-3 group">
@@ -1214,6 +1209,7 @@
 </script>
 </body>
 </html>
+
 
 
 
