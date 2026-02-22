@@ -127,7 +127,22 @@
         @font-face { font-family: 'Poppins'; font-style: normal; font-weight: 600; src: url('./fonts/poppins-v24-latin-600.woff2') format('woff2'); font-display: swap; }
         @font-face { font-family: 'Poppins'; font-style: normal; font-weight: 700; src: url('./fonts/poppins-v24-latin-700.woff2') format('woff2'); font-display: swap; }
 
-        body { background-color: #f0f9ff; color: #334155; }
+        body { 
+            color: #334155; 
+            background-color: #ffffff; 
+            }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to bottom, #e0f2fe 0%, #f0f9ff 50%, #ffffff 100%);
+            z-index: -2;
+            pointer-events: none;
+            }
         section { scroll-margin-top: 100px; }
         
         .glass-card {
@@ -171,10 +186,6 @@
 </head>
 
 <body class="antialiased pb-0 selection:bg-brand-200 selection:text-brand-900">
-
-    <div class="ambient-blob w-[40vw] h-[40vw] top-0 left-0 animate-blob" style="background: radial-gradient(circle, rgba(186,230,253,1) 0%, rgba(186,230,253,0) 70%);"></div>
-    <div class="ambient-blob w-[50vw] h-[50vw] bottom-0 right-0 animate-blob" style="animation-delay: -5s; background: radial-gradient(circle, rgba(219,234,254,1) 0%, rgba(219,234,254,0) 70%);"></div>
-
     <nav class="hidden md:flex fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-md border-b border-white/50 transition-all duration-300">
         <div class="container max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"> <a href="#start" class="text-2xl font-bold tracking-tight text-brand-900 flex items-center gap-3 group">
                 <div class="bg-brand-50 p-2 rounded-xl group-hover:scale-110 transition-transform border border-brand-100">
@@ -1210,6 +1221,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
 
 
 
