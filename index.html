@@ -59,7 +59,7 @@
         font-src 'self'; 
         img-src 'self' data: https://lp-swim.github.io https://raw.githubusercontent.com https://*.google-analytics.com; 
         connect-src 'self' https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; 
-        frame-src 'self' https://www.google.com https://maps.google.com; 
+        frame-src 'self' https://www.google.com; 
         object-src 'none'; 
         base-uri 'self';
     ">
@@ -246,18 +246,19 @@
         </header>
 
     <main class="container max-w-7xl mx-auto px-6 space-y-24 pb-8"> 
-        <section class="full-width-marquee -mx-6 md:-mx-0">
+        <section class="full-width-marquee -mx-6 md:-mx-0" aria-labelledby="bewertungen-title">
             <div class="px-6 md:px-0 mb-6 flex items-center justify-center gap-4 max-w-4xl mx-auto">
                 <div class="flex-1 h-px bg-gradient-to-r from-transparent to-brand-300"></div>
-                <div class="text-brand-600 font-bold tracking-widest uppercase text-xs sm:text-sm text-center min-w-max px-4 shrink-0">
+                <h2 id="bewertungen-title" class="text-brand-600 font-bold tracking-widest uppercase text-xs sm:text-sm text-center min-w-max px-4 shrink-0">
                     Meinungen vom Beckenrand
-                </div>
+                </h2>
                 <div class="flex-1 h-px bg-gradient-to-r from-brand-300 to-transparent"></div>
             </div>          
-            
-            <div class="relative w-full overflow-hidden marquee-mask py-4">
+            <p class="sr-only">
+                Kunden bewerten den Schwimmunterricht durchweg mit 5 Sternen. Besonders gelobt werden die kindgerechte, professionelle und geduldige Art, sowie die schnellen Lernfortschritte und wertvollen Tipps für zu Hause.
+            </p>
+            <div class="relative w-full overflow-hidden marquee-mask py-4" aria-hidden="true">
                 <div class="flex w-max animate-marquee gap-6 items-stretch">
-    
                     <div class="w-[340px] shrink-0 p-6 rounded-3xl bg-white border border-brand-100 shadow-lg shadow-brand-900/5 flex flex-col justify-between">
                         <div class="flex mb-3 gap-1">
                             <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
@@ -551,7 +552,7 @@
 </div>
 
     <a href="https://www.google.de/maps/place/LP-SWIM+%E2%80%93+Inhaber+Lukas+Prehn/@49.5377271,8.5779474,17z/data=!3m2!4b1!5s0x4797d01d72d4f93d:0x4e811ba7f56f8163!4m6!3m5!1s0x66777943db50c52b:0x72759400e8725848!8m2!3d49.5377236!4d8.5805277!16s%2Fg%2F11xv29qq3r?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="block min-h-[300px] bg-slate-100 rounded-[2rem] overflow-hidden relative group shadow-inner">
-        <iframe class="w-full h-full absolute inset-0 border-0 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2590.584436665042!2d8.5809261!3d49.5376939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x66777943db50c52b%3A0x72759400e8725848!2sLP-SWIM%20%E2%80%93%20Inhaber%20Lukas%20Prehn!5e0!3m2!1sde!2sde!4v1708520000000!5m2!1sde!2sde" title="LP-SWIM Standortkarte"></iframe>
+        <iframe class="w-full h-full absolute inset-0 border-0 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2588.636660167232!2d8.577952776891004!3d49.5377270714316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797d01d72d4f93d%3A0x4e811ba7f56f8163!2sSchulstra%C3%9Fe%209%2C%2068519%20Viernheim!5e0!3m2!1sde!2sde!4v1700000000000!5m2!1sde!2sde" title="LP-SWIM Standortkarte"></iframe>
         <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
             <div class="bg-white/90 backdrop-blur px-6 py-3 rounded-full shadow-lg text-sm font-bold text-brand-900 group-hover:scale-110 transition-transform">
                 <i data-lucide="map-pin" class="w-4 h-4 inline mr-2 text-brand-500"></i> Karte öffnen
@@ -1023,33 +1024,40 @@
 <script>
     lucide.createIcons();
 
-    document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
+        let typingStarted = false; 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.remove('opacity-0', 'translate-y-8');
-                    observer.unobserve(entry.target);
+                    if (entry.target.id === 'message') {
+                        if (!typingStarted) {
+                            typingStarted = true;
+                            entry.target.placeholder = ""; 
+                            const text = "Ich würde gerne meine Technik verbessern. Wie läuft die Buchung ab?";
+                            let i = 0;
+                            setTimeout(() => {
+                                const interval = setInterval(() => {
+                                    entry.target.placeholder += text.charAt(i);
+                                    i++;
+                                    if (i >= text.length) clearInterval(interval);
+                                }, 40);
+                            }, 500); 
+                        }
+                        observer.unobserve(entry.target);
+                    } else {
+                        entry.target.classList.remove('opacity-0', 'translate-y-8');
+                        observer.unobserve(entry.target);
+                    }
                 }
             });
         }, { threshold: 0.1 });
-        
         document.querySelectorAll('section article, section > div, section h2').forEach(el => {
             el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
             observer.observe(el);
         });
-
         const msgField = document.getElementById("message");
         if(msgField) {
-            msgField.placeholder = ""; 
-            const text = "Ich würde gerne meine Technik verbessern. Wie läuft die Buchung ab?";
-            let i = 0;
-            setTimeout(() => {
-                const interval = setInterval(() => {
-                    msgField.placeholder += text.charAt(i);
-                    i++;
-                    if (i >= text.length) clearInterval(interval);
-                }, 40);
-            }, 500);
+            observer.observe(msgField);
         }
     });
 
@@ -1094,7 +1102,6 @@
             if (!anyOpen) {
                 overlay.classList.add('opacity-0');
                 setTimeout(() => overlay.classList.add('hidden'), 300);
-                
                 if(!cookieBanner || cookieBanner.classList.contains('hidden')) {
                     document.body.classList.remove('overflow-hidden');
                 } else {
@@ -1103,21 +1110,19 @@
             }
         }, 300);
     }
-    
     function closeAllModals() {
         document.querySelectorAll('[id$="Modal"].flex, #confirmationPopup.flex').forEach(m => closeModal(m.id));
     }
-
     const form = document.getElementById('contactForm');
     const formMessage = document.getElementById('form-message');
     if (form) {
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = form.querySelector('button[type="submit"]');
-            const orgText = btn.innerHTML;
+            const btnSpan = btn.querySelector('span');
+            const orgText = btnSpan.innerText;
             btn.disabled = true;
-            btn.innerHTML = 'Senden...';
-            
+            btnSpan.innerText = 'Senden...';
             try {
                 const res = await fetch(form.action, { 
                     method: 'POST', 
@@ -1135,21 +1140,17 @@
                 formMessage.classList.remove('hidden');
             } finally {
                 btn.disabled = false;
-                btn.innerHTML = orgText;
+                btnSpan.innerText = orgText;
             }
         });
     }
-
     (function() {
         const GA_MEASUREMENT_ID = "G-T5H2XMBKFL"; 
         const STORAGE_KEY = "lp_swim_consent_2026"; 
         const overlay = document.getElementById('cookie-overlay'); 
-        
         if (!overlay) return; 
-        
         const card = overlay.querySelector('div');
         const body = document.body;
-        
         function loadGAScript() {
             const script = document.createElement('script');
             script.async = true;
@@ -1209,8 +1210,3 @@
 </script>
 </body>
 </html>
-
-
-
-
-
