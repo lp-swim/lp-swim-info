@@ -50,17 +50,19 @@
     </script>
 
     <meta name="theme-color" content="#EFF6FF" />
+    
     <meta http-equiv="Content-Security-Policy" content="
-        default-src 'self'; 
-        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdn.tailwindcss.com https://www.googletagmanager.com; 
-        style-src 'self' 'unsafe-inline'; 
-        font-src 'self'; 
-        img-src 'self' data: https://lp-swim.github.io https://raw.githubusercontent.com https://*.google-analytics.com; 
-        connect-src 'self' https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; 
-        frame-src 'self' https://www.google.com https://www.google.de; 
-        object-src 'none'; 
-        base-uri 'self';
+    default-src 'self'; 
+    script-src 'self' 'unsafe-inline' https://unpkg.com https://www.googletagmanager.com; 
+    style-src 'self' 'unsafe-inline'; 
+    font-src 'self'; 
+    img-src 'self' data: https://lp-swim.github.io https://raw.githubusercontent.com https://*.google-analytics.com; 
+    connect-src 'self' https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; 
+    frame-src 'self' https://www.google.com https://www.google.de; 
+    object-src 'none'; 
+    base-uri 'self';
     ">
+    
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -71,54 +73,9 @@
     <link rel="preload" href="./fonts/poppins-v24-latin-700.woff2" as="font" type="font/woff2" crossorigin>
 
     <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Poppins', 'sans-serif'] },
-                    colors: {
-                        brand: { 50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1', 800: '#075985', 900: '#0c4a6e' },
-                    },
-                    animation: {
-                        'marquee': 'marquee 50s linear infinite',
-                        'float': 'float 8s ease-in-out infinite',
-                        'blob': 'blob 10s infinite alternate',
-                        'fade-in': 'fadeIn 1s ease-out forwards',
-                        'hop': 'hop 3s ease-in-out infinite',
-                        'seahorse-swim': 'seahorseSwim 6s ease-in-out infinite',
-                        'wave-slow': 'wave 12s linear infinite',
-                        'wave-fast': 'wave 8s linear infinite reverse',
-                    },
-                    keyframes: {
-                        marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(-50%)' } },
-                        float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-15px)' } },
-                        blob: {
-                            '0%': { transform: 'translate(0, 0) scale(1)' },
-                            '100%': { transform: 'translate(20px, -20px) scale(1.1)' }
-                        },
-                        fadeIn: { from: { opacity: 0, transform: 'translateY(10px)' }, to: { opacity: 1, transform: 'translateY(0)' } },
-                        hop: { 
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-8px)' } 
-                        },
-                        seahorseSwim: {
-                            '0%, 100%': { transform: 'translateY(0) rotate(0deg) translateX(0)' },
-                            '25%': { transform: 'translateY(-8px) rotate(3deg) translateX(2px)' },
-                            '50%': { transform: 'translateY(-14px) rotate(-1deg) translateX(-2px)' },
-                            '75%': { transform: 'translateY(-6px) rotate(2deg) translateX(1px)' }
-                        },
-                        wave: {
-                            '0%': { transform: 'translateX(0)' },
-                            '100%': { transform: 'translateX(-50%)' }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
+    <link rel="stylesheet" href="./style.css">
+    
     <style>
         @font-face { font-family: 'Poppins'; font-style: normal; font-weight: 300; src: url('./fonts/poppins-v24-latin-300.woff2') format('woff2'); font-display: swap; }
         @font-face { font-family: 'Poppins'; font-style: normal; font-weight: 400; src: url('./fonts/poppins-v24-latin-regular.woff2') format('woff2'); font-display: swap; }
@@ -997,5 +954,6 @@
     
 </body>
 </html>
+
 
 
