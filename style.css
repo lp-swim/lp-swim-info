@@ -1154,7 +1154,7 @@ video {
 .bg-brand-900\/60 {
   background-color: rgb(12 74 110 / 0.6);
 }
-.bg-green-700 {
+.bg-green-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(220 252 231 / var(--tw-bg-opacity, 1));
 }
@@ -1162,7 +1162,7 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 247 237 / var(--tw-bg-opacity, 1));
 }
-.bg-red-700 {
+.bg-red-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity, 1));
 }
