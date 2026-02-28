@@ -220,6 +220,13 @@
         if (closeBtn.tagName === 'A' || closeBtn.tagName === 'BUTTON') e.preventDefault();
         closeModal(closeBtn.getAttribute('data-close-modal'));
             }
+        // Cookie-Entscheidung widerrufen
+        const revokeBtn = e.target.closest('[data-revoke-cookies]');
+        if (revokeBtn) {
+        e.preventDefault();
+        localStorage.removeItem('lp_swim_consent_2026'); // Löscht den Speicher
+        window.location.reload(); // Lädt die Seite neu
+            }
         // Alle Modals schließen (Klick auf das abgedunkelte Overlay)
         if (e.target.id === 'modal-overlay') {
         closeAllModals();
