@@ -159,7 +159,7 @@
             <div class="flex items-center gap-2 bg-brand-50/80 p-1.5 rounded-full border border-brand-100">
                 <a class="px-6 py-2 rounded-full text-sm font-medium text-brand-800 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all" href="#jugend">Angebot</a>
                 <a class="px-6 py-2 rounded-full text-sm font-medium text-brand-800 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all" href="#standort">Standort</a>
-                <button onclick="openModal('preisModal')" class="px-6 py-2 rounded-full text-sm font-medium text-brand-800 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all">Preise</button>
+                <button data-open-modal="preisModal" class="px-6 py-2 rounded-full text-sm font-medium text-brand-800 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all">Preise</button>
             </div>
         </div>
     </nav>
@@ -185,7 +185,7 @@
                     <a class="inline-flex items-center justify-center px-7 py-3 rounded-full bg-brand-700 text-white font-medium shadow-xl shadow-brand-900/10 hover:bg-brand-800 hover:-translate-y-1 transition-all" href="#kontakt">
                         Kontaktaufnahme
                     </a>
-                    <button onclick="openModal('preisModal')" class="inline-flex items-center justify-center px-7 py-3 rounded-full bg-white text-brand-900 font-medium border border-brand-200 shadow-sm hover:bg-brand-50 transition-all">
+                    <button data-open-modal="preisModal" class="inline-flex items-center justify-center px-7 py-3 rounded-full bg-white text-brand-900 font-medium border border-brand-200 shadow-sm hover:bg-brand-50 transition-all">
                         Preisübersicht
                     </button>
                 </div>
@@ -568,7 +568,7 @@
                             <div class="flex items-start gap-3">
                                 <input class="mt-1 w-5 h-5 text-brand-600 rounded-md border-brand-200 focus:ring-brand-500" id="privacy-consent" name="privacy-consent" required type="checkbox" />
                                 <label class="text-sm text-slate-500 leading-relaxed cursor-pointer select-none" for="privacy-consent">
-                                    Ich habe die <button type="button" class="text-brand-600 font-semibold hover:underline" onclick="openModal('datenschutzModal')">Datenschutzerklärung</button> gelesen und stimme zu.
+                                    Ich habe die <button type="button" class="text-brand-600 font-semibold hover:underline" data-open-modal="datenschutzModal">Datenschutzerklärung</button> gelesen und stimme zu.
                                 </label>
                             </div>
 
@@ -589,21 +589,21 @@
     <footer class="bg-white py-8 text-center border-t border-brand-50">
         <div class="container mx-auto px-4">
             <div class="flex flex-wrap justify-center gap-6 mb-6 text-sm font-medium text-slate-500">
-                <button onclick="openModal('datenschutzModal')" class="hover:text-brand-600 transition-colors">Datenschutz</button>
-                <button onclick="openModal('agbModal')" class="hover:text-brand-600 transition-colors">AGB</button>
-                <button onclick="openModal('impressumModal')" class="hover:text-brand-600 transition-colors">Impressum</button>
+                <button data-open-modal="datenschutzModal" class="hover:text-brand-600 transition-colors">Datenschutz</button>
+                <button data-open-modal="agbModal" class="hover:text-brand-600 transition-colors">AGB</button>
+                <button data-open-modal="impressumModal" class="hover:text-brand-600 transition-colors">Impressum</button>
             </div>
             <p class="text-slate-400 text-xs tracking-wide">© 2026 LP-SWIM. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 
-    <div id="modal-overlay" class="fixed inset-0 z-[60] bg-brand-900/40 backdrop-blur-sm hidden transition-opacity duration-300 opacity-0" onclick="closeAllModals()"></div>
+    <div id="modal-overlay" class="fixed inset-0 z-[60] bg-brand-900/40 backdrop-blur-sm hidden transition-opacity duration-300 opacity-0"></div>
 
     <div id="preisModal" class="fixed inset-0 z-[70] hidden items-center justify-center p-4 pointer-events-none">
         <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-5xl h-[90vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 transition-all duration-300 modal-anim">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center bg-white rounded-t-[2rem] shrink-0">
                 <h2 class="text-xl font-bold text-brand-900">Preisübersicht</h2>
-                <button onclick="closeModal('preisModal')" class="p-2 hover:bg-brand-50 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen"><i data-lucide="x" class="w-6 h-6 text-slate-400" aria-hidden="true"></i></button>
+                <button data-close-modal="preisModal" class="p-2 hover:bg-brand-50 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen"><i data-lucide="x" class="w-6 h-6 text-slate-400" aria-hidden="true"></i></button>
             </div>
             <div class="flex-grow overflow-hidden bg-brand-50/30 flex items-center justify-center p-4 rounded-b-[2rem]">
                 <img src="./Preisliste%2001.11.2025.webp" width="1200" height="1600" data-nosnippet alt="LP-SWIM Preisübersicht" class="max-h-full max-w-full object-contain shadow-lg rounded-xl" loading="lazy" decoding="async" />
@@ -615,7 +615,7 @@
         <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 transition-all duration-300 modal-anim">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center">
                 <h2 class="text-xl font-bold text-brand-900">Impressum</h2>
-                <button onclick="closeModal('impressumModal')" class="p-2 hover:bg-brand-50 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen"><i data-lucide="x" class="w-6 h-6 text-slate-400" aria-hidden="true"></i></button>            
+                <button data-close-modal="impressumModal" class="p-2 hover:bg-brand-50 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen"><i data-lucide="x" class="w-6 h-6 text-slate-400" aria-hidden="true"></i></button>            
             </div>
             <div class="p-8 overflow-y-auto space-y-8 text-sm text-slate-600 leading-relaxed">
                 <section>
@@ -659,7 +659,7 @@
         <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 transition-all duration-300 modal-anim">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center">
                 <h2 class="text-xl font-bold text-brand-900">Datenschutzerklärung<br>Stand: Februar 2026</h2>
-                <button onclick="closeModal('datenschutzModal')" class="p-2 hover:bg-brand-50 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen"><i data-lucide="x" class="w-6 h-6 text-slate-400" aria-hidden="true"></i></button>
+                <button data-close-modal="datenschutzModal" class="p-2 hover:bg-brand-50 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen"><i data-lucide="x" class="w-6 h-6 text-slate-400" aria-hidden="true"></i></button>
             </div>
             <div class="p-8 overflow-y-auto space-y-8 text-sm text-slate-600 leading-relaxed">
                 <section>
@@ -792,7 +792,7 @@
         <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 transition-all duration-300 modal-anim">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center">
                 <h2 class="text-xl font-bold text-brand-900">Allgemeine Geschäftsbedingungen<br>Stand: Februar 2026</h2>
-                <button onclick="closeModal('agbModal')" class="p-2 hover:bg-brand-50 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen"><i data-lucide="x" class="w-6 h-6 text-slate-400" aria-hidden="true"></i></button>            
+                <button data-close-modal="agbModal" class="p-2 hover:bg-brand-50 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen"><i data-lucide="x" class="w-6 h-6 text-slate-400" aria-hidden="true"></i></button>            
             </div>
             <div class="p-8 overflow-y-auto space-y-8 text-sm text-slate-600 leading-relaxed">
                 <section>
@@ -914,7 +914,7 @@
             </div>
             <h2 class="text-2xl font-bold mb-4 text-brand-900">Gesendet!</h2>
             <p class="text-slate-600 mb-8">Vielen Dank. Wir melden uns in Kürze bei Ihnen zurück.</p>
-            <button onclick="closeModal('confirmationPopup')" class="w-full py-4 rounded-xl bg-brand-900 text-white font-bold hover:bg-brand-800 transition-colors">Alles klar</button>
+            <button data-close-modal="confirmationPopup" class="w-full py-4 rounded-xl bg-brand-900 text-white font-bold hover:bg-brand-800 transition-colors">Alles klar</button>
         </div>
     </div>
 
@@ -934,7 +934,7 @@
                             <i class="shrink-0 w-4 h-4 text-brand-400 mt-0.5" data-lucide="info"></i>
                             <span>
                                 Deine IP wird anonymisiert. Details in der 
-                                <button onclick="openModal('datenschutzModal')" class="text-brand-600 font-bold hover:underline decoration-brand-200 underline-offset-2 transition-colors">Datenschutzerklärung</button>.
+                                <button data-open-modal="datenschutzModal" class="text-brand-600 font-bold hover:underline decoration-brand-200 underline-offset-2 transition-colors">Datenschutzerklärung</button>.
                             </span>
                         </div>
                     </div>
@@ -956,26 +956,3 @@
     
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
