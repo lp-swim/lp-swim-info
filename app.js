@@ -1,6 +1,3 @@
-        // Initialisierung von Lucide Icons
-        lucide.createIcons();
-
         // Animationen bei Sichtbarkeit (Intersection Observer)
         document.addEventListener('DOMContentLoaded', () => {
             let typingStarted = false; 
