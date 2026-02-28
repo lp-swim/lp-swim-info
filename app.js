@@ -207,29 +207,32 @@
         })();
         // --- ZENTRALE KLICK-STEUERUNG (Ersetzt die Inline-onclicks) ---
         document.addEventListener('click', (e) => {
-        // Modals öffnen
-        const openBtn = e.target.closest('[data-open-modal]');
-        if (openBtn) {
-        // e.preventDefault() verhindert, dass die Seite nach oben springt, falls es ein <a> Tag ist
-        if (openBtn.tagName === 'A' || openBtn.tagName === 'BUTTON') e.preventDefault(); 
-        openModal(openBtn.getAttribute('data-open-modal'));
+            // Modals öffnen
+            const openBtn = e.target.closest('[data-open-modal]');
+            if (openBtn) {
+                // e.preventDefault() verhindert, dass die Seite nach oben springt, falls es ein <a> Tag ist
+                if (openBtn.tagName === 'A' || openBtn.tagName === 'BUTTON') e.preventDefault(); 
+                openModal(openBtn.getAttribute('data-open-modal'));
             }
-        // Modals schließen
-        const closeBtn = e.target.closest('[data-close-modal]');
-        if (closeBtn) {
-        if (closeBtn.tagName === 'A' || closeBtn.tagName === 'BUTTON') e.preventDefault();
-        closeModal(closeBtn.getAttribute('data-close-modal'));
+
+            // Modals schließen
+            const closeBtn = e.target.closest('[data-close-modal]');
+            if (closeBtn) {
+                if (closeBtn.tagName === 'A' || closeBtn.tagName === 'BUTTON') e.preventDefault();
+                closeModal(closeBtn.getAttribute('data-close-modal'));
             }
-        // Cookie-Entscheidung widerrufen
-        const revokeBtn = e.target.closest('[data-revoke-cookies]');
-        if (revokeBtn) {
-        e.preventDefault();
-        localStorage.removeItem('lp_swim_consent_2026'); // Löscht den Speicher
-        window.location.reload(); // Lädt die Seite neu
+
+            // Cookie-Entscheidung widerrufen
+            const revokeBtn = e.target.closest('[data-revoke-cookies]');
+            if (revokeBtn) {
+                e.preventDefault();
+                localStorage.removeItem('lp_swim_consent_2026'); // Löscht die gespeicherte Entscheidung
+                window.location.reload(); // Lädt die Seite neu
             }
-        // Alle Modals schließen (Klick auf das abgedunkelte Overlay)
-        if (e.target.id === 'modal-overlay') {
-        closeAllModals();
+
+            // Alle Modals schließen (Klick auf das abgedunkelte Overlay)
+            if (e.target.id === 'modal-overlay') {
+                closeAllModals();
             }
         });
         // --- TASTATUR-STEUERUNG (Barrierefreiheit) ---
