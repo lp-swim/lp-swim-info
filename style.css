@@ -1,4 +1,121 @@
+/* ==========================================
+   1. PROJEKT-STYLES (Basis & Animationen)
+   ========================================== */
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 300; src: url('./fonts/poppins-v24-latin-300.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 400; src: url('./fonts/poppins-v24-latin-regular.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 500; src: url('./fonts/poppins-v24-latin-500.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 600; src: url('./fonts/poppins-v24-latin-600.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 700; src: url('./fonts/poppins-v24-latin-700.woff2') format('woff2'); font-display: swap; }
+body { 
+    color: #334155; 
+    background-color: #ffffff; 
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, #e0f2fe 0%, #f0f9ff 50%, #ffffff 100%);
+    z-index: -2;
+    pointer-events: none;
+}
+section { scroll-margin-top: 100px; }
+.glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 20px -2px rgba(12, 74, 110, 0.05);
+}
+.marquee-mask {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-transform: translate3d(0,0,0); 
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.animate-marquee {
+    display: flex;
+    will-change: transform;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+.animate-marquee > div {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.ambient-blob {
+    position: fixed; 
+    z-index: -1; 
+    opacity: 0.6;
+    will-change: transform;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    pointer-events: none;
+}
+/* ==========================================
+   2. TAILWIND CORE & UTILITIES
+   ========================================== */
 *, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x: ;
+  --tw-pan-y: ;
+  --tw-pinch-zoom: ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position: ;
+  --tw-gradient-via-position: ;
+  --tw-gradient-to-position: ;
+  --tw-ordinal: ;
+  --tw-slashed-zero: ;
+  --tw-numeric-figure: ;
+  --tw-numeric-spacing: ;
+  --tw-numeric-fraction: ;
+  --tw-ring-inset: ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur: ;
+  --tw-brightness: ;
+  --tw-contrast: ;
+  --tw-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-invert: ;
+  --tw-saturate: ;
+  --tw-sepia: ;
+  --tw-drop-shadow: ;
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
+  --tw-contain-size: ;
+  --tw-contain-layout: ;
+  --tw-contain-paint: ;
+  --tw-contain-style: ;
+}
+::backdrop {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
