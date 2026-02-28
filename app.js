@@ -208,3 +208,34 @@
                 };
             }
         })();
+        // --- ZENTRALE KLICK-STEUERUNG (Ersetzt die Inline-onclicks) ---
+        document.addEventListener('click', (e) => {
+        // Modals öffnen
+        const openBtn = e.target.closest('[data-open-modal]');
+        if (openBtn) {
+        // e.preventDefault() verhindert, dass die Seite nach oben springt, falls es ein <a> Tag ist
+        if (openBtn.tagName === 'A' || openBtn.tagName === 'BUTTON') e.preventDefault(); 
+        openModal(openBtn.getAttribute('data-open-modal'));
+            }
+        // Modals schließen
+        const closeBtn = e.target.closest('[data-close-modal]');
+        if (closeBtn) {
+        if (closeBtn.tagName === 'A' || closeBtn.tagName === 'BUTTON') e.preventDefault();
+        closeModal(closeBtn.getAttribute('data-close-modal'));
+            }
+        // Alle Modals schließen (Klick auf das abgedunkelte Overlay)
+        if (e.target.id === 'modal-overlay') {
+        closeAllModals();
+            }
+        });
+        // --- TASTATUR-STEUERUNG (Barrierefreiheit) ---
+        document.addEventListener('keydown', (e) => {
+        // Prüfen, ob die Escape-Taste gedrückt wurde
+         if (e.key === 'Escape') {
+        // Prüfen, ob überhaupt ein Modal (oder das Bestätigungs-Popup) offen ist
+        const anyOpenModal = document.querySelectorAll('[id$="Modal"].flex, #confirmationPopup.flex').length > 0;
+        if (anyOpenModal) {
+            closeAllModals();
+        }
+    }
+});
