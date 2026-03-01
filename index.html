@@ -485,11 +485,11 @@
                             <div class="space-y-4">
                                 <div class="group">
                                     <label for="name" class="block text-sm font-medium text-brand-900 mb-2 ml-1">Vor- und Zuname</label>
-                                    <input id="name" class="w-full px-5 py-3.5 rounded-3xl bg-brand-50 border border-brand-100 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all font-sans text-base text-brand-900 placeholder:text-slate-400" name="name" placeholder="Max Mustermann" required type="text" />
+                                    <input id="name" autocomplete="name" class="w-full px-5 py-3.5 rounded-3xl bg-brand-50 border border-brand-100 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all font-sans text-base text-brand-900 placeholder:text-slate-400" name="name" placeholder="Max Mustermann" required type="text" />
                                 </div>
                                 <div class="group">
                                     <label for="email" class="block text-sm font-medium text-brand-900 mb-2 ml-1">E-Mail</label>
-                                    <input id="email" class="w-full px-5 py-3.5 rounded-3xl bg-brand-50 border border-brand-100 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all font-sans text-base text-brand-900 placeholder:text-slate-400" name="email" placeholder="max@beispiel.de" required type="email" />
+                                    <input id="email" autocomplete="email" class="w-full px-5 py-3.5 rounded-3xl bg-brand-50 border border-brand-100 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all font-sans text-base text-brand-900 placeholder:text-slate-400" name="email" placeholder="max@beispiel.de" required type="email" />
                                 </div>
                                 <div class="group">
                                     <label for="message" class="block text-sm font-medium text-brand-900 mb-2 ml-1">Nachricht</label>
@@ -499,7 +499,7 @@
 
                             <div class="flex items-start gap-3">
                                 <input class="mt-1 w-5 h-5 text-brand-600 rounded-md border-brand-200 focus:ring-brand-500" id="privacy-consent" name="privacy-consent" required type="checkbox" />
-                                <label class="text-sm text-slate-500 leading-relaxed cursor-pointer select-none" for="privacy-consent">
+                                <label class="text-sm text-slate-700 leading-relaxed cursor-pointer select-none" for="privacy-consent">
                                     Ich habe die <button type="button" class="text-brand-600 font-semibold hover:underline" data-open-modal="datenschutzModal">Datenschutzerklärung</button> gelesen und stimme zu.
                                 </label>
                             </div>
@@ -524,7 +524,7 @@
                 <button data-open-modal="agbModal" class="hover:text-brand-600 transition-colors">AGB</button>
                 <button data-open-modal="impressumModal" class="hover:text-brand-600 transition-colors">Impressum</button>
             </div>
-            <p class="text-slate-400 text-xs tracking-wide">© 2026 LP-SWIM. Alle Rechte vorbehalten.</p>
+            <p class="text-slate-500 text-xs tracking-wide">© 2026 LP-SWIM. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 
@@ -905,4 +905,3 @@
     
 </body>
 </html>
-
