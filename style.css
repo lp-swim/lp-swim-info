@@ -2020,11 +2020,11 @@ video {
     line-height: 1;
   }
 }
-
 /* ==========================================
    3. EIGENE ANPASSUNGEN (Overrides)
    ========================================== */
-.pt-10 { padding-top: 2.5rem !important; }
+.pt-10 { padding-top: 1.5rem !important; } /* Abstand Start auf dem Handy */
+
 @media (min-width: 768px) { 
-    .md\:pt-28 { padding-top: 7rem !important; } 
+    .md\:pt-28 { padding-top: 4.5rem !important; } /* Abstand Start auf dem PC */
 }
