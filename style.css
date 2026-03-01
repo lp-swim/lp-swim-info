@@ -2024,10 +2024,16 @@ video {
    3. EIGENE ANPASSUNGEN (Abstand oben)
    ========================================== */
 #start {
-    padding-top: 0rem !important; /* Abstand Start auf dem Handy */
+    padding-top: 0.5rem !important; 
 }
 @media (min-width: 768px) { 
     #start {
-        padding-top: 5rem !important; /* Abstand Start auf dem PC */
+        padding-top: 5.5rem !important; 
     } 
+}
+footer button, footer p {
+    color: #64748b !important; 
+}
+[data-close-modal] svg {
+    pointer-events: none;
 }
