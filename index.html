@@ -73,7 +73,7 @@
 <body class="antialiased pb-0 selection:bg-brand-200 selection:text-brand-900">
     <svg style="display: none;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
         <defs>
-            <symbol id="icon-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <symbol id="icon-star" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
             </symbol>
         </defs>
@@ -535,11 +535,10 @@
         <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-5xl h-[90vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 transition-all duration-300 modal-anim">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center bg-white rounded-t-[2rem] shrink-0">
                 <h2 class="text-xl font-bold text-brand-900">Preisübersicht</h2>
-                
-                <button data-close-modal="preisModal" class="p-2 hover:bg-brand-50 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-slate-500" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                </button>
-            </div>
+                    <button data-close-modal="preisModal" class="p-1.5 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
             <div class="flex-grow overflow-hidden bg-brand-50/30 flex items-center justify-center p-4 rounded-b-[2rem]">
                 <img src="./Preisliste%2001.11.2025.webp" width="1200" height="1600" data-nosnippet alt="LP-SWIM Preisübersicht" class="max-h-full max-w-full object-contain shadow-lg rounded-xl" loading="lazy" decoding="async" />
             </div>
@@ -550,11 +549,10 @@
         <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 transition-all duration-300 modal-anim">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center">
                 <h2 class="text-xl font-bold text-brand-900">Impressum</h2>
-
-                <button data-close-modal="impressumModal" class="p-2 hover:bg-brand-50 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-slate-500" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                </button>            
-            </div>
+                    <button data-close-modal="impressumModal" class="p-1.5 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>           
+                </div>
             <div class="p-8 overflow-y-auto space-y-8 text-sm text-slate-600 leading-relaxed">
                 <section>
                     <h4 class="font-bold text-lg text-brand-700 mb-2">Angaben gemäß § 5 TMG</h4>
@@ -597,11 +595,10 @@
         <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 transition-all duration-300 modal-anim">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center">
                 <h2 class="text-xl font-bold text-brand-900">Datenschutzerklärung<br>Stand: Februar 2026</h2>
-                
-                <button data-close-modal="datenschutzModal" class="p-2 hover:bg-brand-50 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-slate-500" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                </button>
-            </div>
+                    <button data-close-modal="datenschutzModal" class="p-1.5 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
             <div class="p-8 overflow-y-auto space-y-8 text-sm text-slate-600 leading-relaxed">
                 <section>
                     <h4 class="font-bold text-lg text-brand-700 mb-2">1. Datenschutz auf einen Blick</h4>
@@ -743,11 +740,10 @@
         <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 transition-all duration-300 modal-anim">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center">
                 <h2 class="text-xl font-bold text-brand-900">Allgemeine Geschäftsbedingungen<br>Stand: Februar 2026</h2>
-                
-                <button data-close-modal="agbModal" class="p-2 hover:bg-brand-50 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-slate-500" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                </button>            
-            </div>
+                    <button data-close-modal="agbModal" class="p-1.5 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>           
+                </div>
             <div class="p-8 overflow-y-auto space-y-8 text-sm text-slate-600 leading-relaxed">
                 <section>
                     <h4 class="font-bold text-lg text-brand-700 mb-2">§1 Geltungsbereich & Vertretung</h4>
@@ -910,6 +906,7 @@
     
 </body>
 </html>
+
 
 
 
