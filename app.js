@@ -44,11 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-
 // ==========================================
 // 2. MODAL-FUNKTIONEN (Popups)
 // ==========================================
+let lastFocusedElement = null; // Merkt sich den geklickten Button
+
 function openModal(id) {
+    lastFocusedElement = document.activeElement; 
+    
     const modal = document.getElementById(id);
     const overlay = document.getElementById('modal-overlay');
     const content = modal.querySelector('.modal-anim');
@@ -66,6 +69,10 @@ function openModal(id) {
     setTimeout(() => {
         content.classList.remove('scale-95', 'opacity-0');
         content.classList.add('scale-100', 'opacity-100');
+        
+        // Fokus auf das Modal setzen für Screenreader/Tastatur
+        const closeBtn = modal.querySelector('[data-close-modal]');
+        if (closeBtn) closeBtn.focus();
     }, 50);
     
     document.body.classList.add('overflow-hidden');
@@ -94,6 +101,12 @@ function closeModal(id) {
             } else {
                 cookieBanner.classList.remove('opacity-0', 'pointer-events-none');
             }
+            
+            // Fokus zurückgeben
+            if (lastFocusedElement) {
+                lastFocusedElement.focus();
+                lastFocusedElement = null;
+            }
         }
     }, 300);
 }
@@ -101,7 +114,6 @@ function closeModal(id) {
 function closeAllModals() {
     document.querySelectorAll('[id$="Modal"].flex, #confirmationPopup.flex').forEach(m => closeModal(m.id));
 }
-
 
 // ==========================================
 // 3. FORMULAR-VERSAND (AJAX zu Formspree)
@@ -140,7 +152,6 @@ if (form) {
         }
     });
 }
-
 
 // ==========================================
 // 4. COOKIE CONSENT & GOOGLE ANALYTICS
@@ -218,7 +229,6 @@ if (form) {
     }
 })();
 
-
 // ==========================================
 // 5. ZENTRALE KLICK-STEUERUNG
 // ==========================================
@@ -250,7 +260,6 @@ document.addEventListener('click', (e) => {
         closeAllModals();
     }
 });
-
 
 // ==========================================
 // 6. TASTATUR-STEUERUNG (Barrierefreiheit)
