@@ -2023,8 +2023,7 @@ video {
 /* ==========================================
    3. EIGENE ANPASSUNGEN (Overrides)
    ========================================== */
-.pt-10 { padding-top: 1.5rem !important; } /* Abstand Start auf dem Handy */
-
+.pt-10 { padding-top: 1.5rem !important; } /* Handy: Kein Menü, Start; kleiner Abstand (ca. 24px) */
 @media (min-width: 768px) { 
-    .md\:pt-28 { padding-top: 4.5rem !important; } /* Abstand Start auf dem PC */
+    .md\:pt-28 { padding-top: 6rem !important; } /* PC: Menü, Start; 5rem hoch, Text startet direkt 1rem darunter */
 }
