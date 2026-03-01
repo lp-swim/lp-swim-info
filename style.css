@@ -1976,7 +1976,7 @@ video {
 }
 @media (min-width: 768px) { 
     #start {
-        padding-top: 5.5rem !important; 
+        padding-top: 5rem !important; 
     } 
 }
 footer button, footer p {
