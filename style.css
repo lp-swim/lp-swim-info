@@ -2023,7 +2023,7 @@ video {
 /* ==========================================
    3. EIGENE ANPASSUNGEN (Overrides)
    ========================================== */
-.pt-10 { padding-top: 1rem !important; } /* Handy: Kein Menü, Start; kleiner Abstand (ca. 24px) */
+.pt-10 { padding-top: 0rem !important; } /* Handy: Kein Menü, Start; kleiner Abstand (ca. 24px) */
 @media (min-width: 768px) { 
-    .md\:pt-28 { padding-top: 5rem !important; } /* PC: Menü, Start; 5rem hoch, Text startet direkt 1rem darunter */
+    .md\:pt-28 { padding-top: 3rem !important; } /* PC: Menü, Start; 5rem hoch, Text startet direkt 1rem darunter */
 }
