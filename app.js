@@ -64,6 +64,7 @@ function openModal(id) {
     // ARIA Attribute für Barrierefreiheit setzen
     modal.setAttribute('role', 'dialog');
     modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Dialogfenster');
     document.querySelectorAll('nav, header, main, footer').forEach(el => el.setAttribute('aria-hidden', 'true'));
 
     overlay.classList.remove('hidden');
@@ -197,6 +198,7 @@ if (form) {
         // Banner für Screenreader als wichtigen Dialog kennzeichnen
         overlay.setAttribute('role', 'dialog');
         overlay.setAttribute('aria-modal', 'true');
+        overlay.setAttribute('aria-label', 'Cookie-Einstellungen');
         
         setTimeout(() => {
             overlay.classList.remove('opacity-0');
