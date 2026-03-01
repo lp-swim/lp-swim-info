@@ -2024,7 +2024,7 @@ video {
    3. EIGENE ANPASSUNGEN (Abstand oben)
    ========================================== */
 #start {
-    padding-top: 1rem !important; /* Abstand Start auf dem Handy */
+    padding-top: 0rem !important; /* Abstand Start auf dem Handy */
 }
 @media (min-width: 768px) { 
     #start {
