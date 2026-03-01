@@ -52,7 +52,7 @@
     <meta http-equiv="Content-Security-Policy" content="
     default-src 'self'; 
     script-src 'self' https://www.googletagmanager.com; 
-    style-src 'self'; 
+    style-src 'self' 'unsafe-inline'; 
     font-src 'self'; 
     img-src 'self' data: https://lp-swim.github.io https://raw.githubusercontent.com https://*.google-analytics.com; 
     connect-src 'self' https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; 
@@ -78,11 +78,12 @@
             </symbol>
         </defs>
     </svg>    
+    
     <nav class="hidden md:flex fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-md border-b border-white/50 transition-all duration-300">
         <div class="container max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"> 
             <a href="#start" class="text-2xl font-bold tracking-tight text-brand-900 flex items-center gap-3 group">
                 <div class="bg-brand-50 p-2 rounded-xl group-hover:scale-110 transition-transform border border-brand-100">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-brand-600"><path d="M2 6c.6 0 1.2-.2 1.8-.6L5.5 4c1.2-.8 2.8-.8 4 0l1.7 1.4c1.2.8 2.8.8 4 0l1.7-1.4c1.2-.8 2.8-.8 4 0l1.7 1.4c.6.4 1.2.6 1.8.6"/><path d="M2 12c.6 0 1.2-.2 1.8-.6L5.5 10c1.2-.8 2.8-.8 4 0l1.7 1.4c1.2.8 2.8.8 4 0l1.7-1.4c1.2-.8 2.8-.8 4 0l1.7 1.4c.6.4 1.2.6 1.8.6"/><path d="M2 18c.6 0 1.2-.2 1.8-.6L5.5 16c1.2-.8 2.8-.8 4 0l1.7 1.4c1.2.8 2.8.8 4 0l1.7-1.4c1.2-.8 2.8-.8 4 0l1.7 1.4c.6.4 1.2.6 1.8.6"/></svg>
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-brand-600"><path d="M2 6c.6 0 1.2-.2 1.8-.6L5.5 4c1.2-.8 2.8-.8 4 0l1.7 1.4c1.2.8 2.8-.8 4 0l1.7-1.4c1.2-.8 2.8-.8 4 0l1.7 1.4c.6.4 1.2.6 1.8.6"/><path d="M2 12c.6 0 1.2-.2 1.8-.6L5.5 10c1.2-.8 2.8-.8 4 0l1.7 1.4c1.2.8 2.8.8 4 0l1.7-1.4c1.2-.8 2.8-.8 4 0l1.7 1.4c.6.4 1.2.6 1.8.6"/><path d="M2 18c.6 0 1.2-.2 1.8-.6L5.5 16c1.2-.8 2.8-.8 4 0l1.7 1.4c1.2.8 2.8.8 4 0l1.7-1.4c1.2-.8 2.8-.8 4 0l1.7 1.4c.6.4 1.2.6 1.8.6"/></svg>
                 </div>
                 LP-SWIM
             </a>
@@ -94,7 +95,7 @@
         </div>
     </nav>
 
-    <header id="start" class="relative pt-24 pb-12 md:pt-40 md:pb-20 overflow-hidden">
+    <header id="start" class="relative pt-10 pb-12 md:pt-28 md:pb-20 overflow-hidden">
         <div class="container max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-12 lg:gap-20"> 
             <div class="flex-1 text-center md:text-left animate-fade-in">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-brand-100 shadow-sm text-brand-600 text-[11px] font-bold uppercase tracking-wider mb-5">
@@ -157,7 +158,7 @@
                     </a>
                 </h2>
                 <div class="flex-1 h-px bg-gradient-to-r from-brand-300 to-transparent"></div>
-            </div>         
+            </div>          
             <p class="sr-only">
                 Kunden bewerten den Schwimmunterricht durchweg mit 5 Sternen. Besonders gelobt werden die kindgerechte, professionelle und geduldige Art, sowie die schnellen Lernfortschritte und wertvollen Tipps für zu Hause.
             </p>
@@ -534,7 +535,10 @@
         <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-5xl h-[90vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 transition-all duration-300 modal-anim">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center bg-white rounded-t-[2rem] shrink-0">
                 <h2 class="text-xl font-bold text-brand-900">Preisübersicht</h2>
-                <button data-close-modal="preisModal" class="p-2 hover:bg-brand-50 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen"><i data-lucide="x" class="w-6 h-6 text-slate-400" aria-hidden="true"></i></button>
+                
+                <button data-close-modal="preisModal" class="p-2 hover:bg-brand-50 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-slate-500" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
             </div>
             <div class="flex-grow overflow-hidden bg-brand-50/30 flex items-center justify-center p-4 rounded-b-[2rem]">
                 <img src="./Preisliste%2001.11.2025.webp" width="1200" height="1600" data-nosnippet alt="LP-SWIM Preisübersicht" class="max-h-full max-w-full object-contain shadow-lg rounded-xl" loading="lazy" decoding="async" />
@@ -546,7 +550,10 @@
         <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 transition-all duration-300 modal-anim">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center">
                 <h2 class="text-xl font-bold text-brand-900">Impressum</h2>
-                <button data-close-modal="impressumModal" class="p-2 hover:bg-brand-50 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen"><i data-lucide="x" class="w-6 h-6 text-slate-400" aria-hidden="true"></i></button>            
+
+                <button data-close-modal="impressumModal" class="p-2 hover:bg-brand-50 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-slate-500" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>            
             </div>
             <div class="p-8 overflow-y-auto space-y-8 text-sm text-slate-600 leading-relaxed">
                 <section>
@@ -590,7 +597,10 @@
         <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 transition-all duration-300 modal-anim">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center">
                 <h2 class="text-xl font-bold text-brand-900">Datenschutzerklärung<br>Stand: Februar 2026</h2>
-                <button data-close-modal="datenschutzModal" class="p-2 hover:bg-brand-50 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen"><i data-lucide="x" class="w-6 h-6 text-slate-400" aria-hidden="true"></i></button>
+                
+                <button data-close-modal="datenschutzModal" class="p-2 hover:bg-brand-50 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-slate-500" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
             </div>
             <div class="p-8 overflow-y-auto space-y-8 text-sm text-slate-600 leading-relaxed">
                 <section>
@@ -733,7 +743,10 @@
         <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 transition-all duration-300 modal-anim">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center">
                 <h2 class="text-xl font-bold text-brand-900">Allgemeine Geschäftsbedingungen<br>Stand: Februar 2026</h2>
-                <button data-close-modal="agbModal" class="p-2 hover:bg-brand-50 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen"><i data-lucide="x" class="w-6 h-6 text-slate-400" aria-hidden="true"></i></button>            
+                
+                <button data-close-modal="agbModal" class="p-2 hover:bg-brand-50 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-slate-500" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>            
             </div>
             <div class="p-8 overflow-y-auto space-y-8 text-sm text-slate-600 leading-relaxed">
                 <section>
@@ -892,7 +905,8 @@
             </div>
         </div>
     </div>
+    
     <script src="./app.js" defer></script>
+    
 </body>
 </html>
-
