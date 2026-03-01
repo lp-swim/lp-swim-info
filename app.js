@@ -61,6 +61,11 @@ function openModal(id) {
         cookieBanner.classList.add('opacity-0', 'pointer-events-none');
     }
 
+    // ARIA Attribute für Barrierefreiheit setzen
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    document.querySelectorAll('nav, header, main, footer').forEach(el => el.setAttribute('aria-hidden', 'true'));
+
     overlay.classList.remove('hidden');
     setTimeout(() => overlay.classList.remove('opacity-0'), 10);
     
@@ -96,6 +101,10 @@ function closeModal(id) {
         if (!anyOpen) {
             overlay.classList.add('opacity-0');
             setTimeout(() => overlay.classList.add('hidden'), 300);
+            
+            // ARIA Attribute wieder entfernen
+            document.querySelectorAll('nav, header, main, footer').forEach(el => el.removeAttribute('aria-hidden'));
+            
             if(!cookieBanner || cookieBanner.classList.contains('hidden')) {
                 document.body.classList.remove('overflow-hidden');
             } else {
@@ -129,6 +138,7 @@ if (form) {
         const orgText = btnSpan.innerText;
         
         btn.disabled = true;
+        btn.setAttribute('aria-busy', 'true'); // Screenreader informieren
         btnSpan.innerText = 'Senden...';
         
         try {
@@ -140,14 +150,15 @@ if (form) {
             if(res.ok) {
                 form.reset();
                 openModal('confirmationPopup');
-                formMessage.innerHTML = '<div class="text-green-600 font-bold bg-green-50 p-4 rounded-xl text-center mt-4">Nachricht erfolgreich gesendet!</div>';
+                formMessage.innerHTML = '<div class="text-green-600 font-bold bg-green-50 p-4 rounded-xl text-center mt-4" role="alert">Nachricht erfolgreich gesendet!</div>';
                 formMessage.classList.remove('hidden');
             } else throw new Error();
         } catch {
-            formMessage.innerHTML = '<div class="text-red-600 font-bold bg-red-50 p-4 rounded-xl text-center mt-4">Fehler beim Senden. Bitte versuche es später erneut.</div>';
+            formMessage.innerHTML = '<div class="text-red-600 font-bold bg-red-50 p-4 rounded-xl text-center mt-4" role="alert">Fehler beim Senden. Bitte versuche es später erneut.</div>';
             formMessage.classList.remove('hidden');
         } finally {
             btn.disabled = false;
+            btn.removeAttribute('aria-busy');
             btnSpan.innerText = orgText;
         }
     });
@@ -182,6 +193,11 @@ if (form) {
         body.classList.add('overflow-hidden');
         overlay.classList.remove('hidden');
         overlay.classList.add('flex');
+        
+        // Banner für Screenreader als wichtigen Dialog kennzeichnen
+        overlay.setAttribute('role', 'dialog');
+        overlay.setAttribute('aria-modal', 'true');
+        
         setTimeout(() => {
             overlay.classList.remove('opacity-0');
             card.classList.remove('scale-95', 'translate-y-8');
