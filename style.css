@@ -1972,11 +1972,11 @@ video {
    3. EIGENE ANPASSUNGEN (Abstand oben)
    ========================================== */
 #start {
-    padding-top: 1rem !important; 
+    padding-top: 2rem !important; 
 }
 @media (min-width: 768px) { 
     #start {
-        padding-top: 10rem !important; 
+        padding-top: 9rem !important; 
     } 
 }
 footer button, footer p {
