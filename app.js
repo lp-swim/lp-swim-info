@@ -1,294 +1,271 @@
-// ==========================================
-// 1. ANIMATIONEN (Intersection Observer)
-// ==========================================
-document.addEventListener('DOMContentLoaded', () => {
-    let typingStarted = false; 
+// Alles in einer IIFE, um den globalen Namespace sauber zu halten
+(() => {
+    'use strict';
     
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                if (entry.target.id === 'message') {
-                    // Typing-Effekt für die Textarea im Formular
-                    if (!typingStarted) {
-                        typingStarted = true;
-                        entry.target.placeholder = ""; 
-                        const text = "Ich würde gerne meine Technik verbessern. Wie läuft die Buchung ab?";
-                        let i = 0;
-                        setTimeout(() => {
-                            const interval = setInterval(() => {
-                                entry.target.placeholder += text.charAt(i);
-                                i++;
-                                if (i >= text.length) clearInterval(interval);
-                            }, 40);
-                        }, 500); 
+    // ==========================================
+    // 1. ANIMATIONEN (Intersection Observer)
+    // ==========================================
+    document.addEventListener('DOMContentLoaded', () => {
+        let typingStarted = false; 
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.id === 'message') {
+                        if (!typingStarted) {
+                            typingStarted = true;
+                            entry.target.placeholder = ""; 
+                            const text = "Ich würde gerne meine Technik verbessern. Wie läuft die Buchung ab?";
+                            let i = 0;
+                            setTimeout(() => {
+                                const interval = setInterval(() => {
+                                    entry.target.placeholder += text.charAt(i);
+                                    i++;
+                                    if (i >= text.length) clearInterval(interval);
+                                }, 40);
+                            }, 500); 
+                        }
+                        observer.unobserve(entry.target);
+                    } else {
+                        entry.target.classList.remove('opacity-0', 'translate-y-8');
+                        observer.unobserve(entry.target);
                     }
-                    observer.unobserve(entry.target);
-                } else {
-                    // Allgemeine Fade-in Animation
-                    entry.target.classList.remove('opacity-0', 'translate-y-8');
-                    observer.unobserve(entry.target);
                 }
-            }
-        });
-    }, { threshold: 0.1 });
+            });
+        }, { threshold: 0.1 });
 
-    // Elemente für Animationen registrieren
-    document.querySelectorAll('section article, section > div, section h2').forEach(el => {
-        el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
-        observer.observe(el);
+        document.querySelectorAll('section article, section > div, section h2').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
+            observer.observe(el);
+        });
+
+        const msgField = document.getElementById("message");
+        if(msgField) observer.observe(msgField);
     });
 
-    const msgField = document.getElementById("message");
-    if(msgField) {
-        observer.observe(msgField);
-    }
-});
+    // ==========================================
+    // 2. MODAL-FUNKTIONEN (Popups)
+    // ==========================================
+    let lastFocusedElement = null;
 
-// ==========================================
-// 2. MODAL-FUNKTIONEN (Popups)
-// ==========================================
-let lastFocusedElement = null; // Merkt sich den geklickten Button
-
-function openModal(id) {
-    lastFocusedElement = document.activeElement; 
-    
-    const modal = document.getElementById(id);
-    const overlay = document.getElementById('modal-overlay');
-    const content = modal.querySelector('.modal-anim');
-    
-    const cookieBanner = document.getElementById('cookie-overlay');
-    if(cookieBanner && !cookieBanner.classList.contains('hidden')) {
-        cookieBanner.classList.add('opacity-0', 'pointer-events-none');
-    }
-
-    // ARIA Attribute für Barrierefreiheit setzen
-    modal.setAttribute('role', 'dialog');
-    modal.setAttribute('aria-modal', 'true');
-    modal.setAttribute('aria-label', 'Dialogfenster');
-    document.querySelectorAll('nav, header, main, footer').forEach(el => el.setAttribute('aria-hidden', 'true'));
-
-    overlay.classList.remove('hidden');
-    setTimeout(() => overlay.classList.remove('opacity-0'), 10);
-    
-    modal.classList.remove('hidden');
-    modal.classList.add('flex');
-    setTimeout(() => {
-        content.classList.remove('scale-95', 'opacity-0');
-        content.classList.add('scale-100', 'opacity-100');
+    function openModal(id) {
+        lastFocusedElement = document.activeElement; 
         
-        // Fokus auf das Modal setzen für Screenreader/Tastatur
-        const closeBtn = modal.querySelector('[data-close-modal]');
-        if (closeBtn) closeBtn.focus();
-    }, 50);
-    
-    document.body.classList.add('overflow-hidden');
-}
+        const modal = document.getElementById(id);
+        if (!modal) return;
 
-function closeModal(id) {
-    const modal = document.getElementById(id);
-    const overlay = document.getElementById('modal-overlay');
-    const content = modal.querySelector('.modal-anim');
-
-    content.classList.remove('scale-100', 'opacity-100');
-    content.classList.add('scale-95', 'opacity-0');
-
-    setTimeout(() => {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-        
-        const anyOpen = document.querySelectorAll('[id$="Modal"].flex, #confirmationPopup.flex').length > 0;
+        const overlay = document.getElementById('modal-overlay');
+        const content = modal.querySelector('.modal-anim');
         const cookieBanner = document.getElementById('cookie-overlay');
         
-        if (!anyOpen) {
-            overlay.classList.add('opacity-0');
-            setTimeout(() => overlay.classList.add('hidden'), 300);
-            
-            // ARIA Attribute wieder entfernen
-            document.querySelectorAll('nav, header, main, footer').forEach(el => el.removeAttribute('aria-hidden'));
-            
-            if(!cookieBanner || cookieBanner.classList.contains('hidden')) {
-                document.body.classList.remove('overflow-hidden');
-            } else {
-                cookieBanner.classList.remove('opacity-0', 'pointer-events-none');
-            }
-            
-            // Fokus zurückgeben
-            if (lastFocusedElement) {
-                lastFocusedElement.focus();
-                lastFocusedElement = null;
-            }
+        if(cookieBanner && !cookieBanner.classList.contains('hidden')) {
+            cookieBanner.classList.add('opacity-0', 'pointer-events-none');
         }
-    }, 300);
-}
 
-function closeAllModals() {
-    document.querySelectorAll('[id$="Modal"].flex, #confirmationPopup.flex').forEach(m => closeModal(m.id));
-}
+        modal.setAttribute('data-state', 'open');
+        modal.setAttribute('role', 'dialog');
+        modal.setAttribute('aria-modal', 'true');
+        document.querySelectorAll('nav, header, main, footer').forEach(el => el.setAttribute('aria-hidden', 'true'));
 
-// ==========================================
-// 3. FORMULAR-VERSAND (AJAX zu Formspree)
-// ==========================================
-const form = document.getElementById('contactForm');
-const formMessage = document.getElementById('form-message');
-
-if (form) {
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const btn = form.querySelector('button[type="submit"]');
-        const btnSpan = btn.querySelector('span');
-        const orgText = btnSpan.innerText;
+        overlay.classList.remove('hidden');
+        setTimeout(() => overlay.classList.remove('opacity-0'), 10);
         
-        btn.disabled = true;
-        btn.setAttribute('aria-busy', 'true'); // Screenreader informieren
-        btnSpan.innerText = 'Senden...';
+        modal.classList.remove('hidden');
+        modal.classList.add('flex'); 
         
-        try {
-            const res = await fetch(form.action, { 
-                method: 'POST', 
-                body: new FormData(form), 
-                headers: {'Accept': 'application/json'} 
-            });
-            if(res.ok) {
-                form.reset();
-                openModal('confirmationPopup');
-                formMessage.innerHTML = '<div class="text-green-600 font-bold bg-green-50 p-4 rounded-xl text-center mt-4" role="alert">Nachricht erfolgreich gesendet!</div>';
+        setTimeout(() => {
+            if(content) {
+                content.classList.remove('scale-95', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }
+            const closeBtn = modal.querySelector('[data-close-modal]');
+            if (closeBtn) closeBtn.focus();
+        }, 50);
+        
+        document.body.classList.add('overflow-hidden');
+    }
+
+    function closeModal(id) {
+        const modal = document.getElementById(id);
+        if (!modal) return;
+
+        const overlay = document.getElementById('modal-overlay');
+        const content = modal.querySelector('.modal-anim');
+
+        modal.removeAttribute('data-state');
+
+        if(content) {
+            content.classList.remove('scale-100', 'opacity-100');
+            content.classList.add('scale-95', 'opacity-0');
+        }
+
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            
+            const anyOpen = document.querySelectorAll('[data-state="open"]').length > 0;
+            const cookieBanner = document.getElementById('cookie-overlay');
+            
+            if (!anyOpen) {
+                overlay.classList.add('opacity-0');
+                setTimeout(() => overlay.classList.add('hidden'), 300);
+                
+                document.querySelectorAll('nav, header, main, footer').forEach(el => el.removeAttribute('aria-hidden'));
+                
+                if(!cookieBanner || cookieBanner.classList.contains('hidden')) {
+                    document.body.classList.remove('overflow-hidden');
+                } else {
+                    cookieBanner.classList.remove('opacity-0', 'pointer-events-none');
+                }
+                
+                if (lastFocusedElement) {
+                    lastFocusedElement.focus();
+                    lastFocusedElement = null;
+                }
+            }
+        }, 300);
+    }
+
+    function closeAllModals() {
+        document.querySelectorAll('[data-state="open"]').forEach(m => closeModal(m.id));
+    }
+
+    // ==========================================
+    // 3. FORMULAR-VERSAND (AJAX zu Formspree)
+    // ==========================================
+    const form = document.getElementById('contactForm');
+    if (form) {
+        const formMessage = document.getElementById('form-message');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('button[type="submit"]');
+            const btnSpan = btn.querySelector('span');
+            const orgText = btnSpan.innerText;
+            
+            btn.disabled = true;
+            btn.setAttribute('aria-busy', 'true'); 
+            btnSpan.innerText = 'Senden...';
+            
+            try {
+                const res = await fetch(form.action, { 
+                    method: 'POST', 
+                    body: new FormData(form), 
+                    headers: {'Accept': 'application/json'} 
+                });
+                if(res.ok) {
+                    form.reset();
+                    openModal('confirmationPopup');
+                    formMessage.innerHTML = '<div class="text-green-600 font-bold bg-green-50 p-4 rounded-xl text-center mt-4" role="alert">Nachricht erfolgreich gesendet!</div>';
+                    formMessage.classList.remove('hidden');
+                } else throw new Error();
+            } catch {
+                formMessage.innerHTML = '<div class="text-red-600 font-bold bg-red-50 p-4 rounded-xl text-center mt-4" role="alert">Fehler beim Senden. Bitte versuche es später erneut.</div>';
                 formMessage.classList.remove('hidden');
-            } else throw new Error();
-        } catch {
-            formMessage.innerHTML = '<div class="text-red-600 font-bold bg-red-50 p-4 rounded-xl text-center mt-4" role="alert">Fehler beim Senden. Bitte versuche es später erneut.</div>';
-            formMessage.classList.remove('hidden');
-        } finally {
-            btn.disabled = false;
-            btn.removeAttribute('aria-busy');
-            btnSpan.innerText = orgText;
-        }
-    });
-}
+            } finally {
+                btn.disabled = false;
+                btn.removeAttribute('aria-busy');
+                btnSpan.innerText = orgText;
+            }
+        });
+    }
 
-// ==========================================
-// 4. COOKIE CONSENT & GOOGLE ANALYTICS
-// ==========================================
-(function() {
+    // ==========================================
+    // 4. COOKIE CONSENT & GOOGLE ANALYTICS
+    // ==========================================
     const GA_MEASUREMENT_ID = "G-T5H2XMBKFL"; 
     const STORAGE_KEY = "lp_swim_consent_2026"; 
-    const overlay = document.getElementById('cookie-overlay'); 
+    const cookieOverlay = document.getElementById('cookie-overlay'); 
     
-    if (!overlay) return; 
-    
-    const card = overlay.querySelector('div');
-    const body = document.body;
+    if (cookieOverlay) { 
+        const card = cookieOverlay.querySelector('div');
 
-    function loadGAScript() {
-        const script = document.createElement('script');
-        script.async = true;
-        script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_MEASUREMENT_ID;
-        document.head.appendChild(script);
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){ window.dataLayer.push(arguments); } 
-        window.gtag = gtag;
-        gtag('js', new Date());
-        gtag('config', GA_MEASUREMENT_ID, { 'anonymize_ip': true });
-    }
-
-    function showBanner() {
-        body.classList.add('overflow-hidden');
-        overlay.classList.remove('hidden');
-        overlay.classList.add('flex');
-        
-        // Banner für Screenreader als wichtigen Dialog kennzeichnen
-        overlay.setAttribute('role', 'dialog');
-        overlay.setAttribute('aria-modal', 'true');
-        overlay.setAttribute('aria-label', 'Cookie-Einstellungen');
-        
-        setTimeout(() => {
-            overlay.classList.remove('opacity-0');
-            card.classList.remove('scale-95', 'translate-y-8');
-            card.classList.add('scale-100', 'translate-y-0');
-        }, 50);
-    }
-
-    function hideBanner() {
-        overlay.classList.add('opacity-0');
-        card.classList.remove('scale-100', 'translate-y-0');
-        card.classList.add('scale-95', 'translate-y-8');
-        setTimeout(() => {
-            overlay.classList.remove('flex');
-            overlay.classList.add('hidden');
-            const anyModalOpen = document.querySelectorAll('[id$="Modal"].flex').length > 0;
-            if(!anyModalOpen) {
-                body.classList.remove('overflow-hidden');
-            }
-        }, 500);
-    }
-
-    const decision = localStorage.getItem(STORAGE_KEY);
-    if (!decision) {
-        setTimeout(showBanner, 500);
-    } else if (decision === 'accepted') {
-        loadGAScript();
-    }
-
-    const btnAccept = document.getElementById('cookie-accept');
-    const btnDecline = document.getElementById('cookie-decline');
-
-    if (btnAccept) {
-        btnAccept.onclick = () => {
-            localStorage.setItem(STORAGE_KEY, 'accepted');
-            loadGAScript();
-            hideBanner();
-        };
-    }
-
-    if (btnDecline) {
-        btnDecline.onclick = () => {
-            localStorage.setItem(STORAGE_KEY, 'declined');
-            hideBanner();
-        };
-    }
-})();
-
-// ==========================================
-// 5. ZENTRALE KLICK-STEUERUNG
-// ==========================================
-document.addEventListener('click', (e) => {
-    // Modals öffnen
-    const openBtn = e.target.closest('[data-open-modal]');
-    if (openBtn) {
-        if (openBtn.tagName === 'A' || openBtn.tagName === 'BUTTON') e.preventDefault(); 
-        openModal(openBtn.getAttribute('data-open-modal'));
-    }
-
-    // Modals schließen
-    const closeBtn = e.target.closest('[data-close-modal]');
-    if (closeBtn) {
-        if (closeBtn.tagName === 'A' || closeBtn.tagName === 'BUTTON') e.preventDefault();
-        closeModal(closeBtn.getAttribute('data-close-modal'));
-    }
-
-    // Cookie-Entscheidung widerrufen
-    const revokeBtn = e.target.closest('[data-revoke-cookies]');
-    if (revokeBtn) {
-        e.preventDefault();
-        localStorage.removeItem('lp_swim_consent_2026'); 
-        window.location.reload(); 
-    }
-
-    // Alle Modals schließen (Klick auf das abgedunkelte Overlay)
-    if (e.target.id === 'modal-overlay') {
-        closeAllModals();
-    }
-});
-
-// ==========================================
-// 6. TASTATUR-STEUERUNG (Barrierefreiheit)
-// ==========================================
-document.addEventListener('keydown', (e) => {
-    // Prüfen, ob die Escape-Taste gedrückt wurde
-    if (e.key === 'Escape') {
-        // Prüfen, ob überhaupt ein Modal (oder das Bestätigungs-Popup) offen ist
-        const anyOpenModal = document.querySelectorAll('[id$="Modal"].flex, #confirmationPopup.flex').length > 0;
-        if (anyOpenModal) {
-            closeAllModals();
+        function loadGAScript() {
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_MEASUREMENT_ID;
+            document.head.appendChild(script);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){ window.dataLayer.push(arguments); } 
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', GA_MEASUREMENT_ID, { 'anonymize_ip': true });
         }
+
+        function showBanner() {
+            document.body.classList.add('overflow-hidden');
+            cookieOverlay.classList.remove('hidden');
+            cookieOverlay.classList.add('flex');
+            cookieOverlay.setAttribute('role', 'dialog');
+            cookieOverlay.setAttribute('aria-modal', 'true');
+            cookieOverlay.setAttribute('aria-label', 'Cookie-Einstellungen');
+            
+            setTimeout(() => {
+                cookieOverlay.classList.remove('opacity-0');
+                if(card) {
+                    card.classList.remove('scale-95', 'translate-y-8');
+                    card.classList.add('scale-100', 'translate-y-0');
+                }
+            }, 50);
+        }
+
+        function hideBanner() {
+            cookieOverlay.classList.add('opacity-0');
+            if(card) {
+                card.classList.remove('scale-100', 'translate-y-0');
+                card.classList.add('scale-95', 'translate-y-8');
+            }
+            setTimeout(() => {
+                cookieOverlay.classList.remove('flex');
+                cookieOverlay.classList.add('hidden');
+                const anyModalOpen = document.querySelectorAll('[data-state="open"]').length > 0;
+                if(!anyModalOpen) {
+                    document.body.classList.remove('overflow-hidden');
+                }
+            }, 500);
+        }
+
+        const decision = localStorage.getItem(STORAGE_KEY);
+        if (!decision) setTimeout(showBanner, 500);
+        else if (decision === 'accepted') loadGAScript();
+
+        const btnAccept = document.getElementById('cookie-accept');
+        const btnDecline = document.getElementById('cookie-decline');
+
+        if (btnAccept) btnAccept.onclick = () => { localStorage.setItem(STORAGE_KEY, 'accepted'); loadGAScript(); hideBanner(); };
+        if (btnDecline) btnDecline.onclick = () => { localStorage.setItem(STORAGE_KEY, 'declined'); hideBanner(); };
     }
-});
+
+    // ==========================================
+    // 5. ZENTRALE KLICK- & TASTATUR-STEUERUNG
+    // ==========================================
+    document.addEventListener('click', (e) => {
+        const openBtn = e.target.closest('[data-open-modal]');
+        if (openBtn) {
+            if (openBtn.tagName === 'A' || openBtn.tagName === 'BUTTON') e.preventDefault(); 
+            openModal(openBtn.getAttribute('data-open-modal'));
+        }
+
+        const closeBtn = e.target.closest('[data-close-modal]');
+        if (closeBtn) {
+            if (closeBtn.tagName === 'A' || closeBtn.tagName === 'BUTTON') e.preventDefault();
+            closeModal(closeBtn.getAttribute('data-close-modal'));
+        }
+
+        const revokeBtn = e.target.closest('[data-revoke-cookies]');
+        if (revokeBtn) {
+            e.preventDefault();
+            localStorage.removeItem(STORAGE_KEY); 
+            window.location.reload(); 
+        }
+
+        if (e.target.id === 'modal-overlay') closeAllModals();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const anyOpenModal = document.querySelectorAll('[data-state="open"]').length > 0;
+            if (anyOpenModal) closeAllModals();
+        }
+    });
+
+})();
