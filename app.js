@@ -41,6 +41,15 @@
 
         const msgField = document.getElementById("message");
         if(msgField) observer.observe(msgField);
+        const marquee = document.querySelector('.animate-marquee');
+        if (marquee) {
+            const cards = Array.from(marquee.children);
+            cards.forEach(card => {
+                const clone = card.cloneNode(true);
+                clone.setAttribute('aria-hidden', 'true'); 
+                marquee.appendChild(clone);
+            });
+        }
     });
 
     // ==========================================
