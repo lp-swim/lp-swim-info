@@ -76,8 +76,17 @@
             <symbol id="icon-star" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
             </symbol>
+            <symbol id="icon-kinder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </symbol>
+            <symbol id="icon-schule" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 22v-4a2 2 0 1 0-4 0v4"/><path d="m18 10 4 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8l4-2"/><path d="M18 5v17"/><path d="m4 6 8-4 8 4"/><path d="M6 5v17"/><circle cx="12" cy="9" r="2"/>
+            </symbol>
+            <symbol id="icon-erwachsene" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </symbol>
         </defs>
-    </svg>    
+    </svg>  
     
     <nav class="hidden md:flex fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-md border-b border-white/50 transition-all duration-300">
         <div class="container max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"> 
@@ -324,7 +333,7 @@
                     <article class="glass-card p-8 md:p-10 rounded-[2.5rem]">
                         <div class="flex items-center gap-4 mb-4">
                             <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
-                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                                <svg aria-hidden="true" class="w-6 h-6"><use href="#icon-kinder"></use></svg>                            
                             </div>
                             <h3 class="text-lg sm:text-xl font-bold text-brand-900 tracking-tight">Kinder & Jugendliche</h3>
                         </div>
@@ -338,7 +347,7 @@
                     <article class="glass-card p-8 md:p-10 rounded-[2.5rem]" id="schule">
                         <div class="flex items-center gap-4 mb-4">
                             <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
-                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M14 22v-4a2 2 0 1 0-4 0v4"/><path d="m18 10 4 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8l4-2"/><path d="M18 5v17"/><path d="m4 6 8-4 8 4"/><path d="M6 5v17"/><circle cx="12" cy="9" r="2"/></svg>
+                                <svg aria-hidden="true" class="w-6 h-6"><use href="#icon-schule"></use></svg>
                             </div>
                             <h3 class="text-lg sm:text-xl font-bold text-brand-900 tracking-tight">Schulbegleitung</h3>
                         </div>
@@ -352,7 +361,7 @@
                     <article class="glass-card p-8 md:p-10 rounded-[2.5rem]" id="erwachsene">
                         <div class="flex items-center gap-4 mb-4">
                             <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
-                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                                <svg aria-hidden="true" class="w-6 h-6"><use href="#icon-erwachsene"></use></svg>
                             </div>
                             <h3 class="text-lg sm:text-xl font-bold text-brand-900 tracking-tight">Erwachsene</h3>
                         </div>
@@ -888,6 +897,7 @@
     
 </body>
 </html>
+
 
 
 
