@@ -1,4 +1,3 @@
-// Alles in einer IIFE, um den globalen Namespace sauber zu halten
 (() => {
     'use strict';
     
@@ -14,9 +13,21 @@
                     if (entry.target.id === 'message') {
                         if (!typingStarted) {
                             typingStarted = true;
-                            entry.target.placeholder = "Ich würde gerne meine Technik verbessern. Wie läuft die Buchung ab?";
                             entry.target.classList.add('transition-opacity', 'duration-1000');
                             entry.target.style.opacity = '1';
+                            
+                            const text = "Ich würde gerne meine Technik verbessern. Wie läuft die Buchung ab?";
+                            let i = 0;
+                            entry.target.placeholder = ""; 
+                            
+                            function typeWriter() {
+                                if (i < text.length) {
+                                    entry.target.placeholder += text.charAt(i);
+                                    i++;
+                                    setTimeout(typeWriter, 40);
+                                }
+                            }
+                            setTimeout(typeWriter, 500); 
                         }
                         observer.unobserve(entry.target);
                     } else {
@@ -291,6 +302,21 @@
         if (revokeBtn) {
             e.preventDefault();
             localStorage.removeItem(STORAGE_KEY); 
+            
+            const cookies = document.cookie.split("; ");
+            for (let c = 0; c < cookies.length; c++) {
+                const d = window.location.hostname.split(".");
+                while (d.length > 0) {
+                    const cookieBase = encodeURIComponent(cookies[c].split(";")[0].split("=")[0]) + '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; domain=' + d.join('.') + ' ;path=';
+                    const p = location.pathname.split('/');
+                    document.cookie = cookieBase + '/';
+                    while (p.length > 0) {
+                        document.cookie = cookieBase + p.join('/');
+                        p.pop();
+                    };
+                    d.shift();
+                }
+            }
             window.location.reload(); 
         }
 
