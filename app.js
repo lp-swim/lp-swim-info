@@ -70,19 +70,20 @@
         document.querySelectorAll('nav, header, main, footer').forEach(el => el.setAttribute('aria-hidden', 'true'));
 
         overlay.classList.remove('hidden');
-        setTimeout(() => overlay.classList.remove('opacity-0'), 10);
-        
         modal.classList.remove('hidden');
         modal.classList.add('flex'); 
         
-        setTimeout(() => {
-            if(content) {
-                content.classList.remove('scale-95', 'opacity-0');
-                content.classList.add('scale-100', 'opacity-100');
-            }
-            const closeBtn = modal.querySelector('[data-close-modal]');
-            if (closeBtn) closeBtn.focus();
-        }, 50);
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                overlay.classList.remove('opacity-0');
+                if(content) {
+                    content.classList.remove('scale-95', 'opacity-0');
+                    content.classList.add('scale-100', 'opacity-100');
+                }
+                const closeBtn = modal.querySelector('[data-close-modal]');
+                if (closeBtn) closeBtn.focus();
+            });
+        });
         
         document.body.classList.add('overflow-hidden');
     }
