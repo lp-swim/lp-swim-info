@@ -2,7 +2,7 @@
     'use strict';
     
     // ==========================================
-    // 1. ANIMATIONEN (Intersection Observer)
+    // 1. ANIMATIONEN
     // ==========================================
     document.addEventListener('DOMContentLoaded', () => {
         let typingStarted = false; 
@@ -58,107 +58,62 @@
     });
 
     // ==========================================
-    // 2. MODAL-FUNKTIONEN (Popups)
+    // 2. MODAL-FUNKTIONEN
     // ==========================================
-    let lastFocusedElement = null;
-
     function openModal(id) {
-        lastFocusedElement = document.activeElement; 
-        
         const modal = document.getElementById(id);
         if (!modal) return;
 
-        const overlay = document.getElementById('modal-overlay');
         const content = modal.querySelector('.modal-anim');
-        const cookieBanner = document.getElementById('cookie-overlay');
+        document.body.classList.add('overflow-hidden');
         
-        if(cookieBanner && !cookieBanner.classList.contains('hidden')) {
-            cookieBanner.classList.add('opacity-0', 'pointer-events-none');
-        }
-
-        modal.setAttribute('data-state', 'open');
-        modal.setAttribute('role', 'dialog');
-        modal.setAttribute('aria-modal', 'true');
-        document.querySelectorAll('nav, header, main, footer').forEach(el => el.setAttribute('aria-hidden', 'true'));
-
-        overlay.classList.remove('hidden');
-        modal.classList.remove('hidden');
-        modal.classList.add('flex'); 
+        modal.showModal(); 
         
         requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                overlay.classList.remove('opacity-0');
-                if(content) {
-                    content.classList.remove('scale-95', 'opacity-0');
-                    content.classList.add('scale-100', 'opacity-100');
-                }
-                const closeBtn = modal.querySelector('[data-close-modal]');
-                if (closeBtn) closeBtn.focus();
-            });
+            if(content) {
+                content.classList.remove('scale-95', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }
         });
-        
-        document.body.classList.add('overflow-hidden');
     }
 
     function closeModal(id) {
         const modal = document.getElementById(id);
         if (!modal) return;
-
-        const overlay = document.getElementById('modal-overlay');
         const content = modal.querySelector('.modal-anim');
-
-        modal.removeAttribute('data-state');
 
         if(content) {
             content.classList.remove('scale-100', 'opacity-100');
             content.classList.add('scale-95', 'opacity-0');
-        }
 
-        const onTransitionEnd = (e) => {
-            if (e && e.target !== content) return; 
-            if (content) content.removeEventListener('transitionend', onTransitionEnd);
-
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-            
-            const anyOpen = document.querySelectorAll('[data-state="open"]').length > 0;
-            const cookieBanner = document.getElementById('cookie-overlay');
-            
-            if (!anyOpen) {
-                overlay.classList.add('opacity-0');
-                
-                const onOverlayEnd = (e2) => {
-                    if (e2 && e2.target !== overlay) return;
-                    overlay.removeEventListener('transitionend', onOverlayEnd);
-                    overlay.classList.add('hidden');
-                };
-                overlay.addEventListener('transitionend', onOverlayEnd);
-                
-                document.querySelectorAll('nav, header, main, footer').forEach(el => el.removeAttribute('aria-hidden'));
-                
-                if(!cookieBanner || cookieBanner.classList.contains('hidden')) {
-                    document.body.classList.remove('overflow-hidden');
-                } else {
-                    cookieBanner.classList.remove('opacity-0', 'pointer-events-none');
-                }
-                
-                if (lastFocusedElement) {
-                    lastFocusedElement.focus();
-                    lastFocusedElement = null;
-                }
-            }
-        };
-
-        if (content) {
+            const onTransitionEnd = (e) => {
+                if (e && e.target !== content) return; 
+                content.removeEventListener('transitionend', onTransitionEnd);
+                modal.close();
+                checkBodyScroll();
+            };
             content.addEventListener('transitionend', onTransitionEnd);
         } else {
-            onTransitionEnd();
+            modal.close();
+            checkBodyScroll();
         }
     }
 
-    function closeAllModals() {
-        document.querySelectorAll('[data-state="open"]').forEach(m => closeModal(m.id));
+    function checkBodyScroll() {
+        const anyOpen = document.querySelectorAll('dialog[open]').length > 0;
+        const cookieBanner = document.getElementById('cookie-overlay');
+        
+        if (!anyOpen && (!cookieBanner || cookieBanner.classList.contains('hidden'))) {
+            document.body.classList.remove('overflow-hidden');
+        }
     }
+
+    document.querySelectorAll('dialog').forEach(dialog => {
+        dialog.addEventListener('cancel', (e) => {
+            e.preventDefault(); 
+            closeModal(dialog.id);
+        });
+    });
 
     // ==========================================
     // 3. FORMULAR-VERSAND (AJAX zu Formspree)
@@ -264,7 +219,8 @@
             setTimeout(() => {
                 cookieOverlay.classList.remove('flex');
                 cookieOverlay.classList.add('hidden');
-                const anyModalOpen = document.querySelectorAll('[data-state="open"]').length > 0;
+                
+                const anyModalOpen = document.querySelectorAll('dialog[open]').length > 0;
                 if(!anyModalOpen) {
                     document.body.classList.remove('overflow-hidden');
                 }
@@ -283,7 +239,7 @@
     }
 
     // ==========================================
-    // 5. ZENTRALE KLICK- & TASTATUR-STEUERUNG
+    // 5. ZENTRALE KLICK-STEUERUNG
     // ==========================================
     document.addEventListener('click', (e) => {
         const openBtn = e.target.closest('[data-open-modal]');
@@ -320,38 +276,8 @@
             window.location.reload(); 
         }
 
-        if (e.target.id === 'modal-overlay') closeAllModals();
-    });
-
-    document.addEventListener('keydown', (e) => {
-        const openModal = document.querySelector('[data-state="open"]');
-
-        if (e.key === 'Escape' && openModal) {
-            closeAllModals();
-            return;
-        }
-
-        if (e.key === 'Tab' && openModal) {
-            const focusableElements = Array.from(openModal.querySelectorAll(
-                'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-            )).filter(el => el.offsetParent !== null); 
-            
-            if (focusableElements.length === 0) return;
-
-            const firstElement = focusableElements[0];
-            const lastElement = focusableElements[focusableElements.length - 1];
-
-            if (e.shiftKey) { 
-                if (document.activeElement === firstElement || document.activeElement === openModal) {
-                    lastElement.focus();
-                    e.preventDefault();
-                }
-            } else { 
-                if (document.activeElement === lastElement) {
-                    firstElement.focus();
-                    e.preventDefault();
-                }
-            }
+        if (e.target.tagName === 'DIALOG') {
+            closeModal(e.target.id);
         }
     });
 
