@@ -11,16 +11,11 @@ body {
     background-color: #ffffff; 
     text-rendering: optimizeLegibility;
 }
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+body { 
+    color: #334155; 
     background: linear-gradient(to bottom, #e0f2fe 0%, #f0f9ff 50%, #ffffff 100%);
-    z-index: -2;
-    pointer-events: none;
+    background-attachment: fixed;
+    text-rendering: optimizeLegibility;
 }
 section { scroll-margin-top: 100px; }
 .glass-card {
