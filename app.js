@@ -14,16 +14,9 @@
                     if (entry.target.id === 'message') {
                         if (!typingStarted) {
                             typingStarted = true;
-                            entry.target.placeholder = ""; 
-                            const text = "Ich würde gerne meine Technik verbessern. Wie läuft die Buchung ab?";
-                            let i = 0;
-                            setTimeout(() => {
-                                const interval = setInterval(() => {
-                                    entry.target.placeholder += text.charAt(i);
-                                    i++;
-                                    if (i >= text.length) clearInterval(interval);
-                                }, 40);
-                            }, 500); 
+                            entry.target.placeholder = "Ich würde gerne meine Technik verbessern. Wie läuft die Buchung ab?";
+                            entry.target.classList.add('transition-opacity', 'duration-1000');
+                            entry.target.style.opacity = '1';
                         }
                         observer.unobserve(entry.target);
                     } else {
@@ -108,7 +101,10 @@
             content.classList.add('scale-95', 'opacity-0');
         }
 
-        setTimeout(() => {
+        const onTransitionEnd = (e) => {
+            if (e && e.target !== content) return; 
+            if (content) content.removeEventListener('transitionend', onTransitionEnd);
+
             modal.classList.add('hidden');
             modal.classList.remove('flex');
             
@@ -117,7 +113,13 @@
             
             if (!anyOpen) {
                 overlay.classList.add('opacity-0');
-                setTimeout(() => overlay.classList.add('hidden'), 300);
+                
+                const onOverlayEnd = (e2) => {
+                    if (e2 && e2.target !== overlay) return;
+                    overlay.removeEventListener('transitionend', onOverlayEnd);
+                    overlay.classList.add('hidden');
+                };
+                overlay.addEventListener('transitionend', onOverlayEnd);
                 
                 document.querySelectorAll('nav, header, main, footer').forEach(el => el.removeAttribute('aria-hidden'));
                 
@@ -132,7 +134,13 @@
                     lastFocusedElement = null;
                 }
             }
-        }, 300);
+        };
+
+        if (content) {
+            content.addEventListener('transitionend', onTransitionEnd);
+        } else {
+            onTransitionEnd();
+        }
     }
 
     function closeAllModals() {
@@ -167,7 +175,8 @@
                     formMessage.innerHTML = '<div class="text-green-600 font-bold bg-green-50 p-4 rounded-xl text-center mt-4" role="alert">Nachricht erfolgreich gesendet!</div>';
                     formMessage.classList.remove('hidden');
                 } else throw new Error();
-            } catch {
+            } catch (error) {
+                console.error('LP-SWIM Formular-Fehler:', error);
                 formMessage.innerHTML = '<div class="text-red-600 font-bold bg-red-50 p-4 rounded-xl text-center mt-4" role="alert">Fehler beim Senden. Bitte versuche es später erneut.</div>';
                 formMessage.classList.remove('hidden');
             } finally {
@@ -295,9 +304,9 @@
         }
 
         if (e.key === 'Tab' && openModal) {
-            const focusableElements = openModal.querySelectorAll(
+            const focusableElements = Array.from(openModal.querySelectorAll(
                 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-            );
+            )).filter(el => el.offsetParent !== null); 
             
             if (focusableElements.length === 0) return;
 
