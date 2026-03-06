@@ -64,24 +64,31 @@
         const modal = document.getElementById(id);
         if (!modal) return;
 
-        const content = modal.querySelector('.modal-anim');
+        const bg = modal.querySelector('.modal-bg');
+        const content = modal.querySelector('.modal-content');
         document.body.classList.add('overflow-hidden');
         
         modal.showModal(); 
         
         requestAnimationFrame(() => {
-            if(content) {
-                content.classList.remove('scale-95', 'opacity-0');
-                content.classList.add('scale-100', 'opacity-100');
-            }
+            requestAnimationFrame(() => {
+                if(bg) bg.classList.remove('opacity-0');
+                if(content) {
+                    content.classList.remove('scale-95', 'opacity-0');
+                    content.classList.add('scale-100', 'opacity-100');
+                }
+            });
         });
     }
 
     function closeModal(id) {
         const modal = document.getElementById(id);
         if (!modal) return;
-        const content = modal.querySelector('.modal-anim');
+        
+        const bg = modal.querySelector('.modal-bg');
+        const content = modal.querySelector('.modal-content');
 
+        if(bg) bg.classList.add('opacity-0');
         if(content) {
             content.classList.remove('scale-100', 'opacity-100');
             content.classList.add('scale-95', 'opacity-0');
