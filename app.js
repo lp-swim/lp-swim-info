@@ -34,6 +34,7 @@
 
         const msgField = document.getElementById("message");
         if(msgField) observer.observe(msgField);
+        
         const marquee = document.querySelector('.animate-marquee');
         if (marquee) {
             const cards = Array.from(marquee.children);
