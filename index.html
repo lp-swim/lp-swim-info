@@ -527,22 +527,22 @@
         </div>
     </footer>
 
-    <dialog id="preisModal" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-5xl h-[90vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
-        <div class="flex flex-col h-[90vh] w-full">
+    <dialog id="preisModal" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2.5rem)] sm:w-full max-w-5xl h-[80vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
+        <div class="flex flex-col h-full w-full">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center bg-white shrink-0">
                 <h2 class="text-xl font-bold text-brand-900">Preisübersicht</h2>
                 <button data-close-modal="preisModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                 </button>
             </div>
-            <div class="flex-grow overflow-hidden bg-brand-50/30 flex items-center justify-center p-4">
+            <div class="flex-grow overflow-hidden bg-brand-50/30 flex items-center justify-center p-6">
                 <img src="./Preisliste%2001.11.2025.webp" width="1200" height="1600" alt="LP-SWIM Preisübersicht" class="w-full h-full object-contain drop-shadow-md rounded-xl" decoding="sync" />            
             </div>
         </div>
     </dialog>
 
-    <dialog id="impressumModal" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
-        <div class="flex flex-col max-h-[85vh] w-full">
+    <dialog id="impressumModal" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2.5rem)] sm:w-full max-w-2xl h-[80vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
+        <div class="flex flex-col h-full w-full">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center bg-white shrink-0">
                 <h2 class="text-xl font-bold text-brand-900">Impressum</h2>
                 <button data-close-modal="impressumModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
@@ -581,8 +581,8 @@
         </div>
     </dialog>
 
-    <dialog id="datenschutzModal" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
-        <div class="flex flex-col max-h-[85vh] w-full">
+    <dialog id="datenschutzModal" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2.5rem)] sm:w-full max-w-2xl h-[80vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
+        <div class="flex flex-col h-full w-full">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center bg-white shrink-0">
                 <h2 class="text-xl font-bold text-brand-900">Datenschutzerklärung<br>Stand: Februar 2026</h2>
                 <button data-close-modal="datenschutzModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
@@ -652,38 +652,12 @@
                         </div>                    
                     </div>
                 </section>
-                <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">5. Externe Dienste & Partner</h3>
-                    <div class="space-y-3">
-                        <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                            <p class="font-semibold text-brand-900 mb-1">Google Maps (Weiterleitung)</p>
-                            <p class="mb-1">Wir nutzen keine direkt eingebettete Karte, die beim Laden der Seite Daten überträgt. Die Karte auf unserer Seite ist ein Link. Erst wenn Sie aktiv auf die Karte oder den Button „Route“ klicken, werden Sie zu Google Maps weitergeleitet. Ab diesem Zeitpunkt verarbeitet Google Ihre Daten (Standort, IP) zur Routenplanung.</p>
-                            <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline decoration-brand-200 text-xs flex items-center gap-1 mt-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> Google Privacy Policy
-                            </a>
-                        </div>
-                        <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                            <p class="font-semibold text-brand-900 mb-1">Stadtwerke Viernheim (Bäder)</p>
-                            <p class="mb-1">Für die Durchführung der Trainerstunden nutzen wir die Infrastruktur der Stadtwerke Viernheim (Hallenbad & Waldschwimmbad). Wir verlinken auf deren Website, um Ihnen Informationen zu Eintrittspreisen und Öffnungszeiten bereitzustellen. Wenn Sie diese Links anklicken, verlassen Sie unser Angebot. Für die Datenverarbeitung auf den Seiten der Stadtwerke ist allein der Betreiber verantwortlich.</p>
-                            <a href="https://www.stadtwerke-viernheim.de/infopoint/datenschutz" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline decoration-brand-200 text-xs flex items-center gap-1 mt-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> Datenschutzerklärung Stadtwerke Viernheim
-                            </a>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">6. Ihre Rechte</h3>
-                    <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                        <p class="font-semibold text-brand-900 mb-1">Auskunft, Löschung & Widerruf</p>
-                        <p class="mb-1">Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten. Sie haben außerdem ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese jederzeit für die Zukunft widerrufen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.</p>
-                    </div>
-                </section>
             </div>
         </div>
     </dialog>
 
-    <dialog id="agbModal" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
-        <div class="flex flex-col max-h-[85vh] w-full">
+    <dialog id="agbModal" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2.5rem)] sm:w-full max-w-2xl h-[80vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
+        <div class="flex flex-col h-full w-full">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center bg-white shrink-0">
                 <h2 class="text-xl font-bold text-brand-900">AGB<br>Stand: Februar 2026</h2>
                 <button data-close-modal="agbModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
@@ -733,63 +707,13 @@
                         </div>
                     </div>
                 </section>
-                <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">§3 Vergütung & Zahlungsverzug</h3>
-                    <div class="space-y-3">
-                        <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                            <p class="font-semibold text-brand-900 mb-1">Vorkasse & Fristen</p>
-                            <p>Der Rechnungsbetrag ist bis zum angegebenen Fälligkeitsdatum zu begleichen. Geht die Zahlung nicht fristgerecht ein, ist LP-SWIM berechtigt, vom Vertrag zurückzutreten und den Termin anderweitig zu vergeben. Der Zahlungsanspruch bleibt bei kurzfristigem Rücktritt gemäß §4 bestehen.</p>
-                        </div>
-                        <div class="bg-orange-50 p-3 rounded-xl border border-orange-100 text-orange-800 flex items-start gap-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 shrink-0 mt-0.5"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg>
-                            <p class="text-xs sm:text-sm font-medium">Hinweis: Der Eintritt in das Schwimmbad ist <strong>nicht</strong> im Honorar enthalten und muss separat an der Kasse vor Ort entrichtet werden.</p>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">§4 Stornierung, Ausfall & Rückerstattung</h3>
-                    <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 space-y-4">
-                        <div>
-                            <p class="font-semibold text-brand-900 mb-1 flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Absage durch den Kunden (48h-Frist)
-                            </p>
-                            <p class="mb-2">Vereinbarte Termine sind verbindlich. Eine kostenfreie Stornierung oder Verschiebung ist nur bis <strong>48 Stunden vor Beginn</strong> des Termins möglich.</p>
-                            <ul class="list-disc list-inside pl-2 space-y-1 text-slate-600">
-                                <li><strong>Rechtzeitige Absage (> 48h):</strong><br>Der Termin wird kostenfrei storniert oder verschoben.</li>
-                                <li><strong>Verspätete Absage (< 48h) / Nichterscheinen:</strong><br>Es wird das <strong>volle Honorar</strong> als Ausfallentschädigung fällig (§ 615 BGB), da der Termin so kurzfristig nicht neu belegt werden kann. Dies gilt unabhängig vom Grund der Absage.</li>
-                            </ul>
-                        </div>
-                        <div class="border-t border-brand-200 pt-3">
-                            <p class="font-semibold text-brand-900 mb-1 flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg> Absage durch LP-SWIM
-                            </p>
-                            <p class="mb-2">Sollte ein Termin seitens LP-SWIM (z. B. wegen Krankheit des Trainers, technischer Defekte im Bad oder höherer Gewalt) nicht stattfinden können, gilt folgende Regelung:</p>
-                            <ol class="list-decimal list-inside pl-2 space-y-1 text-slate-600">
-                                <li><strong>Vorrangig Ersatztermin:</strong><br>Es wird primär ein Ersatztermin angeboten. Das Guthaben bleibt bestehen.</li>
-                                <li><strong>Rückerstattung:</strong><br>Ein Anspruch auf Rückzahlung des Honorars besteht <strong>ausschließlich</strong> dann, wenn LP-SWIM aus eigenem Verschulden keinen Ersatztermin innerhalb eines angemessenen Zeitraums anbieten kann.</li>
-                            </ol>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">§5 Haftung</h3>
-                    <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100 space-y-2">
-                        <p>Für den Verlust oder die Beschädigung von Garderobe und Wertsachen übernimmt die Kursleitung keine Haftung, soweit diese nicht auf Vorsatz oder grober Fahrlässigkeit unsererseits beruht. Die Teilnehmer werden gebeten, die vorgesehenen Schließfächer des Bades zu nutzen. Ergänzend gelten die AGB und die Haus- und Badeordnung der Stadtwerke Viernheim.</p>
-                    </div>
-                </section>
-                <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">§6 Schlussbestimmungen</h3>
-                    <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                        <p>Sollten einzelne Bestimmungen dieses Vertrages unwirksam oder undurchführbar sein, bleibt die Wirksamkeit der übrigen Bestimmungen hiervon unberührt (Salvatorische Klausel). Es gilt deutsches Recht.</p>
-                    </div>
-                </section>
             </div>
         </div>
     </dialog>
 
-    <dialog id="confirmationPopup" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-sm p-8 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm text-center">
-        <div class="flex flex-col h-full w-full items-center justify-center">
-            <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+    <dialog id="confirmationPopup" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2.5rem)] sm:w-full max-w-sm h-[80vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm text-center">
+        <div class="flex flex-col h-full w-full items-center justify-center p-8">
+            <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 shrink-0">
                 <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M20 6 9 17l-5-5"/></svg>
             </div>
             <h2 class="text-2xl font-bold mb-4 text-brand-900">Gesendet!</h2>
@@ -836,6 +760,7 @@
     
 </body>
 </html>
+
 
 
 
