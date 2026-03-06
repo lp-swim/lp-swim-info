@@ -527,23 +527,23 @@
         </div>
     </footer>
 
-    <dialog id="preisModal" class="p-0 bg-transparent backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm m-auto focus:outline-none">
-        <div class="bg-white rounded-[2rem] shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-5xl h-[90vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300 modal-anim">
-            <div class="p-6 border-b border-brand-50 flex justify-between items-center bg-white rounded-t-[2rem] shrink-0">
+    <dialog id="preisModal" class="p-0 bg-transparent border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm m-auto">
+        <div class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-5xl h-[90vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300 modal-anim">
+            <div class="p-6 border-b border-brand-50 flex justify-between items-center bg-white shrink-0">
                 <h2 class="text-xl font-bold text-brand-900">Preisübersicht</h2>
                 <button data-close-modal="preisModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                 </button>
             </div>
-            <div class="flex-grow overflow-hidden bg-brand-50/30 flex items-center justify-center p-4 rounded-b-[2rem]">
+            <div class="flex-grow overflow-hidden bg-brand-50/30 flex items-center justify-center p-4">
                 <img src="./Preisliste%2001.11.2025.webp" width="1200" height="1600" alt="LP-SWIM Preisübersicht" class="max-h-full max-w-full object-contain shadow-lg rounded-xl" loading="lazy" decoding="async" />            
             </div>
         </div>
     </dialog>
 
-    <dialog id="impressumModal" class="p-0 bg-transparent backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm m-auto focus:outline-none">
-        <div class="bg-white rounded-[2rem] shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-2xl max-h-[85vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300 modal-anim">
-            <div class="p-6 border-b border-brand-50 flex justify-between items-center shrink-0">
+    <dialog id="impressumModal" class="p-0 bg-transparent border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm m-auto">
+        <div class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-2xl max-h-[85vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300 modal-anim">
+            <div class="p-6 border-b border-brand-50 flex justify-between items-center bg-white shrink-0">
                 <h2 class="text-xl font-bold text-brand-900">Impressum</h2>
                 <button data-close-modal="impressumModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -587,9 +587,9 @@
         </div>
     </dialog>
 
-    <dialog id="datenschutzModal" class="p-0 bg-transparent backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm m-auto focus:outline-none">
-        <div class="bg-white rounded-[2rem] shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-2xl max-h-[85vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300 modal-anim">
-            <div class="p-6 border-b border-brand-50 flex justify-between items-center shrink-0">
+    <dialog id="datenschutzModal" class="p-0 bg-transparent border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm m-auto">
+        <div class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-2xl max-h-[85vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300 modal-anim">
+            <div class="p-6 border-b border-brand-50 flex justify-between items-center bg-white shrink-0">
                 <h2 class="text-xl font-bold text-brand-900">Datenschutzerklärung<br>Stand: Februar 2026</h2>
                 <button data-close-modal="datenschutzModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -689,7 +689,7 @@
                         <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
                             <p class="font-semibold text-brand-900 mb-1">Google Maps (Weiterleitung)</p>
                             <p class="mb-1">
-                                Wir nutzen keine direkt eingebettete Karte, die beim Laden der Seite Daten überträgt. Die Karte auf unserer Seite ist ein Link.
+                                Wir nutzen keine directly eingebettete Karte, die beim Laden der Seite Daten überträgt. Die Karte auf unserer Seite ist ein Link.
                                 Erst wenn Sie aktiv auf die Karte oder den Button „Route“ klicken, werden Sie zu Google Maps weitergeleitet.
                                 Ab diesem Zeitpunkt verarbeitet Google Ihre Daten (Standort, IP) zur Routenplanung.
                             </p>
@@ -726,9 +726,9 @@
         </div>
     </dialog>
 
-    <dialog id="agbModal" class="p-0 bg-transparent backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm m-auto focus:outline-none">
-        <div class="bg-white rounded-[2rem] shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-2xl max-h-[85vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300 modal-anim">
-            <div class="p-6 border-b border-brand-50 flex justify-between items-center shrink-0">
+    <dialog id="agbModal" class="p-0 bg-transparent border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm m-auto">
+        <div class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-2xl max-h-[85vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300 modal-anim">
+            <div class="p-6 border-b border-brand-50 flex justify-between items-center bg-white shrink-0">
                 <h2 class="text-xl font-bold text-brand-900">AGB<br>Stand: Februar 2026</h2>
                 <button data-close-modal="agbModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -847,8 +847,8 @@
         </div>
     </dialog>
 
-    <dialog id="confirmationPopup" class="p-0 bg-transparent backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm m-auto focus:outline-none">
-        <div class="bg-white rounded-[2rem] shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-sm p-8 transform scale-95 opacity-0 transition-all duration-300 modal-anim text-center">
+    <dialog id="confirmationPopup" class="p-0 bg-transparent border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm m-auto">
+        <div class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-sm p-8 transform scale-95 opacity-0 transition-all duration-300 modal-anim text-center">
             <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M20 6 9 17l-5-5"/></svg>
             </div>
@@ -896,3 +896,4 @@
     
 </body>
 </html>
+
