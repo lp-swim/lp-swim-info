@@ -527,8 +527,10 @@
         </div>
     </footer>
 
-    <dialog id="preisModal" class="p-0 bg-transparent border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm m-auto">
-        <div class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-5xl h-[90vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300 modal-anim">
+    <dialog id="preisModal" class="p-0 m-auto bg-transparent border-none outline-none backdrop:bg-transparent">
+        <div class="fixed inset-0 bg-brand-900/40 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none modal-bg"></div>
+        
+        <div class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-5xl h-[90vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300 modal-content relative z-10">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center bg-white shrink-0">
                 <h2 class="text-xl font-bold text-brand-900">Preisübersicht</h2>
                 <button data-close-modal="preisModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
@@ -541,8 +543,10 @@
         </div>
     </dialog>
 
-    <dialog id="impressumModal" class="p-0 bg-transparent border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm m-auto">
-        <div class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-2xl max-h-[85vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300 modal-anim">
+    <dialog id="impressumModal" class="p-0 m-auto bg-transparent border-none outline-none backdrop:bg-transparent">
+        <div class="fixed inset-0 bg-brand-900/40 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none modal-bg"></div>
+        
+        <div class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-2xl max-h-[85vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300 modal-content relative z-10">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center bg-white shrink-0">
                 <h2 class="text-xl font-bold text-brand-900">Impressum</h2>
                 <button data-close-modal="impressumModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
@@ -587,8 +591,10 @@
         </div>
     </dialog>
 
-    <dialog id="datenschutzModal" class="p-0 bg-transparent border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm m-auto">
-        <div class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-2xl max-h-[85vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300 modal-anim">
+    <dialog id="datenschutzModal" class="p-0 m-auto bg-transparent border-none outline-none backdrop:bg-transparent">
+        <div class="fixed inset-0 bg-brand-900/40 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none modal-bg"></div>
+        
+        <div class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-2xl max-h-[85vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300 modal-content relative z-10">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center bg-white shrink-0">
                 <h2 class="text-xl font-bold text-brand-900">Datenschutzerklärung<br>Stand: Februar 2026</h2>
                 <button data-close-modal="datenschutzModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
@@ -726,8 +732,10 @@
         </div>
     </dialog>
 
-    <dialog id="agbModal" class="p-0 bg-transparent border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm m-auto">
-        <div class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-2xl max-h-[85vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300 modal-anim">
+    <dialog id="agbModal" class="p-0 m-auto bg-transparent border-none outline-none backdrop:bg-transparent">
+        <div class="fixed inset-0 bg-brand-900/40 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none modal-bg"></div>
+        
+        <div class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-2xl max-h-[85vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300 modal-content relative z-10">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center bg-white shrink-0">
                 <h2 class="text-xl font-bold text-brand-900">AGB<br>Stand: Februar 2026</h2>
                 <button data-close-modal="agbModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
@@ -847,8 +855,10 @@
         </div>
     </dialog>
 
-    <dialog id="confirmationPopup" class="p-0 bg-transparent border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm m-auto">
-        <div class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-sm p-8 transform scale-95 opacity-0 transition-all duration-300 modal-anim text-center">
+    <dialog id="confirmationPopup" class="p-0 m-auto bg-transparent border-none outline-none backdrop:bg-transparent">
+        <div class="fixed inset-0 bg-brand-900/40 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none modal-bg"></div>
+        
+        <div class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-sm p-8 transform scale-95 opacity-0 transition-all duration-300 modal-content relative z-10 text-center">
             <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M20 6 9 17l-5-5"/></svg>
             </div>
@@ -896,4 +906,5 @@
     
 </body>
 </html>
+
 
