@@ -527,30 +527,28 @@
         </div>
     </footer>
 
-    <div id="modal-overlay" class="fixed inset-0 z-[60] bg-brand-900/40 backdrop-blur-sm hidden transition-opacity duration-300 opacity-0"></div>
-
-    <div id="preisModal" class="fixed inset-0 z-[70] hidden items-center justify-center p-4 pointer-events-none">
-        <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-5xl h-[90vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 transition-all duration-300 modal-anim">
+    <dialog id="preisModal" class="p-0 bg-transparent backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm m-auto focus:outline-none">
+        <div class="bg-white rounded-[2rem] shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-5xl h-[90vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300 modal-anim">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center bg-white rounded-t-[2rem] shrink-0">
                 <h2 class="text-xl font-bold text-brand-900">Preisübersicht</h2>
-                    <button data-close-modal="preisModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                    </button>
-                </div>
+                <button data-close-modal="preisModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
             <div class="flex-grow overflow-hidden bg-brand-50/30 flex items-center justify-center p-4 rounded-b-[2rem]">
                 <img src="./Preisliste%2001.11.2025.webp" width="1200" height="1600" alt="LP-SWIM Preisübersicht" class="max-h-full max-w-full object-contain shadow-lg rounded-xl" loading="lazy" decoding="async" />            
             </div>
         </div>
-    </div>
+    </dialog>
 
-    <div id="impressumModal" class="fixed inset-0 z-[70] hidden items-center justify-center p-4 pointer-events-none">
-        <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 transition-all duration-300 modal-anim">
-            <div class="p-6 border-b border-brand-50 flex justify-between items-center">
+    <dialog id="impressumModal" class="p-0 bg-transparent backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm m-auto focus:outline-none">
+        <div class="bg-white rounded-[2rem] shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-2xl max-h-[85vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300 modal-anim">
+            <div class="p-6 border-b border-brand-50 flex justify-between items-center shrink-0">
                 <h2 class="text-xl font-bold text-brand-900">Impressum</h2>
-                    <button data-close-modal="impressumModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                    </button>           
-                </div>
+                <button data-close-modal="impressumModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>           
+            </div>
             <div class="p-8 overflow-y-auto space-y-8 text-sm text-slate-600 leading-relaxed">
                 <section>
                     <h3 class="font-bold text-lg text-brand-700 mb-2">Angaben gemäß § 5 TMG</h3>
@@ -587,16 +585,16 @@
                 </section>
             </div>
         </div>
-    </div>
+    </dialog>
 
-    <div id="datenschutzModal" class="fixed inset-0 z-[70] hidden items-center justify-center p-4 pointer-events-none">
-        <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 transition-all duration-300 modal-anim">
-            <div class="p-6 border-b border-brand-50 flex justify-between items-center">
+    <dialog id="datenschutzModal" class="p-0 bg-transparent backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm m-auto focus:outline-none">
+        <div class="bg-white rounded-[2rem] shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-2xl max-h-[85vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300 modal-anim">
+            <div class="p-6 border-b border-brand-50 flex justify-between items-center shrink-0">
                 <h2 class="text-xl font-bold text-brand-900">Datenschutzerklärung<br>Stand: Februar 2026</h2>
-                    <button data-close-modal="datenschutzModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                    </button>
-                </div>
+                <button data-close-modal="datenschutzModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
             <div class="p-8 overflow-y-auto space-y-8 text-sm text-slate-600 leading-relaxed">
                 <section>
                     <h3 class="font-bold text-lg text-brand-700 mb-2">1. Datenschutz auf einen Blick</h3>
@@ -726,16 +724,16 @@
                 </section>
             </div>
         </div>
-    </div>
+    </dialog>
 
-    <div id="agbModal" class="fixed inset-0 z-[70] hidden items-center justify-center p-4 pointer-events-none">
-        <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col pointer-events-auto transform scale-95 opacity-0 transition-all duration-300 modal-anim">
-            <div class="p-6 border-b border-brand-50 flex justify-between items-center">
+    <dialog id="agbModal" class="p-0 bg-transparent backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm m-auto focus:outline-none">
+        <div class="bg-white rounded-[2rem] shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-2xl max-h-[85vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300 modal-anim">
+            <div class="p-6 border-b border-brand-50 flex justify-between items-center shrink-0">
                 <h2 class="text-xl font-bold text-brand-900">AGB<br>Stand: Februar 2026</h2>
-                    <button data-close-modal="agbModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                    </button>           
-                </div>
+                <button data-close-modal="agbModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>           
+            </div>
             <div class="p-8 overflow-y-auto space-y-8 text-sm text-slate-600 leading-relaxed">
                 <section>
                     <h3 class="font-bold text-lg text-brand-700 mb-2">§1 Geltungsbereich & Vertretung</h3>
@@ -847,10 +845,10 @@
                 </section>
             </div>
         </div>
-    </div>
+    </dialog>
 
-    <div id="confirmationPopup" class="fixed inset-0 z-[70] hidden items-center justify-center p-4 pointer-events-none">
-        <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-sm p-8 pointer-events-auto transform scale-95 opacity-0 transition-all duration-300 modal-anim text-center">
+    <dialog id="confirmationPopup" class="p-0 bg-transparent backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm m-auto focus:outline-none">
+        <div class="bg-white rounded-[2rem] shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-sm p-8 transform scale-95 opacity-0 transition-all duration-300 modal-anim text-center">
             <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M20 6 9 17l-5-5"/></svg>
             </div>
@@ -858,7 +856,7 @@
             <p class="text-slate-600 mb-8">Vielen Dank. Wir melden uns in Kürze bei Ihnen zurück.</p>
             <button data-close-modal="confirmationPopup" class="w-full py-4 rounded-xl bg-brand-900 text-white font-bold hover:bg-brand-800 transition-colors">Alles klar</button>
         </div>
-    </div>
+    </dialog>
 
     <div id="cookie-overlay" class="fixed inset-0 z-[100] bg-brand-900/60 backdrop-blur-md hidden items-end sm:items-center justify-center p-4 transition-all duration-500 opacity-0">
         <div class="bg-white/95 backdrop-blur-xl w-full max-w-lg rounded-[2rem] shadow-2xl shadow-brand-900/20 border border-white/50 p-6 sm:p-8 transform transition-all duration-500 scale-95 translate-y-8">
@@ -898,11 +896,3 @@
     
 </body>
 </html>
-
-
-
-
-
-
-
-
