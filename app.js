@@ -258,10 +258,15 @@
             localStorage.removeItem("lp_swim_consent_2026"); 
             
             const gaCookies = document.cookie.split(";").filter(c => c.trim().startsWith("_ga"));
+            const cleanDomain = window.location.hostname.replace(/^www\./, '');
+            
             gaCookies.forEach(cookie => {
                 const name = cookie.split("=")[0].trim();
-                document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname.replace('www.','')}`;
+                document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+                document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${cleanDomain}`;
+                document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${cleanDomain}`;
             });
+            
             window.location.reload(); 
         }
 
@@ -271,5 +276,3 @@
     });
 
     console.log("App.js erfolgreich geladen.");
-
-})();
