@@ -600,11 +600,11 @@
         </div>
     </footer>
 
-    <dialog id="preisModal" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-5xl h-[90vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
+    <dialog id="preisModal" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-5xl h-[90vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
         <div class="flex flex-col h-[90vh] w-full">
-            <div class="p-6 border-b border-brand-50 flex justify-between items-center bg-white shrink-0">
-                <h2 class="text-xl font-bold text-brand-900">Preisübersicht</h2>
-                <button data-close-modal="preisModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
+            <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-white shrink-0">
+                <h2 class="text-xl font-bold text-brand-900 break-words hyphens-auto">Preisübersicht</h2>
+                <button data-close-modal="preisModal" class="shrink-0 p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
                     <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-close"></use></svg>
                 </button>
             </div>
@@ -614,11 +614,11 @@
         </div>
     </dialog>
 
-    <dialog id="impressumModal" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
+    <dialog id="impressumModal" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
         <div class="flex flex-col max-h-[85vh] w-full">
-            <div class="p-6 border-b border-brand-50 flex justify-between items-center bg-white shrink-0">
-                <h2 class="text-xl font-bold text-brand-900">Impressum</h2>
-                <button data-close-modal="impressumModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
+            <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-white shrink-0">
+                <h2 class="text-xl font-bold text-brand-900 break-words hyphens-auto">Impressum</h2>
+                <button data-close-modal="impressumModal" class="shrink-0 p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
                     <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-close"></use></svg>
                 </button>           
             </div>
@@ -626,7 +626,7 @@
                 <section>
                     <h3 class="font-bold text-lg text-brand-700 mb-2">Angaben gemäß § 5 TMG</h3>
                     <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 flex items-start gap-3">
-                        <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm">
+                        <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0">
                             <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-pin"></use></svg>
                         </div>
                         <div>
@@ -638,10 +638,10 @@
                 <section>
                     <h3 class="font-bold text-lg text-brand-700 mb-2">Kontakt</h3>
                     <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 flex items-start gap-3">
-                        <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm">
+                        <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0">
                             <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-mail"></use></svg>
                         </div>
-                        <div>
+                        <div class="break-all">
                             <p class="font-semibold text-brand-900 mb-1">E-Mail</p>
                             <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x6c;&#x70;&#x73;&#x77;&#x69;&#x6d;&#x2e;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;" class="text-brand-600 hover:underline decoration-brand-200 text-xs flex items-center gap-1 mt-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
@@ -654,11 +654,11 @@
         </div>
     </dialog>
 
-    <dialog id="datenschutzModal" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
+    <dialog id="datenschutzModal" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
         <div class="flex flex-col max-h-[85vh] w-full">
-            <div class="p-6 border-b border-brand-50 flex justify-between items-center bg-white shrink-0">
-                <h2 class="text-xl font-bold text-brand-900">Datenschutzerklärung<br>Stand: Februar 2026</h2>
-                <button data-close-modal="datenschutzModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
+            <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-white shrink-0">
+                <h2 class="text-xl font-bold text-brand-900 break-words hyphens-auto">Datenschutzerklärung<br>Stand: Februar 2026</h2>
+                <button data-close-modal="datenschutzModal" class="shrink-0 p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
                     <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-close"></use></svg>
                 </button>
             </div>
@@ -686,8 +686,8 @@
                         <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
                             <p class="font-semibold text-brand-900 mb-1">GitHub Pages</p>
                             <p class="mb-1">Wir hosten diese Website bei <em>GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA</em>. Beim Aufruf unserer Webseite erfassen die Server von GitHub automatisch Informationen in sogenannten Server-Log-Dateien (z. B. IP-Adresse, Browser, Uhrzeit). Dies ist technisch notwendig, um die Sicherheit und Stabilität der Webseite zu gewährleisten. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (Berechtigtes Interesse).</p>
-                            <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline decoration-brand-200 text-xs flex items-center gap-1 mt-2">
-                                <svg aria-hidden="true" class="w-3 h-3"><use href="#icon-external"></use></svg> Datenschutzerklärung von GitHub
+                            <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline decoration-brand-200 text-xs sm:text-sm flex items-center gap-1 mt-2">
+                                <svg aria-hidden="true" class="w-3 h-3 shrink-0"><use href="#icon-external"></use></svg> Datenschutzerklärung von GitHub
                             </a>
                         </div>
                     </div>
@@ -697,8 +697,8 @@
                     <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
                         <p class="font-semibold text-brand-900 mb-1">Kontaktformular (Formspree)</p>
                         <p class="mb-1">Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben (Name, E-Mail, Nachricht) zwecks Bearbeitung der Anfrage und für Anschlussfragen bei uns gespeichert. Wir nutzen hierfür den Dienstleister <em>Formspree Inc. (USA)</em>. Ihre Daten werden verschlüsselt übertragen. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen (z. B. Kursbuchung) erforderlich ist.</p>
-                        <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline decoration-brand-200 text-xs flex items-center gap-1 mt-2">
-                            <svg aria-hidden="true" class="w-3 h-3"><use href="#icon-external"></use></svg> Datenschutzerklärung von Formspree
+                        <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline decoration-brand-200 text-xs sm:text-sm flex items-center gap-1 mt-2">
+                            <svg aria-hidden="true" class="w-3 h-3 shrink-0"><use href="#icon-external"></use></svg> Datenschutzerklärung von Formspree
                         </a>
                     </div>
                 </section>
@@ -708,8 +708,8 @@
                         <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
                             <p class="font-semibold text-brand-900 mb-1">Google Analytics 4</p>
                             <p class="mb-1">Soweit Sie Ihre Einwilligung erklärt haben (über unseren Cookie-Banner beim ersten Besuch), nutzen wir Google Analytics 4 der <em>Google Ireland Limited</em>. Der Dienst verwendet „Cookies“. Die durch das Cookie erzeugten Informationen über Ihre Benutzung dieser Webseite werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert.</p>
-                            <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline decoration-brand-200 text-xs flex items-center gap-1 mt-2">
-                                <svg aria-hidden="true" class="w-3 h-3"><use href="#icon-external"></use></svg> Datenschutzerklärung von Google
+                            <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline decoration-brand-200 text-xs sm:text-sm flex items-center gap-1 mt-2">
+                                <svg aria-hidden="true" class="w-3 h-3 shrink-0"><use href="#icon-external"></use></svg> Datenschutzerklärung von Google
                             </a>
                         </div>
                         <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
@@ -720,7 +720,7 @@
                             <p class="font-semibold text-brand-900 mb-1">Widerruf der Einwilligung</p>
                             <p class="mb-3 text-sm text-slate-600">Sie können Ihre getroffene Entscheidung bezüglich der Cookies jederzeit widerrufen. Die Seite lädt dann neu und der Banner wird Ihnen erneut angezeigt.</p>
                             <button type="button" data-revoke-cookies class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-brand-200 rounded-lg text-sm font-medium text-brand-800 hover:bg-brand-50 hover:text-brand-900 hover:shadow-sm transition-all shadow-sm">
-                                <svg aria-hidden="true" class="w-4 h-4 text-brand-600"><use href="#icon-cookie"></use></svg> Cookie-Einstellungen zurücksetzen
+                                <svg aria-hidden="true" class="w-4 h-4 text-brand-600 shrink-0"><use href="#icon-cookie"></use></svg> Cookie-Einstellungen zurücksetzen
                             </button>
                         </div>                    
                     </div>
@@ -731,15 +731,15 @@
                         <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
                             <p class="font-semibold text-brand-900 mb-1">Google Maps (Weiterleitung)</p>
                             <p class="mb-1">Wir nutzen keine direkt eingebettete Karte, die beim Laden der Seite Daten überträgt. Die Karte auf unserer Seite ist ein Link. Erst wenn Sie aktiv auf die Karte oder den Button „Route“ klicken, werden Sie zu Google Maps weitergeleitet. Ab diesem Zeitpunkt verarbeitet Google Ihre Daten (Standort, IP) zur Routenplanung.</p>
-                            <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline decoration-brand-200 text-xs flex items-center gap-1 mt-2">
-                                <svg aria-hidden="true" class="w-3 h-3"><use href="#icon-external"></use></svg> Google Privacy Policy
+                            <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline decoration-brand-200 text-xs sm:text-sm flex items-center gap-1 mt-2">
+                                <svg aria-hidden="true" class="w-3 h-3 shrink-0"><use href="#icon-external"></use></svg> Google Privacy Policy
                             </a>
                         </div>
                         <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
                             <p class="font-semibold text-brand-900 mb-1">Stadtwerke Viernheim (Bäder)</p>
                             <p class="mb-1">Für die Durchführung der Trainerstunden nutzen wir die Infrastruktur der Stadtwerke Viernheim (Hallenbad & Waldschwimmbad). Wir verlinken auf deren Website, um Ihnen Informationen zu Eintrittspreisen und Öffnungszeiten bereitzustellen. Wenn Sie diese Links anklicken, verlassen Sie unser Angebot. Für die Datenverarbeitung auf den Seiten der Stadtwerke ist allein der Betreiber verantwortlich.</p>
-                            <a href="https://www.stadtwerke-viernheim.de/infopoint/datenschutz" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline decoration-brand-200 text-xs flex items-center gap-1 mt-2">
-                                <svg aria-hidden="true" class="w-3 h-3"><use href="#icon-external"></use></svg> Datenschutzerklärung Stadtwerke Viernheim
+                            <a href="https://www.stadtwerke-viernheim.de/infopoint/datenschutz" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline decoration-brand-200 text-xs sm:text-sm flex items-center gap-1 mt-2">
+                                <svg aria-hidden="true" class="w-3 h-3 shrink-0"><use href="#icon-external"></use></svg> Datenschutzerklärung Stadtwerke
                             </a>
                         </div>
                     </div>
@@ -755,11 +755,11 @@
         </div>
     </dialog>
 
-    <dialog id="agbModal" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
+    <dialog id="agbModal" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
         <div class="flex flex-col max-h-[85vh] w-full">
-            <div class="p-6 border-b border-brand-50 flex justify-between items-center bg-white shrink-0">
-                <h2 class="text-xl font-bold text-brand-900">AGB<br>Stand: Februar 2026</h2>
-                <button data-close-modal="agbModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
+            <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-white shrink-0">
+                <h2 class="text-xl font-bold text-brand-900 break-words hyphens-auto">AGB<br>Stand: Februar 2026</h2>
+                <button data-close-modal="agbModal" class="shrink-0 p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Fenster schließen">
                     <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-close"></use></svg>
                 </button>           
             </div>
@@ -824,7 +824,7 @@
                     <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 space-y-4">
                         <div>
                             <p class="font-semibold text-brand-900 mb-1 flex items-center gap-2">
-                                <svg aria-hidden="true" class="w-4 h-4"><use href="#icon-clock"></use></svg> Absage durch den Kunden (48h-Frist)
+                                <svg aria-hidden="true" class="w-4 h-4 shrink-0"><use href="#icon-clock"></use></svg> Absage durch den Kunden (48h-Frist)
                             </p>
                             <p class="mb-2">Vereinbarte Termine sind verbindlich. Eine kostenfreie Stornierung oder Verschiebung ist nur bis <strong>48 Stunden vor Beginn</strong> des Termins möglich.</p>
                             <ul class="list-disc list-inside pl-2 space-y-1 text-slate-600">
@@ -834,7 +834,7 @@
                         </div>
                         <div class="border-t border-brand-200 pt-3">
                             <p class="font-semibold text-brand-900 mb-1 flex items-center gap-2">
-                                <svg aria-hidden="true" class="w-4 h-4"><use href="#icon-cookie"></use></svg> Absage durch LP-SWIM
+                                <svg aria-hidden="true" class="w-4 h-4 shrink-0"><use href="#icon-cookie"></use></svg> Absage durch LP-SWIM
                             </p>
                             <p class="mb-2">Sollte ein Termin seitens LP-SWIM (z. B. wegen Krankheit des Trainers, technischer Defekte im Bad oder höherer Gewalt) nicht stattfinden können, gilt folgende Regelung:</p>
                             <ol class="list-decimal list-inside pl-2 space-y-1 text-slate-600">
@@ -860,9 +860,9 @@
         </div>
     </dialog>
 
-    <dialog id="confirmationPopup" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] sm:w-full max-w-sm p-8 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm text-center">
+    <dialog id="confirmationPopup" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-sm p-8 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm text-center">
         <div class="flex flex-col h-full w-full items-center justify-center">
-            <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 shrink-0">
                 <svg aria-hidden="true" class="w-8 h-8"><use href="#icon-check"></use></svg>
             </div>
             <h2 class="text-2xl font-bold mb-4 text-brand-900">Gesendet!</h2>
@@ -909,3 +909,4 @@
     
 </body>
 </html>
+
