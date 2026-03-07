@@ -276,3 +276,5 @@
     });
 
     console.log("App.js erfolgreich geladen.");
+    
+})();
