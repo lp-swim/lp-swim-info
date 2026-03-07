@@ -1976,7 +1976,15 @@ body footer p {
 [data-close-modal] svg {
     pointer-events: none;
 }
-
+.max-w-0 {
+    max-width: 0px;
+}
+.group:hover .group-hover\:max-w-\[200px\] {
+    max-width: 200px;
+}
+.whitespace-nowrap {
+    white-space: nowrap;
+}
 /* ==========================================
    4. BARRIEREFREIHEIT (Accessibility)
    ========================================== */
@@ -1989,7 +1997,6 @@ body footer p {
     transition: none !important;
   }
 }
-
 /* ==========================================
    5. NATIVE DIALOG ANIMATIONEN
    ========================================== */
