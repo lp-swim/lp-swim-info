@@ -170,27 +170,30 @@
                 <path d="M0,60 C200,20 400,100 600,60 C800,20 1000,100 1200,60 L1200,120 L0,120 Z"></path>
                 <path d="M1200,60 C1400,20 1600,100 1800,60 C2000,20 2200,100 2400,60 L2400,120 L1200,120 Z"></path>
             </symbol>
+            <symbol id="icon-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 19V5M5 12l7-7 7 7"/>
+            </symbol>        
         </defs>
     </svg>  
     
     <nav class="hidden md:flex fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-md border-b border-white/50 transition-all duration-300">
         <div class="container max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"> 
-            <a href="#start" class="text-2xl font-bold tracking-tight text-brand-900 flex items-center gap-3 group">
+        <a href="#start" class="text-2xl font-bold tracking-tight text-brand-900 flex items-center gap-3 group">
             <div class="bg-brand-50 w-10 h-10 rounded-xl group-hover:scale-110 transition-transform border border-brand-100 overflow-hidden flex items-center justify-center shrink-0">
                 <img src="./favicon.ico" alt="LP-SWIM Logo" class="w-full h-full object-cover" />             
             </div>
-        <div class="flex items-center overflow-hidden transition-all duration-500 max-w-0 opacity-0 group-hover:max-w-[200px] group-hover:opacity-100 whitespace-nowrap">
-            <span class="mr-1.5 text-xl">Auftauchen</span>
-                <svg aria-hidden="true" class="w-5 h-5 text-brand-600 mb-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 19V5M5 12l7-7 7 7"/>
+            <div class="flex items-center overflow-hidden transition-all duration-500 max-w-0 opacity-0 group-hover:max-w-[200px] group-hover:opacity-100 whitespace-nowrap">
+                <span class="mr-1.5 text-xl">Auftauchen</span>
+                <svg aria-hidden="true" class="w-5 h-5 text-brand-600 mb-0.5">
+                    <use href="#icon-arrow-up"></use>
                 </svg>
             </div>
-            </a>
-            <div class="flex items-center gap-2 bg-brand-50/80 p-1.5 rounded-full border border-brand-100">
-                <a class="px-6 py-2 rounded-full text-sm font-medium text-brand-800 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all" href="#jugend">Angebot</a>
-                <a class="px-6 py-2 rounded-full text-sm font-medium text-brand-800 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all" href="#standort">Standort</a>
-                <button data-open-modal="preisModal" aria-haspopup="dialog" aria-expanded="false" aria-controls="preisModal" class="px-6 py-2 rounded-full text-sm font-medium text-brand-800 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all">Preise</button>            
-            </div>
+        </a>
+        <div class="flex items-center gap-2 bg-brand-50/80 p-1.5 rounded-full border border-brand-100">
+            <a class="px-6 py-2 rounded-full text-sm font-medium text-brand-800 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all" href="#jugend">Angebot</a>
+            <a class="px-6 py-2 rounded-full text-sm font-medium text-brand-800 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all" href="#standort">Standort</a>
+            <button data-open-modal="preisModal" aria-haspopup="dialog" aria-expanded="false" aria-controls="preisModal" class="px-6 py-2 rounded-full text-sm font-medium text-brand-800 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all">Preise</button>            
+        </div>
         </div>
     </nav>
 
@@ -914,6 +917,7 @@
     
 </body>
 </html>
+
 
 
 
