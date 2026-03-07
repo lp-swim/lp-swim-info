@@ -5,38 +5,44 @@
     // 1. ANIMATIONEN
     // ==========================================
     document.addEventListener('DOMContentLoaded', () => {
-        let typingStarted = false; 
+    function startTypeWriter(element, text, speed = 40) {
+        let i = 0;
+        element.placeholder = "";
         
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    if (entry.target.id === 'message') {
-                        if (!typingStarted) {
-                            typingStarted = true;
-                            entry.target.classList.add('transition-opacity', 'duration-1000');
-                            entry.target.style.opacity = '1';
-                            
-                            const text = "Ich würde gerne meine Technik verbessern. Wie läuft die Buchung ab?";
-                            let i = 0;
-                            entry.target.placeholder = ""; 
-                            
-                            function typeWriter() {
-                                if (i < text.length) {
-                                    entry.target.placeholder += text.charAt(i);
-                                    i++;
-                                    setTimeout(typeWriter, 40);
-                                }
-                            }
-                            setTimeout(typeWriter, 500); 
-                        }
-                        observer.unobserve(entry.target);
-                    } else {
-                        entry.target.classList.remove('opacity-0', 'translate-y-8');
-                        observer.unobserve(entry.target);
-                    }
+        function type() {
+            if (i < text.length) {
+                element.placeholder += text.charAt(i);
+                i++;
+                setTimeout(type, speed);
+            }
+        }
+        setTimeout(type, 500);
+    }
+
+    let typingStarted = false;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+
+            const el = entry.target;
+
+            if (el.id === 'message') {
+                if (!typingStarted) {
+                    typingStarted = true;
+                    el.classList.add('transition-opacity', 'duration-1000');
+                    el.style.opacity = '1';
+                    
+                    startTypeWriter(el, "Ich würde gerne meine Technik verbessern. Wie läuft die Buchung ab?");
                 }
-            });
-        }, { threshold: 0.1 });
+            } else {
+                el.classList.remove('opacity-0', 'translate-y-8');
+            }
+            
+            observer.unobserve(el);
+        });
+    }, { threshold: 0.1 });
+});
 
         document.querySelectorAll('section article, section > div, section h2').forEach(el => {
             el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
