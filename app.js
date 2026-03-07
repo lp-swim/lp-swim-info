@@ -5,62 +5,62 @@
     // 1. ANIMATIONEN
     // ==========================================
     document.addEventListener('DOMContentLoaded', () => {
-    function startTypeWriter(element, text, speed = 40) {
-        let i = 0;
-        element.placeholder = "";
-        
-        function type() {
-            if (i < text.length) {
-                element.placeholder += text.charAt(i);
-                i++;
-                setTimeout(type, speed);
-            }
-        }
-        setTimeout(type, 500);
-    }
-
-    let typingStarted = false;
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-
-            const el = entry.target;
-
-            if (el.id === 'message') {
-                if (!typingStarted) {
-                    typingStarted = true;
-                    el.classList.add('transition-opacity', 'duration-1000');
-                    el.style.opacity = '1';
-                    
-                    startTypeWriter(el, "Ich würde gerne meine Technik verbessern. Wie läuft die Buchung ab?");
-                }
-            } else {
-                el.classList.remove('opacity-0', 'translate-y-8');
-            }
+        function startTypeWriter(element, text, speed = 40) {
+            let i = 0;
+            element.placeholder = "";
             
-            observer.unobserve(el);
-        });
-    }, { threshold: 0.1 });
+            function type() {
+                if (i < text.length) {
+                    element.placeholder += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            setTimeout(type, 500);
+        }
 
-    document.querySelectorAll('section article, section > div, section h2').forEach(el => {
-        el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
-        observer.observe(el);
+        let typingStarted = false;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+
+                const el = entry.target;
+
+                if (el.id === 'message') {
+                    if (!typingStarted) {
+                        typingStarted = true;
+                        el.classList.add('transition-opacity', 'duration-1000');
+                        el.style.opacity = '1';
+                        
+                        startTypeWriter(el, "Ich würde gerne meine Technik verbessern. Wie läuft die Buchung ab?");
+                    }
+                } else {
+                    el.classList.remove('opacity-0', 'translate-y-8');
+                }
+                
+                observer.unobserve(el);
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section article, section > div, section h2').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
+            observer.observe(el);
+        });
+
+        const msgField = document.getElementById("message");
+        if (msgField) observer.observe(msgField);
+        
+        const marquee = document.querySelector('.animate-marquee');
+        if (marquee) {
+            const cards = Array.from(marquee.children);
+            cards.forEach(card => {
+                const clone = card.cloneNode(true);
+                clone.setAttribute('aria-hidden', 'true'); 
+                marquee.appendChild(clone);
+            });
+        }
     });
-
-    const msgField = document.getElementById("message");
-    if(msgField) observer.observe(msgField);
-    
-    const marquee = document.querySelector('.animate-marquee');
-    if (marquee) {
-        const cards = Array.from(marquee.children);
-        cards.forEach(card => {
-            const clone = card.cloneNode(true);
-            clone.setAttribute('aria-hidden', 'true'); 
-            marquee.appendChild(clone);
-        });
-    }
-});
 
     // ==========================================
     // 2. MODAL-FUNKTIONEN (CSS Keyframes)
@@ -127,7 +127,7 @@
                     body: new FormData(form), 
                     headers: {'Accept': 'application/json'} 
                 });
-                if(res.ok) {
+                if (res.ok) {
                     form.reset();
                     openModal('confirmationPopup');
                     formMessage.innerHTML = '<div class="text-green-600 font-bold bg-green-50 p-4 rounded-xl text-center mt-4" role="alert">Nachricht erfolgreich gesendet!</div>';
@@ -193,7 +193,7 @@
             
             setTimeout(() => {
                 cookieOverlay.classList.remove('opacity-0');
-                if(card) {
+                if (card) {
                     card.classList.remove('scale-95', 'translate-y-8');
                     card.classList.add('scale-100', 'translate-y-0');
                 }
@@ -202,7 +202,7 @@
 
         function hideBanner() {
             cookieOverlay.classList.add('opacity-0');
-            if(card) {
+            if (card) {
                 card.classList.remove('scale-100', 'translate-y-0');
                 card.classList.add('scale-95', 'translate-y-8');
             }
@@ -211,7 +211,7 @@
                 cookieOverlay.classList.add('hidden');
                 
                 const anyModalOpen = document.querySelectorAll('dialog[open]').length > 0;
-                if(!anyModalOpen) {
+                if (!anyModalOpen) {
                     document.body.classList.remove('overflow-hidden');
                 }
             }, 500);
