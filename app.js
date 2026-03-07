@@ -42,26 +42,25 @@
             observer.unobserve(el);
         });
     }, { threshold: 0.1 });
-});
 
-        document.querySelectorAll('section article, section > div, section h2').forEach(el => {
-            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
-            observer.observe(el);
-        });
-
-        const msgField = document.getElementById("message");
-        if(msgField) observer.observe(msgField);
-        
-        const marquee = document.querySelector('.animate-marquee');
-        if (marquee) {
-            const cards = Array.from(marquee.children);
-            cards.forEach(card => {
-                const clone = card.cloneNode(true);
-                clone.setAttribute('aria-hidden', 'true'); 
-                marquee.appendChild(clone);
-            });
-        }
+    document.querySelectorAll('section article, section > div, section h2').forEach(el => {
+        el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
+        observer.observe(el);
     });
+
+    const msgField = document.getElementById("message");
+    if(msgField) observer.observe(msgField);
+    
+    const marquee = document.querySelector('.animate-marquee');
+    if (marquee) {
+        const cards = Array.from(marquee.children);
+        cards.forEach(card => {
+            const clone = card.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true'); 
+            marquee.appendChild(clone);
+        });
+    }
+});
 
     // ==========================================
     // 2. MODAL-FUNKTIONEN (CSS Keyframes)
