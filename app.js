@@ -376,15 +376,28 @@
                 currentTarget = targetId;
 
                 const fullText = textElement.innerText;
-                const sentences = splitIntoSentences(fullText);
+                const explicitEnglish = /((?:Michael Phelps \(No Limits: The Will to Succeed, 2008\))|(?:[„"']?I think goals should never be easy[\s\S]*?2008\)?))/i;
+                const parts = fullText.split(explicitEnglish);
                 
                 let chunks = [];
-                sentences.forEach(sentence => {
-                    if (!sentence || !sentence.trim()) return;
-                    chunks.push({ 
-                        text: sentence.trim(), 
-                        lang: detectLanguage(sentence) 
-                    });
+                parts.forEach(part => {
+                    if (!part || !part.trim()) return;
+                    
+                    if (part.includes('Michael Phelps (No') || part.includes('I think goals should never')) {
+                        chunks.push({ text: part.trim(), lang: 'en' });
+                    } else {
+                        const sentences = splitIntoSentences(part);
+                        if (sentences) {
+                            sentences.forEach(sentence => {
+                                if (sentence.trim()) {
+                                    chunks.push({ 
+                                        text: sentence.trim(), 
+                                        lang: detectLanguage(sentence) 
+                                    });
+                                }
+                            });
+                        }
+                    }
                 });
 
                 let currentChunkIndex = 0;
