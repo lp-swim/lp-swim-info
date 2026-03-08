@@ -2258,7 +2258,21 @@ body footer p {
 .group:focus-visible .group-hover\:opacity-100 {
     opacity: 1;
 }
-
+*:focus-visible {
+    outline: 3px solid #0284c7 !important; /* Brand-600 Farbe */
+    outline-offset: 4px !important;
+    border-radius: inherit; /* Passt sich automatisch den Ecken an (z.B. runden Buttons) */
+    transition: outline-offset 0.1s ease-in-out;
+}
+.group:hover .logo-text-container,
+a.group:focus-visible .logo-text-container {
+    max-width: 200px !important;
+    opacity: 1 !important;
+}
+header#start:focus, 
+header#start:focus-visible {
+    outline: none !important;
+}
 /* ==========================================
    5. NATIVE DIALOG ANIMATIONEN
    ========================================== */
