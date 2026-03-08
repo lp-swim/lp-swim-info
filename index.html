@@ -179,15 +179,15 @@
     <nav aria-label="Hauptnavigation" class="hidden md:flex fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-md border-b border-white/50 transition-all duration-300">
         <div class="container max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"> 
         
-        <a href="#start" aria-label="Zum Start: Auftauchen" class="text-2xl font-bold tracking-tight text-brand-900 flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-500 rounded-xl p-1 -ml-1 transition-all">
-            <div class="bg-brand-50 w-10 h-10 rounded-xl group-hover:scale-110 transition-transform border border-brand-100 overflow-hidden flex items-center justify-center shrink-0">
-                <img src="./favicon.ico" alt="LP-SWIM Logo" class="w-full h-full object-cover" />             
-            </div>
-            <div class="flex items-center overflow-hidden transition-all duration-500 max-w-0 opacity-0 group-hover:max-w-[200px] group-hover:opacity-100 whitespace-nowrap">
-                <span class="mr-1.5 text-sm font-bold text-brand-900 tracking-normal">Auftauchen</span>
-                <svg aria-hidden="true" class="w-4 h-4 text-brand-900 mb-0.5"><use href="#icon-arrow-up"></use></svg>
-            </div>
-        </a>
+        <a href="#start" aria-label="Zum Start: Auftauchen" class="text-2xl font-bold tracking-tight text-brand-900 flex items-center gap-3 group rounded-xl p-1 -ml-1 transition-all outline-none">
+    <div class="bg-brand-50 w-10 h-10 rounded-xl group-hover:scale-110 transition-transform border border-brand-100 overflow-hidden flex items-center justify-center shrink-0">
+        <img src="./favicon.ico" alt="LP-SWIM Logo" class="w-full h-full object-cover" />             
+    </div>
+    <div class="logo-text-container flex items-center overflow-hidden transition-all duration-500 max-w-0 opacity-0 whitespace-nowrap">
+        <span class="mr-1.5 text-sm font-bold text-brand-900 tracking-normal">Auftauchen</span>
+        <svg aria-hidden="true" class="w-4 h-4 text-brand-900 mb-0.5"><use href="#icon-arrow-up"></use></svg>
+    </div>
+</a>
 
         <div class="flex items-center gap-2 bg-brand-50/80 p-1.5 rounded-full border border-brand-100">
             <a class="px-6 py-2 rounded-full text-sm font-bold text-brand-900 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-500 focus-visible:bg-white" href="#angebote">Angebot</a>
@@ -198,7 +198,7 @@
         </div>
     </nav>
     
-    <header id="start" class="relative pb-12 md:pb-20 overflow-hidden">       
+    <header id="start" tabindex="-1" class="relative pb-12 md:pb-20 overflow-hidden outline-none">        
         <div class="container max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-12 lg:gap-20"> 
             <div class="flex-1 text-center md:text-left animate-fade-in">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-brand-100 shadow-sm text-brand-600 text-[11px] font-bold uppercase tracking-wider mb-5">
@@ -585,11 +585,12 @@
                             </div>
 
                             <button class="w-full py-4 rounded-3xl bg-brand-900 text-white font-bold text-lg shadow-xl shadow-brand-900/10 hover:shadow-brand-900/20 hover:-translate-y-1 transition-all flex items-center justify-center gap-3 group" type="submit">
-                                <span>Senden</span>
-                                <svg aria-hidden="true" class="w-5 h-5 group-hover:translate-x-1 transition-transform"><use href="#icon-send"></use></svg>                            
-                            </button>
-                            
-                            <div id="form-message" class="hidden"></div>
+        <span>Senden</span>
+        <svg aria-hidden="true" class="w-5 h-5 group-hover:translate-x-1 transition-transform"><use href="#icon-send"></use></svg>                            
+    </button>
+    
+    <div id="form-message" class="hidden" aria-live="polite"></div>
+</form>
                         </form>
                     </div>
                 </div>
@@ -918,6 +919,7 @@
     
 </body>
 </html>
+
 
 
 
