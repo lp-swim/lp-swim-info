@@ -141,11 +141,9 @@
                         formMessage.classList.remove('hidden');
                     } else {
                         const data = await res.json().catch(() => ({}));
-                        console.error('Formular-API Fehler:', data);
                         throw new Error(data.error || 'Serverfehler aufgetreten.');
                     }
                 } catch (error) {
-                    console.error('LP-SWIM Formular-Fehler:', error);
                     formMessage.innerHTML = '<div class="text-red-600 font-bold bg-red-50 p-4 rounded-xl text-center mt-4" role="alert">Fehler beim Senden. Bitte versuche es später erneut.</div>';
                     formMessage.classList.remove('hidden');
                 } finally {
@@ -370,9 +368,11 @@
                 let currentChunkIndex = 0;
 
                 function speakNextChunk() {
-                    if (currentChunkIndex >= chunks.length || currentTarget !== targetId) {
-                        currentTarget = null;
-                        resetAllButtons();
+                    if (currentChunkIndex >= chunks.length) {
+                        if (currentTarget === targetId) {
+                            currentTarget = null;
+                            resetAllButtons();
+                        }
                         return;
                     }
 
@@ -391,24 +391,26 @@
                     }
 
                     utterance.onend = () => {
+                        if (currentTarget !== targetId) return;
                         currentChunkIndex++;
                         speakNextChunk();
                     };
 
-                    utterance.onerror = (e) => {
-                        console.error("SpeechSynthesis Error:", e);
-                        currentTarget = null;
-                        resetAllButtons();
+                    utterance.onerror = () => {
+                        if (currentTarget === targetId) {
+                            currentTarget = null;
+                            resetAllButtons();
+                        }
                     };
 
                     window.speechSynthesis.speak(utterance);
                 }
 
-                speakNextChunk();
-                
                 if (playIcon) playIcon.classList.add('hidden');
                 if (stopIcon) stopIcon.classList.remove('hidden');
                 button.setAttribute('aria-label', 'Vorlesen stoppen');
+
+                speakNextChunk();
             });
         });
     });
