@@ -354,7 +354,7 @@
                 currentTarget = targetId;
 
                 const fullText = textElement.innerText;
-                const englishRegex = /([„"']?I think goals should never be easy, they should force you to work, even if they are uncomfortable at the time\.[“"']?)/i;
+                const englishRegex = /([„"']?I think goals should never be easy[\s\S]*?2008\))/i;
                 const parts = fullText.split(englishRegex);
                 
                 let chunks = [];
@@ -379,8 +379,8 @@
                     const chunk = chunks[currentChunkIndex];
                     const utterance = new SpeechSynthesisUtterance(chunk.text);
                     
-                    utterance.rate = 1.0; 
-                    utterance.pitch = 0.9; 
+                    utterance.rate = 1.1; 
+                    utterance.pitch = 0.85; 
                     
                     if (chunk.lang === 'en') {
                         utterance.lang = 'en-US';
