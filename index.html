@@ -175,28 +175,29 @@
             </symbol>        
         </defs>
     </svg>  
-    
-    <nav class="hidden md:flex fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-md border-b border-white/50 transition-all duration-300">
+
+    <nav aria-label="Hauptnavigation" class="hidden md:flex fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-md border-b border-white/50 transition-all duration-300">
         <div class="container max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"> 
-        <a href="#start" class="text-2xl font-bold tracking-tight text-brand-900 flex items-center gap-3 group">
+        
+        <a href="#start" aria-label="Zum Start: Auftauchen" class="text-2xl font-bold tracking-tight text-brand-900 flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-500 rounded-xl p-1 -ml-1 transition-all">
             <div class="bg-brand-50 w-10 h-10 rounded-xl group-hover:scale-110 transition-transform border border-brand-100 overflow-hidden flex items-center justify-center shrink-0">
                 <img src="./favicon.ico" alt="LP-SWIM Logo" class="w-full h-full object-cover" />             
             </div>
             <div class="flex items-center overflow-hidden transition-all duration-500 max-w-0 opacity-0 group-hover:max-w-[200px] group-hover:opacity-100 whitespace-nowrap">
                 <span class="mr-1.5 text-sm font-bold text-brand-900 tracking-normal">Auftauchen</span>
                 <svg aria-hidden="true" class="w-4 h-4 text-brand-900 mb-0.5"><use href="#icon-arrow-up"></use></svg>
-                    <use href="#icon-arrow-up"></use>
-                </svg>
             </div>
         </a>
+
         <div class="flex items-center gap-2 bg-brand-50/80 p-1.5 rounded-full border border-brand-100">
-            <a class="px-6 py-2 rounded-full text-sm font-bold text-brand-900 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all" href="#angebote">Angebot</a>
-            <a class="px-6 py-2 rounded-full text-sm font-bold text-brand-900 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all" href="#standorte">Standort</a>
-            <a class="px-6 py-2 rounded-full text-sm font-bold text-brand-900 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all" href="#preisuebersicht" data-open-modal="preisModal" aria-haspopup="dialog" aria-expanded="false" aria-controls="preisModal">Preise</a>        
+            <a class="px-6 py-2 rounded-full text-sm font-bold text-brand-900 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white" href="#angebote">Angebot</a>
+            <a class="px-6 py-2 rounded-full text-sm font-bold text-brand-900 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white" href="#standorte">Standort</a>
+            <a class="px-6 py-2 rounded-full text-sm font-bold text-brand-900 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white" href="#preisuebersicht" data-open-modal="preisModal" aria-haspopup="dialog" aria-expanded="false" aria-controls="preisModal">Preise</a>        
         </div>
+        
         </div>
     </nav>
-
+    
     <header id="start" class="relative pb-12 md:pb-20 overflow-hidden">       
         <div class="container max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-12 lg:gap-20"> 
             <div class="flex-1 text-center md:text-left animate-fade-in">
@@ -917,6 +918,7 @@
     
 </body>
 </html>
+
 
 
 
