@@ -292,25 +292,28 @@
         }
         
         loadVoices();
-        
         if (window.speechSynthesis.onvoiceschanged !== undefined) {
             window.speechSynthesis.onvoiceschanged = loadVoices;
         }
 
-        function getBestGermanVoice() {
+        function getBestVoice(langCode) {
             if (voices.length === 0) return null;
             
-            const germanVoices = voices.filter(v => v.lang.startsWith('de'));
-            const preferredNames = ['Markus', 'Daniel', 'Stefan', 'Conrad', 'Google Deutsch'];
+            const langVoices = voices.filter(v => v.lang.startsWith(langCode));
+            
+            let preferredNames = [];
+            if (langCode === 'de') {
+                preferredNames = ['Markus', 'Daniel', 'Jannik', 'Arthur', 'Stefan', 'Conrad', 'Google Deutsch'];
+            } else if (langCode === 'en') {
+                preferredNames = ['Daniel', 'Oliver', 'Alex', 'Arthur', 'David', 'Mark', 'James', 'Google UK English Male', 'Google US English Male'];
+            }
             
             for (let name of preferredNames) {
-                const voice = germanVoices.find(v => v.name.includes(name));
+                const voice = langVoices.find(v => v.name.includes(name));
                 if (voice) return voice;
             }
             
-            if (germanVoices.length > 0) return germanVoices[0];
-            
-            return voices[0];
+            return langVoices.length > 0 ? langVoices[0] : voices[0];
         }
 
         window.addEventListener('beforeunload', () => {
@@ -350,34 +353,58 @@
                 resetAllButtons();
                 currentTarget = targetId;
 
-                const textToRead = textElement.innerText; 
-                const utterance = new SpeechSynthesisUtterance(textToRead);
-                const bestVoice = getBestGermanVoice();
+                const fullText = textElement.innerText;
+                const englishRegex = /([„"']?I think goals should never be easy, they should force you to work, even if they are uncomfortable at the time\.[“"']?)/i;
+                const parts = fullText.split(englishRegex);
                 
-                if (bestVoice) {
-                    utterance.voice = bestVoice;
+                let chunks = [];
+                parts.forEach(part => {
+                    if (!part || !part.trim()) return;
+                    if (englishRegex.test(part)) {
+                        chunks.push({ text: part, lang: 'en' });
+                    } else {
+                        chunks.push({ text: part, lang: 'de' });
+                    }
+                });
+
+                let currentChunkIndex = 0;
+
+                function speakNextChunk() {
+                    if (currentChunkIndex >= chunks.length || currentTarget !== targetId) {
+                        currentTarget = null;
+                        resetAllButtons();
+                        return;
+                    }
+
+                    const chunk = chunks[currentChunkIndex];
+                    const utterance = new SpeechSynthesisUtterance(chunk.text);
+                    
+                    utterance.rate = 1.0; 
+                    utterance.pitch = 0.9; 
+                    
+                    if (chunk.lang === 'en') {
+                        utterance.lang = 'en-US';
+                        utterance.voice = getBestVoice('en');
+                    } else {
+                        utterance.lang = 'de-DE';
+                        utterance.voice = getBestVoice('de');
+                    }
+
+                    utterance.onend = () => {
+                        currentChunkIndex++;
+                        speakNextChunk();
+                    };
+
+                    utterance.onerror = (e) => {
+                        console.error("SpeechSynthesis Error:", e);
+                        currentTarget = null;
+                        resetAllButtons();
+                    };
+
+                    window.speechSynthesis.speak(utterance);
                 }
-                
-                utterance.lang = 'de-DE'; 
-                utterance.rate = 0.9; 
-                utterance.pitch = 0.8; 
 
-                utterance.onend = () => {
-                    if (currentTarget === targetId) {
-                        currentTarget = null;
-                        resetAllButtons();
-                    }
-                };
-
-                utterance.onerror = (e) => {
-                    console.error(e);
-                    if (currentTarget === targetId) {
-                        currentTarget = null;
-                        resetAllButtons();
-                    }
-                };
-
-                window.speechSynthesis.speak(utterance);
+                speakNextChunk();
                 
                 if (playIcon) playIcon.classList.add('hidden');
                 if (stopIcon) stopIcon.classList.remove('hidden');
