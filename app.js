@@ -31,18 +31,15 @@
                         el.classList.remove('opacity-0'); 
                         el.classList.add('transition-opacity', 'duration-[1500ms]', 'ease-in-out');
                         el.style.opacity = '1';
-                        
                         startTypeWriter(el, "Ich würde gerne meine Technik verbessern. Wie läuft die Buchung ab?");
                     }
                 } else {
                     el.style.transitionDelay = `${index * 150}ms`;
                     el.classList.remove('opacity-0', 'translate-y-8');
-                    
                     setTimeout(() => {
                         if (el) el.style.transitionDelay = '0ms';
                     }, 1000 + (index * 150));
                 }
-                
                 observer.unobserve(el);
             });
         }, { threshold: 0.1 });
@@ -69,12 +66,9 @@
     function openModal(id) {
         const modal = document.getElementById(id);
         if (!modal) return;
-
         lastFocusedElement = document.activeElement;
-
         document.body.classList.add('overflow-hidden');
         modal.showModal(); 
-        
         const firstFocusable = modal.querySelector('button, a, input, textarea');
         if (firstFocusable) firstFocusable.focus();
     }
@@ -82,29 +76,23 @@
     function closeModal(id) {
         const modal = document.getElementById(id);
         if (!modal) return;
-        
         modal.classList.add('is-closing');
-        
         const onAnimationEnd = (e) => {
             if (e.target !== modal) return; 
             modal.classList.remove('is-closing');
             modal.close();
             modal.removeEventListener('animationend', onAnimationEnd);
-            
             if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
                 lastFocusedElement.focus();
             }
-            
             checkBodyScroll();
         };
-        
         modal.addEventListener('animationend', onAnimationEnd);
     }
 
     function checkBodyScroll() {
         const anyOpen = document.querySelectorAll('dialog[open]').length > 0;
         const cookieBanner = document.getElementById('cookie-overlay');
-        
         if (!anyOpen && (!cookieBanner || cookieBanner.classList.contains('hidden'))) {
             document.body.classList.remove('overflow-hidden');
         }
@@ -128,11 +116,9 @@
                 const btn = form.querySelector('button[type="submit"]');
                 const btnSpan = btn.querySelector('span');
                 const orgText = btnSpan.innerText;
-                
                 btn.disabled = true;
                 btn.setAttribute('aria-busy', 'true'); 
                 btnSpan.innerText = 'Senden...';
-                
                 try {
                     const res = await fetch(form.action, { 
                         method: 'POST', 
@@ -164,22 +150,16 @@
         const GA_MEASUREMENT_ID = "G-T5H2XMBKFL"; 
         const STORAGE_KEY = "lp_swim_consent_2026"; 
         const cookieOverlay = document.getElementById('cookie-overlay'); 
-        
         if (cookieOverlay) { 
             const card = cookieOverlay.querySelector('div');
             const backgroundElements = document.querySelectorAll('nav, header, main, footer');
-
             const focusableElements = cookieOverlay.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
             const firstFocusable = focusableElements[0];
             const lastFocusable = focusableElements[focusableElements.length - 1];
 
             cookieOverlay.addEventListener('keydown', function(e) {
                 const isTabPressed = e.key === 'Tab' || e.keyCode === 9;
-
-                if (!isTabPressed) {
-                    return;
-                }
-
+                if (!isTabPressed) return;
                 if (e.shiftKey) { 
                     if (document.activeElement === firstFocusable) {
                         lastFocusable.focus();
@@ -197,21 +177,12 @@
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){ window.dataLayer.push(arguments); }
                 window.gtag = gtag;
-
-                gtag('consent', 'default', {
-                    'analytics_storage': 'denied',
-                    'ad_storage': 'denied'
-                });
-
-                gtag('consent', 'update', {
-                    'analytics_storage': 'granted'
-                });
-
+                gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denied' });
+                gtag('consent', 'update', { 'analytics_storage': 'granted' });
                 const script = document.createElement('script');
                 script.async = true;
                 script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_MEASUREMENT_ID;
                 document.head.appendChild(script);
-
                 gtag('js', new Date());
                 gtag('config', GA_MEASUREMENT_ID, { 'anonymize_ip': true });
             }
@@ -221,14 +192,12 @@
                 backgroundElements.forEach(el => el.setAttribute('inert', ''));
                 cookieOverlay.classList.remove('hidden');
                 cookieOverlay.classList.add('flex');
-                
                 setTimeout(() => {
                     cookieOverlay.classList.remove('opacity-0');
                     if (card) {
                         card.classList.remove('scale-95', 'translate-y-8');
                         card.classList.add('scale-100', 'translate-y-0');
                     }
-                    
                     const btnAccept = document.getElementById('cookie-accept');
                     if (btnAccept) btnAccept.focus();
                 }, 50);
@@ -254,7 +223,6 @@
 
             const btnAccept = document.getElementById('cookie-accept');
             const btnDecline = document.getElementById('cookie-decline');
-
             if (btnAccept) btnAccept.onclick = () => { localStorage.setItem(STORAGE_KEY, 'accepted'); loadGAScript(); hideBanner(); };
             if (btnDecline) btnDecline.onclick = () => { localStorage.setItem(STORAGE_KEY, 'declined'); hideBanner(); };
         }
@@ -266,20 +234,17 @@
             e.preventDefault(); 
             openModal(openBtn.getAttribute('data-open-modal'));
         }
-
         const closeBtn = e.target.closest('[data-close-modal]');
         if (closeBtn) {
             e.preventDefault();
             closeModal(closeBtn.getAttribute('data-close-modal'));
         }
-
         const revokeBtn = e.target.closest('[data-revoke-cookies]');
         if (revokeBtn) {
             e.preventDefault();
             localStorage.removeItem("lp_swim_consent_2026"); 
             window.location.reload(); 
         }
-
         if (e.target.tagName === 'DIALOG') {
             closeModal(e.target.id);
         }
@@ -289,6 +254,7 @@
         const readButtons = document.querySelectorAll('[data-read-target]');
         let currentAudio = null;
         let currentTarget = null;
+        const audioCache = {};
 
         function resetAllButtons() {
             readButtons.forEach(btn => {
@@ -296,7 +262,7 @@
                 const stopIcon = btn.querySelector('.icon-stop');
                 if (playIcon) playIcon.classList.remove('hidden');
                 if (stopIcon) stopIcon.classList.add('hidden');
-                btn.setAttribute('aria-label', btn.getAttribute('data-original-aria'));
+                btn.classList.remove('animate-pulse');
             });
             if (currentAudio) {
                 currentAudio.pause();
@@ -305,45 +271,35 @@
         }
 
         readButtons.forEach(button => {
-            const originalAriaLabel = button.getAttribute('aria-label') || 'Vorlesen';
-            button.setAttribute('data-original-aria', originalAriaLabel);
+            const targetId = button.getAttribute('data-read-target');
+            const audioUrl = `./audio/${targetId}.mp3`;
+
+            button.addEventListener('mouseenter', () => {
+                if (!audioCache[targetId]) {
+                    audioCache[targetId] = new Audio(audioUrl);
+                    audioCache[targetId].preload = 'auto';
+                }
+            });
 
             button.addEventListener('click', () => {
-                const targetId = button.getAttribute('data-read-target');
                 const playIcon = button.querySelector('.icon-play');
                 const stopIcon = button.querySelector('.icon-stop');
-                
                 if (currentTarget === targetId && currentAudio && !currentAudio.paused) {
                     resetAllButtons();
                     currentTarget = null;
                     return;
                 }
-
                 resetAllButtons();
                 currentTarget = targetId;
-                
-                const audioUrl = `./audio/${targetId}.mp3`; 
-                currentAudio = new Audio(audioUrl);
-
-                currentAudio.addEventListener('ended', () => {
-                    resetAllButtons();
-                    currentTarget = null;
-                });
-
-                currentAudio.addEventListener('error', () => {
-                    resetAllButtons();
-                    currentTarget = null;
-                });
-
+                currentAudio = audioCache[targetId] || new Audio(audioUrl);
+                currentAudio.addEventListener('ended', () => { resetAllButtons(); currentTarget = null; });
+                currentAudio.addEventListener('error', () => { resetAllButtons(); currentTarget = null; });
                 currentAudio.play().then(() => {
                     if (playIcon) playIcon.classList.add('hidden');
                     if (stopIcon) stopIcon.classList.remove('hidden');
-                    button.setAttribute('aria-label', 'Vorlesen stoppen');
-                }).catch(() => {
-                    resetAllButtons();
-                });
+                    button.classList.add('animate-pulse');
+                }).catch(() => resetAllButtons());
             });
         });
     });
-
 })();
