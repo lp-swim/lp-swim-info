@@ -300,10 +300,11 @@
             const langVoices = voices.filter(v => v.lang.startsWith(langCode));
             
             let preferredNames = [];
+            
             if (langCode === 'de') {
-                preferredNames = ['Anna', 'Helena', 'Katja', 'Hedda', 'Marlene', 'Petra', 'Google Deutsch'];
+                preferredNames = ['Anna', 'Helena', 'Katja', 'Hedda', 'Marlene', 'Petra', 'Lisa', 'Steffi'];
             } else if (langCode === 'en') {
-                preferredNames = ['Samantha', 'Karen', 'Victoria', 'Tessa', 'Moira', 'Fiona', 'Zira', 'Hazel', 'Google UK English Female', 'Google US English Female'];
+                preferredNames = ['Samantha', 'Karen', 'Victoria', 'Tessa', 'Moira', 'Fiona', 'Zira', 'Hazel'];
             }
             
             for (let name of preferredNames) {
@@ -311,7 +312,12 @@
                 if (voice) return voice;
             }
             
-            return langVoices.length > 0 ? langVoices[0] : voices[0];
+            const femaleVoice = langVoices.find(v => v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('woman'));
+            if (femaleVoice) return femaleVoice;
+            
+            if (langVoices.length > 0) return langVoices[0];
+            
+            return voices[0];
         }
 
         window.addEventListener('beforeunload', () => {
