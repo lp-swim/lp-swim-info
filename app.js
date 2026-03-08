@@ -191,21 +191,26 @@
             }
 
             function showBanner() {
-                document.body.classList.add('overflow-hidden');
-                cookieOverlay.classList.remove('hidden');
-                cookieOverlay.classList.add('flex');
-                cookieOverlay.setAttribute('role', 'dialog');
-                cookieOverlay.setAttribute('aria-modal', 'true');
-                cookieOverlay.setAttribute('aria-label', 'Cookie-Einstellungen');
-                
-                setTimeout(() => {
-                    cookieOverlay.classList.remove('opacity-0');
-                    if (card) {
-                        card.classList.remove('scale-95', 'translate-y-8');
-                        card.classList.add('scale-100', 'translate-y-0');
-                    }
-                }, 50);
-            }
+    document.body.classList.add('overflow-hidden');
+    cookieOverlay.classList.remove('hidden');
+    cookieOverlay.classList.add('flex');
+    cookieOverlay.setAttribute('role', 'dialog');
+    cookieOverlay.setAttribute('aria-modal', 'true');
+    cookieOverlay.setAttribute('aria-label', 'Cookie-Einstellungen');
+    
+    setTimeout(() => {
+        cookieOverlay.classList.remove('opacity-0');
+        if (card) {
+            card.classList.remove('scale-95', 'translate-y-8');
+            card.classList.add('scale-100', 'translate-y-0');
+        }
+        
+        const btnAccept = document.getElementById('cookie-accept');
+        if (btnAccept) {
+            btnAccept.focus();
+        }
+    }, 50);
+}
 
             function hideBanner() {
                 cookieOverlay.classList.add('opacity-0');
