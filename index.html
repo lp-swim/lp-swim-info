@@ -179,20 +179,20 @@
     <nav aria-label="Hauptnavigation" class="hidden md:flex fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-md border-b border-white/50 transition-all duration-300">
         <div class="container max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"> 
         
-        <a href="#start" aria-label="Zum Start: Auftauchen" class="text-2xl font-bold tracking-tight text-brand-900 flex items-center gap-3 group rounded-xl p-1 -ml-1 transition-all outline-none">
+        <a href="#start" aria-label="Zurück zum Seitenanfang" class="text-2xl font-bold tracking-tight text-brand-900 flex items-center gap-3 group rounded-xl p-1 -ml-1 transition-all outline-none">
             <div class="bg-brand-50 w-10 h-10 rounded-xl group-hover:scale-110 transition-transform border border-brand-100 overflow-hidden flex items-center justify-center shrink-0">
                 <img src="./favicon.ico" alt="LP-SWIM Logo" class="w-full h-full object-cover" />             
             </div>
-            <div class="logo-text-container flex items-center overflow-hidden transition-all duration-500 max-w-0 opacity-0 whitespace-nowrap">
+            <div class="logo-text-container flex items-center overflow-hidden transition-all duration-500 max-w-0 opacity-0 whitespace-nowrap" aria-hidden="true">
                 <span class="mr-1.5 text-sm font-bold text-brand-900 tracking-normal">Auftauchen</span>
                 <svg aria-hidden="true" class="w-4 h-4 text-brand-900 mb-0.5"><use href="#icon-arrow-up"></use></svg>
             </div>
         </a>
 
         <div class="flex items-center gap-2 bg-brand-50/80 p-1.5 rounded-full border border-brand-100">
-            <a class="px-6 py-2 rounded-full text-sm font-bold text-brand-900 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all" href="#angebote">Angebot</a>
-            <a class="px-6 py-2 rounded-full text-sm font-bold text-brand-900 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all" href="#standorte">Standort</a>
-            <a class="px-6 py-2 rounded-full text-sm font-bold text-brand-900 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all" href="#preisuebersicht" data-open-modal="preisModal" aria-haspopup="dialog" aria-expanded="false" aria-controls="preisModal">Preise</a>        
+            <a class="px-6 py-2 rounded-full text-sm font-bold text-brand-900 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all" href="#angebote" aria-label="Zur Sektion Angebote springen">Angebot</a>
+            <a class="px-6 py-2 rounded-full text-sm font-bold text-brand-900 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all" href="#standorte" aria-label="Zur Sektion Standort springen">Standort</a>
+            <a class="px-6 py-2 rounded-full text-sm font-bold text-brand-900 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all" href="#preisuebersicht" data-open-modal="preisModal" aria-haspopup="dialog" aria-expanded="false" aria-controls="preisModal" aria-label="Preisübersicht als Dialogfenster öffnen">Preise</a>        
         </div>
         
         </div>
@@ -202,12 +202,12 @@
         <div class="container max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-12 lg:gap-20"> 
             <div class="flex-1 text-center md:text-left animate-fade-in">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-brand-100 shadow-sm text-brand-600 text-[11px] font-bold uppercase tracking-wider mb-5">
-                    <span class="w-1.5 h-1.5 rounded-full bg-red-900 shadow-glow-red animate-pulse"></span>
-                    Mrz. Termine ausgebucht
+                    <span class="w-1.5 h-1.5 rounded-full bg-red-900 shadow-glow-red animate-pulse" aria-hidden="true"></span>
+                    März Termine ausgebucht
                 </div>
 
                 <h1 class="text-3xl sm:text-5xl lg:text-7xl font-bold text-brand-900 mb-6 leading-tight tracking-tight text-balance">
-                    Weil Sicherheit <br class="hidden md:block">
+                    Weil Sicherheit <br aria-hidden="true" class="hidden md:block">
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-400">im Wasser zählt</span>
                 </h1>
                 
@@ -216,16 +216,16 @@
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-                    <a class="inline-flex items-center justify-center px-7 py-3 rounded-full bg-brand-700 text-white font-medium shadow-xl shadow-brand-900/10 hover:bg-brand-800 hover:-translate-y-1 transition-all" href="#kontakt">
+                    <a class="inline-flex items-center justify-center px-7 py-3 rounded-full bg-brand-700 text-white font-medium shadow-xl shadow-brand-900/10 hover:bg-brand-800 hover:-translate-y-1 transition-all" href="#kontakt" aria-label="Zum Kontaktformular springen">
                         Kontaktaufnahme
                     </a>
-                    <a class="inline-flex items-center justify-center px-7 py-3 rounded-full bg-white text-brand-900 font-medium border border-brand-200 shadow-sm hover:bg-brand-50 transition-all" data-open-modal="preisModal" href="#preisuebersicht">
+                    <a class="inline-flex items-center justify-center px-7 py-3 rounded-full bg-white text-brand-900 font-medium border border-brand-200 shadow-sm hover:bg-brand-50 transition-all" data-open-modal="preisModal" href="#preisuebersicht" aria-label="Preisübersicht als Dialogfenster öffnen">
                         Preisübersicht
                     </a>
                 </div>
             </div>
 
-            <div class="flex-1 w-full flex justify-center perspective-1000 md:justify-end">
+            <div class="flex-1 w-full flex justify-center perspective-1000 md:justify-end" aria-hidden="true">
                 <div class="relative w-64 h-64 sm:w-80 sm:h-80">
                     <div class="absolute inset-0 bg-gradient-to-tr from-brand-200 to-white rounded-full blur-2xl opacity-60 animate-pulse"></div>
                     
@@ -372,26 +372,26 @@
             </div>
         </section>
 
-        <section class="max-w-7xl mx-auto">
+        <section class="max-w-7xl mx-auto" aria-labelledby="ueber-mich-heading">
             <div class="flex flex-col md:flex-row gap-8 md:gap-20 items-start">
                 <div class="md:w-1/3 md:sticky md:top-32">
                     <div class="inline-flex items-center gap-2 text-brand-600 font-bold tracking-wider uppercase text-xs mb-3">
                         <svg aria-hidden="true" class="w-4 h-4"><use href="#icon-user"></use></svg>                        
                         <span>Über mich</span>
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-900 leading-tight">
-                        Schön, dass <br class="hidden md:block">du da bist
+                    <h2 id="ueber-mich-heading" class="text-3xl md:text-4xl font-bold text-brand-900 leading-tight">
+                        Schön, dass <br aria-hidden="true" class="hidden md:block">du da bist
                     </h2>
-                    <div class="h-1 w-12 bg-brand-200 mt-6 rounded-full hidden md:block"></div>
+                    <div class="h-1 w-12 bg-brand-200 mt-6 rounded-full hidden md:block" aria-hidden="true"></div>
                 </div>
                 
                 <div class="md:w-2/3 glass-card rounded-[2.5rem] p-8 md:p-10 space-y-6 text-slate-600 text-sm leading-relaxed font-light text-justify hyphens-auto">
                     <div class="flex items-center gap-4 mb-2">
-                        <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0" aria-hidden="true">
                             <svg aria-hidden="true" class="w-6 h-6"><use href="#icon-vorwort"></use></svg>
                         </div>
-                            <h3 class="text-lg sm:text-xl font-bold text-brand-900 tracking-tight">Vorwort</h3>
-                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-brand-900 tracking-tight">Vorwort</h3>
+                    </div>
                     <blockquote class="border-l-2 border-brand-200 pl-4 py-2 text-brand-800 italic text-left">
                     „I think goals should never be easy, they should force you to work, even if they are uncomfortable at the time.“<br>
                     <span class="text-xs font-semibold text-brand-600 mt-2 block tracking-wide">– Michael Phelps (No Limits: The Will to Succeed, 2008)</span>
@@ -403,7 +403,7 @@
             </div>
         </section>
 
-        <section class="max-w-7xl mx-auto" id="angebote">
+        <section class="max-w-7xl mx-auto" id="angebote" aria-labelledby="angebote-heading">
             <div class="flex flex-col md:flex-row gap-8 md:gap-20 items-start">
                 
                 <div class="md:w-1/3 md:sticky md:top-32">
@@ -411,19 +411,19 @@
                         <svg aria-hidden="true" class="w-4 h-4"><use href="#icon-angebot"></use></svg>
                         <span>Angebote</span>
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-900 leading-tight">
-                        Individuell & <br class="hidden md:block">Zielgerichtet
+                    <h2 id="angebote-heading" class="text-3xl md:text-4xl font-bold text-brand-900 leading-tight">
+                        Individuell <span aria-hidden="true">&</span><span class="sr-only">und</span> <br aria-hidden="true" class="hidden md:block">Zielgerichtet
                     </h2>
-                    <div class="h-1 w-12 bg-brand-200 mt-6 rounded-full hidden md:block"></div>
+                    <div class="h-1 w-12 bg-brand-200 mt-6 rounded-full hidden md:block" aria-hidden="true"></div>
                 </div>
 
                 <div class="md:w-2/3 space-y-6">
                     <article class="glass-card p-8 md:p-10 rounded-[2.5rem]">
                         <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0" aria-hidden="true">
                                 <svg aria-hidden="true" class="w-6 h-6"><use href="#icon-kinder"></use></svg>                            
                             </div>
-                            <h3 class="text-lg sm:text-xl font-bold text-brand-900 tracking-tight">Kinder & Jugendliche</h3>
+                            <h3 class="text-lg sm:text-xl font-bold text-brand-900 tracking-tight">Kinder <span aria-hidden="true">&</span><span class="sr-only">und</span> Jugendliche</h3>
                         </div>
                         <div class="text-slate-600 space-y-3 text-justify hyphens-auto text-sm leading-relaxed font-light">
                             <p>Qualitativer Schwimmunterricht ist für viele Kinder und Jugendliche heutzutage leider keine Selbstverständlichkeit mehr. Im dichten Familienalltag fehlen oft schlichtweg die zeitlichen Kapazitäten für regelmäßige Schwimmbadbesuche. Gleichzeitig stößt auch das reguläre Schulschwimmen durch knappe Wasserzeiten zunehmend an seine Grenzen.</p>
@@ -434,7 +434,7 @@
 
                     <article class="glass-card p-8 md:p-10 rounded-[2.5rem]" id="schule">
                         <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0" aria-hidden="true">
                                 <svg aria-hidden="true" class="w-6 h-6"><use href="#icon-schule"></use></svg>
                             </div>
                             <h3 class="text-lg sm:text-xl font-bold text-brand-900 tracking-tight">Schulbegleitung</h3>
@@ -448,7 +448,7 @@
 
                     <article class="glass-card p-8 md:p-10 rounded-[2.5rem]" id="erwachsene">
                         <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0" aria-hidden="true">
                                 <svg aria-hidden="true" class="w-6 h-6"><use href="#icon-erwachsene"></use></svg>
                             </div>
                             <h3 class="text-lg sm:text-xl font-bold text-brand-900 tracking-tight">Erwachsene</h3>
@@ -463,56 +463,56 @@
             </div>
         </section>
 
-        <section class="max-w-7xl mx-auto" id="standorte">
+        <section class="max-w-7xl mx-auto" id="standorte" aria-labelledby="standorte-heading">
             <div class="flex flex-col md:flex-row gap-8 md:gap-20 items-start">
                     
                 <div class="md:w-1/3 md:sticky md:top-32">
                     <div class="inline-flex items-center gap-2 text-brand-600 font-bold tracking-wider uppercase text-xs mb-3">
                         <svg aria-hidden="true" class="w-4 h-4"><use href="#icon-map"></use></svg>
-                        <span>Standort & Ablauf</span>
+                        <span>Standort <span aria-hidden="true">&</span><span class="sr-only">und</span> Ablauf</span>
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-900 leading-tight">
-                        Dein Weg <br class="hidden md:block">ins Wasser
+                    <h2 id="standorte-heading" class="text-3xl md:text-4xl font-bold text-brand-900 leading-tight">
+                        Dein Weg <br aria-hidden="true" class="hidden md:block">ins Wasser
                     </h2>
-                    <div class="h-1 w-12 bg-brand-200 mt-6 rounded-full hidden md:block"></div>
+                    <div class="h-1 w-12 bg-brand-200 mt-6 rounded-full hidden md:block" aria-hidden="true"></div>
                 </div>
 
                 <div class="md:w-2/3 glass-card rounded-[2.5rem] p-8 md:p-10 space-y-8">
-                    <div class="space-y-12 relative pl-4 border-l-2 border-brand-100 ml-2">
-                        <div class="relative pl-8">
-                            <div class="animate-hop absolute -left-[21px] -top-1 w-10 h-10 rounded-full bg-white border-2 border-brand-100 flex items-center justify-center text-brand-500 shadow-sm z-10">
+                    <ol class="space-y-12 relative pl-4 border-l-2 border-brand-100 ml-2" aria-label="Schritt-für-Schritt Ablauf der Anmeldung">
+                        <li class="relative pl-8">
+                            <div class="animate-hop absolute -left-[21px] -top-1 w-10 h-10 rounded-full bg-white border-2 border-brand-100 flex items-center justify-center text-brand-500 shadow-sm z-10" aria-hidden="true">
                                 <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-start"></use></svg>
                             </div>
                             <h3 class="font-bold text-lg text-brand-900 mb-1">Auf die Plätze</h3>
                             <p class="text-slate-600 leading-relaxed font-light text-sm">
                                 Der Erstkontakt erfolgt über das Kontaktformular. Nach einer Rückmeldung zum Ablauf und der Erfassung Ihrer Daten werden Sie unverbindlich in den Verteiler aufgenommen. Die Terminübersicht für den Folgemonat erhalten Sie dann jeweils zum Monatsende.
                             </p>
-                        </div>
+                        </li>
 
-                        <div class="relative pl-8">
-                            <div class="absolute -left-[21px] -top-1 w-10 h-10 rounded-full bg-white border-2 border-brand-100 flex items-center justify-center text-brand-500 shadow-sm z-10">
+                        <li class="relative pl-8">
+                            <div class="absolute -left-[21px] -top-1 w-10 h-10 rounded-full bg-white border-2 border-brand-100 flex items-center justify-center text-brand-500 shadow-sm z-10" aria-hidden="true">
                                 <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-fertig"></use></svg>
                             </div>
                             <h3 class="font-bold text-lg text-brand-900 mb-1">Fertig</h3>
                             <p class="text-slate-600 leading-relaxed font-light text-sm">
                                 Sobald Ihnen die Übersicht vorliegt, wählen Sie Ihren Wunschtermin aus. Die Reservierung erfolgt anschließend direkt über den in der E-Mail verlinkten WhatsApp-Chat.
                             </p>
-                        </div>
+                        </li>
 
-                        <div class="relative pl-8">
-                            <div class="absolute -left-[21px] -top-1 w-10 h-10 rounded-full bg-brand-500 border-4 border-brand-100 shadow-lg shadow-brand-200 flex items-center justify-center text-white z-10">
+                        <li class="relative pl-8">
+                            <div class="absolute -left-[21px] -top-1 w-10 h-10 rounded-full bg-brand-500 border-4 border-brand-100 shadow-lg shadow-brand-200 flex items-center justify-center text-white z-10" aria-hidden="true">
                                 <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-los"></use></svg>
                             </div>
                             <h3 class="font-bold text-lg text-brand-900 mb-1">Los</h3>
                             <p class="text-slate-600 leading-relaxed font-light text-sm">
                                 Mit Zugang der Rechnung oder einer expliziten Terminbestätigung gilt der Termin als verbindlich gebucht. Ab diesem Zeitpunkt gelten die Stornierungsbedingungen gemäß §4.
                             </p>
-                        </div>
-                    </div>
+                        </li>
+                    </ol>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 break-words">
                         <a aria-label="Website des Hallenbads in neuem Tab öffnen" href="https://www.stadtwerke-viernheim.de/preise-leistungen/baeder-und-sauna/hallenbad" target="_blank" rel="noopener noreferrer" class="group p-4 rounded-3xl bg-white border border-blue-100 hover:bg-blue-50 transition-colors text-center shadow-sm outline-none">
-                            <div class="inline-flex p-2 bg-blue-50 rounded-full text-blue-500 mb-2 group-hover:bg-blue-100 transition-colors">
+                            <div class="inline-flex p-2 bg-blue-50 rounded-full text-blue-500 mb-2 group-hover:bg-blue-100 transition-colors" aria-hidden="true">
                                 <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-indoor"></use></svg>
                             </div>
                             <span class="block text-xs font-bold uppercase text-blue-600 tracking-wider mb-1">Okt – April</span>
@@ -521,7 +521,7 @@
                         </a>
 
                         <a aria-label="Website des Waldschwimmbads in neuem Tab öffnen" href="https://www.stadtwerke-viernheim.de/preise-leistungen/baeder-und-sauna/waldschwimmbad/" target="_blank" rel="noopener noreferrer" class="group p-4 rounded-3xl bg-white border border-yellow-100 hover:bg-yellow-50 transition-colors text-center shadow-sm outline-none">
-                            <div class="inline-flex p-2 bg-yellow-50 rounded-full text-yellow-500 mb-2 group-hover:bg-yellow-100 transition-colors">
+                            <div class="inline-flex p-2 bg-yellow-50 rounded-full text-yellow-500 mb-2 group-hover:bg-yellow-100 transition-colors" aria-hidden="true">
                                 <svg aria-hidden="true" class="w-5 h-5 text-yellow-500"><use href="#icon-sun"></use></svg>
                             </div>
                             <span class="block text-xs font-bold uppercase text-slate-600 tracking-wider mb-1">Juni – Aug</span>
@@ -531,7 +531,7 @@
                     </div>
 
                     <div class="block min-h-[300px] bg-slate-100 rounded-[2rem] overflow-hidden relative group shadow-inner">
-                        <iframe class="w-full h-full absolute inset-0 border-0 grayscale opacity-80 transition-all duration-700 pointer-events-none" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2588.423019803525!2d8.577947376915096!3d49.53772707143491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x66777943db50c52b%3A0x72759400e8725848!2sLP-SWIM%20%E2%80%93%20Inhaber%20Lukas%20Prehn!5e0!3m2!1sde!2sde!4v1708876543210!5m2!1sde!2sde" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" title="LP-SWIM Standortkarte"></iframe>                        
+                        <iframe class="w-full h-full absolute inset-0 border-0 grayscale opacity-80 transition-all duration-700 pointer-events-none" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2588.423019803525!2d8.577947376915096!3d49.53772707143491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x66777943db50c52b%3A0x72759400e8725848!2sLP-SWIM%20%E2%80%93%20Inhaber%20Lukas%20Prehn!5e0!3m2!1sde!2sde!4v1708876543210!5m2!1sde!2sde" aria-hidden="true" tabindex="-1"></iframe>                        
                         <div class="absolute inset-0 flex items-center justify-center">
                             <a aria-label="Standort in Google Maps in neuem Tab öffnen" href="https://www.google.de/maps/place/LP-SWIM+%E2%80%93+Inhaber+Lukas+Prehn/@49.5377271,8.5779474,17z/data=!3m2!4b1!5s0x4797d01d72d4f93d:0x4e811ba7f56f8163!4m6!3m5!1s0x66777943db50c52b:0x72759400e8725848!8m2!3d49.5377236!4d8.5805277!16s%2Fg%2F11xv29qq3r?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="bg-white/90 backdrop-blur px-6 py-3 rounded-full shadow-lg text-sm font-bold text-brand-900 hover:scale-110 hover:bg-white transition-all z-10 flex items-center outline-none">
                                 <svg aria-hidden="true" class="w-4 h-4 mr-2 text-brand-500"><use href="#icon-pin"></use></svg> 
@@ -544,14 +544,15 @@
             </div>
         </section>
 
-        <section class="max-w-7xl mx-auto" id="kontakt">
+        <section class="max-w-7xl mx-auto" id="kontakt" aria-labelledby="kontakt-heading">
+            <h2 id="kontakt-heading" class="sr-only">Kontakt aufnehmen</h2>
             <div class="glass-card rounded-[2.5rem] p-8 md:p-10 shadow-2xl shadow-brand-900/5">
                 <div class="flex flex-col md:flex-row gap-8 md:gap-20 items-start">
                     
                     <div class="md:w-1/3 md:sticky md:top-32 w-full">
-                        <div class="inline-flex items-center gap-2 text-brand-600 font-bold tracking-wider uppercase text-xs mb-3"></div>
                         <div class="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-lg group w-full">
-                                <img src="./kontakt-lukas.webp" width="800" height="1000" alt="Lukas Prehn - Schwimmtrainer" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />                            <div class="absolute inset-0 bg-gradient-to-t from-brand-900/80 via-transparent to-transparent flex flex-col justify-end p-6">
+                            <img src="./kontakt-lukas.webp" width="800" height="1000" alt="Porträt von Lukas Prehn, Schwimmtrainer" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />                            
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-900/80 via-transparent to-transparent flex flex-col justify-end p-6" aria-hidden="true">
                                 <p class="text-white font-bold text-lg">Lukas Prehn</p>
                                 <p class="text-brand-100 text-sm">Inhaber & Trainer</p>
                             </div>
@@ -586,7 +587,7 @@
                                 <div class="text-sm text-slate-700 leading-relaxed">
                                     <label class="cursor-pointer select-none" for="privacy-consent">Ich stimme der Datenverarbeitung zu.</label>
                                     <span class="block mt-0.5 text-xs">
-                                        Details in der <button type="button" class="text-brand-600 font-semibold hover:underline outline-none" data-open-modal="datenschutzModal">Datenschutzerklärung</button>.
+                                        Details in der <button type="button" class="text-brand-600 font-semibold hover:underline outline-none" data-open-modal="datenschutzModal" aria-label="Datenschutzerklärung als Dialogfenster öffnen">Datenschutzerklärung</button>.
                                     </span>
                                 </div>
                             </div>
@@ -608,9 +609,9 @@
     <footer class="bg-white py-8 text-center border-t border-brand-50">
         <div class="container mx-auto px-4">
             <div class="flex flex-wrap justify-center gap-6 mb-6 text-sm font-medium text-slate-600">
-                <button data-open-modal="datenschutzModal" class="hover:text-brand-600 transition-colors outline-none">Datenschutz</button>
-                <button data-open-modal="agbModal" class="hover:text-brand-600 transition-colors outline-none">AGB</button>
-                <button data-open-modal="impressumModal" class="hover:text-brand-600 transition-colors outline-none">Impressum</button>
+                <button data-open-modal="datenschutzModal" class="hover:text-brand-600 transition-colors outline-none" aria-label="Datenschutzerklärung als Dialogfenster öffnen">Datenschutz</button>
+                <button data-open-modal="agbModal" class="hover:text-brand-600 transition-colors outline-none" aria-label="Allgemeine Geschäftsbedingungen als Dialogfenster öffnen">AGB</button>
+                <button data-open-modal="impressumModal" class="hover:text-brand-600 transition-colors outline-none" aria-label="Impressum als Dialogfenster öffnen">Impressum</button>
             </div>
             <p class="text-slate-600 text-xs tracking-wide">© 2026 LP-SWIM. Alle Rechte vorbehalten.</p>
         </div>
@@ -625,7 +626,7 @@
                 </button>
             </div>
             <div class="flex-grow overflow-hidden bg-brand-50/30 flex items-center justify-center p-4">
-                <img src="./Preisliste%2001.11.2025.webp" width="1200" height="1600" alt="LP-SWIM Preisübersicht" class="w-full h-full object-contain drop-shadow-md rounded-xl" decoding="sync" />            
+                <img src="./Preisliste%2001.11.2025.webp" width="1200" height="1600" alt="LP-SWIM Preisübersicht Dokument" class="w-full h-full object-contain drop-shadow-md rounded-xl" decoding="sync" />            
             </div>
         </div>
     </dialog>
@@ -642,7 +643,7 @@
                 <section>
                     <h3 class="font-bold text-lg text-brand-700 mb-2">Angaben gemäß § 5 TMG</h3>
                     <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 flex items-start gap-3">
-                        <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0">
+                        <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0" aria-hidden="true">
                             <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-pin"></use></svg>
                         </div>
                         <div>
@@ -654,14 +655,14 @@
                 <section>
                     <h3 class="font-bold text-lg text-brand-700 mb-2">Kontakt</h3>
                     <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 flex items-start gap-3">
-                        <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0">
+                        <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0" aria-hidden="true">
                             <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-mail"></use></svg>
                         </div>
                         <div class="break-all">
                             <p class="font-semibold text-brand-900 mb-1">E-Mail</p>
-                            <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x6c;&#x70;&#x73;&#x77;&#x69;&#x6d;&#x2e;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;" class="text-brand-600 hover:underline decoration-brand-200 text-xs flex items-center gap-1 mt-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                                &#x6c;&#x70;&#x73;&#x77;&#x69;&#x6d;&#x2e;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;
+                            <a href="mailto:lpswim.info@gmail.com" class="text-brand-600 hover:underline decoration-brand-200 text-xs flex items-center gap-1 mt-2">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                lpswim.info@gmail.com
                             </a>
                         </div>
                     </div>
@@ -673,7 +674,7 @@
     <dialog id="datenschutzModal" aria-labelledby="datenschutzTitle" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
         <div class="flex flex-col max-h-[85vh] w-full">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-white shrink-0">
-                <h2 id="datenschutzTitle" class="text-xl font-bold text-brand-900 break-words hyphens-auto">DSE<br>Stand: Februar 2026</h2>
+                <h2 id="datenschutzTitle" class="text-xl font-bold text-brand-900 break-words hyphens-auto">DSE<br aria-hidden="true">Stand: Februar 2026</h2>
                 <button data-close-modal="datenschutzModal" class="shrink-0 p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors outline-none" aria-label="Fenster schließen">
                     <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-close"></use></svg>
                 </button>
@@ -689,9 +690,9 @@
                         <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
                             <p class="font-semibold text-brand-900 mb-1">Verantwortliche Stelle</p>
                             <p class="mb-1">Lukas Prehn<br>c/o IP-Management #6336<br>Ludwig-Erhard-Straße 18<br>20459 Hamburg<br>Deutschland</p>
-                             <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x6c;&#x70;&#x73;&#x77;&#x69;&#x6d;&#x2e;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;" class="text-brand-600 hover:underline decoration-brand-200 text-xs flex items-center gap-1 mt-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                                &#x6c;&#x70;&#x73;&#x77;&#x69;&#x6d;&#x2e;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;
+                             <a href="mailto:lpswim.info@gmail.com" class="text-brand-600 hover:underline decoration-brand-200 text-xs flex items-center gap-1 mt-2">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                lpswim.info@gmail.com
                             </a>
                         </div>
                     </div>
@@ -738,14 +739,14 @@
                         <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
                             <p class="font-semibold text-brand-900 mb-1">Widerruf der Einwilligung</p>
                             <p class="mb-3 text-sm text-slate-600">Sie können Ihre getroffene Entscheidung bezüglich der Cookies jederzeit widerrufen. Die Seite lädt dann neu und der Banner wird Ihnen erneut angezeigt.</p>
-                            <button type="button" data-revoke-cookies class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-brand-200 rounded-lg text-sm font-medium text-brand-800 hover:bg-brand-50 hover:text-brand-900 hover:shadow-sm transition-all shadow-sm outline-none">
+                            <button type="button" data-revoke-cookies class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-brand-200 rounded-lg text-sm font-medium text-brand-800 hover:bg-brand-50 hover:text-brand-900 hover:shadow-sm transition-all shadow-sm outline-none" aria-label="Cookie-Einstellungen zurücksetzen und Seite neu laden">
                                 <svg aria-hidden="true" class="w-4 h-4 text-brand-600 shrink-0"><use href="#icon-cookie"></use></svg> Cookie-Einstellungen zurücksetzen
                             </button>
                         </div>                    
                     </div>
                 </section>
                 <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">5. Externe Dienste & Partner</h3>
+                    <h3 class="font-bold text-lg text-brand-700 mb-2">5. Externe Dienste <span aria-hidden="true">&</span><span class="sr-only">und</span> Partner</h3>
                     <div class="space-y-3">
                         <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
                             <p class="font-semibold text-brand-900 mb-1">Google Maps (Weiterleitung)</p>
@@ -768,7 +769,7 @@
                 <section>
                     <h3 class="font-bold text-lg text-brand-700 mb-2">6. Ihre Rechte</h3>
                     <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                        <p class="font-semibold text-brand-900 mb-1">Auskunft, Löschung & Widerruf</p>
+                        <p class="font-semibold text-brand-900 mb-1">Auskunft, Löschung <span aria-hidden="true">&</span><span class="sr-only">und</span> Widerruf</p>
                         <p class="mb-1">Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten. Sie haben außerdem ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese jederzeit für die Zukunft widerrufen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.</p>
                     </div>
                 </section>
@@ -779,14 +780,14 @@
     <dialog id="agbModal" aria-labelledby="agbTitle" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
         <div class="flex flex-col max-h-[85vh] w-full">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-white shrink-0">
-                <h2 id="agbTitle" class="text-xl font-bold text-brand-900 break-words hyphens-auto">AGB<br>Stand: Februar 2026</h2>
+                <h2 id="agbTitle" class="text-xl font-bold text-brand-900 break-words hyphens-auto">AGB<br aria-hidden="true">Stand: Februar 2026</h2>
                 <button data-close-modal="agbModal" class="shrink-0 p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors outline-none" aria-label="Fenster schließen">
                     <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-close"></use></svg>
                 </button>           
             </div>
             <div class="p-8 overflow-y-auto space-y-8 text-sm text-slate-600 leading-relaxed">
                 <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">§1 Geltungsbereich & Vertretung</h3>
+                    <h3 class="font-bold text-lg text-brand-700 mb-2">§1 Geltungsbereich <span aria-hidden="true">&</span><span class="sr-only">und</span> Vertretung</h3>
                     <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100 space-y-2">
                         <p>Diese AGB gelten für alle Verträge zwischen <strong>LP-SWIM (Lukas Prehn)</strong> und den Kunden über Schwimmunterricht und Schulbegleitung.</p>
                         <div class="flex items-start gap-2 pt-2">
@@ -796,19 +797,19 @@
                     </div>
                 </section>
                 <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">§2 Vertragsschluss & Buchungsablauf</h3>
+                    <h3 class="font-bold text-lg text-brand-700 mb-2">§2 Vertragsschluss <span aria-hidden="true">&</span><span class="sr-only">und</span> Buchungsablauf</h3>
                     <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 space-y-4">
                         <div class="flex items-start gap-3">
-                            <div class="bg-white p-2 rounded-lg text-brand-600 shadow-sm mt-1 shrink-0">
+                            <div class="bg-white p-2 rounded-lg text-brand-600 shadow-sm mt-1 shrink-0" aria-hidden="true">
                                 <svg aria-hidden="true" class="w-4 h-4"><use href="#icon-user-plus"></use></svg>
                             </div>
                             <div>
-                                <p class="font-semibold text-brand-900">1. Aufnahme & Verteiler:</p>
+                                <p class="font-semibold text-brand-900">1. Aufnahme <span aria-hidden="true">&</span><span class="sr-only">und</span> Verteiler:</p>
                                 <p>Der Erstkontakt erfolgt über das Kontaktformular. Mit Übermittlung der Daten (Leistungsstand, Ziele, Rechnungsanschrift) wird der Interessent unverbindlich in den monatlichen E-Mail-Verteiler aufgenommen.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
-                            <div class="bg-white p-2 rounded-lg text-brand-600 shadow-sm mt-1 shrink-0">
+                            <div class="bg-white p-2 rounded-lg text-brand-600 shadow-sm mt-1 shrink-0" aria-hidden="true">
                                 <svg aria-hidden="true" class="w-4 h-4"><use href="#icon-calendar"></use></svg>
                             </div>
                             <div>
@@ -817,7 +818,7 @@
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
-                            <div class="bg-white p-2 rounded-lg text-brand-600 shadow-sm mt-1 shrink-0">
+                            <div class="bg-white p-2 rounded-lg text-brand-600 shadow-sm mt-1 shrink-0" aria-hidden="true">
                                 <svg aria-hidden="true" class="w-4 h-4"><use href="#icon-handshake"></use></svg>
                             </div>
                             <div>
@@ -828,10 +829,10 @@
                     </div>
                 </section>
                 <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">§3 Vergütung & Zahlungsverzug</h3>
+                    <h3 class="font-bold text-lg text-brand-700 mb-2">§3 Vergütung <span aria-hidden="true">&</span><span class="sr-only">und</span> Zahlungsverzug</h3>
                     <div class="space-y-3">
                         <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                            <p class="font-semibold text-brand-900 mb-1">Vorkasse & Fristen</p>
+                            <p class="font-semibold text-brand-900 mb-1">Vorkasse <span aria-hidden="true">&</span><span class="sr-only">und</span> Fristen</p>
                             <p>Der Rechnungsbetrag ist bis zum angegebenen Fälligkeitsdatum zu begleichen. Geht die Zahlung nicht fristgerecht ein, ist LP-SWIM berechtigt, vom Vertrag zurückzutreten und den Termin anderweitig zu vergeben. Der Zahlungsanspruch bleibt bei kurzfristigem Rücktritt gemäß §4 bestehen.</p>
                         </div>
                         <div class="bg-orange-50 p-3 rounded-xl border border-orange-100 text-orange-800 flex items-start gap-3">
@@ -841,7 +842,7 @@
                     </div>
                 </section>
                 <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">§4 Stornierung, Ausfall & Rückerstattung</h3>
+                    <h3 class="font-bold text-lg text-brand-700 mb-2">§4 Stornierung, Ausfall <span aria-hidden="true">&</span><span class="sr-only">und</span> Rückerstattung</h3>
                     <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 space-y-4">
                         <div>
                             <p class="font-semibold text-brand-900 mb-1 flex items-center gap-2">
@@ -849,8 +850,8 @@
                             </p>
                             <p class="mb-2">Vereinbarte Termine sind verbindlich. Eine kostenfreie Stornierung oder Verschiebung ist nur bis <strong>48 Stunden vor Beginn</strong> des Termins möglich.</p>
                             <ul class="list-disc list-inside pl-2 space-y-1 text-slate-600">
-                                <li><strong>Rechtzeitige Absage (> 48h):</strong><br>Der Termin wird kostenfrei storniert oder verschoben.</li>
-                                <li><strong>Verspätete Absage (< 48h) / Nichterscheinen:</strong><br>Es wird das <strong>volle Honorar</strong> als Ausfallentschädigung fällig (§ 615 BGB), da der Termin so kurzfristig nicht neu belegt werden kann. Dies gilt unabhängig vom Grund der Absage.</li>
+                                <li><strong>Rechtzeitige Absage (größer 48h):</strong><br>Der Termin wird kostenfrei storniert oder verschoben.</li>
+                                <li><strong>Verspätete Absage (kleiner 48h) / Nichterscheinen:</strong><br>Es wird das <strong>volle Honorar</strong> als Ausfallentschädigung fällig (§ 615 BGB), da der Termin so kurzfristig nicht neu belegt werden kann. Dies gilt unabhängig vom Grund der Absage.</li>
                             </ul>
                         </div>
                         <div class="border-t border-brand-200 pt-3">
@@ -883,23 +884,23 @@
 
     <dialog id="confirmationPopup" aria-labelledby="confirmationTitle" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-sm p-8 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm text-center">
         <div class="flex flex-col h-full w-full items-center justify-center">
-            <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 shrink-0">
+            <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 shrink-0" aria-hidden="true">
                 <svg aria-hidden="true" class="w-8 h-8"><use href="#icon-check"></use></svg>
             </div>
             <h2 id="confirmationTitle" class="text-2xl font-bold mb-4 text-brand-900">Gesendet!</h2>
             <p class="text-slate-600 mb-8">Vielen Dank. Wir melden uns in Kürze bei Ihnen zurück.</p>
-            <button data-close-modal="confirmationPopup" class="w-full py-4 rounded-xl bg-brand-900 text-white font-bold hover:bg-brand-800 transition-colors outline-none">Alles klar</button>
+            <button data-close-modal="confirmationPopup" class="w-full py-4 rounded-xl bg-brand-900 text-white font-bold hover:bg-brand-800 transition-colors outline-none" aria-label="Bestätigung schließen">Alles klar</button>
         </div>
     </dialog>
 
     <div id="cookie-overlay" role="dialog" aria-modal="true" aria-labelledby="cookie-title" class="fixed inset-0 z-[100] bg-brand-900/60 backdrop-blur-md hidden items-end sm:items-center justify-center p-4 transition-all duration-500 opacity-0">
         <div class="bg-white/95 backdrop-blur-xl w-full max-w-lg rounded-[2rem] shadow-2xl shadow-brand-900/20 border border-white/50 p-6 sm:p-8 transform transition-all duration-500 scale-95 translate-y-8">
             <div class="flex items-start gap-5">
-                <div class="group p-4 bg-brand-50 text-brand-600 rounded-2xl shrink-0 shadow-sm border border-brand-100 hover:bg-brand-100 transition-colors duration-300">
+                <div class="group p-4 bg-brand-50 text-brand-600 rounded-2xl shrink-0 shadow-sm border border-brand-100 hover:bg-brand-100 transition-colors duration-300" aria-hidden="true">
                     <svg aria-hidden="true" class="w-8 h-8 group-hover:rotate-12 transition-transform duration-300"><use href="#icon-cookie-big"></use></svg>
                 </div>
                 <div class="space-y-3">
-                    <h3 id="cookie-title" class="font-bold text-xl text-brand-900 tracking-tight">Datenschutz & Cookies</h3>
+                    <h3 id="cookie-title" class="font-bold text-xl text-brand-900 tracking-tight">Datenschutz <span aria-hidden="true">&</span><span class="sr-only">und</span> Cookies</h3>
                     <div class="text-slate-600 text-sm leading-relaxed space-y-3">
                         <p>
                             Damit hier alles flüssig läuft, nutzen wir Google Analytics 4, um unsere Seite stetig zu verbessern.
@@ -908,17 +909,17 @@
                             <svg aria-hidden="true" class="shrink-0 w-4 h-4 text-brand-400 mt-0.5"><use href="#icon-info"></use></svg>
                             <span>
                                 Deine IP wird anonymisiert. Details in der 
-                                <button data-open-modal="datenschutzModal" class="text-brand-600 font-bold hover:underline decoration-brand-200 underline-offset-2 transition-colors outline-none">Datenschutzerklärung</button>.
+                                <button data-open-modal="datenschutzModal" class="text-brand-600 font-bold hover:underline decoration-brand-200 underline-offset-2 transition-colors outline-none" aria-label="Datenschutzerklärung als Dialogfenster öffnen">Datenschutzerklärung</button>.
                             </span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="flex flex-col-reverse sm:flex-row gap-3 mt-8 pt-6 border-t border-slate-100">
-                <button id="cookie-decline" class="flex-1 px-5 py-3.5 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:text-slate-800 rounded-xl transition-all border border-transparent hover:border-slate-200 focus:outline-none">
+                <button id="cookie-decline" class="flex-1 px-5 py-3.5 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:text-slate-800 rounded-xl transition-all border border-transparent hover:border-slate-200 focus:outline-none" aria-label="Cookies ablehnen">
                     Ablehnen
                 </button>
-                <button id="cookie-accept" class="flex-1 px-5 py-3.5 text-sm font-bold bg-brand-900 text-white rounded-xl shadow-lg shadow-brand-900/20 hover:shadow-brand-900/40 hover:-translate-y-0.5 transition-all flex justify-center items-center gap-2 group outline-none">
+                <button id="cookie-accept" class="flex-1 px-5 py-3.5 text-sm font-bold bg-brand-900 text-white rounded-xl shadow-lg shadow-brand-900/20 hover:shadow-brand-900/40 hover:-translate-y-0.5 transition-all flex justify-center items-center gap-2 group outline-none" aria-label="Cookies akzeptieren">
                     <svg aria-hidden="true" class="w-4 h-4 group-hover:scale-110 transition-transform"><use href="#icon-check"></use></svg>
                     Akzeptieren
                 </button>
