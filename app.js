@@ -252,15 +252,50 @@
     });
 
     // ==========================================
-    // VORLESEFUNKTION (Text-to-Speech)
+    // VORLESEFUNKTION
     // ==========================================
     document.addEventListener('DOMContentLoaded', () => {
         const readButtons = document.querySelectorAll('[data-read-target]');
-        let currentTarget = null; 
+        let currentTarget = null;
+        let voices = [];
+
+        function loadVoices() {
+            voices = window.speechSynthesis.getVoices();
+        }
+        loadVoices();
+        if (window.speechSynthesis.onvoiceschanged !== undefined) {
+            window.speechSynthesis.onvoiceschanged = loadVoices;
+        }
+
+        function getBestGermanVoice() {
+            if (voices.length === 0) return null;
+            
+            const germanVoices = voices.filter(v => v.lang.startsWith('de'));
+            
+            const preferredNames = ['Markus', 'Daniel', 'Stefan', 'Conrad', 'Google Deutsch'];
+            for (let name of preferredNames) {
+                const voice = germanVoices.find(v => v.name.includes(name));
+                if (voice) return voice;
+            }
+            
+            if (germanVoices.length > 0) return germanVoices[0];
+            
+            return voices[0];
+        }
 
         window.addEventListener('beforeunload', () => {
             window.speechSynthesis.cancel();
         });
+
+        function resetAllButtons() {
+            readButtons.forEach(btn => {
+                const playIcon = btn.querySelector('.icon-play');
+                const stopIcon = btn.querySelector('.icon-stop');
+                if (playIcon) playIcon.classList.remove('hidden');
+                if (stopIcon) stopIcon.classList.add('hidden');
+                btn.setAttribute('aria-label', btn.getAttribute('data-original-aria'));
+            });
+        }
 
         readButtons.forEach(button => {
             const originalAriaLabel = button.getAttribute('aria-label');
@@ -269,49 +304,49 @@
             button.addEventListener('click', () => {
                 const targetId = button.getAttribute('data-read-target');
                 const textElement = document.getElementById(targetId);
+                const playIcon = button.querySelector('.icon-play');
+                const stopIcon = button.querySelector('.icon-stop');
                 
                 if (!textElement) return;
 
                 if (window.speechSynthesis.speaking && currentTarget === targetId) {
                     window.speechSynthesis.cancel();
                     currentTarget = null;
-                    button.innerText = '🔊';
-                    button.setAttribute('aria-label', originalAriaLabel);
+                    resetAllButtons();
                     return;
                 }
 
                 window.speechSynthesis.cancel();
-                
-                readButtons.forEach(btn => {
-                    btn.innerText = '🔊';
-                    btn.setAttribute('aria-label', btn.getAttribute('data-original-aria'));
-                });
+                resetAllButtons();
 
                 const textToRead = textElement.innerText; 
-                
                 const utterance = new SpeechSynthesisUtterance(textToRead);
                 
-                utterance.lang = 'de-DE'; // Deutsche Aussprache
-                utterance.rate = 1.0;     // Lesegeschwindigkeit
-                utterance.pitch = 1.0;    // Tonhöhe
+                const bestVoice = getBestGermanVoice();
+                if (bestVoice) {
+                    utterance.voice = bestVoice;
+                }
+                
+                utterance.lang = 'de-DE'; 
+                utterance.rate = 0.9; 
+                utterance.pitch = 0.8; 
 
                 utterance.onend = () => {
                     currentTarget = null;
-                    button.innerText = '🔊';
-                    button.setAttribute('aria-label', originalAriaLabel);
+                    resetAllButtons();
                 };
 
                 utterance.onerror = (e) => {
                     console.error("Fehler bei der Sprachausgabe:", e);
                     currentTarget = null;
-                    button.innerText = '🔊';
-                    button.setAttribute('aria-label', originalAriaLabel);
+                    resetAllButtons();
                 };
 
                 window.speechSynthesis.speak(utterance);
                 currentTarget = targetId;
                 
-                button.innerText = '⏹️'; 
+                playIcon.classList.add('hidden');
+                stopIcon.classList.remove('hidden');
                 button.setAttribute('aria-label', 'Vorlesen stoppen');
             });
         });
