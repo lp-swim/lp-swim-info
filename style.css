@@ -2235,49 +2235,53 @@ body footer p {
 }
 
 /* ==========================================
-   4. BARRIEREFREIHEIT
+   4. BARRIEREFREIHEIT, LOGO & FOKUS
    ========================================== */
 @media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { 
+        animation: none !important; 
+        transition: none !important; 
     }
-    *, *::before, *::after {
-        animation: none !important;
-        transition: none !important;
-    }
+}
+
+.logo-text-container {
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    white-space: nowrap;
+}
+
+.group:hover .logo-text-container,
+a.group:focus-visible .logo-text-container,
+.group:focus-visible .group-hover\:opacity-100 {
+    max-width: 200px !important;
+    opacity: 1 !important;
 }
 
 .group:focus-visible .group-hover\:scale-110 {
     transform: scale(1.1);
 }
 
-.group:focus-visible .group-hover\:max-w-\[200px\] {
-    max-width: 200px;
-}
-
-.group:focus-visible .group-hover\:opacity-100 {
-    opacity: 1;
-}
 *:focus-visible {
-    outline: 3px solid #0284c7 !important; /* Brand-600 Farbe */
+    outline: 3px solid #0284c7 !important;
     outline-offset: 4px !important;
-    border-radius: inherit; /* Passt sich automatisch den Ecken an (z.B. runden Buttons) */
+    border-radius: inherit;
     transition: outline-offset 0.1s ease-in-out;
 }
-.group:hover .logo-text-container,
-a.group:focus-visible .logo-text-container {
-    max-width: 200px !important;
-    opacity: 1 !important;
-}
+
 header#start:focus, 
 header#start:focus-visible {
     outline: none !important;
 }
+
 /* ==========================================
    5. NATIVE DIALOG ANIMATIONEN
    ========================================== */
 dialog[open] {
     animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    border: none;
 }
 
 dialog[open]::backdrop {
