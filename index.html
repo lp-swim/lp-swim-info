@@ -172,7 +172,13 @@
             </symbol>
             <symbol id="icon-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 19V5M5 12l7-7 7 7"/>
-            </symbol>        
+            </symbol> 
+            <symbol id="icon-play" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+</symbol>
+<symbol id="icon-stop" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="6" y="6" width="12" height="12" rx="2" ry="2"></rect>
+</symbol>        
         </defs>
     </svg>  
 
@@ -392,9 +398,10 @@
     </div>
     <h3 class="text-lg sm:text-xl font-bold text-brand-900 tracking-tight flex items-center">
         Vorwort
-        <button type="button" class="ml-3 inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-50 hover:bg-brand-100 transition-colors focus-visible:ring-2 focus-visible:ring-brand-500 outline-none" aria-label="Vorwort vorlesen" data-read-target="text-vorwort">
-            🔊
-        </button>
+        <button type="button" class="ml-3 inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-50 text-brand-600 hover:bg-brand-100 hover:text-brand-800 transition-colors focus-visible:ring-2 focus-visible:ring-brand-500 outline-none" aria-label="Vorwort vorlesen" data-read-target="text-vorwort">
+    <svg aria-hidden="true" class="w-4 h-4 icon-play"><use href="#icon-play"></use></svg>
+    <svg aria-hidden="true" class="w-4 h-4 icon-stop hidden"><use href="#icon-stop"></use></svg>
+</button>
     </h3>
 </div>
 
@@ -432,9 +439,10 @@
     </div>
     <h3 class="text-lg sm:text-xl font-bold text-brand-900 tracking-tight flex items-center flex-wrap">
         Kinder <span aria-hidden="true" class="mx-1">&</span><span class="sr-only">und</span> Jugendliche
-        <button type="button" class="ml-2 inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-50 hover:bg-brand-100 transition-colors focus-visible:ring-2 focus-visible:ring-brand-500 outline-none" aria-label="Bereich Kinder und Jugendliche vorlesen" data-read-target="text-kinder">
-            🔊
-        </button>
+        <button type="button" class="ml-2 inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-50 text-brand-600 hover:bg-brand-100 hover:text-brand-800 transition-colors focus-visible:ring-2 focus-visible:ring-brand-500 outline-none" aria-label="Bereich Kinder und Jugendliche vorlesen" data-read-target="text-kinder">
+    <svg aria-hidden="true" class="w-4 h-4 icon-play"><use href="#icon-play"></use></svg>
+    <svg aria-hidden="true" class="w-4 h-4 icon-stop hidden"><use href="#icon-stop"></use></svg>
+</button>
     </h3>
 </div>
 <div id="text-kinder" class="text-slate-600 space-y-3 text-justify hyphens-auto text-sm leading-relaxed font-light">
@@ -451,9 +459,10 @@
     </div>
     <h3 class="text-lg sm:text-xl font-bold text-brand-900 tracking-tight flex items-center">
         Schulbegleitung
-        <button type="button" class="ml-3 inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-50 hover:bg-brand-100 transition-colors focus-visible:ring-2 focus-visible:ring-brand-500 outline-none" aria-label="Bereich Schulbegleitung vorlesen" data-read-target="text-schule">
-            🔊
-        </button>
+        <button type="button" class="ml-3 inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-50 text-brand-600 hover:bg-brand-100 hover:text-brand-800 transition-colors focus-visible:ring-2 focus-visible:ring-brand-500 outline-none" aria-label="Bereich Schulbegleitung vorlesen" data-read-target="text-schule">
+    <svg aria-hidden="true" class="w-4 h-4 icon-play"><use href="#icon-play"></use></svg>
+    <svg aria-hidden="true" class="w-4 h-4 icon-stop hidden"><use href="#icon-stop"></use></svg>
+</button>
     </h3>
 </div>
 <div id="text-schule" class="text-slate-600 space-y-3 text-justify hyphens-auto text-sm leading-relaxed font-light">
@@ -470,9 +479,10 @@
     </div>
     <h3 class="text-lg sm:text-xl font-bold text-brand-900 tracking-tight flex items-center">
         Erwachsene
-        <button type="button" class="ml-3 inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-50 hover:bg-brand-100 transition-colors focus-visible:ring-2 focus-visible:ring-brand-500 outline-none" aria-label="Bereich Erwachsene vorlesen" data-read-target="text-erwachsene">
-            🔊
-        </button>
+        <button type="button" class="ml-3 inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-50 text-brand-600 hover:bg-brand-100 hover:text-brand-800 transition-colors focus-visible:ring-2 focus-visible:ring-brand-500 outline-none" aria-label="Bereich Erwachsene vorlesen" data-read-target="text-erwachsene">
+    <svg aria-hidden="true" class="w-4 h-4 icon-play"><use href="#icon-play"></use></svg>
+    <svg aria-hidden="true" class="w-4 h-4 icon-stop hidden"><use href="#icon-stop"></use></svg>
+</button>
     </h3>
 </div>
 <div id="text-erwachsene" class="text-slate-600 space-y-3 text-justify hyphens-auto text-sm leading-relaxed font-light">
@@ -953,5 +963,6 @@
     
 </body>
 </html>
+
 
 
