@@ -306,20 +306,37 @@
             const langVoices = voices.filter(v => v.lang.toLowerCase().startsWith(langCode));
             if (langVoices.length === 0) return null; 
 
-            let maleNames = langCode === 'de' 
-                ? ['martin', 'stefan', 'conrad', 'markus', 'daniel', 'jannis', 'klaus', 'thorsten', 'bernd', 'christoph', 'olli', 'paul', 'ralf'] 
-                : ['alex', 'david', 'mark', 'fred', 'daniel', 'oliver', 'arthur', 'george', 'malcolm', 'brian', 'tom', 'aaron', 'bruce', 'evan', 'gordon', 'john', 'kenny', 'ralph', 'russell'];
+            let preferredNames = langCode === 'de' 
+                ? ['markus', 'daniel', 'stefan', 'conrad', 'google deutsch', 'jannis', 'martin'] 
+                : ['google us english', 'alex', 'david', 'mark', 'fred', 'oliver', 'arthur'];
 
-            for (let name of maleNames) {
+            const premiumKeywords = ['premium', 'enhanced', 'natural', 'online', 'neural'];
+
+            for (let name of preferredNames) {
+                for (let keyword of premiumKeywords) {
+                    const voice = langVoices.find(v => v.name.toLowerCase().includes(name) && v.name.toLowerCase().includes(keyword));
+                    if (voice) return voice;
+                }
+            }
+            
+            for (let keyword of premiumKeywords) {
+                const premiumVoice = langVoices.find(v => 
+                    v.name.toLowerCase().includes(keyword) && 
+                    !v.name.toLowerCase().includes('female') && 
+                    !v.name.toLowerCase().includes('woman')
+                );
+                if (premiumVoice) return premiumVoice;
+            }
+
+            for (let name of preferredNames) {
                 const voice = langVoices.find(v => v.name.toLowerCase().includes(name));
                 if (voice) return voice;
             }
 
             const genericMaleVoice = langVoices.find(v => 
-                (v.name.toLowerCase().includes('male') || v.name.toLowerCase().includes('man') || v.name.toLowerCase().includes('boy')) && 
+                (v.name.toLowerCase().includes('male') || v.name.toLowerCase().includes('man')) && 
                 !v.name.toLowerCase().includes('female') && 
-                !v.name.toLowerCase().includes('woman') &&
-                !v.name.toLowerCase().includes('girl')
+                !v.name.toLowerCase().includes('woman')
             );
             if (genericMaleVoice) return genericMaleVoice;
 
