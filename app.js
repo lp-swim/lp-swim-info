@@ -20,9 +20,9 @@
         let typingStarted = false;
 
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-
+            const intersectingEntries = entries.filter(e => e.isIntersecting);
+            
+            intersectingEntries.forEach((entry, index) => {
                 const el = entry.target;
 
                 if (el.id === 'message') {
@@ -35,7 +35,12 @@
                         startTypeWriter(el, "Ich würde gerne meine Technik verbessern. Wie läuft die Buchung ab?");
                     }
                 } else {
+                    el.style.transitionDelay = `${index * 150}ms`;
                     el.classList.remove('opacity-0', 'translate-y-8');
+                    
+                    setTimeout(() => {
+                        if (el) el.style.transitionDelay = '0ms';
+                    }, 1000 + (index * 150));
                 }
                 
                 observer.unobserve(el);
