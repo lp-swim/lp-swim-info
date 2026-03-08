@@ -303,12 +303,12 @@
         function getBestVoice(langCode) {
             if (voices.length === 0) return null;
             
-            const langVoices = voices.filter(v => v.lang.startsWith(langCode));
-            if (langVoices.length === 0) return voices[0];
+            const langVoices = voices.filter(v => v.lang.toLowerCase().startsWith(langCode));
+            if (langVoices.length === 0) return null; 
 
             let preferredNames = langCode === 'de' 
-                ? ['Daniel', 'Jannis', 'Klaus', 'Conrad', 'Marcus', 'Andreas', 'Stefan', 'Hans'] 
-                : ['Daniel', 'Alex', 'Fred', 'Oliver', 'Arthur', 'George', 'Malcolm', 'Brian', 'Tom'];
+                ? ['Google Deutsch', 'Daniel', 'Jannis', 'Klaus', 'Conrad', 'Marcus', 'Andreas', 'Stefan', 'Hans'] 
+                : ['Google US English', 'Daniel', 'Alex', 'Fred', 'Oliver', 'Arthur', 'George', 'Malcolm', 'Brian', 'Tom'];
 
             const premiumKeywords = ['premium', 'enhanced', 'natural', 'online', 'neural'];
 
@@ -396,7 +396,9 @@
                 resetAllButtons();
                 currentTarget = targetId;
 
-                const fullText = textElement.innerText;
+                const rawText = textElement.innerText || textElement.textContent;
+                const fullText = rawText.replace(/\s+/g, ' ').trim();
+                
                 const explicitEnglish = /((?:Michael Phelps \(No Limits: The Will to Succeed, 2008\))|(?:[„"']?I think goals should never be easy[\s\S]*?2008\)?))/i;
                 const parts = fullText.split(explicitEnglish);
                 
@@ -439,11 +441,13 @@
                     
                     if (chunk.lang === 'en') {
                         utterance.lang = 'en-US';
-                        utterance.voice = getBestVoice('en');
+                        const voice = getBestVoice('en');
+                        if (voice) utterance.voice = voice;
                         utterance.rate = 0.92; 
                     } else {
                         utterance.lang = 'de-DE';
-                        utterance.voice = getBestVoice('de');
+                        const voice = getBestVoice('de');
+                        if (voice) utterance.voice = voice;
                         utterance.rate = 0.95; 
                     }
 
