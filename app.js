@@ -301,9 +301,9 @@
             
             let preferredNames = [];
             if (langCode === 'de') {
-                preferredNames = ['Markus', 'Daniel', 'Jannik', 'Arthur', 'Stefan', 'Conrad', 'Google Deutsch'];
+                preferredNames = ['Anna', 'Helena', 'Katja', 'Hedda', 'Marlene', 'Petra', 'Google Deutsch'];
             } else if (langCode === 'en') {
-                preferredNames = ['Daniel', 'Oliver', 'Alex', 'Arthur', 'David', 'Mark', 'James', 'Google UK English Male', 'Google US English Male'];
+                preferredNames = ['Samantha', 'Karen', 'Victoria', 'Tessa', 'Moira', 'Fiona', 'Zira', 'Hazel', 'Google UK English Female', 'Google US English Female'];
             }
             
             for (let name of preferredNames) {
