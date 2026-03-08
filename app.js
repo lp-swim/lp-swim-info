@@ -298,14 +298,17 @@
             if (voices.length === 0) return null;
             
             const langVoices = voices.filter(v => v.lang.startsWith(langCode));
-            
-            let preferredNames = [];
-            
-            if (langCode === 'de') {
-                preferredNames = ['Anna', 'Helena', 'Katja', 'Hedda', 'Marlene', 'Petra', 'Lisa', 'Steffi'];
-            } else if (langCode === 'en') {
-                preferredNames = ['Samantha', 'Karen', 'Victoria', 'Tessa', 'Moira', 'Fiona', 'Zira', 'Hazel'];
+            if (langVoices.length === 0) return voices[0];
+
+            const premiumKeywords = ['premium', 'enhanced', 'natural', 'online', 'neural'];
+            for (let keyword of premiumKeywords) {
+                const premiumVoice = langVoices.find(v => v.name.toLowerCase().includes(keyword));
+                if (premiumVoice) return premiumVoice;
             }
+            
+            let preferredNames = langCode === 'de' 
+                ? ['Anna', 'Helena', 'Katja', 'Hedda', 'Marlene'] 
+                : ['Samantha', 'Victoria', 'Karen', 'Tessa', 'Moira'];
             
             for (let name of preferredNames) {
                 const voice = langVoices.find(v => v.name.includes(name));
@@ -313,11 +316,21 @@
             }
             
             const femaleVoice = langVoices.find(v => v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('woman'));
-            if (femaleVoice) return femaleVoice;
+            return femaleVoice || langVoices[0];
+        }
+
+        function detectLanguage(text) {
+            const enWords = /\b(the|and|is|to|of|with|for|that|it|you|this|are|we|in|on)\b/gi;
+            const deWords = /\b(der|die|das|und|ist|zu|von|mit|für|dass|es|sie|wir|auf|im)\b/gi;
             
-            if (langVoices.length > 0) return langVoices[0];
+            const enCount = (text.match(enWords) || []).length;
+            const deCount = (text.match(deWords) || []).length;
             
-            return voices[0];
+            return enCount > deCount ? 'en' : 'de';
+        }
+
+        function splitIntoSentences(text) {
+            return text.match(/[^.!?]+[.!?]+|\s*[^.!?]+$/g) || [text];
         }
 
         window.addEventListener('beforeunload', () => {
@@ -335,7 +348,7 @@
         }
 
         readButtons.forEach(button => {
-            const originalAriaLabel = button.getAttribute('aria-label');
+            const originalAriaLabel = button.getAttribute('aria-label') || 'Vorlesen';
             button.setAttribute('data-original-aria', originalAriaLabel);
 
             button.addEventListener('click', () => {
@@ -358,17 +371,15 @@
                 currentTarget = targetId;
 
                 const fullText = textElement.innerText;
-                const englishRegex = /([„"']?I think goals should never be easy[\s\S]*?2008\))/i;
-                const parts = fullText.split(englishRegex);
+                const sentences = splitIntoSentences(fullText);
                 
                 let chunks = [];
-                parts.forEach(part => {
-                    if (!part || !part.trim()) return;
-                    if (englishRegex.test(part)) {
-                        chunks.push({ text: part, lang: 'en' });
-                    } else {
-                        chunks.push({ text: part, lang: 'de' });
-                    }
+                sentences.forEach(sentence => {
+                    if (!sentence || !sentence.trim()) return;
+                    chunks.push({ 
+                        text: sentence.trim(), 
+                        lang: detectLanguage(sentence) 
+                    });
                 });
 
                 let currentChunkIndex = 0;
@@ -385,15 +396,16 @@
                     const chunk = chunks[currentChunkIndex];
                     const utterance = new SpeechSynthesisUtterance(chunk.text);
                     
-                    utterance.rate = 1; 
-                    utterance.pitch = 0.85; 
+                    utterance.pitch = 1.0;
                     
                     if (chunk.lang === 'en') {
                         utterance.lang = 'en-US';
                         utterance.voice = getBestVoice('en');
+                        utterance.rate = 0.92;
                     } else {
                         utterance.lang = 'de-DE';
                         utterance.voice = getBestVoice('de');
+                        utterance.rate = 1.05;
                     }
 
                     utterance.onend = () => {
@@ -402,7 +414,8 @@
                         speakNextChunk();
                     };
 
-                    utterance.onerror = () => {
+                    utterance.onerror = (e) => {
+                        console.warn(e);
                         if (currentTarget === targetId) {
                             currentTarget = null;
                             resetAllButtons();
