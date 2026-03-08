@@ -386,8 +386,8 @@
                     const chunk = chunks[currentChunkIndex];
                     const utterance = new SpeechSynthesisUtterance(chunk.text);
                     
-                    utterance.pitch = 0.8;
-                    utterance.rate = 0.9;
+                    utterance.pitch = 0.85;
+                    utterance.rate = 1;
                     
                     if (chunk.lang === 'en') {
                         utterance.lang = 'en-US';
