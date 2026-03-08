@@ -287,66 +287,8 @@
 
     document.addEventListener('DOMContentLoaded', () => {
         const readButtons = document.querySelectorAll('[data-read-target]');
+        let currentAudio = null;
         let currentTarget = null;
-        let voices = [];
-        let chunkTimeout = null; 
-
-        function loadVoices() {
-            voices = window.speechSynthesis.getVoices();
-        }
-        
-        loadVoices();
-        if (window.speechSynthesis.onvoiceschanged !== undefined) {
-            window.speechSynthesis.onvoiceschanged = loadVoices;
-        }
-
-        function getBestVoice(langCode) {
-            if (voices.length === 0) return null;
-            
-            const langVoices = voices.filter(v => v.lang.toLowerCase().startsWith(langCode));
-            if (langVoices.length === 0) return null; 
-
-            let preferredNames = langCode === 'de' 
-                ? ['markus', 'daniel', 'stefan', 'conrad', 'google deutsch', 'jannis', 'martin'] 
-                : ['google us english', 'alex', 'david', 'mark', 'fred', 'oliver', 'arthur'];
-
-            const premiumKeywords = ['premium', 'enhanced', 'natural', 'online', 'neural'];
-
-            for (let name of preferredNames) {
-                for (let keyword of premiumKeywords) {
-                    const voice = langVoices.find(v => v.name.toLowerCase().includes(name) && v.name.toLowerCase().includes(keyword));
-                    if (voice) return voice;
-                }
-            }
-            
-            for (let keyword of premiumKeywords) {
-                const premiumVoice = langVoices.find(v => 
-                    v.name.toLowerCase().includes(keyword) && 
-                    !v.name.toLowerCase().includes('female') && 
-                    !v.name.toLowerCase().includes('woman')
-                );
-                if (premiumVoice) return premiumVoice;
-            }
-
-            for (let name of preferredNames) {
-                const voice = langVoices.find(v => v.name.toLowerCase().includes(name));
-                if (voice) return voice;
-            }
-
-            const genericMaleVoice = langVoices.find(v => 
-                (v.name.toLowerCase().includes('male') || v.name.toLowerCase().includes('man')) && 
-                !v.name.toLowerCase().includes('female') && 
-                !v.name.toLowerCase().includes('woman')
-            );
-            if (genericMaleVoice) return genericMaleVoice;
-
-            return langVoices[0];
-        }
-
-        window.addEventListener('beforeunload', () => {
-            window.speechSynthesis.cancel();
-            clearTimeout(chunkTimeout);
-        });
 
         function resetAllButtons() {
             readButtons.forEach(btn => {
@@ -356,7 +298,10 @@
                 if (stopIcon) stopIcon.classList.add('hidden');
                 btn.setAttribute('aria-label', btn.getAttribute('data-original-aria'));
             });
-            clearTimeout(chunkTimeout);
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
         }
 
         readButtons.forEach(button => {
@@ -365,87 +310,38 @@
 
             button.addEventListener('click', () => {
                 const targetId = button.getAttribute('data-read-target');
-                const textElement = document.getElementById(targetId);
                 const playIcon = button.querySelector('.icon-play');
                 const stopIcon = button.querySelector('.icon-stop');
                 
-                if (!textElement) return;
-
-                if (currentTarget === targetId) {
-                    window.speechSynthesis.cancel();
-                    currentTarget = null;
+                if (currentTarget === targetId && currentAudio && !currentAudio.paused) {
                     resetAllButtons();
+                    currentTarget = null;
                     return;
                 }
 
-                window.speechSynthesis.cancel();
                 resetAllButtons();
                 currentTarget = targetId;
-
-                const rawText = textElement.innerText || textElement.textContent;
-                const explicitEnglish = /((?:Michael Phelps \(No Limits: The Will to Succeed, 2008\))|(?:[„"']?I think goals should never be easy[\s\S]*?2008\)?))/i;
-                const parts = rawText.split(explicitEnglish);
                 
-                let chunks = [];
-                parts.forEach(part => {
-                    if (!part || !part.trim()) return;
-                    
-                    if (part.includes('Michael Phelps (No') || part.includes('I think goals should never')) {
-                        chunks.push({ text: part.trim(), lang: 'en' });
-                    } else {
-                        chunks.push({ text: part.trim(), lang: 'de' });
-                    }
+                const audioUrl = `./audio/${targetId}.mp3`; 
+                currentAudio = new Audio(audioUrl);
+
+                currentAudio.addEventListener('ended', () => {
+                    resetAllButtons();
+                    currentTarget = null;
                 });
 
-                let currentChunkIndex = 0;
+                currentAudio.addEventListener('error', () => {
+                    resetAllButtons();
+                    currentTarget = null;
+                });
 
-                function speakNextChunk() {
-                    if (currentChunkIndex >= chunks.length) {
-                        if (currentTarget === targetId) {
-                            currentTarget = null;
-                            resetAllButtons();
-                        }
-                        return;
-                    }
-
-                    const chunk = chunks[currentChunkIndex];
-                    const utterance = new SpeechSynthesisUtterance(chunk.text);
-                    
-                    utterance.pitch = 0.8;
-                    utterance.rate = 0.9;
-                    
-                    if (chunk.lang === 'en') {
-                        utterance.lang = 'en-US';
-                        const voice = getBestVoice('en');
-                        if (voice) utterance.voice = voice;
-                    } else {
-                        utterance.lang = 'de-DE';
-                        const voice = getBestVoice('de');
-                        if (voice) utterance.voice = voice;
-                    }
-
-                    utterance.onend = () => {
-                        if (currentTarget !== targetId) return;
-                        currentChunkIndex++;
-                        chunkTimeout = setTimeout(speakNextChunk, 100); 
-                    };
-
-                    utterance.onerror = (e) => {
-                        console.warn(e);
-                        if (currentTarget === targetId) {
-                            currentTarget = null;
-                            resetAllButtons();
-                        }
-                    };
-
-                    window.speechSynthesis.speak(utterance);
-                }
-
-                if (playIcon) playIcon.classList.add('hidden');
-                if (stopIcon) stopIcon.classList.remove('hidden');
-                button.setAttribute('aria-label', 'Vorlesen stoppen');
-
-                speakNextChunk();
+                currentAudio.play().then(() => {
+                    if (playIcon) playIcon.classList.add('hidden');
+                    if (stopIcon) stopIcon.classList.remove('hidden');
+                    button.setAttribute('aria-label', 'Vorlesen stoppen');
+                }).catch(() => {
+                    resetAllButtons();
+                });
             });
         });
     });
