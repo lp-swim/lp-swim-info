@@ -1986,7 +1986,7 @@ body footer p {
     white-space: nowrap;
 }
 /* ==========================================
-   4. BARRIEREFREIHEIT (Accessibility)
+   4. BARRIEREFREIHEIT
    ========================================== */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -1996,6 +1996,15 @@ body footer p {
     animation: none !important;
     transition: none !important;
   }
+}
+.group:focus .group-hover\:scale-110 {
+    transform: scale(1.1);
+}
+.group:focus .group-hover\:max-w-\[200px\] {
+    max-width: 200px;
+}
+.group:focus .group-hover\:opacity-100 {
+    opacity: 1;
 }
 /* ==========================================
    5. NATIVE DIALOG ANIMATIONEN
