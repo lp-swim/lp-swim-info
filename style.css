@@ -2248,15 +2248,15 @@ body footer p {
 }
 
 .group:focus-visible .group-hover\:scale-110 {
-    transform: scale(1.1) !important;
+    transform: scale(1.1);
 }
 
 .group:focus-visible .group-hover\:max-w-\[200px\] {
-    max-width: 200px !important;
+    max-width: 200px;
 }
 
 .group:focus-visible .group-hover\:opacity-100 {
-    opacity: 1 !important;
+    opacity: 1;
 }
 
 /* ==========================================
