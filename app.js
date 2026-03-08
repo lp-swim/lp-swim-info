@@ -1,9 +1,8 @@
 (() => {
     'use strict';
     
-    // ==========================================
-    // 1. ANIMATIONEN & OBSERVER
-    // ==========================================
+    let lastFocusedElement;
+
     document.addEventListener('DOMContentLoaded', () => {
         function startTypeWriter(element, text, speed = 40) {
             let i = 0;
@@ -43,7 +42,6 @@
             });
         }, { threshold: 0.1 });
 
-        // Elemente beobachten
         document.querySelectorAll('section article, section > div, section h2').forEach(el => {
             el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
             observer.observe(el);
@@ -52,7 +50,6 @@
         const msgField = document.getElementById("message");
         if (msgField) observer.observe(msgField);
         
-        // Marquee klonen
         const marquee = document.querySelector('.animate-marquee');
         if (marquee) {
             const cards = Array.from(marquee.children);
@@ -64,14 +61,17 @@
         }
     });
 
-    // ==========================================
-    // 2. MODAL-FUNKTIONEN (CSS Keyframes)
-    // ==========================================
     function openModal(id) {
         const modal = document.getElementById(id);
         if (!modal) return;
+
+        lastFocusedElement = document.activeElement;
+
         document.body.classList.add('overflow-hidden');
         modal.showModal(); 
+        
+        const firstFocusable = modal.querySelector('button, a, input, textarea');
+        if (firstFocusable) firstFocusable.focus();
     }
 
     function closeModal(id) {
@@ -85,6 +85,11 @@
             modal.classList.remove('is-closing');
             modal.close();
             modal.removeEventListener('animationend', onAnimationEnd);
+            
+            if (lastFocusedElement) {
+                lastFocusedElement.focus();
+            }
+            
             checkBodyScroll();
         };
         
@@ -109,9 +114,6 @@
         });
     });
 
-    // ==========================================
-    // 3. FORMULAR-VERSAND (AJAX zu Formspree)
-    // ==========================================
     document.addEventListener('DOMContentLoaded', () => {
         const form = document.getElementById('contactForm');
         if (form) {
@@ -151,9 +153,6 @@
         }
     });
 
-    // ==========================================
-    // 4. COOKIE CONSENT & GOOGLE ANALYTICS
-    // ==========================================
     document.addEventListener('DOMContentLoaded', () => {
         const GA_MEASUREMENT_ID = "G-T5H2XMBKFL"; 
         const STORAGE_KEY = "lp_swim_consent_2026"; 
@@ -169,16 +168,11 @@
 
                 gtag('consent', 'default', {
                     'analytics_storage': 'denied',
-                    'ad_storage': 'denied',
-                    'ad_user_data': 'denied',
-                    'ad_personalization': 'denied'
+                    'ad_storage': 'denied'
                 });
 
                 gtag('consent', 'update', {
-                    'analytics_storage': 'granted',
-                    'ad_storage': 'denied',
-                    'ad_user_data': 'denied',
-                    'ad_personalization': 'denied'
+                    'analytics_storage': 'granted'
                 });
 
                 const script = document.createElement('script');
@@ -191,26 +185,21 @@
             }
 
             function showBanner() {
-    document.body.classList.add('overflow-hidden');
-    cookieOverlay.classList.remove('hidden');
-    cookieOverlay.classList.add('flex');
-    cookieOverlay.setAttribute('role', 'dialog');
-    cookieOverlay.setAttribute('aria-modal', 'true');
-    cookieOverlay.setAttribute('aria-label', 'Cookie-Einstellungen');
-    
-    setTimeout(() => {
-        cookieOverlay.classList.remove('opacity-0');
-        if (card) {
-            card.classList.remove('scale-95', 'translate-y-8');
-            card.classList.add('scale-100', 'translate-y-0');
-        }
-        
-        const btnAccept = document.getElementById('cookie-accept');
-        if (btnAccept) {
-            btnAccept.focus();
-        }
-    }, 50);
-}
+                document.body.classList.add('overflow-hidden');
+                cookieOverlay.classList.remove('hidden');
+                cookieOverlay.classList.add('flex');
+                
+                setTimeout(() => {
+                    cookieOverlay.classList.remove('opacity-0');
+                    if (card) {
+                        card.classList.remove('scale-95', 'translate-y-8');
+                        card.classList.add('scale-100', 'translate-y-0');
+                    }
+                    
+                    const btnAccept = document.getElementById('cookie-accept');
+                    if (btnAccept) btnAccept.focus();
+                }, 50);
+            }
 
             function hideBanner() {
                 cookieOverlay.classList.add('opacity-0');
@@ -221,11 +210,7 @@
                 setTimeout(() => {
                     cookieOverlay.classList.remove('flex');
                     cookieOverlay.classList.add('hidden');
-                    
-                    const anyModalOpen = document.querySelectorAll('dialog[open]').length > 0;
-                    if (!anyModalOpen) {
-                        document.body.classList.remove('overflow-hidden');
-                    }
+                    checkBodyScroll();
                 }, 500);
             }
 
@@ -241,19 +226,16 @@
         }
     });
 
-    // ==========================================
-    // 5. ZENTRALE KLICK-STEUERUNG
-    // ==========================================
     document.addEventListener('click', (e) => {
         const openBtn = e.target.closest('[data-open-modal]');
         if (openBtn) {
-            if (openBtn.tagName === 'A' || openBtn.tagName === 'BUTTON') e.preventDefault(); 
+            e.preventDefault(); 
             openModal(openBtn.getAttribute('data-open-modal'));
         }
 
         const closeBtn = e.target.closest('[data-close-modal]');
         if (closeBtn) {
-            if (closeBtn.tagName === 'A' || closeBtn.tagName === 'BUTTON') e.preventDefault();
+            e.preventDefault();
             closeModal(closeBtn.getAttribute('data-close-modal'));
         }
 
@@ -261,17 +243,6 @@
         if (revokeBtn) {
             e.preventDefault();
             localStorage.removeItem("lp_swim_consent_2026"); 
-            
-            const gaCookies = document.cookie.split(";").filter(c => c.trim().startsWith("_ga"));
-            const cleanDomain = window.location.hostname.replace(/^www\./, '');
-            
-            gaCookies.forEach(cookie => {
-                const name = cookie.split("=")[0].trim();
-                document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-                document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${cleanDomain}`;
-                document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${cleanDomain}`;
-            });
-            
             window.location.reload(); 
         }
 
@@ -279,7 +250,5 @@
             closeModal(e.target.id);
         }
     });
-
-    console.log("App.js erfolgreich geladen.");
     
 })();
