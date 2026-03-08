@@ -29,7 +29,7 @@
                     if (!typingStarted) {
                         typingStarted = true;
                         el.classList.remove('opacity-0'); 
-                        el.classList.add('transition-opacity', 'duration-1000');
+                        el.classList.add('transition-opacity', 'duration-[1500ms]', 'ease-in-out');
                         el.style.opacity = '1';
                         
                         startTypeWriter(el, "Ich würde gerne meine Technik verbessern. Wie läuft die Buchung ab?");
@@ -86,7 +86,7 @@
             modal.close();
             modal.removeEventListener('animationend', onAnimationEnd);
             
-            if (lastFocusedElement) {
+            if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
                 lastFocusedElement.focus();
             }
             
@@ -139,7 +139,11 @@
                         openModal('confirmationPopup');
                         formMessage.innerHTML = '<div class="text-green-600 font-bold bg-green-50 p-4 rounded-xl text-center mt-4" role="alert">Nachricht erfolgreich gesendet!</div>';
                         formMessage.classList.remove('hidden');
-                    } else throw new Error();
+                    } else {
+                        const data = await res.json().catch(() => ({}));
+                        console.error('Formular-API Fehler:', data);
+                        throw new Error(data.error || 'Serverfehler aufgetreten.');
+                    }
                 } catch (error) {
                     console.error('LP-SWIM Formular-Fehler:', error);
                     formMessage.innerHTML = '<div class="text-red-600 font-bold bg-red-50 p-4 rounded-xl text-center mt-4" role="alert">Fehler beim Senden. Bitte versuche es später erneut.</div>';
