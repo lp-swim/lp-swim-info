@@ -289,6 +289,7 @@
         const readButtons = document.querySelectorAll('[data-read-target]');
         let currentTarget = null;
         let voices = [];
+        let chunkTimeout = null; 
 
         function loadVoices() {
             voices = window.speechSynthesis.getVoices();
@@ -358,6 +359,7 @@
 
         window.addEventListener('beforeunload', () => {
             window.speechSynthesis.cancel();
+            clearTimeout(chunkTimeout);
         });
 
         function resetAllButtons() {
@@ -368,6 +370,7 @@
                 if (stopIcon) stopIcon.classList.add('hidden');
                 btn.setAttribute('aria-label', btn.getAttribute('data-original-aria'));
             });
+            clearTimeout(chunkTimeout);
         }
 
         readButtons.forEach(button => {
@@ -437,17 +440,17 @@
                     if (chunk.lang === 'en') {
                         utterance.lang = 'en-US';
                         utterance.voice = getBestVoice('en');
-                        utterance.rate = 0.92;
+                        utterance.rate = 0.92; 
                     } else {
                         utterance.lang = 'de-DE';
                         utterance.voice = getBestVoice('de');
-                        utterance.rate = 1.05;
+                        utterance.rate = 0.95; 
                     }
 
                     utterance.onend = () => {
                         if (currentTarget !== targetId) return;
                         currentChunkIndex++;
-                        speakNextChunk();
+                        chunkTimeout = setTimeout(speakNextChunk, 400); 
                     };
 
                     utterance.onerror = (e) => {
