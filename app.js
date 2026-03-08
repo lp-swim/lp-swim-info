@@ -305,23 +305,41 @@
             const langVoices = voices.filter(v => v.lang.startsWith(langCode));
             if (langVoices.length === 0) return voices[0];
 
-            const premiumKeywords = ['premium', 'enhanced', 'natural', 'online', 'neural'];
-            for (let keyword of premiumKeywords) {
-                const premiumVoice = langVoices.find(v => v.name.toLowerCase().includes(keyword));
-                if (premiumVoice) return premiumVoice;
-            }
-            
             let preferredNames = langCode === 'de' 
-                ? ['Anna', 'Helena', 'Katja', 'Hedda', 'Marlene'] 
-                : ['Samantha', 'Victoria', 'Karen', 'Tessa', 'Moira'];
+                ? ['Daniel', 'Jannis', 'Klaus', 'Conrad', 'Marcus', 'Andreas', 'Stefan', 'Hans'] 
+                : ['Daniel', 'Alex', 'Fred', 'Oliver', 'Arthur', 'George', 'Malcolm', 'Brian', 'Tom'];
+
+            const premiumKeywords = ['premium', 'enhanced', 'natural', 'online', 'neural'];
+
+            for (let name of preferredNames) {
+                for (let keyword of premiumKeywords) {
+                    const voice = langVoices.find(v => v.name.includes(name) && v.name.toLowerCase().includes(keyword));
+                    if (voice) return voice;
+                }
+            }
             
             for (let name of preferredNames) {
                 const voice = langVoices.find(v => v.name.includes(name));
                 if (voice) return voice;
             }
             
-            const femaleVoice = langVoices.find(v => v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('woman'));
-            return femaleVoice || langVoices[0];
+            const maleVoice = langVoices.find(v => 
+                (v.name.toLowerCase().includes('male') || v.name.toLowerCase().includes('man')) && 
+                !v.name.toLowerCase().includes('female') && 
+                !v.name.toLowerCase().includes('woman')
+            );
+            if (maleVoice) return maleVoice;
+
+            for (let keyword of premiumKeywords) {
+                const premiumVoice = langVoices.find(v => 
+                    v.name.toLowerCase().includes(keyword) && 
+                    !v.name.toLowerCase().includes('female') && 
+                    !v.name.toLowerCase().includes('woman')
+                );
+                if (premiumVoice) return premiumVoice;
+            }
+
+            return langVoices[0];
         }
 
         function detectLanguage(text) {
