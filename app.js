@@ -164,6 +164,31 @@
         
         if (cookieOverlay) { 
             const card = cookieOverlay.querySelector('div');
+            const backgroundElements = document.querySelectorAll('nav, header, main, footer');
+
+            const focusableElements = cookieOverlay.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            const firstFocusable = focusableElements[0];
+            const lastFocusable = focusableElements[focusableElements.length - 1];
+
+            cookieOverlay.addEventListener('keydown', function(e) {
+                const isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+
+                if (!isTabPressed) {
+                    return;
+                }
+
+                if (e.shiftKey) { 
+                    if (document.activeElement === firstFocusable) {
+                        lastFocusable.focus();
+                        e.preventDefault();
+                    }
+                } else { 
+                    if (document.activeElement === lastFocusable) {
+                        firstFocusable.focus();
+                        e.preventDefault();
+                    }
+                }
+            });
 
             function loadGAScript() {
                 window.dataLayer = window.dataLayer || [];
@@ -190,6 +215,7 @@
 
             function showBanner() {
                 document.body.classList.add('overflow-hidden');
+                backgroundElements.forEach(el => el.setAttribute('inert', ''));
                 cookieOverlay.classList.remove('hidden');
                 cookieOverlay.classList.add('flex');
                 
@@ -214,6 +240,7 @@
                 setTimeout(() => {
                     cookieOverlay.classList.remove('flex');
                     cookieOverlay.classList.add('hidden');
+                    backgroundElements.forEach(el => el.removeAttribute('inert'));
                     checkBodyScroll();
                 }, 500);
             }
