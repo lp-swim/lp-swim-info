@@ -251,9 +251,6 @@
         }
     });
 
-    // ==========================================
-    // VORLESEFUNKTION
-    // ==========================================
     document.addEventListener('DOMContentLoaded', () => {
         const readButtons = document.querySelectorAll('[data-read-target]');
         let currentTarget = null;
@@ -262,7 +259,9 @@
         function loadVoices() {
             voices = window.speechSynthesis.getVoices();
         }
+        
         loadVoices();
+        
         if (window.speechSynthesis.onvoiceschanged !== undefined) {
             window.speechSynthesis.onvoiceschanged = loadVoices;
         }
@@ -271,8 +270,8 @@
             if (voices.length === 0) return null;
             
             const germanVoices = voices.filter(v => v.lang.startsWith('de'));
-            
             const preferredNames = ['Markus', 'Daniel', 'Stefan', 'Conrad', 'Google Deutsch'];
+            
             for (let name of preferredNames) {
                 const voice = germanVoices.find(v => v.name.includes(name));
                 if (voice) return voice;
@@ -309,7 +308,7 @@
                 
                 if (!textElement) return;
 
-                if (window.speechSynthesis.speaking && currentTarget === targetId) {
+                if (currentTarget === targetId) {
                     window.speechSynthesis.cancel();
                     currentTarget = null;
                     resetAllButtons();
@@ -318,11 +317,12 @@
 
                 window.speechSynthesis.cancel();
                 resetAllButtons();
+                currentTarget = targetId;
 
                 const textToRead = textElement.innerText; 
                 const utterance = new SpeechSynthesisUtterance(textToRead);
-                
                 const bestVoice = getBestGermanVoice();
+                
                 if (bestVoice) {
                     utterance.voice = bestVoice;
                 }
@@ -332,21 +332,24 @@
                 utterance.pitch = 0.8; 
 
                 utterance.onend = () => {
-                    currentTarget = null;
-                    resetAllButtons();
+                    if (currentTarget === targetId) {
+                        currentTarget = null;
+                        resetAllButtons();
+                    }
                 };
 
                 utterance.onerror = (e) => {
-                    console.error("Fehler bei der Sprachausgabe:", e);
-                    currentTarget = null;
-                    resetAllButtons();
+                    console.error(e);
+                    if (currentTarget === targetId) {
+                        currentTarget = null;
+                        resetAllButtons();
+                    }
                 };
 
                 window.speechSynthesis.speak(utterance);
-                currentTarget = targetId;
                 
-                playIcon.classList.add('hidden');
-                stopIcon.classList.remove('hidden');
+                if (playIcon) playIcon.classList.add('hidden');
+                if (stopIcon) stopIcon.classList.remove('hidden');
                 button.setAttribute('aria-label', 'Vorlesen stoppen');
             });
         });
