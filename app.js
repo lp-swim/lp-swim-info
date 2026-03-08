@@ -250,5 +250,71 @@
             closeModal(e.target.id);
         }
     });
-    
+
+    // ==========================================
+    // VORLESEFUNKTION (Text-to-Speech)
+    // ==========================================
+    document.addEventListener('DOMContentLoaded', () => {
+        const readButtons = document.querySelectorAll('[data-read-target]');
+        let currentTarget = null; 
+
+        window.addEventListener('beforeunload', () => {
+            window.speechSynthesis.cancel();
+        });
+
+        readButtons.forEach(button => {
+            const originalAriaLabel = button.getAttribute('aria-label');
+            button.setAttribute('data-original-aria', originalAriaLabel);
+
+            button.addEventListener('click', () => {
+                const targetId = button.getAttribute('data-read-target');
+                const textElement = document.getElementById(targetId);
+                
+                if (!textElement) return;
+
+                if (window.speechSynthesis.speaking && currentTarget === targetId) {
+                    window.speechSynthesis.cancel();
+                    currentTarget = null;
+                    button.innerText = '🔊';
+                    button.setAttribute('aria-label', originalAriaLabel);
+                    return;
+                }
+
+                window.speechSynthesis.cancel();
+                
+                readButtons.forEach(btn => {
+                    btn.innerText = '🔊';
+                    btn.setAttribute('aria-label', btn.getAttribute('data-original-aria'));
+                });
+
+                const textToRead = textElement.innerText; 
+                
+                const utterance = new SpeechSynthesisUtterance(textToRead);
+                
+                utterance.lang = 'de-DE'; // Deutsche Aussprache
+                utterance.rate = 1.0;     // Lesegeschwindigkeit
+                utterance.pitch = 1.0;    // Tonhöhe
+
+                utterance.onend = () => {
+                    currentTarget = null;
+                    button.innerText = '🔊';
+                    button.setAttribute('aria-label', originalAriaLabel);
+                };
+
+                utterance.onerror = (e) => {
+                    console.error("Fehler bei der Sprachausgabe:", e);
+                    currentTarget = null;
+                    button.innerText = '🔊';
+                    button.setAttribute('aria-label', originalAriaLabel);
+                };
+
+                window.speechSynthesis.speak(utterance);
+                currentTarget = targetId;
+                
+                button.innerText = '⏹️'; 
+                button.setAttribute('aria-label', 'Vorlesen stoppen');
+            });
+        });
+    });
+
 })();
