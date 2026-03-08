@@ -307,54 +307,15 @@
             if (langVoices.length === 0) return null; 
 
             let preferredNames = langCode === 'de' 
-                ? ['Google Deutsch', 'Daniel', 'Jannis', 'Klaus', 'Conrad', 'Marcus', 'Andreas', 'Stefan', 'Hans'] 
-                : ['Google US English', 'Daniel', 'Alex', 'Fred', 'Oliver', 'Arthur', 'George', 'Malcolm', 'Brian', 'Tom'];
+                ? ['Markus', 'Daniel', 'Stefan', 'Conrad', 'Google Deutsch'] 
+                : ['Google US English', 'Daniel', 'Alex', 'Fred', 'Oliver'];
 
-            const premiumKeywords = ['premium', 'enhanced', 'natural', 'online', 'neural'];
-
-            for (let name of preferredNames) {
-                for (let keyword of premiumKeywords) {
-                    const voice = langVoices.find(v => v.name.includes(name) && v.name.toLowerCase().includes(keyword));
-                    if (voice) return voice;
-                }
-            }
-            
             for (let name of preferredNames) {
                 const voice = langVoices.find(v => v.name.includes(name));
                 if (voice) return voice;
             }
             
-            const maleVoice = langVoices.find(v => 
-                (v.name.toLowerCase().includes('male') || v.name.toLowerCase().includes('man')) && 
-                !v.name.toLowerCase().includes('female') && 
-                !v.name.toLowerCase().includes('woman')
-            );
-            if (maleVoice) return maleVoice;
-
-            for (let keyword of premiumKeywords) {
-                const premiumVoice = langVoices.find(v => 
-                    v.name.toLowerCase().includes(keyword) && 
-                    !v.name.toLowerCase().includes('female') && 
-                    !v.name.toLowerCase().includes('woman')
-                );
-                if (premiumVoice) return premiumVoice;
-            }
-
             return langVoices[0];
-        }
-
-        function detectLanguage(text) {
-            const enWords = /\b(the|and|is|to|of|with|for|that|it|you|this|are|we|in|on)\b/gi;
-            const deWords = /\b(der|die|das|und|ist|zu|von|mit|für|dass|es|sie|wir|auf|im)\b/gi;
-            
-            const enCount = (text.match(enWords) || []).length;
-            const deCount = (text.match(deWords) || []).length;
-            
-            return enCount > deCount ? 'en' : 'de';
-        }
-
-        function splitIntoSentences(text) {
-            return text.match(/[^.!?]+[.!?]+|\s*[^.!?]+$/g) || [text];
         }
 
         window.addEventListener('beforeunload', () => {
@@ -397,10 +358,8 @@
                 currentTarget = targetId;
 
                 const rawText = textElement.innerText || textElement.textContent;
-                const fullText = rawText.replace(/\s+/g, ' ').trim();
-                
                 const explicitEnglish = /((?:Michael Phelps \(No Limits: The Will to Succeed, 2008\))|(?:[„"']?I think goals should never be easy[\s\S]*?2008\)?))/i;
-                const parts = fullText.split(explicitEnglish);
+                const parts = rawText.split(explicitEnglish);
                 
                 let chunks = [];
                 parts.forEach(part => {
@@ -409,17 +368,7 @@
                     if (part.includes('Michael Phelps (No') || part.includes('I think goals should never')) {
                         chunks.push({ text: part.trim(), lang: 'en' });
                     } else {
-                        const sentences = splitIntoSentences(part);
-                        if (sentences) {
-                            sentences.forEach(sentence => {
-                                if (sentence.trim()) {
-                                    chunks.push({ 
-                                        text: sentence.trim(), 
-                                        lang: detectLanguage(sentence) 
-                                    });
-                                }
-                            });
-                        }
+                        chunks.push({ text: part.trim(), lang: 'de' });
                     }
                 });
 
@@ -437,24 +386,23 @@
                     const chunk = chunks[currentChunkIndex];
                     const utterance = new SpeechSynthesisUtterance(chunk.text);
                     
-                    utterance.pitch = 1.0;
+                    utterance.pitch = 0.8;
+                    utterance.rate = 0.9;
                     
                     if (chunk.lang === 'en') {
                         utterance.lang = 'en-US';
                         const voice = getBestVoice('en');
                         if (voice) utterance.voice = voice;
-                        utterance.rate = 0.92; 
                     } else {
                         utterance.lang = 'de-DE';
                         const voice = getBestVoice('de');
                         if (voice) utterance.voice = voice;
-                        utterance.rate = 0.95; 
                     }
 
                     utterance.onend = () => {
                         if (currentTarget !== targetId) return;
                         currentChunkIndex++;
-                        chunkTimeout = setTimeout(speakNextChunk, 400); 
+                        chunkTimeout = setTimeout(speakNextChunk, 100); 
                     };
 
                     utterance.onerror = (e) => {
