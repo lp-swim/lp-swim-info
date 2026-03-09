@@ -65,7 +65,7 @@
     <link rel="preload" href="./fonts/poppins-v24-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./fonts/poppins-v24-latin-700.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preconnect" href="https://formspree.io" crossorigin>    
-    <link rel="stylesheet" href="./style.css?v=3">
+    <link rel="stylesheet" href="./style.css?v=1">
 </head>
 
 <body class="antialiased pb-0 selection:bg-brand-200 selection:text-brand-900">
@@ -184,10 +184,10 @@
         </a>
 
         <div class="flex items-center gap-2 bg-brand-50/80 p-1.5 rounded-full border border-brand-100">
-            <a class="px-6 py-2 rounded-full text-sm font-bold text-brand-900 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all" href="#angebote" aria-label="Zur Sektion Angebote springen">Angebot</a>
-            <a class="px-6 py-2 rounded-full text-sm font-bold text-brand-900 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all" href="#standorte" aria-label="Zur Sektion Standort springen">Standort</a>
-            <a class="px-6 py-2 rounded-full text-sm font-bold text-brand-900 hover:text-brand-600 hover:bg-white hover:shadow-sm transition-all" href="#preisuebersicht" data-open-modal="preisModal" aria-haspopup="dialog" aria-expanded="false" aria-controls="preisModal" aria-label="Preisübersicht als Dialogfenster öffnen">Preise</a>        
-        </div>
+    <a class="nav-link px-6 py-2 rounded-full text-sm font-bold text-brand-900 transition-all" href="#angebote" aria-label="Zur Sektion Angebote springen">Angebot</a>
+    <a class="nav-link px-6 py-2 rounded-full text-sm font-bold text-brand-900 transition-all" href="#standorte" aria-label="Zur Sektion Standort springen">Standort</a>
+    <a class="nav-link px-6 py-2 rounded-full text-sm font-bold text-brand-900 transition-all" href="#preisuebersicht" data-open-modal="preisModal" aria-haspopup="dialog" aria-expanded="false" aria-controls="preisModal" aria-label="Preisübersicht als Dialogfenster öffnen">Preise</a>        
+</div>
         
         </div>
     </nav>
@@ -223,13 +223,12 @@
                 <div class="relative w-64 h-64 sm:w-80 sm:h-80">
                     <div class="absolute inset-0 bg-gradient-to-tr from-brand-200 to-white rounded-full blur-2xl opacity-60 animate-pulse"></div>
                     
-                    <div class="relative w-full h-full glass-card rounded-[2.5rem] flex items-center justify-center animate-float overflow-hidden border border-white shadow-lg">
-                        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
-                            <source src="./video/vorschau.mp4" type="video/mp4">
-                        </video>
-                        
-                        <div class="absolute inset-0 bg-brand-900/20 mix-blend-multiply pointer-events-none"></div>
-                    </div>
+                    <div class="relative w-full h-full glass-card rounded-[2.5rem] flex items-center justify-center overflow-hidden border border-white shadow-lg">
+    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
+        <source src="./video/vorschau.mp4" type="video/mp4">
+    </video>
+    <div class="absolute inset-0 bg-brand-900/20 mix-blend-multiply pointer-events-none"></div>
+</div>
                 </div>
             </div>
         </div>
@@ -518,24 +517,24 @@
                     </ol>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 break-words">
-                        <a aria-label="Website des Hallenbads in neuem Tab öffnen" href="https://www.stadtwerke-viernheim.de/preise-leistungen/baeder-und-sauna/hallenbad" target="_blank" rel="noopener noreferrer" class="group p-4 rounded-3xl bg-white border border-blue-100 hover:bg-blue-50 transition-colors text-center shadow-sm outline-none">
-                            <div class="inline-flex p-2 bg-blue-50 rounded-full text-blue-500 mb-2 group-hover:bg-blue-100 transition-colors" aria-hidden="true">
-                                <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-indoor"></use></svg>
-                            </div>
-                            <span class="block text-xs font-bold uppercase text-blue-600 tracking-wider mb-1">Okt – April</span>
-                            <span class="font-bold text-slate-900">Hallenbad</span>
-                            <span class="sr-only"> (öffnet in neuem Tab)</span>
-                        </a>
+    <a href="https://www.stadtwerke-viernheim.de/preise-leistungen/baeder-und-sauna/hallenbad" target="_blank" rel="noopener noreferrer" class="card-winter group p-4 rounded-3xl bg-white border transition-colors text-center shadow-sm outline-none">
+        <div class="icon-box inline-flex p-2 rounded-full mb-2 transition-colors" aria-hidden="true">
+            <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-indoor"></use></svg>
+        </div>
+        <span class="block text-xs font-bold uppercase tracking-wider mb-1">Okt – April</span>
+        <span class="font-bold text-slate-900">Hallenbad</span>
+         <span class="sr-only"> (öffnet in neuem Tab)</span>    
+    </a>
 
-                        <a aria-label="Website des Waldschwimmbads in neuem Tab öffnen" href="https://www.stadtwerke-viernheim.de/preise-leistungen/baeder-und-sauna/waldschwimmbad/" target="_blank" rel="noopener noreferrer" class="group p-4 rounded-3xl bg-white border border-yellow-100 hover:bg-yellow-50 transition-colors text-center shadow-sm outline-none">
-                            <div class="inline-flex p-2 bg-yellow-50 rounded-full text-yellow-500 mb-2 group-hover:bg-yellow-100 transition-colors" aria-hidden="true">
-                                <svg aria-hidden="true" class="w-5 h-5 text-yellow-500"><use href="#icon-sun"></use></svg>
-                            </div>
-                            <span class="block text-xs font-bold uppercase text-slate-600 tracking-wider mb-1">Juni – Aug</span>
-                            <span class="font-bold text-slate-900">Waldschwimmbad</span>
-                            <span class="sr-only"> (öffnet in neuem Tab)</span>
-                        </a>
-                    </div>
+    <a href="https://www.stadtwerke-viernheim.de/preise-leistungen/baeder-und-sauna/waldschwimmbad/" target="_blank" rel="noopener noreferrer" class="card-summer group p-4 rounded-3xl bg-white border transition-colors text-center shadow-sm outline-none">
+        <div class="icon-box inline-flex p-2 rounded-full mb-2 transition-colors" aria-hidden="true">
+            <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-sun"></use></svg>
+        </div>
+        <span class="block text-xs font-bold uppercase tracking-wider mb-1">Juni – Aug</span>
+        <span class="font-bold text-slate-900">Waldschwimmbad</span>
+         <span class="sr-only"> (öffnet in neuem Tab)</span>    
+    </a>
+</div>
 
                     <div class="block min-h-[300px] bg-slate-100 rounded-[2rem] overflow-hidden relative group shadow-inner">
                         <iframe class="w-full h-full absolute inset-0 border-0 grayscale opacity-80 transition-all duration-700 pointer-events-none" loading="lazy" title="Google Maps Standort LP-SWIM" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2588.423019803525!2d8.577947376915096!3d49.53772707143491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x66777943db50c52b%3A0x72759400e8725848!2sLP-SWIM%20%E2%80%93%20Inhaber%20Lukas%20Prehn!5e0!3m2!1sde!2sde!4v1708876543210!5m2!1sde!2sde" aria-hidden="true" tabindex="-1"></iframe>                        
@@ -938,6 +937,7 @@
     
 </body>
 </html>
+
 
 
 
