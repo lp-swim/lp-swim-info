@@ -8,8 +8,8 @@
 @font-face { font-family: 'Poppins'; font-style: normal; font-weight: 700; src: url('./fonts/poppins-v24-latin-700.woff2') format('woff2'); font-display: swap; }
 
 body { 
-    color: #cfc9c5; 
-    background: linear-gradient(to bottom, #302621 0%, #203133 50%, #111827 100%);
+    color: #c2d0d6; 
+    background: linear-gradient(to bottom, #1d2a30 0%, #263c45 50%, #151e23 100%);
     background-attachment: fixed;
     text-rendering: optimizeLegibility;
 }
@@ -25,11 +25,11 @@ section {
 }
 
 .glass-card {
-    background: rgba(25, 21, 19, 0.6);
+    background: rgba(30, 45, 53, 0.65);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(194, 208, 214, 0.05);
+    box-shadow: 0 8px 32px -4px rgba(10, 15, 18, 0.8);
 }
 
 .marquee-mask {
@@ -2322,26 +2322,27 @@ dialog.is-closing::backdrop {
     to { opacity: 0; backdrop-filter: blur(0px); }
 }
 
-.text-brand-900 { color: #cfc9c5; } 
-.text-slate-600 { color: #a39c98; } 
-.text-slate-700 { color: #bfb8b4; }
-.text-slate-900 { color: #cfc9c5; }
+/* ==========================================
+   6. DARK CINEMATIC OVERRIDES (Cool Water)
+   ========================================== */
+.text-brand-900, .text-white, .text-slate-900 { color: #c2d0d6; } 
+.text-slate-600, .text-slate-700 { color: #8a9ca3; }
+.text-brand-600, .text-brand-700, .text-blue-500, .text-blue-600 { color: #6d909c; }
 
-.text-brand-600 { color: #8bbbbd; } 
-.text-brand-700 { color: #699b9e; }
-.bg-brand-900 { background-color: #243f43; color: #cfc9c5; border: 1px solid rgba(255,255,255,0.06); } 
-.hover\:bg-brand-800:hover { background-color: #1a3134; }
+.from-brand-600 { --tw-gradient-from: #6d909c; }
+.to-brand-400 { --tw-gradient-to: #b5c7cd; }
 
-.bg-white { background-color: rgba(33, 28, 25, 0.6); border-color: rgba(255,255,255,0.04); color: #cfc9c5; }
-.bg-white\/80 { background-color: rgba(25, 21, 19, 0.85); }
-.bg-white\/95 { background-color: rgba(25, 21, 19, 0.95); }
-.bg-brand-50 { background-color: rgba(33, 28, 25, 0.4); }
+.bg-brand-900, .bg-brand-700 { background-color: #2e434d; color: #c2d0d6; border: 1px solid rgba(194,208,214,0.1); } 
+.hover\:bg-brand-800:hover { background-color: #24353d; }
 
-.border-brand-50, .border-brand-100, .border-brand-200, .border-white\/50, .border-slate-100 { 
-    border-color: rgba(255, 255, 255, 0.04); 
+.bg-white, .bg-white\/80, .bg-white\/90, .bg-white\/95 { background-color: rgba(30, 45, 53, 0.7); border-color: rgba(194,208,214,0.05); color: #c2d0d6; }
+.bg-brand-50, .bg-slate-50, .bg-slate-100 { background-color: rgba(30, 45, 53, 0.4); }
+
+.border-brand-50, .border-brand-100, .border-brand-200, .border-white\/50, .border-slate-100, .border-blue-100, .border-yellow-100 { 
+    border-color: rgba(194, 208, 214, 0.05); 
 }
-.from-brand-300 { --tw-gradient-from: rgba(255,255,255,0.1); }
+.from-brand-300 { --tw-gradient-from: rgba(194,208,214,0.1); }
 
-.bg-blue-50 { background-color: rgba(139, 187, 189, 0.15); }
-.bg-yellow-50 { background-color: rgba(217, 119, 6, 0.15); }
-.text-blue-600 { color: #8bbbbd; }
+.bg-blue-50 { background-color: rgba(109, 144, 156, 0.15); }
+.bg-yellow-50 { background-color: rgba(161, 184, 192, 0.1); }
+.text-yellow-500 { color: #8a9ca3; }
