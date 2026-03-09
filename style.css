@@ -8,22 +8,32 @@
 @font-face { font-family: 'Poppins'; font-style: normal; font-weight: 700; src: url('./fonts/poppins-v24-latin-700.woff2') format('woff2'); font-display: swap; }
 
 body { 
-    color: #f1f5f9; 
-    background: linear-gradient(to bottom, #0f172a 0%, #112a46 50%, #1e4b7a 100%);
+    color: #f8fafc; /* Klares, reines Weiß für die Schrift */
+    /* Ein edles Mittel-Blau: Heller, atmosphärisch, wie auf deinem Kontaktbild */
+    background: linear-gradient(to bottom, #1e3a5f 0%, #2b5074 50%, #3a6b8c 100%);
     background-attachment: fixed;
     text-rendering: optimizeLegibility;
 }
-section { scroll-margin-top: 32px; }
-@media (min-width: 768px) {
-    section { scroll-margin-top: 100px; }
+
+section { 
+    scroll-margin-top: 32px; 
 }
+
+@media (min-width: 768px) {
+    section { 
+        scroll-margin-top: 100px; 
+    }
+}
+
 .glass-card {
-    background: rgba(30, 41, 59, 0.7); 
+    /* Ein sanfteres, helleres Glas, das freundlicher wirkt */
+    background: rgba(35, 55, 75, 0.65); 
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.3);
 }
+
 .animate-float {
     animation: none !important;
     transform: translateY(0) !important;
@@ -721,36 +731,66 @@ dialog.is-closing::backdrop { animation: backdropFadeOut 0.2s ease-in forwards; 
 @keyframes backdropFadeOut { from { opacity: 1; backdrop-filter: blur(4px); } to { opacity: 0; backdrop-filter: blur(0px); } }
 
 /* ==========================================
-   6. DARK CINEMATIC OVERRIDES (Atmospheric Light Blue)
+   6. DARK CINEMATIC OVERRIDES (Medium Atmospheric Blue)
    ========================================== */
+
+/* Texte (Klares Weiß und sehr helles Grau für optimale Lesbarkeit) */
 .text-brand-900, .text-slate-900, .text-slate-800 { color: #ffffff; } 
-.text-slate-600, .text-slate-700 { color: #cbd5e1; } 
-.text-slate-500, .text-slate-400 { color: #94a3b8; }
+.text-slate-600, .text-slate-700 { color: #f1f5f9; } 
+.text-slate-500, .text-slate-400 { color: #cbd5e1; }
+
+/* Akzente (Sanftes, helles Eisblau, das nicht blendet) */
 .text-brand-100, .text-brand-200, .text-brand-400, .text-brand-500, 
-.text-brand-600, .text-brand-700, .text-brand-800 { color: #38bdf8; }
-.from-brand-600 { --tw-gradient-from: #38bdf8; }
+.text-brand-600, .text-brand-700, .text-brand-800 { color: #7dd3fc; }
+
+.from-brand-600 { --tw-gradient-from: #7dd3fc; }
 .to-brand-400 { --tw-gradient-to: #e0f2fe; }
-.bg-brand-900, .bg-brand-700, .bg-brand-500 { background-color: #0284c7; color: #ffffff; border: 1px solid rgba(255,255,255,0.15); } 
+
+/* Buttons Haupt (Ruhiges Blau, das beim Hovern leicht DUNKELER wird, damit Text lesbar bleibt) */
+.bg-brand-900, .bg-brand-700, .bg-brand-500 { background-color: #0284c7; color: #ffffff; border: 1px solid rgba(255,255,255,0.2); } 
 .hover\:bg-brand-800:hover { background-color: #0369a1; }
-.bg-white, .bg-white\/80, .bg-white\/90, .bg-white\/95 { background-color: rgba(15, 23, 42, 0.85); border-color: rgba(255,255,255,0.08); color: #ffffff; }
+
+/* Navigationsleiste und Haupt-Glaskarten (Sanftes Mittelblau) */
+.bg-white, .bg-white\/80, .bg-white\/90, .bg-white\/95 { 
+    background-color: rgba(30, 45, 65, 0.85); 
+    border-color: rgba(255,255,255,0.1); 
+    color: #ffffff; 
+}
+
+/* Innere Pille der Navi & Badges */
 .bg-brand-50, .bg-brand-50\/30, .bg-brand-50\/50, .bg-brand-50\/80, 
-.bg-slate-50, .bg-slate-100 { background-color: rgba(30, 41, 59, 0.6); }
-.border-brand-50, .border-brand-100, .border-brand-200, .border-white\/50, .border-slate-100 { border-color: rgba(255, 255, 255, 0.08); }
-.from-brand-300 { --tw-gradient-from: rgba(255,255,255,0.05); }
+.bg-slate-50, .bg-slate-100 { 
+    background-color: rgba(45, 70, 95, 0.5); 
+}
+
+/* Linien dezent aber sichtbar */
+.border-brand-50, .border-brand-100, .border-brand-200, .border-white\/50, .border-slate-100 { 
+    border-color: rgba(255, 255, 255, 0.15); 
+}
+.from-brand-300 { --tw-gradient-from: rgba(255,255,255,0.1); }
 
 /* ==========================================
-   NEU: SAUBERE KLASSEN (Ganz ohne Zwang)
+   NEU: SAUBERE KLASSEN (Perfekte Hover-Effekte)
    ========================================== */
-.nav-link:hover { background-color: rgba(255, 255, 255, 0.05); color: #e0f2fe; }
-.card-winter { border-color: rgba(14, 165, 233, 0.3); }
-.card-winter:hover { background-color: rgba(14, 165, 233, 0.1); }
-.card-winter .icon-box { background-color: rgba(14, 165, 233, 0.15); color: #7dd3fc; }
-.card-winter:hover .icon-box { background-color: rgba(14, 165, 233, 0.25); }
-.card-winter span { color: #7dd3fc; }
+
+/* NAVIGATION HOVER: Nur ein Hauch von Hintergrund (Milchglas), Text bleibt strahlend weiß! */
+.nav-link:hover { 
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: #ffffff; 
+}
+
+/* Standorte: Hallenbad (Winter-Eisblau) */
+.card-winter { border-color: rgba(14, 165, 233, 0.4); }
+.card-winter:hover { background-color: rgba(14, 165, 233, 0.15); }
+.card-winter .icon-box { background-color: rgba(14, 165, 233, 0.2); color: #bae6fd; }
+.card-winter:hover .icon-box { background-color: rgba(14, 165, 233, 0.3); }
+.card-winter span { color: #bae6fd; }
 .card-winter span.text-slate-900 { color: #ffffff; }
-.card-summer { border-color: rgba(245, 158, 11, 0.3); }
-.card-summer:hover { background-color: rgba(245, 158, 11, 0.1); }
-.card-summer .icon-box { background-color: rgba(245, 158, 11, 0.15); color: #fbbf24; }
-.card-summer:hover .icon-box { background-color: rgba(245, 158, 11, 0.25); }
-.card-summer span { color: #fbbf24; }
+
+/* Standorte: Waldschwimmbad (Sonnen-Gold/Amber) */
+.card-summer { border-color: rgba(245, 158, 11, 0.4); }
+.card-summer:hover { background-color: rgba(245, 158, 11, 0.15); }
+.card-summer .icon-box { background-color: rgba(245, 158, 11, 0.2); color: #fde68a; }
+.card-summer:hover .icon-box { background-color: rgba(245, 158, 11, 0.3); }
+.card-summer span { color: #fde68a; }
 .card-summer span.text-slate-900 { color: #ffffff; }
