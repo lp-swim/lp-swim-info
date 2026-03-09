@@ -8,8 +8,8 @@
 @font-face { font-family: 'Poppins'; font-style: normal; font-weight: 700; src: url('./fonts/poppins-v24-latin-700.woff2') format('woff2'); font-display: swap; }
 
 body { 
-    color: #334155; 
-    background: linear-gradient(to bottom, #e0f2fe 0%, #f0f9ff 50%, #ffffff 100%);
+    color: #1e293b; 
+    background: linear-gradient(to bottom, #bae6fd 0%, #e2e8f0 60%, #f8fafc 100%);
     background-attachment: fixed;
     text-rendering: optimizeLegibility;
 }
@@ -25,11 +25,11 @@ section {
 }
 
 .glass-card {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 4px 20px -2px rgba(12, 74, 110, 0.05);
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px -4px rgba(12, 74, 110, 0.15);
 }
 
 .marquee-mask {
