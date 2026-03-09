@@ -8,8 +8,8 @@
 @font-face { font-family: 'Poppins'; font-style: normal; font-weight: 700; src: url('./fonts/poppins-v24-latin-700.woff2') format('woff2'); font-display: swap; }
 
 body { 
-    color: #c2d0d6; 
-    background: linear-gradient(to bottom, #1d2a30 0%, #263c45 50%, #151e23 100%);
+    color: #e2e8f0; 
+    background: linear-gradient(to bottom, #1a1e23 0%, #1e272a 50%, #111417 100%);
     background-attachment: fixed;
     text-rendering: optimizeLegibility;
 }
@@ -25,11 +25,11 @@ section {
 }
 
 .glass-card {
-    background: rgba(30, 45, 53, 0.65);
+    background: rgba(22, 27, 34, 0.7); 
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(194, 208, 214, 0.05);
-    box-shadow: 0 8px 32px -4px rgba(10, 15, 18, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.6);
 }
 
 .marquee-mask {
@@ -2323,26 +2323,28 @@ dialog.is-closing::backdrop {
 }
 
 /* ==========================================
-   6. DARK CINEMATIC OVERRIDES (Cool Water)
+   6. DARK CINEMATIC OVERRIDES (Leserlich & Warm)
    ========================================== */
-.text-brand-900, .text-white, .text-slate-900 { color: #c2d0d6; } 
-.text-slate-600, .text-slate-700 { color: #8a9ca3; }
-.text-brand-600, .text-brand-700, .text-blue-500, .text-blue-600 { color: #6d909c; }
+.text-brand-900, .text-slate-900 { color: #ffffff; } 
+.text-slate-600, .text-slate-700 { color: #cbd5e1; } 
+.text-slate-500 { color: #94a3b8; }
 
-.from-brand-600 { --tw-gradient-from: #6d909c; }
-.to-brand-400 { --tw-gradient-to: #b5c7cd; }
+.text-brand-600, .text-brand-700, .text-blue-500, .text-blue-600 { color: #5eead4; }
 
-.bg-brand-900, .bg-brand-700 { background-color: #2e434d; color: #c2d0d6; border: 1px solid rgba(194,208,214,0.1); } 
-.hover\:bg-brand-800:hover { background-color: #24353d; }
+.from-brand-600 { --tw-gradient-from: #5eead4; }
+.to-brand-400 { --tw-gradient-to: #ccfbf1; }
 
-.bg-white, .bg-white\/80, .bg-white\/90, .bg-white\/95 { background-color: rgba(30, 45, 53, 0.7); border-color: rgba(194,208,214,0.05); color: #c2d0d6; }
-.bg-brand-50, .bg-slate-50, .bg-slate-100 { background-color: rgba(30, 45, 53, 0.4); }
+.bg-brand-900, .bg-brand-700 { background-color: #1f2d35; color: #ffffff; border: 1px solid rgba(255,255,255,0.15); } 
+.hover\:bg-brand-800:hover { background-color: #172228; }
+
+.bg-white, .bg-white\/80, .bg-white\/90, .bg-white\/95 { background-color: rgba(22, 27, 34, 0.85); border-color: rgba(255,255,255,0.08); color: #ffffff; }
+.bg-brand-50, .bg-slate-50, .bg-slate-100 { background-color: rgba(30, 36, 44, 0.5); }
 
 .border-brand-50, .border-brand-100, .border-brand-200, .border-white\/50, .border-slate-100, .border-blue-100, .border-yellow-100 { 
-    border-color: rgba(194, 208, 214, 0.05); 
+    border-color: rgba(255, 255, 255, 0.08); 
 }
-.from-brand-300 { --tw-gradient-from: rgba(194,208,214,0.1); }
+.from-brand-300 { --tw-gradient-from: rgba(255,255,255,0.05); }
 
-.bg-blue-50 { background-color: rgba(109, 144, 156, 0.15); }
-.bg-yellow-50 { background-color: rgba(161, 184, 192, 0.1); }
-.text-yellow-500 { color: #8a9ca3; }
+.bg-blue-50 { background-color: rgba(94, 234, 212, 0.1); }
+.bg-yellow-50 { background-color: rgba(250, 204, 21, 0.1); }
+.text-yellow-500 { color: #cbd5e1; }
