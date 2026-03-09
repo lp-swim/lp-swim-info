@@ -15,7 +15,13 @@ body {
 }
 
 section { 
-    scroll-margin-top: 100px; 
+    scroll-margin-top: 32px; /* Kleiner, sauberer Abstand für Handys (ohne fixierte Navigation) */
+}
+
+@media (min-width: 768px) {
+    section { 
+        scroll-margin-top: 100px; /* Platzhalter für die fixierte Navigation auf dem PC */
+    }
 }
 
 .glass-card {
