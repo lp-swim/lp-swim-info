@@ -224,13 +224,11 @@
                     <div class="absolute inset-0 bg-gradient-to-tr from-brand-200 to-white rounded-full blur-2xl opacity-60 animate-pulse"></div>
                     
                     <div class="relative w-full h-full glass-card rounded-[2.5rem] flex items-center justify-center animate-float overflow-hidden border border-white shadow-lg">
-                        <div class="absolute bottom-0 left-0 w-[200%] h-1/2 opacity-60 animate-wave-slow">
-                            <svg aria-hidden="true" class="w-full h-full text-brand-200" fill="currentColor" preserveAspectRatio="none"><use href="#icon-wave-1"></use></svg>
-                        </div>
-                        <div class="absolute bottom-0 left-0 w-[200%] h-2/5 opacity-70 animate-wave-fast">
-                            <svg aria-hidden="true" class="w-full h-full text-brand-300" fill="currentColor" preserveAspectRatio="none"><use href="#icon-wave-2"></use></svg>
-                        </div>
-                        <svg aria-hidden="true" class="relative z-10 w-32 h-32 md:w-40 md:h-40 text-brand-600 opacity-90 animate-seahorse-swim drop-shadow-md" fill="currentColor"><use href="#icon-seepferdchen"></use></svg>
+                        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
+                            <source src="./video/vorschau.mp4" type="video/mp4">
+                        </video>
+                        
+                        <div class="absolute inset-0 bg-brand-900/20 mix-blend-multiply pointer-events-none"></div>
                     </div>
                 </div>
             </div>
@@ -940,4 +938,5 @@
     
 </body>
 </html>
+
 
