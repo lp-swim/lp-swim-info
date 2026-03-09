@@ -8,27 +8,28 @@
 @font-face { font-family: 'Poppins'; font-style: normal; font-weight: 700; src: url('./fonts/poppins-v24-latin-700.woff2') format('woff2'); font-display: swap; }
 
 body { 
-    color: #e2e8f0; /* Weiches Off-White für weniger Kontrast-Härte */
-    /* Cinematic Vignette: Dunkles Midnight zu tiefem Charcoal */
-    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+    color: #f8fafc; /* Strahlendes Weiß für den Text */
+    /* HELLERER CINEMATIC LOOK: Ein tiefes, aber leuchtendes Ozean-Blau zu einem weichen Slate */
+    background: radial-gradient(circle at 50% -20%, #334e68 0%, #1a2c42 60%, #101d2d 100%);
     background-attachment: fixed;
     text-rendering: optimizeLegibility;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
 }
 
 section { scroll-margin-top: 32px; }
 @media (min-width: 768px) { section { scroll-margin-top: 100px; } }
 
 .glass-card {
-    /* "Smoked Glass" - dunkler, edler, tiefer */
-    background: rgba(15, 23, 42, 0.65); 
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.5);
+    /* "Frosted Crystal" - Helleres Glas, das Licht einfängt */
+    background: rgba(255, 255, 255, 0.07); 
+    backdrop-filter: blur(25px) saturate(160%);
+    -webkit-backdrop-filter: blur(25px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
 .animate-float { animation: none !important; transform: translateY(0) !important; }
+
 .marquee-mask {
     -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
     mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
