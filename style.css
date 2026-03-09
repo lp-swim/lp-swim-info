@@ -8,36 +8,27 @@
 @font-face { font-family: 'Poppins'; font-style: normal; font-weight: 700; src: url('./fonts/poppins-v24-latin-700.woff2') format('woff2'); font-display: swap; }
 
 body { 
-    color: #f8fafc; /* Klares, reines Weiß für die Schrift */
-    /* Ein edles Mittel-Blau: Heller, atmosphärisch, wie auf deinem Kontaktbild */
-    background: linear-gradient(to bottom, #1e3a5f 0%, #2b5074 50%, #3a6b8c 100%);
+    color: #e2e8f0; /* Weiches Off-White für weniger Kontrast-Härte */
+    /* Cinematic Vignette: Dunkles Midnight zu tiefem Charcoal */
+    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
     background-attachment: fixed;
     text-rendering: optimizeLegibility;
+    letter-spacing: -0.01em;
 }
 
-section { 
-    scroll-margin-top: 32px; 
-}
-
-@media (min-width: 768px) {
-    section { 
-        scroll-margin-top: 100px; 
-    }
-}
+section { scroll-margin-top: 32px; }
+@media (min-width: 768px) { section { scroll-margin-top: 100px; } }
 
 .glass-card {
-    /* Ein sanfteres, helleres Glas, das freundlicher wirkt */
-    background: rgba(35, 55, 75, 0.65); 
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.3);
+    /* "Smoked Glass" - dunkler, edler, tiefer */
+    background: rgba(15, 23, 42, 0.65); 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
-.animate-float {
-    animation: none !important;
-    transform: translateY(0) !important;
-}
+.animate-float { animation: none !important; transform: translateY(0) !important; }
 .marquee-mask {
     -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
     mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
