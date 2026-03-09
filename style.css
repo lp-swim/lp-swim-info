@@ -8,8 +8,8 @@
 @font-face { font-family: 'Poppins'; font-style: normal; font-weight: 700; src: url('./fonts/poppins-v24-latin-700.woff2') format('woff2'); font-display: swap; }
 
 body { 
-    color: #f0ece1; 
-    background: linear-gradient(to bottom, #2b353a 0%, #1e2528 50%, #121618 100%);
+    color: #f1f5f9; 
+    background: linear-gradient(to bottom, #0f172a 0%, #112a46 50%, #1e4b7a 100%);
     background-attachment: fixed;
     text-rendering: optimizeLegibility;
 }
@@ -25,10 +25,10 @@ section {
 }
 
 .glass-card {
-    background: rgba(30, 37, 41, 0.7); 
+    background: rgba(15, 23, 42, 0.65); 
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(240, 236, 225, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.6);
 }
 
@@ -2323,52 +2323,51 @@ dialog.is-closing::backdrop {
 }
 
 /* ==========================================
-   6. DARK CINEMATIC OVERRIDES (Teal & Orange / Cinematic)
+   6. DARK CINEMATIC OVERRIDES (Atmospheric Light Blue)
    ========================================== */
+/* Texte (Strahlendes Weiß und klares Eisgrau für perfekte Lesbarkeit auf dunklem Grund) */
+.text-brand-900, .text-slate-900, .text-slate-800 { color: #ffffff; } 
+.text-slate-600, .text-slate-700 { color: #cbd5e1; } 
+.text-slate-500, .text-slate-400 { color: #94a3b8; }
 
-/* Texte (Warmes Creme-Weiß für den perfekten Kontrast zum bläulichen Hintergrund) */
-.text-brand-900, .text-slate-900, .text-slate-800 { color: #fdfbf7; } 
-.text-slate-600, .text-slate-700 { color: #d1cbc3; } 
-.text-slate-500, .text-slate-400 { color: #a69f96; }
-
-/* Akzente im Hollywood-Stil: Warmes Gold/Karamell (Keine blaue Schrift!) */
+/* Akzente im Kino-Stil: Strahlendes, klares Hellblau (wie leuchtendes Pool-Wasser) */
 .text-brand-100, .text-brand-200, .text-brand-400, .text-brand-500, 
 .text-brand-600, .text-brand-700, .text-brand-800,
 .text-blue-400, .text-blue-500, .text-blue-600 { 
-    color: #d4a373; 
+    color: #38bdf8; 
 }
 
-/* Farbverlauf Überschrift "im Wasser zählt" (Gold zu hellem Sand) */
-.from-brand-600 { --tw-gradient-from: #d4a373; }
-.to-brand-400 { --tw-gradient-to: #faedcd; }
+/* Farbverlauf Überschrift "im Wasser zählt" (Leuchtendes Hellblau zu Weiß) */
+.from-brand-600 { --tw-gradient-from: #38bdf8; }
+.to-brand-400 { --tw-gradient-to: #e0f2fe; }
 
-/* Buttons (Dunkles Karamell mit starkem Kontrast) */
-.bg-brand-900, .bg-brand-700, .bg-brand-500 { background-color: #5c432b; color: #fdfbf7; border: 1px solid rgba(253,251,247,0.1); } 
-.hover\:bg-brand-800:hover { background-color: #4a3420; }
+/* Buttons (Sattes Cinematic Blue) */
+.bg-brand-900, .bg-brand-700, .bg-brand-500 { background-color: #0284c7; color: #ffffff; border: 1px solid rgba(255,255,255,0.15); } 
+.hover\:bg-brand-800:hover { background-color: #0369a1; }
 
-/* Navigationsleiste und Haupt-Glaskarten (Nimmt den dezenten Blaustich auf) */
+/* Navigationsleiste und Haupt-Glaskarten (Tiefes Nachtblau, leicht transparent) */
 .bg-white, .bg-white\/80, .bg-white\/90, .bg-white\/95 { 
-    background-color: rgba(30, 37, 41, 0.85); 
-    border-color: rgba(240,236,225,0.06); 
-    color: #fdfbf7; 
+    background-color: rgba(15, 23, 42, 0.85); 
+    border-color: rgba(255,255,255,0.08); 
+    color: #ffffff; 
 }
 
-/* Innere Pille der Navi & Badges (Ein noch tieferer, dunkler Schiefer-Ton - kein Grau!) */
+/* Innere Pille der Navi & Badges (Tiefblaues Glas, kein Grau mehr!) */
 .bg-brand-50, .bg-brand-50\/30, .bg-brand-50\/50, .bg-brand-50\/80, 
 .bg-slate-50, .bg-slate-100, .bg-blue-50 { 
-    background-color: rgba(18, 22, 24, 0.6); 
+    background-color: rgba(30, 41, 59, 0.6); 
 }
 
 /* Linien dezent aber sichtbar */
 .border-brand-50, .border-brand-100, .border-brand-200, .border-white\/50, .border-slate-100, .border-blue-100, .border-yellow-100 { 
-    border-color: rgba(240, 236, 225, 0.06); 
+    border-color: rgba(255, 255, 255, 0.08); 
 }
-.from-brand-300 { --tw-gradient-from: rgba(240,236,225,0.05); }
+.from-brand-300 { --tw-gradient-from: rgba(255,255,255,0.05); }
 
 /* Icons & Hover-States anpassen */
-.bg-yellow-50 { background-color: rgba(250, 237, 205, 0.1); } 
-.text-yellow-500 { color: #d1cbc3; }
+.bg-yellow-50 { background-color: rgba(56, 189, 248, 0.15); } /* Hellblauer Schimmer für die Badges */
+.text-yellow-500 { color: #38bdf8; }
 
-/* Hover-Effekte in der Navi (Sehr dunkles, sanftes Aufleuchten) */
-.hover\:bg-white:hover { background-color: rgba(43, 53, 59, 0.4); } 
-.hover\:text-brand-600:hover { color: #faedcd; }
+/* Hover-Effekte in der Navi (Sanftes, hellblaues Aufleuchten statt hartem Weiß) */
+.hover\:bg-white:hover { background-color: rgba(56, 189, 248, 0.2); } 
+.hover\:text-brand-600:hover { color: #ffffff; }
