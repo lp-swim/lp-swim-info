@@ -9,7 +9,7 @@
 
 body { 
     color: #334155; 
-    background: linear-gradient(to bottom, #e0f2fe 0%, #f0f9ff 40%, #f8fafc 100%);
+    background: linear-gradient(to bottom, #bae6fd 0%, #e0f2fe 50%, #f1f5f9 100%);
     background-attachment: fixed;
     text-rendering: optimizeLegibility;
 }
@@ -25,11 +25,11 @@ section {
 }
 
 .glass-card {
-    background: rgba(248, 250, 252, 0.85); 
+    background: rgba(241, 245, 249, 0.85); 
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.4); 
-    box-shadow: 0 4px 20px -2px rgba(12, 74, 110, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    box-shadow: 0 4px 20px -2px rgba(12, 74, 110, 0.08); 
 }
 
 .marquee-mask {
