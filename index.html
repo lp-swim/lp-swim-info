@@ -65,7 +65,7 @@
     <link rel="preload" href="./fonts/poppins-v24-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./fonts/poppins-v24-latin-700.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preconnect" href="https://formspree.io" crossorigin>    
-    <link rel="stylesheet" href="./style.css?v=3">
+    <link rel="stylesheet" href="./style.css?v=1">
 </head>
 
 <body class="antialiased pb-0 selection:bg-brand-200 selection:text-brand-900">
@@ -173,10 +173,10 @@
         </a>
 
         <div class="flex items-center gap-2 bg-brand-50/80 p-1.5 rounded-full border border-brand-100">
-    <a class="nav-link px-6 py-2 rounded-full text-sm font-bold text-brand-900 transition-all" href="#angebote" aria-label="Zur Sektion Angebote springen">Angebot</a>
-    <a class="nav-link px-6 py-2 rounded-full text-sm font-bold text-brand-900 transition-all" href="#standorte" aria-label="Zur Sektion Standort springen">Standort</a>
-    <a class="nav-link px-6 py-2 rounded-full text-sm font-bold text-brand-900 transition-all" href="#preisuebersicht" data-open-modal="preisModal" aria-haspopup="dialog" aria-expanded="false" aria-controls="preisModal" aria-label="Preisübersicht als Dialogfenster öffnen">Preise</a>        
-</div>
+            <a class="nav-link px-6 py-2 rounded-full text-sm font-bold text-brand-900 transition-all hover:bg-white hover:text-brand-600 hover:shadow-sm" href="#angebote" aria-label="Zur Sektion Angebote springen">Angebot</a>
+            <a class="nav-link px-6 py-2 rounded-full text-sm font-bold text-brand-900 transition-all hover:bg-white hover:text-brand-600 hover:shadow-sm" href="#standorte" aria-label="Zur Sektion Standort springen">Standort</a>
+            <a class="nav-link px-6 py-2 rounded-full text-sm font-bold text-brand-900 transition-all hover:bg-white hover:text-brand-600 hover:shadow-sm" href="#preisuebersicht" data-open-modal="preisModal" aria-haspopup="dialog" aria-expanded="false" aria-controls="preisModal" aria-label="Preisübersicht als Dialogfenster öffnen">Preise</a>        
+        </div>
         
         </div>
     </nav>
@@ -512,7 +512,7 @@
         </div>
         <span class="block text-xs font-bold uppercase tracking-wider mb-1">Okt – April</span>
         <span class="font-bold text-slate-900">Hallenbad</span>
-         <span class="sr-only"> (öffnet in neuem Tab)</span>    
+        <span class="sr-only"> (öffnet in neuem Tab)</span>    
     </a>
 
     <a href="https://www.stadtwerke-viernheim.de/preise-leistungen/baeder-und-sauna/waldschwimmbad/" target="_blank" rel="noopener noreferrer" class="card-summer group p-4 rounded-3xl bg-white border transition-colors text-center shadow-sm outline-none">
@@ -612,23 +612,23 @@
         </div>
     </footer>
 
-    <dialog id="preisModal" role="dialog" aria-modal="true" aria-labelledby="preisTitle" class="bg-slate-50 rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-5xl h-[90vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
+    <dialog id="preisModal" role="dialog" aria-modal="true" aria-labelledby="preisTitle" class="bg-slate-100 rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-5xl h-[90vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
         <div class="flex flex-col h-[90vh] w-full">
-            <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-slate-50 shrink-0">
+            <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-slate-100 shrink-0">
                 <h2 id="preisTitle" class="text-xl font-bold text-brand-900 break-words hyphens-auto">Preisübersicht</h2>
                 <button data-close-modal="preisModal" class="shrink-0 p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors outline-none" aria-label="Fenster schließen">
                     <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-close"></use></svg>
                 </button>
             </div>
             <div class="flex-grow overflow-hidden bg-brand-50/30 flex items-center justify-center p-4">
-                <img src="./Preisliste%2001.11.2025.webp" width="1200" height="1600" alt="LP-SWIM Preisübersicht Dokument" class="w-full h-full object-contain drop-shadow-md rounded-xl" decoding="sync" />            
+                <img src="./Preisliste%2001.11.2025.webp" width="1200" height="1600" alt="LP-SWIM Preisübersicht Dokument" class="w-full h-full object-contain drop-shadow-md rounded-xl" decoding="async" loading="lazy" />            
             </div>
         </div>
     </dialog>
 
-    <dialog id="impressumModal" role="dialog" aria-modal="true" aria-labelledby="impressumTitle" class="bg-slate-50 rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
+    <dialog id="impressumModal" role="dialog" aria-modal="true" aria-labelledby="impressumTitle" class="bg-slate-100 rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
         <div class="flex flex-col max-h-[85vh] w-full">
-            <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-slate-50 shrink-0">
+            <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-slate-100 shrink-0">
                 <h2 id="impressumTitle" class="text-xl font-bold text-brand-900 break-words hyphens-auto">Impressum</h2>
                 <button data-close-modal="impressumModal" class="shrink-0 p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors outline-none" aria-label="Fenster schließen">
                     <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-close"></use></svg>
@@ -666,9 +666,9 @@
         </div>
     </dialog>
 
-    <dialog id="datenschutzModal" role="dialog" aria-modal="true" aria-labelledby="datenschutzTitle" class="bg-slate-50 rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
+    <dialog id="datenschutzModal" role="dialog" aria-modal="true" aria-labelledby="datenschutzTitle" class="bg-slate-100 rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
         <div class="flex flex-col max-h-[85vh] w-full">
-            <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-slate-50 shrink-0">
+            <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-slate-100 shrink-0">
                 <h2 id="datenschutzTitle" class="text-xl font-bold text-brand-900 break-words hyphens-auto">DSE<br aria-hidden="true">Stand: Februar 2026</h2>
                 <button data-close-modal="datenschutzModal" class="shrink-0 p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors outline-none" aria-label="Fenster schließen">
                     <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-close"></use></svg>
@@ -772,9 +772,9 @@
         </div>
     </dialog>
 
-    <dialog id="agbModal" role="dialog" aria-modal="true" aria-labelledby="agbTitle" class="bg-slate-50 rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
+    <dialog id="agbModal" role="dialog" aria-modal="true" aria-labelledby="agbTitle" class="bg-slate-100 rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
         <div class="flex flex-col max-h-[85vh] w-full">
-            <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-slate-50 shrink-0">
+            <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-slate-100 shrink-0">
                 <h2 id="agbTitle" class="text-xl font-bold text-brand-900 break-words hyphens-auto">AGB<br aria-hidden="true">Stand: Februar 2026</h2>
                 <button data-close-modal="agbModal" class="shrink-0 p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors outline-none" aria-label="Fenster schließen">
                     <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-close"></use></svg>
@@ -877,7 +877,7 @@
         </div>
     </dialog>
 
-    <dialog id="confirmationPopup" role="dialog" aria-modal="true" aria-labelledby="confirmationTitle" class="bg-slate-50 rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-sm p-8 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm text-center">
+    <dialog id="confirmationPopup" role="dialog" aria-modal="true" aria-labelledby="confirmationTitle" class="bg-slate-100 rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-sm p-8 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm text-center">
         <div class="flex flex-col h-full w-full items-center justify-center">
             <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 shrink-0" aria-hidden="true">
                 <svg aria-hidden="true" class="w-8 h-8"><use href="#icon-check"></use></svg>
@@ -926,6 +926,7 @@
     
 </body>
 </html>
+
 
 
 
