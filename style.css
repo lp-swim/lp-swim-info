@@ -8,8 +8,8 @@
 @font-face { font-family: 'Poppins'; font-style: normal; font-weight: 700; src: url('./fonts/poppins-v24-latin-700.woff2') format('woff2'); font-display: swap; }
 
 body { 
-    color: #e2e8f0;
-    background: radial-gradient(circle at 50% 0%, #0c4a6e 0%, #0f172a 40%, #020617 100%);
+    color: #334155; 
+    background: linear-gradient(to bottom, #e0f2fe 0%, #f0f9ff 40%, #f8fafc 100%);
     background-attachment: fixed;
     text-rendering: optimizeLegibility;
 }
@@ -25,11 +25,11 @@ section {
 }
 
 .glass-card {
-    background: rgba(15, 23, 42, 0.4); 
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.08); 
-    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5); 
+    background: rgba(248, 250, 252, 0.85); 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.4); 
+    box-shadow: 0 4px 20px -2px rgba(12, 74, 110, 0.05);
 }
 
 .marquee-mask {
@@ -899,51 +899,6 @@ video {
 
 .animate-pulse {
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes seahorseSwim {
-    0%, 100% {
-        transform: translateY(0) rotate(0deg) translateX(0);
-    }
-    25% {
-        transform: translateY(-8px) rotate(3deg) translateX(2px);
-    }
-    50% {
-        transform: translateY(-14px) rotate(-1deg) translateX(-2px);
-    }
-    75% {
-        transform: translateY(-6px) rotate(2deg) translateX(1px);
-    }
-}
-
-.animate-seahorse-swim {
-    animation: seahorseSwim 6s ease-in-out infinite;
-}
-
-@keyframes wave {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-.animate-wave-fast {
-    animation: wave 8s linear infinite reverse;
-}
-
-@keyframes wave {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-.animate-wave-slow {
-    animation: wave 12s linear infinite;
 }
 
 .cursor-pointer {
