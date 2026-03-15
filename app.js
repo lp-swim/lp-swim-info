@@ -43,16 +43,24 @@
             let i = 0;
             let currentText = "";
             element.setAttribute('placeholder', "");
+            let lastTime = 0;
             
-            function type() {
-                if (i < text.length) {
+            function type(time) {
+                if (!lastTime) lastTime = time;
+                const progress = time - lastTime;
+
+                if (progress >= speed) {
                     currentText += text.charAt(i);
                     element.setAttribute('placeholder', currentText);
                     i++;
-                    setTimeout(type, speed);
+                    lastTime = time;
+                }
+                
+                if (i < text.length) {
+                    requestAnimationFrame(type);
                 }
             }
-            setTimeout(type, 500);
+            setTimeout(() => requestAnimationFrame(type), 500);
         }
 
         let typingStarted = false;
@@ -155,7 +163,7 @@
         const lastFocusable = focusableElements[focusableElements.length - 1];
 
         cookieOverlay.addEventListener('keydown', function(e) {
-            const isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+            const isTabPressed = e.key === 'Tab';
             if (!isTabPressed) return;
             if (e.shiftKey) { 
                 if (document.activeElement === firstFocusable) {
@@ -314,3 +322,4 @@
         });
     });
 })();
+
