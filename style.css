@@ -9,9 +9,19 @@
 
 body { 
     color: #334155; 
-    background: linear-gradient(to bottom, #bae6fd 0%, #e0f2fe 50%, #f1f5f9 100%);
-    background-attachment: fixed;
     text-rendering: optimizeLegibility;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10;
+    background: linear-gradient(to bottom, #bae6fd 0%, #e0f2fe 50%, #f1f5f9 100%);
+    pointer-events: none;
 }
 
 section { 
