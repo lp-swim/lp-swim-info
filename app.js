@@ -38,54 +38,20 @@
         }
     }
     
-    function initObserverAndTypewriter() {
-        function startTypeWriter(element, text, speed = 40) {
-            let i = 0;
-            let currentText = "";
-            element.setAttribute('placeholder', "");
-            let lastTime = 0;
-            
-            function type(time) {
-                if (!lastTime) lastTime = time;
-                const progress = time - lastTime;
-
-                if (progress >= speed) {
-                    currentText += text.charAt(i);
-                    element.setAttribute('placeholder', currentText);
-                    i++;
-                    lastTime = time;
-                }
-                
-                if (i < text.length) {
-                    requestAnimationFrame(type);
-                }
-            }
-            setTimeout(() => requestAnimationFrame(type), 500);
-        }
-
-        let typingStarted = false;
-
+    function initScrollAnimations() {
         const observer = new IntersectionObserver((entries) => {
             const intersectingEntries = entries.filter(e => e.isIntersecting);
             
             intersectingEntries.forEach((entry, index) => {
                 const el = entry.target;
-
-                if (el.id === 'message') {
-                    if (!typingStarted) {
-                        typingStarted = true;
-                        el.classList.remove('opacity-0'); 
-                        el.classList.add('transition-opacity', 'duration-[1500ms]', 'ease-in-out');
-                        el.style.opacity = '1';
-                        startTypeWriter(el, "Ich würde gerne meine Technik verbessern. Wie läuft die Buchung ab?");
-                    }
-                } else {
-                    el.style.transitionDelay = `${index * 150}ms`;
-                    el.classList.remove('opacity-0', 'translate-y-8');
-                    setTimeout(() => {
-                        if (el) el.style.transitionDelay = '0ms';
-                    }, 1000 + (index * 150));
-                }
+                
+                el.style.transitionDelay = `${index * 150}ms`;
+                el.classList.remove('opacity-0', 'translate-y-8');
+                
+                setTimeout(() => {
+                    if (el) el.style.transitionDelay = '0ms';
+                }, 1000 + (index * 150));
+                
                 observer.unobserve(el);
             });
         }, { threshold: 0.1 });
@@ -94,9 +60,6 @@
             el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
             observer.observe(el);
         });
-
-        const msgField = document.getElementById("message");
-        if (msgField) observer.observe(msgField);
     }
 
     function initMarquee() {
@@ -109,45 +72,6 @@
                 marquee.appendChild(clone);
             });
         }
-    }
-
-    function initForm() {
-        const form = document.getElementById('contactForm');
-        if (!form) return;
-        
-        const formMessage = document.getElementById('form-message');
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const btn = form.querySelector('button[type="submit"]');
-            const btnSpan = btn.querySelector('span');
-            const orgText = btnSpan.innerText;
-            btn.disabled = true;
-            btn.setAttribute('aria-busy', 'true'); 
-            btnSpan.innerText = 'Senden...';
-            try {
-                const res = await fetch(form.action, { 
-                    method: 'POST', 
-                    body: new FormData(form), 
-                    headers: {'Accept': 'application/json'} 
-                });
-                if (res.ok) {
-                    form.reset();
-                    openModal('confirmationPopup');
-                    formMessage.innerHTML = '<div class="text-green-600 font-bold bg-green-50 p-4 rounded-xl text-center mt-4" role="alert">Nachricht erfolgreich gesendet!</div>';
-                    formMessage.classList.remove('hidden');
-                } else {
-                    const data = await res.json().catch(() => ({}));
-                    throw new Error(data.error || 'Serverfehler aufgetreten.');
-                }
-            } catch (error) {
-                formMessage.innerHTML = '<div class="text-red-600 font-bold bg-red-50 p-4 rounded-xl text-center mt-4" role="alert">Fehler beim Senden. Bitte versuche es später erneut.</div>';
-                formMessage.classList.remove('hidden');
-            } finally {
-                btn.disabled = false;
-                btn.removeAttribute('aria-busy');
-                btnSpan.innerText = orgText;
-            }
-        });
     }
 
     function initCookieBanner() {
@@ -308,9 +232,8 @@
     });
 
     document.addEventListener('DOMContentLoaded', () => {
-        initObserverAndTypewriter();
+        initScrollAnimations();
         initMarquee();
-        initForm();
         initCookieBanner();
         initAudioReader();
 
@@ -322,4 +245,3 @@
         });
     });
 })();
-
