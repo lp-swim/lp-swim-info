@@ -920,10 +920,6 @@ video {
     user-select: none;
 }
 
-.resize-none {
-    resize: none;
-}
-
 .list-inside {
     list-style-position: inside;
 }
@@ -1893,11 +1889,6 @@ video {
 .selection\:text-brand-900::selection {
     --tw-text-opacity: 1;
     color: rgb(12 74 110 / var(--tw-text-opacity, 1));
-}
-
-.placeholder\:text-slate-400::placeholder {
-    --tw-text-opacity: 1;
-    color: rgb(148 163 184 / var(--tw-text-opacity, 1));
 }
 
 .hover\:-translate-y-0\.5:hover {
