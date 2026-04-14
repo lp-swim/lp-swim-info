@@ -180,26 +180,28 @@
             const targetId = button.getAttribute('data-read-target');
             const audioUrl = `./audio/${targetId}.mp3`;
 
-            button.addEventListener('mouseenter', () => {
-                if (!audioCache[targetId]) {
-                    audioCache[targetId] = new Audio(audioUrl);
-                    audioCache[targetId].preload = 'auto';
-                }
-            });
-
             button.addEventListener('click', () => {
                 const playIcon = button.querySelector('.icon-play');
                 const stopIcon = button.querySelector('.icon-stop');
+                
                 if (currentTarget === targetId && currentAudio && !currentAudio.paused) {
                     resetAllButtons();
                     currentTarget = null;
                     return;
                 }
+                
                 resetAllButtons();
                 currentTarget = targetId;
-                currentAudio = audioCache[targetId] || new Audio(audioUrl);
+                
+                if (!audioCache[targetId]) {
+                    audioCache[targetId] = new Audio(audioUrl);
+                    audioCache[targetId].preload = 'metadata'; 
+                }
+                
+                currentAudio = audioCache[targetId];
                 currentAudio.addEventListener('ended', () => { resetAllButtons(); currentTarget = null; });
                 currentAudio.addEventListener('error', () => { resetAllButtons(); currentTarget = null; });
+                
                 currentAudio.play().then(() => {
                     if (playIcon) playIcon.classList.add('hidden');
                     if (stopIcon) stopIcon.classList.remove('hidden');
