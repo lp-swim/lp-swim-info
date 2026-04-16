@@ -638,10 +638,19 @@
                     </p>
                 </div>
 
-                <div class="md:w-2/3 w-full glass-card rounded-[2.5rem] overflow-hidden shadow-2xl shadow-brand-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-brand-900/10">
-                    <a href="https://calendly.com/lp-swim" target="_blank" rel="noopener noreferrer" class="block w-full h-full outline-none group" aria-label="Zur Terminbuchung auf Calendly (öffnet in neuem Tab)">
-                        <img src="./Calendly%20Vorschaubild.webp" alt="Klicke hier, um zur Terminbuchung zu gelangen" width="800" height="600" loading="lazy" class="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity">
-                    </a>
+                <div class="md:w-2/3 w-full glass-card rounded-[2.5rem] overflow-hidden shadow-2xl shadow-brand-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-brand-900/10 relative group">
+                    <img src="./Calendly%20Vorschaubild.webp" alt="Vorschau Terminbuchung" width="800" height="600" loading="lazy" 
+                         class="w-full h-full min-h-[400px] object-cover grayscale opacity-80 transition-all duration-700 group-hover:grayscale-0 group-hover:opacity-100">
+    
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <a href="https://calendly.com/lp-swim" target="_blank" rel="noopener noreferrer" 
+                           class="bg-white/90 backdrop-blur px-6 py-3 rounded-full shadow-lg text-sm font-bold text-brand-900 hover:scale-110 hover:bg-white transition-all z-10 flex items-center outline-none"
+                           aria-label="Termin bei Calendly buchen (öffnet in neuem Tab)">
+                            <svg aria-hidden="true" class="w-4 h-4 mr-2 text-brand-500"><use href="#icon-calendar"></use></svg> 
+                            Termin buchen
+                            <span class="sr-only"> (öffnet in neuem Tab)</span>
+                        </a>
+                    </div>
                 </div>
                 
             </div>
