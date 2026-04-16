@@ -211,26 +211,6 @@
         });
     }
 
-    function initCalendlyLazyLoad() {
-        const calendlyDiv = document.querySelector('.calendly-inline-widget');
-        if (!calendlyDiv) return;
-
-        const observer = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const script = document.createElement('script');
-                    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-                    script.async = true;
-                    document.body.appendChild(script);
-                    
-                    obs.unobserve(entry.target);
-                }
-            });
-        }, { rootMargin: '600px' }); 
-
-        observer.observe(calendlyDiv);
-    }
-
     document.addEventListener('click', (e) => {
         const openBtn = e.target.closest('[data-open-modal]');
         if (openBtn) {
@@ -258,7 +238,6 @@
         initMarquee();
         initCookieBanner();
         initAudioReader();
-        initCalendlyLazyLoad();
 
         document.querySelectorAll('dialog').forEach(dialog => {
             dialog.addEventListener('cancel', (e) => {
