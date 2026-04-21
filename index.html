@@ -902,92 +902,121 @@
     <dialog id="agbModal" role="dialog" aria-modal="true" aria-labelledby="agbTitle" class="bg-slate-100 rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
     <div class="flex flex-col max-h-[85vh] w-full">
         <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-slate-100 shrink-0">
-            <h2 id="agbTitle" class="text-xl font-bold text-brand-900 break-words hyphens-auto">AGB<br aria-hidden="true">Stand: April 2026</h2>
-            <button data-close-modal="agbModal" class="shrink-0 p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors outline-none" aria-label="Fenster schließen">
-                <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-close"></use></svg>
+            <div>
+                <h2 id="agbTitle" class="text-xl font-bold text-brand-900 break-words">Allgemeine Geschäftsbedingungen</h2>
+                <p class="text-[10px] uppercase tracking-widest text-brand-500 font-bold mt-1">Stand: April 2026</p>
+            </div>
+            <button data-close-modal="agbModal" class="shrink-0 p-2 text-slate-500 hover:text-brand-600 hover:bg-white rounded-xl transition-all shadow-sm outline-none" aria-label="Fenster schließen">
+                <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
         </div>
 
-        <div class="p-8 overflow-y-auto space-y-8 text-sm text-slate-600 leading-relaxed">
+        <div class="p-6 md:p-10 overflow-y-auto space-y-10 text-sm text-slate-600 leading-relaxed bg-white">
             <section>
-                <h3 class="font-bold text-lg text-brand-700 mb-2">§1 Geltungsbereich & Erfüllungsgehilfen</h3>
-                <div class="space-y-3">
-                    <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                        <p class="font-semibold text-brand-900 mb-1">Geltung der Bedingungen</p>
-                        <p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen <strong>LP-SWIM (Lukas Prehn)</strong> und den Kunden über Schwimmunterricht (Einzeltraining, Hausbesuche), Schulbegleitung sowie Leistungen für Institutionen.</p>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-2 bg-brand-50 text-brand-600 rounded-lg">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                     </div>
-                    <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                        <p class="font-semibold text-brand-900 mb-1">Einsatz von Personal</p>
-                        <p>LP-SWIM ist berechtigt, die geschuldete Leistung durch qualifizierte Erfüllungsgehilfen (z. B. angestellte Trainer oder Vertretungskräfte) zu erbringen. Ein Anspruch auf Durchführung durch eine bestimmte Person besteht nicht.</p>
+                    <h3 class="font-bold text-lg text-brand-900">§1 Geltungsbereich & Vertragsgegenstand</h3>
+                </div>
+                <div class="bg-slate-50/50 p-5 rounded-2xl border border-slate-100 space-y-3">
+                    <p>Diese AGB regeln das Rechtsverhältnis zwischen <strong>LP-SWIM (Inhaber: Lukas Prehn)</strong> und seinen Kunden. Sie gelten für sämtliche Leistungen wie herkömmliche Trainerstunden, Hausbesuche bei Privatpersonen sowie Dienstleistungen für Schulen und sonstige Institutionen.</p>
+                    <p>LP-SWIM ist berechtigt, die geschuldeten Leistungen auch durch qualifizierte Erfüllungsgehilfen (z. B. angestellte Trainer oder spezialisierte Vertretungskräfte) zu erbringen. Ein Anspruch auf die Durchführung durch eine spezifische Person besteht nicht.</p>
+                </div>
+            </section>
+
+            <section>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-2 bg-brand-50 text-brand-600 rounded-lg">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-lg text-brand-900">§2 Buchungsmodelle & Vertragsschluss</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-5 rounded-2xl border border-brand-100 bg-white shadow-sm">
+                        <p class="font-bold text-brand-700 mb-2 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-brand-400"></span> Standard-Trainerstunden
+                        </p>
+                        <p class="text-xs leading-relaxed">Für Termine innerhalb der im Online-Kalender angezeigten Kapazitäten kommt der Vertrag unmittelbar durch den erfolgreichen Abschluss des Buchungsprozesses und die zeitgleiche Zahlung via PayPal zustande.</p>
+                    </div>
+                    <div class="p-5 rounded-2xl border border-brand-100 bg-white shadow-sm">
+                        <p class="font-bold text-brand-700 mb-2 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-brand-400"></span> Individualanfragen
+                        </p>
+                        <p class="text-xs leading-relaxed">Hausbesuche sowie Anfragen von Schulen oder Institutionen erfolgen als unverbindliche Anfrage via Calendly. Der Kunde erhält daraufhin eine automatisierte E-Mail mit der Aufforderung zur individuellen Terminabstimmung via <strong>WhatsApp</strong>.</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-4 bg-brand-50/50 rounded-xl border border-brand-100 text-xs italic">
+                    <strong>Hinweis:</strong> Bei Individualanfragen wird der Vertrag erst rechtsverbindlich, sobald LP-SWIM den Termin bestätigt und dem Kunden einen persönlichen Zahlungslink zur Vorkasse übermittelt hat.
+                </div>
+            </section>
+
+            <section>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-2 bg-brand-50 text-brand-600 rounded-lg">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-lg text-brand-900">§3 Preise & Zahlungsmodalitäten</h3>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-slate-50/80 p-5 rounded-2xl border border-slate-100">
+                        <p class="font-semibold text-brand-900 mb-1">Prinzip der Vorkasse</p>
+                        <p>Sämtliche Leistungen sind im Voraus zu bezahlen. Direktbuchungen werden über die im Portal integrierte PayPal-Schnittstelle abgewickelt. Bei individuell vereinbarten Terminen (WhatsApp/Schulen) erfolgt die Zahlung über einen separaten Zahlungslink.</p>
+                    </div>
+                    <div class="flex items-start gap-3 p-4 bg-orange-50 rounded-xl border border-orange-100">
+                        <svg class="w-5 h-5 text-orange-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        <p class="text-xs text-orange-900"><strong>Wichtiger Hinweis zu Fremdkosten:</strong> Eintrittspreise für öffentliche Badeanstalten sind ausdrücklich <u>nicht</u> im Honorar von LP-SWIM enthalten und müssen vom Kunden oder der Begleitperson eigenständig vor Ort entrichtet werden.</p>
                     </div>
                 </div>
             </section>
 
             <section>
-                <h3 class="font-bold text-lg text-brand-700 mb-2">§2 Vertragsschluss & Buchungswege</h3>
-                <div class="space-y-3">
-                    <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100">
-                        <p class="font-semibold text-brand-900 mb-2">1. Herkömmliche Trainerstunden (Direktbuchung)</p>
-                        <p>Bei Terminen innerhalb der im Online-Portal angezeigten Zeiten kommt der Vertrag unmittelbar durch Abschluss des Buchungsprozesses und erfolgreiche Zahlung (via PayPal) zustande.</p>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-2 bg-brand-50 text-brand-600 rounded-lg">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
-                    <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100">
-                        <p class="font-semibold text-brand-900 mb-2">2. Hausbesuche, Schulen & Institutionen (Individualanfrage)</p>
-                        <p class="mb-2">Für Leistungen außerhalb des Standard-Kalenders (z. B. Privatpools oder Schulbegleitung) gilt folgender Ablauf:</p>
-                        <ul class="list-disc list-inside space-y-1 ml-2 text-xs sm:text-sm">
-                            <li><strong>Anfrage:</strong> Übermittlung der Daten via Calendly-Formular (unverbindliche Anfrage).</li>
-                            <li><strong>Kontaktaufnahme:</strong> Der Kunde erhält eine automatisierte E-Mail mit dem Link zur individuellen Terminfindung via WhatsApp.</li>
-                            <li><strong>Terminfindung:</strong> Die konkrete Abstimmung erfolgt ausschließlich persönlich über WhatsApp.</li>
-                            <li><strong>Vertragsschluss:</strong> Der Vertrag wird erst verbindlich, wenn LP-SWIM den Termin bestätigt und einen individuellen Zahlungslink übermittelt.</li>
-                        </ul>
-                    </div>
+                    <h3 class="font-bold text-lg text-brand-900">§4 Stornierung & Ausfallentschädigung</h3>
+                </div>
+                <div class="bg-white border-2 border-brand-50 p-6 rounded-3xl space-y-4">
+                    <p>Vereinbarte Termine sind verbindlich. Da es sich um ein individuelles Einzelsetting handelt, ist eine kurzfristige Neubelegung bei Absagen in der Regel nicht möglich.</p>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3">
+                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <p><strong>Fristgerechte Absage:</strong> Bis zu 48 Stunden vor dem Termin kann dieser kostenfrei storniert oder verschoben werden.</p>
+                        </li>
+                        <li class="flex gap-3">
+                            <svg class="w-5 h-5 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                            <div>
+                                <p><strong>Kurzfristige Absage (< 48h):</strong> Bei Absagen unter 48 Stunden oder Nichterscheinen wird das volle Honorar (100 %) als Ausfallentschädigung fällig (§ 615 BGB).</p>
+                                <p class="text-[11px] text-slate-400 mt-1">Dem Kunden bleibt der Nachweis gestattet, dass LP-SWIM durch den Ausfall kein oder ein wesentlich geringerer Schaden entstanden ist.</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </section>
 
             <section>
-                <h3 class="font-bold text-lg text-brand-700 mb-2">§3 Vergütung & Zahlungsbedingungen</h3>
-                <div class="space-y-3">
-                    <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                        <p class="font-semibold text-brand-900 mb-1">Zahlungsweg</p>
-                        <p>Die Vergütung ist als Vorkasse zu leisten. Bei Direktbuchungen erfolgt dies via PayPal; bei Individualanfragen (Hausbesuche/Schulen) über den gesendeten Zahlungslink. Ohne fristgerechten Zahlungseingang besteht kein Anspruch auf Durchführung des Termins.</p>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-2 bg-brand-50 text-brand-600 rounded-lg">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01"></path></svg>
                     </div>
-                    <div class="bg-orange-50 p-3 rounded-xl border border-orange-100 text-orange-800 flex items-start gap-3">
-                        <svg aria-hidden="true" class="w-5 h-5 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <p class="text-xs font-medium">Hinweis: Eintrittspreise für öffentliche Bäder sind nicht im Honorar enthalten. Bei Hausbesuchen trägt der Kunde die Verantwortung für die Betriebssicherheit des privaten Pools.</p>
+                    <h3 class="font-bold text-lg text-brand-900">§5 Haftung & Aufsichtspflicht</h3>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-slate-50/50 p-5 rounded-2xl border border-slate-100">
+                        <p class="font-semibold text-brand-900 mb-1">Allgemeine Haftung</p>
+                        <p>LP-SWIM haftet unbeschränkt für Vorsatz und grobe Fahrlässigkeit. Bei leichter Fahrlässigkeit wird die Haftung auf die Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) und auf den vertragstypischen, vorhersehbaren Schaden begrenzt.</p>
+                    </div>
+                    <div class="bg-slate-50/50 p-5 rounded-2xl border border-slate-100">
+                        <p class="font-semibold text-brand-900 mb-1">Besonderheit: Hausbesuche & Schulen</p>
+                        <p>Bei <strong>Hausbesuchen</strong> liegt die Verkehrssicherungspflicht der Poolanlage (z. B. Wasserqualität, technische Sicherheit) beim Kunden. Bei <strong>Schulbegleitungen</strong> verbleibt die pädagogische Gesamtverantwortung und Aufsichtspflicht im Sinne des Schulgesetzes stets bei der zuständigen Lehrkraft.</p>
                     </div>
                 </div>
             </section>
 
-            <section>
-                <h3 class="font-bold text-lg text-brand-700 mb-2">§4 Stornierung & Ausfallentschädigung</h3>
-                <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100">
-                    <p class="font-semibold text-brand-900 mb-2">Stornierungsfristen</p>
-                    <p class="mb-3">Eine kostenfreie Stornierung oder Verschiebung ist für alle Formate bis spätestens <strong>48 Stunden vor Beginn</strong> möglich.</p>
-                    <div class="mt-3 pl-3 border-l-2 border-red-300 text-sm text-slate-700">
-                        <p class="mb-1 text-red-800 font-bold">Kurzfristige Absage (< 48h):</p>
-                        <p>Erfolgt die Absage später oder erscheint der Kunde nicht, wird das volle Honorar (100 %) als Ausfallentschädigung fällig (§ 615 BGB). Dem Kunden bleibt der Nachweis gestattet, dass kein oder ein geringerer Schaden entstanden ist.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h3 class="font-bold text-lg text-brand-700 mb-2">§5 Haftung & Aufsichtspflicht</h3>
-                <div class="space-y-3">
-                    <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                        <p class="font-semibold text-brand-900 mb-1">Haftungsumfang</p>
-                        <p>LP-SWIM haftet unbeschränkt für Vorsatz und grobe Fahrlässigkeit. Bei leichter Fahrlässigkeit wird die Haftung auf vertragstypische, vorhersehbare Schäden begrenzt.</p>
-                    </div>
-                    <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                        <p class="font-semibold text-brand-900 mb-1">Aufsicht bei Schulen & Hausbesuchen</p>
-                        <p>Bei Schulbegleitungen bleibt die pädagogische Gesamtverantwortung bei der Lehrkraft. Bei Hausbesuchen liegt die Verkehrssicherungspflicht der Poolanlage beim Eigentümer/Kunden.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h3 class="font-bold text-lg text-brand-700 mb-2">§6 Schlussbestimmungen</h3>
-                <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                    <p>Es gilt das Recht der Bundesrepublik Deutschland. Sollten einzelne Bestimmungen unwirksam sein, bleibt die Gültigkeit der übrigen Bestimmungen unberührt (Salvatorische Klausel).</p>
-                </div>
+            <section class="pt-6 border-t border-slate-100">
+                <h3 class="font-bold text-brand-900 mb-2 text-base">§6 Schlussbestimmungen</h3>
+                <p class="text-xs text-slate-500 italic">Es gilt das Recht der Bundesrepublik Deutschland. Sollten einzelne Bestimmungen dieses Vertrages unwirksam oder undurchführbar sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen hiervon unberührt (Salvatorische Klausel).</p>
             </section>
         </div>
     </div>
