@@ -733,171 +733,172 @@
     </dialog>
 
     <dialog id="datenschutzModal" role="dialog" aria-modal="true" aria-labelledby="datenschutzTitle" class="bg-slate-100 rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
-        <div class="flex flex-col max-h-[85vh] w-full">
-            <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-slate-100 shrink-0">
-                <h2 id="datenschutzTitle" class="text-xl font-bold text-brand-900 break-words hyphens-auto">DSE<br aria-hidden="true">Stand: Februar 2026</h2>
-                <button data-close-modal="datenschutzModal" class="shrink-0 p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors outline-none" aria-label="Fenster schließen">
-                    <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-close"></use></svg>
-                </button>
+    <div class="flex flex-col max-h-[85vh] w-full">
+        <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-slate-100 shrink-0">
+            <div>
+                <h2 id="datenschutzTitle" class="text-xl font-bold text-brand-900 break-words">Datenschutzerklärung</h2>
+                <p class="text-[10px] uppercase tracking-widest text-brand-500 font-bold mt-1">Stand: April 2026</p>
             </div>
-            <div class="p-8 overflow-y-auto space-y-8 text-sm text-slate-600 leading-relaxed">
-                <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">1. Datenschutz auf einen Blick</h3>
-                    <div class="space-y-3">
-                        <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                            <p class="font-semibold text-brand-900 mb-1">Allgemeine Hinweise</p>
-                            <p class="mb-1">Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
-                        </div>
-                        <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                            <p class="font-semibold text-brand-900 mb-1">Verantwortliche Stelle</p>
-                            <p class="mb-1">Lukas Prehn<br>c/o IP-Management #6336<br>Ludwig-Erhard-Straße 18<br>20459 Hamburg<br>Deutschland</p>
-                            <a href="mailto:lpswim.info@gmail.com" class="text-brand-600 hover:underline decoration-brand-200 text-xs flex items-center gap-1 mt-2">
-                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                                lpswim.info@gmail.com
-                            </a>
-                        </div>
-                        <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                            <p class="font-semibold text-brand-900 mb-1">SSL- bzw. TLS-Verschlüsselung</p>
-                            <p class="mb-1">Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel bei Terminbuchungen, eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://“ auf „https://“ wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.</p>
-                        </div>
-                        <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                            <p class="font-semibold text-brand-900 mb-1">Speicherdauer</p>
-                            <p class="mb-1">Soweit in dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wird, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine Einwilligung widerrufen, werden Ihre Daten gelöscht, sofern keine anderen rechtlich zulässigen Gründe für die Speicherung vorliegen (z. B. steuerrechtliche Aufbewahrungsfristen).</p>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">2. Hosting</h3>
-                    <div class="space-y-3">
-                        <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                            <p class="font-semibold text-brand-900 mb-1">GitHub Pages</p>
-                            <p class="mb-1">Wir hosten diese Website bei <em>GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA</em>. Damit eine Website im Internet überhaupt aufgerufen und an Ihren Browser ausgeliefert werden kann, ist die temporäre Verarbeitung Ihrer IP-Adresse technisch zwingend erforderlich. Ein Vorab-Widerspruch (Opt-Out) ist hierbei technisch nicht möglich, da sonst keine Verbindung zustande kommt.</p>
-                            <p class="mb-1 mt-2">Die Server von GitHub erfassen automatisch Informationen in sogenannten Server-Log-Dateien (IP-Adresse, Browsertyp, Datum und Uhrzeit des Zugriffs). Dies dient der Gewährleistung der Sicherheit und Stabilität der Webseite. Die Rechtsgrundlage hierfür ist Art. 6 Abs. 1 lit. f DSGVO (Berechtigtes Interesse an einer technisch fehlerfreien Darstellung und Optimierung der Website).</p>
-                            <p class="mb-1 mt-2">GitHub ist nach dem EU-US Data Privacy Framework (DPF) zertifiziert, womit ein sicherer Datentransfer in die USA gewährleistet ist.</p>
-                            <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline decoration-brand-200 text-xs sm:text-sm flex items-center gap-1 mt-2 outline-none">
-                                <svg aria-hidden="true" class="w-3 h-3 shrink-0"><use href="#icon-external"></use></svg> Datenschutzerklärung von GitHub
-                                <span class="sr-only"> (öffnet in neuem Tab)</span>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">3. Datenerfassung auf dieser Website</h3>
-                    <div class="space-y-3">
-                        <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                            <p class="font-semibold text-brand-900 mb-1">Terminbuchung (Calendly)</p>
-                            <p class="mb-1">Für die Online-Terminbuchung nutzen wir den Dienst <em>Calendly LLC (USA)</em>. Wenn Sie einen Termin buchen, werden Ihre eingegebenen Daten (Name, E-Mail, Rechnungsanschrift) an Calendly übertragen und auf deren Servern gespeichert, um Ihre Buchung zu verwalten. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).</p>
-                            <p class="mb-1 mt-2">Wir haben mit Calendly einen <strong>Auftragsverarbeitungsvertrag (AVV)</strong> geschlossen. Dies ist ein datenschutzrechtlich vorgeschriebener Vertrag, der sicherstellt, dass Calendly die personenbezogenen Daten unserer Webseitenbesucher nur nach unseren Weisungen und unter Einhaltung der DSGVO verarbeitet. Calendly ist zudem nach dem EU-US Data Privacy Framework (DPF) zertifiziert.</p>
-                            <a href="https://calendly.com/legal/privacy-notice" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline decoration-brand-200 text-xs sm:text-sm flex items-center gap-1 mt-2 outline-none">
-                                <svg aria-hidden="true" class="w-3 h-3 shrink-0"><use href="#icon-external"></use></svg> Datenschutzerklärung von Calendly
-                                <span class="sr-only"> (öffnet in neuem Tab)</span>
-                            </a>
-                        </div>
-                        <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                            <p class="font-semibold text-brand-900 mb-1">Zahlungsdienstleister (PayPal)</p>
-                            <p class="mb-1">Für die Abwicklung von Zahlungen nutzen wir den Zahlungsdienstleister <em>PayPal (Europe) S.à r.l. et Cie, S.C.A.</em>. Wenn Sie eine Zahlung via PayPal vornehmen, werden Ihre zur Zahlungsabwicklung erforderlichen Daten (z. B. Name, E-Mail-Adresse, Rechnungsbetrag) an PayPal übermittelt. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).</p>
-                            <a href="https://www.paypal.com/de/webapps/mpp/ua/privacy-full" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline decoration-brand-200 text-xs sm:text-sm flex items-center gap-1 mt-2 outline-none">
-                                <svg aria-hidden="true" class="w-3 h-3 shrink-0"><use href="#icon-external"></use></svg> Datenschutzerklärung von PayPal
-                                <span class="sr-only"> (öffnet in neuem Tab)</span>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">4. Analyse-Tools</h3>
-                    <div class="space-y-3">
-                        <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                            <p class="font-semibold text-brand-900 mb-1">Google Analytics 4</p>
-                            <p class="mb-1">Soweit Sie Ihre Einwilligung erklärt haben (über unseren Cookie-Banner beim ersten Besuch), nutzen wir Google Analytics 4 der <em>Google Ireland Limited</em>. Der Dienst verwendet „Cookies“. Die durch das Cookie erzeugten Informationen über Ihre Benutzung dieser Webseite werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert.</p>
-                            <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline decoration-brand-200 text-xs sm:text-sm flex items-center gap-1 mt-2 outline-none">
-                                <svg aria-hidden="true" class="w-3 h-3 shrink-0"><use href="#icon-external"></use></svg> Datenschutzerklärung von Google
-                                <span class="sr-only"> (öffnet in neuem Tab)</span>
-                            </a>
-                        </div>
-                        <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                            <p class="font-semibold text-brand-900 mb-1">IP-Anonymisierung</p>
-                            <p class="mb-1">Wir haben die IP-Anonymisierung aktiviert. Dadurch wird Ihre IP-Adresse von Google innerhalb der EU gekürzt. Rechtsgrundlage: Ihre Einwilligung gem. Art. 6 Abs. 1 lit. a DSGVO. Sie können diese jederzeit widerrufen, indem Sie die Seite neu laden und die Einstellungen ändern.</p>
-                        </div>
-                        <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                            <p class="font-semibold text-brand-900 mb-1">Widerruf der Einwilligung</p>
-                            <p class="mb-3 text-sm text-slate-600">Sie können Ihre getroffene Entscheidung bezüglich der Cookies jederzeit widerrufen. Die Seite lädt dann neu und der Banner wird Ihnen erneut angezeigt.</p>
-                            <button type="button" data-revoke-cookies class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-brand-200 rounded-lg text-sm font-medium text-brand-800 hover:bg-brand-50 hover:text-brand-900 hover:shadow-sm transition-all shadow-sm outline-none" aria-label="Cookie-Einstellungen zurücksetzen und Seite neu laden">
-                                <svg aria-hidden="true" class="w-4 h-4 text-brand-600 shrink-0"><use href="#icon-cookie"></use></svg> Cookie-Einstellungen zurücksetzen
-                            </button>
-                        </div>                    
-                    </div>
-                </section>
-                <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">5. Externe Dienste <span aria-hidden="true">&amp;</span><span class="sr-only">und</span> Partner</h3>
-                    <div class="space-y-3">
-                        <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                            <p class="font-semibold text-brand-900 mb-1">Google Maps (Weiterleitung)</p>
-                            <p class="mb-1">Wir nutzen keine direkt eingebettete Karte, die beim Laden der Seite Daten überträgt. Die Karte auf unserer Seite ist ein Link. Erst wenn Sie aktiv auf den Button „Karte öffnen" klicken, werden Sie zu Google Maps weitergeleitet. Ab diesem Zeitpunkt verarbeitet Google Ihre Daten.</p>
-                            <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline decoration-brand-200 text-xs sm:text-sm flex items-center gap-1 mt-2 outline-none">
-                                <svg aria-hidden="true" class="w-3 h-3 shrink-0"><use href="#icon-external"></use></svg> Google Privacy Policy
-                                <span class="sr-only"> (öffnet in neuem Tab)</span>
-                            </a>
-                        </div>
-                        <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                            <p class="font-semibold text-brand-900 mb-1">Stadtwerke Viernheim (Bäder)</p>
-                            <p class="mb-1">Für die Durchführung der Trainerstunden nutzen wir die Infrastruktur der Stadtwerke Viernheim (Hallenbad & Waldschwimmbad). Wir verlinken auf deren Website, um Ihnen Informationen zu Eintrittspreisen und Öffnungszeiten bereitzustellen. Wenn Sie diese Links anklicken, verlassen Sie unser Angebot. Für die Datenverarbeitung auf den Seiten der Stadtwerke ist allein der Betreiber verantwortlich.</p>
-                            <a href="https://www.stadtwerke-viernheim.de/infopoint/datenschutz" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline decoration-brand-200 text-xs sm:text-sm flex items-center gap-1 mt-2 outline-none">
-                                <svg aria-hidden="true" class="w-3 h-3 shrink-0"><use href="#icon-external"></use></svg> Datenschutzerklärung Stadtwerke
-                                <span class="sr-only"> (öffnet in neuem Tab)</span>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">6. Ihre Rechte als betroffene Person</h3>
-                    <p class="mb-3 text-slate-600">Im Rahmen der geltenden gesetzlichen Bestimmungen haben Sie jederzeit folgende Rechte hinsichtlich Ihrer personenbezogenen Daten:</p>
-                    <div class="space-y-3">
-                        <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100">
-                            <p class="font-semibold text-brand-900 mb-1">Auskunft, Löschung und Berichtigung</p>
-                            <p class="mb-2 text-slate-600">Sie haben das Recht auf unentgeltliche Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten. Zudem haben Sie ein Recht auf Berichtigung oder Löschung dieser Daten.</p>
-                            <div class="mt-3 pl-3 border-l-2 border-brand-300 text-sm text-slate-600">
-                                <strong class="text-brand-800">Beispiel:</strong> Sie können mich jederzeit fragen, welche Kontaktdaten ich von Ihnen gespeichert habe. Hat sich Ihre Handynummer geändert, korrigiere ich diese. Wenn Sie keinen Unterricht mehr nehmen, können Sie mich bitten, Ihre Daten zu löschen (sofern ich sie nicht noch für das Finanzamt aufheben muss).
-                            </div>
-                        </div>
-
-                        <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100">
-                            <p class="font-semibold text-brand-900 mb-1">Widerruf von Einwilligungen (Art. 7 Abs. 3 DSGVO)</p>
-                            <p class="mb-2 text-slate-600">Viele Datenverarbeitungsvorgänge (z.B. Google Analytics) sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.</p>
-                            <div class="mt-3 pl-3 border-l-2 border-brand-300 text-sm text-slate-600">
-                                <strong class="text-brand-800">Beispiel:</strong> Sie haben beim ersten Besuch dieser Website dem Cookie-Banner zugestimmt, möchten dies nun aber doch nicht mehr. Über den Button "Cookie-Einstellungen zurücksetzen" (siehe Punkt 4) können Sie diese Erlaubnis einfach mit einem Klick zurückziehen.
-                            </div>
-                        </div>
-
-                        <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100">
-                            <p class="font-semibold text-brand-900 mb-1">Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</p>
-                            <p class="mb-2 text-slate-600">Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen, beispielsweise wenn Sie die Richtigkeit der Daten bestreiten.</p>
-                            <div class="mt-3 pl-3 border-l-2 border-brand-300 text-sm text-slate-600">
-                                <strong class="text-brand-800">Beispiel:</strong> Es gibt eine Unstimmigkeit bezüglich einer Rechnung für eine gebuchte Trainerstunde. Während wir den Sachverhalt in Ruhe klären, können Sie verlangen, dass ich Ihre Daten für diese Zeit "sperre" und für nichts anderes verwende.
-                            </div>
-                        </div>
-
-                        <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100">
-                            <p class="font-semibold text-brand-900 mb-1">Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</p>
-                            <p class="mb-2 text-slate-600">Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen.</p>
-                            <div class="mt-3 pl-3 border-l-2 border-brand-300 text-sm text-slate-600">
-                                <strong class="text-brand-800">Beispiel:</strong> Sie ziehen um und Ihr neuer Schwimmverein fragt nach den bisherigen Trainingszeiten. Sie können mich bitten, Ihnen eine einfache Excel- oder CSV-Tabelle Ihrer vergangenen Calendly-Terminbuchungen zuzusenden.
-                            </div>
-                        </div>
-
-                        <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100">
-                            <p class="font-semibold text-brand-900 mb-1">Widerspruchsrecht (Art. 21 DSGVO)</p>
-                            <p class="text-slate-600">Wenn die Datenverarbeitung auf Grundlage von Art. 6 Abs. 1 lit. e oder f DSGVO (berechtigtes Interesse, z.B. Logfiles beim Hosting) erfolgt, haben Sie jederzeit das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, gegen die Verarbeitung Ihrer personenbezogenen Daten Widerspruch einzulegen.</p>
-                        </div>
-
-                        <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100">
-                            <p class="font-semibold text-brand-900 mb-1">Beschwerderecht bei der Aufsichtsbehörde</p>
-                            <p class="text-slate-600">Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Datenschutzaufsichtsbehörde zu, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes.</p>
-                        </div>
-                    </div>
-                </section>
-            </div>
+            <button data-close-modal="datenschutzModal" class="shrink-0 p-2 text-slate-500 hover:text-brand-600 hover:bg-white rounded-xl transition-all shadow-sm outline-none" aria-label="Fenster schließen">
+                <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
         </div>
-    </dialog>
+
+        <div class="p-6 md:p-10 overflow-y-auto space-y-10 text-sm text-slate-600 leading-relaxed bg-white">
+            
+            <section>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-2 bg-brand-50 text-brand-600 rounded-lg">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-lg text-brand-900">1. Datenschutz auf einen Blick</h3>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-slate-50/80 p-5 rounded-2xl border border-slate-100">
+                        <p class="font-bold text-brand-900 mb-1">Allgemeine Hinweise</p>
+                        <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
+                    </div>
+                    <div class="bg-slate-50/80 p-5 rounded-2xl border border-slate-100">
+                        <p class="font-bold text-brand-900 mb-1">Verantwortliche Stelle</p>
+                        <p>Lukas Prehn<br>c/o IP-Management #6336<br>Ludwig-Erhard-Straße 18<br>20459 Hamburg<br>Deutschland</p>
+                        <a href="mailto:lpswim.info@gmail.com" class="text-brand-600 hover:text-brand-800 font-medium text-sm flex items-center gap-2 mt-3 outline-none">
+                            <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            lpswim.info@gmail.com
+                        </a>
+                    </div>
+                    <div class="bg-slate-50/80 p-5 rounded-2xl border border-slate-100">
+                        <p class="font-bold text-brand-900 mb-1">SSL- bzw. TLS-Verschlüsselung & Speicherdauer</p>
+                        <p>Diese Seite nutzt aus Sicherheitsgründen eine SSL- bzw. TLS-Verschlüsselung (erkennbar am Schloss-Symbol im Browser). Soweit keine speziellere Speicherdauer genannt wird, verbleiben Ihre Daten bei uns, bis der Zweck entfällt oder Sie ein rechtmäßiges Löschersuchen stellen.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-2 bg-brand-50 text-brand-600 rounded-lg">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-lg text-brand-900">2. Hosting</h3>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-slate-50/80 p-5 rounded-2xl border border-slate-100">
+                        <p class="font-bold text-brand-900 mb-1">GitHub Pages</p>
+                        <p class="mb-2">Wir hosten diese Website bei <em>GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA</em>. Für die Auslieferung der Website ist die temporäre Verarbeitung Ihrer IP-Adresse technisch zwingend erforderlich (Log-Dateien).</p>
+                        <p class="mb-3">Die Rechtsgrundlage hierfür ist Art. 6 Abs. 1 lit. f DSGVO. GitHub ist nach dem EU-US Data Privacy Framework zertifiziert.</p>
+                        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-800 outline-none">
+                            <svg aria-hidden="true" class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg> 
+                            Datenschutzerklärung GitHub
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-2 bg-brand-50 text-brand-600 rounded-lg">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-lg text-brand-900">3. Buchung & Datenerfassung</h3>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-slate-50/80 p-5 rounded-2xl border border-slate-100">
+                        <p class="font-bold text-brand-900 mb-1">Terminbuchung (Calendly)</p>
+                        <p class="mb-2">Für die Online-Terminbuchung nutzen wir den Dienst <em>Calendly LLC (USA)</em>. Wenn Sie einen Termin buchen, werden Ihre eingegebenen Daten an Calendly übertragen. Die Verarbeitung erfolgt zur Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO). Ein Auftragsverarbeitungsvertrag (AVV) liegt vor.</p>
+                        <a href="https://calendly.com/legal/privacy-notice" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-800 outline-none">
+                            <svg aria-hidden="true" class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg> 
+                            Datenschutzerklärung Calendly
+                        </a>
+                    </div>
+                    <div class="bg-slate-50/80 p-5 rounded-2xl border border-slate-100">
+                        <p class="font-bold text-brand-900 mb-1">Zahlungsdienstleister (PayPal)</p>
+                        <p class="mb-2">Für die Abwicklung von Zahlungen nutzen wir den Zahlungsdienstleister <em>PayPal (Europe) S.à r.l. et Cie, S.C.A.</em>. Die zur Zahlungsabwicklung erforderlichen Daten werden an PayPal übermittelt (Art. 6 Abs. 1 lit. b DSGVO).</p>
+                        <a href="https://www.paypal.com/de/webapps/mpp/ua/privacy-full" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-800 outline-none">
+                            <svg aria-hidden="true" class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg> 
+                            Datenschutzerklärung PayPal
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-2 bg-brand-50 text-brand-600 rounded-lg">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-lg text-brand-900">4. Analyse-Tools & Cookies</h3>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-slate-50/80 p-5 rounded-2xl border border-slate-100">
+                        <p class="font-bold text-brand-900 mb-1">Google Analytics 4 & IP-Anonymisierung</p>
+                        <p class="mb-2">Soweit Sie eingewilligt haben, nutzen wir Google Analytics 4. Dabei werden Cookies verwendet und Informationen in die USA übertragen. Wir haben die IP-Anonymisierung aktiviert, wodurch Ihre IP-Adresse von Google innerhalb der EU gekürzt wird.</p>
+                        <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-800 outline-none">
+                            <svg aria-hidden="true" class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg> 
+                            Datenschutzerklärung Google
+                        </a>
+                    </div>
+                    <div class="bg-brand-50/40 p-5 rounded-2xl border border-brand-100 text-center sm:text-left sm:flex sm:items-center sm:justify-between gap-4">
+                        <div>
+                            <p class="font-bold text-brand-900 mb-1">Widerruf der Einwilligung</p>
+                            <p class="text-xs text-slate-600 mb-4 sm:mb-0">Sie können Ihre getroffene Entscheidung bezüglich der Cookies jederzeit widerrufen. Die Seite lädt dann neu.</p>
+                        </div>
+                        <button type="button" data-revoke-cookies class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-white border border-brand-200 rounded-xl text-sm font-bold text-brand-800 hover:bg-brand-50 hover:text-brand-900 hover:shadow-sm transition-all shadow-sm outline-none shrink-0" aria-label="Cookie-Einstellungen zurücksetzen und Seite neu laden">
+                            <svg aria-hidden="true" class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                            Zurücksetzen
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-2 bg-brand-50 text-brand-600 rounded-lg">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-lg text-brand-900">5. Externe Dienste & Weiterleitungen</h3>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-slate-50/80 p-5 rounded-2xl border border-slate-100">
+                        <p class="font-bold text-brand-900 mb-1">Google Maps</p>
+                        <p>Wir nutzen keine direkt eingebettete Karte. Erst wenn Sie aktiv auf den Button „Karte öffnen“ klicken, werden Sie zu Google Maps weitergeleitet. Ab diesem Zeitpunkt verarbeitet Google Ihre Daten.</p>
+                    </div>
+                    <div class="bg-slate-50/80 p-5 rounded-2xl border border-slate-100">
+                        <p class="font-bold text-brand-900 mb-1">Stadtwerke Viernheim (Bäder)</p>
+                        <p>Wir verlinken auf die Seiten der Bäder, um Ihnen Informationen zu Eintrittspreisen bereitzustellen. Für die Datenverarbeitung auf den verlinkten Seiten ist allein der Betreiber verantwortlich.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-2 bg-brand-50 text-brand-600 rounded-lg">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-lg text-brand-900">6. Ihre Rechte</h3>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-slate-50/80 p-5 rounded-2xl border border-slate-100">
+                        <p class="font-bold text-brand-900 mb-1">Auskunft, Löschung & Berichtigung</p>
+                        <p class="mb-3">Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten Daten, deren Herkunft und den Zweck der Datenverarbeitung. Ebenso haben Sie ein Recht auf Berichtigung oder Löschung.</p>
+                        <div class="pl-3 border-l-2 border-brand-300 text-xs text-slate-500">
+                            <strong class="text-brand-800">Beispiel:</strong> Sie können mich bitten, Ihre Daten zu löschen, sofern keine steuerlichen Aufbewahrungspflichten dagegensprechen.
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-slate-50/80 p-5 rounded-2xl border border-slate-100">
+                            <p class="font-bold text-brand-900 mb-1">Einschränkung & Übertragbarkeit</p>
+                            <p class="text-xs">Sie haben das Recht, die Einschränkung der Verarbeitung zu verlangen. Zudem können Sie Daten, die wir automatisiert verarbeiten, an sich oder Dritte (z.B. Ihren Schwimmverein) aushändigen lassen.</p>
+                        </div>
+                        <div class="bg-slate-50/80 p-5 rounded-2xl border border-slate-100">
+                            <p class="font-bold text-brand-900 mb-1">Widerspruch & Beschwerde</p>
+                            <p class="text-xs">Sie haben das Recht, aus persönlichen Gründen gegen Verarbeitungen Widerspruch einzulegen. Zudem steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</dialog>
 
     <dialog id="agbModal" role="dialog" aria-modal="true" aria-labelledby="agbTitle" class="bg-slate-100 rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
     <div class="flex flex-col max-h-[85vh] w-full">
@@ -912,6 +913,7 @@
         </div>
 
         <div class="p-6 md:p-10 overflow-y-auto space-y-10 text-sm text-slate-600 leading-relaxed bg-white">
+            
             <section>
                 <div class="flex items-center gap-3 mb-4">
                     <div class="p-2 bg-brand-50 text-brand-600 rounded-lg">
@@ -919,9 +921,15 @@
                     </div>
                     <h3 class="font-bold text-lg text-brand-900">§1 Geltungsbereich & Vertragsgegenstand</h3>
                 </div>
-                <div class="bg-slate-50/50 p-5 rounded-2xl border border-slate-100 space-y-3">
-                    <p>Diese AGB regeln das Rechtsverhältnis zwischen <strong>LP-SWIM (Inhaber: Lukas Prehn)</strong> und seinen Kunden. Sie gelten für sämtliche Leistungen wie herkömmliche Trainerstunden, Hausbesuche bei Privatpersonen sowie Dienstleistungen für Schulen und sonstige Institutionen.</p>
-                    <p>LP-SWIM ist berechtigt, die geschuldeten Leistungen auch durch qualifizierte Erfüllungsgehilfen (z. B. angestellte Trainer oder spezialisierte Vertretungskräfte) zu erbringen. Ein Anspruch auf die Durchführung durch eine spezifische Person besteht nicht.</p>
+                <div class="space-y-4">
+                    <div class="bg-slate-50/80 p-5 rounded-2xl border border-slate-100">
+                        <p class="font-bold text-brand-900 mb-1">Geltung der Bedingungen</p>
+                        <p>Diese AGB regeln das Rechtsverhältnis zwischen <strong>LP-SWIM (Inhaber: Lukas Prehn)</strong> und seinen Kunden. Sie gelten für sämtliche Leistungen wie herkömmliche Trainerstunden, Hausbesuche bei Privatpersonen sowie Dienstleistungen für Schulen und sonstige Institutionen.</p>
+                    </div>
+                    <div class="bg-slate-50/80 p-5 rounded-2xl border border-slate-100">
+                        <p class="font-bold text-brand-900 mb-1">Einsatz von Personal</p>
+                        <p>LP-SWIM ist berechtigt, die geschuldeten Leistungen auch durch qualifizierte Erfüllungsgehilfen (z. B. angestellte Trainer oder spezialisierte Vertretungskräfte) zu erbringen. Ein Anspruch auf die Durchführung durch eine spezifische Person besteht nicht.</p>
+                    </div>
                 </div>
             </section>
 
@@ -932,22 +940,19 @@
                     </div>
                     <h3 class="font-bold text-lg text-brand-900">§2 Buchungsmodelle & Vertragsschluss</h3>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="p-5 rounded-2xl border border-brand-100 bg-white shadow-sm">
+                <div class="space-y-4">
+                    <div class="bg-slate-50/80 p-5 rounded-2xl border border-slate-100">
                         <p class="font-bold text-brand-700 mb-2 flex items-center gap-2">
                             <span class="w-2 h-2 rounded-full bg-brand-400"></span> Standard-Trainerstunden
                         </p>
-                        <p class="text-xs leading-relaxed">Für Termine innerhalb der im Online-Kalender angezeigten Kapazitäten kommt der Vertrag unmittelbar durch den erfolgreichen Abschluss des Buchungsprozesses und die zeitgleiche Zahlung via PayPal zustande.</p>
+                        <p>Für Termine innerhalb der im Online-Kalender angezeigten Kapazitäten kommt der Vertrag unmittelbar durch den erfolgreichen Abschluss des Buchungsprozesses und die zeitgleiche Zahlung via PayPal zustande.</p>
                     </div>
-                    <div class="p-5 rounded-2xl border border-brand-100 bg-white shadow-sm">
+                    <div class="bg-slate-50/80 p-5 rounded-2xl border border-slate-100">
                         <p class="font-bold text-brand-700 mb-2 flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-brand-400"></span> Individualanfragen
+                            <span class="w-2 h-2 rounded-full bg-brand-400"></span> Individualanfragen (Hausbesuche/Schulen)
                         </p>
-                        <p class="text-xs leading-relaxed">Hausbesuche sowie Anfragen von Schulen oder Institutionen erfolgen als unverbindliche Anfrage via Calendly. Der Kunde erhält daraufhin eine automatisierte E-Mail mit der Aufforderung zur individuellen Terminabstimmung via <strong>WhatsApp</strong>.</p>
+                        <p>Anfragen erfolgen unverbindlich via Calendly. Der Kunde erhält eine automatisierte E-Mail zur individuellen Terminabstimmung via <strong>WhatsApp</strong>. Der Vertrag wird erst rechtsverbindlich, sobald LP-SWIM den Termin bestätigt und einen persönlichen Zahlungslink zur Vorkasse übermittelt hat.</p>
                     </div>
-                </div>
-                <div class="mt-4 p-4 bg-brand-50/50 rounded-xl border border-brand-100 text-xs italic">
-                    <strong>Hinweis:</strong> Bei Individualanfragen wird der Vertrag erst rechtsverbindlich, sobald LP-SWIM den Termin bestätigt und dem Kunden einen persönlichen Zahlungslink zur Vorkasse übermittelt hat.
                 </div>
             </section>
 
@@ -960,12 +965,12 @@
                 </div>
                 <div class="space-y-4">
                     <div class="bg-slate-50/80 p-5 rounded-2xl border border-slate-100">
-                        <p class="font-semibold text-brand-900 mb-1">Prinzip der Vorkasse</p>
+                        <p class="font-bold text-brand-900 mb-1">Prinzip der Vorkasse</p>
                         <p>Sämtliche Leistungen sind im Voraus zu bezahlen. Direktbuchungen werden über die im Portal integrierte PayPal-Schnittstelle abgewickelt. Bei individuell vereinbarten Terminen (WhatsApp/Schulen) erfolgt die Zahlung über einen separaten Zahlungslink.</p>
                     </div>
-                    <div class="flex items-start gap-3 p-4 bg-orange-50 rounded-xl border border-orange-100">
+                    <div class="flex items-start gap-3 p-5 bg-orange-50/80 rounded-2xl border border-orange-100">
                         <svg class="w-5 h-5 text-orange-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                        <p class="text-xs text-orange-900"><strong>Wichtiger Hinweis zu Fremdkosten:</strong> Eintrittspreise für öffentliche Badeanstalten sind ausdrücklich <u>nicht</u> im Honorar von LP-SWIM enthalten und müssen vom Kunden oder der Begleitperson eigenständig vor Ort entrichtet werden.</p>
+                        <p class="text-orange-900 text-sm"><strong>Wichtiger Hinweis zu Fremdkosten:</strong> Eintrittspreise für öffentliche Badeanstalten sind ausdrücklich <u>nicht</u> im Honorar von LP-SWIM enthalten und müssen eigenständig vor Ort entrichtet werden.</p>
                     </div>
                 </div>
             </section>
@@ -977,21 +982,26 @@
                     </div>
                     <h3 class="font-bold text-lg text-brand-900">§4 Stornierung & Ausfallentschädigung</h3>
                 </div>
-                <div class="bg-white border-2 border-brand-50 p-6 rounded-3xl space-y-4">
-                    <p>Vereinbarte Termine sind verbindlich. Da es sich um ein individuelles Einzelsetting handelt, ist eine kurzfristige Neubelegung bei Absagen in der Regel nicht möglich.</p>
-                    <ul class="space-y-4">
-                        <li class="flex gap-3">
-                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <p><strong>Fristgerechte Absage:</strong> Bis zu 48 Stunden vor dem Termin kann dieser kostenfrei storniert oder verschoben werden.</p>
-                        </li>
-                        <li class="flex gap-3">
-                            <svg class="w-5 h-5 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                            <div>
-                                <p><strong>Kurzfristige Absage (< 48h):</strong> Bei Absagen unter 48 Stunden oder Nichterscheinen wird das volle Honorar (100 %) als Ausfallentschädigung fällig (§ 615 BGB).</p>
-                                <p class="text-[11px] text-slate-400 mt-1">Dem Kunden bleibt der Nachweis gestattet, dass LP-SWIM durch den Ausfall kein oder ein wesentlich geringerer Schaden entstanden ist.</p>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="space-y-4">
+                    <div class="bg-slate-50/80 p-5 rounded-2xl border border-slate-100 flex gap-4">
+                        <div class="p-2 bg-green-50 text-green-600 rounded-full shrink-0 h-fit">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div>
+                            <p class="font-bold text-brand-900 mb-1">Fristgerechte Absage</p>
+                            <p>Bis zu 48 Stunden vor dem Termin kann dieser kostenfrei storniert oder verschoben werden.</p>
+                        </div>
+                    </div>
+                    <div class="bg-red-50/50 p-5 rounded-2xl border border-red-100 flex gap-4">
+                        <div class="p-2 bg-red-100 text-red-600 rounded-full shrink-0 h-fit">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </div>
+                        <div>
+                            <p class="font-bold text-red-900 mb-1">Kurzfristige Absage (< 48h)</p>
+                            <p class="text-red-800">Bei Absagen unter 48 Stunden oder Nichterscheinen wird das volle Honorar (100 %) als Ausfallentschädigung fällig (§ 615 BGB). Eine Neubelegung ist in diesem Zeitraum in der Regel nicht mehr möglich.</p>
+                            <p class="text-xs text-red-700/70 mt-2">Dem Kunden bleibt der Nachweis gestattet, dass durch den Ausfall kein oder ein wesentlich geringerer Schaden entstanden ist.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -1003,12 +1013,12 @@
                     <h3 class="font-bold text-lg text-brand-900">§5 Haftung & Aufsichtspflicht</h3>
                 </div>
                 <div class="space-y-4">
-                    <div class="bg-slate-50/50 p-5 rounded-2xl border border-slate-100">
-                        <p class="font-semibold text-brand-900 mb-1">Allgemeine Haftung</p>
+                    <div class="bg-slate-50/80 p-5 rounded-2xl border border-slate-100">
+                        <p class="font-bold text-brand-900 mb-1">Allgemeine Haftung</p>
                         <p>LP-SWIM haftet unbeschränkt für Vorsatz und grobe Fahrlässigkeit. Bei leichter Fahrlässigkeit wird die Haftung auf die Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) und auf den vertragstypischen, vorhersehbaren Schaden begrenzt.</p>
                     </div>
-                    <div class="bg-slate-50/50 p-5 rounded-2xl border border-slate-100">
-                        <p class="font-semibold text-brand-900 mb-1">Besonderheit: Hausbesuche & Schulen</p>
+                    <div class="bg-slate-50/80 p-5 rounded-2xl border border-slate-100">
+                        <p class="font-bold text-brand-900 mb-1">Besonderheit: Hausbesuche & Schulen</p>
                         <p>Bei <strong>Hausbesuchen</strong> liegt die Verkehrssicherungspflicht der Poolanlage (z. B. Wasserqualität, technische Sicherheit) beim Kunden. Bei <strong>Schulbegleitungen</strong> verbleibt die pädagogische Gesamtverantwortung und Aufsichtspflicht im Sinne des Schulgesetzes stets bei der zuständigen Lehrkraft.</p>
                     </div>
                 </div>
