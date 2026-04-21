@@ -692,79 +692,38 @@
         </div>
     </dialog>
 
-    <dialog id="impressumModal" role="dialog" aria-modal="true" aria-labelledby="impressumTitle" class="bg-slate-100 rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
-        <div class="flex flex-col max-h-[85vh] w-full">
-            <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-slate-100 shrink-0">
-                <h2 id="impressumTitle" class="text-xl font-bold text-brand-900 break-words hyphens-auto">Impressum</h2>
-                <button data-close-modal="impressumModal" class="shrink-0 p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors outline-none" aria-label="Fenster schließen">
-                    <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-close"></use></svg>
-                </button>            
-            </div>
-            <div class="p-8 overflow-y-auto space-y-8 text-sm text-slate-600 leading-relaxed">
-                <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">Angaben gemäß § 5 TMG</h3>
-                    <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 flex items-start gap-3">
-                        <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0" aria-hidden="true">
-                            <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-pin"></use></svg>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-brand-900 mb-1">Anschrift</p>
-                            <p>Lukas Prehn<br>c/o IP-Management #6336<br>Ludwig-Erhard-Straße 18<br>20459 Hamburg<br>Deutschland</p>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">Kontakt</h3>
-                    <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 flex items-start gap-3">
-                        <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0" aria-hidden="true">
-                            <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-mail"></use></svg>
-                        </div>
-                        <div class="break-all">
-                            <p class="font-semibold text-brand-900 mb-1">E-Mail</p>
-                            <a href="mailto:lpswim.info@gmail.com" class="text-brand-600 hover:underline decoration-brand-200 text-xs flex items-center gap-1 mt-2">
-                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                                lpswim.info@gmail.com
-                            </a>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </dialog>
-
     <dialog id="datenschutzModal" role="dialog" aria-modal="true" aria-labelledby="datenschutzTitle" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-3xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
     <div class="flex flex-col max-h-[85vh] w-full bg-slate-50">
-        
         <div class="p-6 md:px-8 border-b border-slate-200 flex justify-between items-center gap-4 bg-white shrink-0 shadow-sm z-10">
             <div>
                 <h2 id="datenschutzTitle" class="text-xl md:text-2xl font-bold text-brand-900 tracking-tight">Datenschutzerklärung</h2>
                 <p class="text-xs uppercase tracking-widest text-brand-500 font-bold mt-1">Stand: April 2026</p>
             </div>
-            <button data-close-modal="datenschutzModal" class="shrink-0 p-2.5 text-slate-500 hover:text-brand-700 hover:bg-slate-100 rounded-xl transition-colors outline-none" aria-label="Fenster schließen">
-                <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            <button data-close-modal="datenschutzModal" class="shrink-0 p-2.5 text-slate-400 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-colors outline-none" aria-label="Fenster schließen">
+                <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
         </div>
 
-        <div class="p-6 md:p-8 overflow-y-auto space-y-10 text-slate-600">
+        <div class="p-5 md:p-8 overflow-y-auto space-y-10 text-slate-600">
             
-            <section>
-                <div class="flex items-center gap-4 mb-5">
-                    <div class="p-3 bg-brand-100 text-brand-700 rounded-xl shrink-0">
+            <section class="space-y-4">
+                <div class="flex items-center gap-4">
+                    <div class="p-3 bg-white text-brand-600 rounded-2xl shadow-sm border border-slate-100 shrink-0">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
-                    <h3 class="font-bold text-xl text-brand-900">1. Datenschutz auf einen Blick</h3>
+                    <h3 class="font-bold text-lg md:text-xl text-brand-900">1. Datenschutz auf einen Blick</h3>
                 </div>
                 
                 <div class="space-y-4">
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                        <h4 class="font-bold text-base text-brand-900 mb-2">Allgemeine Hinweise</h4>
-                        <p class="leading-relaxed">Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen.</p>
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200">
+                        <h4 class="font-bold text-brand-900 mb-2">Allgemeine Hinweise</h4>
+                        <p class="text-sm leading-relaxed">Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen.</p>
                     </div>
                     
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                        <h4 class="font-bold text-base text-brand-900 mb-2">Verantwortliche Stelle</h4>
-                        <p class="leading-relaxed mb-3">Lukas Prehn<br>c/o IP-Management #6336<br>Ludwig-Erhard-Straße 18<br>20459 Hamburg<br>Deutschland</p>
-                        <a href="mailto:lpswim.info@gmail.com" class="inline-flex items-center gap-2 text-brand-600 hover:text-brand-800 font-bold transition-colors outline-none">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200">
+                        <h4 class="font-bold text-brand-900 mb-2">Verantwortliche Stelle</h4>
+                        <p class="text-sm leading-relaxed mb-3">Lukas Prehn<br>c/o IP-Management #6336<br>Ludwig-Erhard-Straße 18<br>20459 Hamburg<br>Deutschland</p>
+                        <a href="mailto:lpswim.info@gmail.com" class="inline-flex items-center gap-2 text-brand-600 hover:text-brand-800 font-bold text-sm transition-colors outline-none">
                             <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                             lpswim.info@gmail.com
                         </a>
@@ -772,77 +731,30 @@
                 </div>
             </section>
 
-            <section>
-                <div class="flex items-center gap-4 mb-5">
-                    <div class="p-3 bg-brand-100 text-brand-700 rounded-xl shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
-                    </div>
-                    <h3 class="font-bold text-xl text-brand-900">2. Hosting</h3>
-                </div>
-                
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                    <h4 class="font-bold text-base text-brand-900 mb-2">GitHub Pages</h4>
-                    <p class="leading-relaxed mb-4">Wir hosten diese Website bei GitHub Inc. (USA). Für die Auslieferung der Website ist die temporäre Verarbeitung Ihrer IP-Adresse technisch zwingend erforderlich (Log-Dateien gem. Art. 6 Abs. 1 lit. f DSGVO).</p>
-                    <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-brand-600 hover:text-brand-800 outline-none">
-                        Datenschutzerklärung GitHub 
-                        <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    </a>
-                </div>
-            </section>
-
-            <section>
-                <div class="flex items-center gap-4 mb-5">
-                    <div class="p-3 bg-brand-100 text-brand-700 rounded-xl shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                    </div>
-                    <h3 class="font-bold text-xl text-brand-900">3. Buchungsprozess</h3>
-                </div>
-                
-                <div class="space-y-4">
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                        <h4 class="font-bold text-base text-brand-900 mb-2">Terminbuchung (Calendly)</h4>
-                        <p class="leading-relaxed mb-4">Für die Online-Terminbuchung nutzen wir Calendly LLC (USA). Die Verarbeitung erfolgt zur Vertragserfüllung. Ein datenschutzrechtlicher Auftragsverarbeitungsvertrag (AVV) liegt vor.</p>
-                        <a href="https://calendly.com/legal/privacy-notice" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-brand-600 hover:text-brand-800 outline-none">
-                            Datenschutzerklärung Calendly 
-                            <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                        </a>
-                    </div>
-                    
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                        <h4 class="font-bold text-base text-brand-900 mb-2">Zahlungsdienstleister (PayPal)</h4>
-                        <p class="leading-relaxed mb-4">Für die Zahlungsabwicklung nutzen wir PayPal (Europe). Die zur Abwicklung erforderlichen Daten werden an PayPal übermittelt (Art. 6 Abs. 1 lit. b DSGVO).</p>
-                        <a href="https://www.paypal.com/de/webapps/mpp/ua/privacy-full" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-brand-600 hover:text-brand-800 outline-none">
-                            Datenschutzerklärung PayPal 
-                            <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <div class="flex items-center gap-4 mb-5">
-                    <div class="p-3 bg-brand-100 text-brand-700 rounded-xl shrink-0">
+            <section class="space-y-4">
+                <div class="flex items-center gap-4">
+                    <div class="p-3 bg-white text-brand-600 rounded-2xl shadow-sm border border-slate-100 shrink-0">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
                     </div>
-                    <h3 class="font-bold text-xl text-brand-900">4. Analyse & Cookies</h3>
+                    <h3 class="font-bold text-lg md:text-xl text-brand-900">2. Analyse & Cookies</h3>
                 </div>
                 
                 <div class="space-y-4">
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                        <h4 class="font-bold text-base text-brand-900 mb-2">Google Analytics 4</h4>
-                        <p class="leading-relaxed mb-4">Soweit Sie eingewilligt haben, nutzen wir Google Analytics. Dabei werden Cookies verwendet und die IP-Adresse anonymisiert (gekürzt) verarbeitet.</p>
-                        <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-brand-600 hover:text-brand-800 outline-none">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200">
+                        <h4 class="font-bold text-brand-900 mb-2">Google Analytics 4</h4>
+                        <p class="text-sm leading-relaxed mb-4">Soweit Sie eingewilligt haben, nutzen wir Google Analytics. Dabei werden Cookies verwendet und die IP-Adresse anonymisiert (gekürzt) verarbeitet.</p>
+                        <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-brand-600 hover:text-brand-800 outline-none">
                             Datenschutzerklärung Google 
                             <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                         </a>
                     </div>
                     
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-                        <div>
-                            <h4 class="font-bold text-base text-brand-900 mb-2">Widerruf der Einwilligung</h4>
-                            <p class="leading-relaxed">Sie können Ihre Cookie-Entscheidung jederzeit mit einem Klick widerrufen.</p>
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                        <div class="flex-1">
+                            <h4 class="font-bold text-brand-900 mb-1">Widerruf der Einwilligung</h4>
+                            <p class="text-xs leading-relaxed text-slate-500">Sie können Ihre Cookie-Entscheidung jederzeit mit einem Klick auf diesen Button widerrufen. Die Seite lädt daraufhin neu.</p>
                         </div>
-                        <button type="button" data-revoke-cookies class="shrink-0 w-full md:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-50 border border-brand-200 rounded-xl font-bold text-brand-800 hover:bg-brand-100 transition-colors outline-none" aria-label="Cookie-Einstellungen zurücksetzen">
+                        <button type="button" data-revoke-cookies class="shrink-0 w-full md:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-50 border border-brand-200 rounded-2xl font-bold text-brand-800 hover:bg-brand-100 transition-colors outline-none" aria-label="Cookie-Einstellungen zurücksetzen">
                             <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
                             Zurücksetzen
                         </button>
@@ -850,190 +762,167 @@
                 </div>
             </section>
 
-            <section>
-                <div class="flex items-center gap-4 mb-5">
-                    <div class="p-3 bg-brand-100 text-brand-700 rounded-xl shrink-0">
+            <section class="space-y-4">
+                <div class="flex items-center gap-4">
+                    <div class="p-3 bg-white text-brand-600 rounded-2xl shadow-sm border border-slate-100 shrink-0">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
                     </div>
-                    <h3 class="font-bold text-xl text-brand-900">5. Externe Weiterleitungen</h3>
+                    <h3 class="font-bold text-lg md:text-xl text-brand-900">3. Externe Weiterleitungen</h3>
                 </div>
                 
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-6">
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 space-y-6">
                     <div>
-                        <h4 class="font-bold text-base text-brand-900 mb-2">Google Maps</h4>
-                        <p class="leading-relaxed">Wir nutzen keine direkt eingebettete Karte. Erst wenn Sie aktiv auf den Link „Karte öffnen“ klicken, werden Sie zu Google weitergeleitet.</p>
+                        <h4 class="font-bold text-brand-900 mb-2">Google Maps</h4>
+                        <p class="text-sm leading-relaxed">Wir nutzen keine direkt eingebettete Karte. Erst wenn Sie aktiv auf den Link „Karte öffnen“ klicken, werden Sie zu Google weitergeleitet.</p>
                     </div>
                     <hr class="border-slate-100">
                     <div>
-                        <h4 class="font-bold text-base text-brand-900 mb-2">Stadtwerke Viernheim</h4>
-                        <p class="leading-relaxed">Wir verlinken auf die Seiten der Bäder. Für die Datenverarbeitung auf den verlinkten Seiten ist allein der dortige Betreiber verantwortlich.</p>
+                        <h4 class="font-bold text-brand-900 mb-2">Stadtwerke Viernheim</h4>
+                        <p class="text-sm leading-relaxed">Wir verlinken auf die Seiten der Bäder. Für die Datenverarbeitung auf den verlinkten Seiten ist allein der dortige Betreiber verantwortlich.</p>
                     </div>
                 </div>
             </section>
 
-            <section>
-                <div class="flex items-center gap-4 mb-5">
-                    <div class="p-3 bg-brand-100 text-brand-700 rounded-xl shrink-0">
+            <section class="space-y-4">
+                <div class="flex items-center gap-4">
+                    <div class="p-3 bg-white text-brand-600 rounded-2xl shadow-sm border border-slate-100 shrink-0">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                     </div>
-                    <h3 class="font-bold text-xl text-brand-900">6. Ihre Rechte</h3>
+                    <h3 class="font-bold text-lg md:text-xl text-brand-900">4. Ihre Rechte</h3>
                 </div>
                 
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-6">
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 space-y-6">
                     <div>
-                        <h4 class="font-bold text-base text-brand-900 mb-2">Auskunft, Löschung & Berichtigung</h4>
-                        <p class="leading-relaxed">Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten Daten. Ebenso haben Sie ein Recht auf Berichtigung oder Löschung.</p>
+                        <h4 class="font-bold text-brand-900 mb-2">Rechte der betroffenen Person</h4>
+                        <p class="text-sm leading-relaxed">Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten Daten sowie ein Recht auf Berichtigung, Sperrung oder Löschung.</p>
                     </div>
                     <hr class="border-slate-100">
                     <div>
-                        <h4 class="font-bold text-base text-brand-900 mb-2">Weitere Rechte</h4>
-                        <p class="leading-relaxed">Sie haben das Recht, die Einschränkung der Verarbeitung zu verlangen, Daten übertragen zu lassen, Widerspruch einzulegen und sich bei der Aufsichtsbehörde zu beschweren.</p>
+                        <h4 class="font-bold text-brand-900 mb-2">Beschwerderecht</h4>
+                        <p class="text-sm leading-relaxed text-justify">Im Falle von Verstößen steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.</p>
                     </div>
                 </div>
             </section>
-
         </div>
     </div>
 </dialog>
 
     <dialog id="agbModal" role="dialog" aria-modal="true" aria-labelledby="agbTitle" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-3xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
     <div class="flex flex-col max-h-[85vh] w-full bg-slate-50">
-        
         <div class="p-6 md:px-8 border-b border-slate-200 flex justify-between items-center gap-4 bg-white shrink-0 shadow-sm z-10">
             <div>
                 <h2 id="agbTitle" class="text-xl md:text-2xl font-bold text-brand-900 tracking-tight">Allgemeine Geschäftsbedingungen</h2>
-                <p class="text-xs uppercase tracking-widest text-brand-500 font-bold mt-1">Stand: April 2026</p>
+                <p class="text-[10px] uppercase tracking-widest text-brand-500 font-bold mt-1">Stand: April 2026</p>
             </div>
-            <button data-close-modal="agbModal" class="shrink-0 p-2.5 text-slate-500 hover:text-brand-700 hover:bg-slate-100 rounded-xl transition-colors outline-none" aria-label="Fenster schließen">
-                <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            <button data-close-modal="agbModal" class="shrink-0 p-2 text-slate-400 hover:text-brand-600 hover:bg-slate-50 rounded-xl transition-all outline-none" aria-label="Fenster schließen">
+                <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
         </div>
 
-        <div class="p-6 md:p-8 overflow-y-auto space-y-10 text-slate-600">
+        <div class="p-5 md:p-8 overflow-y-auto space-y-8 text-slate-600">
             
-            <section>
-                <div class="flex items-center gap-4 mb-5">
-                    <div class="p-3 bg-brand-100 text-brand-700 rounded-xl shrink-0">
+            <section class="space-y-4">
+                <div class="flex items-center gap-4">
+                    <div class="p-3 bg-white text-brand-600 rounded-2xl shadow-sm border border-slate-100 shrink-0">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                     </div>
-                    <h3 class="font-bold text-xl text-brand-900">1. Geltungsbereich</h3>
+                    <h3 class="font-bold text-lg md:text-xl text-brand-900 tracking-tight">§1 Geltungsbereich & Leistungen</h3>
                 </div>
-                
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-6">
-                    <div>
-                        <h4 class="font-bold text-base text-brand-900 mb-2">Geltung der Bedingungen</h4>
-                        <p class="leading-relaxed">Diese AGB regeln das Rechtsverhältnis zwischen <strong>LP-SWIM (Inhaber: Lukas Prehn)</strong> und seinen Kunden. Sie gelten für sämtliche Leistungen wie herkömmliche Trainerstunden, Hausbesuche bei Privatpersonen sowie Dienstleistungen für Schulen und sonstige Institutionen.</p>
-                    </div>
-                    <hr class="border-slate-100">
-                    <div>
-                        <h4 class="font-bold text-base text-brand-900 mb-2">Einsatz von Personal</h4>
-                        <p class="leading-relaxed">LP-SWIM ist berechtigt, die geschuldeten Leistungen auch durch qualifizierte Erfüllungsgehilfen (z. B. angestellte Trainer) zu erbringen. Ein Anspruch auf die Durchführung durch eine spezifische Person besteht nicht.</p>
-                    </div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 space-y-4">
+                    <p class="leading-relaxed text-sm">Diese AGB gelten für alle Dienstleistungen von <strong>LP-SWIM (Inhaber Lukas Prehn)</strong>. Das Angebot umfasst klassischen Schwimmunterricht im Einzelsetting, Hausbesuche im privaten Bereich sowie die fachliche Begleitung für Schulen und Institutionen.</p>
+                    <p class="leading-relaxed text-sm">LP-SWIM erbringt die Leistungen persönlich oder durch qualifizierte Erfüllungsgehilfen. Ein Anspruch auf die Betreuung durch eine spezifische Person besteht grundsätzlich nicht.</p>
                 </div>
             </section>
 
-            <section>
-                <div class="flex items-center gap-4 mb-5">
-                    <div class="p-3 bg-brand-100 text-brand-700 rounded-xl shrink-0">
+            <section class="space-y-4">
+                <div class="flex items-center gap-4">
+                    <div class="p-3 bg-white text-brand-600 rounded-2xl shadow-sm border border-slate-100 shrink-0">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                     </div>
-                    <h3 class="font-bold text-xl text-brand-900">2. Vertragsschluss</h3>
+                    <h3 class="font-bold text-lg md:text-xl text-brand-900 tracking-tight">§2 Buchungswege & Vertragsschluss</h3>
                 </div>
-                
                 <div class="space-y-4">
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                        <h4 class="font-bold text-base text-brand-900 mb-2">Standard-Trainerstunden</h4>
-                        <p class="leading-relaxed">Für Termine innerhalb der im Online-Kalender angezeigten Kapazitäten kommt der Vertrag unmittelbar durch den erfolgreichen Abschluss des Buchungsprozesses und die zeitgleiche Zahlung via PayPal zustande.</p>
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+                        <h4 class="font-bold text-brand-900 mb-2 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-brand-500"></span> 1. Direktbuchung (Online-Kalender)
+                        </h4>
+                        <p class="text-sm leading-relaxed text-justify">Bei Terminen innerhalb der im Portal freigeschalteten Zeiten kommt der Vertrag mit Abschluss der Buchung und erfolgreicher Zahlung via PayPal zustande.</p>
                     </div>
-                    
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                        <h4 class="font-bold text-base text-brand-900 mb-2">Individualanfragen (Hausbesuche/Schulen)</h4>
-                        <p class="leading-relaxed">Anfragen erfolgen unverbindlich via Calendly. Der Kunde erhält eine automatisierte E-Mail zur individuellen Terminabstimmung via <strong>WhatsApp</strong>. Der Vertrag wird erst rechtsverbindlich, sobald LP-SWIM den Termin bestätigt und einen persönlichen Zahlungslink zur Vorkasse übermittelt hat.</p>
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+                        <h4 class="font-bold text-brand-900 mb-2 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-brand-500"></span> 2. Individualtermine (Hausbesuche/Schulen)
+                        </h4>
+                        <p class="text-sm leading-relaxed text-justify">Anfragen für Hausbesuche oder Schulen erfolgen unverbindlich via Calendly. Nach der Anfrage erhält der Kunde eine E-Mail zur Einleitung der individuellen Terminfindung via <strong>WhatsApp</strong>. Ein rechtlich bindender Vertrag kommt hier erst zustande, wenn LP-SWIM den Termin bestätigt und der Kunde die Zahlung über den übermittelten Link erfolgreich abgeschlossen hat.</p>
                     </div>
                 </div>
             </section>
 
-            <section>
-                <div class="flex items-center gap-4 mb-5">
-                    <div class="p-3 bg-brand-100 text-brand-700 rounded-xl shrink-0">
+            <section class="space-y-4">
+                <div class="flex items-center gap-4">
+                    <div class="p-3 bg-white text-brand-600 rounded-2xl shadow-sm border border-slate-100 shrink-0">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                     </div>
-                    <h3 class="font-bold text-xl text-brand-900">3. Preise & Bezahlung</h3>
+                    <h3 class="font-bold text-lg md:text-xl text-brand-900 tracking-tight">§3 Vergütung & Nebenkosten</h3>
                 </div>
-                
                 <div class="space-y-4">
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                        <h4 class="font-bold text-base text-brand-900 mb-2">Prinzip der Vorkasse</h4>
-                        <p class="leading-relaxed">Sämtliche Leistungen sind im Voraus zu bezahlen. Direktbuchungen werden über die integrierte PayPal-Schnittstelle abgewickelt. Bei individuell vereinbarten Terminen erfolgt die Zahlung über einen separaten Zahlungslink.</p>
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+                        <p class="text-sm leading-relaxed">Die Zahlung erfolgt grundsätzlich per Vorkasse. Bei Individualterminen ohne rechtzeitigen Zahlungseingang behält sich LP-SWIM vor, den Termin ohne weitere Mahnung neu zu vergeben.</p>
                     </div>
-                    
-                    <div class="bg-orange-50 p-6 rounded-2xl border border-orange-200 flex flex-col md:flex-row gap-5 items-start md:items-center">
-                        <div class="bg-white p-3 rounded-full shadow-sm shrink-0">
-                            <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <div class="bg-orange-50 p-6 rounded-3xl border border-orange-200 flex flex-col sm:flex-row gap-4 items-start">
+                        <div class="bg-white p-2 rounded-full shadow-sm text-orange-500 shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
                         </div>
-                        <p class="text-orange-900 leading-relaxed"><strong>Wichtiger Hinweis:</strong> Eintrittspreise für öffentliche Badeanstalten sind ausdrücklich <u>nicht</u> im Honorar von LP-SWIM enthalten und müssen eigenständig vor Ort entrichtet werden.</p>
+                        <p class="text-orange-900 text-sm font-medium leading-relaxed">Der Eintrittspreis für öffentliche Schwimmbäder ist <u>nicht</u> im Honorar enthalten und muss vom Kunden vor Ort separat entrichtet werden.</p>
                     </div>
                 </div>
             </section>
 
-            <section>
-                <div class="flex items-center gap-4 mb-5">
-                    <div class="p-3 bg-brand-100 text-brand-700 rounded-xl shrink-0">
+            <section class="space-y-4">
+                <div class="flex items-center gap-4">
+                    <div class="p-3 bg-white text-brand-600 rounded-2xl shadow-sm border border-slate-100 shrink-0">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
-                    <h3 class="font-bold text-xl text-brand-900">4. Stornierung & Ausfall</h3>
+                    <h3 class="font-bold text-lg md:text-xl text-brand-900 tracking-tight">§4 Stornierung & Ausfall</h3>
                 </div>
-                
                 <div class="space-y-4">
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col md:flex-row gap-5 items-start">
-                        <div class="bg-green-50 p-3 rounded-full border border-green-100 shrink-0 text-green-600">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex gap-4 items-start">
+                        <div class="bg-green-50 p-2 rounded-full text-green-600 shrink-0">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-base text-brand-900 mb-2">Fristgerechte Absage</h4>
-                            <p class="leading-relaxed">Bis zu 48 Stunden vor dem Termin kann dieser kostenfrei storniert oder verschoben werden.</p>
-                        </div>
+                        <p class="text-sm leading-relaxed"><strong>Bis 48h vorher:</strong> Termine können bis zu 48 Stunden vor Beginn kostenfrei storniert oder verschoben werden.</p>
                     </div>
-                    
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-red-100 flex flex-col md:flex-row gap-5 items-start">
-                        <div class="bg-red-50 p-3 rounded-full border border-red-100 shrink-0 text-red-600">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-red-100 flex gap-4 items-start">
+                        <div class="bg-red-50 p-2 rounded-full text-red-600 shrink-0">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                         </div>
                         <div>
-                            <h4 class="font-bold text-base text-red-900 mb-2">Kurzfristige Absage (< 48h)</h4>
-                            <p class="leading-relaxed text-red-900/90 mb-3">Bei Absagen unter 48 Stunden oder Nichterscheinen wird das volle Honorar (100 %) als Ausfallentschädigung fällig (§ 615 BGB). Eine Neubelegung ist in diesem Zeitraum in der Regel nicht mehr möglich.</p>
-                            <p class="text-xs text-red-700/80">Dem Kunden bleibt der Nachweis gestattet, dass durch den Ausfall kein oder ein wesentlich geringerer Schaden entstanden ist.</p>
+                            <p class="text-sm leading-relaxed text-red-900 font-bold mb-1">Kurzfristige Absage (< 48h):</p>
+                            <p class="text-sm leading-relaxed text-red-800">In diesem Fall wird das volle Honorar (100 %) als Ausfallentschädigung fällig (§ 615 BGB), da ein Ersatzteilnehmer so kurzfristig nicht gefunden werden kann. Dem Kunden bleibt der Nachweis gestattet, dass LP-SWIM kein oder ein geringerer Schaden entstanden ist.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section>
-                <div class="flex items-center gap-4 mb-5">
-                    <div class="p-3 bg-brand-100 text-brand-700 rounded-xl shrink-0">
+            <section class="space-y-4">
+                <div class="flex items-center gap-4">
+                    <div class="p-3 bg-white text-brand-600 rounded-2xl shadow-sm border border-slate-100 shrink-0">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01"></path></svg>
                     </div>
-                    <h3 class="font-bold text-xl text-brand-900">5. Haftung & Aufsichtspflicht</h3>
+                    <h3 class="font-bold text-lg md:text-xl text-brand-900 tracking-tight">§5 Haftung & Aufsicht</h3>
                 </div>
-                
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-6">
-                    <div>
-                        <h4 class="font-bold text-base text-brand-900 mb-2">Allgemeine Haftung</h4>
-                        <p class="leading-relaxed">LP-SWIM haftet unbeschränkt für Vorsatz und grobe Fahrlässigkeit. Bei leichter Fahrlässigkeit wird die Haftung auf die Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) und auf den vorhersehbaren Schaden begrenzt.</p>
+                <div class="space-y-4">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+                        <p class="text-sm leading-relaxed">LP-SWIM haftet unbeschränkt für Vorsatz und grobe Fahrlässigkeit. Für leichte Fahrlässigkeit wird nur bei Verletzung vertragswesentlicher Pflichten (Kardinalpflichten) gehaftet.</p>
                     </div>
-                    <hr class="border-slate-100">
-                    <div>
-                        <h4 class="font-bold text-base text-brand-900 mb-2">Hausbesuche & Schulen</h4>
-                        <p class="leading-relaxed">Bei <strong>Hausbesuchen</strong> liegt die Verkehrssicherungspflicht der Poolanlage beim Kunden. Bei <strong>Schulbegleitungen</strong> verbleibt die pädagogische Gesamtverantwortung und Aufsichtspflicht stets bei der zuständigen Lehrkraft.</p>
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+                        <p class="text-sm leading-relaxed">Bei <strong>Hausbesuchen</strong> liegt die Verkehrssicherungspflicht der Poolanlage beim Kunden. Bei <strong>Schulbegleitungen</strong> bleibt die Gesamtverantwortung stets bei der zuständigen Lehrkraft.</p>
                     </div>
                 </div>
             </section>
 
-            <section class="pt-8 border-t border-slate-200">
-                <h4 class="font-bold text-brand-900 mb-2">6. Schlussbestimmungen</h4>
-                <p class="text-sm leading-relaxed text-slate-500">Es gilt das Recht der Bundesrepublik Deutschland. Sollten einzelne Bestimmungen dieses Vertrages unwirksam oder undurchführbar sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen hiervon unberührt (Salvatorische Klausel).</p>
+            <section class="pt-6 border-t border-slate-200">
+                <p class="text-xs text-slate-500 italic text-justify">Es gilt deutsches Recht. Sollten einzelne Bestimmungen dieses Vertrages unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen hiervon unberührt.</p>
             </section>
-
         </div>
     </div>
 </dialog>
