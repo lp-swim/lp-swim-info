@@ -900,109 +900,98 @@
     </dialog>
 
     <dialog id="agbModal" role="dialog" aria-modal="true" aria-labelledby="agbTitle" class="bg-slate-100 rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
-        <div class="flex flex-col max-h-[85vh] w-full">
-            <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-slate-100 shrink-0">
-                <h2 id="agbTitle" class="text-xl font-bold text-brand-900 break-words hyphens-auto">AGB<br aria-hidden="true">Stand: Februar 2026</h2>
-                <button data-close-modal="agbModal" class="shrink-0 p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors outline-none" aria-label="Fenster schließen">
-                    <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-close"></use></svg>
-                </button>            
-            </div>
-            <div class="p-8 overflow-y-auto space-y-8 text-sm text-slate-600 leading-relaxed">
-                <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">§1 Geltungsbereich <span aria-hidden="true">&amp;</span><span class="sr-only">und</span> Vertretung</h3>
-                    <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100 space-y-2">
-                        <p>Diese AGB gelten für alle Verträge zwischen <strong>LP-SWIM (Lukas Prehn)</strong> und den Kunden über Schwimmunterricht und Schulbegleitung.</p>
-                        <div class="flex items-start gap-2 pt-2">
-                            <svg aria-hidden="true" class="w-4 h-4 text-brand-600 mt-0.5 shrink-0"><use href="#icon-user-plus"></use></svg>
-                            <p><strong>Leistungserbringung durch Dritte:</strong><br>LP-SWIM ist berechtigt, die geschuldete Leistung auch durch qualifizierte Erfüllungsgehilfen (z. B. angestellte Trainer oder Vertretungskräfte) erbringen zu lassen. Der Vertrag kommt mit LP-SWIM zustande, ein Anspruch auf Durchführung durch eine bestimmte Person besteht grundsätzlich nicht, es sei denn, dies wurde schriftlich fixiert.</p>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">§2 Vertragsschluss <span aria-hidden="true">&amp;</span><span class="sr-only">und</span> Buchungsablauf</h3>
-                    <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 space-y-4">
-                        <div class="flex items-start gap-3">
-                            <div class="bg-white p-2 rounded-lg text-brand-600 shadow-sm mt-1 shrink-0" aria-hidden="true">
-                                <svg aria-hidden="true" class="w-4 h-4"><use href="#icon-user-plus"></use></svg>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-brand-900">1. Erstkontakt <span aria-hidden="true">&amp;</span><span class="sr-only">und</span> Terminbuchung:</p>
-                                <p>Für Ihre Trainerstunde nutzen Sie unkompliziert unser Buchungsportal: Wählen Sie einfach Ihren gewünschten Trainingsschwerpunkt aus, suchen Sie sich ein passendes Zeitfenster und schließen Sie die Buchung direkt mit der Zahlung ab.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="bg-white p-2 rounded-lg text-brand-600 shadow-sm mt-1 shrink-0" aria-hidden="true">
-                                <svg aria-hidden="true" class="w-4 h-4"><use href="#icon-calendar"></use></svg>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-brand-900">2. Terminbestätigung:</p>
-                                <p>Sie erhalten im Anschluss per E-Mail Ihre verbindliche Terminbestätigung. Mit der Buchung treten unsere Stornierungsbedingungen gemäß § 4 in Kraft. Für Rückfragen oder eventuelle Terminabsagen finden Sie in dieser Bestätigungsmail zudem den direkten Link zu unserem WhatsApp-Chat.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="bg-white p-2 rounded-lg text-brand-600 shadow-sm mt-1 shrink-0" aria-hidden="true">
-                                <svg aria-hidden="true" class="w-4 h-4"><use href="#icon-handshake"></use></svg>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-brand-900">3. Verbindlicher Vertragsschluss:</p>
-                                <p>Jetzt kann es losgehen! Ihrem Termin steht nichts mehr im Wege. Ob im Hallen- oder Freibad – der Treffpunkt für den Unterricht ist stets direkt bei der Badeaufsicht. Dieser Ablauf gilt unverändert für alle Folgetermine. Neue Zeiten für den kommenden Monat schalten wir jeweils zum Monatsende im Portal für Sie frei.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">§3 Vergütung <span aria-hidden="true">&amp;</span><span class="sr-only">und</span> Zahlungsverzug</h3>
-                    <div class="space-y-3">
-                        <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                            <p class="font-semibold text-brand-900 mb-1">Vorkasse <span aria-hidden="true">&amp;</span><span class="sr-only">und</span> Fristen</p>
-                            <p>Der Rechnungsbetrag ist bis zum angegebenen Fälligkeitsdatum zu begleichen. Geht die Zahlung nicht fristgerecht ein, ist LP-SWIM berechtigt, vom Vertrag zurückzutreten und den Termin anderweitig zu vergeben. Der Zahlungsanspruch bleibt bei kurzfristigem Rücktritt gemäß §4 bestehen.</p>
-                        </div>
-                        <div class="bg-orange-50 p-3 rounded-xl border border-orange-100 text-orange-800 flex items-start gap-3">
-                            <svg aria-hidden="true" class="w-5 h-5 shrink-0 mt-0.5"><use href="#icon-ticket"></use></svg>
-                            <p class="text-xs sm:text-sm font-medium">Hinweis: Der Eintritt in das Schwimmbad ist <strong>nicht</strong> im Honorar enthalten und muss separat an der Kasse vor Ort entrichtet werden.</p>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">§4 Stornierung, Ausfall <span aria-hidden="true">&amp;</span><span class="sr-only">und</span> Rückerstattung</h3>
-                    <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 space-y-4">
-                        <div>
-                            <p class="font-semibold text-brand-900 mb-1 flex items-center gap-2">
-                                <svg aria-hidden="true" class="w-4 h-4 shrink-0"><use href="#icon-clock"></use></svg> Absage durch den Kunden (48h-Frist)
-                            </p>
-                            <p class="mb-2">Vereinbarte Termine sind verbindlich. Eine kostenfreie Stornierung oder Verschiebung ist nur bis <strong>48 Stunden vor Beginn</strong> des Termins möglich.</p>
-                            <ul class="list-disc list-inside pl-2 space-y-1 text-slate-600">
-                                <li><strong>Rechtzeitige Absage (größer 48h):</strong><br>Der Termin wird kostenfrei storniert oder verschoben.</li>
-                                <li><strong>Verspätete Absage (kleiner 48h) / Nichterscheinen:</strong><br>Es wird das <strong>volle Honorar</strong> als Ausfallentschädigung fällig (§ 615 BGB), da der Termin so kurzfristig nicht neu belegt werden kann. Dies gilt unabhängig vom Grund der Absage.</li>
-                            </ul>
-                        </div>
-                        <div class="border-t border-brand-200 pt-3">
-                            <p class="font-semibold text-brand-900 mb-1 flex items-center gap-2">
-                                <svg aria-hidden="true" class="w-4 h-4 shrink-0"><use href="#icon-cookie"></use></svg> Absage durch LP-SWIM
-                            </p>
-                            <p class="mb-2">Sollte ein Termin seitens LP-SWIM (z. B. wegen Krankheit des Trainers, technischer Defekte im Bad oder höherer Gewalt) nicht stattfinden können, gilt folgende Regelung:</p>
-                            <ol class="list-decimal list-inside pl-2 space-y-1 text-slate-600">
-                                <li><strong>Vorrangig Ersatztermin:</strong><br>Es wird primär ein Ersatztermin angeboten. Das Guthaben bleibt bestehen.</li>
-                                <li><strong>Rückerstattung:</strong><br>Ein Anspruch auf Rückzahlung des Honorars besteht <strong>ausschließlich</strong> dann, wenn LP-SWIM aus eigenem Verschulden keinen Ersatztermin innerhalb eines angemessenen Zeitraums anbieten kann.</li>
-                            </ol>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">§5 Haftung</h3>
-                    <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100 space-y-2">
-                        <p>Für den Verlust oder die Beschädigung von Garderobe und Wertsachen übernimmt die Kursleitung keine Haftung, soweit diese nicht auf Vorsatz oder grober Fahrlässigkeit unsererseits beruht. Die Teilnehmer werden gebeten, die vorgesehenen Schließfächer des Bades zu nutzen. Ergänzend gelten die AGB und die Haus- und Badeordnung der Stadtwerke Viernheim.</p>
-                    </div>
-                </section>
-                <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">§6 Schlussbestimmungen</h3>
-                    <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
-                        <p>Sollten einzelne Bestimmungen dieses Vertrages unwirksam oder undurchführbar sein, bleibt die Wirksamkeit der übrigen Bestimmungen hiervon unberührt (Salvatorische Klausel). Es gilt deutsches Recht.</p>
-                    </div>
-                </section>
-            </div>
+    <div class="flex flex-col max-h-[85vh] w-full">
+        <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-slate-100 shrink-0">
+            <h2 id="agbTitle" class="text-xl font-bold text-brand-900 break-words hyphens-auto">AGB<br aria-hidden="true">Stand: April 2026</h2>
+            <button data-close-modal="agbModal" class="shrink-0 p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-colors outline-none" aria-label="Fenster schließen">
+                <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-close"></use></svg>
+            </button>
         </div>
-    </dialog>
+
+        <div class="p-8 overflow-y-auto space-y-8 text-sm text-slate-600 leading-relaxed">
+            <section>
+                <h3 class="font-bold text-lg text-brand-700 mb-2">§1 Geltungsbereich & Erfüllungsgehilfen</h3>
+                <div class="space-y-3">
+                    <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
+                        <p class="font-semibold text-brand-900 mb-1">Geltung der Bedingungen</p>
+                        <p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen <strong>LP-SWIM (Lukas Prehn)</strong> und den Kunden über Schwimmunterricht (Einzeltraining, Hausbesuche), Schulbegleitung sowie Leistungen für Institutionen.</p>
+                    </div>
+                    <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
+                        <p class="font-semibold text-brand-900 mb-1">Einsatz von Personal</p>
+                        <p>LP-SWIM ist berechtigt, die geschuldete Leistung durch qualifizierte Erfüllungsgehilfen (z. B. angestellte Trainer oder Vertretungskräfte) zu erbringen. Ein Anspruch auf Durchführung durch eine bestimmte Person besteht nicht.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="font-bold text-lg text-brand-700 mb-2">§2 Vertragsschluss & Buchungswege</h3>
+                <div class="space-y-3">
+                    <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100">
+                        <p class="font-semibold text-brand-900 mb-2">1. Herkömmliche Trainerstunden (Direktbuchung)</p>
+                        <p>Bei Terminen innerhalb der im Online-Portal angezeigten Zeiten kommt der Vertrag unmittelbar durch Abschluss des Buchungsprozesses und erfolgreiche Zahlung (via PayPal) zustande.</p>
+                    </div>
+                    <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100">
+                        <p class="font-semibold text-brand-900 mb-2">2. Hausbesuche, Schulen & Institutionen (Individualanfrage)</p>
+                        <p class="mb-2">Für Leistungen außerhalb des Standard-Kalenders (z. B. Privatpools oder Schulbegleitung) gilt folgender Ablauf:</p>
+                        <ul class="list-disc list-inside space-y-1 ml-2 text-xs sm:text-sm">
+                            <li><strong>Anfrage:</strong> Übermittlung der Daten via Calendly-Formular (unverbindliche Anfrage).</li>
+                            <li><strong>Kontaktaufnahme:</strong> Der Kunde erhält eine automatisierte E-Mail mit dem Link zur individuellen Terminfindung via WhatsApp.</li>
+                            <li><strong>Terminfindung:</strong> Die konkrete Abstimmung erfolgt ausschließlich persönlich über WhatsApp.</li>
+                            <li><strong>Vertragsschluss:</strong> Der Vertrag wird erst verbindlich, wenn LP-SWIM den Termin bestätigt und einen individuellen Zahlungslink übermittelt.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="font-bold text-lg text-brand-700 mb-2">§3 Vergütung & Zahlungsbedingungen</h3>
+                <div class="space-y-3">
+                    <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
+                        <p class="font-semibold text-brand-900 mb-1">Zahlungsweg</p>
+                        <p>Die Vergütung ist als Vorkasse zu leisten. Bei Direktbuchungen erfolgt dies via PayPal; bei Individualanfragen (Hausbesuche/Schulen) über den gesendeten Zahlungslink. Ohne fristgerechten Zahlungseingang besteht kein Anspruch auf Durchführung des Termins.</p>
+                    </div>
+                    <div class="bg-orange-50 p-3 rounded-xl border border-orange-100 text-orange-800 flex items-start gap-3">
+                        <svg aria-hidden="true" class="w-5 h-5 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <p class="text-xs font-medium">Hinweis: Eintrittspreise für öffentliche Bäder sind nicht im Honorar enthalten. Bei Hausbesuchen trägt der Kunde die Verantwortung für die Betriebssicherheit des privaten Pools.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="font-bold text-lg text-brand-700 mb-2">§4 Stornierung & Ausfallentschädigung</h3>
+                <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100">
+                    <p class="font-semibold text-brand-900 mb-2">Stornierungsfristen</p>
+                    <p class="mb-3">Eine kostenfreie Stornierung oder Verschiebung ist für alle Formate bis spätestens <strong>48 Stunden vor Beginn</strong> möglich.</p>
+                    <div class="mt-3 pl-3 border-l-2 border-red-300 text-sm text-slate-700">
+                        <p class="mb-1 text-red-800 font-bold">Kurzfristige Absage (< 48h):</p>
+                        <p>Erfolgt die Absage später oder erscheint der Kunde nicht, wird das volle Honorar (100 %) als Ausfallentschädigung fällig (§ 615 BGB). Dem Kunden bleibt der Nachweis gestattet, dass kein oder ein geringerer Schaden entstanden ist.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="font-bold text-lg text-brand-700 mb-2">§5 Haftung & Aufsichtspflicht</h3>
+                <div class="space-y-3">
+                    <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
+                        <p class="font-semibold text-brand-900 mb-1">Haftungsumfang</p>
+                        <p>LP-SWIM haftet unbeschränkt für Vorsatz und grobe Fahrlässigkeit. Bei leichter Fahrlässigkeit wird die Haftung auf vertragstypische, vorhersehbare Schäden begrenzt.</p>
+                    </div>
+                    <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
+                        <p class="font-semibold text-brand-900 mb-1">Aufsicht bei Schulen & Hausbesuchen</p>
+                        <p>Bei Schulbegleitungen bleibt die pädagogische Gesamtverantwortung bei der Lehrkraft. Bei Hausbesuchen liegt die Verkehrssicherungspflicht der Poolanlage beim Eigentümer/Kunden.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="font-bold text-lg text-brand-700 mb-2">§6 Schlussbestimmungen</h3>
+                <div class="bg-brand-50/50 p-3 rounded-xl border border-brand-100">
+                    <p>Es gilt das Recht der Bundesrepublik Deutschland. Sollten einzelne Bestimmungen unwirksam sein, bleibt die Gültigkeit der übrigen Bestimmungen unberührt (Salvatorische Klausel).</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</dialog>
 
     <div id="cookie-overlay" role="dialog" aria-modal="true" aria-labelledby="cookie-title" class="fixed inset-0 z-[100] bg-brand-900/60 backdrop-blur-md hidden items-end sm:items-center justify-center p-4 transition-all duration-500 opacity-0">
         <div class="bg-white/95 backdrop-blur-xl w-full max-w-lg rounded-[2rem] shadow-2xl shadow-brand-900/20 border border-white/50 p-6 sm:p-8 transform transition-all duration-500 scale-95 translate-y-8">
