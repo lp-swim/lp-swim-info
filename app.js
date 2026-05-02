@@ -1,14 +1,12 @@
 (() => {
     'use strict';
-    
-    let lastFocusedElement;
 
     function openModal(id) {
         const modal = document.getElementById(id);
         if (!modal) return;
-        lastFocusedElement = document.activeElement;
         document.body.classList.add('overflow-hidden');
         modal.showModal(); 
+        
         const firstFocusable = modal.querySelector('button, a, input, textarea');
         if (firstFocusable) firstFocusable.focus();
     }
@@ -17,14 +15,12 @@
         const modal = document.getElementById(id);
         if (!modal) return;
         modal.classList.add('is-closing');
+        
         const onAnimationEnd = (e) => {
             if (e.target !== modal) return; 
             modal.classList.remove('is-closing');
             modal.close();
             modal.removeEventListener('animationend', onAnimationEnd);
-            if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
-                lastFocusedElement.focus();
-            }
             checkBodyScroll();
         };
         modal.addEventListener('animationend', onAnimationEnd);
@@ -32,8 +28,7 @@
 
     function checkBodyScroll() {
         const anyOpen = document.querySelectorAll('dialog[open]').length > 0;
-        const cookieBanner = document.getElementById('cookie-overlay');
-        if (!anyOpen && (!cookieBanner || cookieBanner.classList.contains('hidden'))) {
+        if (!anyOpen) {
             document.body.classList.remove('overflow-hidden');
         }
     }
@@ -74,86 +69,37 @@
         }
     }
 
-    function initCookieBanner() {
+    window.loadGAScript = function() {
         const GA_MEASUREMENT_ID = "G-T5H2XMBKFL"; 
-        const STORAGE_KEY = "lp_swim_consent_2026"; 
-        const cookieOverlay = document.getElementById('cookie-overlay'); 
-        if (!cookieOverlay) return;
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ window.dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denied' });
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
         
-        const card = cookieOverlay.querySelector('div');
-        const backgroundElements = document.querySelectorAll('nav, header, main, footer');
-        const focusableElements = cookieOverlay.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-        const firstFocusable = focusableElements[0];
-        const lastFocusable = focusableElements[focusableElements.length - 1];
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_MEASUREMENT_ID;
+        document.head.appendChild(script);
+        gtag('js', new Date());
+        gtag('config', GA_MEASUREMENT_ID, { 'anonymize_ip': true });
+    };
 
-        cookieOverlay.addEventListener('keydown', function(e) {
-            const isTabPressed = e.key === 'Tab';
-            if (!isTabPressed) return;
-            if (e.shiftKey) { 
-                if (document.activeElement === firstFocusable) {
-                    lastFocusable.focus();
-                    e.preventDefault();
-                }
-            } else { 
-                if (document.activeElement === lastFocusable) {
-                    firstFocusable.focus();
-                    e.preventDefault();
-                }
-            }
-        });
-
-        function loadGAScript() {
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){ window.dataLayer.push(arguments); }
-            window.gtag = gtag;
-            gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denied' });
-            gtag('consent', 'update', { 'analytics_storage': 'granted' });
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_MEASUREMENT_ID;
-            document.head.appendChild(script);
-            gtag('js', new Date());
-            gtag('config', GA_MEASUREMENT_ID, { 'anonymize_ip': true });
-        }
-
-        function showBanner() {
-            document.body.classList.add('overflow-hidden');
-            backgroundElements.forEach(el => el.setAttribute('inert', ''));
-            cookieOverlay.classList.remove('hidden');
-            cookieOverlay.classList.add('flex');
-            setTimeout(() => {
-                cookieOverlay.classList.remove('opacity-0');
-                if (card) {
-                    card.classList.remove('scale-95', 'translate-y-8');
-                    card.classList.add('scale-100', 'translate-y-0');
-                }
-                const btnAccept = document.getElementById('cookie-accept');
-                if (btnAccept) btnAccept.focus();
-            }, 50);
-        }
-
-        function hideBanner() {
-            cookieOverlay.classList.add('opacity-0');
-            if (card) {
-                card.classList.remove('scale-100', 'translate-y-0');
-                card.classList.add('scale-95', 'translate-y-8');
-            }
-            setTimeout(() => {
-                cookieOverlay.classList.remove('flex');
-                cookieOverlay.classList.add('hidden');
-                backgroundElements.forEach(el => el.removeAttribute('inert'));
-                checkBodyScroll();
-            }, 500);
-        }
+    function initCookieBanner() {
+        const STORAGE_KEY = "lp_swim_consent_2026"; 
+        const cookieDialog = document.getElementById('cookie-overlay'); 
+        if (!cookieDialog) return;
 
         const decision = localStorage.getItem(STORAGE_KEY);
-        if (!decision) setTimeout(showBanner, 500);
-        else if (decision === 'accepted') loadGAScript();
-
-        const btnAccept = document.getElementById('cookie-accept');
-        const btnDecline = document.getElementById('cookie-decline');
-        if (btnAccept) btnAccept.onclick = () => { localStorage.setItem(STORAGE_KEY, 'accepted'); loadGAScript(); hideBanner(); };
-        if (btnDecline) btnDecline.onclick = () => { localStorage.setItem(STORAGE_KEY, 'declined'); hideBanner(); };
+        
+        if (!decision) {
+            setTimeout(() => {
+                document.body.classList.add('overflow-hidden');
+                cookieDialog.showModal();
+            }, 500);
+        } else if (decision === 'accepted') {
+            window.loadGAScript();
+        }
     }
 
     function initAudioReader() {
@@ -169,6 +115,12 @@
                 if (playIcon) playIcon.classList.remove('hidden');
                 if (stopIcon) stopIcon.classList.add('hidden');
                 btn.classList.remove('animate-pulse');
+                
+                const originalLabel = btn.getAttribute('data-original-label');
+                if (originalLabel) {
+                    btn.setAttribute('aria-label', originalLabel);
+                    btn.setAttribute('aria-pressed', 'false');
+                }
             });
             if (currentAudio) {
                 currentAudio.pause();
@@ -179,6 +131,10 @@
         readButtons.forEach(button => {
             const targetId = button.getAttribute('data-read-target');
             const audioUrl = `./audio/${targetId}.mp3`;
+
+            if (!button.hasAttribute('data-original-label')) {
+                button.setAttribute('data-original-label', button.getAttribute('aria-label'));
+            }
 
             button.addEventListener('click', () => {
                 const playIcon = button.querySelector('.icon-play');
@@ -206,6 +162,9 @@
                     if (playIcon) playIcon.classList.add('hidden');
                     if (stopIcon) stopIcon.classList.remove('hidden');
                     button.classList.add('animate-pulse');
+                    
+                    button.setAttribute('aria-label', 'Vorlesen stoppen');
+                    button.setAttribute('aria-pressed', 'true');
                 }).catch(() => resetAllButtons());
             });
         });
@@ -217,17 +176,35 @@
             e.preventDefault(); 
             openModal(openBtn.getAttribute('data-open-modal'));
         }
+        
         const closeBtn = e.target.closest('[data-close-modal]');
         if (closeBtn) {
             e.preventDefault();
             closeModal(closeBtn.getAttribute('data-close-modal'));
         }
+        
         const revokeBtn = e.target.closest('[data-revoke-cookies]');
         if (revokeBtn) {
             e.preventDefault();
             localStorage.removeItem("lp_swim_consent_2026"); 
             window.location.reload(); 
         }
+        
+        const cookieAction = e.target.closest('[data-cookie-action]');
+        if (cookieAction) {
+            e.preventDefault();
+            const action = cookieAction.getAttribute('data-cookie-action');
+            
+            if (action === 'accept') {
+                localStorage.setItem("lp_swim_consent_2026", 'accepted');
+                if (typeof window.loadGAScript === 'function') window.loadGAScript();
+            } else {
+                localStorage.setItem("lp_swim_consent_2026", 'declined');
+            }
+            
+            closeModal('cookie-overlay'); 
+        }
+
         if (e.target.tagName === 'DIALOG') {
             closeModal(e.target.id);
         }
