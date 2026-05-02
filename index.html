@@ -1006,7 +1006,7 @@
         </div>
     </dialog>
 
-    <dialog id="impressumModal" role="dialog" aria-modal="true" aria-labelledby="impressumTitle" class="bg-slate-100 rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/40 backdrop:backdrop-blur-sm">
+    <dialog id="impressumModal" role="dialog" aria-modal="true" aria-labelledby="impressumTitle" class="bg-slate-100 rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-2xl max-h-[85vh] p-0 m-auto border-none outline-none backdrop:bg-brand-900/60">
         <div class="flex flex-col max-h-[85vh] w-full">
             <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-slate-100 shrink-0">
                 <h2 id="impressumTitle" class="text-xl font-bold text-brand-900 break-words hyphens-auto">Impressum</h2>
@@ -1016,26 +1016,48 @@
             </div>
             
             <div class="p-8 overflow-y-auto space-y-8 text-sm text-slate-600 leading-relaxed">
+                
                 <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">Angaben gemäß § 5 TMG</h3>
-                    <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100">
-                        <p>Lukas Prehn<br>c/o IP-Management #6336<br>Ludwig-Erhard-Straße 18<br>20459 Hamburg<br>Deutschland</p>
+                    <h3 class="font-bold text-lg text-brand-700 mb-3">Angaben gemäß § 5 TMG</h3>
+                    <div class="bg-brand-50/50 p-5 rounded-xl border border-brand-100 flex items-start gap-4">
+                        <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0 border border-brand-50" aria-hidden="true">
+                            <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-user"></use></svg>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-brand-900 mb-1">Betreiber der Website</p>
+                            <p>Lukas Prehn<br>c/o IP-Management #6336<br>Ludwig-Erhard-Straße 18<br>20459 Hamburg<br>Deutschland</p>
+                        </div>
                     </div>
                 </section>
 
                 <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">Kontakt</h3>
-                    <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100">
-                        <p>E-Mail: <a href="mailto:lpswim.info@gmail.com" class="text-brand-600 font-bold hover:text-brand-400 hover:underline decoration-brand-200 underline-offset-2 transition-colors outline-none">lpswim.info@gmail.com</a></p>
+                    <h3 class="font-bold text-lg text-brand-700 mb-3">Kontakt</h3>
+                    <div class="bg-brand-50/50 p-5 rounded-xl border border-brand-100 flex items-start gap-4">
+                        <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0 border border-brand-50" aria-hidden="true">
+                            <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-mail"></use></svg>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-brand-900 mb-1">E-Mail-Adresse</p>
+                            <a href="mailto:lpswim.info@gmail.com" class="text-brand-600 font-bold hover:text-brand-400 hover:underline decoration-brand-200 underline-offset-2 transition-colors outline-none">
+                                lpswim.info@gmail.com
+                            </a>
+                        </div>
                     </div>
                 </section>
                 
                 <section>
-                    <h3 class="font-bold text-lg text-brand-700 mb-2">Verbraucher­streit­beilegung / Universal­schlichtungs­stelle</h3>
-                    <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100">
-                        <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+                    <h3 class="font-bold text-lg text-brand-700 mb-3">Streitbeilegung</h3>
+                    <div class="bg-brand-50/50 p-5 rounded-xl border border-brand-100 flex items-start gap-4">
+                        <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0 border border-brand-50" aria-hidden="true">
+                            <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-info"></use></svg>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-brand-900 mb-1">Verbraucherschlichtung</p>
+                            <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+                        </div>
                     </div>
                 </section>
+
             </div>
         </div>
     </dialog>
