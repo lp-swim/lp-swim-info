@@ -96,6 +96,7 @@
             setTimeout(() => {
                 document.body.classList.add('overflow-hidden');
                 cookieDialog.showModal();
+                cookieDialog.focus();
             }, 500);
         } else if (decision === 'accepted') {
             window.loadGAScript();
@@ -206,7 +207,9 @@
         }
 
         if (e.target.tagName === 'DIALOG') {
-            closeModal(e.target.id);
+            if (e.target.id !== 'cookie-overlay') {
+                closeModal(e.target.id);
+            }
         }
     });
 
@@ -219,7 +222,9 @@
         document.querySelectorAll('dialog').forEach(dialog => {
             dialog.addEventListener('cancel', (e) => {
                 e.preventDefault(); 
-                closeModal(dialog.id);
+                if (dialog.id !== 'cookie-overlay') {
+                    closeModal(dialog.id);
+                }
             });
         });
     });
