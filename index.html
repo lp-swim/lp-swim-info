@@ -639,14 +639,23 @@
                     <h2 id="kontakt-heading" class="text-3xl md:text-4xl font-bold text-brand-900 leading-tight">
                         Startschuss
                     </h2>
-                    <div class="h-1 w-12 bg-brand-200 mt-6 mb-6 rounded-full" aria-hidden="true"></div>
-                    <p class="text-slate-600 text-sm leading-relaxed font-light">
-                        Bereit für den Sprung ins Wasser? Schwerpunkt auswählen, Zeitfenster finden und den Termin direkt online buchen.
-                    </p>
+                    <div class="h-1 w-12 bg-brand-200 mt-6 rounded-full hidden md:block" aria-hidden="true"></div>
                 </div>
 
-                <div class="md:w-2/3 w-full glass-card rounded-[2.5rem] p-8 md:p-10 space-y-6">
+                <div class="md:w-2/3 w-full glass-card rounded-[2.5rem] p-8 md:p-10 space-y-8">
                     
+                    <div class="flex items-start gap-4">
+                        <div class="bg-brand-50 p-3 rounded-2xl text-brand-600 shadow-sm shrink-0 border border-brand-100" aria-hidden="true">
+                            <svg aria-hidden="true" class="w-6 h-6"><use href="#icon-start"></use></svg>
+                        </div>
+                        <div class="text-slate-600 text-sm sm:text-base leading-relaxed font-light mt-0.5">
+                            <p>
+                                <strong class="font-semibold text-brand-900">Bereit für den Sprung ins Wasser?</strong><br>
+                                Schwerpunkt auswählen, Zeitfenster finden und den Termin direkt online buchen.
+                            </p>
+                        </div>
+                    </div>
+
                     <div class="block min-h-[300px] bg-slate-100 rounded-[2rem] overflow-hidden relative group shadow-inner">
                         <img src="./Calendly%20Vorschaubild.webp" alt="Vorschau Terminbuchung" width="800" height="600" loading="lazy" class="w-full h-full absolute inset-0 object-cover grayscale opacity-80 transition-all duration-700 group-hover:grayscale-0 group-hover:opacity-100">
                         <div class="absolute inset-0 flex items-center justify-center">
@@ -672,6 +681,7 @@
                             </p>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </section>
