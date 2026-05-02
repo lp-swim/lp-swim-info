@@ -24,12 +24,12 @@ body::before {
     pointer-events: none;
 }
 
-section { 
-    scroll-margin-top: 32px; /* Kleiner, sauberer Abstand für Handys (ohne fixierte Navigation) */
+section, header, article, main { 
+    scroll-margin-top: 32px; /* Kleiner, sauberer Abstand für Handys */
 }
 
 @media (min-width: 768px) {
-    section { 
+    section, header, article, main { 
         scroll-margin-top: 100px; /* Platzhalter für die fixierte Navigation auf dem PC */
     }
 }
