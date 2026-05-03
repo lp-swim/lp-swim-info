@@ -492,8 +492,9 @@
                     <div class="h-1 w-12 bg-brand-200 mt-6 rounded-full hidden md:block" aria-hidden="true"></div>
                 </div>
 
-                <div class="md:w-2/3 space-y-6">
-                    <article class="glass-card p-8 md:p-10 rounded-[2.5rem]">
+                <div class="md:w-2/3 flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 -mx-6 px-6 md:flex-col md:overflow-visible md:gap-0 md:space-y-6 md:mx-0 md:px-0 md:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                    
+                    <article class="glass-card p-6 sm:p-8 md:p-10 rounded-[2.5rem] w-[85vw] sm:w-[24rem] shrink-0 snap-center md:w-auto md:shrink-1 flex flex-col">
                         <div class="flex items-center justify-between mb-4">
                             <h3 class="text-lg sm:text-xl font-bold text-brand-900 tracking-tight flex items-center flex-wrap">
                                 Kinder <span aria-hidden="true" class="mx-1">&</span><span class="sr-only">und</span> Jugendliche
@@ -503,14 +504,14 @@
                                 <svg aria-hidden="true" class="w-4 h-4 icon-stop hidden"><use href="#icon-stop"></use></svg>
                             </button>
                         </div>
-                        <div id="text-kinder" class="text-slate-600 space-y-3 text-justify hyphens-auto text-sm leading-relaxed font-light">
+                        <div id="text-kinder" class="text-slate-600 space-y-4 md:space-y-3 text-left md:text-justify md:hyphens-auto text-sm leading-relaxed font-light">
                             <p>Qualitativer Schwimmunterricht ist für viele Kinder und Jugendliche heutzutage leider keine Selbstverständlichkeit mehr. Im dichten Familienalltag fehlen oft schlichtweg die zeitlichen Kapazitäten für regelmäßige Schwimmbadbesuche. Gleichzeitig stößt auch das reguläre Schulschwimmen durch knappe Wasserzeiten zunehmend an seine Grenzen.</p>
                             <p>Diese fehlende Routine führt schnell zu unsicheren Bewegungsabläufen und einer instabilen Lage im Wasser. Ohne eine kontinuierliche Korrektur schleifen sich technische Fehler dauerhaft ein. Das gefährdet nicht nur die Sicherheit im Wasser, sondern bremst langfristig auch die natürliche Freude an der Bewegung aus.</p>
                             <p>Genau hier setzen wir an und gleichen die fehlende Wasserpraxis durch eine gezielte Begleitung aus. Der Unterricht richtet sich nach dem jeweiligen Entwicklungsstand und fokussiert sich auf die festgelegten Ziele. Diese Zusammenarbeit bringt das Vertrauen im Wasser zurück und reicht bis zur erfolgreichen Abnahme der offiziellen Schwimmabzeichen.</p>
                         </div>
                     </article>
 
-                    <article class="glass-card p-8 md:p-10 rounded-[2.5rem]" id="schule">
+                    <article class="glass-card p-6 sm:p-8 md:p-10 rounded-[2.5rem] w-[85vw] sm:w-[24rem] shrink-0 snap-center md:w-auto md:shrink-1 flex flex-col" id="schule">
                         <div class="flex items-center justify-between mb-4">
                             <h3 class="text-lg sm:text-xl font-bold text-brand-900 tracking-tight">
                                 Schulbegleitung
@@ -520,14 +521,14 @@
                                 <svg aria-hidden="true" class="w-4 h-4 icon-stop hidden"><use href="#icon-stop"></use></svg>
                             </button>
                         </div>
-                        <div id="text-schule" class="text-slate-600 space-y-3 text-justify hyphens-auto text-sm leading-relaxed font-light">
+                        <div id="text-schule" class="text-slate-600 space-y-4 md:space-y-3 text-left md:text-justify md:hyphens-auto text-sm leading-relaxed font-light">
                             <p>Lehrkräfte tragen im Schwimmunterricht eine enorme Verantwortung. Sie müssen den Ablauf strukturieren, eine lückenlose Aufsicht gewährleisten und die Klassen pädagogisch betreuen. Diese Anforderungen stehen oft in starkem Kontrast zu knappen personellen Kapazitäten. Wie schnell dieses Gleichgewicht kippen kann, verdeutlichte ein tragischer Vorfall vom September 2023.</p>
                             <p>Damals ertrank ein Zweitklässler, was eine weitreichende juristische Debatte über Aufsichtspflichten auslöste. Trotz der Einhaltung bestehender Vorgaben kam es zu Bewährungsstrafen und Geldauflagen für das beteiligte Personal. Diese Situation offenbart ein enormes rechtliches Risiko im Schulalltag und zeigt die massive Belastung für Lehrkräfte unmissverständlich auf.</p>
                             <p>Als qualifizierte Begleitperson biete ich Schulen in Mannheim sowie der näheren Umgebung eine professionelle Entlastung an. Durch meine zusätzliche Präsenz am Beckenrand wird die Aufsicht deutlich engmaschiger. So schaffen wir ein verlässliches Lernumfeld, von dem die Lehrkräfte durch rechtliche Sicherheit ebenso profitieren wie die Schüler durch eine intensivere Betreuung.</p>
                         </div>
                     </article>
 
-                    <article class="glass-card p-8 md:p-10 rounded-[2.5rem]" id="erwachsene">
+                    <article class="glass-card p-6 sm:p-8 md:p-10 rounded-[2.5rem] w-[85vw] sm:w-[24rem] shrink-0 snap-center md:w-auto md:shrink-1 flex flex-col" id="erwachsene">
                         <div class="flex items-center justify-between mb-4">
                             <h3 class="text-lg sm:text-xl font-bold text-brand-900 tracking-tight">
                                 Erwachsene
@@ -537,12 +538,13 @@
                                 <svg aria-hidden="true" class="w-4 h-4 icon-stop hidden"><use href="#icon-stop"></use></svg>
                             </button>
                         </div>
-                        <div id="text-erwachsene" class="text-slate-600 space-y-3 text-justify hyphens-auto text-sm leading-relaxed font-light">
+                        <div id="text-erwachsene" class="text-slate-600 space-y-4 md:space-y-3 text-left md:text-justify md:hyphens-auto text-sm leading-relaxed font-light">
                             <p>Für viele Erwachsene ist der Zugang zum Wasser mit Unsicherheiten oder Scham verbunden. Es hält sich der Trugschluss, Schwimmen sei ein reines Kinderthema. Wasserkompetenz ist allerdings keine Frage des Alters. Sie lässt sich jederzeit erlernen, erfordert jedoch die Bereitschaft, die eigene Komfortzone zu verlassen.</p>
                             <p>Fehlende Routine wird im Urlaub oder in offenen Gewässern schnell zur unterschätzten Gefahr. Gezielter Unterricht baut Ängste strukturiert ab und festigt einen technisch sauberen Bewegungsablauf. Dies steigert nicht nur die körperliche Fitness, sondern stärkt maßgeblich auch das Vertrauen in die eigene Leistungsfähigkeit.</p>
                             <p>Für bereits Geübte liegt der Fokus auf der gezielten Optimierung bestehender Fähigkeiten. Durch konzentrierte Arbeit an Wasserlage und Atemtechnik wird der Schwimmstil deutlich effizienter. Diese Zusammenarbeit eignet sich ideal für den technischen Feinschliff im Wettkampfsport oder zur Erreichung persönlicher Ziele.</p>
                         </div>
                     </article>
+
                 </div>
             </div>
         </section>
