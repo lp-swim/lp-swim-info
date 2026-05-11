@@ -256,7 +256,7 @@
                     <a class="inline-flex items-center justify-center px-7 py-3 rounded-full bg-brand-700 text-white font-medium shadow-xl shadow-brand-900/10 hover:bg-brand-800 hover:-translate-y-1 transition-all" href="#kontakt" aria-label="Zur Terminbuchung springen">
                         Einzelunterricht buchen
                     </a>
-                    <a id="preis-button-mobil" class="items-center justify-center px-7 py-3 rounded-full bg-white text-brand-900 font-medium border border-brand-200 shadow-sm hover:bg-brand-50 transition-all" data-open-modal="preisModal" href="#preisuebersicht" aria-label="Preisübersicht als Dialogfenster öffnen">
+                    <a class="inline-flex items-center justify-center px-7 py-3 rounded-full bg-white text-brand-900 font-medium border border-brand-200 shadow-sm hover:bg-brand-50 transition-all" data-open-modal="preisModal" href="#preisuebersicht" aria-label="Preisübersicht als Dialogfenster öffnen">
                         Preisübersicht
                     </a>
                 </div>
@@ -701,10 +701,9 @@
     <footer class="bg-white py-8 text-center border-t border-brand-50">
         <div class="container mx-auto px-4">
             <div class="flex flex-wrap justify-center gap-6 mb-6 text-sm font-medium text-slate-600">
-                <a href="preise.html" target="_blank" class="hover:text-brand-600 transition-colors">Preise</a>
-                <a href="datenschutz.html" target="_blank" class="hover:text-brand-600 transition-colors">Datenschutz</a>
-                <a href="agb.html" target="_blank" class="hover:text-brand-600 transition-colors">AGB</a>
-                <a href="impressum.html" target="_blank" class="hover:text-brand-600 transition-colors">Impressum</a>
+                <button data-open-modal="datenschutzModal" class="hover:text-brand-600 transition-colors outline-none" aria-label="Datenschutzerklärung als Dialogfenster öffnen">Datenschutz</button>
+                <button data-open-modal="agbModal" class="hover:text-brand-600 transition-colors outline-none" aria-label="Allgemeine Geschäftsbedingungen als Dialogfenster öffnen">AGB</button>
+                <button data-open-modal="impressumModal" class="hover:text-brand-600 transition-colors outline-none" aria-label="Impressum als Dialogfenster öffnen">Impressum</button>
             </div>
             <p class="text-slate-600 text-xs tracking-wide">© 2026 LP-SWIM. Alle Rechte vorbehalten.</p>
         </div>
