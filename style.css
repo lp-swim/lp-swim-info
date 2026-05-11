@@ -2277,3 +2277,12 @@ dialog.is-closing::backdrop {
     from { opacity: 1; backdrop-filter: blur(4px); }
     to { opacity: 0; backdrop-filter: blur(0px); }
 }
+#preis-button-mobil {
+    display: inline-flex; 
+}
+
+@media (min-width: 768px) {
+    #preis-button-mobil {
+        display: none; 
+    }
+}
