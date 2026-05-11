@@ -25,12 +25,20 @@ body::before {
 }
 
 section, header, article, main { 
-    scroll-margin-top: 32px; /* Kleiner, sauberer Abstand für Handys */
+    scroll-margin-top: 32px;
+}
+
+#preis-button-mobil {
+    display: inline-flex;
 }
 
 @media (min-width: 768px) {
     section, header, article, main { 
-        scroll-margin-top: 100px; /* Platzhalter für die fixierte Navigation auf dem PC */
+        scroll-margin-top: 100px;
+    }
+    
+    #preis-button-mobil {
+        display: none;
     }
 }
 
@@ -2276,13 +2284,4 @@ dialog.is-closing::backdrop {
 @keyframes backdropFadeOut {
     from { opacity: 1; backdrop-filter: blur(4px); }
     to { opacity: 0; backdrop-filter: blur(0px); }
-}
-#preis-button-mobil {
-    display: inline-flex; 
-}
-
-@media (min-width: 768px) {
-    #preis-button-mobil {
-        display: none; 
-    }
 }
