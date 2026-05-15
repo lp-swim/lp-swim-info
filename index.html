@@ -61,7 +61,7 @@
     <meta http-equiv="Content-Security-Policy" content="
         default-src 'self'; 
         script-src 'self' https://www.googletagmanager.com; 
-        style-src 'self' 'unsafe-inline'; 
+        style-src 'self'; 
         font-src 'self'; 
         img-src 'self' data: https://lp-swim.github.io https://raw.githubusercontent.com https://*.google-analytics.com; 
         connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; 
@@ -964,8 +964,8 @@
                     <h3 class="font-bold text-lg text-brand-700 mb-2">§ 4 Stornierung & Ausfallentschädigung</h3>
                     <div class="space-y-3">
                         
-                        <div class="p-4 rounded-xl border flex items-start gap-3" style="background-color: rgba(240, 253, 244, 0.5); border-color: #dcfce7;">
-                            <div class="p-2 rounded-full shadow-sm shrink-0 border" style="background-color: #ffffff; color: #16a34a; border-color: #dcfce7;" aria-hidden="true">
+                        <div class="p-4 rounded-xl border border-green-200 bg-green-50/50 flex items-start gap-3">
+                            <div class="p-2 rounded-full shadow-sm shrink-0 border border-green-200 bg-white text-green-600" aria-hidden="true">
                                 <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-check"></use></svg>
                             </div>
                             <div class="min-w-0 flex-1">
@@ -973,15 +973,15 @@
                                 <p>Vereinbarte Termine sind rechtlich bindend. Eine kostenfreie Stornierung oder Verschiebung durch den Kunden ist ausschließlich bis spätestens <strong>48 Stunden vor dem vereinbarten Beginn</strong> möglich.</p>
                             </div>
                         </div>
-                        
-                        <div class="p-4 rounded-xl border flex items-start gap-3" style="background-color: rgba(254, 242, 242, 0.4); border-color: #fee2e2;">
-                            <div class="p-2 rounded-full shadow-sm shrink-0 border" style="background-color: #fee2e2; color: #dc2626; border-color: #fecaca;" aria-hidden="true">
+
+                        <div class="p-4 rounded-xl border border-red-200 bg-red-50/50 flex items-start gap-3">
+                            <div class="p-2 rounded-full shadow-sm shrink-0 border border-red-200 bg-red-100 text-red-600" aria-hidden="true">
                                 <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-close"></use></svg>
                             </div>
                             <div class="min-w-0 flex-1">
-                                <p class="font-semibold mb-1" style="color: #7f1d1d;">4.2 Kurzfristige Absage (< 48h) & Nichterscheinen</p>
-                                <p class="mb-2" style="color: rgba(127, 29, 29, 0.85);">Sagt der Kunde einen Termin weniger als 48 Stunden vor Beginn ab oder erscheint er kommentarlos nicht, gerät er in den gesetzlichen Annahmeverzug. In diesem Fall wird das <strong>volle vertraglich vereinbarte Honorar (100 %)</strong> als Ausfallentschädigung fällig (§ 615 BGB), da ein individueller Einzeltermin so kurzfristig nicht mehr anderweitig mit einer Ersatzperson belegt werden kann.</p>
-                                <p class="text-xs italic" style="color: rgba(153, 27, 27, 0.7);">Dem Kunden bleibt der gesetzliche Nachweis ausdrücklich gestattet, dass LP-SWIM durch den Ausfall kein oder ein wesentlich geringerer Schaden (beispielsweise durch ersparte Aufwendungen) entstanden ist.</p>
+                                <p class="font-semibold mb-1 text-red-900">4.2 Kurzfristige Absage (< 48h) & Nichterscheinen</p>
+                                <p class="mb-2 text-red-900/80">Sagt der Kunde einen Termin weniger als 48 Stunden vor Beginn ab oder erscheint er kommentarlos nicht, gerät er in den gesetzlichen Annahmeverzug. In diesem Fall wird das <strong>volle vertraglich vereinbarte Honorar (100 %)</strong> als Ausfallentschädigung fällig (§ 615 BGB), da ein individueller Einzeltermin so kurzfristig nicht mehr anderweitig mit einer Ersatzperson belegt werden kann.</p>
+                                <p class="text-xs italic text-red-800/70">Dem Kunden bleibt der gesetzliche Nachweis ausdrücklich gestattet, dass LP-SWIM durch den Ausfall kein oder ein wesentlich geringerer Schaden (beispielsweise durch ersparte Aufwendungen) entstanden ist.</p>
                             </div>
                         </div>
 
@@ -1083,7 +1083,7 @@
         </div>
     </dialog>
     
-    <dialog id="cookie-overlay" tabindex="-1" aria-labelledby="cookie-title" class="bg-white shadow-2xl shadow-brand-900/20 max-w-lg rounded-[2rem] border border-slate-100 p-6 sm:p-8 outline-none backdrop:bg-brand-900/80" style="margin: auto; width: 90%;">        
+    <dialog id="cookie-overlay" tabindex="-1" aria-labelledby="cookie-title" class="bg-white shadow-2xl shadow-brand-900/20 max-w-lg rounded-[2rem] border border-slate-100 p-6 sm:p-8 outline-none backdrop:bg-brand-900/80 m-auto w-[90%]">        
         <div class="flex items-start gap-5">
             <div class="group p-4 bg-brand-50 text-brand-600 rounded-2xl shrink-0 shadow-sm border border-brand-100 hover:bg-brand-100 transition-colors duration-300" aria-hidden="true">
                 <svg aria-hidden="true" class="w-8 h-8 group-hover:rotate-12 transition-transform duration-300"><use href="#icon-cookie-big"></use></svg>
