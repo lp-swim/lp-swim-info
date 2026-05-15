@@ -90,7 +90,24 @@
         const cookieDialog = document.getElementById('cookie-overlay'); 
         if (!cookieDialog) return;
 
-        const decision = localStorage.getItem(STORAGE_KEY);
+        const storedData = localStorage.getItem(STORAGE_KEY);
+        let decision = null;
+
+        if (storedData) {
+            try {
+                const parsedData = JSON.parse(storedData);
+                const now = Date.now();
+                const sixMonthsInMillis = 180 * 24 * 60 * 60 * 1000;
+                
+                if (now - parsedData.timestamp < sixMonthsInMillis) {
+                    decision = parsedData.value;
+                } else {
+                    localStorage.removeItem(STORAGE_KEY);
+                }
+            } catch (e) {
+                decision = storedData; 
+            }
+        }
         
         if (!decision) {
             setTimeout(() => {
@@ -99,7 +116,9 @@
                 cookieDialog.focus();
             }, 500);
         } else if (decision === 'accepted') {
-            window.loadGAScript();
+            if (typeof window.loadGAScript === 'function') {
+                window.loadGAScript();
+            }
         }
     }
 
@@ -196,11 +215,15 @@
             e.preventDefault();
             const action = cookieAction.getAttribute('data-cookie-action');
             
-            if (action === 'accept') {
-                localStorage.setItem("lp_swim_consent_2026", 'accepted');
-                if (typeof window.loadGAScript === 'function') window.loadGAScript();
-            } else {
-                localStorage.setItem("lp_swim_consent_2026", 'declined');
+            const consentData = {
+                value: action === 'accept' ? 'accepted' : 'declined',
+                timestamp: Date.now()
+            };
+            
+            localStorage.setItem("lp_swim_consent_2026", JSON.stringify(consentData));
+            
+            if (action === 'accept' && typeof window.loadGAScript === 'function') {
+                window.loadGAScript();
             }
             
             closeModal('cookie-overlay'); 
