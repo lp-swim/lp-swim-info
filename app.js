@@ -1,14 +1,44 @@
 (() => {
     'use strict';
 
+    let lastActiveElement = null;
+
+    function handleFocusTrap(e) {
+        if (e.key !== 'Tab') return;
+        
+        const modal = e.currentTarget;
+        const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (focusableElements.length === 0) return;
+
+        const firstFocusable = focusableElements[0];
+        const lastFocusable = focusableElements[focusableElements.length - 1];
+
+        if (e.shiftKey) {
+            if (document.activeElement === firstFocusable) {
+                e.preventDefault();
+                lastFocusable.focus();
+            }
+        } else {
+            if (document.activeElement === lastFocusable) {
+                e.preventDefault();
+                firstFocusable.focus();
+            }
+        }
+    }
+
     function openModal(id) {
         const modal = document.getElementById(id);
         if (!modal) return;
+        
+        lastActiveElement = document.activeElement;
+        
         document.body.classList.add('overflow-hidden');
         modal.showModal(); 
         
-        const firstFocusable = modal.querySelector('button, a, input, textarea');
-        if (firstFocusable) firstFocusable.focus();
+        const focusableElements = modal.querySelectorAll('button, a, input, textarea, [tabindex]:not([tabindex="-1"])');
+        if (focusableElements.length > 0) focusableElements[0].focus();
+
+        modal.addEventListener('keydown', handleFocusTrap);
     }
 
     function closeModal(id) {
@@ -16,12 +46,19 @@
         if (!modal) return;
         modal.classList.add('is-closing');
         
+        modal.removeEventListener('keydown', handleFocusTrap);
+        
         const onAnimationEnd = (e) => {
             if (e.target !== modal) return; 
             modal.classList.remove('is-closing');
             modal.close();
             modal.removeEventListener('animationend', onAnimationEnd);
             checkBodyScroll();
+
+            if (lastActiveElement) {
+                lastActiveElement.focus();
+                lastActiveElement = null;
+            }
         };
         modal.addEventListener('animationend', onAnimationEnd);
     }
