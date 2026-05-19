@@ -123,7 +123,7 @@
     };
 
     function initCookieBanner() {
-        const STORAGE_KEY = "lp_swim_consent_2026"; 
+        const STORAGE_KEY = "lp_swim_consent_einstellungen"; 
         const cookieDialog = document.getElementById('cookie-overlay'); 
         if (!cookieDialog) return;
 
@@ -243,7 +243,7 @@
         const revokeBtn = e.target.closest('[data-revoke-cookies]');
         if (revokeBtn) {
             e.preventDefault();
-            localStorage.removeItem("lp_swim_consent_2026"); 
+            localStorage.removeItem("lp_swim_consent_einstellungen"); 
             window.location.reload(); 
         }
         
@@ -257,7 +257,7 @@
                 timestamp: Date.now()
             };
             
-            localStorage.setItem("lp_swim_consent_2026", JSON.stringify(consentData));
+            localStorage.setItem("lp_swim_consent_einstellungen", JSON.stringify(consentData));
             
             if (action === 'accept' && typeof window.loadGAScript === 'function') {
                 window.loadGAScript();
