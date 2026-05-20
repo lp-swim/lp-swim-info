@@ -98,11 +98,13 @@
         const marquee = document.querySelector('.animate-marquee');
         if (marquee) {
             const cards = Array.from(marquee.children);
-            cards.forEach(card => {
-                const clone = card.cloneNode(true);
-                clone.setAttribute('aria-hidden', 'true'); 
-                marquee.appendChild(clone);
-            });
+            for (let i = 0; i < 2; i++) {
+                cards.forEach(card => {
+                    const clone = card.cloneNode(true);
+                    clone.setAttribute('aria-hidden', 'true'); 
+                    marquee.appendChild(clone);
+                });
+            }
         }
     }
 
