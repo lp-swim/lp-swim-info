@@ -1,0 +1,20 @@
+{
+  "id": "/lp-swim-info/",
+  "name": "LP-SWIM | Weil Sicherheit im Wasser zählt",
+  "short_name": "LP-SWIM",
+  "description": "Ob als Begleitperson im Schulschwimmen oder im Einzelunterricht – vom ersten sicheren Wasserkontakt bis zur Verfeinerung der Schwimmtechnik.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#EFF6FF",
+  "theme_color": "#EFF6FF",
+  "orientation": "portrait-primary",
+  "scope": "./",
+  "icons": [
+    {
+      "src": "./favicon.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}
