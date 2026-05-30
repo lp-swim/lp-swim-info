@@ -195,7 +195,7 @@ img, video {max-width: 100%;height: auto;}
 .space-y-6 > :not([hidden]) ~ :not([hidden]) {--tw-space-y-reverse: 0;margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));}
 .space-y-8 > :not([hidden]) ~ :not([hidden]) {--tw-space-y-reverse: 0;margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom: calc(2rem * var(--tw-space-y-reverse));}
 .overflow-hidden {overflow: hidden;}
-.overflow-y-auto {overflow-y: auto;}
+.overflow-y-auto {overflow-y-auto;}
 .scroll-smooth {scroll-behavior: smooth;}
 .hyphens-auto {-webkit-hyphens: auto;hyphens: auto;}
 .text-balance {text-wrap: balance;}
@@ -473,9 +473,11 @@ dialog.is-closing::backdrop {animation: backdropFadeOut 0.2s ease-in forwards;}
 .agb-text-red-mid {color: rgba(127, 29, 29, 0.85);}
 .agb-text-red-light {color: rgba(153, 27, 27, 0.7);}
 .card-winter, .card-summer {position: relative;z-index: 10;}
-#angebote, #standorte, #kontakt {position: relative;}
-#angebote::before, #standorte::before, #kontakt::before {content: "";position: absolute;top: 0;left: calc(50% - 50vw);width: 100vw;height: 100%;background-attachment: fixed;background-size: cover;background-position: center;background-repeat: no-repeat;z-index: -5;opacity: 0.3;pointer-events: none;}
+#start, #vorwort, #angebote, #standorte, #kontakt {position: relative;margin-top: 0 !important;margin-bottom: 0 !important;padding-top: 6rem;padding-bottom: 6rem;}
+#start {padding-top: 10rem;}
+#start::before, #vorwort::before, #angebote::before, #standorte::before, #kontakt::before {content: "";position: absolute;top: 0;left: calc(50% - 50vw);width: 100vw;height: 100%;background-attachment: fixed;background-size: cover;background-position: center;background-repeat: no-repeat;z-index: -5;opacity: 0.3;pointer-events: none;}
+#start::before, #vorwort::before {background-image: url('./hintergrund-start.webp');}
 #angebote::before {background-image: url('./hintergrund-angebote.webp');}
 #standorte::before {background-image: url('./hintergrund-standorte.webp');}
 #kontakt::before {background-image: url('./hintergrund-kontakt.webp');}
-@supports (-webkit-touch-callout: none) {#angebote::before, #standorte::before, #kontakt::before {background-attachment: scroll;}}
+@supports (-webkit-touch-callout: none) {#start::before, #vorwort::before, #angebote::before, #standorte::before, #kontakt::before {background-attachment: scroll;}}
