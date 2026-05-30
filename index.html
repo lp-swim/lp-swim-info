@@ -276,7 +276,7 @@
         </defs>
     </svg>  
 
-    <nav aria-label="Hauptnavigation" class="hidden md:flex fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-md border-b border-white/50 transition-all duration-300">
+    <nav aria-label="Hauptnavigation" class="hidden md:flex fixed top-0 inset-x-0 z-50 glass-card !rounded-none !border-x-0 !border-t-0 border-b border-white/30 transition-all duration-300">
         <div class="container max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"> 
             
             <a href="#start" aria-label="Zurück zum Seitenanfang" class="text-2xl font-bold tracking-tight text-brand-900 flex items-center gap-3 group rounded-xl p-1 -ml-1 transition-all outline-none">
@@ -297,7 +297,7 @@
         </div>
     </nav>
     
-    <header id="start" tabindex="-1" class="relative pb-12 md:pb-20 overflow-hidden outline-none">        
+    <header id="start" tabindex="-1" class="relative overflow-hidden outline-none">        
         <div class="container max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-12 lg:gap-20"> 
             <div class="flex-1 text-center md:text-left animate-fade-in">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-brand-100 shadow-sm text-brand-600 text-[11px] font-bold uppercase tracking-wider mb-5">
@@ -331,16 +331,16 @@
                             <video autoplay loop muted playsinline poster="./video/vorschau-poster.webp" class="absolute inset-0 w-full h-full object-cover">
                             <source src="./video/vorschau.mp4" type="video/mp4">
                             </video>
-                        <div class="absolute inset-0 bg-brand-900/20 mix-blend-multiply pointer-events-none"></div>
+                        <div class="absolute inset-0 bg-brand-900/40 mix-blend-multiply pointer-events-none"></div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <main id="main-content" tabindex="-1" class="container max-w-7xl mx-auto px-6 space-y-24 pb-8 outline-none"> 
+    <main id="main-content" tabindex="-1" class="container max-w-7xl mx-auto px-6 outline-none"> 
         
-        <section class="full-width-marquee -mx-6 md:-mx-0" aria-labelledby="bewertungen-title">
+        <section id="bewertungen" class="full-width-marquee -mx-6 md:-mx-0" aria-labelledby="bewertungen-title">
             <div class="px-6 md:px-0 mb-6 flex items-center justify-center gap-4 max-w-4xl mx-auto">
                 <div class="flex-1 h-px bg-gradient-to-r from-transparent to-brand-300"></div>
                 <h2 id="bewertungen-title" class="text-brand-600 font-bold tracking-widest uppercase text-xs sm:text-sm text-center min-w-max px-4 shrink-0">
@@ -521,8 +521,8 @@
             </div>
         </section>
 
-        <section class="max-w-7xl mx-auto" aria-labelledby="ueber-mich-heading">
-            <div class="flex flex-col md:flex-row gap-8 md:gap-20 items-start">
+        <section id="vorwort" class="max-w-7xl mx-auto" aria-labelledby="ueber-mich-heading">
+            <div class="flex flex-col md:flex-row-reverse gap-8 md:gap-20 items-start">
                 <div class="md:w-1/3 md:sticky md:top-32">
                     <div class="inline-flex items-center gap-2 text-brand-600 font-bold tracking-wider uppercase text-xs mb-3">
                         <svg aria-hidden="true" class="w-4 h-4"><use href="#icon-user"></use></svg>                        
@@ -558,7 +558,7 @@
             </div>
         </section>
 
-        <section class="max-w-7xl mx-auto" id="angebote" aria-labelledby="angebote-heading">
+        <section id="angebote" class="max-w-7xl mx-auto" aria-labelledby="angebote-heading">
             <div class="flex flex-col md:flex-row gap-8 md:gap-20 items-start">
                 
                 <div class="md:w-1/3 md:sticky md:top-32">
@@ -627,8 +627,8 @@
             </div>
         </section>
 
-        <section class="max-w-7xl mx-auto" id="standorte" aria-labelledby="standorte-heading">
-            <div class="flex flex-col md:flex-row gap-8 md:gap-20 items-start">
+        <section id="standorte" class="max-w-7xl mx-auto" aria-labelledby="standorte-heading">
+            <div class="flex flex-col md:flex-row-reverse gap-8 md:gap-20 items-start">
                     
                 <div class="md:w-1/3 md:sticky md:top-32">
                     <div class="inline-flex items-center gap-2 text-brand-600 font-bold tracking-wider uppercase text-xs mb-3">
@@ -708,7 +708,7 @@
             </div>
         </section>
 
-        <section class="max-w-7xl mx-auto" id="kontakt" aria-labelledby="kontakt-heading">
+        <section id="kontakt" class="max-w-7xl mx-auto" aria-labelledby="kontakt-heading">
             <div class="flex flex-col md:flex-row gap-8 md:gap-20 items-start">
                 <div class="md:w-1/3 md:sticky md:top-32">
                     <div class="inline-flex items-center gap-2 text-brand-600 font-bold tracking-wider uppercase text-xs mb-3">
@@ -760,7 +760,7 @@
         </section>
     </main>
 
-    <footer class="bg-white py-8 text-center border-t border-brand-50">
+    <footer class="glass-card !rounded-none !border-x-0 !border-b-0 py-8 text-center border-t border-white/30 mt-0 relative z-10">
         <div class="container mx-auto px-4">
             <div class="flex flex-wrap justify-center gap-6 mb-6 text-sm font-medium text-slate-600">
                 <button data-open-modal="datenschutzModal" class="hover:text-brand-600 transition-colors outline-none" aria-label="Datenschutzerklärung als Dialogfenster öffnen">Datenschutz</button>
@@ -820,8 +820,8 @@
                             <div class="min-w-0 flex-1">
                                 <p class="font-semibold text-brand-900 mb-1">Verantwortliche Stelle</p>
                                 <p class="mb-1">Lukas Prehn<br>c/o IP-Management #6336<br>Ludwig-Erhard-Straße 18<br>20459 Hamburg<br>Deutschland</p>
-                                <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x6c;&#x70;&#x73;&#x77;&#x69;&#x6d;&#x2e;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;" class="text-brand-600 font-bold hover:text-brand-400 hover:underline decoration-brand-200 underline-offset-2 transition-colors outline-none break-all">
-                                    &#x6c;&#x70;&#x73;&#x77;&#x69;&#x6d;&#x2e;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;
+                                <a href="mailto:lpswim.info@gmail.com" class="text-brand-600 font-bold hover:text-brand-400 hover:underline decoration-brand-200 underline-offset-2 transition-colors outline-none break-all">
+                                    lpswim.info@gmail.com
                                 </a>
                             </div>
                         </div>
@@ -1141,7 +1141,7 @@
                                 <svg aria-hidden="true" class="w-5 h-5"><use href="#icon-close"></use></svg>
                             </div>
                             <div class="min-w-0 flex-1">
-                                <p class="font-semibold mb-1 agb-text-red-dark">4.2 Kurzfristige Absage (&lt; 48h) & Nichterscheinen</p>
+                                <p class="font-semibold mb-1 agb-text-red-dark">4.2 Kurzfristige Absage (< 48h) & Nichterscheinen</p>
                                 <p class="mb-2 agb-text-red-mid">Sagt der Kunde einen Termin weniger als 48 Stunden vor Beginn ab oder erscheint er kommentarlos nicht, gerät er in den gesetzlichen Annahmeverzug. In diesem Fall wird das <strong>volle vertraglich vereinbarte Honorar (100 %)</strong> als Ausfallentschädigung einbehalten (§ 615 BGB). Diese Regelung gilt aus Gründen der Planungssicherheit unabhängig vom Absagegrund (somit auch bei einer kurzfristigen Erkrankung), da ein individueller Einzeltermin so kurzfristig nicht mehr mit einer Ersatzperson belegt werden kann.</p>
                                 <p class="text-xs italic agb-text-red-light">Dem Kunden bleibt der gesetzliche Nachweis ausdrücklich gestattet, dass LP-SWIM durch den Ausfall kein oder ein wesentlich geringerer Schaden (beispielsweise durch ersparte Aufwendungen) entstanden ist.</p>
                             </div>
@@ -1232,8 +1232,8 @@
                         </div>
                         <div class="min-w-0 flex-1">
                             <p class="font-semibold text-brand-900 mb-1">E-Mail</p>
-                            <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x6c;&#x70;&#x73;&#x77;&#x69;&#x6d;&#x2e;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;" class="text-brand-600 font-bold hover:text-brand-400 hover:underline decoration-brand-200 underline-offset-2 transition-colors outline-none break-all">
-                                &#x6c;&#x70;&#x73;&#x77;&#x69;&#x6d;&#x2e;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;
+                            <a href="mailto:lpswim.info@gmail.com" class="text-brand-600 font-bold hover:text-brand-400 hover:underline decoration-brand-200 underline-offset-2 transition-colors outline-none break-all">
+                                lpswim.info@gmail.com
                             </a>
                         </div>
                     </div>
