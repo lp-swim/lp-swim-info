@@ -1,5 +1,5 @@
 'use strict';
-const CACHE_NAME = 'lp-swim-cache-v3';
+const CACHE_NAME = 'lp-swim-cache-v4';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -7,8 +7,13 @@ const ASSETS_TO_CACHE = [
   './app.js',
   './favicon.webp',
   './fonts/poppins-v24-latin-regular.woff2',
-  './fonts/poppins-v24-latin-700.woff2'
+  './fonts/poppins-v24-latin-700.woff2',
+  './hintergrund-start.webp',
+  './hintergrund-angebote.webp',
+  './hintergrund-standorte.webp',
+  './hintergrund-kontakt.webp'
 ];
+
 self.addEventListener('install', (event) => {
   self.skipWaiting(); 
   event.waitUntil(
@@ -17,6 +22,7 @@ self.addEventListener('install', (event) => {
     })
   );
 });
+
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -30,6 +36,7 @@ self.addEventListener('activate', (event) => {
     }).then(() => self.clients.claim())
   );
 });
+
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET' || !event.request.url.startsWith('http')) return;
   if (event.request.mode === 'navigate') {
