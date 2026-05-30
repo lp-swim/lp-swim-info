@@ -472,17 +472,17 @@ dialog.is-closing::backdrop {animation: backdropFadeOut 0.2s ease-in forwards;}
 .agb-text-red-mid {color: rgba(127, 29, 29, 0.85);}
 .agb-text-red-light {color: rgba(153, 27, 27, 0.7);}
 .card-winter, .card-summer {position: relative;z-index: 10;}
-#start, #bewertungen, #vorwort, #angebote, #standorte, #kontakt, footer {
+body > section, body > header, body > footer {
     position: relative;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+    margin-top: 0;
+    margin-bottom: 0;
     padding-top: 6rem;
     padding-bottom: 6rem;
 }
 #start { padding-top: 12rem; padding-bottom: 8rem; }
 #bewertungen { padding-top: 2rem; padding-bottom: 4rem; }
 footer { padding-top: 4rem; padding-bottom: 4rem; }
-#start::before, #bewertungen::before, #vorwort::before, #angebote::before, #standorte::before, #kontakt::before, footer::before {
+header::before, section::before, footer::before {
     content: "";
     position: absolute;
     top: 0;
@@ -502,12 +502,14 @@ footer { padding-top: 4rem; padding-bottom: 4rem; }
 #standorte::before { background-image: url('./hintergrund-standorte.webp'); }
 #kontakt::before, footer::before { background-image: url('./hintergrund-kontakt.webp'); }
 @supports (-webkit-touch-callout: none) {
-    #start::before, #bewertungen::before, #vorwort::before, #angebote::before, #standorte::before, #kontakt::before, footer::before {
-        background-attachment: scroll;
-    }
+    header::before, section::before, footer::before { background-attachment: scroll; }
+}
+.glass-card {
+    background-color: rgba(241, 245, 249, 0.65);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
 }
 #bewertungen figure {
     background-color: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
 }
