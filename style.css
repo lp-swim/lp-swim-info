@@ -8,8 +8,7 @@ body::before {content: "";position: fixed;top: 0;left: 0;width: 100vw;height: 10
 section, header, article, main {scroll-margin-top: 32px;}
 #preis-button-mobil {display: inline-flex;}
 @media (min-width: 768px) {section, header, article, main {scroll-margin-top: 100px;}#preis-button-mobil {display: none;}}
-.glass-card {background: rgba(241, 245, 249, 0.85);backdrop-filter: blur(20px);-webkit-backdrop-filter: blur(20px);border: 1px solid rgba(255, 255, 255, 0.3);box-shadow: 0 4px 20px -2px rgba(12, 74, 110, 0.08);}
-.marquee-mask {-webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);-webkit-transform: translate3d(0,0,0);-webkit-backface-visibility: hidden;backface-visibility: hidden;}
+.glass-card {background: rgba(241, 245, 249, 0.65);backdrop-filter: blur(20px);-webkit-backdrop-filter: blur(20px);border: 1px solid rgba(255, 255, 255, 0.4);box-shadow: 0 4px 20px -2px rgba(12, 74, 110, 0.08);}.marquee-mask {-webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);-webkit-transform: translate3d(0,0,0);-webkit-backface-visibility: hidden;backface-visibility: hidden;}
 .animate-marquee {display: flex;will-change: transform;-webkit-transform: translate3d(0, 0, 0);transform: translate3d(0, 0, 0);}
 .animate-marquee > div {-webkit-transform: translateZ(0);transform: translateZ(0);-webkit-backface-visibility: hidden;backface-visibility: hidden;}
 .ambient-blob {position: fixed;z-index: -1;opacity: 0.6;will-change: transform;-webkit-transform: translateZ(0);transform: translateZ(0);-webkit-backface-visibility: hidden;backface-visibility: hidden;pointer-events: none;}
@@ -506,4 +505,9 @@ footer { padding-top: 4rem; padding-bottom: 4rem; }
     #start::before, #bewertungen::before, #vorwort::before, #angebote::before, #standorte::before, #kontakt::before, footer::before {
         background-attachment: scroll;
     }
+}
+#bewertungen figure {
+    background-color: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
