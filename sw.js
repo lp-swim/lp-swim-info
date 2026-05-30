@@ -1,5 +1,5 @@
 'use strict';
-const CACHE_NAME = 'lp-swim-cache-v4';
+const CACHE_NAME = 'lp-swim-cache-v3';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -7,11 +7,7 @@ const ASSETS_TO_CACHE = [
   './app.js',
   './favicon.webp',
   './fonts/poppins-v24-latin-regular.woff2',
-  './fonts/poppins-v24-latin-700.woff2',
-  './hintergrund-start.webp',
-  './hintergrund-angebote.webp',
-  './hintergrund-standorte.webp',
-  './hintergrund-kontakt.webp'
+  './fonts/poppins-v24-latin-700.woff2'
 ];
 self.addEventListener('install', (event) => {
   self.skipWaiting(); 
