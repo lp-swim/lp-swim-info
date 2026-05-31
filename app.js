@@ -203,7 +203,15 @@
         if (revokeBtn) {
             e.preventDefault();
             localStorage.removeItem("lp_swim_consent_einstellungen"); 
-            window.location.reload(); 
+            closeModal('datenschutzModal');
+            setTimeout(() => {
+                const cookieDialog = document.getElementById('cookie-overlay');
+                if (cookieDialog) {
+                    document.body.classList.add('overflow-hidden');
+                    cookieDialog.showModal();
+                    cookieDialog.focus();
+                }
+            }, 300);
         }
         const cookieAction = e.target.closest('[data-cookie-action]');
         if (cookieAction) {
