@@ -291,6 +291,24 @@
         initCookieBanner();
         initAudioReader();
 
+    document.addEventListener('DOMContentLoaded', () => {
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.05,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.glass-card, .animate-marquee figure').forEach(el => {
+            obs.observe(el);
+        });
+    });
+        
         document.querySelectorAll('dialog').forEach(dialog => {
             dialog.addEventListener('cancel', (e) => {
                 e.preventDefault(); 
