@@ -1,5 +1,5 @@
 'use strict';
-const CACHE_NAME = 'lp-swim-cache-v1';
+const CACHE_NAME = 'lp-swim-cache-v100';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
