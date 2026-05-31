@@ -1,5 +1,5 @@
 'use strict';
-const CACHE_NAME = 'lp-swim-cache-v69';
+const CACHE_NAME = 'lp-swim-cache';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -8,8 +8,9 @@ const ASSETS_TO_CACHE = [
   './favicon.webp',
   './fonts/poppins-v24-latin-regular.woff2',
   './fonts/poppins-v24-latin-700.woff2',
-  './hintergrund-standort.webp'
+  './hintergrund-standorte.webp'
 ];
+
 self.addEventListener('install', (event) => {
   self.skipWaiting(); 
   event.waitUntil(
@@ -18,6 +19,7 @@ self.addEventListener('install', (event) => {
     })
   );
 });
+
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -31,8 +33,10 @@ self.addEventListener('activate', (event) => {
     }).then(() => self.clients.claim())
   );
 });
+
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET' || !event.request.url.startsWith('http')) return;
+  
   if (event.request.mode === 'navigate') {
     event.respondWith(
       fetch(event.request)
@@ -43,11 +47,12 @@ self.addEventListener('fetch', (event) => {
           });
         })
         .catch(() => {
-          return caches.match('./index.html');
+          return caches.match('./index.html').then(response => response || caches.match('./'));
         })
     );
     return;
   }
+  
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       const fetchPromise = fetch(event.request).then((networkResponse) => {
@@ -58,7 +63,8 @@ self.addEventListener('fetch', (event) => {
           });
         }
         return networkResponse;
-      }).catch(() => {
+      }).catch((error) => {
+          console.warn('Fetch fehlgeschlagen, offline?', error);
       });
       return cachedResponse || fetchPromise;
     })
