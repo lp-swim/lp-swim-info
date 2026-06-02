@@ -1,5 +1,6 @@
 'use strict';
-const CACHE_NAME = 'lp-swim-cache';
+const CACHE_VERSION = 'v3';
+const CACHE_NAME = `lp-swim-cache-${CACHE_VERSION}`;
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -8,18 +9,18 @@ const ASSETS_TO_CACHE = [
   './favicon.webp',
   './fonts/poppins-v24-latin-regular.woff2',
   './fonts/poppins-v24-latin-700.woff2',
-  './hintergrund-standorte.webp'
+  './hintergrund-standorte.webp',
+  './Siegel_DSLV geprüfte Schwimmschule.webp',
+  './Regierungspraesidium-Karlsruhe.webp',
+  './Calendly%20Vorschaubild.webp',
+  './Preisliste%2001.11.2025.webp'
 ];
-
 self.addEventListener('install', (event) => {
   self.skipWaiting(); 
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(ASSETS_TO_CACHE);
-    })
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS_TO_CACHE))
   );
 });
-
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -33,10 +34,8 @@ self.addEventListener('activate', (event) => {
     }).then(() => self.clients.claim())
   );
 });
-
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET' || !event.request.url.startsWith('http')) return;
-  
   if (event.request.mode === 'navigate') {
     event.respondWith(
       fetch(event.request)
@@ -47,14 +46,13 @@ self.addEventListener('fetch', (event) => {
           });
         })
         .catch(() => {
-          return caches.match('./index.html').then(response => response || caches.match('./'));
+          return caches.match('./index.html', { ignoreSearch: true });
         })
     );
     return;
   }
-  
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
+    event.respondWith(
+    caches.match(event.request, { ignoreSearch: true }).then((cachedResponse) => {
       const fetchPromise = fetch(event.request).then((networkResponse) => {
         if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
           const responseToCache = networkResponse.clone();
