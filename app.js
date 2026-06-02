@@ -67,9 +67,12 @@
                 observer.unobserve(el);
             });
         }, { threshold: 0.1 });
-        document.querySelectorAll('section article, section > div, section h2').forEach(el => {
-            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
-            observer.observe(el);
+        const scrollElements = document.querySelectorAll('section article, section > div, section h2');
+        requestAnimationFrame(() => {
+            scrollElements.forEach(el => {
+                el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
+                observer.observe(el);
+            });
         });
     }
     function initMarquee() {
@@ -255,25 +258,29 @@
                 }
             });
         });
-        setTimeout(() => {
-            const elements = document.querySelectorAll('.glass-card, .animate-marquee figure');
-            if ('IntersectionObserver' in window) {
-                const obs = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
+        const glassElements = document.querySelectorAll('.glass-card, .animate-marquee figure');
+        if ('IntersectionObserver' in window) {
+            const obs = new IntersectionObserver((entries, observerInstance) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        requestAnimationFrame(() => {
                             entry.target.classList.add('is-visible');
-                            obs.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.01, rootMargin: '0px 0px 50px 0px' });
-
-                elements.forEach(el => obs.observe(el));
-            }
+                        });
+                        observerInstance.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.01, rootMargin: '0px 0px 50px 0px' });
+            
+            glassElements.forEach(el => obs.observe(el));
+            
             setTimeout(() => {
-                elements.forEach(el => el.classList.add('is-visible'));
+                requestAnimationFrame(() => {
+                    glassElements.forEach(el => el.classList.add('is-visible'));
+                });
             }, 2500);
-
-        }, 100);
+        } else {
+            glassElements.forEach(el => el.classList.add('is-visible'));
+        }
     });
 
 })();
