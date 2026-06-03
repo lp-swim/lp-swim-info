@@ -1,5 +1,5 @@
 'use strict';
-const CACHE_VERSION = 'v2.0';
+const CACHE_VERSION = 'v2.1';
 const CACHE_NAME = `lp-swim-cache-${CACHE_VERSION}`;
 const ASSETS_TO_CACHE = [
   './',
