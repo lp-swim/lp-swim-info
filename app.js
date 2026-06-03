@@ -108,10 +108,16 @@
     };
 
     function initCookieBanner() {
-        const STORAGE_KEY = "lp_swim_consent_einstellungen"; 
-        const cookieDialog = document.getElementById('cookie-overlay'); 
-        if (!cookieDialog) return;
-        const storedData = localStorage.getItem(STORAGE_KEY);
+    const STORAGE_KEY = "lp_swim_consent_einstellungen"; 
+    const cookieDialog = document.getElementById('cookie-overlay'); 
+    if (!cookieDialog) return;
+    cookieDialog.addEventListener('close', () => {
+        if (!localStorage.getItem(STORAGE_KEY)) {
+            document.body.classList.add('overflow-hidden');
+            cookieDialog.showModal();
+        }
+    });
+    const storedData = localStorage.getItem(STORAGE_KEY);
         let decision = null;
         if (storedData) {
             try {
