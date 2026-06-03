@@ -57,14 +57,17 @@
     function initScrollAnimations() {
         const observer = new IntersectionObserver((entries) => {
             const intersectingEntries = entries.filter(e => e.isIntersecting);
-            intersectingEntries.forEach((entry, index) => {
-                const el = entry.target;    
-                el.style.transitionDelay = `${index * 150}ms`;
-                el.classList.remove('opacity-0', 'translate-y-8');
-                setTimeout(() => {
-                    if (el) el.style.transitionDelay = '0ms';
-                }, 1000 + (index * 150));
-                observer.unobserve(el);
+            if (intersectingEntries.length === 0) return;
+            requestAnimationFrame(() => {
+                intersectingEntries.forEach((entry, index) => {
+                    const el = entry.target;    
+                    el.style.transitionDelay = `${index * 150}ms`;
+                    el.classList.remove('opacity-0', 'translate-y-8');
+                    setTimeout(() => {
+                        if (el) el.style.transitionDelay = '0ms';
+                    }, 1000 + (index * 150));
+                    observer.unobserve(el);
+                });
             });
         }, { threshold: 0.1 });
         document.querySelectorAll('section article, section > div, section h2').forEach(el => {
