@@ -76,7 +76,7 @@
         const marquee = document.querySelector('.animate-marquee');
         if (marquee) {
             const cards = Array.from(marquee.children);
-            for (let i = 0; i < 2; i++) {
+            for (let i = 0; i < 1; i++) {
                 cards.forEach(card => {
                     const clone = card.cloneNode(true);
                     clone.setAttribute('aria-hidden', 'true'); 
