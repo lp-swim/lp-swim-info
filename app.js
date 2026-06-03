@@ -240,10 +240,17 @@
                 timestamp: Date.now()
             };
             localStorage.setItem("lp_swim_consent_einstellungen", JSON.stringify(consentData));            
-            if (action === 'accept' && typeof window.loadGAScript === 'function') {
-                window.loadGAScript();
+            
+            if (action === 'accept') {
+                if (typeof window.loadGAScript === 'function') window.loadGAScript();
+                closeModal('cookie-overlay');
+            } else if (action === 'decline') {
+                if (typeof window.gtag === 'function') {
+                    window.location.reload();
+                } else {
+                    closeModal('cookie-overlay');
+                }
             }
-            closeModal('cookie-overlay'); 
         }
         if (e.target.tagName === 'DIALOG') {
             if (e.target.id !== 'cookie-overlay') {
