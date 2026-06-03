@@ -208,7 +208,6 @@
         const revokeBtn = e.target.closest('[data-revoke-cookies]');
         if (revokeBtn) {
             e.preventDefault();
-            localStorage.removeItem("lp_swim_consent_einstellungen"); 
             closeModal('datenschutzModal');
             setTimeout(() => {
                 const cookieDialog = document.getElementById('cookie-overlay');
