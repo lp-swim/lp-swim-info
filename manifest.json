@@ -5,7 +5,7 @@
   "description": "Ob als Begleitperson im Schulschwimmen oder im Einzelunterricht – vom ersten sicheren Wasserkontakt bis zur Verfeinerung der Schwimmtechnik.",
   "lang": "de",
   "dir": "ltr",
-  "start_url": "./index.html",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#EFF6FF",
   "theme_color": "#EFF6FF",
