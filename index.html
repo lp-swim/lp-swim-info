@@ -152,7 +152,7 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
   
-    <link rel="stylesheet" href="./style.css?v=1">
+    <link rel="stylesheet" href="./style.css?v=2">
     <link rel="manifest" href="./manifest.json" />
 </head>
 
@@ -359,10 +359,10 @@
         <div class="container max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-20"> 
             
             <div class="flex-1 text-center md:text-left">
-                <div class="stagger-1 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-brand-200 shadow-md text-brand-700 text-xs font-bold uppercase tracking-wider mb-4 md:mb-5">
-                    <span class="w-1.5 h-1.5 rounded-full bg-green-600 shadow-glow-green animate-pulse" aria-hidden="true"></span>
+                <a href="#kontakt" class="stagger-1 animate-float-btn inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white border border-brand-200 shadow-md text-brand-700 text-xs sm:text-sm font-bold uppercase tracking-wider mb-5 hover:bg-brand-50 transition-colors outline-none cursor-pointer" aria-label="Zur Terminbuchung springen">
+                    <span class="w-2 h-2 rounded-full bg-green-600 shadow-glow-green animate-pulse" aria-hidden="true"></span>
                     Juni-Termine verfügbar!                
-                </div>
+                </a>
 
                 <h1 class="stagger-2 w-full hero-title sm:text-5xl lg:text-7xl font-bold text-brand-900 mb-4 md:mb-5 tracking-tight">
                     Weil Sicherheit<br>
@@ -372,16 +372,6 @@
                 <p class="stagger-3 w-full text-base md:text-lg text-slate-700 mb-6 md:mb-8 max-w-xl mx-auto md:mx-0 leading-relaxed font-medium">
                     Schwimmunterricht im Einzelsetting – vom ersten Wasserkontakt bis zur Technikverfeinerung 
                 </p>
-                
-                <div class="stagger-4 flex flex-col md:flex-row items-stretch md:items-center gap-3 md:gap-5 w-full mx-auto md:mx-0">
-                    <a id="termin-button-mobil" class="animate-float-btn flex items-center justify-center w-full md:w-auto px-8 py-4 rounded-full bg-brand-700 text-white font-bold shadow-xl shadow-brand-900/20 text-base hover:bg-brand-800 transition-all outline-none" href="#kontakt" aria-label="Zur Terminbuchung springen">
-                        Termin buchen
-                    </a>
-                    <button id="preis-button-mobil" type="button" class="flex items-center justify-center w-full md:w-auto px-8 py-4 rounded-full bg-white/90 backdrop-blur-sm text-brand-800 font-bold border border-slate-100 shadow-sm text-base hover:bg-brand-50 transition-all outline-none" data-open-modal="preisModal" aria-label="Preisübersicht als Dialogfenster öffnen">
-                        Preisübersicht
-                    </button>
-                </div>
-            </div>
 
             <div class="stagger-5 seal-wrapper" aria-label="Zertifizierungen und Qualifikationen">
     
@@ -846,6 +836,7 @@
             <div class="flex flex-wrap justify-center gap-6 mb-6 text-sm font-medium text-slate-600">
                 <button data-open-modal="datenschutzModal" class="hover:text-brand-600 transition-colors outline-none" aria-label="Datenschutzerklärung als Dialogfenster öffnen">Datenschutz</button>
                 <button data-open-modal="agbModal" class="hover:text-brand-600 transition-colors outline-none" aria-label="Allgemeine Geschäftsbedingungen als Dialogfenster öffnen">AGB</button>
+                <button data-open-modal="preisModal" class="mobile-preis-link hover:text-brand-600 transition-colors outline-none" aria-label="Preisübersicht als Dialogfenster öffnen">Preisübersicht</button>
                 <button data-open-modal="impressumModal" class="hover:text-brand-600 transition-colors outline-none" aria-label="Impressum als Dialogfenster öffnen">Impressum</button>
             </div>
             <p class="text-slate-600 text-xs tracking-wide">© 2026 LP-SWIM. Alle Rechte vorbehalten.</p>
@@ -1391,6 +1382,6 @@
             </div>
     </dialog>
     
-    <script src="./app.js?v=1" defer></script>    
+    <script src="./app.js?v=2" defer></script>    
 </body>
 </html>
