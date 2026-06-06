@@ -5,12 +5,12 @@
   "description": "Schwimmunterricht im Einzelsetting – vom ersten Wasserkontakt bis zur Technikverfeinerung",
   "lang": "de",
   "dir": "ltr",
-  "start_url": "./",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#EFF6FF",
   "theme_color": "#EFF6FF",
   "orientation": "portrait-primary",
-  "scope": "./",
+  "scope": "/",
   "categories": ["sports", "education", "business"],
   "icons": [
     {
@@ -18,6 +18,20 @@
       "sizes": "377x377",
       "type": "image/webp",
       "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Termin buchen",
+      "short_name": "Termine",
+      "description": "Direkt zur Calendly-Buchung springen",
+      "url": "/#kontakt"
+    },
+    {
+      "name": "Standorte & Ablauf",
+      "short_name": "Standorte",
+      "description": "Hallenbad und Waldschwimmbad",
+      "url": "/#standorte"
     }
   ],
   "screenshots": [
