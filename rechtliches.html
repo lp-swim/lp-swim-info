@@ -3,16 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Rechtliches: Impressum, Datenschutz & AGB | LP-SWIM</title>
+    <title>Rechtliche Dokumente | LP-SWIM</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="./style.css?v=2.1.1">
+    <link rel="stylesheet" href="./style.css?v=2.1.3">
 </head>
-<body class="antialiased selection:bg-brand-200 selection:text-brand-900 min-h-screen py-12 px-4 sm:px-6">
+<body class="antialiased bg-slate-100 min-h-screen py-8 px-4 sm:px-6 md:py-12">
 
-    <!-- Global SVG Icons Defs (identical to index.html symbols used in modals) -->
     <svg class="hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
         <defs>
-            <symbol id="icon-star" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
             <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></symbol>
             <symbol id="icon-credit-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></symbol>
             <symbol id="icon-whatsapp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></symbol>
@@ -32,12 +30,12 @@
             <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
             <symbol id="icon-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" x2="9" y1="3" y2="18"/><line x1="15" x2="15" y1="6" y2="21"/></symbol>
             <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+            <symbol id="icon-star" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
         </defs>
     </svg>
 
-    <main class="max-w-3xl mx-auto space-y-12">
+    <main class="max-w-3xl mx-auto space-y-8 md:space-y-12">
         
-        <!-- Header Branding Element (Matching Website Theme) -->
         <div class="flex items-center justify-between p-6 bg-white border border-brand-100 rounded-[2rem] shadow-sm">
             <div class="flex items-center gap-4">
                 <div class="bg-brand-50 w-12 h-12 rounded-xl border border-brand-100 flex items-center justify-center shrink-0">
@@ -53,8 +51,13 @@
             </a>
         </div>
 
-        <!-- 1. IMPRESSUM SECTION -->
-        <section class="glass-card rounded-[2.5rem] p-6 md:p-10 is-visible">
+        <div class="flex flex-wrap gap-2 justify-center p-2 bg-white/60 backdrop-blur border border-brand-100 rounded-2xl shadow-sm">
+            <a href="#impressum" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-brand-900 rounded-xl transition-colors">1. Impressum</a>
+            <a href="#datenschutz" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-brand-900 rounded-xl transition-colors">2. Datenschutz</a>
+            <a href="#agb" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-brand-900 rounded-xl transition-colors">3. AGB</a>
+        </div>
+
+        <section id="impressum" class="glass-card rounded-[2.5rem] p-6 md:p-10 is-visible">
             <div class="border-b border-brand-50 pb-4 mb-6">
                 <h1 class="text-2xl font-bold text-brand-900 break-words hyphens-auto">Impressum</h1>
             </div>
@@ -117,8 +120,7 @@
             </div>
         </section>
 
-        <!-- 2. DATENSCHUTZ SECTION -->
-        <section class="glass-card rounded-[2.5rem] p-6 md:p-10 is-visible">
+        <section id="datenschutz" class="glass-card rounded-[2.5rem] p-6 md:p-10 is-visible">
             <div class="border-b border-brand-50 pb-4 mb-6">
                 <h1 class="text-2xl font-bold text-brand-900 break-words hyphens-auto">Datenschutzerklärung</h1>
                 <span class="text-[10px] uppercase tracking-widest text-brand-500 font-bold block mt-1">Stand: April 2026</span>
@@ -211,7 +213,7 @@
                             </div>
                             <div class="min-w-0 flex-1">
                                 <p class="font-semibold text-brand-900 mb-1">Progressive Web App (PWA) & Service Worker</p>
-                                <p class="mb-2">Diese Website nutzt die Technologie einer sogenannten Progressive Web App (PWA). Um eine schnelle Ladezeit, Stabilität und grundlegende Offline-Funktionalitäten bereitzustellen, wird ein sogenannter „Service Worker“ eingesetzt. Dieser speichert technische, statische Daten der Website (wie HTML-Strukturen, Stylesheets, Skripte und Schriftarten) im lokalen Cache-Speicher Ihres Endgeräts.</p>
+                                <p class="mb-2">Diese Website nutzt die Technologie einer sogenannte Progressive Web App (PWA). Um eine schnelle Ladezeit, Stabilität und grundlegende Offline-Funktionalitäten bereitzustellen, wird ein sogenannter „Service Worker“ eingesetzt. Dieser speichert technische, statische Daten der Website (wie HTML-Strukturen, Stylesheets, Skripte und Schriftarten) im lokalen Cache-Speicher Ihres Endgeräts.</p>
                                 <p>Es werden dabei zu keinem Zeitpunkt personenbezogene Daten von Ihnen ausgelesen, dauerhaft ausgewertet oder an externe Server übertragen. Die Speicherung erfolgt ausschließlich lokal auf Ihrem Gerät und ist für die fehlerfreie technische Bereitstellung der App-Funktion zwingend erforderlich (Art. 6 Abs. 1 lit. f DSGVO i.V.m. § 25 Abs. 2 Nr. 2 TDDDG).</p>
                             </div>
                         </div>
@@ -246,63 +248,115 @@
                 </div>
 
                 <div class="space-y-4">
-                    <h2 class="font-bold text-lg text-brand-700 mb-2">5. Ihre Rechte als betroffene Person</h2>
-                    <div class="space-y-3">
+                    <h2 class="font-bold text-lg text-brand-700 mb-2">5. Ihre Rechte als betroffene Person (Betroffenenrechte)</h2>
+                    <p class="text-xs text-slate-500 mb-4">Nach der DSGVO stehen Ihnen umfassende Rechte bezüglich der Verarbeitung Ihrer personenbezogenen Daten zu. Jedes Recht wird von uns unverzüglich und unentgeltlich gewahrt:</p>
+                    
+                    <div class="grid grid-cols-1 gap-4">
+                        
                         <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 flex items-start gap-3">
                             <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0" aria-hidden="true">
                                 <svg class="w-5 h-5"><use href="#icon-user"></use></svg>
                             </div>
                             <div class="min-w-0 flex-1">
-                                <p class="font-semibold text-brand-900 mb-1">Auskunft, Berichtigung & Löschung (Art. 15, 16, 17 DSGVO)</p>
-                                <p class="mb-2">Sie haben das Recht, unentgeltlich Auskunft über Ihre bei uns gespeicherten personenbezogenen Daten zu erhalten sowie deren sofortige Berichtigung oder Löschung zu fordern. Einer Löschung dürfen lediglich gesetzliche Aufbewahrungsfristen (z. B. steuerrechtliche Vorgaben für Rechnungen) entgegenstehen.</p>
-                                <div class="pl-3 border-l-2 border-brand-300 text-xs text-slate-600">
-                                    <strong class="text-brand-800">Beispiel:</strong> Sie können jederzeit nachfragen, welche Kontaktdaten wir von Ihnen vorliegen haben. Stellen Sie einen Fehler fest, korrigieren wir diesen. Wenn Sie keinen Schwimmunterricht mehr nehmen, löschen wir Ihren WhatsApp-Kommunikationsverlauf und Ihre Calendly-Daten umgehend auf Ihren Wunsch.
-                                </div>
+                                <p class="font-semibold text-brand-900 mb-1">Recht auf Auskunft (Art. 15 DSGVO)</p>
+                                <p class="mb-2">Sie haben das Recht, jederzeit eine kostenlose Bestätigung darüber zu verlangen, ob wir Sie betreffende personenbezogene Daten verarbeiten, woher diese stammen und zu welchem Zweck sie gespeichert werden.</p>
+                                <div class="pl-3 border-l-2 border-brand-300 text-xs text-slate-500 italic">Beispiel: Sie können erfragen, welche E-Mail-Adresse und welchen Namen wir aus Ihren Calendly-Einträgen vorliegen haben.</div>
                             </div>
                         </div>
+
                         <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 flex items-start gap-3">
                             <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0" aria-hidden="true">
-                                <svg class="w-5 h-5"><use href="#icon-clock"></use></svg>
+                                <svg class="w-5 h-5"><use href="#icon-file-text"></use></svg>
                             </div>
                             <div class="min-w-0 flex-1">
-                                <p class="font-semibold text-brand-900 mb-1">Einschränkung der Verarbeitung (Art. 18 DSGVO)</p>
-                                <p class="mb-2">Sie können verlangen, dass wir die Verarbeitung Ihrer Daten einschränken. Die Daten werden dann zwar noch gespeichert, aber für keine anderen Zwecke mehr verwendet.</p>
-                                <div class="pl-3 border-l-2 border-brand-300 text-xs text-slate-600">
-                                    <strong class="text-brand-800">Beispiel:</strong> Es gibt eine Unstimmigkeit bezüglich einer Rechnung. Während wir den Sachverhalt in Ruhe rechtlich prüfen, können Sie verlangen, dass wir Ihre Daten für diese Zeit „sperren“ und absolut nicht antasten.
-                                </div>
+                                <p class="font-semibold text-brand-900 mb-1">Recht auf Berichtigung (Art. 16 DSGVO)</p>
+                                <p class="mb-2">Sollten die bei uns über Sie gespeicherten Daten unrichtig oder unvollständig sein, haben Sie das Recht, die unverzügliche Korrektur oder Ergänzung zu verlangen.</p>
+                                <div class="pl-3 border-l-2 border-brand-300 text-xs text-slate-500 italic">Beispiel: Wenn sich Ihre Telefonnummer oder E-Mail-Adresse geändert hat, passen wir diese auf Zuruf sofort an.</div>
                             </div>
                         </div>
-                        <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 flex items-start gap-3">
-                            <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0" aria-hidden="true">
-                                <svg class="w-5 h-5"><use href="#icon-external"></use></svg>
-                            </div>
-                            <div class="min-w-0 flex-1">
-                                <p class="font-semibold text-brand-900 mb-1">Datenübertragbarkeit (Art. 20 DSGVO)</p>
-                                <p class="mb-2">Sie haben das Recht, die Herausgabe von Daten, die wir auf Grundlage eines Vertrags automatisiert verarbeiten, in einem gängigen, maschinenlesbaren Format zu verlangen.</p>
-                                <div class="pl-3 border-l-2 border-brand-300 text-xs text-slate-600">
-                                    <strong class="text-brand-800">Beispiel:</strong> Sie ziehen in eine andere Stadt und Ihr neuer Schwimmverein benötigt einen genauen Nachweis über Ihre bisherigen Trainingseinheiten. Wir stellen Ihnen diese Daten auf Wunsch strukturiert in einer Tabelle zur Verfügung.
-                                </div>
-                            </div>
-                        </div>
+
                         <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 flex items-start gap-3">
                             <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0" aria-hidden="true">
                                 <svg class="w-5 h-5"><use href="#icon-close"></use></svg>
                             </div>
                             <div class="min-w-0 flex-1">
-                                <p class="font-semibold text-brand-900 mb-1">Widerspruch & Beschwerderecht (Art. 21, 77 DSGVO)</p>
-                                <p class="mb-2">Sie haben jederzeit das Recht, gegen Verarbeitungen, die auf einem berechtigten Interesse beruhen, Widerspruch einzulegen. Des Weiteren steht Ihnen bei mutmaßlichen Verstößen gegen das Datenschutzrecht ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.</p>
-                                <div class="pl-3 border-l-2 border-brand-300 text-xs text-slate-600">
-                                    <strong class="text-brand-800">Beispiel:</strong> Sollten Sie der festen Überzeugung sein, dass wir Ihre Daten unsachgemäß behandeln und ein direktes Gespräch mit uns keine Klärung bringt, können Sie sich jederzeit an den zuständigen Landesbeauftragten für den Datenschutz wenden.
-                                </div>
+                                <p class="font-semibold text-brand-900 mb-1">Recht auf Löschung / „Vergessenwerden“ (Art. 17 DSGVO)</p>
+                                <p class="mb-2">Sie können die sofortige Löschung Ihrer Daten verlangen, sofern kein rechtlicher Grund (z. B. gesetzliche Aufbewahrungsfristen für ausgestellte Rechnungen) die weitere Speicherung zwingend erfordert.</p>
+                                <div class="pl-3 border-l-2 border-brand-300 text-xs text-slate-500 italic">Beispiel: Nach Beendigung Ihres Schwimmkurses löschen wir Ihren WhatsApp-Chatverlauf und Ihre Calendly-Historie restlos auf Wunsch.</div>
                             </div>
                         </div>
+
+                        <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 flex items-start gap-3">
+                            <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0" aria-hidden="true">
+                                <svg class="w-5 h-5"><use href="#icon-clock"></use></svg>
+                            </div>
+                            <div class="min-w-0 flex-1">
+                                <p class="font-semibold text-brand-900 mb-1">Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</p>
+                                <p class="mb-2">Sie haben das Recht, die Einschränkung der Datenverarbeitung zu fordern. Die Daten bleiben gespeichert, dürfen von uns aber nicht mehr aktiv genutzt werden.</p>
+                                <div class="pl-3 border-l-2 border-brand-300 text-xs text-slate-500 italic">Beispiel: Wenn Sie die Richtigkeit einer Rechnung bestreiten, sperren wir Ihre Daten für jede andere Nutzung, bis der Fall geklärt ist.</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 flex items-start gap-3">
+                            <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0" aria-hidden="true">
+                                <svg class="w-5 h-5"><use href="#icon-info"></use></svg>
+                            </div>
+                            <div class="min-w-0 flex-1">
+                                <p class="font-semibold text-brand-900 mb-1">Recht auf Unterrichtung (Art. 19 DSGVO)</p>
+                                <p>Haben Sie Ihr Recht auf Berichtigung, Löschung oder Einschränkung geltend gemacht, sind wir verpflichtet, allen Empfängern, denen Ihre Daten offengelegt wurden (z.B. Calendly), diese Korrektur mitzuteilen.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 flex items-start gap-3">
+                            <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0" aria-hidden="true">
+                                <svg class="w-5 h-5"><use href="#icon-external"></use></svg>
+                            </div>
+                            <div class="min-w-0 flex-1">
+                                <p class="font-semibold text-brand-900 mb-1">Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</p>
+                                <p class="mb-2">Sie dürfen fordern, dass wir Ihnen Ihre Daten, die wir auf Basis einer Einwilligung oder eines Vertrages automatisiert verarbeiten, in einem gängigen, maschinenlesbaren Format aushändigen.</p>
+                                <div class="pl-3 border-l-2 border-brand-300 text-xs text-slate-500 italic">Beispiel: Auf Wunsch stellen wir Ihnen Ihre absolvierten Trainertrainings-Termine strukturiert in einer CSV-Tabelle bereit.</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 flex items-start gap-3">
+                            <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0" aria-hidden="true">
+                                <svg class="w-5 h-5"><use href="#icon-handshake"></use></svg>
+                            </div>
+                            <div class="min-w-0 flex-1">
+                                <p class="font-semibold text-brand-900 mb-1">Recht auf Widerspruch (Art. 21 DSGVO)</p>
+                                <p class="mb-2">Erfolgt eine Datenverarbeitung auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigte Interessen), haben Sie das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen diese Verarbeitung Widerspruch einzulegen.</p>
+                                <div class="pl-3 border-l-2 border-brand-300 text-xs text-slate-500 italic">Beispiel: Sie können der statistischen Erfassung rein technischer Server-Logfiles widersprechen.</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 flex items-start gap-3">
+                            <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0" aria-hidden="true">
+                                <svg class="w-4 h-4 text-brand-600 shrink-0"><use href="#icon-cookie"></use></svg>
+                            </div>
+                            <div class="min-w-0 flex-1">
+                                <p class="font-semibold text-brand-900 mb-1">Recht auf Widerruf erteilter Einwilligungen (Art. 7 Abs. 3 DSGVO)</p>
+                                <p class="mb-2">Einwilligungen (wie das Akzeptieren von Google Analytics über das Cookie-Banner) können Sie jederzeit mit Wirkung für die Zukunft und ohne Angabe von Gründen widerrufen.</p>
+                                <div class="pl-3 border-l-2 border-brand-300 text-xs text-slate-500 italic">Tipp: Nutzen Sie hierfür einfach die Schaltfläche "Einstellungen zurücksetzen" im Hauptfenster der Website.</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 flex items-start gap-3">
+                            <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0" aria-hidden="true">
+                                <svg class="w-5 h-5"><use href="#icon-scale"></use></svg>
+                            </div>
+                            <div class="min-w-0 flex-1">
+                                <p class="font-semibold text-brand-900 mb-1">Recht auf Beschwerde bei einer Aufsichtsbehörde (Art. 77 DSGVO)</p>
+                                <p class="mb-2">Wenn Sie vermuten, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt, steht Ihnen das Recht zu, Beschwerde bei einer zuständigen Datenschutzbehörde einzulegen.</p>
+                                <div class="pl-3 border-l-2 border-brand-300 text-xs text-slate-500 italic">Zuständigkeit: Für Baden-Württemberg ist dies der Landesbeauftragte für den Datenschutz und die Informationsfreiheit in Stuttgart.</div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 3. AGB SECTION -->
-        <section class="glass-card rounded-[2.5rem] p-6 md:p-10 is-visible">
+        <section id="agb" class="glass-card rounded-[2.5rem] p-6 md:p-10 is-visible">
             <div class="border-b border-brand-50 pb-4 mb-6">
                 <h1 class="text-2xl font-bold text-brand-900 break-words hyphens-auto">Allgemeine Geschäftsbedingungen</h1>
                 <span class="text-[10px] uppercase tracking-widest text-brand-500 font-bold block mt-1">Stand: April 2026</span>
@@ -494,8 +548,7 @@
             </div>
         </section>
 
-        <!-- Footer Element matching index.html aesthetics -->
-        <footer class="text-center py-6 text-slate-500 text-xs tracking-wide">
+        <footer class="text-center py-6 border-t border-brand-100 text-slate-500 text-xs tracking-wide">
             <p>© 2026 LP-SWIM. Alle Rechte vorbehalten.</p>
         </footer>
 
