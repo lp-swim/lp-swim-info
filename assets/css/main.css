@@ -3880,3 +3880,164 @@ input, select, textarea {
 		}
 
 	}
+/* ==========================================================================
+   LP-SWIM ERGÄNZUNGEN (Modals, Chatbot & Cookie-Banner Integration)
+   ========================================================================== */
+
+dialog {
+    border: none;
+    background: transparent;
+    padding: 0;
+    width: calc(100vw - 2rem);
+    max-width: 750px;
+    outline: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+dialog::backdrop {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(6px);
+}
+
+.modal-header {
+    background: #f8fafc;
+    padding: 1.25rem 2rem;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.modal-header h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+.close-modal-btn {
+    background: #e2e8f0;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: #475569;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: background 0.2s ease;
+}
+
+.close-modal-btn:hover {
+    background: #cbd5e1;
+}
+
+.modal-body {
+    background: #ffffff;
+    padding: 2.5rem 2rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    color: #334155;
+    overflow-y: auto;
+    max-height: 65vh;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.modal-body h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.price-grid {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 736px) {
+    .price-grid {
+        flex-direction: column;
+    }
+}
+
+.price-card {
+    flex: 1;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    text-align: center;
+}
+
+.price-card.highlight {
+    border-color: #0284c7;
+    background: rgba(2, 132, 199, 0.02);
+}
+
+.price-amount {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #0284c7;
+    margin: 0.5rem 0;
+}
+
+.price-desc {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.modal-notice {
+    font-size: 0.85rem;
+    color: #64748b;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* --- Chatbot UI Modernisierung --- */
+#ai-chat-window {
+    transition: all 0.25s ease-in-out;
+}
+
+#chat-messages {
+    background: #f8fafc;
+}
+
+.chat-msg {
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    max-width: 80%;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+.chat-msg.user {
+    background: #0284c7;
+    color: #ffffff;
+    align-self: flex-end;
+    border-bottom-right-radius: 0.25rem;
+    margin-left: auto;
+}
+
+.chat-msg.bot {
+    background: #e2e8f0;
+    color: #1e293b;
+    align-self: flex-start;
+    border-bottom-left-radius: 0.25rem;
+    margin-right: auto;
+}
+
+.cookie-box {
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3);
+}
