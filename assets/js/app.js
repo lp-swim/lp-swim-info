@@ -2,6 +2,7 @@
     "use strict";
 
     let activeModalElement = null;
+    const COOKIE_KEY = "lp_swim_consent_einstellungen";
 
     // Focus Trap für Barrierefreiheit in Modals
     function handleFocusTrap(e) {
@@ -31,7 +32,7 @@
         if (!modal) return;
 
         activeModalElement = document.activeElement;
-        document.body.style.overflow = "hidden"; // Scrollen im Hintergrund verhindern
+        document.body.classList.add("overflow-hidden");
         modal.removeAttribute("hidden");
         modal.showModal();
 
@@ -40,7 +41,7 @@
 
         modal.addEventListener("keydown", handleFocusTrap);
 
-        // URL-Hash setzen
+        // URL-Hash Zuordnung
         const hashMapping = {
             datenschutzModal: "datenschutz",
             agbModal: "agb",
@@ -52,95 +53,127 @@
 
         if (window.location.hash !== targetHash) {
             history.pushState({ overlayOpen: modalId }, null, targetHash || window.location.pathname + window.location.search);
+        } else {
+            history.replaceState({ overlayOpen: modalId }, null, window.location.href);
         }
     };
 
-    // Modal schließen
-    window.closeModal = function(modalId, isPopState = false) {
+    // Modal schließen mit Animations-Ende-Prüfung
+    window.closeModal = function(modalId, fromPopstate = false) {
         const modal = document.getElementById(modalId);
         if (!modal) return;
 
+        modal.classList.add("is-closing");
         modal.removeEventListener("keydown", handleFocusTrap);
-        modal.close();
-        modal.setAttribute("hidden", "");
-        document.body.style.overflow = ""; // Scrollen wieder erlauben
 
-        if (activeModalElement) {
-            activeModalElement.focus();
-            activeModalElement = null;
+        if (!fromPopstate && history.state && history.state.overlayOpen === modalId) {
+            history.back();
         }
 
-        if (!isPopState && window.location.hash) {
-            history.pushState({ overlayOpen: null }, null, window.location.pathname + window.location.search);
-        }
-    };
-
-    // Klick außerhalb des Modals schließt es
-    document.querySelectorAll("dialog").forEach(dialog => {
-        dialog.addEventListener("click", e => {
-            if (e.target === dialog && dialog.id !== "cookie-overlay") {
-                closeModal(dialog.id);
+        const onAnimationEnd = (e) => {
+            if (e.target === modal) {
+                modal.classList.remove("is-closing");
+                modal.close();
+                modal.setAttribute("hidden", "true");
+                modal.removeEventListener("animationend", onAnimationEnd);
+                
+                // Prüfen, ob noch andere Modals offen sind
+                if (document.querySelectorAll("dialog[open]").length === 0) {
+                    document.body.classList.remove("overflow-hidden");
+                }
+                
+                document.body.classList.remove("cookie-open");
+                if (activeModalElement) {
+                    activeModalElement.focus();
+                    activeModalElement = null;
+                }
             }
-        });
-    });
-
-    // Hash-Steuerung beim Laden der Seite
-    window.addEventListener("DOMContentLoaded", () => {
-        const currentHash = window.location.hash.substring(1);
-        const hashMap = {
-            datenschutz: "datenschutzModal",
-            agb: "agbModal",
-            impressum: "impressumModal",
-            preise: "preisModal"
         };
-        if (hashMap[currentHash]) {
-            setTimeout(() => openModal(hashMap[currentHash]), 100);
-        }
-    });
-
-    // Hash-Änderungen überwachen (z.B. Zurück-Button)
-    window.addEventListener("hashchange", () => {
-        const currentHash = window.location.hash.substring(1);
-        const hashMap = {
-            datenschutz: "datenschutzModal",
-            agb: "agbModal",
-            impressum: "impressumModal",
-            preise: "preisModal"
-        };
-        if (hashMap[currentHash] && !document.getElementById(hashMap[currentHash]).hasAttribute("open")) {
-            openModal(hashMap[currentHash]);
-        }
-    });
-
-    window.addEventListener("popstate", () => {
-        document.querySelectorAll("dialog[open]").forEach(dialog => {
-            if (dialog.id !== "cookie-overlay") closeModal(dialog.id, true);
-        });
-    });
+        modal.addEventListener("animationend", onAnimationEnd);
+    };
 
     // --- COOKIE BANNER ---
     function initCookieBanner() {
         const overlay = document.getElementById("cookie-overlay");
-        const acceptBtn = document.getElementById("cookie-accept");
-        const denyBtn = document.getElementById("cookie-deny");
+        if (!overlay) return;
 
-        if (!overlay || !acceptBtn || !denyBtn) return;
+        const consent = localStorage.getItem(COOKIE_KEY);
+        let consentValue = null;
 
-        const consent = localStorage.getItem("cookieConsent");
-        if (!consent) {
-            overlay.classList.remove("hidden");
+        if (consent) {
+            try {
+                const parsed = JSON.parse(consent);
+                // 180 Tage Gültigkeit prüfen (15552000000 ms)
+                if (Date.now() - parsed.timestamp < 15552000000) {
+                    consentValue = parsed.value;
+                } else {
+                    localStorage.removeItem(COOKIE_KEY);
+                }
+            } catch (e) {
+                consentValue = consent;
+            }
         }
 
-        acceptBtn.addEventListener("click", () => {
-            localStorage.setItem("cookieConsent", "accepted");
-            overlay.classList.add("hidden");
-            // Hier optional Google Analytics aktivieren
+        if (consentValue === "accepted") {
+            loadGoogleAnalytics();
+        } else if (!consent) {
+            document.body.classList.add("overflow-hidden", "cookie-open");
+            overlay.classList.remove("hidden");
+            
+            // Klicks innerhalb des Banners abfangen
+            const acceptBtn = document.getElementById("cookie-accept");
+            const denyBtn = document.getElementById("cookie-deny");
+
+            if (acceptBtn) {
+                acceptBtn.addEventListener("click", () => {
+                    const consentData = { value: "accepted", timestamp: Date.now() };
+                    localStorage.setItem(COOKIE_KEY, JSON.stringify(consentData));
+                    document.body.classList.remove("cookie-open", "overflow-hidden");
+                    overlay.classList.add("hidden");
+                    loadGoogleAnalytics();
+                });
+            }
+
+            if (denyBtn) {
+                denyBtn.addEventListener("click", () => {
+                    const consentData = { value: "declined", timestamp: Date.now() };
+                    localStorage.setItem(COOKIE_KEY, JSON.stringify(consentData));
+                    document.body.classList.remove("cookie-open", "overflow-hidden");
+                    overlay.classList.add("hidden");
+                });
+            }
+        }
+    }
+
+    function loadGoogleAnalytics() {
+        if (window.gaLoaded) return;
+        window.gaLoaded = true;
+        const GA_ID = "G-T5H2XMBKFL";
+
+        window.dataLayer = window.dataLayer||[];
+        function gtag(){window.dataLayer.push(arguments);}
+        window.gtag = gtag;
+
+        gtag("consent", "default", {
+            analytics_storage: "denied",
+            ad_storage: "denied",
+            ad_user_data: "denied",
+            ad_personalization: "denied"
+        });
+        gtag("consent", "update", {
+            analytics_storage: "granted",
+            ad_storage: "granted",
+            ad_user_data: "granted",
+            ad_personalization: "granted"
         });
 
-        denyBtn.addEventListener("click", () => {
-            localStorage.setItem("cookieConsent", "denied");
-            overlay.classList.add("hidden");
-        });
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+        document.head.appendChild(script);
+
+        gtag("js", new Date());
+        gtag("config", GA_ID, { anonymize_ip: true });
     }
 
     // --- AI CHAT SYSTEM ---
@@ -153,21 +186,34 @@
 
     let aiWorker = null;
 
-    if (window.Worker) {
-        aiWorker = new Worker("ai-worker.js");
-        aiWorker.onmessage = (e) => {
-            const { type, payload } = e.data;
-            if (type === "REPLY") {
-                // Lade-Indikator entfernen
-                const loader = chatMessages.querySelector(".typing-indicator-wrapper");
-                if (loader) loader.remove();
-
-                appendChatMessage(payload, false);
-            }
-        };
+    function lazyInitWorker() {
+        if (aiWorker) return;
+        try {
+            const workerPath = new URL("./ai-worker.js", window.location.href).href;
+            aiWorker = new Worker(workerPath, { type: "module" });
+            
+            aiWorker.onmessage = (e) => {
+                const { type, text, payload } = e.data;
+                const msgText = text || payload; // Fallback für beide Event-Strukturen
+                
+                if (type === "REPLY") {
+                    const loader = chatMessages.querySelector(".typing-indicator-wrapper");
+                    if (loader) loader.remove();
+                    appendChatMessage(msgText, false);
+                } else if (type === "ERROR") {
+                    const loader = chatMessages.querySelector(".typing-indicator-wrapper");
+                    if (loader) loader.remove();
+                    appendChatMessage("Es gab einen Fehler. Bitte nutzen Sie das Kontaktformular.", false);
+                }
+            };
+            aiWorker.postMessage({ type: "INIT" });
+        } catch (err) {
+            console.error("Worker-Initialisierung fehlgeschlagen:", err);
+        }
     }
 
     function appendChatMessage(text, isUser, isHtml = true) {
+        if (!chatMessages) return;
         const msgDiv = document.createElement("div");
         msgDiv.className = `chat-msg ${isUser ? 'user' : 'bot'}`;
         
@@ -183,12 +229,25 @@
 
     if (chatBtn && chatWin) {
         chatBtn.addEventListener("click", () => {
-            chatWin.classList.toggle("open");
+            const isOpen = chatWin.classList.contains("scale-100");
+            if (isOpen) {
+                chatWin.classList.remove("scale-100", "opacity-100");
+                chatWin.classList.add("scale-0", "opacity-0");
+                document.body.classList.remove("overflow-hidden");
+            } else {
+                chatWin.classList.remove("scale-0", "opacity-0");
+                chatWin.classList.add("scale-100", "opacity-100");
+                document.body.classList.add("overflow-hidden");
+                lazyInitWorker();
+                if (chatInput) setTimeout(() => chatInput.focus(), 150);
+            }
         });
 
         if (chatClose) {
             chatClose.addEventListener("click", () => {
-                chatWin.classList.remove("open");
+                chatWin.classList.remove("scale-100", "opacity-100");
+                chatWin.classList.add("scale-0", "opacity-0");
+                document.body.classList.remove("overflow-hidden");
             });
         }
 
@@ -201,10 +260,9 @@
                 chatInput.value = "";
                 appendChatMessage(text, true, false);
 
-                // Lade-Indikator hinzufügen
                 const loaderWrapper = document.createElement("div");
                 loaderWrapper.className = "chat-msg bot typing-indicator-wrapper";
-                loaderWrapper.innerHTML = `<div class="typing-indicator"><span></span><span></span><span></span></div>`;
+                loaderWrapper.innerHTML = `<div class="typing-indicator flex items-center h-6 px-2" style="gap:6px"><div></div><div></div><div></div></div>`;
                 chatMessages.appendChild(loaderWrapper);
                 chatMessages.scrollTop = chatMessages.scrollHeight;
 
@@ -215,16 +273,63 @@
         }
     }
 
-    // Initialisierung
+    // --- EVENT LISTENERS & ROUTING ---
     window.addEventListener("DOMContentLoaded", () => {
         initCookieBanner();
+        
+        // Hash-Steuerung beim ersten Laden
+        const currentHash = window.location.hash.substring(1);
+        const hashMap = {
+            datenschutz: "datenschutzModal",
+            agb: "agbModal",
+            impressum: "impressumModal",
+            preise: "preisModal"
+        };
+        if (hashMap[currentHash]) {
+            setTimeout(() => window.openModal(hashMap[currentHash]), 100);
+        }
     });
-// --- Service Worker Registrierung (PWA) ---
+
+    window.addEventListener("hashchange", () => {
+        const currentHash = window.location.hash.substring(1);
+        const hashMap = {
+            datenschutz: "datenschutzModal",
+            agb: "agbModal",
+            impressum: "impressumModal",
+            preise: "preisModal"
+        };
+        if (hashMap[currentHash] && !document.getElementById(hashMap[currentHash]).hasAttribute("open")) {
+            window.openModal(hashMap[currentHash]);
+        }
+    });
+
+    window.addEventListener("popstate", () => {
+        document.querySelectorAll("dialog[open]").forEach(dialog => {
+            if (dialog.id !== "cookie-overlay") window.closeModal(dialog.id, true);
+        });
+    });
+
+    // Klick außerhalb schließt Modal (Backdrop-Klick)
+    document.querySelectorAll("dialog").forEach(dialog => {
+        dialog.addEventListener("click", e => {
+            if (e.target === dialog && dialog.id !== "cookie-overlay") {
+                window.closeModal(dialog.id);
+            }
+        });
+        dialog.addEventListener("cancel", (e) => {
+            e.preventDefault();
+            if (dialog.id !== "cookie-overlay") window.closeModal(dialog.id);
+        });
+    });
+
+    // PWA Service Worker
     if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
-            navigator.serviceWorker.register("./sw.js")
-                .then(reg => console.log("Service Worker erfolgreich registriert:", reg.scope))
-                .catch(err => console.error("Service Worker Registrierung fehlgeschlagen:", err));
+            navigator.serviceWorker.register("./sw.js").catch(() => {});
         });
     }
+
+    // Lazy Init Worker Fallback nach 3 Sekunden
+    setTimeout(lazyInitWorker, 3000);
+
 })();
