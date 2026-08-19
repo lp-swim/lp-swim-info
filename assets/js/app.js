@@ -219,5 +219,12 @@
     window.addEventListener("DOMContentLoaded", () => {
         initCookieBanner();
     });
-
+// --- Service Worker Registrierung (PWA) ---
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker.register("./sw.js")
+                .then(reg => console.log("Service Worker erfolgreich registriert:", reg.scope))
+                .catch(err => console.error("Service Worker Registrierung fehlgeschlagen:", err));
+        });
+    }
 })();
