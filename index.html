@@ -24,6 +24,15 @@
 <script>
   tailwind.config = {
     theme: {
+      /* Das hier bringt die Seitenabstände auf dem Handy zurück! */
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1.5rem',
+          md: '2rem',
+          lg: '2.5rem',
+        },
+      },
       extend: {
         fontFamily: {
           sans: ['Poppins', 'sans-serif'],
