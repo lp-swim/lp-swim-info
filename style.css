@@ -74,6 +74,14 @@ dialog.is-closing::backdrop{animation:smoothBgOut .3s ease forwards}
     pointer-events: auto;
 }
 
+.desktop-dropdown{opacity:0;pointer-events:none;transform:translateY(4px);transition:opacity .2s ease,transform .2s ease}
+.desktop-dropdown::before{content:'';position:absolute;top:-20px;left:0;right:0;height:20px}
+.desktop-menu-wrapper:focus-within .desktop-dropdown,.desktop-menu-wrapper:hover .desktop-dropdown{opacity:1;pointer-events:auto;transform:translateY(0)}
+.desktop-menu-wrapper button svg line{transition:transform .25s ease,opacity .25s ease;transform-origin:12px 12px}
+.desktop-menu-wrapper:hover button svg line:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.desktop-menu-wrapper:hover button svg line:nth-child(2){opacity:0}
+.desktop-menu-wrapper:hover button svg line:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
 /* Stagger Animations for Hero */
 @keyframes fadeInDownSmooth{0%{opacity:0;transform:translate3d(0,-20px,0)}100%{opacity:1;transform:translate3d(0,0,0)}}
 .stagger-1{opacity:0;animation:fadeInDownSmooth .5s cubic-bezier(.16,1,.3,1) 0s forwards}
