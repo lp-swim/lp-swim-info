@@ -87,24 +87,28 @@
             <a href="#angebote" class="hover:text-slate-900 transition-colors">Angebote</a>
             <a href="#standorte" class="hover:text-slate-900 transition-colors">Standorte</a>
             <a href="#ablauf" class="hover:text-slate-900 transition-colors">Ablauf</a>
+            <button type="button" data-open-modal="preisModal" class="hover:text-slate-900 transition-colors outline-none">Preise</button>
             <a href="#kontakt" class="bg-[#38bdf8] text-white px-6 py-2.5 rounded-full hover:bg-sky-500 transition-colors shadow-md shadow-sky-200">Termin wählen</a>
         </div>
     </div>
 </nav>
 
-<nav class="md:hidden fixed top-0 inset-x-0 z-50 bg-[#fbfaf8]/90 backdrop-blur-md h-20 flex items-center justify-between px-6">
+<nav class="md:hidden fixed top-0 inset-x-0 z-50 bg-[#fbfaf8]/90 backdrop-blur-md h-20 flex items-center justify-between px-6 border-b border-slate-100/60">
     <a href="#start" class="text-xl font-serif text-slate-900">
         LP-<span class="italic text-[#38bdf8]">SWIM</span>
     </a>
     <div class="desktop-menu-wrapper relative group">
-        <button type="button" class="flex items-center justify-center w-10 h-10 rounded-full text-slate-600 outline-none" aria-label="Menü öffnen">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        <button type="button" class="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-slate-200/80 text-slate-700 shadow-sm outline-none transition-transform active:scale-95" aria-label="Menü öffnen">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
-        <div class="desktop-dropdown absolute top-[calc(100%+0.5rem)] right-0 w-56 bg-white border border-slate-100 rounded-2xl shadow-xl p-2 flex flex-col z-50">
-            <a href="#angebote" class="block w-full px-4 py-3 text-slate-600 text-center">Angebote</a>
-            <a href="#standorte" class="block w-full px-4 py-3 text-slate-600 text-center">Standorte</a>
-            <a href="#ablauf" class="block w-full px-4 py-3 text-slate-600 text-center">Ablauf</a>
-            <button type="button" class="block w-full px-4 py-3 text-slate-600 text-center" data-open-modal="preisModal">Preise</button>
+        <div class="desktop-dropdown absolute top-[calc(100%+0.75rem)] right-0 w-[calc(100vw-3rem)] max-w-xs bg-white/95 backdrop-blur-xl border border-slate-100/90 rounded-[2rem] shadow-2xl shadow-slate-900/10 p-4 flex flex-col gap-1 z-50 transition-all duration-300">
+            <a href="#angebote" class="block w-full px-5 py-3 text-slate-700 font-medium text-sm text-center rounded-2xl hover:bg-slate-50 active:bg-sky-50 active:text-[#38bdf8] transition-colors">Angebote</a>
+            <a href="#standorte" class="block w-full px-5 py-3 text-slate-700 font-medium text-sm text-center rounded-2xl hover:bg-slate-50 active:bg-sky-50 active:text-[#38bdf8] transition-colors">Standorte</a>
+            <a href="#ablauf" class="block w-full px-5 py-3 text-slate-700 font-medium text-sm text-center rounded-2xl hover:bg-slate-50 active:bg-sky-50 active:text-[#38bdf8] transition-colors">Ablauf</a>
+            <button type="button" class="block w-full px-5 py-3 text-slate-700 font-medium text-sm text-center rounded-2xl hover:bg-slate-50 active:bg-sky-50 active:text-[#38bdf8] transition-colors" data-open-modal="preisModal">Preise</button>
+            <div class="pt-2 mt-1 border-t border-slate-100">
+                <a href="#kontakt" class="block w-full py-3.5 bg-[#38bdf8] text-white text-center font-bold text-sm rounded-full shadow-md shadow-sky-200 hover:bg-sky-500 transition-colors">Termin wählen</a>
+            </div>
         </div>
     </div>
 </nav>
@@ -426,7 +430,6 @@
                 <button type="button" data-open-modal="datenschutzModal" class="hover:text-slate-900 transition-colors outline-none">Datenschutz</button>
                 <button type="button" data-open-modal="agbModal" class="hover:text-slate-900 transition-colors outline-none">AGB</button>
                 <button type="button" data-open-modal="impressumModal" class="hover:text-slate-900 transition-colors outline-none">Impressum</button>
-                <button type="button" data-open-modal="preisModal" class="hover:text-slate-900 transition-colors outline-none">Preisübersicht</button>
             </div>
         </div>
         <p class="text-slate-400 text-xs tracking-wide">© 2026 LP-SWIM. Alle Rechte vorbehalten.</p>
