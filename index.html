@@ -97,11 +97,11 @@
     <a href="#start" class="text-xl font-serif text-slate-900">
         LP-<span class="italic text-[#38bdf8]">SWIM</span>
     </a>
-    <div class="desktop-menu-wrapper relative group">
-        <button type="button" class="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-slate-200/80 text-slate-700 shadow-sm outline-none transition-transform active:scale-95" aria-label="Menü öffnen">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    <div class="relative">
+        <button type="button" id="mobile-menu-btn" class="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-slate-200/80 text-slate-700 shadow-sm outline-none transition-transform active:scale-95" aria-label="Menü öffnen" aria-expanded="false">
+            <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
-        <div class="desktop-dropdown absolute top-[calc(100%+0.75rem)] right-0 w-[calc(100vw-3rem)] max-w-xs bg-white/95 backdrop-blur-xl border border-slate-100/90 rounded-[2rem] shadow-2xl shadow-slate-900/10 p-4 flex flex-col gap-1 z-50 transition-all duration-300">
+        <div id="mobile-dropdown" class="mobile-nav-popup absolute top-[calc(100%+0.75rem)] right-0 w-[calc(100vw-3rem)] max-w-xs bg-white/95 backdrop-blur-xl border border-slate-100/90 rounded-[2rem] shadow-2xl shadow-slate-900/10 p-3 flex flex-col gap-1 z-50 transition-all duration-300 ease-out origin-top-right">
             <a href="#angebote" class="block w-full px-5 py-3 text-slate-700 font-medium text-sm text-center rounded-2xl hover:bg-slate-50 active:bg-sky-50 active:text-[#38bdf8] transition-colors">Angebote</a>
             <a href="#standorte" class="block w-full px-5 py-3 text-slate-700 font-medium text-sm text-center rounded-2xl hover:bg-slate-50 active:bg-sky-50 active:text-[#38bdf8] transition-colors">Standorte</a>
             <a href="#ablauf" class="block w-full px-5 py-3 text-slate-700 font-medium text-sm text-center rounded-2xl hover:bg-slate-50 active:bg-sky-50 active:text-[#38bdf8] transition-colors">Ablauf</a>
