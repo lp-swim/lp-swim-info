@@ -348,12 +348,141 @@
     </div>
 </footer>
 
-<dialog id="preisModal"> </dialog>
-<dialog id="datenschutzModal"> </dialog>
-<dialog id="agbModal"> </dialog>
-<dialog id="impressumModal"> </dialog>
-<dialog id="cookie-overlay"> </dialog>
-<div id="ai-chat-widget"> </div>
+<dialog id="preisModal" aria-modal="true" aria-labelledby="preisTitle" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-5xl h-[90vh] p-0 m-auto outline-none" hidden>
+    <div class="flex flex-col h-[90vh] w-full">
+        <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-slate-50 shrink-0">
+            <div>
+                <h2 id="preisTitle" class="text-xl font-bold text-brand-900 break-words hyphens-auto">Preisübersicht</h2>
+                <p class="text-xs text-slate-500 mt-1">Alle Preise sind Endpreise. Gemäß § 19 UStG wird keine Umsatzsteuer ausgewiesen.</p>
+            </div>
+            <button type="button" data-close-modal="preisModal" class="shrink-0 p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-200 rounded-md transition-colors outline-none" aria-label="Fenster schließen"><svg aria-hidden="true" class="w-5 h-5"><use href="#icon-close"></use></svg></button>
+        </div>
+        <div class="flex-grow overflow-hidden bg-brand-50/30 flex items-center justify-center p-6 pb-8 sm:p-8">
+            <img src="./img/preisliste.webp" width="1200" height="1600" alt="LP-SWIM Preisübersicht Dokument" class="w-full h-full object-contain drop-shadow-md rounded-xl" decoding="async" loading="lazy">
+        </div>
+    </div>
+</dialog>
+
+<dialog id="datenschutzModal" aria-modal="true" aria-labelledby="datenschutzTitle" class="bg-slate-50 rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[42rem] max-h-[85vh] p-0 m-auto outline-none" hidden>
+    <div class="flex flex-col max-h-[85vh] w-full">
+        <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-slate-100 shrink-0">
+            <h2 id="datenschutzTitle" class="text-xl font-bold text-brand-900 break-words hyphens-auto">Datenschutzerklärung<br aria-hidden="true"><span class="text-[10px] uppercase tracking-widest text-brand-500">Stand: April 2026</span></h2>
+            <button type="button" data-close-modal="datenschutzModal" class="shrink-0 p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-200 rounded-md transition-colors outline-none" aria-label="Fenster schließen"><svg aria-hidden="true" class="w-5 h-5"><use href="#icon-close"></use></svg></button>
+        </div>
+        <div class="p-8 overflow-y-auto space-y-8 text-sm text-slate-600 leading-relaxed break-words hyphens-auto">
+            <section>
+                <h3 class="font-bold text-lg text-brand-700 mb-2">1. Datenschutz auf einen Blick</h3>
+                <div class="space-y-3">
+                    <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 flex items-start gap-3">
+                        <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0" aria-hidden="true"><svg aria-hidden="true" class="w-5 h-5"><use href="#icon-shield"></use></svg></div>
+                        <div class="min-w-0 flex-1"><p class="font-semibold text-brand-900 mb-1">Grundsätzliches</p><p>Der Schutz Ihrer persönlichen Daten hat für uns höchste Priorität. Wir behandeln Ihre personenbezogenen Daten vertraulich und strikt nach den Vorgaben der europäischen Datenschutz-Grundverordnung (DSGVO), des Bundesdatenschutzgesetzes (BDSG) sowie des Telekommunikation-Digitale-Dienste-Datenschutz-Gesetzes (TDDDG).</p></div>
+                    </div>
+                    <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 flex items-start gap-3">
+                        <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0" aria-hidden="true"><svg aria-hidden="true" class="w-5 h-5"><use href="#icon-user"></use></svg></div>
+                        <div class="min-w-0 flex-1"><p class="font-semibold text-brand-900 mb-1">Verantwortliche Stelle</p><p class="mb-1">Lukas Prehn<br>c/o IP-Management #6336<br>Ludwig-Erhard-Straße 18<br>20459 Hamburg<br>Deutschland</p><a href="mailto:&#x6c;&#x70;&#x73;&#x77;&#x69;&#x6d;&#x2e;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;" class="text-brand-600 font-bold hover:text-brand-400 hover:underline decoration-brand-200 underline-offset-2 transition-colors outline-none break-all"> &#x6c;&#x70;&#x73;&#x77;&#x69;&#x6d;&#x2e;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d; </a></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</dialog>
+
+<dialog id="agbModal" aria-modal="true" aria-labelledby="agbTitle" class="bg-slate-50 rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[42rem] max-h-[85vh] p-0 m-auto outline-none" hidden>
+    <div class="flex flex-col max-h-[85vh] w-full">
+        <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-slate-100 shrink-0">
+            <h2 id="agbTitle" class="text-xl font-bold text-brand-900 break-words hyphens-auto">Allgemeine Geschäftsbedingungen<br aria-hidden="true"><span class="text-[10px] uppercase tracking-widest text-brand-500">Stand: April 2026</span></h2>
+            <button type="button" data-close-modal="agbModal" class="shrink-0 p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-200 rounded-md transition-colors outline-none" aria-label="Fenster schließen"><svg aria-hidden="true" class="w-5 h-5"><use href="#icon-close"></use></svg></button>
+        </div>
+        <div class="p-8 overflow-y-auto space-y-8 text-sm text-slate-600 leading-relaxed break-words hyphens-auto">
+            <section>
+                <h3 class="font-bold text-lg text-brand-700 mb-2">§ 1 Geltungsbereich & Leistungserbringung</h3>
+                <div class="space-y-3">
+                    <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 flex items-start gap-3">
+                        <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0" aria-hidden="true"><svg aria-hidden="true" class="w-5 h-5"><use href="#icon-file-text"></use></svg></div>
+                        <div class="min-w-0 flex-1"><p class="font-semibold text-brand-900 mb-1">1.1 Vertragsgegenstand</p><p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für sämtliche Verträge zwischen <strong>uns, LP-SWIM (Inhaber: Lukas Prehn),</strong> und Ihnen als Kunden.</p></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</dialog>
+
+<dialog id="impressumModal" aria-modal="true" aria-labelledby="impressumTitle" class="bg-slate-50 rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[42rem] max-h-[85vh] p-0 m-auto outline-none" hidden>
+    <div class="flex flex-col max-h-[85vh] w-full">
+        <div class="p-6 border-b border-brand-50 flex justify-between items-center gap-4 bg-slate-100 shrink-0">
+            <h2 id="impressumTitle" class="text-xl font-bold text-brand-900 break-words hyphens-auto">Impressum</h2>
+            <button type="button" data-close-modal="impressumModal" class="shrink-0 p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-200 rounded-md transition-colors outline-none" aria-label="Fenster schließen"><svg aria-hidden="true" class="w-5 h-5"><use href="#icon-close"></use></svg></button>
+        </div>
+        <div class="p-8 overflow-y-auto space-y-8 text-sm text-slate-600 leading-relaxed break-words hyphens-auto">
+            <section>
+                <h3 class="font-bold text-lg text-brand-700 mb-2">Angaben gemäß § 5 TMG</h3>
+                <div class="bg-brand-50/50 p-4 rounded-xl border border-brand-100 flex items-start gap-3">
+                    <div class="bg-white p-2 rounded-full text-brand-600 shadow-sm shrink-0" aria-hidden="true"><svg aria-hidden="true" class="w-5 h-5"><use href="#icon-user"></use></svg></div>
+                    <div class="min-w-0 flex-1"><p class="font-semibold text-brand-900 mb-1">Betreiber der Website</p><p>Lukas Prehn<br>c/o IP-Management #6336<br>Ludwig-Erhard-Straße 18<br>20459 Hamburg<br>Deutschland</p></div>
+                </div>
+            </section>
+        </div>
+    </div>
+</dialog>
+
+<dialog id="cookie-overlay" tabindex="-1" aria-labelledby="cookie-title" class="bg-white shadow-2xl shadow-brand-900/20 w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:max-w-lg rounded-[2rem] border border-slate-100 p-6 sm:p-8 outline-none m-auto">
+    <div class="flex items-start gap-5">
+        <div class="group p-4 bg-brand-50 text-brand-600 rounded-2xl shrink-0 shadow-sm border border-brand-100 hover:bg-brand-100 transition-colors duration-300" aria-hidden="true">
+            <svg aria-hidden="true" class="w-8 h-8 group-hover:rotate-12 transition-transform duration-300"><use href="#icon-cookie-big"></use></svg>
+        </div>
+        <div class="space-y-3">
+            <h3 id="cookie-title" class="font-bold text-xl text-brand-900 tracking-tight">Datenschutz & Cookies</h3>
+            <div class="text-slate-600 text-sm leading-relaxed space-y-3">
+                <p>Damit hier alles flüssig läuft, möchten wir Google Analytics 4 nutzen, um anonymisiert auszuwerten, wie unsere Seite genutzt wird. Dies geschieht nur mit Ihrer freiwilligen Zustimmung.</p>
+                <div class="text-xs text-slate-500 bg-slate-50 p-3 rounded-xl border border-slate-100 flex items-start gap-2">
+                    <svg aria-hidden="true" class="shrink-0 w-4 h-4 text-brand-400 mt-0.5"><use href="#icon-info"></use></svg>
+                    <span> Ihre IP wird anonymisiert. Details & Widerruf in der <button type="button" data-open-modal="datenschutzModal" class="text-brand-600 font-bold hover:underline decoration-brand-200 underline-offset-2 transition-colors outline-none" aria-label="Datenschutzerklärung als Dialogfenster öffnen">Datenschutzerklärung</button>.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col-reverse sm:flex-row gap-3 mt-8 pt-6 border-t border-slate-100">
+        <button type="button" data-cookie-action="decline" class="flex-1 px-5 py-3.5 text-sm font-bold bg-slate-100 text-slate-600 shadow-sm hover:bg-slate-50 hover:text-slate-800 rounded-xl transition-all border border-slate-100 hover:border-slate-200 outline-none" aria-label="Cookies ablehnen">Ablehnen</button>
+        <button type="button" data-cookie-action="accept" class="flex-1 px-5 py-3.5 text-sm font-bold bg-brand-900 text-white rounded-xl shadow-lg shadow-brand-900/20 hover:shadow-brand-900/40 hover:-translate-y-0.5 transition-all flex justify-center items-center gap-2 group outline-none" aria-label="Cookies akzeptieren">
+            <svg aria-hidden="true" class="w-4 h-4 group-hover:scale-110 transition-transform"><use href="#icon-check"></use></svg> Akzeptieren
+        </button>
+    </div>
+</dialog>
+
+<div id="ai-chat-widget" class="fixed bottom-6 right-6 z-[100] flex flex-col items-end pointer-events-none">
+    <div id="ai-chat-window" class="pointer-events-auto w-[calc(100vw-3rem)] sm:w-96 bg-white/90 backdrop-blur-md border border-brand-100 rounded-[2rem] shadow-2xl overflow-hidden flex flex-col mb-4 transition-all duration-300 origin-bottom-right scale-0 opacity-0 h-[30rem] max-h-[calc(100dvh-6rem)]">
+        <div class="bg-brand-900 text-white p-4 flex justify-between items-center shrink-0">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-brand-50" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><path d="M4.93 4.93l4.24 4.24"></path><path d="M14.83 14.83l4.24 4.24"></path><path d="M14.83 9.17l4.24-4.24"></path><path d="M4.93 19.07l4.24-4.24"></path></svg>
+                </div>
+                <div>
+                    <h3 class="font-bold text-sm">Ihr Rettungsring</h3>
+                    <p class="text-[10px] text-brand-200">FAQ-Datenbank</p>
+                </div>
+            </div>
+            <button type="button" id="close-chat-btn" class="text-brand-200 hover:text-white transition-colors outline-none" aria-label="Chat schließen">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        <div id="ai-chat-messages" class="flex-1 p-4 overflow-y-auto space-y-4 text-sm bg-slate-50/50">
+            <div class="flex gap-2 items-end">
+                <div class="bg-white border border-brand-100 text-slate-600 p-3 rounded-2xl rounded-bl-none shadow-sm max-w-[85%]">Schön, dass Sie hier sind! Damit ich Ihre Frage optimal beantworten kann, stellen Sie diese bitte einzeln.</div>
+            </div>
+        </div>
+        <div class="p-3 bg-white border-t border-brand-50 shrink-0">
+            <form id="ai-chat-form" class="flex items-center relative w-full">
+                <input type="text" id="ai-chat-input" class="w-full bg-slate-50 border border-brand-100 rounded-full pl-5 py-3 text-sm text-slate-700 outline-none focus:outline-none focus:border-brand-300 focus:bg-white transition-all shadow-inner" style="padding-right:3.5rem" placeholder="Frage stellen..." autocomplete="off">
+                <button type="submit" class="absolute bg-brand-600 text-white rounded-full flex items-center justify-center hover:bg-brand-700 hover:scale-105 transition-all shadow-md outline-none" style="right:6px;top:6px;bottom:6px;aspect-ratio:1/1" aria-label="Senden">
+                    <svg class="w-4 h-4 ml-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+    <button type="button" id="toggle-chat-btn" class="pointer-events-auto bg-white border border-slate-200 text-brand-700 w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all outline-none animate-pulse" aria-label="Hilfe & Fragen öffnen">
+        <svg style="width: 1.5rem; height: 1.5rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><path d="M4.93 4.93l4.24 4.24"></path><path d="M14.83 14.83l4.24 4.24"></path><path d="M14.83 9.17l4.24-4.24"></path><path d="M4.93 19.07l4.24-4.24"></path></svg>
+    </button>
+</div>
 
 <script src="./app.js?v=3.1.0" defer></script>
 </body>
