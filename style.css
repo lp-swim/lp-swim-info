@@ -95,3 +95,109 @@ dialog.is-closing::backdrop{animation:smoothBgOut .3s ease forwards}
     [data-close-modal], #close-chat-btn { display: none; } 
     .animate-marquee figure {width: 85vw; padding: 1.5rem;}
 }
+/* Bäder Kacheln Container & Layout */
+.baeder-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+@media (min-width: 640px) {
+    .baeder-container {
+        flex-direction: row;
+    }
+}
+
+/* Kachel Grunddesign */
+.bad-kachel {
+    flex: 1;
+    display: block;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px -5px rgba(226, 232, 240, 0.5);
+    text-decoration: none;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .bad-kachel {
+        padding: 2rem;
+    }
+}
+
+/* Dezentes Hervorheben bei Hover */
+.bad-kachel:hover {
+    border-color: #7dd3fc;
+    box-shadow: 0 20px 25px -5px rgba(14, 165, 233, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Zeitraum Badge & Punkt */
+.bad-kachel-zeitraum {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #0284c7;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.bad-kachel-punkt {
+    width: 0.625rem;
+    height: 0.625rem;
+    background-color: #38bdf8;
+    border-radius: 9999px;
+    transition: transform 0.3s ease;
+}
+
+.bad-kachel:hover .bad-kachel-punkt {
+    transform: scale(1.25);
+}
+
+/* Titel & Externes Link Icon */
+.bad-kachel-titel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.bad-kachel:hover .bad-kachel-titel {
+    color: #0284c7;
+}
+
+.bad-kachel-icon {
+    width: 1rem;
+    height: 1rem;
+    color: #94a3b8;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.bad-kachel:hover .bad-kachel-icon {
+    color: #0284c7;
+    transform: translate(2px, -2px);
+}
+
+/* Untertitel & Beschreibungstext */
+.bad-kachel-untertitel {
+    font-size: 0.8125rem;
+    color: #94a3b8;
+    margin-bottom: 1.5rem;
+}
+
+.bad-kachel-text {
+    font-size: 0.875rem;
+    line-height: 1.625;
+    color: #64748b;
+}
