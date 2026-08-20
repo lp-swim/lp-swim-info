@@ -95,8 +95,8 @@ dialog.is-closing::backdrop{animation:smoothBgOut .3s ease forwards}
     [data-close-modal], #close-chat-btn { display: none; } 
     .animate-marquee figure {width: 85vw; padding: 1.5rem;}
 }
-/* Bäder Kacheln Container & Layout */
-.baeder-container {
+
+.baeder-layout-wrapper {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -104,40 +104,37 @@ dialog.is-closing::backdrop{animation:smoothBgOut .3s ease forwards}
 }
 
 @media (min-width: 640px) {
-    .baeder-container {
+    .baeder-layout-wrapper {
         flex-direction: row;
     }
 }
 
-/* Kachel Grunddesign */
-.bad-kachel {
+.schwimmbad-karte {
     flex: 1;
     display: block;
     background-color: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 1.5rem;
     padding: 1.5rem;
-    box-shadow: 0 10px 25px -5px rgba(226, 232, 240, 0.5);
+    box-shadow: 0 20px 25px -5px rgba(226, 232, 240, 0.3), 0 10px 10px -5px rgba(226, 232, 240, 0.3);
     text-decoration: none;
     outline: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (min-width: 768px) {
-    .bad-kachel {
+    .schwimmbad-karte {
         padding: 2rem;
     }
 }
 
-/* Dezentes Hervorheben bei Hover */
-.bad-kachel:hover {
-    border-color: #7dd3fc;
-    box-shadow: 0 20px 25px -5px rgba(14, 165, 233, 0.15);
+.schwimmbad-karte:hover {
+    border-color: #bae6fd;
+    box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.15);
     transform: translateY(-2px);
 }
 
-/* Zeitraum Badge & Punkt */
-.bad-kachel-zeitraum {
+.karte-saison {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -149,7 +146,7 @@ dialog.is-closing::backdrop{animation:smoothBgOut .3s ease forwards}
     margin-bottom: 1.5rem;
 }
 
-.bad-kachel-punkt {
+.saison-indikator {
     width: 0.625rem;
     height: 0.625rem;
     background-color: #38bdf8;
@@ -157,12 +154,11 @@ dialog.is-closing::backdrop{animation:smoothBgOut .3s ease forwards}
     transition: transform 0.3s ease;
 }
 
-.bad-kachel:hover .bad-kachel-punkt {
+.schwimmbad-karte:hover .saison-indikator {
     transform: scale(1.25);
 }
 
-/* Titel & Externes Link Icon */
-.bad-kachel-titel {
+.karte-titel {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -173,30 +169,29 @@ dialog.is-closing::backdrop{animation:smoothBgOut .3s ease forwards}
     transition: color 0.3s ease;
 }
 
-.bad-kachel:hover .bad-kachel-titel {
+.schwimmbad-karte:hover .karte-titel {
     color: #0284c7;
 }
 
-.bad-kachel-icon {
+.karte-extern-icon {
     width: 1rem;
     height: 1rem;
     color: #94a3b8;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-.bad-kachel:hover .bad-kachel-icon {
+.schwimmbad-karte:hover .karte-extern-icon {
     color: #0284c7;
     transform: translate(2px, -2px);
 }
 
-/* Untertitel & Beschreibungstext */
-.bad-kachel-untertitel {
-    font-size: 0.8125rem;
+.karte-merkmale {
+    font-size: 13px;
     color: #94a3b8;
     margin-bottom: 1.5rem;
 }
 
-.bad-kachel-text {
+.karte-beschreibung {
     font-size: 0.875rem;
     line-height: 1.625;
     color: #64748b;
